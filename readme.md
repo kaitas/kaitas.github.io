@@ -7,5 +7,6 @@ Since 19th Dec 2013
 
 # Contact
 
-twitter [o_ob](https://twitter.com/o_ob)
-
+- twitter[@o_ob](https://twitter.com/o_ob)
+- [Facebook](https://www.facebook.com/aquihiko) only for physically connected relations
+- [LinkedIn](https://www.linkedin.com/in/akihiko-shirai/)
