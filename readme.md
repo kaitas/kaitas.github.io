@@ -3,6 +3,7 @@
 Github pages
 Since 19th Dec 2013 
 
+- [スマ歩！さがみはら](https://kaitas.github.io/sumaho-sagamihara/)
 - [IEEEVR2020jp](https://kaitas.github.io/IEEEVR2020jp/)
 
 # Contact
