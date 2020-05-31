@@ -3,8 +3,14 @@
 Github pages
 Since 19th Dec 2013 
 
+## Archived Pages
+- [相模イングレス部](https://kaitas.github.io/sagami-ingress/)
 - [スマ歩！さがみはら](https://kaitas.github.io/sumaho-sagamihara/)
 - [IEEEVR2020jp](https://kaitas.github.io/IEEEVR2020jp/)
+
+# Research
+
+- [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
 # Contact
 
