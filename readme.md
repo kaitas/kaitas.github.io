@@ -12,6 +12,10 @@ Since 19th Dec 2013
 
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
+# Blog
+
+[aki.shirai.as](http://aki.shirai.as/)
+
 # Contact
 
 - twitter[@o_ob](https://twitter.com/o_ob)
