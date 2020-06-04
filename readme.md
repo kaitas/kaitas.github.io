@@ -14,10 +14,10 @@ Since 19th Dec 2013
 
 # Blog
 
-[aki.shirai.as](http://aki.shirai.as/)
+[aki's right brain](http://aki.shirai.as/)
 
 
-[kaitas.github.io/blog](https://kaitas.github.io/blog/)
+[aki's left brain](https://kaitas.github.io/blog/)
 
 # Contact
 
