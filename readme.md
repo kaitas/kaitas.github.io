@@ -15,6 +15,8 @@ Since 19th Dec 2013
 # Blog
 
 [aki.shirai.as](http://aki.shirai.as/)
+
+
 [kaitas.github.io/blog](https://kaitas.github.io/blog/)
 
 # Contact
