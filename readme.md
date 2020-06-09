@@ -13,7 +13,13 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 ## GREE VR Studio Laboratory
 
+- [Laboratory](https://vr.gree.net/lab/)
+-- [「転生こえうらない」Voice Fortune Teller](https://vr.gree.net/lab/vc/)
+- [Products](https://vr.gree.net/en/)
+
 ## KAIT Shirai Lab
+
+- [Publications](http://blog.shirai.la/publications/)
 
 # Lecture Notes
 
