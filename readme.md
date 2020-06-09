@@ -30,7 +30,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 [aki's left brain](https://kaitas.github.io/blog/)
 
-# Archived Projects
+# Archived Projects in Github pages
 - [相模Ingress部](https://kaitas.github.io/sagami-ingress/)
 - [スマ歩！さがみはら](https://kaitas.github.io/sumaho-sagamihara/)
 - [IEEEVR2020jp](https://kaitas.github.io/IEEEVR2020jp/)
