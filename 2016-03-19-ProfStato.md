@@ -9,6 +9,13 @@
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
 
+<a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
+
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
+</blockquote>
+
+
 <blockquote class="twitter-tweet">
  <p lang="ja" dir="ltr">先日の日本発の触覚VRの祖のひとり，東京工業大学佐藤誠先生の最終講義での白井の講演を公開させていただきました．<a href="https://t.co/Dm70davAnt">https://t.co/Dm70davAnt</a><br>
  動画は入ってませんが，おもしろさの科学へのアプローチの礎になればと．
