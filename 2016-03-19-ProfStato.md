@@ -90,7 +90,7 @@ This article is a retrospective view for Professor Makoto SATO and his final lec
 
 グラフィックス技術のみではゲームのリアリティには寄与できても「本質的なおもしろさ」には寄与できないことに限界を感じつつも「ビデオゲーム産業」の中でジレンマを感じながらR\&Dの本質に悩む日々の小生に，佐藤先生はさわやかな笑顔で「君，おもしろいね」「うちに来ない？」と，妻も子もいる悩めるエンジニアをアカデミアの世界への誘ったのであった．
 
-![./img/ProfSatoT.png](（佐藤誠先生：著者によるイラスト）)
+![佐藤誠先生：著者によるイラスト](./img/ProfSatoT.png)
 
 - 佐藤先生の自然な笑顔，本当は笑っていない事も．
 - An illustration of natural smile of Prof.Sato drawn by author. It was difficult to see if it is not laughing truly.
@@ -133,7 +133,7 @@ This article is a retrospective view for Professor Makoto SATO and his final lec
 
 ### 多重化映像技術
 
-![/img/RoadMap.png](多重化ディスプレイ技術のロードマップ / Road map of multiplex imaging technology)
+![多重化ディスプレイ技術のロードマップ / Road map of multiplex imaging technology](/img/RoadMap.png)
 - 多重化ディスプレイ技術のロードマップ
 
 中でも，一つのディスプレイで複数の映像を視聴することができる多重化映像技術は長い歴史を持ちつつある．
@@ -148,12 +148,12 @@ HMDによるVRブームのそのあとに，触覚技術とともに新たな「
 
 ### 2D+3Dハイブリッドシアターシステム「2x3D」
 
-![/img/2x3d.jpg]("2x3D'', 2D+3D hybrid theater system)
-![/img/exp2x3d.jpg](figure "2x3D'', 2D+3D hybrid theater system)
+!["2x3D'', 2D+3D hybrid theater system](/img/2x3d.jpg)
+![figure "2x3D'', 2D+3D hybrid theater system](/img/exp2x3d.jpg])
 
 - "2x3D'', 2D+3D hybrid theater system
 
-![/img/GAD.png](メガネなし拡張現実ディスプレイ / Glassless Augumented Reality Display)
+![メガネなし拡張現実ディスプレイ / Glassless Augumented Reality Display](/img/GAD.png)
 
 - メガネなし拡張現実 / ディスプレイGlassless Augumented Reality Display
 
