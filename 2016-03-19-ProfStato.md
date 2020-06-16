@@ -9,10 +9,19 @@
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
 
-<a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
+https://twitter.com/o_ob/status/717393169671987200
+
+<blockquote class="twitter-tweet">
+https://twitter.com/o_ob/status/717393169671987200
+</blockquote>
 
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
+</blockquote>
+
+
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">https://twitter.com/o_ob/status/717393169671987200</a>
 </blockquote>
 
 
