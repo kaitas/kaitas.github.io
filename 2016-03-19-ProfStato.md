@@ -201,6 +201,7 @@ HMDによるVRブームのそのあとに，触覚技術とともに新たな「
 http://www.art-science.org/journal/v3n1/v3n1pp022/artsci-v3n1pp022.pdf
 
 博士論文もかつて公開していましたが，サーバごと消えていますね，今度発掘作業しておきます．
+→[発掘作業しました](https://kaitas.github.io/AkihikoSHIRAI-DoctorThesis2004.html)
 
 
 <a href="./download/ProfSato20160319.pdf" onclick="ga('send', 'pageview', './download/ProfSato20160319.pdf')">
