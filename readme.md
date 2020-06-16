@@ -50,15 +50,15 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [卒論が1ミリも進まない4年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
-- ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research]()
+- ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
 
 
 # Books
 
 - [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
-![https://www.ohmsha.co.jp/Portals/0/book/small/978-4-274-06750-1.jpg]
+![https://www.ohmsha.co.jp/Portals/0/book/small/978-4-274-06750-1.jpg](WiiRemoteプログラミング)
 - [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
-![https://www.borndigital.co.jp/wp-content/uploads/2018/07/cov-23.jpg]
+![https://www.borndigital.co.jp/wp-content/uploads/2018/07/cov-23.jpg](白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―)
 
 # Contact
 
