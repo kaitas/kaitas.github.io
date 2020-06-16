@@ -12,15 +12,18 @@ http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twi
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-<h1>2013年度版加筆</h1>
-<blockquote class="twitter-tweet"><p>text</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/399830962176933888">date</a></blockquote>
+<h2>updates</h2>
+
+<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/399830962176933888">date</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p>自blogサイトの2013年のアクセス統計。まとまった記事はあまり書いてこなかったけど、卒論関係が時期になるとどっと増える。月間1万PVぐらい。TeXテンプレのダウンロード数も多い。 #Sotsuron</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/414592912278573056">December, 22, 2013</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/416972043922325504">date</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-
-https://twitter.com/o_ob/status/414592912278573056
-
-https://twitter.com/o_ob/status/416972043922325504
 
 <h1>INDEX</h1>
 <ul>
@@ -92,6 +95,8 @@ Twitter(@o_ob)ぐらいなら反応するかもしれません．
 いずれにせよボランティアですから．
 最新情報などはこちらへ
 http://aki.shirai.as/2013/01/tex-sample/
+
+
 【謝辞】
 ベースはこちらのyosshi71jpによるTeX解説から作っています．ゼロから作りたい人はこちらをどうぞ．
 そのほうが絶対勉強になりますって！
@@ -115,12 +120,14 @@ http://aki.shirai.as/2013/01/tex-sample/
 本サンプルではドラゴンクエストにおける魔法の命名規則が出現するが，間違っても神奈川工科大学ではこのような学位論文を受け付けてはいないことを注記しておく．
 また各大学・研究室では脈々と引き継がれてきた先輩方のテンプレや，先生方の指導方針があるはずである．そちらのほうが優先であることは間違いない．
 
+```tex
 %%% 目次
 \tableofcontents
 \mainmatter %%% 本文ここから
 
 \part{序論} %3部構成を取る必要がない場合もあります
 \chapter{はじめに}
+```
 
 <h2>\section{卒論とは何なのか}</h2>
 卒業論文とは，大学を卒業するものが得る学士という称号と引き換えに書くものである．修士は修士論文，博士号あれば博士論文．
@@ -225,7 +232,7 @@ PNG図の入れ方がわかれば，あとからPowerPointでいくらでも清�
 <a href="./img/osusume.png" title="おすすめの執筆順序"><img src="./img/osusume.png" alt="おすすめの執筆順序" width="637" height="168" /></a>
 下のTeXソースをコンパイルするとこのような美しい表になる
 
-
+```tex
 % 表の挿入
 \begin{table}[h]
 \caption{おすすめの執筆順序}% {}内に表題を書く
@@ -249,6 +256,7 @@ PNG図の入れ方がわかれば，あとからPowerPointでいくらでも清�
 \end{tabular}
 \end{center}
 \end{table}
+```
 
 以上のような流れで書いて見ることをおすすめする．
 
@@ -398,6 +406,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 残念ながら，この作業は通常，時間終了まで何回やっても終わらないループである．
 
 大事なことは以下のポイントだろうか．
+```
 \begin{enumerate}
 \item たまには印刷してみる．紙のほうがはるかにはかどる（A5サイズなどでよい）．
 \item 先生が修正指摘した箇所は二度と修正候補にならないように確実に修正する
@@ -405,6 +414,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 \item 本気で最終版ならバインダーに入れて
 \item 先生がブレることもある
 \end{enumerate}
+```
 
 (1)は電車移動中やファミレスなどで気分転換作業するのに適している．
 
@@ -418,6 +428,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 
 ★そんな先生の指導ストレスを少しでも軽減するために書いたエントリー「<a title="Kindle Paperwhiteは論文校正に使えるか？" href="http://aki.shirai.as/2013/01/kindle-paperwhite-for-diploma-paper-review/" target="_blank" rel="noopener">Kindle Paperwhiteは論文校正に使えるか？</a>」もどうぞ．
 
+```
 % 図の挿入
 \begin{figure}[htbp]
 \begin{center}
@@ -426,6 +437,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 \caption{Piled Higher and Deeper:「``FINAL''.doc」(10/12/2012)より http://www.phdcomics.com/ 参照}
 \label{http://www.phdcomics.com/comics/archive.php?comicid=1531}
 \end{figure}
+```
 
 (5)最後に，先生も人間である．沢山の学生を同時に指導し，若い君たちの勢いに押されて何日も徹夜していれば，間違いもある．
 そんな時には怒号に怒号や号泣で返すのではなく，まずは確かな方針に従うことだ．
