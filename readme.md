@@ -33,17 +33,21 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Blog
 
-[aki's right brain](http://aki.shirai.as/)
+- [aki's left brain](https://kaitas.github.io/blog/)
+- [aki's right brain](http://aki.shirai.as/)
+- [王様の耳はロバの耳](https://ameblo.jp/akihiko)
+- [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
 
-
-[aki's left brain](https://kaitas.github.io/blog/)
 
 # Archived Projects in Github pages
+- [KAIT Shirai Lab](https://new.shirai.la/)
 - [相模Ingress部](https://kaitas.github.io/sagami-ingress/)
 - [スマ歩！さがみはら](https://kaitas.github.io/sumaho-sagamihara/)
 - [IEEEVR2020jp](https://kaitas.github.io/IEEEVR2020jp/)
 
+# Articles
 
+- [卒論が1ミリも進まない4年生におくる，卒論サンプル](tex-sample.md)
 
 # Contact
 
