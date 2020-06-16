@@ -15,19 +15,15 @@ TeXで卒論を書く基本は変わりません。
 <h2>updates</h2>
 <blockquote class="twitter-tweet"><p>祝公式化！VRSJ大会2017テンプレ for CloudLaTeX（PNG画像，bibファイルサポート）
 http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/887924065297588224">July 20, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/399830962176933888">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet"><p>自blogサイトの2013年のアクセス統計。まとまった記事はあまり書いてこなかったけど、卒論関係が時期になるとどっと増える。月間1万PVぐらい。TeXテンプレのダウンロード数も多い。 #Sotsuron</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/414592912278573056">December, 22, 2013</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/416972043922325504">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <h1>INDEX</h1>
@@ -506,8 +502,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 <h2>・目次にサブセクションまで含ませたい</h2>
 
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/427780351356727297 ">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 デフォルトのままでは目次には「1.1」までは含まれても「1.1.1」までは含まれません．大学のフォーマットによっては「サブセクションまで目次に含める」などあると思いますので，
 

@@ -9,9 +9,9 @@
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
 
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/717393169671987200">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/717393169671987200">date</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 日本発の触覚VRの祖のひとり，東京工業大学佐藤誠先生の最終講義での白井の講演を公開させていただきました．
 動画は入ってませんが，おもしろさの科学へのアプローチの礎になればと思います．ちなみにスライド63ページを20分(ぐらい)で喋っていますね…．
@@ -40,23 +40,18 @@
 白井のTwitterログで見つけることができますが，佐藤先生を支える先生方の大変素晴らしい講演があり，良い刺激になりました．
 
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711190520773550081">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711189762762117120">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711065898530906112">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711153792746594304">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711190541883428864">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711189799713964032">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 佐藤先生の講演は素晴らしかったです．本当にクモ好きなんですねえ．
@@ -194,8 +189,7 @@ HMDによるVRブームのそのあとに，触覚技術とともに新たな「
 おまけ：
 
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711546525780877313">date</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 当時の論文に興味がある人はこちらが良いかと思います．■「エンタテイメントシステム」（芸術科学会論文誌）
 http://www.art-science.org/journal/v3n1/v3n1pp022/artsci-v3n1pp022.pdf
