@@ -50,6 +50,8 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [卒論が1ミリも進まない4年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
+- ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research]()
+
 
 # Books
 
