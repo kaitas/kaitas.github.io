@@ -2,8 +2,14 @@
 
 初稿2003-1-15, 2020-06-16移植
 
-<blockquote class="twitter-tweet"><p>ヘウレーカ！　JekyllでコンテンツをHTMLで書いて良いことと、レイアウト側だけではなくコンテンツ側でも include が使えることに気がついて、蒙が啓けた気がする</p>&mdash; Genji (@genji_tw) <a href="https://twitter.com/genji_tw/statuses/398471861828206592">November 7, 2013</a></blockquote>
+<blockquote class="twitter-tweet"><p>祝公式化！VRSJ大会2017テンプレ for CloudLaTeX（PNG画像，bibファイルサポート）
+http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/887924065297588224">July 20, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class='jekyll-twitter-plugin' align="center">
+    {% twitter https://twitter.com/o_ob maxwidth=500 limit=5 %}
+    {% twitter https://twitter.com/o_ob/status/887924065297588224 %}
+</div>
 
 <h1>この記事は古い記事です(2013年初稿執筆)</h1>
 <h2>関連情報</h2>

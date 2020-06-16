@@ -4,7 +4,12 @@ title: Akihiko SHIRAI, Ph.D as kaitas in Github
 google_analytics: UA-168023643-1
 
 # https://genjiapp.com/blog/2013/11/13/jekyll-config-for-markdown.html
+# 以下のオプションはGithub pagesでは有効ではないと考えます
 markdown: redcarpet
 redcarpet:
   extensions: ["autolink", "hard_wrap"]
-  
+# https://gist.github.com/abhisheknaik96/26ce79ac7a307eb836dcf02a52f87cf2
+plugins:
+  - jekyll-gist
+  - jekyll-twitter-plugin
+
