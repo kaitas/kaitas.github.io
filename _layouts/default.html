@@ -6,7 +6,8 @@
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="/assets/css/style.css?v=791e0a36b217305d2dcbfb42a76c786eb17ba7c4">
     <title>{{ page.title }}</title>
-  </head>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</head>
 
   <body>
     <section class="page-header">
@@ -28,12 +29,13 @@
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="site-footer">
-      <footer class="inner">
+        <a href="{{site.baseurl}}/">Home</a>
+        <p class="copyright">aki's left brain maintained by <a href="https://twitter.com/o_ob">o_ob</a></p>
+
+        <footer class="inner">
         {% if site.github.is_project_page %}
         <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <a href="{{site.baseurl}}/">Home</a>
-        <p class="copyright">aki's left brain maintained by <a href="https://twitter.com/o_ob">@o_ob</a></p>
         <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
