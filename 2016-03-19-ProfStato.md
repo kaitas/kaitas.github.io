@@ -65,7 +65,7 @@
 
 ## 自分の講演について振り返り
 
-- [SlideShare](http://www.slideshare.net/aquihiko/ss-60516411)
+- [SlideShare おもしろい研究&quot;への挑戦 - Challenges for &quot;Omoshiroi&quot; research](http://www.slideshare.net/aquihiko/ss-60516411)
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/9dxHIv7ysHwphe" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/aquihiko/ss-60516411" title="&quot;おもしろい研究&quot;への挑戦 - Challenges for &quot;Omoshiroi&quot; research" target="_blank">&quot;おもしろい研究&quot;への挑戦 - Challenges for &quot;Omoshiroi&quot; research</a> </strong> from <strong><a href="//www.slideshare.net/aquihiko" target="_blank">Akihiko Shirai</a></strong> </div>
 
