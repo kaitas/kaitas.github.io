@@ -43,20 +43,19 @@
 ## 当日の様子
 白井のTwitterログで見つけることができますが，佐藤先生を支える先生方の大変素晴らしい講演があり，良い刺激になりました．
 
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711190520773550081">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711189762762117120">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711065898530906112">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711153792746594304">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711190541883428864">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711189799713964032">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">SPIDAR for street dance. <a href="https://t.co/eqgjLZb9Sb">pic.twitter.com/eqgjLZb9Sb</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711190520773550081?ref_src=twsrc%5Etfw">March 19, 2016</a></blockquote>
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">DOLPHY in the move with SPIDAR. <a href="https://t.co/EDoDG0QTYW">pic.twitter.com/EDoDG0QTYW</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711189762762117120?ref_src=twsrc%5Etfw">March 19, 2016</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">佐藤先生の最終講義「&quot;おもしろい研究&quot;への挑戦」での講演終わり！<br>続いて稲見先生「身体の未来」。 <a href="https://t.co/KMCazZOjEO">pic.twitter.com/KMCazZOjEO</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711065898530906112?ref_src=twsrc%5Etfw">March 19, 2016</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Giving a speech by Prof INAMI for Prof Makoto SATO&#39;s last lecture. <a href="https://t.co/ZyPK2nDIZA">pic.twitter.com/ZyPK2nDIZA</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711153792746594304?ref_src=twsrc%5Etfw">March 19, 2016</a></blockquote>
+
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">SPIDAR-S, single string for smartphone. <a href="https://t.co/yy0l1M4UcH">pic.twitter.com/yy0l1M4UcH</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711190541883428864?ref_src=twsrc%5Etfw">March 19, 2016</a></blockquote>
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">「学遊一如」。<br>最後にSPIDAR-Sを参加者に配布とか！ <a href="https://t.co/t3XMGfbbtr">pic.twitter.com/t3XMGfbbtr</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711189799713964032?ref_src=twsrc%5Etfw">March 19, 2016</a></blockquote>
 
 佐藤先生の講演は素晴らしかったです．本当にクモ好きなんですねえ．
 
@@ -192,8 +191,7 @@ HMDによるVRブームのそのあとに，触覚技術とともに新たな「
 
 おまけ：
 
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/711546525780877313">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">昨日頂いたSPIDAR-Sを動作確認。<br>「ハプティック技術推進協議会」という名の東工大佐藤誠研究室にはマブチモーターで触覚デバイス作る動画も。<a href="https://t.co/ZYm6wnyhXQ">https://t.co/ZYm6wnyhXQ</a> <a href="https://t.co/5cJDF3Wall">pic.twitter.com/5cJDF3Wall</a></p>&mdash; Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) <a href="https://twitter.com/o_ob/status/711546525780877313?ref_src=twsrc%5Etfw">March 20, 2016</a></blockquote>
 
 当時の論文に興味がある人はこちらが良いかと思います．■「エンタテイメントシステム」（芸術科学会論文誌）
 http://www.art-science.org/journal/v3n1/v3n1pp022/artsci-v3n1pp022.pdf
