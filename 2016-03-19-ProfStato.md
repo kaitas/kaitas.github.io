@@ -75,9 +75,9 @@
 文中に本来あるべき論文等の引用はPDF版で見ていただければ幸いです．
 
 ## "おもしろい研究''への挑戦 Challenges for "Omoshiroi'' research
-- 著者 白井 暁彦（神奈川工科大学 情報学部 情報メディア学科 准教授）
+- 著者 白井 暁彦（神奈川工科大学 情報学部 情報メディア学科 准教授）当時
 - Akihiko SHIRAI, Ph.D (Kanagawa Institute of Technology)
-- 2016
+- 2016-03-19
 
 ## Abstract
 This article is a retrospective view for Professor Makoto SATO and his final lecture. The author studied in spatial force feedback display for augmented reality system with his supervisor Prof. SATO from 2001 to 2004 and the experience have been applied into entertainment systems research to current education in computer media.
@@ -206,4 +206,6 @@ http://www.art-science.org/journal/v3n1/v3n1pp022/artsci-v3n1pp022.pdf
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
 
-
+### History
+- Published in [aki's right brain](http://aki.shirai.as/challenges-for-omoshiroi-research/) at 2016-04-06
+- Moved to [aki's left brain](https://kaitas.github.io/2016-03-19-ProfStato.html) at 2020-06-16
