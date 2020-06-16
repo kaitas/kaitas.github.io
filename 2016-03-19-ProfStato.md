@@ -9,9 +9,13 @@
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
 
-
-<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/717393169671987200">date</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet">
+ <p lang="ja" dir="ltr">先日の日本発の触覚VRの祖のひとり，東京工業大学佐藤誠先生の最終講義での白井の講演を公開させていただきました．<a href="https://t.co/Dm70davAnt">https://t.co/Dm70davAnt</a><br>
+ 動画は入ってませんが，おもしろさの科学へのアプローチの礎になればと．
+ <a href="https://t.co/M17P4BSKqF">https://t.co/M17P4BSKqF</a></p>&mdash; 
+ Akihiko SHIRAI, Ph.D #EnjoyStayHome🦠 (@o_ob) 
+ <a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
+ </blockquote>
 
 日本発の触覚VRの祖のひとり，東京工業大学佐藤誠先生の最終講義での白井の講演を公開させていただきました．
 動画は入ってませんが，おもしろさの科学へのアプローチの礎になればと思います．ちなみにスライド63ページを20分(ぐらい)で喋っていますね…．
