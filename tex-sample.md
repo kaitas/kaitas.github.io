@@ -6,10 +6,12 @@
 http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/887924065297588224">July 20, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<!--
 <div class='jekyll-twitter-plugin' align="center">
     {% twitter https://twitter.com/o_ob maxwidth=500 limit=5 %}
     {% twitter https://twitter.com/o_ob/status/887924065297588224 %}
 </div>
+-->
 
 <h1>この記事は古い記事です(2013年初稿執筆)</h1>
 <h2>関連情報</h2>
