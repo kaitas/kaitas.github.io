@@ -84,7 +84,7 @@ This article is a retrospective view for Professor Makoto SATO and his final lec
 
 ## 君，おもしろいね」から始まった師弟関係
 
-佐藤先生との出会いは，小生の初めてのSIGGRAPH参加であったSIGGRAPH'97が最初であったように記憶している．佐藤研究室「Virtual basketball」に感動し，その後，日本VR学会第2回大会(名古屋・1997年)および，SIGGRAPH'98での ``Foot Interface: Fantastic Phantom Slipper`` を，当時の所属大学であった東京工芸大学 写真工学科 光情報処理研究室より発表する切っ掛けとなった．当時はVRは2回目のバブルを迎えており，2016年現在よりも100倍ほど高価な投資が必要ではあったが，夢もフロンティア精神もある時代であった．小生は画像工学専攻を卒業後，キヤノン株式会社に籍を置き，BJプリンタの工場である福島工場を経て，グループの英国ゲームエンジン開発企業Criterionに移籍し，PlayStation2を起爆剤とする世界のビデオゲーム業界の裏方で充実しつつも忙しい日々を過ごしていた．
+佐藤先生との出会いは，小生の初めてのSIGGRAPH参加であったSIGGRAPH'97が最初であったように記憶している．佐藤研究室「Virtual basketball」に感動し，その後，日本VR学会第2回大会(名古屋・1997年)および，SIGGRAPH'98での [Foot Interface: Fantastic Phantom Slipper](https://www.youtube.com/watch?v=vU_SBt7GJ6A) を，当時の所属大学であった東京工芸大学 写真工学科 光情報処理研究室より発表する切っ掛けとなった．当時はVRは2回目のバブルを迎えており，2016年現在よりも100倍ほど高価な投資が必要ではあったが，夢もフロンティア精神もある時代であった．小生は画像工学専攻を卒業後，キヤノン株式会社に籍を置き，BJプリンタの工場である福島工場を経て，グループの英国ゲームエンジン開発企業Criterionに移籍し，PlayStation2を起爆剤とする世界のビデオゲーム業界の裏方で充実しつつも忙しい日々を過ごしていた．
 
 佐藤先生との再会の舞台はSIGGRAPH2000であった．リアルタイムコンピュータグラフィックス技術においては，物理シミュレーションを取り込み，大きく進歩する時代であった．佐藤研究室は「4+4 Fingers Direct Manipulation With Force Feedback」，つまりSPIDARでRubik's cubeを操作するデモを Emerging Technologies: Point of Departure においてデモしていた．
 
@@ -205,3 +205,5 @@ http://www.art-science.org/journal/v3n1/v3n1pp022/artsci-v3n1pp022.pdf
 <a href="./download/ProfSato20160319.pdf" onclick="ga('send', 'pageview', './download/ProfSato20160319.pdf')">
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
+
+
