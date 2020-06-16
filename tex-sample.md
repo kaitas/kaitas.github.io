@@ -114,7 +114,9 @@ http://aki.shirai.as/2013/01/tex-sample/
 
 <h5>＜以下，駄サンプル文から引用，改訂予定，上記PDFのほうが読み物としては読みやすいはず．以下，論述なので基本は「である調」であるべきだが、意図的に口語が混ざっていることに注意＞</h5>
 
-```tex:はじめに
+```tex:改行はスペース2つ
+
+はじめに
 
 本論文はドラゴンクエストにおける魔法の命名規則におけるユーザビリティにおける雑文から，TeXを使った卒論執筆手法を整理するものである．
 論文の要旨とは，その論文の主題や前提となる背景，論文の構成，研究の成果や価値を特徴付ける実験手法や結果について1ページ程度で凝縮して表現するものである．
@@ -130,6 +132,9 @@ http://aki.shirai.as/2013/01/tex-sample/
 
 本サンプルではドラゴンクエストにおける魔法の命名規則が出現するが，間違っても神奈川工科大学ではこのような学位論文を受け付けてはいないことを注記しておく．
 また各大学・研究室では脈々と引き継がれてきた先輩方のテンプレや，先生方の指導方針があるはずである．そちらのほうが優先であることは間違いない．
+```
+
+```tex: 目次とpart, chapter, sectionの使い方
 
 %%% 目次
 \tableofcontents
@@ -155,6 +160,9 @@ http://aki.shirai.as/2013/01/tex-sample/
 こういった博士論文はすべて，大学の図書館および国立大学であれば国会図書館に収蔵されているはずである．
 一方で，自信を持って「博士論文はこう書け！」といったお手本のようなものがないのも現実である．
 誰もがそんな風に自信を持って博士号がとれるわけではない，本当に生きるか死ぬかのギリギリでもらえるラインであることが多いからである．
+```
+
+```tex
 
 本サンプルではそのような切羽詰まった世界ではなく，
 単なる\textbf{TeXで書く大きめの論文}を示すにとどまる．そのうち，気が向けば筆を執ることもあるかもしれないが，それはこれを活用した読者各位の心がけ次第といったところだろうか．
@@ -240,8 +248,11 @@ PNG図の入れ方がわかれば，あとからPowerPointでいくらでも清�
 <!--[caption id="attachment_6630" align="alignright" width="637"]<a href="http://aki.shirai.as/2013/01/tex-sample/osusume/" rel="attachment wp-att-6630"><img class="size-full wp-image-6630" title="おすすめの執筆順序" src="http://aki.shirai.as/wp-content/uploads/2013/01/osusume.png" alt="おすすめの執筆順序" width="637" height="168" /></a> 下のTeXソースをコンパイルするとこのような美しい表になる[/caption]-->
 
 <a href="./img/osusume.png" title="おすすめの執筆順序"><img src="./img/osusume.png" alt="おすすめの執筆順序" width="637" height="168" /></a>
+
+
 下のTeXソースをコンパイルするとこのような美しい表になる
 
+```tex
 % 表の挿入
 \begin{table}[h]
 \caption{おすすめの執筆順序}% {}内に表題を書く
@@ -265,6 +276,7 @@ PNG図の入れ方がわかれば，あとからPowerPointでいくらでも清�
 \end{tabular}
 \end{center}
 \end{table}
+```
 
 以上のような流れで書いて見ることをおすすめする．
 
@@ -436,7 +448,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 ★そんな先生の指導ストレスを少しでも軽減するために書いたエントリー「<a title="Kindle Paperwhiteは論文校正に使えるか？" href="http://aki.shirai.as/2013/01/kindle-paperwhite-for-diploma-paper-review/" target="_blank" rel="noopener">Kindle Paperwhiteは論文校正に使えるか？</a>」もどうぞ．
 
 
-% 図の挿入
+```tex:図の挿入
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[bb=0 0 432 576,width=5cm]{figall/phd101212s.png}
@@ -444,6 +456,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 \caption{Piled Higher and Deeper:「``FINAL''.doc」(10/12/2012)より http://www.phdcomics.com/ 参照}
 \label{http://www.phdcomics.com/comics/archive.php?comicid=1531}
 \end{figure}
+```
 
 (5)最後に，先生も人間である．沢山の学生を同時に指導し，若い君たちの勢いに押されて何日も徹夜していれば，間違いもある．
 そんな時には怒号に怒号や号泣で返すのではなく，まずは確かな方針に従うことだ．
