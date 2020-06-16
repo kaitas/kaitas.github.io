@@ -127,7 +127,8 @@ Sotsuron.texをLabEditorで開いてビルド(F12)します．
 ```
 
 ### 目次とpart, chapter, sectionの使い方
-```tex:
+
+```
 # 目次とpart, chapter, sectionの使い方
 
 %%% 目次
@@ -162,7 +163,8 @@ Sotsuron.texをLabEditorで開いてビルド(F12)します．
 ```
 
 ### 番号付き列挙．便利なので覚えるべし
-```tex:
+
+```
 
 \section{課題の設定}
 卒業研究において，最も最初に取り組むべき事はなんだろうか．
@@ -452,7 +454,8 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 ★そんな先生の指導ストレスを少しでも軽減するために書いたエントリー「<a title="Kindle Paperwhiteは論文校正に使えるか？" href="http://aki.shirai.as/2013/01/kindle-paperwhite-for-diploma-paper-review/" target="_blank" rel="noopener">Kindle Paperwhiteは論文校正に使えるか？</a>」もどうぞ．
 
 
-```tex:図の挿入
+```
+% 図の挿入
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[bb=0 0 432 576,width=5cm]{figall/phd101212s.png}
@@ -467,7 +470,8 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 そんな時に，論文概要は君を助けてくれるだろう．
 だから今，卒論が1ミリも進まないい君は，いますぐ，先生と論文概要と章構成については合意を得て置かなければならない．
 
-```tex:
+```
+
 \section{一旦筆を置く前に}
 以上の通り，一気に書き綴って見たが，お役に立てたら幸いである．
 
