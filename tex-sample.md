@@ -1,21 +1,22 @@
 # 卒論が1ミリも進まない4年生におくる，TeX卒論サンプル
 
-初稿2003-1-15, 2020-06-16移植
-
-<blockquote class="twitter-tweet"><p>祝公式化！VRSJ大会2017テンプレ for CloudLaTeX（PNG画像，bibファイルサポート）
-http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/887924065297588224">July 20, 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-{{ site.time | date_to_string }}
+初稿2003-1-15, 2020-06-16移植, {{ site.time | date_to_string }} 更新
 
 
 
 <h1>この記事は古い記事です(2013年初稿執筆)</h1>
 <h2>関連情報</h2>
-https://twitter.com/o_ob/status/887924065297588224
 
-<h1>2013年度版加筆を計画中</h1>
-https://twitter.com/o_ob/status/399830962176933888
+<blockquote class="twitter-tweet"><p>祝公式化！VRSJ大会2017テンプレ for CloudLaTeX（PNG画像，bibファイルサポート）
+http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/887924065297588224">July 20, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<h1>2013年度版加筆</h1>
+<blockquote class="twitter-tweet"><p>text</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/399830962176933888">date</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 
 https://twitter.com/o_ob/status/414592912278573056
 
