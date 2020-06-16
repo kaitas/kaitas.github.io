@@ -36,8 +36,9 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [aki's left brain](https://kaitas.github.io/blog/)
 - [aki's right brain](http://aki.shirai.as/)
-- [王様の耳はロバの耳](https://ameblo.jp/akihiko)
 - [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
+- [王様の耳はロバの耳](https://ameblo.jp/akihiko)
+- [Future Entertainment Laboratory](http://akihiko.shirai.as/)
 
 
 # Archived Projects in Github pages
@@ -48,6 +49,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Articles
 
+- [【博士論文】「床面提示型触覚エンタテイメントシステムの提案と開発　白井暁彦」](AkihikoSHIRAI-DoctorThesis2004.md)
 - [卒論が1ミリも進まない4年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
 - ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
