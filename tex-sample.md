@@ -60,8 +60,9 @@ http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twi
 
 <!--<a href="http://aki.shirai.as/2013/01/tex-sample/sotsuron/" rel="attachment wp-att-6618">Sotsuron</a>(PDF)-->
 
-- (TeX一式) [SotsuronTeX.zip](./download/SotsuronTeX.zip)
-
+<a href="./download/SotsuronTeX.zip" onclick="ga('send', 'pageview', './download/SotsuronTeX.zip')">
+▶ (TeX一式) SotsuronTeX.zip
+</a>
 <pre>
 #卒論が1ミリも進まない4年生におくる，卒論サンプル README
 Version 1.1 20:07 2013/01/15
