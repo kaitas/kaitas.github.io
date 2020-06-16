@@ -491,7 +491,11 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 
 <h1>TIPSと更新</h1>
 <h2>・目次にサブセクションまで含ませたい</h2>
-https://twitter.com/o_ob/status/427780351356727297
+
+<blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/427780351356727297 ">date</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 デフォルトのままでは目次には「1.1」までは含まれても「1.1.1」までは含まれません．大学のフォーマットによっては「サブセクションまで目次に含める」などあると思いますので，
 
 <pre>\setcounter{tocdepth}{2}</pre>
@@ -532,9 +536,9 @@ https://twitter.com/o_ob/status/427780351356727297
 <h1>関連リンク</h1>
 お茶の水女子大・伊藤先生による「修士論文の作り方」およびそこから他の先生方へのリンク
 
-http://itolab.is.ocha.ac.jp/~itot/lecture/msthesis.html
+[修士論文の作り方](http://itolab.is.ocha.ac.jp/~itot/message/msthesis.html)
 
 【関連】
 
-卒論、そろそろ図書館を本気で活用すべき時期。
-http://aki.shirai.as/2014/01/why-you-dont-go-to-your-library/
+- [卒論、そろそろ図書館を本気で活用すべき時期。](http://aki.shirai.as/why-you-dont-go-to-your-library/)
+
