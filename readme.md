@@ -56,9 +56,9 @@ From June 2018, He is backed to game industry again as a labo director to launch
 # Books
 
 - [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
-![WiiRemoteプログラミング](https://www.ohmsha.co.jp/Portals/0/book/small/978-4-274-06750-1.jpg)
+- ![WiiRemoteプログラミング](https://www.ohmsha.co.jp/Portals/0/book/small/978-4-274-06750-1.jpg | width=200)
 - [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
-![白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](https://www.borndigital.co.jp/wp-content/uploads/2018/07/cov-23.jpg)
+- ![白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](https://www.borndigital.co.jp/wp-content/uploads/2018/07/cov-23.jpg | width=200)
 
 # Contact
 
