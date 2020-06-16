@@ -90,7 +90,7 @@ This article is a retrospective view for Professor Makoto SATO and his final lec
 
 グラフィックス技術のみではゲームのリアリティには寄与できても「本質的なおもしろさ」には寄与できないことに限界を感じつつも「ビデオゲーム産業」の中でジレンマを感じながらR\&Dの本質に悩む日々の小生に，佐藤先生はさわやかな笑顔で「君，おもしろいね」「うちに来ない？」と，妻も子もいる悩めるエンジニアをアカデミアの世界への誘ったのであった．
 
-![佐藤誠先生：著者によるイラスト](./img/ProfSatoT.png)
+![佐藤誠先生：著者によるイラスト](./img/ProfSatoT.png | width=200)
 
 - 佐藤先生の自然な笑顔，本当は笑っていない事も．
 - An illustration of natural smile of Prof.Sato drawn by author. It was difficult to see if it is not laughing truly.
