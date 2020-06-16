@@ -4,15 +4,20 @@
 
 
 
-<h1>この記事は古い記事です(2013年初稿執筆)</h1>
-<h2>関連情報</h2>
+<h2>この記事は古い記事です(2013年初稿執筆)</h2>
 
+大学教員時代に出、卒論初稿を待つ時間がヤキモキすぎて書いた読みづらいエントリーですが、多くの人に読まれているようなので保管しておきます。
+
+筆者、最近は<a href="https://www.overleaf.com/">OverLeaf</a>を使っています。
+
+TeXで卒論を書く基本は変わりません。
+
+<h2>updates</h2>
 <blockquote class="twitter-tweet"><p>祝公式化！VRSJ大会2017テンプレ for CloudLaTeX（PNG画像，bibファイルサポート）
 http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/887924065297588224">July 20, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-<h2>updates</h2>
 
 <blockquote class="twitter-tweet"><p>tweet</p>&mdash; Aki (@o_ob) <a href="https://twitter.com/o_ob/status/399830962176933888">date</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -57,7 +62,8 @@ http://bit.ly/VRSJACloudLaTeX  #VRSJ</p>&mdash; Aki (@o_ob) <a href="https://twi
 
 (TeX一式)[SotsuronTeX.zip](./download/SotsuronTeX.zip)
 
-<h4>#卒論が1ミリも進まない4年生におくる，卒論サンプル README</h4>
+<pre>
+#卒論が1ミリも進まない4年生におくる，卒論サンプル README
 Version 1.1 20:07 2013/01/15
 
 【執筆に使用した環境】
@@ -101,6 +107,8 @@ http://aki.shirai.as/2013/01/tex-sample/
 ベースはこちらのyosshi71jpによるTeX解説から作っています．ゼロから作りたい人はこちらをどうぞ．
 そのほうが絶対勉強になりますって！
 <a href="http://d.hatena.ne.jp/yosshi71jp/20101210/1292005429">http://d.hatena.ne.jp/yosshi71jp/20101210/1292005429</a>
+</pre>
+
 
 <h1>TeXサンプルに書かれている日本語から…</h1>
 <h5>＜以下，駄サンプル文から引用，改訂予定，上記PDFのほうが読み物としては読みやすいはず．以下，論述なので基本は「である調」であるべきだが、意図的に口語が混ざっていることに注意＞</h5>
@@ -161,22 +169,27 @@ http://aki.shirai.as/2013/01/tex-sample/
 その面接官は君に『マイクロソフトの新しいゲーム用コントローラであるKinect\texttrademark を使った，新奇なVRエンタテイメントシステムを開発しています』といった，超専門的で価値があるのかないのかわからない話をして貰いたいとは微塵も思っていないはずである．
 
 問題は，その研究が
+
+```
 \begin{enumerate} %番号付き列挙．便利なので覚えるべし
 \item 『どんな課題を解決しようとしているのか？』%ここに項目を書く
 \item 『その課題解決はうちの業務に役に立ちそうか？』
 \item 仮に役に立たなくても『そのガンバリはうちの業務に役に立ちそうか？』
 \end{enumerate}
+```
 
 といった程度のことを聞いているに過ぎない．
 
 このような背景において，間違っても
 
+```
 \begin{itemize} %ただの箇条書き，これも便利なので覚えるべし．
 \item c++とC\#ではC\#のほうが得意です
 \item Processingしか書けません
 \item KinectはOpenNIもMicrosoft KinectSDKでもどっちでもいけます
 \item 処理はGPU上で動いてます
 \end{itemize}
+```
 
 なんていう話をしても仕方がないのである．
 上記に列挙したような要素は，開発の中身であって，先端の研究をしている人間が，採用担当者や他の研究室の先生に『わかってもらおう』などという態度で前提をすっ飛ばして語っては，失礼千万あまりあまって，ただのギークと思われても仕方がない．
@@ -406,6 +419,7 @@ Google画像検索では出てこないぞ，自分で撮影するか，描く�
 残念ながら，この作業は通常，時間終了まで何回やっても終わらないループである．
 
 大事なことは以下のポイントだろうか．
+
 ```
 \begin{enumerate}
 \item たまには印刷してみる．紙のほうがはるかにはかどる（A5サイズなどでよい）．
