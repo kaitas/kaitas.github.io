@@ -24,11 +24,11 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [Publications](http://blog.shirai.la/publications/)
 - [Manga Generator Consortium](https://manga.style/)
 
-# Lecture Notes
+# Lecture
 
 - [“Research and Development for Avatar-Driven Virtual Society in VR4.0 Era” #EMTECH #DesiredIdentities](https://www.youtube.com/watch?v=hVR82Rb7eqM) Published on June 27,2020
 - [Mozilla Hubsが拓く新世代WebVRのススメ #HubsScrum](https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum) Published on May 13, 2020
-
+- [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10月22日23日, China.
 - [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
 - [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
 
