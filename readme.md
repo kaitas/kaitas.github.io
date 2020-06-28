@@ -26,6 +26,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Lecture Notes
 
+- [“Research and Development for Avatar-Driven Virtual Society in VR4.0 Era” #EMTECH #DesiredIdentities](https://www.youtube.com/watch?v=hVR82Rb7eqM) Published on June 27,2020
 - [Mozilla Hubsが拓く新世代WebVRのススメ #HubsScrum](https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum) Published on May 13, 2020
 
 - [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
@@ -49,10 +50,11 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Articles
 
-- [【博士論文】「床面提示型触覚エンタテイメントシステムの提案と開発　白井暁彦」](AkihikoSHIRAI-DoctorThesis2004.md)
+- [【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf) DHU JOURNAL Vol.06 2019
 - [卒論が1ミリも進まない4年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
 - ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
+- [【博士論文】「床面提示型触覚エンタテイメントシステムの提案と開発　白井暁彦」](AkihikoSHIRAI-DoctorThesis2004.md)
 
 
 # Books
