@@ -11,6 +11,11 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
+## Projects
+
+- [Phantastic Phantom Slipper](Phantastic-Fantom-Slipper)
+
+
 ## GREE VR Studio Laboratory
 
 - [Laboratory](https://vr.gree.net/lab/)
@@ -31,7 +36,6 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10月22日23日, China.
 - [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
 - [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
-
 
 # Blog
 
