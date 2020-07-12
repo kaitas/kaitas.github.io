@@ -12,8 +12,9 @@
 <p>When people walk, various kinds of information, such as pressure, ruggedness and inclination of floors, are perceived through the skin sensations of their soles. We employ phantom sensation to transmit such kinds of information. In order to elicit phantom sensation, we use tiny vibration motors. The vibrators are set in the sole of the slippers. Two vibrators are set in each sole. Fused sensation can be moved two dimensional around the feet, by controlling the intensities of the four vibrators appropriately.<br />Fantastic Phantom Slipper is shown at VRSJ’97 (Virtual Reality Annual Conference in Japan) and ACM SIGGRAPH’98 Enhanced Reality.</p>
 <p><a href="./img/fig.gif"><img src="./img/fig.gif" alt="" width="300" height="215" /></a></p>
 <p><a href="./img/Filpper.gif"><img src="./img/Filpper.gif" alt="" width="426" height="580" /><br /> </a></p>
-<h2>Links</h2>
-<p><a href="./img/Filpper.gif"></p>
+
+<h2>Video</h2>
+
 [YouTube](https://www.youtube.com/watch?v=vU_SBt7GJ6A)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vU_SBt7GJ6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
