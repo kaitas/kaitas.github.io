@@ -2,7 +2,8 @@
 
 ## Fantastic Phantom Slipper [1997-1998]
 
-<p>The first project of the “Interactive Floors” series. Most virtual reality systems use upper body parts, such as eyes, ears, arms and hands, for the interactions, and much information is concentrated into them. This situation is caused by some restrictions of current interface devices. People should be able to move and act freely in virtual environments as they do in the real world. People usually move with their legs and feet in the real world. We believe that they should be able to move freely with their legs and feet in virtual worlds.<a href="./img/FPS1.png"><img src="./img/FPS1-200x300.png"/></a></p>
+<p>The first project of the “Interactive Floors” series. Most virtual reality systems use upper body parts, such as eyes, ears, arms and hands, for the interactions, and much information is concentrated into them. This situation is caused by some restrictions of current interface devices. People should be able to move and act freely in virtual environments as they do in the real world. People usually move with their legs and feet in the real world. We believe that they should be able to move freely with their legs and feet in virtual worlds.
+<a href="./img/FPS1.png"><img align="right" src="./img/FPS1-200x300.png"/></a></p>
 <p>From this viewpoint, we have developed a multi-modal interface using human feet. Feet movements of the users are measured by a real-time optical motion capture system. The feedback information is transmitted to the users through tactile sensation on the feet, namely to the soles. These functions are realized by specially developed slippers. The only device the user should wear is a pair of slippers, and he/she can move and act freely.</p>
 <p>Since we are accustomed to wear shoes, wearing such slippers, do not cause psychological/physical discomforts. Utilizing key technologies we developed, we constructed an interactive amusement system using a foot interface, the "Fantastic Phantom Slipper".</p>
 <p>The system has been realized with a real-time optical motion capture system using PSD and Infrared-LEDs. In the system, two LEDs are fixed on each slipper. The locations and directions of slippers on the floor are measured in real-time. Since feet are usually on the floor, two dimensional measurement is sufficient for this application.</p>
@@ -19,5 +20,5 @@
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vU_SBt7GJ6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<p>Academic article</p>
+<h2>Academic article</h2>
 <p><code>Yuichiro Kume. 1998. Foot interface: fantastic phantom slipper. In ACM SIGGRAPH 98 Conference abstracts and applications (SIGGRAPH '98). ACM, New York, NY, USA, 114-. DOI=http://dx.doi.org/10.1145/280953.284801</code><br /><a href="https://dl.acm.org/citation.cfm?id=284801">ACM Portal</a> [<a href="http://delivery.acm.org/10.1145/290000/284801/p114-kume.pdf">PDF</a>]</p>
