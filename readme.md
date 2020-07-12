@@ -13,7 +13,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 ## Projects
 
-- [Phantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
+- [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
 
 
 ## GREE VR Studio Laboratory
