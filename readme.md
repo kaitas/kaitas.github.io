@@ -59,7 +59,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
 - ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
 - [【博士論文】「床面提示型触覚エンタテイメントシステムの提案と開発　白井暁彦」](AkihikoSHIRAI-DoctorThesis2004.md)
-
+- [フランスを研究 -rechercher la france-](2006-08-30-rechercher-la-france.md)
 
 # Books
 
