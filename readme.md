@@ -64,6 +64,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 # Books
 
 - [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
+- (working)[WiiRemoteプログラミング]https://kaitas.github.io/akihiko.shirai.as/projects/WiiRemote/)
 - [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
 
 
