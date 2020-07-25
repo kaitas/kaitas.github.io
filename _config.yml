@@ -9,6 +9,7 @@ layouts_dir: _layouts
 # data_dir: _data
 includes_dir: _includes
 show_excerpts: true
+paginate: true
 permalink: date
 # collections_dir: .
 #collections:
