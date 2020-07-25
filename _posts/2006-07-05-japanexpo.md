@@ -5,7 +5,7 @@ date: 2006-07-05 01:19:20 GMT
 author: aki
 ---
 
-## PORvsFRA!! [#c3c7ce42]
+## PORvsFRA!!
 ジダーン！！
 
 この1点がなかったら完全な膠着戦だったかも。
