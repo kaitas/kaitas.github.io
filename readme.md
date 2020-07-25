@@ -37,6 +37,8 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [Mozilla Hubsが拓く新世代WebVRのススメ #HubsScrum](https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum) Published on May 13, 2020
 - [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10月22日23日, China.
 - [SIGGRAPH Asia 日本語完全ガイド～初めての参加者ために](https://www.slideshare.net/aquihiko/siggraph-asia-2018-acm-tokyo-20181204) SIGGRAPH ASIA 2018 Tokyo (2018年12月4日)
+- [WiiRemote Programming Workshop - 革新的インタラクションを構成する“部品としての”ゲームコントローラー](https://www.slideshare.net/aquihiko/wiiremote-programming-workshop), JAIST 2009/11/20
+- [Virtual Realty for Entertainment - 文化・言語背景を 文化・言語背景を超えた環境における国際的エンタテイメントシステムデザイン](https://www.slideshare.net/aquihiko/virtual-realty-for-entertainment) JAIST, 2006/11
 - <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式Ludology事始－</a> IGDA日本 ゲームテクノロジー研究会 第1回 研究会(2004年1月10日)(<a href="https://www.slideshare.net/aquihiko/igda-1/aquihiko/igda-1">Detail in SlideShare</a>)
 
 # Blog
