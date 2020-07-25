@@ -8,17 +8,16 @@ source: .
 layouts_dir: _layouts
 # data_dir: _data
 includes_dir: _includes
-show_excerpts: true
+show_excerpts: true # 投稿の中身を展開する
 paginate: true
-permalink: date
+# permalink: date
 # collections_dir: .
 #collections:
 #  posts: 
 #    output: true
-plugins:
-  - jekyll-paginate
-
-paginate_path       : /page:num
+# plugins:
+#  - jekyll-paginate
+# paginate_path       : /page:num
 
 # https://genjiapp.com/blog/2013/11/13/jekyll-config-for-markdown.html
 # 以下のオプションはGithub pagesでは有効ではないと考えます

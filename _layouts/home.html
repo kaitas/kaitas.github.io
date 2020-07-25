@@ -27,15 +27,13 @@ layout: default
       <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
     <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d %H:%M" -%}
+      {%- assign date_format = site.minima.date_format | default: "%Y-%m-%d" -%}
       {%- for post in posts -%}
       <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
+        <span class="post-meta">[{{ post.date | date: date_format }}]</span>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
-          </a>
-        </h3>
+          </a><br>
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
