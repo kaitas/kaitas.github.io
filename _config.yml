@@ -8,6 +8,7 @@ source: .
 layouts_dir: _layouts
 # data_dir: _data
 includes_dir: _includes
+show_excerpts: true
 permalink: date
 # collections_dir: .
 #collections:
