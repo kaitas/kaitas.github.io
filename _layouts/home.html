@@ -8,13 +8,13 @@ layout: default
 
   {{ content }}
 
-pagenate start
+paginate start
   {% if site.paginate %}
     {% assign posts = paginator.posts %}
   {% else %}
     {% assign posts = site.posts %}
   {% endif %}
-
+paginate end
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}

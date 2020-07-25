@@ -1,4 +1,7 @@
-# Akihiko SHIRAI, Ph.D
+---
+title: Akihiko SHIRAI, Ph.D
+layout: default
+---
 
 Github pages Since 19th Dec 2013 
 
