@@ -15,7 +15,7 @@ collections:
 plugins:
   - jekyll-paginate
 
-paginate_path       : /page:num
+# paginate_path       : /page:num
 
 # https://genjiapp.com/blog/2013/11/13/jekyll-config-for-markdown.html
 # 以下のオプションはGithub pagesでは有効ではないと考えます
