@@ -41,15 +41,6 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [Virtual Realty for Entertainment - 文化・言語背景を 文化・言語背景を超えた環境における国際的エンタテイメントシステムデザイン](https://www.slideshare.net/aquihiko/virtual-realty-for-entertainment) JAIST, 2006/11
 - <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式Ludology事始－</a> IGDA日本 ゲームテクノロジー研究会 第1回 研究会(2004年1月10日)(<a href="https://www.slideshare.net/aquihiko/igda-1/aquihiko/igda-1">Detail in SlideShare</a>)
 
-# Blog
-
-- [aki's left brain](https://kaitas.github.io/blog/)
-- [aki's right brain](http://aki.shirai.as/)
-- [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
-- [王様の耳はロバの耳](https://ameblo.jp/akihiko)
-- [Future Entertainment Laboratory](http://akihiko.shirai.as/)
-
-
 # Archived Projects in Github pages
 - [KAIT Shirai Lab](https://new.shirai.la/)
 - [相模Ingress部](https://kaitas.github.io/sagami-ingress/)
@@ -77,3 +68,15 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - twitter[@o_ob](https://twitter.com/o_ob)
 - [Facebook](https://www.facebook.com/aquihiko) only for physically connected relations
 - [LinkedIn](https://www.linkedin.com/in/akihiko-shirai/)
+
+<hr>
+
+# Blog
+
+- [aki's left brain](https://kaitas.github.io/blog/)
+- [aki's right brain](http://aki.shirai.as/)
+- [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
+- [王様の耳はロバの耳](https://ameblo.jp/akihiko)
+- [Future Entertainment Laboratory](http://akihiko.shirai.as/)
+
+<hr>
