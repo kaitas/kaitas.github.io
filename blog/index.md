@@ -6,6 +6,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
+title: blog
 ---
 このサイトは現在構築中です。
+古いブログの投稿を移植していますのでお目汚しがあるかもしれません。
 
