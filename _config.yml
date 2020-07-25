@@ -10,7 +10,7 @@ layouts_dir: _layouts
 includes_dir: _includes
 collections_dir: .
 collections:
-  posts: true
+  posts: 
     output: true
 plugins:
   - jekyll-paginate
