@@ -5,6 +5,10 @@ languages: ["en", "ja"]
 google_analytics: UA-168023643-1
 
 source: .
+layouts_dir: _layouts
+# data_dir: _data
+includes_dir: _includes
+collections_dir: .
 collections:
   posts:
     output: true
