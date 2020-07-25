@@ -15,9 +15,9 @@ show_excerpts: true # 投稿の中身を展開する
 
 # permalink: date # 不明
 # collections_dir: .
-#collections:
-#  posts: 
-#    output: true
+collections:
+  posts: 
+    output: true
 plugins:
   - jekyll-paginate
 
