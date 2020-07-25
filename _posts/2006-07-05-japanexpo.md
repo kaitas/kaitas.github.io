@@ -3,7 +3,6 @@ layout: post
 title: "にっぽんに行きたしと思へども"
 date: 2006-07-05 01:19:20 GMT
 author: aki
-categories: blog
 ---
 
 ## PORvsFRA!! [#c3c7ce42]
