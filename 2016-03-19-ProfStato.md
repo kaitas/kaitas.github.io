@@ -5,7 +5,7 @@
 - 2016-03-19
 - 佐藤誠先生ご退職記念シンポジウム「パターン認識と人工現実感の40 年」
 - [SlideShare](https://www.slideshare.net/aquihiko/ss-60516411)
-<a href="./download/ProfSato20160319.pdf" onclick="ga('send', 'pageview', './download/ProfSato20160319.pdf')">
+<a href="./PDF/ProfSato20160319.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/ProfSato20160319.pdf');">
 ▶ (PDF) おもしろい研究"への挑戦
 </a>
 
