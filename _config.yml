@@ -10,8 +10,8 @@ layouts_dir: _layouts
 includes_dir: _includes
 show_excerpts: true # 投稿の中身を展開する
 # http://jekyllrb-ja.github.io/docs/pagination/
-paginate: 1
-paginate_path: "/blog/page:num/"
+# paginate: 1
+#paginate_path: "/blog/page:num/"
 
 # permalink: date # 不明
 # collections_dir: .
