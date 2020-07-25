@@ -4,6 +4,10 @@ title: Akihiko SHIRAI, Ph.D as kaitas in Github
 languages: ["en", "ja"]
 google_analytics: UA-168023643-1
 
+source: .
+collections:
+  posts:
+    output: true
 plugins:
   - jekyll-paginate
 
