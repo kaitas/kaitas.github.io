@@ -9,8 +9,10 @@ layouts_dir: _layouts
 # data_dir: _data # なぜかこのディレクトリをいったん指定しないと _posts が動かなかった
 includes_dir: _includes
 show_excerpts: true # 投稿の中身を展開する
-paginate: 2
-paginate_path: "/page:num/"
+# http://jekyllrb-ja.github.io/docs/pagination/
+paginate: 1
+paginate_path: "/blog/page:num/"
+
 # permalink: date # 不明
 # collections_dir: .
 #collections:
