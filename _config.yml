@@ -6,8 +6,9 @@ google_analytics: UA-168023643-1
 
 source: .
 layouts_dir: _layouts
-data_dir: _data
+# data_dir: _data
 includes_dir: _includes
+permalink: date
 # collections_dir: .
 #collections:
 #  posts: 
