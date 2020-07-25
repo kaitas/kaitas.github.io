@@ -36,6 +36,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10月22日23日, China.
 - [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
 - [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
+- <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'pageview', '/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式Ludology事始－</a>
 
 # Blog
 
