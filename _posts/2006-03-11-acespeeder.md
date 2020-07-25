@@ -103,7 +103,7 @@ http://www.violin-fiddle.com/archives/000021.html
 ちなみにAS2の挿入曲はテクノ・ハウス系が多いので、ノリのよいフランス娘が踊りながら遊んでくれるといいな(希望的観測)。
 
 
-![image025.jpg](/assets/2006/image025.jpg)
+![image025AS.jpg](/assets/2006/image025AS.jpg)
 
 
 RoboGamerで開発した連続フレーム差分による動物体認識を使うという手もあったのだが「野生の勘」で使わないことにした。
