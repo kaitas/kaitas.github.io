@@ -42,23 +42,20 @@ layout: default
 {% assign pre = page.previous %}
 page.previous.url={{ pre.url }}
 page.previous.title={{ pre.title }}
+post.url = {{ post.url }}
+page.url = {{ page.url }}
 
-{% assign cat = page.category %}
- {% for post in site.categories[cat] %}
-    {% if post.url == page.url %}
-      {% assign post_index0 = forloop.index0 %}
-      {% assign post_index1 = forloop.index %}
-    {% endif %}
-  {% endfor %}
+ {% if post.url == page.url %}
+   {% assign post_index0 = forloop.index0 %}
+   {% assign post_index1 = forloop.index %}
+ {% endif %}
   
-  {% for post in site.categories[cat] %}
-    {% if post_index0 == forloop.index %}
-      {% assign next_post = post %}
-    {% endif %}
-    {% if post_index1 == forloop.index0 %}
-      {% assign prev_post = post %}
-    {% endif %}
-  {% endfor %}  
+ {% if post_index0 == forloop.index %}
+   {% assign next_post = post %}
+ {% endif %}
+ {% if post_index1 == forloop.index0 %}
+   {% assign prev_post = post %}
+ {% endif %}
 
  {% if prev_post %}
   <div class="article__previous">
