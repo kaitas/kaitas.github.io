@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
+  <header class="post-header" id="top">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -34,5 +34,6 @@ layout: default
     {%- include disqus_comments.html -%}
   {%- endif -%}
 
+  <div align="center"><a href="#top">top</a><div>
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
