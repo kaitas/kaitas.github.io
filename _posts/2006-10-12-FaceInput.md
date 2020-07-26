@@ -49,7 +49,7 @@ Reality Center(円柱形ディスプレイルーム、SGIとか繋がってた�
 
 細かい技術的な説明は昨夜この辺に書いたので、割愛。
 - [http://ameblo.jp/akihiko/entry-10018217497.html](https://ameblo.jp/akihiko/entry-10018217497.html)
-- [https://kaitas.github.io/2006/10/11/CvHaarClassifierCascade.html][https://kaitas.github.io/2006/10/11/CvHaarClassifierCascade.html]
+- [https://kaitas.github.io/2006/10/11/CvHaarClassifierCascade.html](https://kaitas.github.io/2006/10/11/CvHaarClassifierCascade.html)
 
 でもいくつかメモ。
 
