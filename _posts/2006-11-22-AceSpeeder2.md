@@ -35,6 +35,9 @@ BBSにフランス人が居るのも気になります。
 
 [@raingraph](https://twitter.com/raingraph)
 
+当時の機体を手直しながら複数のプラットフォームに展開しつつ、デザインを大事に使っていただけるのはうれしいですね。
+いろいろ思い出します
+
 アートの開発に関わった [Erik Geslin](https://www.researchgate.net/profile/Erik_Geslin) も、この作品と論文から人生を大きく変えていったんだよな…。
 
 - [WiiMedia: Motion analysis methods and applications using a consumer video game controller](https://www.researchgate.net/publication/234819226_WiiMedia_Motion_analysis_methods_and_applications_using_a_consumer_video_game_controller)
