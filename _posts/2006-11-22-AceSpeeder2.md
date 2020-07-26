@@ -8,7 +8,7 @@ author: aki
 
 なんと3年越えで開発を続けているAceSpeeder2ですが、本日、ついに体験版公開にこぎつけました！
 
-![20061122.jpg](/assoc/2006/20061122.jpg)
+![20061122.jpg](/assets/2006/20061122.jpg)
 
 
 [http://www.raingraph.com/news.htm](https://sites.google.com/site/raingraphinfo/acespeeder2)
