@@ -48,7 +48,9 @@ Gilles Brossardの学位審査無事終了。審査には参加させていた�
 ## 2月からタバコ禁止
 
 今日のフリー新聞「20minitues」のトップ記事。
-「Villepin interdit le tabac dans les lieux publics au 1er février 2007」
+
+> 「Villepin interdit le tabac dans les lieux publics au 1er février 2007」
+
 http://www.20minutes.fr/articles/2006/10/08/20061008-actualite-Villepin-interdit-le-tabac-dans-les-lieux-publics-au-1er-fevrier-2007.php?__
 
 2007年2月1日から公共の場で禁煙！個人的には嫌煙家＆子供もちなので歓迎もいいところなのですが、タバコ王国フランスとしては大事件かもしれないですね。

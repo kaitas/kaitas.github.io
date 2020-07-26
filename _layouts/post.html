@@ -33,7 +33,15 @@ layout: default
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
   {%- endif -%}
+  <div align="center">
+    {%- if page.previous -%}
+     <a href="{page.previous.url}">page.previous.title</a>
+    {%- endif-%}
+    <a href="#top">top</a>
+    {%- if page.next -%}
+     <a href="{page.next.url}">page.next.title</a>
+    {%- endif-%}
+  </div>  
 
-  <div align="center"><a href="#top">top</a><div>
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
