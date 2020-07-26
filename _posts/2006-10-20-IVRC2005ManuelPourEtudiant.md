@@ -64,139 +64,97 @@ The final stage in Kakamigahara city.
 
 - [Annual Report (Japanese)](/assets/IVRC/IVRC2004.pdf)
 
-- &ref(IVRC2004.pdf);
-
 ----
+## What should you do ''now''? [#ncdce5a4]
 
+__Improve your project!__
 
-*What should you do ''now''? [#ncdce5a4]
-''Improve your project!''
 This is the most important comment for you just now.
 
-*What are Japanese students doing ''now''? [#g75df362]
+### What are Japanese students doing ''now''?
 They are preparing for the first stage,which is a paper review of the projects.
 If their projects are accepted, they can go to the second stage, which is an aural-presentation. Normally, about 30 teams are accepted at the first stage, then only 10 projects will be qualified for the third stage, the Tokyo Stage at end of August.
 Finally, 4 projects will participate to the final stage at Gifu Kakamigahara. French studens who have been awarded will join to the final stage as the finalist.
 
-*Trip and accommodation [#db619fa6]
-**Who will pay for you? [#u3fa8634]
+## Trip and accommodation
+### Who will pay for you?
 IVRC can invite 3 demonstrators to Japan from the award winning team based on a partnership between IVRC and Laval Virtual. In counterpart Laval Virtual invites 3 demonstrators to France. This partnership is contracted for the 2004 to 2006 period.
 
-**Previous winners [#b28a498c]
-***Laval Virtual Award 2003 [#m86080db]
--Dis-Tansu (Tama Univ.)
--Fragra (NAIST, Jalan)
-***IVRC Award 2004 [#vcdb3c62]
--Pinocchio, a virtual character (ENIB, Brest France )
---Christphe LE GAL
---Thomas JOURDAN
---Prof. Jacques TISSEAU
----http://www.cerv.fr/
-//★旅費（先方が手配）
-//人数：３名（学生２名＋教授１名）
-//航空券：414,898円
-//（他海外送金手数料：7,000円）
-//	内訳：
-//	M TISSEAU Jacques氏：1226．51ユーロ
-//	M LE GAL Christphe氏＋M JOURDAN Thomas氏：1785．02ユーロ
-//	合計：3011．53ユーロ（為替相場137.77円）
-//★宿泊費（学生２名分のみ）
-//10月27日-29日(3泊）：12,600円
-//10月30日（1泊）：11,000円
-//
-//改めて考えみると，
-//・国内交通費の支払いが行われておりません．
-//・M TISSEAU Jacques氏の宿泊費が支払われておりません．
-//・機材搬送費用（昨年は手荷物？）
-//上記は，LAVAL側が支払ってくれていたという事でしょうか．
-//（ご指示がなかったので支払っておりませんでした．すみません）
+## Previous winners
 
+### Laval Virtual Award 2003
+- Dis-Tansu (Tama Univ.)
+- Fragra (NAIST, Jalan)
+### IVRC Award 2004
+- Pinocchio, a virtual character (ENIB, Brest France )
+ - Christphe LE GAL
+ - Thomas JOURDAN
+ - Prof. Jacques TISSEAU
+ - http://www.cerv.fr/
 
-**Duty and limitations [#g3a671f2]
+## Duty and limitations
 IVRC pays a maximum of 500,000YEN (about 3,600Euro). It includes all of costs for 1 demonstration project and its trip(local transfers, airplane, shipping, etc..) and accommodations. it means, the winners should prepare their presentation and staff for less than 500,000YEN. If the cost becomes greater than 500,000YEN, IVRC doesn't mention it but there are no additional supports.
 The invited teams have to successfully show their projects to the public on the final stage of IVRC at the end of October, 2005. Even if it is difficult, they should do their best for it to work. The IVRC executive committee will help them. However, if unfortunately the invited team renounces to participate at IVRC, the representative from the team must warn IVRC(info@ivrc.net) as soon as possible. 
 
-**Basic procedure [#pab57f4f]
-The organisation of IVRC and I can help make your ''basic itinerary'', i.e. air flights of Roissy(CDG) to Japan(NRT/KIX/NGO), local transfer(train and bus), accommodation (hotel and dormitory) and pickups for round trip(voyage aller et retour).
-IVRC suggests a basic itinerary for 3 person when the schedule of final stage has been fixed (might be soon, [[the final stage>http://ivrc.net/2005/about/compe.php]] will be 27-29th, October). If your team needs ''special extension'' like additional person, additional place to visit and/or additional shipping equipments, please tell me of them in advance. I'll try to make a more suitable plan with the smallest possible extra cost. However, if your team informs the IVRC organisation of these whishes on a very late term, like September or October, your requirements will be difficult to realize.
-IVRC transfers(sends) the cost to your bank account if the itinerary is fixed. If there are cost that is difficult to pay in advance like local transfer(ex.Japan Railways) and hotel, it will be paid at the final stage in Japan by YEN cash(please keep the receipt or memo it! Mme.Tanaka, a secretary of IVRC/VRSJ will pay for you).  All of the costs have to be under 500,000YEN. However if your team extends the costs over the awarded 500,000YEN (even though the IVRC regulation does NOT mention about it), your team has to find additional income like donation, funding or pay by yourselves.
+## Basic procedure
+The organisation of IVRC and I can help make your ''basic itinerary'', i.e. air flights of Roissy(CDG) to Japan(NRT/KIX/NGO), local transfer (train and bus), accommodation (hotel and dormitory) and pickups for round trip (voyage aller et retour).
+IVRC suggests a basic itinerary for 3 person when the schedule of final stage has been fixed (might be soon, [the final stage](http://ivrc.net/2005/about/compe.php) will be 27-29th, October). If your team needs **special extension** like additional person, additional place to visit and/or additional shipping equipments, please tell me of them in advance. I'll try to make a more suitable plan with the smallest possible extra cost. However, if your team informs the IVRC organisation of these whishes on a very late term, like September or October, your requirements will be difficult to realize.
+
+IVRC transfers (sends) the cost to your bank account if the itinerary is fixed. If there are cost that is difficult to pay in advance like local transfer(ex.Japan Railways) and hotel, it will be paid at the final stage in Japan by YEN cash(please keep the receipt or memo it! Mme.Tanaka, a secretary of IVRC/VRSJ will pay for you).  All of the costs have to be under 500,000YEN. However if your team extends the costs over the awarded 500,000YEN (even though the IVRC regulation does NOT mention about it), your team has to find additional income like donation, funding or pay by yourselves.
 If you and/or your organisation would like to manage it by yourselves, please tell me as soon as possible. It is easier but risky for us. So please ask me for help without any hesitation, which I will gladly do if we have time.
 All of the itinerary should be fixed at the end of August.
 
-//2005/5/9のメール
-//I’m a member of the BAM Project and a student of the ESIEA Laval.
-//Thank you for your congratulations.
-//We have seen your RoboGamer at Laval Virtual and the article about you in Ouest France newspaper.
-//We have been also contacted by Georges Kagotani for information to write a press release.
-//Thank you very much for your help. I’ve read your manual. So I will send you soon an English description of our project.
-//I have a first question, I see that we have a budget of 3600&#8364; but we have to organize our trip ourselves (take our tickets…) ?
-//Cordialement
-//Julien BAESSENS
 
-
-**Is there any other helps from IVRC? [#d0cca2a4]
+## Is there any other helps from IVRC?
 Of course, IVRC executive committee will supports you. PC equipment, cost reducing, printing material, language support, assistant volunteer, site-seeing, special party, daily dinner, etc... However, ''advance information'' is of utmost importance for us to help you.
 
-**Special Issue on 2005 [#tb65dcd9]
+## Special Issue on 2005
 This year there are 2 winning teams from Laval Virtual. Of course, we're making the necessary preparations for both of teams. 
 
 (now IVRC is discussing about inviting budget plan, please wait...)
 
-//In our plan, ESEIA should prepare as ''an official invitated team''. And ATI Paris8 should prepare as ''an optional invited team''. 
-//Prof. Chihara, NAIST Japan has a plan to get a budget to invite a team from France. It will be possible to invite a few person from overseas to NAIST (Nara prefecture, a west old city near from Kyoto, Osaka, Gifu, Aichi...). It means participants can visit to IVRC and NAIST.
-//(Thanks lot! ''Fragra'' team and Prof. Chihara!)
-//http://www.naist.jp/
 Of course, it is just a plan now. Visiting to other laboratories like Prof.Tachi(U-Tokyo), Prof.Sato(TITECH) or Prof.Iwata(Univ.Tsukuba) are also possible because of they are member of executive committee. There are no additional cost suports for your additional trips however I can help your good trip in Japan!
 
 
-***CALL FOR PARTICIPATION IVRC2004 the Final Stage (from past website) [#ja306dd7]
+### CALL FOR PARTICIPATION IVRC2004 the Final Stage (from past website)
 
 IVRC 2004 opens the final stage in Kakamigahara city, Gifu prefecture at 29-30th October 2004. Four student projects that overcame the Tokyo preliminary contest by public demonstration, and one project invited from France Laval Virtual 2004 student competition, “Village de la Création”. We’re waiting for many of your attendance.
 
-【Tokyo preliminary contest】   
-【Conspiratio】  
-【Spike Tree】   
-【Ton Ton】  
+- Tokyo preliminary contest
+ - Conspiratio
+ - Spike Tree
+ - Ton Ton
 
-Agenda
-　29th October (Friday)
-10:00 - 10:20 Opening Ceremony
-10:30 - 17:00 Public Demonstration (including Jury experience)
-17:30 - 18:00 Awarding Ceremony
+- Agenda: 29th October (Friday)
+ - 10:00 - 10:20 Opening Ceremony
+ - 10:30 - 17:00 Public Demonstration (including Jury experience)
+ - 17:30 - 18:00 Awarding Ceremony
  
-　30th October (Saturday)
-　10:00 - 16:00 Public Demonstration
-　10:00 - 11:30 “Future Experience Tour” from elementary/junior high school
+- 30th October (Saturday)
+ - 10:00 - 16:00 Public Demonstration
+ - 10:00 - 11:30 “Future Experience Tour” from elementary/junior high school
 
-Place
-1-2 Meeting Room, Tecnho Plaza, Kakamigahara City.
+- Place: 1-2 Meeting Room, Tecnho Plaza, Kakamigahara City.
 
-Admission fee 
-No charge
-Contents
-Demonstration exhibition of four student projects that overcame the Tokyo preliminary contest by public demonstration, and one project invited from France Laval Virtual 2004 student competition, “Village de la Création”. Opening and awarding ceremonies.
+- Admission fee : No charge
+- Contents: Demonstration exhibition of four student projects that overcame the Tokyo preliminary contest by public demonstration, and one project invited from France Laval Virtual 2004 student competition, “Village de la Création”. Opening and awarding ceremonies.
 
+- Joint Event: Techno Messe 2004
 
-Joint Event
-  Techno Messe 2004
+- Jury committee (expectation)
+ - Chair: Hiroo Iwata (Tsukuba Univ)
+ - Vice chair: Hironao Takeda (Sega, Inc.)
+ - Jury committee member (Alphabetical)
+  - Michiko Ohkura (Shibaura Institute of Technology)
+  - Makoto Sato (Tokyo Institute of Technology)
+  - Kazuhiro Shigenobu (MeSci)
+  - Akimitsu Seki (Seki Patent Office)
+  - Masahiko Tsukamoto (Kobe Univ.)
+  - Hide Nakaya (commentator, NHK)
+  - Masaaki Fukumoto (NTT DoCoMo)
+  - Jun’ichi Hoshino (Tsukuba Univ.)
 
-Jury committee (expectation)
-Chair
-Hiroo Iwata (Tsukuba Univ)
-Vice chair 
-Hironao Takeda (Sega, Inc.)
-
-  Jury committee member (Alphabetical)
-   Michiko Ohkura (Shibaura Institute of Technology)
-   Makoto Sato (Tokyo Institute of Technology)
-   Kazuhiro Shigenobu (MeSci)
-   Akimitsu Seki (Seki Patent Office)
-   Masahiko Tsukamoto (Kobe Univ.)
-   Hide Nakaya (commentator, NHK)
-   Masaaki Fukumoto (NTT DoCoMo)
-   Jun’ichi Hoshino (Tsukuba Univ.)
-
-Access
+- Access
  Techno Plaza, Kakamigahara City
  Please see the map in this website.
 
