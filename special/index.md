@@ -1,11 +1,13 @@
 ---
 # special な投稿を置く場所
-layout: home
-title: default
+layout: default
+title: special
 category: special
 ---
-このサイトは現在構築中です。
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-- [ ] Open a pull request
 
+special
+
+# IVRC
+
+## IVRC2005
+- [IVRC2005 participating manual for French students](IVRC2005ManuelPourEtudiant)
