@@ -269,6 +269,20 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 - Contact:
   - Julien BAESSENS
 
+![logo_final.jpg](/assets/IVRC/logo_final.jpg)
+
+![pfh2.jpg](/assets/IVRC/pfh2.jpg)
+
+![pfh4.jpg](/assets/IVRC/pfh4.jpg
+
+![affiche.jpg](/assets/IVRC/affiche.jpg)
+
+![ressorts.jpg](/assets/IVRC/ressorts.jpg)
+
+
+![PICT0047.jpg](/assets/IVRC/PICT0047.jpg)
+
+![DSC03297.JPG](/assets/IVRC/DSC03297.JPG)
 
 ----
 
@@ -292,26 +306,6 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 
 ----
 
-## Pictures
-
-![ressorts.GIF](/assets/IVRC/ressorts.GIF)
-
-
-![PICT0047.GIF](/assets/IVRC/PICT0047.GIF)
-
-![pfh4.GIF](/assets/IVRC/pfh4.GIF)
-
-![pfh2.GIF](/assets/IVRC/pfh2.GIF)
-
-![logo_final.GIF](/assets/IVRC/logo_final.GIF)
-
-![DSC03297.GIF](/assets/IVRC/DSC03297.GIF)
-
-![affiche.GIF](/assets/IVRC/affiche.GIF)
-
-![IVRC2004.GIF](/assets/IVRC/IVRC2004.GIF)
-
-----
 
 - Last update at 2005-04-29 05:57:11
 - moved at 2020-07-26
