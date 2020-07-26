@@ -81,49 +81,38 @@ The Lively Center of the Lagoon Nebula via NASA https://t.co/c5hj3cJn65 https://
 ・公共交通機関を避けて車で送り迎え＋仕方なく電車
 ・体力落ちすぎ・雨＋低気圧風呂にも入らず寝込んでいるんだけど明日から大丈夫かな…？ 
 
-<blockquote class="twitter-tweet">
- <p lang="ja" dir="ltr">先日の日本発の触覚VRの祖のひとり，東京工業大学佐藤誠先生の最終講義での白井の講演を公開させていただきました．<a href="https://t.co/Dm70davAnt">https://t.co/Dm70davAnt</a><br>
- 動画は入ってませんが，おもしろさの科学へのアプローチの礎になればと．
- <a href="https://t.co/M17P4BSKqF">https://t.co/M17P4BSKqF</a></p>
- <a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
- </blockquote>
-
 <hr>
-
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/1267113139851558912">test</a>
-</blockquote>
 
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/1267113139851558912"></a>
 <a href="https://twitter.com/o_ob/statuses/1267115311116902400"></a>
-https://twitter.com/o_ob/statuses/1267115650805202945
-https://twitter.com/o_ob/statuses/1267135475921195008
-https://twitter.com/o_ob/statuses/1267135529104994304
-https://twitter.com/o_ob/statuses/1267136976576057345
-https://twitter.com/o_ob/statuses/1267137323034009605
-https://twitter.com/o_ob/statuses/1267138026003546112
-https://twitter.com/o_ob/statuses/1267144577179238402
-https://twitter.com/o_ob/statuses/1267144939088953344
-https://twitter.com/o_ob/statuses/1267145768973942785
-https://twitter.com/o_ob/statuses/1267151793168900101
-https://twitter.com/o_ob/statuses/1267154358531063808
-https://twitter.com/o_ob/statuses/1267154475052986368
-https://twitter.com/o_ob/statuses/1267174522718838784
-https://twitter.com/o_ob/statuses/1267176082844729344
-https://twitter.com/o_ob/statuses/1267200926860754945
-https://twitter.com/o_ob/statuses/1267204288641560576
-https://twitter.com/o_ob/statuses/1267206603448528896
-https://twitter.com/o_ob/statuses/1267216522092535810
-https://twitter.com/o_ob/statuses/1267228143741353984
-https://twitter.com/o_ob/statuses/1267237230801633286
-https://twitter.com/o_ob/statuses/1267246410635739136
-https://twitter.com/o_ob/statuses/1267290907973316608
-https://twitter.com/o_ob/statuses/1267291278435184640
-https://twitter.com/o_ob/statuses/1267303188694216712
-https://twitter.com/o_ob/statuses/1267303194532724736
-https://twitter.com/o_ob/statuses/1267303201080070144
-https://twitter.com/o_ob/statuses/1267333697084297219
-https://twitter.com/o_ob/statuses/1267421826965110784
+<a href="https://twitter.com/o_ob/statuses/1267115650805202945"></a>
+<a href="https://twitter.com/o_ob/statuses/1267135475921195008"></a>
+<a href="https://twitter.com/o_ob/statuses/1267135529104994304"></a>
+<a href="https://twitter.com/o_ob/statuses/1267136976576057345"></a>
+<a href="https://twitter.com/o_ob/statuses/1267137323034009605"></a>
+<a href="https://twitter.com/o_ob/statuses/1267138026003546112"></a>
+<a href="https://twitter.com/o_ob/statuses/1267144577179238402"></a>
+<a href="https://twitter.com/o_ob/statuses/1267144939088953344"></a>
+<a href="https://twitter.com/o_ob/statuses/1267145768973942785"></a>
+<a href="https://twitter.com/o_ob/statuses/1267151793168900101"></a>
+<a href="https://twitter.com/o_ob/statuses/1267154358531063808"></a>
+<a href="https://twitter.com/o_ob/statuses/1267154475052986368"></a>
+<a href="https://twitter.com/o_ob/statuses/1267174522718838784"></a>
+<a href="https://twitter.com/o_ob/statuses/1267176082844729344"></a>
+<a href="https://twitter.com/o_ob/statuses/1267200926860754945"></a>
+<a href="https://twitter.com/o_ob/statuses/1267204288641560576"></a>
+<a href="https://twitter.com/o_ob/statuses/1267206603448528896"></a>
+<a href="https://twitter.com/o_ob/statuses/1267216522092535810"></a>
+<a href="https://twitter.com/o_ob/statuses/1267228143741353984"></a>
+<a href="https://twitter.com/o_ob/statuses/1267237230801633286"></a>
+<a href="https://twitter.com/o_ob/statuses/1267246410635739136"></a>
+<a href="https://twitter.com/o_ob/statuses/1267290907973316608"></a>
+<a href="https://twitter.com/o_ob/statuses/1267291278435184640"></a>
+<a href="https://twitter.com/o_ob/statuses/1267303188694216712"></a>
+<a href="https://twitter.com/o_ob/statuses/1267303194532724736"></a>
+<a href="https://twitter.com/o_ob/statuses/1267303201080070144"></a>
+<a href="https://twitter.com/o_ob/statuses/1267333697084297219"></a>
+<a href="https://twitter.com/o_ob/statuses/1267421826965110784"></a>
 </blockquote>
 
