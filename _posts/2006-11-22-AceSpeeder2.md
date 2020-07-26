@@ -33,7 +33,10 @@ BBSにフランス人が居るのも気になります。
 
 作者のRaingraphさんのTwitterによると、次回作を作っている様子…！
 
-[@raingraph](https://twitter.com/raingraph)
+- [@raingraph](https://twitter.com/raingraph)
+
+- [AceSpeeder3 (Steam)](https://store.steampowered.com/app/885290/AceSpeeder3/)
+
 
 当時の機体を手直しながら複数のプラットフォームに展開しつつ、デザインを大事に使っていただけるのはうれしいですね。
 いろいろ思い出します
