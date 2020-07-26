@@ -38,18 +38,17 @@ layout: default
     <a href="#top">top</a>
   </div>  
 
-<!--https://talk.jekyllrb.com/t/how-to-link-to-next-and-previous-posts-for-same-blog-category/629/2-->  
 {% assign prev_post = page.previous %}
 {% assign next_post = page.next %}
 {% if prev_post %}
-  <div class="article__previous">
-    <a href="{{ prev_post.url }}">{{ prev_post.title }}</a>
+  <div align="left">
+    <a href="{{ prev_post.url }}"><< {{ prev_post.title }}</a>
   </div>
 {% endif %}
 
 {% if next_post %}
-  <div class="article__next">
-    <a href="{{ next_post.url }}">{{ next_post.title }}</a>
+  <div align="right">
+    <a href="{{ next_post.url }}">{{ next_post.title }} >></a>
   </div>
 {% endif %}
 
