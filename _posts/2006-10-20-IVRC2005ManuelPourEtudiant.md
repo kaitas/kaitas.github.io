@@ -65,9 +65,9 @@ The final stage in Kakamigahara city.
 - [Annual Report (Japanese)](/assets/IVRC/IVRC2004.pdf)
 
 ----
-## What should you do ''now''? [#ncdce5a4]
+## What should you do ''now''?
 
-__Improve your project!__
+### __Improve your project!__
 
 This is the most important comment for you just now.
 
@@ -85,7 +85,9 @@ IVRC can invite 3 demonstrators to Japan from the award winning team based on a 
 ### Laval Virtual Award 2003
 - Dis-Tansu (Tama Univ.)
 - Fragra (NAIST, Jalan)
+
 ### IVRC Award 2004
+
 - Pinocchio, a virtual character (ENIB, Brest France )
  - Christphe LE GAL
  - Thomas JOURDAN
@@ -121,18 +123,18 @@ Of course, it is just a plan now. Visiting to other laboratories like Prof.Tachi
 IVRC 2004 opens the final stage in Kakamigahara city, Gifu prefecture at 29-30th October 2004. Four student projects that overcame the Tokyo preliminary contest by public demonstration, and one project invited from France Laval Virtual 2004 student competition, “Village de la Création”. We’re waiting for many of your attendance.
 
 - Tokyo preliminary contest
- - Conspiratio
- - Spike Tree
- - Ton Ton
+  - Conspiratio
+  - Spike Tree
+  - Ton Ton
 
 - Agenda: 29th October (Friday)
- - 10:00 - 10:20 Opening Ceremony
- - 10:30 - 17:00 Public Demonstration (including Jury experience)
- - 17:30 - 18:00 Awarding Ceremony
+  - 10:00 - 10:20 Opening Ceremony
+  - 10:30 - 17:00 Public Demonstration (including Jury experience)
+  - 17:30 - 18:00 Awarding Ceremony
  
-- 30th October (Saturday)
- - 10:00 - 16:00 Public Demonstration
- - 10:00 - 11:30 “Future Experience Tour” from elementary/junior high school
+- Agenda: 30th October (Saturday)
+  - 10:00 - 16:00 Public Demonstration
+  - 10:00 - 11:30 “Future Experience Tour” from elementary/junior high school
 
 - Place: 1-2 Meeting Room, Tecnho Plaza, Kakamigahara City.
 
@@ -142,17 +144,17 @@ IVRC 2004 opens the final stage in Kakamigahara city, Gifu prefecture at 29-30th
 - Joint Event: Techno Messe 2004
 
 - Jury committee (expectation)
- - Chair: Hiroo Iwata (Tsukuba Univ)
- - Vice chair: Hironao Takeda (Sega, Inc.)
- - Jury committee member (Alphabetical)
-  - Michiko Ohkura (Shibaura Institute of Technology)
-  - Makoto Sato (Tokyo Institute of Technology)
-  - Kazuhiro Shigenobu (MeSci)
-  - Akimitsu Seki (Seki Patent Office)
-  - Masahiko Tsukamoto (Kobe Univ.)
-  - Hide Nakaya (commentator, NHK)
-  - Masaaki Fukumoto (NTT DoCoMo)
-  - Jun’ichi Hoshino (Tsukuba Univ.)
+  - Chair: Hiroo Iwata (Tsukuba Univ)
+  - Vice chair: Hironao Takeda (Sega, Inc.)
+  - Jury committee member (Alphabetical)
+    - Michiko Ohkura (Shibaura Institute of Technology)
+    - Makoto Sato (Tokyo Institute of Technology)
+    - Kazuhiro Shigenobu (MeSci)
+    - Akimitsu Seki (Seki Patent Office)
+    - Masahiko Tsukamoto (Kobe Univ.)
+    - Hide Nakaya (commentator, NHK)
+    - Masaaki Fukumoto (NTT DoCoMo)
+    - Jun’ichi Hoshino (Tsukuba Univ.)
 
 - Access
  Techno Plaza, Kakamigahara City
@@ -206,89 +208,68 @@ ViewPlus, Inc.
 Santoku Corporation
 
 (C) 1993-2004 IVRC Project Team. All rights reserved.  
-----
-
-//*What is the award of IVRC2005?
-
 
 ----
-*Project description [#z525ac86]
+
+## Project description
+
 These information will use for IVRC official documents, video, publications.
 Please correct if you find any errors. And give me ''description'' and ''comment for IVRC award''. 
 
-**Le cirque int&eacute;ractif d’ATI [#e4e1af84]
--Project description:
+## Le cirque int&eacute;ractif d’ATI
+- Project description:
+- Organization:
+  - Universit&eacute; Paris 8, IUP Arts et Technologies de l'Image
+- Team member:
+  - C&eacute;dric PLESSIET
+  - Nicolas SERIKOFF
+  - Xavier GOUCHET
+  - Clo&eacute; LANG-WILLAR
+  - Sylvian GRAIN
 
--Organization:
---Universit&eacute; Paris 8, IUP Arts et Technologies de l'Image
+- Allocataire/Moniteur ATI Universit&eacute; PARIS 8
+  - C&eacute;dric PLESSIET
 
--Team member:
---C&eacute;dric PLESSIET
---Nicolas SERIKOFF
---Xavier GOUCHET
---Clo&eacute; LANG-WILLAR
---Sylvian GRAIN
-//sylvain_grain@hotmail.com
+- Contact:
+  - Marie H&eacute;l&egrave;ne TRAMUS
+- comment for IVRC award:
 
--Allocataire/Moniteur ATI Universit&eacute; PARIS 8
---C&eacute;dric PLESSIET
-//cplessiet@9online.fr
+## BAM Simulateur pour immerger l’utilisateur du jeu Tux Racer
+- Project description:
+- Organization:
+  - ESIEA OUEST (Ecole sup&eacute;rieure d'informatique, &eacute;lectronique et automatique)
+- Team member:
+  - Sylvian MERCIER
+  - Julien BAESSENS
+  - Arnaud AUBRY
+- Contact:
+  - Julien BAESSENS
 
-
--Contact:
---Marie H&eacute;l&egrave;ne TRAMUS
-//mh.tramus@club-internet.fr
-
--comment for IVRC award:
-
-**BAM Simulateur pour immerger l’utilisateur du jeu Tux Racer [#zd9e0ff1]
--Project description:
-~
-~
-~
-
--Organization:
---ESIEA OUEST (Ecole sup&eacute;rieure d'informatique, &eacute;lectronique et automatique)
-
--Team member:
---Sylvian MERCIER
-//<sylvain_mercierl@hotmail.com>:
-//最後のLはいらないのかも
---Julien BAESSENS
---Arnaud AUBRY
-//Aubry Arnaud <Muby53@wanadoo.fr>
--Contact:
---Julien BAESSENS
-//i.baessens@wanadoo.fr
-//iではなくてjとおもわれれる
-
-
-//j.baessens@wanadoo.fr <j.baessens@wanadoo.fr>; 
-//muby53@wanadoo.fr <muby53@wanadoo.fr>;
-//sylvain_mercierl@hotmail.com>; 
-//i.baessens@wanadoo.fr; 
-//mh.tramus@club-internet.fr;
 
 ----
-*Links [#lf4edd84]
-**IVRC [#b3f0c199]
-[[Official Website>http://ivrc.net/]]
--To watch IVRC2004, these links will help you.
---http://ivrc.net/2004/
---http://ivrc.net/2004/movies/ivrc2004annual.wmv
--IVRC chronicle
---http://ivrc.net/movies/ivrcchro.mpg
-*Location [#ccb4d935]
--Gifu Prefecture
---[[Wikipedia English>http://en.wikipedia.org/wiki/Gifu_Prefecture]]
---[[Wikipedia French>http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Gifu]]
--Kakamigahara city
-http://en.wikipedia.org/wiki/Kakamigahara%2C_Gifu
---VR Techno center
-http://www.vrtc.co.jp/
+
+## Links
+### IVRC
+[Official Website](http://ivrc.net/)
+- To watch IVRC2004, these links will help you.
+  - http://ivrc.net/2004/
+  - http://ivrc.net/2004/movies/ivrc2004annual.wmv
+- IVRC chronicle
+  - http://ivrc.net/movies/ivrcchro.mpg
+
+### Location
+- Gifu Prefecture
+  - [Wikipedia English](http://en.wikipedia.org/wiki/Gifu_Prefecture)
+  - [Wikipedia French](http://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_Gifu)
+- Kakamigahara city
+ http://en.wikipedia.org/wiki/Kakamigahara%2C_Gifu
+- VR Techno center
+ http://www.vrtc.co.jp/
 
 ----
-*Pictures [#cc3d7dcb]
+
+## Pictures
+
 &ref(Flow2005.GIF);
 
 &ref(Gifu.GIF);
@@ -316,9 +297,6 @@ http://www.vrtc.co.jp/
 //&ref(IVRC2004.pdf);
 
 ----
-*Notice [#h8857308]
-This document have no warranty. But if you find any errors, please correct me. ~
-//#article
-----
-Last update at 2005-04-29 05:57:11
-#counter
+
+- Last update at 2005-04-29 05:57:11
+- moved at 2020-07-26
