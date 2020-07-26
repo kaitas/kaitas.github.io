@@ -3,7 +3,9 @@ layout: post
 title: "「OpenCV 1.0 release candidate 1」(2006-08-18）"
 date: 2006-01-15 20:39:15 GMT
 author: aki
-category: special
+category: 
+- special
+- OpenCV
 ---
 ## 「OpenCV 1.0 release candidate 1」(2006-08-18）
 情報まとめ．
