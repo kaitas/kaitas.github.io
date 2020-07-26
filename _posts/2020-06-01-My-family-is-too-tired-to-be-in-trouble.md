@@ -92,10 +92,9 @@ The Lively Center of the Lagoon Nebula via NASA https://t.co/c5hj3cJn65 https://
 
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/1267113139851558912">test</a>
-<a href="https://twitter.com/o_ob/statuses/1267113139851558912">test</a>
-<a href="https://twitter.com/o_ob/statuses/1267113139851558912">
 </blockquote>
 
+<blockquote class="twitter-tweet">
 https://twitter.com/o_ob/statuses/1267113139851558912
 https://twitter.com/o_ob/statuses/1267115311116902400
 https://twitter.com/o_ob/statuses/1267115650805202945
@@ -126,4 +125,5 @@ https://twitter.com/o_ob/statuses/1267303194532724736
 https://twitter.com/o_ob/statuses/1267303201080070144
 https://twitter.com/o_ob/statuses/1267333697084297219
 https://twitter.com/o_ob/statuses/1267421826965110784
+</blockquote>
 
