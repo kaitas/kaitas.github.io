@@ -81,6 +81,16 @@ The Lively Center of the Lagoon Nebula via NASA https://t.co/c5hj3cJn65 https://
 ・公共交通機関を避けて車で送り迎え＋仕方なく電車
 ・体力落ちすぎ・雨＋低気圧風呂にも入らず寝込んでいるんだけど明日から大丈夫かな…？ 
 
+<blockquote class="twitter-tweet">
+ <p lang="ja" dir="ltr">先日の日本発の触覚VRの祖のひとり，東京工業大学佐藤誠先生の最終講義での白井の講演を公開させていただきました．<a href="https://t.co/Dm70davAnt">https://t.co/Dm70davAnt</a><br>
+ 動画は入ってませんが，おもしろさの科学へのアプローチの礎になればと．
+ <a href="https://t.co/M17P4BSKqF">https://t.co/M17P4BSKqF</a></p>
+ <a href="https://twitter.com/o_ob/status/717393169671987200?ref_src=twsrc%5Etfw">April 5, 2016</a>
+ </blockquote>
+
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/1267113139851558912">test</a>
+</blockquote>
 
 https://twitter.com/o_ob/statuses/1267113139851558912
 https://twitter.com/o_ob/statuses/1267115311116902400
