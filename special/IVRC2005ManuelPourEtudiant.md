@@ -276,27 +276,35 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 
 ![Gifu.GIF](/assets/IVRC/Gifu.GIF)
 
-&ref(History1.GIF);
+![History1.GIF](/assets/IVRC/History1.GIF)
 
-&ref(History2.GIF);
+![History2.GIF](/assets/IVRC/History2.GIF)
 
-&ref(History3.GIF);
+![History3.GIF](/assets/IVRC/History3.GIF)
 
-&ref(History4.GIF);
+![History4.GIF](/assets/IVRC/History4.GIF)
 
-&ref(Whatis1.GIF);
+![Whatis1.GIF](/assets/IVRC/Whatis1.GIF)
 
-&ref(Whatis2.GIF);
+![Whatis2.GIF](/assets/IVRC/Whatis2.GIF)
 
-//*Pictures2005
-//&ref(ressorts.jpg);
-//&ref(PICT0047.jpg);
-//&ref(pfh4.jpg);
-//&ref(pfh2.jpg);
-//&ref(logo_final.jpg);
-//&ref(DSC03297.JPG);
-//&ref(affiche.jpg);
-//&ref(IVRC2004.pdf);
+
+![ressorts.GIF](/assets/IVRC/ressorts.GIF)
+
+
+![PICT0047.GIF](/assets/IVRC/PICT0047.GIF)
+
+![pfh4.GIF](/assets/IVRC/pfh4.GIF)
+
+![pfh2.GIF](/assets/IVRC/pfh2.GIF)
+
+![logo_final.GIF](/assets/IVRC/logo_final.GIF)
+
+![DSC03297.GIF](/assets/IVRC/DSC03297.GIF)
+
+![affiche.GIF](/assets/IVRC/affiche.GIF)
+
+![IVRC2004.GIF](/assets/IVRC/IVRC2004.GIF)
 
 ----
 
