@@ -75,7 +75,6 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [aki's left brain](https://kaitas.github.io/blog/)
 - [aki's right brain](http://aki.shirai.as/)
-- [WiiRemoteプログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
 - [王様の耳はロバの耳](https://ameblo.jp/akihiko)
 - [Future Entertainment Laboratory](http://akihiko.shirai.as/)
 
