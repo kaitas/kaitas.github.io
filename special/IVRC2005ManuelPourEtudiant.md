@@ -3,7 +3,9 @@ layout: post
 title: "IVRC2005 participating manual for French students"
 date: 2006-10-20 09:55:05 GMT 
 author: aki
-category: IVRC
+category: 
+- special
+- IVRC
 ---
 ## IVRC2005 participating manual for French students
 
@@ -269,6 +271,8 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 ----
 
 ## Pictures
+
+![Flow2005.GIF](/assets/IVRC/Flow2005.GIF)
 
 &ref(Flow2005.GIF);
 
