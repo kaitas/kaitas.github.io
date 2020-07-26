@@ -39,27 +39,9 @@ layout: default
   </div>  
 
 <!--https://talk.jekyllrb.com/t/how-to-link-to-next-and-previous-posts-for-same-blog-category/629/2-->  
-{% assign pre = page.previous %}
-page.previous.url={{ pre.url }}
-page.previous.title={{ pre.title }}
-post.url = {{ post.url }}
-page.url = {{ page.url }}
-{% assign nex = page.next %}
-page.next.title = {{ nex.title }}
-
- {% if post.url == page.url %}
-   {% assign post_index0 = forloop.index0 %}
-   {% assign post_index1 = forloop.index %}
- {% endif %}
-  
- {% if post_index0 == forloop.index %}
-   {% assign next_post = post %}
- {% endif %}
- {% if post_index1 == forloop.index0 %}
-   {% assign prev_post = post %}
- {% endif %}
-
- {% if prev_post %}
+{% assign prev_post = page.previous %}
+{% assign next_post = page.next %}
+{% if prev_post %}
   <div class="article__previous">
     <a href="{{ prev_post.url }}">{{ prev_post.title }}</a>
   </div>
