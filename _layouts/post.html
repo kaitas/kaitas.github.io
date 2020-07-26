@@ -44,6 +44,8 @@ page.previous.url={{ pre.url }}
 page.previous.title={{ pre.title }}
 post.url = {{ post.url }}
 page.url = {{ page.url }}
+{% assign nex = page.next %}
+page.next.title = {{ nex.title }}
 
  {% if post.url == page.url %}
    {% assign post_index0 = forloop.index0 %}
