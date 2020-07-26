@@ -39,9 +39,8 @@ layout: default
   </div>  
 
 <!--https://talk.jekyllrb.com/t/how-to-link-to-next-and-previous-posts-for-same-blog-category/629/2-->  
-
-  {% assign cat = page.category %}
-
+post.url={%post.url%} page.url={%page.url%}
+{% assign cat = page.category %}
   {% for post in site.categories[cat] %}
     {% if post.url == page.url %}
       {% assign post_index0 = forloop.index0 %}
@@ -57,8 +56,9 @@ layout: default
       {% assign prev_post = post %}
     {% endif %}
   {% endfor %}  
+prev_post = {% prev_post%}
 
-  {% if prev_post %}
+ {% if prev_post %}
   <div class="article__previous">
     <a href="{{ prev_post.url }}">{{ prev_post.title }}</a>
   </div>
