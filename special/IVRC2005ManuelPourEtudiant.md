@@ -22,24 +22,45 @@ Please don't hesitate to tell me about you. Incorrect English or Fonangle are al
 
 
 ## Basic information on IVRC
-- What's IVRC? / What's the goal of IVRC
+
+### What's IVRC? / What's the goal of IVRC
  - ''International collegiate Virtual Reality Contest''
  - A contest of interaction and virtual reality by fusing art and technology.
  -  Honors the greatest Virtual Reality and Interactive works of students.
  - New educational system through VR contest.
 
-- Who are the participants (societies, schools, etc.)
+
+![Flow2005.GIF](/assets/IVRC/Flow2005.GIF)
+
+![Gifu.GIF](/assets/IVRC/Gifu.GIF)
+
+![History1.GIF](/assets/IVRC/History1.GIF)
+
+![History2.GIF](/assets/IVRC/History2.GIF)
+
+![History3.GIF](/assets/IVRC/History3.GIF)
+
+![History4.GIF](/assets/IVRC/History4.GIF)
+
+![Whatis1.GIF](/assets/IVRC/Whatis1.GIF)
+
+![Whatis2.GIF](/assets/IVRC/Whatis2.GIF)
+
+
+
+### Who are the participants (societies, schools, etc.)
  - Mainly student teams, organized from under-graduate to master course universities.
 - What are the main events
 The final stage in Kakamigahara city.
-[[Please see>http://ivrc.net/~photo/BoF/IVRC2005_BOF_IEEE.ppt]]
+[Please see](http://ivrc.net/~photo/BoF/IVRC2005_BOF_IEEE.ppt)
 - How is organised the competition
  - Organized by Virtual Reality Society of Japan, Gifu Prefecture and Kakamigahara-City.
   - Virtual Reality Society of Japan. [http://www.vrsj.org/]
  - Held in Kakamigahara City, Gifu Prefecture, JAPAN
  - Supported by Ministry of Economy, Trade and Industry and Ministry of Education, Culture, Science and Technology.
 
-- What the winners can expect
+### What the winners can expect
+
 - When and how long does IVRC happen
  - Established in 1993.
  - Renamed from “Intercollegiate Virtual Reality Contest” in 2004. 
@@ -67,6 +88,7 @@ The final stage in Kakamigahara city.
 - [Annual Report (Japanese)](/assets/IVRC/IVRC2004.pdf)
 
 ----
+
 ## What should you do ''now''?
 
 ### __Improve your project!__
@@ -271,23 +293,6 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 ----
 
 ## Pictures
-
-![Flow2005.GIF](/assets/IVRC/Flow2005.GIF)
-
-![Gifu.GIF](/assets/IVRC/Gifu.GIF)
-
-![History1.GIF](/assets/IVRC/History1.GIF)
-
-![History2.GIF](/assets/IVRC/History2.GIF)
-
-![History3.GIF](/assets/IVRC/History3.GIF)
-
-![History4.GIF](/assets/IVRC/History4.GIF)
-
-![Whatis1.GIF](/assets/IVRC/Whatis1.GIF)
-
-![Whatis2.GIF](/assets/IVRC/Whatis2.GIF)
-
 
 ![ressorts.GIF](/assets/IVRC/ressorts.GIF)
 
