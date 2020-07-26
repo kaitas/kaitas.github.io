@@ -2,16 +2,15 @@
 layout: post
 title: "家族が疲れすぎてヤバい"
 # categories: Blog
-#author: twitter-blogger
-slug: 2020-06-01
-id: 41930
+author: twitter-blogger
+# slug: 2020-06-01
+# id: 41930
 date: '2020-06-01 23:59:00'
-layout: post
 #comments: false
-categories:
-  - twitter
-tags:
-  - twitter-daily
+# categories:
+#  - twitter
+#tags:
+#  - twitter-daily
 ---
 気圧を調整して均一にしている https://t.co/ZMoXkLQWCB 
 がっちりくっついてますね https://t.co/wvlsVQpRvt 
