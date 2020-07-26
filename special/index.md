@@ -5,9 +5,10 @@ title: special
 category: special
 ---
 
-special
+# special
 
-# IVRC
+## OpenCV
+- [「OpenCV 1.0 release candidate 1」(2006-08-18）](OpenCV)
 
-## IVRC2005
-- [IVRC2005 participating manual for French students](IVRC2005ManuelPourEtudiant)
+## IVRC
+- [IVRC2005: participating manual for French students](IVRC2005ManuelPourEtudiant)
