@@ -266,7 +266,7 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 - Kakamigahara city
  http://en.wikipedia.org/wiki/Kakamigahara%2C_Gifu
 - VR Techno center
- http://www.vrtc.co.jp/
+ [http://www.vrtc.co.jp/](http://www.vrtc.co.jp/)
 
 ----
 
@@ -274,9 +274,7 @@ Please correct if you find any errors. And give me ''description'' and ''comment
 
 ![Flow2005.GIF](/assets/IVRC/Flow2005.GIF)
 
-&ref(Flow2005.GIF);
-
-&ref(Gifu.GIF);
+![Gifu.GIF](/assets/IVRC/Gifu.GIF)
 
 &ref(History1.GIF);
 
