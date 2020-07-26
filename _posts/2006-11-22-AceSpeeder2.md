@@ -26,8 +26,11 @@ BBSにフランス人が居るのも気になります。
 打ち上げパーティをやらないといけないですね!!
 
 ### 2020-07-26追記
+公式トレイラー
 
-折しも先に公開となった「AceSpeeder2 Laval Virtual Special Edition」です。
+<iframe width="560" height="315" src="https://www.youtube.com/embed/derr8dPXgt4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+こちらは折しも先に公開となった「AceSpeeder2 Laval Virtual Special Edition」です。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N4WtupBoRMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
