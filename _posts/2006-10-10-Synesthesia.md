@@ -4,7 +4,8 @@ title: "TRIZ／ついにGoogleがYouTubeを買収"
 date: 2006-10-09 22:06:42 GMT
 author: aki
 ---
-##　Vista on VMWare
+
+## Vista on VMWare
 
 Windows Vista RC1をVMWare Workstation/Player環境で試してみる。
 先日、デスクトップマシンに入れたのだけど、都合で消してしまったので。
