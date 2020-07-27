@@ -1,5 +1,5 @@
 ---
-title: "Github Pages 移植進行中"
+title: "Github Pages 移植進行中。markdownでのTwitter埋め込み"
 date: 2020-07-26
 author: aki
 ---
@@ -27,16 +27,19 @@ Twitterも埋められるようになった
 これを常識として理解してもらう必要があるフェーズにあると思います。
 私も挑戦する側ですが、何も知らずに騙される人がいたら可哀そう、という視点については同意したいところです。</p><a href=" http://twitter.com/o_ob/status/1287417498216751104"> July 27, 2020 at 01:00AM</a></blockquote>
 
-TwitterからIFTTT経由でTweetを保存している。
+かつてWordpress上ではTwitter Digestというプラグインをカスタマイズして遺してきた。
+
 Twitterのアーカイブは過去、大きなテーマだったのだけど、最近はTwitter公式の``widget.js``を使う方法がよいと考えている。
 （見た目の問題と利用規約的な理由）
 
-なお公式の引用方法だと、結構長いスクリプトになるが、実は ``&lt;blockquote&gt;`` で ``&lt;A&gt;`` タグを囲んでtwitter参照URLを書けば良い。
+なお公式の引用方法だと、結構長いスクリプトになるが、実は ``blockquote`` で ``A`` タグを囲んでtwitter参照URLを書けば良い。
 オプションで引用元ツイートを表示しないオプションもある。
+具体的にはこんな感じ。
 
 > &lt;blockquote class="twitter-tweet" data-conversation="none"&gt;&lt;a href="https://twitter.com/o_ob/statuses/1267113139851558912"&gt;&lt;/a&gt;&lt;/blockquote&gt;
 
 という感じで``data-conversation="none"``を加えてあげることで引用RTの元ツイートを表示しない。
+TwitterからIFTTT経由でTweetを保存するときにこのタグを加えてあげれば、そんなに難しいことではなくなる。
 
 なお、このエントリーはiPhoneで書いている。
 なんとか書ける、というレベルではあるが
