@@ -39,11 +39,14 @@ I saw Bob Behnken have sweat from his eyes.Doug Hurley always smiles with teeth 
 
 <HR>
 
-@ingressbu: 相模原市立博物館のウェブサーバ引っ越しにともない、#相模Ingress部 のサイトをGithub Pagesに引っ越しました。いままでご支援いただいた相模原市立博物館と相模原市共同事業の関係者のみなさま、そして #Ingress で繋がったみなさ…
 
 # ステートレス＆サーバレスWebに向かう
 
 2005年ごろのBlogから1日1ファイルでも5000ファイルぐらいあって、もうそろそろWordpressのMySQLが扱えなくなってきた…何かいい方法ないだろうか？と研究し続けている
+
+> @ingressbu: 相模原市立博物館のウェブサーバ引っ越しにともない、#相模Ingress部 のサイトをGithub Pagesに引っ越しました。いままでご支援いただいた相模原市立博物館と相模原市共同事業の関係者のみなさま、そして #Ingress で繋がったみなさまありがとうございました。
+
+
 
 
 # 家族が疲れすぎてヤバい
@@ -65,16 +68,15 @@ I saw Bob Behnken have sweat from his eyes.Doug Hurley always smiles with teeth 
 
 南北線、目黒から白金高輪ぐらいまでがヤバめだったけど永田町超えたら着席率40％ぐらい。路線と時間帯を攻略せねばなあ…
 
+→ その後、南北線から三田線に通学ルートを変更することになった。本数多いほうが正義。
+
 
 # 人間を信じるのは人間だ
 
-報道されない写真 https://t.co/qyZ8f5V0hD
-
-一方で西海岸でいちばん優雅なエリアで「ああ、神様！ クソ地獄！ 私たちのアパートは破壊され、下のワインバーが略奪され、通りが燃えています！ 煙手榴弾がやってくる！」を見てしまうと深刻にならざるをえない…。keep cal… https://t.co/xL0MkmrJng 
-
-https://t.co/Poo5HI1k8Q 
+[報道されない写真](https://t.co/qyZ8f5V0hD)
 
 # time was rewinded.
+
 #roppongihills#tokyo2021🇯🇵 https://t.co/rM95WDa0Wq https://t.co/yrJSMh1uCP
 
 ![Instagram](https://pbs.twimg.com/media/EZZdiNgXgAE_PDu?format=jpg&name=small)
@@ -84,12 +86,9 @@ https://t.co/Poo5HI1k8Q
 
 ![Instagram](https://pbs.twimg.com/media/EZZdihvWkAMCzmn?format=jpg&name=small)
 
-https://t.co/ufvatEXr23
+なお六本木ヒルズのサイネージには ``#physicaldistancing`` と書かれている。
 
-https://t.co/hgU04MQCQu
-
-
-#physicaldistancing#roppongihills https://t.co/RbV1t9gIHf https://t.co/7ajwAup8ny
+たしかにソーシャルディスタンスって、商業施設で書くものではないような。
 
 <hr>
 
