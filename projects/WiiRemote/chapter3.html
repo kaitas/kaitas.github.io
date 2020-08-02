@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WPD54GC');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-195249-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-195249-1');
+</script>
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="keyword" content="WiiRemoteプログラミング,Wii,WiiRemote,wiimote,Wiiリモコン,プログラミング">
+<meta name="description" content="A portal for a book 'WiiRemote Programming', 書籍WiiRemoteプログラミングについてのポータルです。">
+<title>書籍：WiiRemoteプログラミング＜WiiRemote Programming＞ Chap3 まずは実験してみよう </title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年11月10日最終更新" lang="ja">
+<body style="background-image: url(pageBG.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: right bottom; font-family:sans-serif;">
+<h1 class="title">まずは実験してみよう</h1>
+<div class="date">2009年11月11日最終更新</div>
+<div class="author">白井暁彦</div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id16" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteとPCをBluetoothで接続する</a>
+<ul>
+<li> <a href="#doc2_id46" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Bluetoothをインストールする時の注意</a>
+<li> <a href="#doc2_id49" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">PTM-UBT3S(東芝製スタック)でのペアリング</a>
+<li> <a href="#doc2_id112" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Lenovo ThinkPadでのペアリング</a>
+<li> <a href="#doc2_id156" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ASUS EeePC S101でのペアリング</a>
+</ul>
+<li> <a href="#doc1_id21" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiinRemoteで実験</a>
+<ul>
+<li> <a href="#doc3_id233" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">世界最速公開のツール「WiinRemote」</a>
+<li> <a href="#doc3_id236" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiinRemoteの入手とインストール</a>
+<li> <a href="#doc3_id247" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiinRemoteを使いこなそう</a>
+<li> <a href="#doc3_id276" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">重力を観察してみよう</a>
+<li> <a href="#doc3_id285" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">PowerPointでプレゼンテーション</a>
+</ul>
+<li> <a href="#doc1_id23" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GlovePIEで実験</a>
+<ul>
+<li> <a href="#doc4_id319" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GlovePIEとは</a>
+<li> <a href="#doc4_id325" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GlovePIEのインストール</a>
+<li> <a href="#doc4_id342" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GlovePIEの基本操作</a>
+</ul>
+<li> <a href="#doc1_id25" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GlovePIEでつくる「高機能赤外線マウス」</a>
+<ul>
+<li> <a href="#doc5_id384" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">高機能赤外線マウスを設計する</a>
+<li> <a href="#doc5_id487" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ボタンアクションの実装</a>
+<li> <a href="#doc5_id517" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">デバッグ機能・関数・フィルタの活用</a>
+<li> <a href="#doc5_id554" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GUIをつかったスクリプト記述支援</a>
+<li> <a href="#doc5_id564" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">装飾しよう：LED、スピーカーでバイブレーター</a>
+<ul>
+<li> <a href="#doc5_id566" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">サンプルスクリプトを読もう</a>
+<li> <a href="#doc5_id569" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ウィンドウの境界を振動で通知</a>
+<li> <a href="#doc5_id575" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">LEDでタイマーを作る</a>
+<li> <a href="#doc5_id581" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">スピーカーを鳴らす</a>
+<li> <a href="#doc5_id588" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">コマンドラインによる起動自動化</a>
+</ul>
+</ul>
+</ul>
+</div>
+
+<h2 id="doc1_id16">WiiRemoteとPCをBluetoothで接続する</h2>
+
+<p class="first_ja">ここでは前節で紹介したいくつかのBluetoothスタックを使って、実際にWiiRemoteをPCに接続する方法をステップバイステップで解説していきます。すでにお使いのBluetooth環境で問題なく接続できている読者は読み飛ばして、次節のツールをつかった実験に進んでいただいてもかまいませんが、初めて実験するときや、新しく買ったBluetoothアダプタを利用する場合は、ぜひ関連する種類の解説を一読することをお勧めします。ドライバ付属のウィザードだけではどうしても接続できない「ちょっとしたコツ」があるときがあります。</p>
+
+<h3 id="doc2_id46">Bluetoothをインストールする時の注意</h3>
+
+<p class="first_ja">現在、多くのBluetoothホストアダプタはUSBインタフェースの形状をしています。インストールは製品付属のマニュアルを良く読んで行ってください。一般的なUSBメモリなどと異なり、Bluetoothホストアダプタは初めて挿入する「前に」、付属ソフトウェアのインストールを必要とする場合がほとんどです。</p>
+<p>何も考えずに、BluetoothハードウェアをUSBポートに挿入してしまうと、自動でドライバーを設定されてしまったりして、ソフトウェアのセットアップで詰まることになります。まずは、製品に同梱されているマニュアルを一読しましょう。多くの場合はまず、ソフトウェアCD-ROMのインストーラーを使って、ソフトウェアをセットアップすることになるはずです。</p>
+<p>またBluetooth機器のドライバーはサービスとしてインストールされるものが多いので、インストール後は必ず再起動しましょう。またインストール時のオプションで、Bluetoothヘッドホンなどの音声関係のサービスや、ファイル転送関係のサービスを選択できる場合があります。もしWiiRemoteだけで利用するのであれば、これらのサービスは全く必要が無く、使用しませんので、追加インストールしたり、サービスを自動起動する設定にする必要はありません(メモリや処理の節約になります)。</p>
+<p>無事にインストールが終わり、再起動したら、タスクバーやデスクトップ、マイコンピュータ内にあるBluetoothアダプタのアイコンから、Bluetoothスタックの様々なサービスを利用できるようになります。</p>
+
+<h3 id="doc2_id49">PTM-UBT3S(東芝製スタック)でのペアリング</h3>
+
+<p class="first_ja">ここでは手軽に入手できるUSB外付けタイプのBluetoothアダプタ「PTM-UBT3S」(プリンストンテクノロジー)を使って、ステップバイステップでWiiRemoteとPCのペアリングを解説します。</p>
+<p>筆者が購入したPTM-UBT3Sに同梱されていたスタックは東芝製でした。タスクバーの時計の近くにあるBluetoothのアイコンをダブルクリックすると「Bluetooth設定」というウインドウが起動します。メニューの「ヘルプ→バージョン情報」を選ぶことで「Bluetooth Stack for Windows by Toshiba Version v5.10.15」といったバージョン情報を確認することができます。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/BT-Stack.png" alt="東芝製Bluetoothスタックのメイン画面" width="8cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/BT-Toshiba.png" alt="東芝製Bluetoothスタックのバージョン情報" width="8cm">
+</div>
+
+<p>この東芝製スタックはDELLの一部の機種にも採用されており、WiiRemote登場当初から安定した接続が行えていることで有名でした。早速、WiiRemoteと接続してみましょう。</p>
+<p>全てのBluetooth機器は「ペアリング」という接続認証をホスト側と連携して行う必要があります。これは様々な機器が混在する近距離無線通信において、適切な周辺機器が、適切なユーザに確認された上で、接続されることを保証するためにあります。携帯電話などの機器は、勝手に接続されると電話帳の閲覧や、発信などを扱えてしまうため、接続にPIN(パスコード)が必要になることが多いのですが、WiiRemoteの場合には、害の無いただの入力インタフェースなので、PINは設定されていません。基本はホスト側とタイミングを合わせて同期ボタンを押すだけでペアリングできます。</p>
+<p>「Bluetoothの設定」のメニューから「新しい接続」をクリックすると「新しい接続の追加ウィザード」が起動します。「エクスプレスモード(おすすめ)」のまま次にすすめましょう。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/BT-Step1.png" alt="ペアリングの開始" width="10cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/BT-Step2.png" alt="ここでWiiRemoteを同期モードにする" width="10cm">
+</div>
+
+<p>「Bluetooth機器を探しています」と表示されたら、すかさずWiiRemoteの「1」ボタンと「2」ボタンを同時に押しましょう。WiiRemoteの電池フタを開けたところにある、赤い「Syncボタン」でもかまいません。プレイヤーインジケータ(WiiRemote下部にある4個の青色LED)が点滅し、外部からの接続要求を数秒間の間、受け入れることを意味する「接続認証待ち」の状態になります。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/BT-Step3.png" alt="“Nintendo RVL-CNT-01”つまりWiiRemoteが表示された" width="10cm">
+</div>
+
+<p>次に「使用するBluetooth機器を選択してください」というダイアログが表示され、図のようにデバイス名の一覧に「Nintendo RVL-CNT-01」が現れます。これが表示されたらクリックしてWiiRemoteを選択し、「次へ」をクリックしてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/BT-Step4.png" alt="この時にWiiRemoteは接続認証待ち(LED点滅)であること" width="10cm">
+</div>
+
+<p>「Bluetooth機器に接続しています」というダイアログが表示されたら、WiiRemoteをみて、青色LEDが点滅していることを確認します。もし点滅していなかったら、再度「1」ボタンと「2ボタン」を同時に押しっぱなしにして、接続認証待ちの状態を保ってください。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/BT-Step5.png" alt="Bluetooth機器としてWiiRemoteが表示された" width="10cm">
+</div>
+
+<p>PINコードは必要ないので、自動的に接続完了の状態になるはずです。これで無事接続できました。途中何度か「1」「2」ボタンを押しっぱなしにするところがありましたが、WiiRemoteの裏側にある電池フタ内部にある「Sync」ボタンでも同じ操作ができます(まったく同じ機能です)。</p>
+<p>さて、WiiRemoteには節電機能があり、しばらくの間、通信やボタン操作がないと、自動的に接続を終了し、電源断の状態になります。この切断状態では、Bluetooth管理ソフトウェアでの表示は下のような表示になります。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/BT-Step6.png" alt="WiiRemoteは「登録されているが切断」という状態" width="8cm">
+</div>
+
+<p>この状態は「WiiRemoteは登録されているが切断されている」という状態です。ダブルクリックすると、</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/BT-ToshibaReady.png" alt="WiiRemoteの「1」,「2」ボタンを押して再接続" width="8cm">
+</div>
+
+<p>「HIDデバイスの接続の準備をしてからOKボタンを押してください」と表示されます。ここで再度WiiRemoteの「1」,「2」ボタンを同時押しして、接続認証待ちの状態(4つの青色LEDが点滅)にしてから、OKボタンを押せば再接続できます。</p>
+<p>なお複数のWiiRemoteが混在する可能性がある場合、不要な接続設定は右クリックでメニューを表示し「削除」しておくと良いでしょう。うまく接続できないときも、一旦設定を削除して、最初のステップからやり直すと良いでしょう。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/BT-Step7.png" alt="登録されたWiiRemote接続の詳細情報" width="8cm">
+</div>
+
+<p>また右クリックのメニューから「詳細」を表示することができます。ここにはWiiRemoteの個体番号「デバイスアドレス」などが表示されています(ネットワークカードのMACアドレスに相当する固有のID)。複数のWiiRemoteが混在する環境だと、個々のWiiRemoteを見分けるにはこのデバイスアドレスがたよりです。下4桁などをシールなどにして貼っておくと混乱しなくて良いでしょう。</p>
+
+<h3 id="doc2_id112">Lenovo ThinkPadでのペアリング</h3>
+
+<p class="first_ja">次に、代表的なノートPC「ThinkPad」標準搭載Bluetoothアダプタでの接続例を紹介します。ここでは筆者が使用しているWindowsXP搭載ThinkPad X61を例にしています。</p>
+<p>「コントロールパネル」には「Bluetooth設定」というアイコンがあり、「診断」タブを見ると「Broadcom Corporation」、「ファームウェアリビジョンVersion 2.1.211.299」とありました。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-ThinkPad.png" alt="ThinkPadに搭載されているBroadcom社製Bluetoothスタック">
+</div>
+
+<p>もしこの段階で正しく表示されていない場合、Bluetoothアダプタが故障しているか、無線機能がハードウェアスイッチでOFFになっている、BIOSで有効にされていない、もしくは、デバイスが存在しないといった可能性があります。特にBIOSやソフトウェアスイッチでの無効化は見落としがちなので、確認してみると良いでしょう(無線の状態はFn+F5キーで確認することができます)。</p>
+<p>次に「クライアントアプリケーション」のタブをクリックしてみましょう。これから利用する「HID(Human Interface Device)」のセキュリティ保護が「不要」になっていることを確認してください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-B0.png" alt="クライアントアプリケーションのタブを表示">
+</div>
+
+<p>無事に作動しているようでしたら、実際に接続してみましょう。「マイコンピュータ」に「マイBluetooth」というアイコンがあるはずですので、ダブルクリックして開いてください。最初は何も表示されませんので、WiiRemoteの「1」と「2」のボタンを押して、検索可能状態にした状態で「範囲内のデバイスの検索」を実行してみてください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-B1.png" alt="Broadcom社製Bluetoothスタック：範囲内のデバイスの検索">
+</div>
+
+<p>近くにWiiRemoteや携帯電話などペアリング可能なデバイスが存在するとアイコンが表示されます。このアイコンにマウスポインタを近づけたり、プロパティを見るとデバイスアドレスを見ることができます。</p>
+<p>さて、ここでつい、このアイコンをダブルクリックして「デバイスの接続」を実行してしまいがちなのですが、この方法では永遠にWiiRemoteとのペアリングを実現することはできません。その流れでいくと、ペアリングのためのPINコードを必須として要求されるのですが、WiiRemoteには「空白のパスワード」が設定されているため、空白のパスワードを受け付けないこのスタックでは認証ができないのです。これはおそらくBroadcomのスタックにおけるバグか仕様ミスなのですが、ちょっとしたコツで接続する方法があります。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-BErr.png" alt="Broadcom社製Bluetoothスタック：このエラーが表示され先に進めない">
+</div>
+
+<p>まず、一度、検索結果の個々のデバイスアイコンではない空白部分をクリックしてください。すると左側のタスクの一覧に「Bluetoothデバイスの追加」というタスクが現れます。これをクリックすると「Bluetoothセットアップウィザード」が起動します。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-BW1.png" alt="Broadcom社製Bluetoothスタック：セットアップウィザード">
+</div>
+
+<p>検索を開始し、WiiRemoteが現れたらそのアイコンをクリックして「次へ」のボタンを押します。ここからWiiRemoteの「1」と「2」のボタンを押しっぱなしにして指をはなさないでください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-BW2.png" alt="表示された「RVL-CNT-01」をクリックして「次へ」">
+</div>
+
+<p>PINを要求する画面が表示されますが、WiiRemoteのボタンを片手で押したまま「スキップ」をクリックします。そのまま3秒ほど待ってみてください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-BW3.png" alt="「1」,「2」ボタンを押したまま「スキップ」し、3秒ほど待つ">
+</div>
+
+<p>すると、エラー画面は表示されず、無事、WiiRemoteのHIDサービスを選択する画面が表示されます。チェックボックスをONにして「完了」してください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-BW4.png" alt="このサービス選択画面が表示されるまで待つのがコツ">
+</div>
+
+<p>この流れで無事Broadcom社のスタックも利用できるようになります。PINが要求される画面で「1」+「2」ボタンを押しっぱなしにしておくのがポイントです。再接続の場合も同じ手順で接続できますが、一度ペアリングに成功していれば、マイコンピュータ内のマイBluetoothアイコンから、接続したいWiiRemoteのアイコンをクリックして「選択したBluetoothデバイスの追加」として、「1」と「2」ボタンを押しっぱなしにしておけば、短いステップで再接続できます。</p>
+<p>なお、この後「マイBluetooth」ウィンドウには何も表示されませんが、「範囲内のデバイスの表示」というBluetoothタスクをクリックしてみてください。「マイBluetooth\Bluetooth Neighborhood全体」という場所にはリンク状態を示す「→←」が付加されたWiiRemoteのアイコンが表示されているはずです。切断する場合はデバイスのアイコンをクリックして「無効化」を選んでください。再接続は、デバイスのアイコンをクリックしてBluetoothタスクから「選択したBluetoothデバイスの追加」を選ぶと、ウィザードが再度起動します。上記の手順と同じく、「1」,「2」ボタンを押しっぱなしにして、「スキップ」を選んだ後、そのままボタンを押し続けてHIDサービスが表示されるまで3秒ほど待つのを忘れないようにしてください。</p>
+<p>以上で、ThinkPadに搭載されているBroadcom社のエクスプローラー統合型のスタックにおける接続方法の解説を終わります。長年の実績と堅牢さで人気のThinkPadですが、筆者の使用している環境はいささか古いのかもしれません。システムのデバイスマネージャーからBluetoothデバイス内部のドライバのプロパティを見ると、メーカーは確かにBroadcomですが、日付が「2006/12/19」、バージョンが「5.1.0.2900」となっております。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-ThinkPadSys.png" alt="デバイスマネージャーでドライババージョンを確認">
+</div>
+
+<div class="fyi">
+<div class="title">Broadcom社製Bluetoothスタック、ちょっといい話</div>
+
+<p class="first_ja">Broadcom社はBluetooth業界では大手で、WiiRemote本体にもそのチップが搭載されています。またBroadcomが供給するドライバソフトウェアは周辺機器として販売されているBluetoothアダプタや、多くのノートPCに採用され、ドライバのバージョンも日々進化しており、WiiRemote登場当初に比べて、下層のドライバには何の不満もないのですが、ときおり翻訳上の表現やGUIの動作で意味不明なところもあります(そもそもWiiRemoteを接続するテストをドライバ開発者が標準的に行っているとも思えませんが...)。今のところHIDサービスが列挙されるまで『1+2を押しっぱなしにしないとタイムアウトする』というテクニックは共通のようです。筆者が体験した面白いBloadcomスタックの経験としては、デバイスの列挙時に文字化けを起こし、ボタンも表示されず、何をして良いのかわからない、という製品もありました。こんな時は「Alt+C」や「Alt+S」、「Alt+N」など「スキップ」や「次へ」にあたるショートカットを試してみるとよいでしょう。</p>
+</div>
+
+
+<h3 id="doc2_id156">ASUS EeePC S101でのペアリング</h3>
+
+<p class="first_ja">続いて、最近話題のネットブックの代表ともいえるASUS社製「EeePC 901」でのペアリングを紹介します。内蔵されているBluetoothアダプタはThinkPadの例と同じくBroadcom社ですが、バージョンが異なり、よりWindowsのエクスプローラーに統合されています。接続はできるのですが、ちょっとしたコツがありますので、初期設定から解説します。</p>
+<p>まずは、初めてBluetoothで接続する場合、コントロールパネルの「システム」から「デバイスマネージャ」を起動し、どのようなBluetoothデバイスがインストールされているのか確認しておくと良いでしょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-0.png" alt="デバイスマネージャ「Bluetoothデバイス」でドライバの詳細は確認できる">
+</div>
+
+<p>さて、このPCで初めてBluetoothを使用する場合、初期設定が必要になります。コントロールパネルの「Bluetooth設定」をダブルクリックすると、初期設定のためのウィザードが起動します。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-1.png" alt="ここでのチェックはお好みで">
+</div>
+
+<p>「WIDCOMM Bluetooth Software 5.1.0.5500」と小さく表示されていますが、まずはこのPCのBluetoothホストとしての名前とコンピュータの種類を設定します。ここでは「Eee」という名前の「ラップトップ」としました。続いてサービスの設定に入ります。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-2.png" alt="Bluetooth初期設定ウィザード">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="png/BT-253-3.png" alt="「次へ」をクリックしてサービスの設定に進む">
+</div>
+
+<p>ここではWiiRemote都の接続に必要なサービスはありませんので、全てのチェックを外した状態で「次へ」進みます。サービスは後でもコントロールパネル「Bluetoothの設定」から「ローカルサービス」で設定することができますので心配は要りません。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-4.png" alt="必要なサービスはないのですべてチェックを外して「次へ」">
+</div>
+
+<p>さあ、初期設定は終わっています。ウィザードはそのまま続いてデバイスとの接続を行うことができます。WiiRemoteを準備して「次へ」進みます。WiiRemoteの「1」ボタン「2」ボタンを同時押しして、接続待機モード(青色LED4つが点滅)の状態にします(1+2ボタンからは手を離さないほうが良いでしょう)。タイミングが合わないときはウィザードの「再検索」を押してみましょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-5.png" alt="WiiRemoteを手元に準備して「次へ」">
+</div>
+
+<p>マウスとキーボードのアイコンと共に「Nintendo RVL-CNT-01」が発見されたら、すばやくクリックして「次へ」を押します。このとき、つい「1」+「2」ボタンから手を離してしまうことが多いので気をつけてください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-6.png" alt="WiiRemoteが検出されたらアイコンをクリックして「次へ」">
+</div>
+
+<p>ここから少し素早く手を動かす必要があります。ダイアログが表示されペアリングに入ります。「今すぐ組み合わせ」と表示されていますが、実はPINを持たないWiiRemoteとはこの流れでは接続できません。ここでは「スキップ」を選択します。するとしばらく何も表示されないので、「1」+「2」ボタンを押しっぱなしにしていてください。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-7.png" alt="セキュリティコードは「スキップ」する">
+</div>
+
+<p>無事にWiiRemoteのサービス列挙に成功すると、図のように「Nintendo RVL-CNT-01：Bluetooth対応マウス、キーボード、その他のインタフェースデバイスを使用します。」と表示されます。「1」+「2」ボタンを押してるので大変かもしれませんが、チェックして「次へ」を押しましょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-8.png" alt="使用するサービスが現れるのでチェックして「次へ」">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="png/BT-253-9.png" alt="無事に接続が完了した">
+</div>
+
+<p>さて、これで無事接続完了です。WiiRemoteのボタンから手を離しても大丈夫です。「マイBluetooth\Bluetooth Neighbourhood全体」というウィンドウにWiiRemoteを表す「Nintendo RVL-CNT-01」が表示されているはずです。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-10.png" alt="接続中なので「→←」が表示されている">
+</div>
+
+<p>ダブルクリックすると、ステータス表示できます。ステータスには信号強度やアクティビティが表示されます。WiiRemoteのボタンを押すと受信データが増える様子を見る事ができます。なお他のスタックのようにMACアドレスを見ることはできないようです。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-11.png" alt="ステータス表示：ボタンを押すと「受信」が増える">
+</div>
+
+<p>右クリックで「無効化」を選ぶと切断状態になります。再度接続するときは「マイコンピュータ」の「マイBluetooth」から「Bluetoothデバイスの追加」というウィザード形式のものを選んでください。「Bluetoothデバイスの検索」や「Bluetooth Neighborhood全体」を選んでも良さそうなものなのですが、ペアリングの「スキップ」にバグがあるようで、先に進むことができません。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-253-12.png" alt="マイコンピュータの「マイ Bluetooth」では「デバイスの追加」を選択">
+</div>
+
+<p>再接続であっても「デバイスの追加」ウィザードを選ぶ、という点にだけ気をつけてください。接続の流れ自体は再接続でも全く変わりません。「1」+「2」ボタンを押しっぱなしにするのを忘れずに。接続されている場合は「Bluetooth Neighborhood全体」に表示されます。</p>
+<p>さて、無事にBluetooth接続の流れが理解できましたでしょうか？最後に紹介したThinkPadとEeePCの例はBroadcom社のスタックにおけるバグのようなものがあり、ペアリングに「ボタン押しっぱなし」や「再接続時もウィザード」などのコツが必要でしたが、一度覚えてしまえば難なく利用できます。特にネットブックではVisual Studioを使った開発などはあまり現実的ではありませんが、標準でBluetoothアダプタを内蔵しているので、展示やプロジェクトなどでは便利に使えることもあるでしょう(何より安価です！)。</p>
+<p>ここで紹介したBluetooth接続がうまくいかなかった方は、できればこのステップで使えそうなものを調達しておくことをお勧めします。無事にBluetooth接続に成功した人は、そのまま次の節の実験に進んでください。</p>
+<div class="fyi">
+<div class="title">その他のスタック</div>
+
+<p class="first_ja">BlueSoleilは、WiiRemote登場当初は欧米で最も動作実績のあるスタックでした。専用の接続アプリケーションが特徴的で、特に難なく接続できるので解説はいたしません。</p>
+<p>またWindows Vistaにおいて、一時期、WiiRemoteが接続できず、あきらめていた人もいるかもしれませんが、SP1以降から動作することが報告されていますので、あきらめずに試してみるとよいでしょう。</p>
+<p>ちなみにMacOSやUbuntuなどのLinuxではOSの標準の機能だけで問題なく接続できます。</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id21">WiinRemoteで実験</h2>
+
+
+<h3 id="doc3_id233">世界最速公開のツール「WiinRemote」</h3>
+
+<p class="first_ja">WiinRemoteは2006年12月2日、Wii本体が発売されたその日に公開され、世界でもっとも有名になったWiiRemoteをPCで利用できるフリーウェアです。tokkyoさんによって開発され「おなかすいた族」(http://onakasuita.org/wii/)にて公開されています。WiiRemoteを使ってWindowsのカーソルを動かしたり、加速度センサや赤外線センサの状態を観察することができます。</p>
+<p>2007年1月13日に公開された「WiinRemote_v2007.1.13.zip」が現在のところ最終版で、Borland Delphi 6によるソースコードも公開されています。最も早く公開され、ソースコードが貢献しているだけでなく、ツールとしても様々な機能が安定して利用できるので、現在でも多くのユーザに利用されています。</p>
+
+<h3 id="doc3_id236">WiinRemoteの入手とインストール</h3>
+
+<p class="first_ja">WiinRemoteは「おなかすいた族」(http://onakasuita.org/wii/)にて無料で配布されています。「--ダウンロード」の最も新しいバージョン「WiinRemote_v2007.1.13.zip」をクリックしてダウンロードします。ダウンロードしたファイルを解凍します。場所はどこでも良く、インストールは不要です。あとは「WiinRemote.exe」を実行するだけです。</p>
+
+<div class="figure">
+<img class="figure" src="png/WiinRemote0.png" alt="WiinRemoteをダウンロードして解凍">
+</div>
+
+<p>前節で無事にWiiRemoteとBluetooth接続接続できていれば、スクリーンショットのように加速度の値を示すグラフが表示されます。WiiRemoteをブンブンと振って、動きが変化することを確認しましょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/WiinRemote1.png" alt="「WiinRemote」のスクリーンショット">
+</div>
+
+
+<h3 id="doc3_id247">WiinRemoteを使いこなそう</h3>
+
+<p class="first_ja">WiinRemoteには様々な機能があります。WiiRemoteの基本的な入力情報を確認するだけでなく、マウスの代わりとしてある程度の操作ができるようになっています。まず、いろいろ試す前に「Ctrl+S」(コントロールキーを押しながら「S」)で、マウス入力機能のOn/Offを切り換えられるのを覚えておくと慌てないで済みます。</p>
+
+<div class="figure">
+<img class="figure" src="png/WiinRemoteCap.png" alt="WiinRemote：各部解説">
+</div>
+
+<p>左側のWiiRemoteの写真が、現在の押されているボタンを表示しています。ボタンが押されると薄ピンクで表示されます。</p>
+<p>「Motion Sensor」と表示されているエリアが加速度センサーのリアルタイムの値です。Blue,Red,GreenがそれぞれWiiRemoteのX,Y,Z軸に割り当てられています。次のセクションではこれを使ってちょっとした物理の実験を行います。「Motion Sensor」の右側に表示されている黒い線が、推定されたWiiRemoteの「姿勢」を表しています。</p>
+<p>「IR Sensor」では、赤外線センサーが取得した座標値を表示しています。いま手元に純正のセンサーバーがなくても、WiiRemoteを使って周りを探してみてください。何か反応する物があるかもしれません。身近な物では例えば、太陽や白熱電球などが赤外線を発しています。</p>
+<p>ヌンチャクコントローラーが接続されている場合「Nunchuk」のエリアに加速度センサーとアナログスティックの値が表示されます。</p>
+<p>メニューの「Options」で「Preferences」もしくはCtrl+Pで、設定画面が表示されます。</p>
+
+<div class="figure">
+<img class="figure" src="png/WiinRemote2.png" alt="WiinRemote：設定画面">
+</div>
+
+<p>左から、「General」の「Cursor」で、カーソルモード時のマウスポインタを何で操作するかを選べます。デフォルトは加速度センサーによる傾きです。センサーバーを使わなくてもよいのですが、これはあまり操作しやすいものではありません。赤外線で操作する「IR Sensor」もしくはヌンチャクのアナログスティックで操作する「Nunchuk Analog Stick」をぜひ試してみてください。その他のチェックボックスの機能は以下の通りです。</p>
+
+<div class="table">
+<table id="doc3_id257" class="data" rules="groups">
+<colgroup span="2">
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">項目</th>
+<th align="center">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>Enable Cursor at Startup</td>
+<td>カーソルモードを起動時から使用</td>
+</tr>
+<tr class="odd">
+<td>Minimize at Startup</td>
+<td>起動時に最小化</td>
+</tr>
+<tr class="even">
+<td>Draw Graph</td>
+<td>グラフを描画</td>
+</tr>
+<tr class="odd">
+<td>Rumble on Edge</td>
+<td>マウスカーソルが画面端に来たときにバイブレータを振動</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>「Motion Sensor」項目は、加速度センサーでマウスを操作するときに必要になるパラメーターです。</p>
+
+<div class="table">
+<table id="doc3_id266" class="data" rules="groups">
+<colgroup span="2">
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">項目</th>
+<th align="center">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>Motion sensor threshold</td>
+<td>加速度センサーの微少な値をどこまで無視するか</td>
+</tr>
+<tr class="odd">
+<td>Invert Horizontal</td>
+<td>水平方向を逆転</td>
+</tr>
+<tr class="even">
+<td>Invert Vertical</td>
+<td>垂直方向を反転</td>
+</tr>
+<tr class="odd">
+<td>Cursor Speed</td>
+<td>カーソル移動速度の最速と最小(左にすると遅い)</td>
+</tr>
+<tr class="even">
+<td>When button pressed</td>
+<td>Bボタンが押されているときカーソルを速い/遅いを選択</td>
+</tr>
+<tr class="odd">
+<td>Re-Calibrate on Cursor On/Off</td>
+<td>カーソルモードの切り替え時にキャリブレーションを実行</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>「Button Assign」では、WiiRemoteの各ボタンに機能を割り当てられます。シンプルですがなかなか強力な機能で、例えばButtonを「HOME」、Assignを「Keys」にして、「Keys」にある「Press Keys Here」をクリックして「Alt」キーを押してから「F4」キーを押してみましょう。その下に「Alt+F4」と表示されたら「Set」を押します(最後に「Apply」キーを押して設定保存)。これでHOMEキーを押したら、そのウィンドウを閉じる機能ができました。同じような手順で「＋」「－」キーに音量を割り当てたり、「1」「2」キーに好きなアプリケーションを割り当てることができます(「Execute」で実行ファイルを選んでから「Set」するのを忘れずに)。</p>
+<p>「IR Sensor」では「赤外線が見えないときは加速度センサーを使う」というチェックボックスと、LEDが視界の外に出た場合の安定性を調整するための「見失った時の調整枠を表示(垂直方向)」があります。</p>
+<p>「Nunchuk」ではアナログスティックをカーソルモードで使用した場合の速度と、上下左右方向の逆転用チェックボックスがあります。</p>
+
+<h3 id="doc3_id276">重力を観察してみよう</h3>
+
+<p class="first_ja">さて、さきほど紹介した「Motion Sensor」では、加速度のリアルタイム値を3色{X,Y,Z}＝{青,赤,緑}で表示しています。WiiRemoteのX,Y,Z軸とはそれぞれ、ボタンの付いている面を机の上に置いたとして、側面のボタンが付いていない方向がX、赤外線センサーが付いている方向がY、ボタン面の上下方向がZとなります。</p>
+<p>そして、よくみると、3つの色の線はいつも同じレベルにはありません。ボタン面を上にしている時は緑が他に比べて少し低く、右側を下にするかたちで横に寝かせると青が低く、そして赤外線センサー部分を下にして立たせると、赤が低くなります。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/WiinRemoteGBR.png" alt="WiinRemoteで重力を観察" width="10cm">
+</div>
+
+<p>これはいったい何でしょう？そうです！これが地球上の全ての物質に働く『万有引力』です。普段は直接我々の目に見えない重力加速度が、各軸の下向きに働く加速度として観察できているといえます。当たり前のことなのですが、ちょっとした感動が味わえませんか？これを利用することで、WiiRemoteの傾きも検出できます。加速度センサーグラフの右側ではそのようにして姿勢を推定しているようです。ただし、気をつけなければなりません、時には人間がWiiRemoteを強く振るときには重力よりも大きな値を入力することになります。そんなとき、この姿勢推定はどんな様子になるか、観察してみてください。</p>
+
+<h3 id="doc3_id285">PowerPointでプレゼンテーション</h3>
+
+<p class="first_ja">さて、シンプルでパワフルな「WiinRemote」ですが、実用的に使うために、少し設定してみましょう。ここではプレゼンテーションソフト「PowerPoint」での利用を想定してみます。</p>
+<p>まずは「HOME」ボタンでパワーポイントを起動できるようにしましょう。Ctrl+Pで設定画面を表示させて「Button Assign」の「Button」を選んで「Home」に変更、そしてすぐ下の「Assign」を「Execute」に変更します。さらに下のExecuteに「C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE」をファイルブラウザなどを使って設定し、最後に「Set」を押します。「Apply」を押して、いったん設定画面を閉じて、HOMEボタンを押したらパワーポイントが表示されるのを確認しましょう。表示されたら、好きなプレゼンテーションファイルを開いておくとよいでしょう。</p>
+<p>同じ要領で、以下のように割り当ててみてください。</p>
+
+<div class="table">
+<table id="doc3_id287" class="data" rules="groups">
+<colgroup span="3">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">Button</th>
+<th align="center">Assign</th>
+<th align="center">機能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>Up</td>
+<td>Up</td>
+<td>スライド戻し(変更なし)</td>
+</tr>
+<tr class="odd">
+<td>Down</td>
+<td>Down</td>
+<td>スライド送り(変更なし)</td>
+</tr>
+<tr class="even">
+<td>Right</td>
+<td>Keys [PgDn]</td>
+<td>ページ送り</td>
+</tr>
+<tr class="odd">
+<td>Left</td>
+<td>Keys [PgUp]</td>
+<td>ページ巻き戻し</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>Mouse-&gt;Left Click</td>
+<td>マウスクリック(変更なし)</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>Cursor On/Off＆Speed</td>
+<td>カーソルモード＆速度切替(変更なし)</td>
+</tr>
+<tr class="even">
+<td>Plus</td>
+<td>Mixer-&gt;Volume Up</td>
+<td>再生音量アップ</td>
+</tr>
+<tr class="odd">
+<td>Minux</td>
+<td>Mixer-&gt;Volume Down</td>
+<td>ビデオ等の再生音量ダウン</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Keys [Esc]</td>
+<td>いざというときのための終了</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Keys [F5]</td>
+<td>プレゼンテーション再生</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>どうでしょう？いつものPowerPointが、よりカッコよく操作できるようになりました。この応用で、特にプログラムを書かなくても、様々なアプリケーション用にWiiRemoteが使えるようにカスタマイズすることができます。</p>
+<p class="first_ja">ここではフリーウェア「WiinRemote」を使って、WiiRemoteの接続後の動作確認と、PowerPointをWiiRemoteで操作するための設定を解説しました。WiinRemoteはシンプルですが、スタートが速かったことで多くの人々に支えられ、様々なスタックで安定動作することが特徴です。インストールも不要で、サイズも小さいので、いざというときの動作確認のために持ち歩いておくと便利です。</p>
+<p>このようにWiinRemoteは様々なアプリケーションに合わせて、GUIだけでボタンの割り当てなどを設定することができ便利ですが、その固有の設定を保存してあとで読み込んだり、切り換えたりすることには向いていません。またジョイスティックの代わりの信号を出すことも残念ながらできません。そのような用途には次節で解説する「GlovePIE」が適しているでしょう。</p>
+<div class="fyi">
+<div class="title">よく聞く“キャリブレーション”って何？</div>
+
+<p class="first_ja">「キャリブレーション」とは、デバイス系制御ではよく出てくる用語です。センサーや測定器など、ある信号の入力と測定の対象と、出力される値との関係を、再現性のある基準に合わせて決定付ける作業です。デバイス制御系のプログラミングでは、デバイスの「生の値」(raw data)を、使用できるデータに変換するための操作ともいえます。</p>
+<p>この変換は用途や特性によりさまざまな変換が実施されます。初期値や原点をセットすればいいものから、較正曲線といった二次曲線を利用する方法、ある値域だけを利用するバンドパスフィルタを組み合わせた方法など、その調整方法についてはさまざまです。</p>
+<p>なお昔は「較正」とも標記されていましたが、近年では計量法で「校正」と表記されており、正式には「校正」の概念には「調整」が含まれないそうです。よって最近では「キャリブレーション」のままカタカナ翻訳される事が多いようです。</p>
+<p>ユーザーインターフェースなどでキャリブレーションする、といった場合はたいてい原点のリセットなどを行って、そこを基準にする、という行動であることが多いです。例えばタブレットPCなどのタッチパネルを初めて使うとき画面に表示された「＋」をクリックしてください、というメッセージが数回出ることがありますが、内部では4点の表示上の位置と、タッチパネルデバイスから送られてくる信号を適合させるための「キャリブレーション」を行っています。</p>
+<p>WiiRemoteは計測機器ではなく、ゲーム用のインターフェイスですから、測量や重力の再現性はそこそこもとめられますが、測定器ほどではありません。再現性の不備や、経年変化などで誤りがあったとしても、同じような体験が再現できればいいわけです。</p>
+<p>そのため、WiiRemoteには、加速度センサーの重力に対する補正値が保存されているようです。また赤外線センサーの強度は距離、すなわち使用する部屋の空間に依存しますので、Wii本体側で4段階に設定することができるようです。その他、必要になるキャリブレーションの仕組みはアプリケーション開発者側で考えて実装する必要があります。もちろんキャリブレーションの必要のない、極力少ない手順で安定して利用できる仕組みが実現できればすばらしいです。</p>
+</div>
+
+
+<h2 id="doc1_id23">GlovePIEで実験</h2>
+
+
+<h3 id="doc4_id319">GlovePIEとは</h3>
+
+<p class="first_ja">GlovePIEは最も使用されている、WiiRemoteをサポートするコントローラエミュレーターです。Carl Kennerによって開発されています。GlovePIEとは「Glove Programmable Input Emulator」の意味で、もともとヴァーチャルリアリティのためのデータグローブ製品「5DT」を使って、さまざまなゲームをプレイするためにジョイスティックやマウスをエミュレーションするために開発されていたようです。その成長の過程でWiiRemoteをサポートし、有名になりました。特徴として、すべてのエミュレーションを専用のスクリプトで記述します。例えば「Aボタンをショット、Bボタンをボムに」といったゲームそれぞれの割り当てを、自分で書くことができるのです。</p>
+<p>例えば、「DOOM」などの一人称シューティングゲームでよく使われる[W][A][S][D]キーがそれぞれ前後左右の移動キーに割り当てられている場合、GlovePIEスクリプトでは、データグローブの位置を使って</p>
+
+<pre id="doc4_id321" class="program">
+W = glove.z &gt; -50 cm
+S = glove.z &lt; -70 cm
+A = glove.x &lt; -10 cm
+D = glove.x &gt; 10 cm
+</pre>
+
+<p>と表現することができます。他にもジョイスティックやマウス、キーボードも複数のキー入力を連続したマクロとして扱うことなどもでき、SAPI(音声出力API)や、電子音楽で使われるMIDIやOpenSound Control(OSC)などの出力もサポートしており、非常に高機能なツールといえます。</p>
+
+<h3 id="doc4_id325">GlovePIEのインストール</h3>
+
+<p class="first_ja">GlovePIEのインストールは非常に簡単です。公式ホームページに行き、最新版をダウンロードし、アーカイブを展開するだけです。</p>
+<div class="fyi">
+<div class="title">GlovePIEのホームページ</div>
+
+<p class="first_ja">http://carl.kenner.googlepages.com/glovepie_download</p>
+</div>
+
+<p>最新版はバージョン0.30なのですが、深刻なバグ(赤外線センサー使用時に加速度センサーキャリブレーションに不具合)を理由に公開が中止されています。ジェスチャー認識などたくさんの新機能が盛り込まれているようなのですが、「公開されるまでの間0.29をお使いください」と書かれたまま、ずいぶんと長い時間が経ってしまっています。Ver.0.29の公開は2007年1月4日と少々古いのですが特に問題はないので、こちらをダウンロードしましょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/GlovePIEDL.png" alt="GlovePIEのホームページ：ダウンロードに関して">
+</div>
+
+<p>ダウンロードのリンクも帯域の制限などで4箇所ありますので、確実にダウンロードできているかどうか確認しながら「GlovePIE029.zip」をダウンロードしてください。</p>
+
+<div class="figure">
+<img class="figure" src="png/GlovePIE029.png" alt="GlovePIE ver.0.29を展開したところ">
+</div>
+
+<p>ダウンロードしたZIPファイルを展開すると、たくさんのファイルが現れます。実行ファイルは「GlovePIE.exe」ですが、まずはライセンス関係を確認するために「readme.txt」を開きましょう。</p>
+<p>ライセンスに関しては、以下のように記述されています。</p>
+
+<pre id="doc4_id338" class="program">
+This software is copyright (c) Carl Kenner, except for scripts by other \
+    authors.
+By using this software you agree to obey the following license conditions:
+
+* You can't make money using this software as part of a baseball \
+    simulation. This is for contractual reasons. But you can make as much \
+    money as you like using it for anything else.
+
+* You may not use this software directly or indirectly for any military \
+    purpose. This includes, but is not limited to, training, research and \
+    development, controlling military hardware, directing military \
+    personel, or troop entertainment. You may not use this software \
+    anywhere on a military base or vessel. This applies to all versions of \
+    PIE.
+
+* You may not export this software to Israel, or use it in Israel \
+    (including the occupied territories), until Israel has ended its \
+    occupation of the West Bank, Gaza Strip, Lebanon, Syria, and anywhere \
+    else it may occupy. If you try to run it in Israel it will give you an \
+    error.
+
+* Missionaries may not use this software. It may not be used for any \
+    missionary purpose. Or any other genocidal purpose.
+
+* You may not use this software to cheat at online or multiplayer games. \
+    What constitutes cheating depends on the game and the server. Just \
+    using a different input device shouldn't be considered cheating, but \
+    complex scripted actions to make things easier may be considered \
+    cheating. Don't get GlovePIE banned, or you will hurt everyone who \
+    wants to play with a VR glove. But feel free to cheat at single player!
+</pre>
+
+<p>意訳すると、以下のようになります。「このソフトウェアのコピーライトは(c)Carl Kennerです。他の著者による著作(スクリプト)を除きます。このソフトウェアを使用することにより、以下のライセンス条項に従うことに同意します。あなたは、このソフトウェアを野球シミュレーションの一部のようにして、お金を儲けることができませんが、これは契約上の理由です。他の何かに使うことで、好きなだけお金を儲ける機能を有します。直接または間接的に、このソフトウェアを軍用目的に使用してはいけません。これはトレーニング、研究開発、軍用ハードウェアの制御、部隊指示、部隊の娯楽などを含み、限定されません。このソフトウェアを軍用基地もしくは軍用艦内で使用してはいけません。これはPIEのすべてのバージョンに該当します。このソフトウェアを、イスラエルがウエストバンク(ヨルダン川西岸)のその占領、ガザ地区、レバノン、シリアと他の占領区の占有を終えるまで、イスラエルに輸出もしくはイスラエル(占有された領土を含む)で使用してはいけません。もしあなたがこのソフトウェアをイスラエルで実行しようとすれば、あなたにエラーを与えます。宣教師は、このソフトウェアを使用してはいけません。いかなる伝道目的、もしくは他のいかなる大量虐殺目的にも使われてはいけません。オンラインまたはマルチプレーヤーゲームでいかさまをするために、このソフトウェアを使用はしてはいけません。不正行為を意味するところは、ゲームとサーバーに依ります。普段と異なる入力デバイスを使うことは不正行為とされるべきではありませんが、物事をより簡単にするための、複雑なスクリプト化されたアクションは不正行為になるでしょう。GlovePIEを禁止されないようにしてください。もし、VRグローブでみんなを傷つける遊びをしたいなら、シングルプレーヤーで不正行為を遠慮なくやってください！」</p>
+<p>本書を読んでいらっしゃる方で、このライセンス条文が問題になる人はまずいないでしょう。もしこのソフトを使ってお金持ちになったなんていい話があったら、ホームページの「Donate」から、作者のCarl Kenner氏に募金をするとよいかもしれません。特に、新しい機能についてのアイディアなども募金と共に募集しています。</p>
+
+<h3 id="doc4_id342">GlovePIEの基本操作</h3>
+
+<p class="first_ja">まず、3.1章の流れに沿って、WiiRemoteをBluetooth接続してください。無事接続が終わったら「GlovePIE.exe」を起動します。</p>
+
+<div class="figure">
+<img class="figure" src="png/GP01.png" alt="GlovePIEを起動したところ">
+</div>
+
+<p>この後、サンプルスクリプトを読み込んで、実際にWiiRemoteを使って操作を行う実験を行います。ここで注意です。スクリプトが想定外の動作をすることで、正常な操作ができなくなる可能性があります。そうなったときに慌てないために[Shift+P+I+E]もしくは[Alt+R]→[S]で「スクリプトの停止」ができることを覚えておくとよいでしょう([Shift+PIE]は動作しないこともあります)。</p>
+<p>まずは最も簡単なWiiRemoteを使うサンプルスクリプトを試してみましょう。「File」メニューから「Open」を選んで、GlovePIEと同じ階層にある「WiimoteScripts」フォルダ内にある「Wiibrator.PIE」をロードします。なおこのディレクトリには大量の面白そうなファイル名が並んでいます。PIEスクリプトというテキストファイルで、様々なゲームのエミュレーターや、Windows上でWiiRemoteを使うためのサンプルが用意されています。メモ帳などのテキストエディタで開いたり編集することもできますが、この際なので「.PIE」という拡張子をGlovePIEに関連づけてしまうのもよいでしょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/GP02.png" alt="サンプル「Wiibrator.PIE」をロード">
+</div>
+
+<p>スクリプトがロードされると、以下のように表示されているはずです。</p>
+
+<div id="doc4_id352" class="caption">Wiibrator.PIE</div>
+<pre class="program" style="margin-top:0">
+//Wiibrator 
+//By deceased 
+
+// Does not control mouse so feel free to surf ^^ 
+
+// D pad up turns it on 
+// D pad down turns it off 
+if wiimote.Up 
+  wiimote.Rumble = 1 
+endif 
+if wiimote.Down 
+  wiimote.Rumble = 0 
+endif
+</pre>
+
+<p>さて、このスクリプトは十時キーを使ってバイブレーターをOn/Offするだけのスクリプトですので安心して実行できます。[F9]もしくは、メニューの[Run!]から[Run!]を選んで実行してみましょう。</p>
+<p>緑の三角矢印が「Run」から「Stop」に変わり、スクリプト表示エリアがグレーになったら実行中です。接続したWiiRemoteの十時ボタンの上(POWERボタン側)を押してみましょう。バイブレーターが作動します。あわてず十時ボタンの下(Aボタン側)を押すと、止まります。何度でも繰り返し遊んでみてください。ひととおり遊んだら、GlovePIEウィンドウ内の「Stop」を押してスクリプトを止めましょう。</p>
+<p>さて、スクリプトを解説してみます。「//」で始まる行はコメントなので、実質6行のスクリプトです。まず、PIEスクリプトは非常に動的でユーザーフレンドリーなスクリプトで、ほとんどのケースで初期化コードが不要です。一番上から実行され、一番下までいくと、また上から実行されます。この場合も宣言や初期化などしなくても</p>
+
+<pre id="doc4_id355" class="program">
+if wiimote.Up
+</pre>
+
+<p>とすることで、WiiRemoteが初期化され、現在のボタンの状態を「wiimote.Up」で取得することができます。ここが「True/1」になったときに「wiimote.Rumble = 1」となりバイブレーターを駆動し、「endif」でif文を抜けます。下を押した場合つまり「if wiimote.Down」の場合も同様で、バイブレーターの振動を意味する「wiimote.Rumble」を「0」にすることで振動を止めます。</p>
+<p>例えば、ここで新しくシンプルなスクリプトを作成してみましょう。「File」メニューから「New」を選びます。「Clear text box without saving changes?(保存しなくてもいいですか？)」という質問が出たら「Yes」で問題ありません。新しいスクリプトとして以下をテキストボックスに書きます。</p>
+
+<pre id="doc4_id358" class="program">
+wiimote.Rumble = wiimote.A
+</pre>
+
+<p>たった一行のスクリプトですが、Aボタンを押している間だけ、バイブレーターが鳴ります。GlovePIEはスクリプト記述についても支援機能があり、「wiimote.」といったように予約されたクラス名とピリオドまで書くと、自動的にその先のプロパティ名などをリストしてくれます。これでマニュアルがなくても簡単にスクリプトが書けますし、またシンタックスエラー(文字の書き損じによる間違い)も大きく減らすことができます。</p>
+<p>書き終わったら、まずはシンタックスを確認しましょう。メニューの「Run!」から「Check for errors」を選びます。何か間違いがあると、該当する行がピンク色に変わります。間違いがなければ何も起きませんので、[F9]で実行しましょう。無事に、Aボタンを押している間だけバイブレーターが鳴れば成功です。「Aボタン連打！」などしてみて、バイブレーターの鳴り具合を確認してみるとよいでしょう。</p>
+<p>もし挙動がおかしい、反応がない、といったときは、接続を確認するために、WiinRemoteなど確実に動くツールを起動してみるとよいでしょう。Bluetoothが時間切れで自動切断されている場合もあります。単純なスクリプトなので、挙動がおかしいときは、単にGlovePIEやPCを再起動してみるのも解決策になるときもあります。</p>
+<div class="fyi">
+<div class="title">バイブレーターを“暴走”させてみよう</div>
+
+<p class="first_ja">ここでバイブレーターに関する注意を実験を通して確認します。バイブレーターを起動した状態でスクリプトを止めると何が起きるでしょう？上記のスクリプトでは、Aボタンを押しっぱなしにした状態で、GlovePIEをスクリプトを停止させます。するとスクリプトは終了しているのに、バイブレーターは鳴り続けます。大変です。暴走状態です。この状態でしばらく放っておくとあっという間に電池が切れてしまいます。しかし、スクリプトを再度起動しても、Aボタンを連打しても、バイブレーターは止まらないかもしれません(これはバグではないかと見ています)。</p>
+<p>こういうときは、慌てず騒がず、GlovePIEを終了します。スクリプトの保存が必要なら保存をしておきます。そして、再度、GlovePIEを起動し「Wiibrator.PIE」などのバイブレーターを使用するスクリプトを読み込んで、Runすればバイブレーターの暴走は止まります。</p>
+</div>
+
+
+<h2 id="doc1_id25">GlovePIEでつくる「高機能赤外線マウス」</h2>
+
+<p class="first_ja">このセクションでは、GlovePIEを使って、高機能な赤外線マウスを作成していきます。実践的な開発を通して、WiiRemote開発のコツやGlovePIEの強力なスクリプティング機能とGUIによる支援機能をステップバイステップで学ぶことができます。</p>
+
+<h3 id="doc5_id384">高機能赤外線マウスを設計する</h3>
+
+<p class="first_ja">まずはこれから作成する赤外線マウスについて、簡単に仕様を決めておきましょう。基本動作としては、WiiRemoteをセンサバーや赤外線光源に向けて、マウスのようにして使うタイプのものにします。せっかく作るのですからファイル操作やPowerPointのプレゼンテーションに実際に使える高機能なものを想定します。</p>
+
+<div class="table">
+<table id="doc5_id386" class="data" rules="groups">
+<colgroup span="2">
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">WiiRemote側操作</th>
+<th align="center">割り当てる操作</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>赤外線</td>
+<td>マウスポインタの移動</td>
+</tr>
+<tr class="odd">
+<td>十字キー</td>
+<td>カーソルキー</td>
+</tr>
+<tr class="even">
+<td>Aボタン</td>
+<td>マウス左ボタン</td>
+</tr>
+<tr class="odd">
+<td>Aボタン・ダブルクリック</td>
+<td>Enterキー</td>
+</tr>
+<tr class="even">
+<td>Bボタン</td>
+<td>マウス右ボタン</td>
+</tr>
+<tr class="odd">
+<td>Bボタン・ダブルクリック</td>
+<td>Deleteキー</td>
+</tr>
+<tr class="even">
+<td>A+Bボタン同時押し</td>
+<td>デスクトップを表示</td>
+</tr>
+<tr class="odd">
+<td>＋ボタン</td>
+<td>アプリケーション切り替え[Alt+Tab]</td>
+</tr>
+<tr class="even">
+<td>－ボタン</td>
+<td>アプリケーション終了[Alt+F4]</td>
+</tr>
+<tr class="odd">
+<td>Homeボタン</td>
+<td>スクリプト終了</td>
+</tr>
+<tr class="even">
+<td>1ボタン</td>
+<td>GlovePIE最小化／最大化</td>
+</tr>
+<tr class="odd">
+<td>2ボタン長押し</td>
+<td>PowerPointを起動</td>
+</tr>
+<tr class="even">
+<td>2ボタン・シングルクリック</td>
+<td>Escキー(プレゼンテーション終了)</td>
+</tr>
+<tr class="odd">
+<td>2ボタン・ダブルクリック</td>
+<td>プレゼンテーション開始[F5]</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>WiiRemoteならではの、沢山あるデジタルボタンを活用して、長押し、ダブルクリック、A+Bボタン同時押しなどのコンビネーションを使った使いやすい操作を盛り込んでいます。もちろんこのセクションの体験を通して、ご自身のアイディアで新しい機能を盛り込んでいくことが可能です。</p>
+
+<h3 id="doc5_id487">ボタンアクションの実装</h3>
+
+<p class="first_ja">まずは手始めに「Homeボタンで終了」を実装してみましょう。新しいスクリプトとして以下を記述して実行してみてください。GlovePIEスクリプトは大文字・小文字は無視されます。</p>
+
+<pre id="doc5_id489" class="program">
+if Wiimote.Home then
+ ExitScript
+end if
+</pre>
+
+<p>記述したらWiiRemoteを接続後にRunして、Homeボタンで終了できるかどうか試してみてください。「ExitScript」とは実行中のGlovePIEスクリプトを終了させるコマンドです。詳しくは、GlovePIEとおなじディレクトリにあるマニュアル(Documentation.rtf)に記載されています。基本的なコマンドはこのセクションで解説していきますので、いまは「そういう便利な物があるんだ」という理解でよいでしょう(本セクションの最後にまとめて紹介します)。</p>
+<p>さて、次は十字キーにカーソルキーを割り当てましょう。先ほどのようにif文をつかうと明確に条件やその後の処理を記述できますが、今回はボタンイベントに対するキーアクションを大量に設定しなければなりませんので、もっと簡単な記述方式で書き直してみます。</p>
+
+<pre id="doc5_id492" class="program">
+//WiiRemote IR mouse
+
+//Key Binds
+ExitScript = Wiimote.Home
+Key.Up     = Wiimote.Up
+Key.Down   = Wiimote.Down
+Key.Left   = Wiimote.Left
+Key.Right  = Wiimote.Right
+</pre>
+
+<p>このように「=」でつなぐことで、キー入力に割り当てるアクションが1行で表現できます。また「//」で始まる行はコメント行です(日本語は表示上化けてしまいます)。</p>
+<p>次は「＋ボタン」でアプリケーションを切り換え、「－ボタンでアプリケーション終了」できるようにします。「Alt+Tab」のように複数のキーを使う場合は以下のような表記をします。</p>
+
+<pre id="doc5_id495" class="program">
+Key.Alt+Tab = Wiimote.Plus
+Key.Alt+F4  = Wiimote.Minus
+</pre>
+
+<p>簡単ですね！もちろん「Key.Alt+Key.Tab」と表記してもかまいません。</p>
+<p>そして、これは「WiiRemoteのAボタンとBボタンを同時に押したときに、デスクトップを表示する」というアクションです。</p>
+
+<pre id="doc5_id498" class="program">
+Key.Windows+D = Wiimote.A and Wiimote.B
+</pre>
+
+<p>次は、WiiRemoteのA,Bボタンのダブルクリックを使ってEnterやDeleteを入力できるようにします。</p>
+
+<pre id="doc5_id501" class="program">
+Key.Enter  = DoubleClicked(Wiimote.A)
+Key.Delete = DoubleClicked(Wiimote.B)
+</pre>
+
+<p>「DoubleClicked()」という関数を使うことで、ダブルクリックを判定できます。ここで実際に動作を試すために、メモ帳などを実行してからスクリプトをRunしてみて、＋ボタンでアプリケーションを切り換え、十字ボタンやダブルクリックを試してみるとよいでしょう。最後にHomeボタンでスクリプトを停止します。</p>
+<p>次は、「2ボタン」にいろいろな機能を割り当ててみます。長押し、シングルクリック、ダブルクリックで、それぞれPowerPointの起動、Escキー、F5キーに割り当てます。</p>
+
+<div id="doc5_id504" class="caption">2ボタンでPowerPointを起動</div>
+<pre class="program" style="margin-top:0">
+Execute(&quot;C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE&quot;)
+ = HeldDown(Wiimote.Two, 1s)
+Key.Escape = SingleClicked(Wiimote.Two)
+Key.F5     = DoubleClicked(Wiimote.Two)
+</pre>
+
+<p>HeldDown(対象,秒数)とすることで、長押しを検出できます。単位は秒です。「0.5」などでもよいでしょう。Execute(&quot;実行ファイル名&quot;)で任意のアプリケーションを起動できます。シングルクリック、ダブルクリックも同様に関数を使って検出することができますので今までと同じように割り当てます。</p>
+<p>さて、実際に「2ボタン」を長押しし、PowerPointが立ち上がったら、今度はダブルクリックでプレゼンテーションを起動、さらにシングルクリックでプレゼンテーション終了、「－ボタン」でPowerPoint終了、と試してみてください。Escキーは他のアプリケーションなどでもよく使いますのでここに割り当てておくのは便利そうです。</p>
+<p>PowerPointがインストールされていない場合は他のアプリケーションで試してみましょう。例えば「Execute(&quot;mspaint.exe&quot;)」とすることで「ペイント」が起動します。PrintScreenキーと張り付け(Ctrl+V)でも面白いでしょう。</p>
+
+<div id="doc5_id507" class="caption">ペイントで試す場合のスクリプト</div>
+<pre class="program" style="margin-top:0">
+Execute(&quot;mspaint&quot;) = HeldDown(Wiimote.Two, 1s)
+Key.PrintScreen = SingleClicked(Wiimote.Two)
+Key.Ctrl+V      = DoubleClicked(Wiimote.Two)
+</pre>
+
+<p>「－ボタン」を押して終了すると「保存しますか？」ときかれますが、十字キーの右、そして「Aボタン」のダブルクリックで「いいえ」を選択することができます。もう簡単な操作ならなんでもWiiRemoteでできそうですね！</p>
+<p>最後に、左右のマウスボタンをそれぞれA,Bボタンに、そして「1ボタン」にはGlovePIEの表示切り替え機能を割り当てます。</p>
+
+<pre id="doc5_id510" class="program">
+UnMinimizePie = HeldDown(wiimote.One, 1s)
+MinimizePie   = wiimote.One
+
+Mouse.LeftButton  = Wiimote.A
+Mouse.RightButton = Wiimote.B
+</pre>
+
+<p>ここまでの作業でスクリプトは以下のようになっているはずです。</p>
+
+<div id="doc5_id513" class="caption">WiiRemoteボタンアクション(完成版)</div>
+<pre class="program" style="margin-top:0">
+//WiiRemote IR mouse (part for buttons)
+
+//Key Binds
+ExitScript = Wiimote.Home
+Key.Up     = Wiimote.Up
+Key.Down   = Wiimote.Down
+Key.Left   = Wiimote.Left
+Key.Right  = Wiimote.Right
+
+//combination
+Key.Alt+Tab = Wiimote.Plus
+Key.Alt+F4  = Wiimote.Minus
+Key.Windows+D = Wiimote.A and Wiimote.B
+
+//Double Clicks
+Key.Enter  = DoubleClicked(Wiimote.A)
+Key.Delete = DoubleClicked(Wiimote.B)
+
+//Multifunctions on Two-Button
+Execute(&quot;C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE&quot;) = \
+    HeldDown(Wiimote.Two, 1s)
+Key.Escape = SingleClicked(Wiimote.Two)
+Key.F5     = DoubleClicked(Wiimote.Two)
+
+//Hide and Show by One-Button
+UnMinimizePie = HeldDown(wiimote.One, 1s)
+MinimizePie   = wiimote.One
+
+//Mouse Buttons are linking to A and B
+Mouse.LeftButton  = Wiimote.A
+Mouse.RightButton = Wiimote.B
+</pre>
+
+<p>いかがでしょうか？GlovePIEスクリプトの短い記述だけで、かなり高機能なツールがつくれることが実感できたでしょうか？</p>
+
+<h3 id="doc5_id517">デバッグ機能・関数・フィルタの活用</h3>
+
+<p class="first_ja">さて、ボタンアクションを一通り使いこなせるようになって、だんだん楽しくなってきたところでしょう！しかしまだこの状態では、マウスポインタは相変わらず動きません。センサーバーの赤外線にWiiRemoteを向けて、自在にマウスポインタが操作できたらどんなに楽しいでしょうか。</p>
+<p>はやる気持ちを抑えて、まずは「デバッグ機能」を学びましょう。</p>
+<p>先ほどのスクリプトの一番下に以下の記述を足してみましょう。</p>
+
+<pre id="doc5_id519" class="program">
+Debug = mouse.x
+</pre>
+
+<p>実行すると、GlovePIEの「Runボタン」の右側に、なにやら数字が表示されるようになったはずです。これは現在のマウスのX(横方向)の値です。ここでマウスを動かしてみましょう。値は左から右に行くにつれ、ゼロから1への小数をとるはずです(これを値域[0,1]と表現します)。「Debug=」とすることで、デバッグ用に内部の値を表示する機能です。</p>
+<p>続いて、以下のDebugPrint()関数も試してみましょう。</p>
+
+<pre id="doc5_id522" class="program">
+Debug = mouse.x
+DebugPrint(&quot;X=&quot;+mouse.x+&quot; Y=&quot;+mouse.y)
+</pre>
+
+<p>これは別のウィンドウが開き、時系列でより多くのデータを読むことができます。用途に合わせて使い分けるとよいでしょう。</p>
+<p>さて、それではついにセンサーバーを使って、このデバッグウィンドウに赤外線センサーの値を表示してみましょう。先ほどのテストコードを以下のように書き換えます。</p>
+
+<pre id="doc5_id525" class="program">
+Debug = &quot;mx=&quot;+mouse.x+&quot; my=&quot;+mouse.y
+if Wiimote.dot1vis then
+ DebugPrint(&quot;X=&quot;+Wiimote.dot1x+&quot; Y=&quot;+Wiimote.dot1y)
+end if
+</pre>
+
+<p>「dot1vis」が「最初の1点目が見えるかどうか」、「dot1x」と「dot1y」はその座標を表しています。</p>
+<p>早速実験してみましょう。最低でも1点の赤外線光源が見えればよいので、近くにセンサーバーがない場合は、太陽光や電球光源などを探してから実行しましょう。光源として使えるかどうか不安なときは、あらかじめWiinRemoteを使って確認すると便利です。</p>
+
+<div class="figure">
+<img class="figure" src="png/GlovePIE-DebugPrintIR.png" alt="別ウィンドウ表示に赤外線センサーの値が表示される">
+</div>
+
+<p>赤外線光源に向けたとき、デバッグウィンドウに値が書き足されていく様子が見えれば成功です！値が書き足されない場合は、WiinRemoteをつかって赤外線が正しく認識できているか試してみましょう。ウィンドウが見つからないときは、GlovePIEのウィンドウの裏側に隠れていることがあるので調節してみましょう。</p>
+<p>さて、原理的にはこのdot1x,dot1yをマウスのx,yに割り当てれば完成、ということなのですが実際にはそう単純ではありません。</p>
+
+<div id="doc5_id532" class="caption">このままではマウスポインタは常に右下に行ってしまう</div>
+<pre class="program" style="margin-top:0">
+Mouse.x = Wiimote.dot1x
+Mouse.y = Wiimote.dot1y
+</pre>
+
+<p>実はこのままでは画面上のマウスポインタとWiiRemoteの赤外線センサーが取得する値とのスケールがあっていません。さらに動作方向の極性(正負)があっていません。操作のイメージとしては、WiiRemoteを上に向けたらマウスポインタが上に、左に向けたらマウスポインタが左に行って欲しい感じがします(多くのWii用ゲームがそうであるように)。そのため、スケーリングをして、さらにある軸の正負を反転させる必要があります。</p>
+<p>WiinRemoteや、デバッグ出力で観察できるように、WiiRemoteの赤外線センサーは水平方向Xは[0,1023]の値域、垂直方向Yは[0,767]の値域をとります。WiiRemoteをセンサーバーに向かって上から下に向けるとき、WiinRemoteからみえる赤外線の点像は上部から下部、生値Xはゼロからはじまって767に向かって増加していきます。また左から右に向けたとき、WiinRemoteからみえる赤外線の点像は右側から左側へ、生値Xは1023から始まってゼロに向かって減少していきます。</p>
+<p>対して左辺側のマウスポインタの座標は左上を(0,0)、右下を(1,1)とする[0,1]の値域となっています。これら異なる値域をスマートにつなぐ関数が「MapRange(x, a,b , c,d )」です。xという値域[a,b]をとるもとの入力値を、値域[c,d]に変換することができます。よって、以下のように関数を記述することで、正しい操作感が得られるように変換されます。</p>
+
+<div id="doc5_id535" class="caption">正しく変換される式</div>
+<pre class="program" style="margin-top:0">
+Mouse.x = MapRange(Wiimote.dot1x, 1023,   0 , 0,1)
+Mouse.y = MapRange(Wiimote.dot1y,    0, 767 , 0,1)
+</pre>
+
+<p>さて、これで完成！と思いきや、実行してみると…どうでしょう？何か違和感はありませんか？人によっては感じないかもしれませんが、実際にこの赤外線マウスを使って、フォルダを開き、ファイルを移動して…といった操作を試してみるとよいでしょう。するとポインタが、高速にブルブルふるえて非常に操作しづらいはずです。この「ふるえ」にはいろんな原因があります。一つは赤外線センサーのノイズ(特に“ドリフトノイズ”と呼ばれることもありますが、センサーの内部がわかるわけではないので単に“ノイズ”としておきましょう）、それから人間の手そのものが持っている微少な震えです。マウスの場合は机の上の摩擦で気にならないのですが、WiiRemoteの場合は空中で、しかもかなり高速高精度の計測を行うので、このような人間の手の震えの存在も理解しながら実装していく必要があります。信号処理の知識はこのようなケースで非常に役に立つでしょう。この場合は急速な動きである高周波成分を除去する「ローパスフィルタ」が効果的ではないでしょうか。</p>
+<p>難しい話はさておき、ローパスフィルタは平均をとることで実現できます。GlovePIEスクリプトにはこういった便利な関数が数多く実装されています。</p>
+
+<dl>
+<dt>Smooth(x, [ExtraFrames, [DeadbandDistance]])
+<dd>Smooths関数は値xを過去の[ExtraFrames]の件数分だけつかって平均を算出します。もし[DeadbandDistance]以上の変更がなければ、全てにおいて変更がなかったものとして判断します(省略時のデフォルト[DeadbandDistance]は0)。</dl>
+
+<p>先ほどのMouseへの代入の式において、Smooth関数を取り入れてみましょう。ExtraFramesは3にしておきます。これで過去3フレームの値を使って平均をとります。デバッグ出力も、以下のようにすっきり整理します。</p>
+
+<div id="doc5_id547" class="caption">ローパスフィルタを実装</div>
+<pre class="program" style="margin-top:0">
+if Wiimote.dot1vis then
+ Mouse.x = MapRange(Smooth(Wiimote.dot1x, 3), 1023,    0, 0,1)
+ Mouse.y = MapRange(Smooth(Wiimote.dot1y, 3),    0, 767 , 0,1)
+Debug = &quot;mx=&quot;+Mouse.x+&quot; my=&quot;+Mouse.y+&quot; IRX=&quot;+Wiimote.dot1x+&quot; \
+    IRY=&quot;+Wiimote.dot1y
+end if
+</pre>
+
+<p>どうでしょうか？ぐっと安定感のあるマウスポインタになったのではないでしょうか？信号処理の理論では、適切なExtraFramesを算出する方法もありますが、今回の場合は経験的に入れても全く問題ないでしょう。3～10程度で試してみるとよいでしょう(値が大きくなるとスムースにはなりますが、その分処理が重たくなります)。</p>
+<p>さて、これで高機能赤外線マウスは一旦完成です。ここまでの全てのスクリプトを掲載します。</p>
+
+<div id="doc5_id550" class="caption">高機能赤外線マウス(完成版)</div>
+<pre class="program" style="margin-top:0">
+//WiiRemote IR mouse (basic)
+
+//Key Binds
+ExitScript = Wiimote.Home
+Key.Up     = Wiimote.Up
+Key.Down   = Wiimote.Down
+Key.Left   = Wiimote.Left
+Key.Right  = Wiimote.Right
+
+//combination
+Key.Alt+Tab = Wiimote.Plus
+Key.Alt+F4  = Wiimote.Minus
+Key.Windows+D = Wiimote.A and Wiimote.B
+
+//Double Clicks
+Key.Enter  = DoubleClicked(Wiimote.A)
+Key.Delete = DoubleClicked(Wiimote.B)
+
+//Multifunctions on Two-Button
+Execute(&quot;C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE&quot;) = \
+    HeldDown(Wiimote.Two, 1s)
+Key.Escape = SingleClicked(Wiimote.Two)
+Key.F5     = DoubleClicked(Wiimote.Two)
+
+//Hide and Show by One-Button
+UnMinimizePie = HeldDown(wiimote.One, 1s)
+MinimizePie   = wiimote.One
+
+//Mouse Buttons are linking to A and B
+Mouse.LeftButton  = Wiimote.A
+Mouse.RightButton = Wiimote.B
+
+//Assign Infrared as mouse input
+if Wiimote.dot1vis then
+ Mouse.x = MapRange(Smooth(Wiimote.dot1x, 3), 1023,    0, 0,1)
+ Mouse.y = MapRange(Smooth(Wiimote.dot1y, 3),    0, 767 , 0,1)
+Debug = &quot;mx=&quot;+Mouse.x+&quot; my=&quot;+Mouse.y+&quot; IRX=&quot;+Wiimote.dot1x+&quot; \
+    IRY=&quot;+Wiimote.dot1y
+end if
+</pre>
+
+<p>さて、実際に使い込んでボタンアサインや細かなパラメーターなどを変更してみるとよいでしょう。なおこのスクリプトは赤外線が見えないときはマウス制御を奪いませんので、マウスと協調作業することもできます。実行したままタスクバーにしまっておけば(最小化ボタンの左にタスクバー格納ボタンがあります)、何かと便利でカッコイイです。</p>
+<p>A+Bボタン同時押しでデスクトップを表示し、＋ボタンでアプリケーションを切り換え、Bボタンで右クリック、十字キーで細かな作業をし、Aボタンのダブルクリックで決定、2ボタンでEsc…といった感じで慣れると快感になってきます。スクリプトはHomeボタンを押せばいつでも終了できます。</p>
+
+<h3 id="doc5_id554">GUIをつかったスクリプト記述支援</h3>
+
+<p class="first_ja">さて、さきほど最後に赤外線の座標系をマウスの座標系に合わせるために、新しいMapRangeという関数を使いました。GlovePIEは非常に高機能なスクリプト環境を装備しているので、そもそも「mouse」といったキーワードや便利な関数、コマンドなどを、付属のマニュアルだけで探してくるのは(しかも「未完成」と明記されています...)、なかなか骨の折れる作業です。</p>
+<p>GlovePIEの新機能として「GlovePIE GUI」が実装されています。グラフィカルな環境で、入出力の関係を結びつけると自動的にスクリプトが作成され、接続関係なども管理してくれるようです。マニュアルをよく読んでいくと「WiiRemote関係の機能はGUIを使わない方が良い」と書かれているのですが、筆者が試した感覚では、WiiRemote→キーボード・マウス等に使うのであれば十分使えますし、最終的にテキストで表現されるスクリプトが全てなので、GlovePIEの機能を素早く調べる上ではかなり役立つ環境ですので紹介しておきます。</p>
+<p>練習のために、先ほど最後に作成したWiiRemote→マウスの変換式をGUIで作成してみましょう。まずは先ほど作成した「高機能赤外線マウス」を保存して、一旦GlovePIEを起動し直してください。新しいGlovePIEが起動したら、メニューの「Edit」の下あたりにある「GUI」というタブをクリックしてください。ボタンが2つありますが「Detect Output Emulate」を押すと、使用可能な出力デバイスがリストされますので、「Output Device」から「Mouse」を選んでください。下にたくさんの操作可能なプロパティが現れますのでここから「x」を選び「Edit Manualy」ボタンを押します。</p>
+
+<div class="figure">
+<img class="figure" src="png/GlovePIE-GUI.png" alt="GlovePIE GUI">
+</div>
+
+<p>「Input Device」というプルダウンがありますので、ここから「Wiimote」を選びます。「Number」は複数のWiiRemoteを接続した場合ですので空白のままで、その隣の「Part of device, or a numeric value, or expression:」に「dot1x」と書いてみてください(入力支援機能がすでに働いているはずです)。プルダウンから選択するのもよいでしょう。</p>
+<p>さらに「More」というボタンを押して、詳細を表示します。「Function:」というプルダウンで「Smooth」を選ぶと「Frames」が現れますので「3」を設定し、最後に「Convert from source range」から[min]と[max]をそれぞれ、デフォルトで入っている[0,1023]から[1023,0]に書き換えて、最後に「Apply」という大きなボタンを押して数秒待ちます。</p>
+<p>GUIタブから「Untitled」と表示されている通常のスクリプトタブに戻ります。すると、</p>
+
+<pre id="doc5_id560" class="program">
+Mouse.x = MapRange(Smooth(Wiimote.dot1x, 3), 0,1023, 0,1)
+</pre>
+
+<p>というように、先ほどと全く同じスクリプトが自動生成されていることが確認できます。もちろん実行もできますが、同じ手順を再度「GUI」タブに戻って「mouse」→「y」→「Edit Manualy」→「Wiimote」…というように選んで完成させてみてください。GUIで作成したスクリプトは必ず文末に現れるようです(GlovePIE自体が手続き型言語ではないので、順番が問題になることはあまりない)。</p>
+<p>今回は新規スクリプトで実験しましたが、既存のスクリプトでも十分に利用できます。新機能を追加するとき、新しくキーボードに割り当てたいが名称がわからないとき、適切な値域を扱いたいが基本的な値を調べるのが面倒なとき...などに非常に役に立ちます。WiiRemoteへの出力(例えばLEDやバイブレーター、スピーカーなど)もまだサポートされていませんが、MIDIなどはかなり整備されているようなので、今後、アップデートされるようであれば機能強化が期待されるところです。</p>
+
+<h3 id="doc5_id564">装飾しよう：LED、スピーカーでバイブレーター</h3>
+
+<p class="first_ja">ここから先は、余力のある人だけでかまいません。GlovePIEのもつ様々な機能を利用して、より多くの機能を実装してみましょう。</p>
+
+<h4 id="doc5_id566">サンプルスクリプトを読もう</h4>
+
+<p class="first_ja">さて、高機能赤外線マウスを自力で完成させられたあなたは、もう他のPIEスクリプトを読むのが難しくなくなっているはずです。「WiimoteScripts」フォルダの中にあるさまざまな例を読んでみることをお勧めします。多くはPCゲームのキーボード・マウスのエミュレーションが多いのですが、より簡単に操作できるよう様々なスクリプティングテクニックが読み取れます。他にもこのディレクトリには、WiiRemoteの基本機能に対する解説的なスクリプト、例えばバッテリー残量を表示する「WiiBattery.PIE」や、Midiと組み合わせた簡易ドラムセット「WiiDrums2.PIE」、ヌンチャクまで使った本格ギター「Wiitar」、加速度から距離を求めようとする「TestVelocityPos.PIE」など参考になるものがあります(ならないものも沢山あります！)。</p>
+
+<h4 id="doc5_id569">ウィンドウの境界を振動で通知</h4>
+
+<p class="first_ja">バイブレーターは最初に試したとおり「Wiimote.Rumble」で制御できますので、マウスポインタが現在のウィンドウの境界にぶつかったら、振動するようなスクリプトを追加してみます。</p>
+
+<div id="doc5_id571" class="caption">ウィンドウの境界でバイブレーターを鳴らす</div>
+<pre class="program" style="margin-top:0">
+ var.hit = false;
+var.hit = mouse.CursorPosX&lt;Window.Left or \
+    mouse.CursorPosX&gt;Window.Left+Window.Width
+var.hit = var.hit or mouse.CursorPosY&lt;Window.Top or \
+    mouse.CursorPosY&gt;Window.Top+Window.Height
+ Wiimote.Rumble =var.hit;
+</pre>
+
+<p>変数var.hitは現在のマウスポインタの位置と、現在のウィンドウ境界を比べて、ポインタが外にいる場合trueになります。これをWiimote.Rubmleにwつなげています。</p>
+<p>これを応用すれば弱視の方や何らかの理由でマウスが使えないかた(例えば産まれたばかりの赤ん坊を抱っこしていて...)でもエクスプローラーのようなGUIが触りやすくなるかもしれません。</p>
+
+<h4 id="doc5_id575">LEDでタイマーを作る</h4>
+
+<p class="first_ja">学会などでプレゼンテーションをしているときに、ついつい時間オーバーしてしまったりしませんか？ですが本番になると逆に時間が気になりすぎて、堂々と話ができなかったり…。このスクリプトは、手元に持っているであろうWiiRemoteのLEDを使って、残り時間を表現します。</p>
+
+<div id="doc5_id577" class="caption">LEDによるタイマー表示</div>
+<pre class="program" style="margin-top:0">
+Wiimote.Led1 = HeldDown(true, 5s);
+Wiimote.Led2 = HeldDown(true, 10s);
+Wiimote.Led3 = HeldDown(true, 20s);
+Wiimote.Led4 = HeldDown(true, 1 minutes);
+</pre>
+
+<p>この例ではWiiRemoteの青色LEDが左から順に、5秒、10秒、20秒、1分…というように点灯して最後は4つ全点灯します。Windowsのプログレスバーのようなイメージですね。あらかじめプレゼンテーションの構成と共に、適切なラップタイムを設定しておくというのもよいでしょう。</p>
+
+<h4 id="doc5_id581">スピーカーを鳴らす</h4>
+
+<p class="first_ja">最後にスピーカーを使ってみます。GlovePIEで使えるWiiRemoteのスピーカー機能は非常に低レベルな機能しか提供されていません。周波数とボリュームを設定し、それが適切な長さだけ再生されるように自分で管理する必要があります。WAVファイルを再生できるような機能もそのうち出てくるのかもしれませんが…。このスクリプトはその構造を理解するためだけの目的で書かれています。1ボタンを押すたび様々な音(ノイズ？)が鳴ります。</p>
+
+<pre id="doc5_id583" class="program">
+if Wiimote.One then
+ Wiimote.Volume = 1.00
+ Wiimote.SampleRate = 3640 Hz
+ while ( true )
+  if var.f&lt;=0 then
+   var.f=360
+  end if
+// wait 10ms
+debugprint(&quot;f=&quot;+var.f + &quot;Cos:&quot;+cos(var.f)+&quot; \
+    Freq:&quot;+abs(500*cos(var.f)+1000));
+  Wiimote.Frequency =abs(500*cos(var.f)+1000)
+// Wiimote.Frequency = 261.62
+  var.f=var.f-10;
+ end while
+else
+ wait 1000ms
+ Wiimote.Frequency = 0Hz
+end if
+</pre>
+
+<p>コメントアウトされていますが、いくつかの周波数(たとえば261.62Hz)などでキレイに聞こえる音が存在します。インターネットを探すと音階と周波数の関係についてのデータがありますので、その周波数を使えば音階を表現することも可能でしょう(やはり音質はそこそこですが...)。</p>
+
+<h4 id="doc5_id588">コマンドラインによる起動自動化</h4>
+
+<p class="first_ja">PIEスクリプトを作り込んでいくと、今度はGlovePIEから読み込んで実行…という流れが面倒になってくるはずです。アート作品の展示などに使う場合はぜひとも自動起動させたいところです。GlovePIEはコマンドラインからの起動もサポートしています。</p>
+<p>起動時のオプションで、以下のように解説されています。</p>
+<p>GlovePIE.exeに続いて以下の3種類の方法でファイル名を指定します。空白などが入る場合はクォーテーション「&quot;」で囲むのを忘れずに。拡張子「.PIE」は含んでも含まなくてもよいようです。</p>
+
+<dl>
+<dt>filename.PIE
+<dd>起動時に開いておくPIEスクリプトを指定。「Run」メニューから「Run!」を選ばない限り実行されない。
+<dt>-filename.PIE
+<dd>上記と同様、起動後は自動でスクリプトが開始する
+<dt>/r:filename.EXE
+<dd>PIEが起動したときに、自動開始する他の「.EXE」形式の実行ファイルを指定。例えばゲームとPIEスクリプトを同時起動など。</dl>
+
+<p>例えば以下のようなバッチファイルを書いておけば、すぐに作成した赤外線マウスが使えます。</p>
+
+<div id="doc5_id611" class="caption">startIRmouse.bat</div>
+<pre class="program" style="margin-top:0">
+&quot;C:\GlovePIE029\GlovePIE.exe&quot; -&quot;C:\GlovePIE029\IRmouse&quot;
+</pre>
+
+<p>もちろんIRmouse.PIEは指定した場所に保存しておいてください。</p>
+<p>GlovePIEの可能性はGlovePIEスクリプトの使いこなしにあるといっても過言ではありません。本書はWiiRemoteによるプログラミングのための本ですが、このセクションで学んだとおり、GlovePIEによるスクリプティングだけでもかなりのことができます。また、GlovePIEはMIDIだけでなくジョイスティックやデータグローブ、OSCやSpeechAPIといった他のインタラクション技術でも使われているような基本的なユーザーインタフェース周辺機器のエミュレーターやコンバーターとしてのポテンシャルもとても高いソフトウェアです。また、かなり様々な言語の仕様を取り込んでいるので、プログラミング言語マニアとしても勉強になります。</p>
+<p>これでこの章はおしまいです。Bluetooth接続やWiinRemoteやGlovePIEなど、基本となるツールの使い方はしっかりと理解できたでしょうか？この先のプログラミング編に入る前に「わかったつもり」を脱しておいてください。またここでの知識は、実際に新しいハードウェアを購入したり、新しい作品を作ったり、展示を行う上での改造を行ったりといったときにこの章で学んだ内容は必ず役に立つものです。</p>
+
+<div class="footer">
+<a href="index.html">[Back to Home]</a> 
+<a href="WiiRemoteProgramming_piii-xii.pdf" target="_blank">[刊行によせて・もくじ]</a>
+<a href="chapter1.html">[1章]</a>
+<a href="chapter2.html">[2章]</a>
+<a href="chapter3.html">[3章]</a>
+<A href="http://www.amazon.co.jp/gp/product/4274067505?ie=UTF8&tag=amazonas-22&linkCode=as2&camp=247&creative=1211&creativeASIN=4274067505">[本書をAmazonで購入!]</A><BR>
+書籍「WiiRemoteプログラミング」(Webお試し版)
+(C)2009 オーム社開発局 白井暁彦・小坂崇之・木村秀敬・くるくる研究室
+ (イラスト)タナカユカリ<BR>
+ISBN 978-4-274-06750-1
+定価2940円（本体2800円）<BR>
+
+<font color="red">★本Webサイトは書籍のプロモーションのために公開されております。著作権等の権利は著者と発行者にあります。掲出されている内容は出版された最終版ではなく、保証されていません。詳細は本書をご購入ください。</font>
+
+</div>
+</body>
+</html>

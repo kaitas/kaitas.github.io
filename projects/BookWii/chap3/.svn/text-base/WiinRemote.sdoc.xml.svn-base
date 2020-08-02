@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiinRemoteで実験</title>
+<author>白井暁彦</author>
+<date>2009年4月6日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+<subsection title="世界最速公開のツール「WiinRemote」">
+
+WiinRemoteは2006年12月2日、Wii本体が発売されたその日に公開され、世界でもっとも有名になったWiiRemoteをPCで利用できるフリーウェアです。tokkyoさんによって開発され「おなかすいた族」(http://onakasuita.org/wii/)にて公開されています。WiiRemoteを使ってWindowsのカーソルを動かしたり、加速度センサや赤外線センサの状態を観察することができます。
+
+2007年1月13日に公開された「WiinRemote_v2007.1.13.zip」が現在のところ最終版で、Borland Delphi 6によるソースコードも公開されています。最も早く公開され、ソースコードが貢献しているだけでなく、ツールとしても様々な機能が安定して利用できるので、現在でも多くのユーザに利用されています。
+</subsection>
+
+<subsection title="WiinRemoteの入手とインストール">
+WiinRemoteは「おなかすいた族」(http://onakasuita.org/wii/)にて無料で配布されています。
+「--ダウンロード」の最も新しいバージョン「WiinRemote_v2007.1.13.zip」をクリックしてダウンロードします。ダウンロードしたファイルを解凍します。場所はどこでも良く、インストールは不要です。あとは「WiinRemote.exe」を実行するだけです。
+
+<figure id="WiinRemote0.png" src="png/WiinRemote0.png" title="WiinRemoteをダウンロードして解凍">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+前節で無事にWiiRemoteとBluetooth接続接続できていれば、スクリーンショットように加速度の値を示すグラフが表示されます。WiiRemoteをブンブンと振って、動きが変化することを確認しましょう。
+
+<figure id="WiinRemote1.png" src="png/WiinRemote1.png" title="「WiinRemote」のスクリーンショット">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+</subsection>
+
+<subsection title="WiinRemoteを使いこなそう">
+WiinRemoteには様々な機能があります。
+WiiRemoteの基本的な入力情報を確認するだけでなく、マウスの代わりとしてある程度の操作ができるようになっています。
+まず、いろいろ試す前に「Ctrl+S」(コントロールキーを押しながら「S」)で、マウス入力機能のOn/Offを切り換えられるのを覚えておくと慌てないで済みます。
+
+<figure id="WiinRemoteCap.png" src="png/WiinRemoteCap.png" title="WiinRemote：各部解説">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+
+左側のWiiRemoteの写真が、現在の押されているボタンを表示しています。ボタンが押されると薄ピンクで表示されます。
+
+「Motion Sensor」と表示されているエリアが加速度センサーのリアルタイムの値です。Blue,Red,GreenがそれぞれWiiRemoteのX,Y,Z軸に割り当てられています。次のセクションではこれを使ってちょっとした物理の実験を行います。「Motion Sensor」の右側に表示されている黒い線が、推定されたWiiRemoteの「姿勢」を表しています。
+
+「IR Sensor」では、赤外線センサーが取得した座標値を表示しています。いま手元に純正のセンサーバーがなくても、WiiRemoteを使って周りを探してみてください。何か反応する物があるかもしれません。身近な物では例えば、太陽や白熱電球などが赤外線を発しています。
+
+ヌンチャクコントローラーが接続されている場合「Nunchuk」のエリアに加速度センサーとアナログスティックの値が表示されます。
+
+メニューの「Options」で「Preferences」もしくはCtrl+Pで、設定画面が表示されます。
+
+<figure id="WiinRemote2.png" src="png/WiinRemote2.png" title="WiinRemote：設定画面">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+左から、「General」の「Cursor」で、カーソルモード時のマウスポインタを何で操作するかを選べます。デフォルトは加速度センサーによる傾きです。センサーバーを使わなくてもよいのですが、これはあまり操作しやすいものではありません。赤外線で操作する「IR Sensor」もしくはヌンチャクのアナログスティックで操作する「Nunchuk Analog Stick」をぜひ試してみてください。
+その他のチェックボックスの機能は以下の通りです。
+<table>
+<thead>項目,意味</thead>
+<tbody>
+Enable Cursor at Startup,カーソルモードを起動時から使用
+Minimize at Startup,起動時に最小化
+Draw Graph,グラフを描画
+Rumble on Edge,マウスカーソルが画面端に来たときにバイブレータを振動
+</tbody>
+</table>
+
+
+「Motion Sensor」項目は、加速度センサーでマウスを操作するときに必要になるパラメーターです。
+
+<table>
+<thead>項目,意味</thead>
+<tbody>
+Motion sensor threshold,加速度センサーの微少な値をどこまで無視するか
+Invert Horizontal,水平方向を逆転
+Invert Vertical,垂直方向を反転
+Cursor Speed,カーソル移動速度の最速と最小(左にすると遅い)
+When button pressed,Bボタンが押されているときカーソルを速い/遅いを選択
+Re-Calibrate on Cursor On/Off,カーソルモードの切り替え時にキャリブレーションを実行
+</tbody>
+</table>
+
+「Button Assign」では、WiiRemoteの各ボタンに機能を割り当てられます。
+シンプルですがなかなか強力な機能で、例えばButtonを「HOME」、Assignを「Keys」にして、「Keys」にある「Press Keys Here」をクリックして「Alt」キーを押してから「F4」キーを押してみましょう。その下に「Alt+F4」と表示されたら「Set」を押します(最後に「Apply」キーを押して設定保存)。これでHOMEキーを押したら、そのウィンドウを閉じる機能ができました。同じような手順で「＋」「－」キーに音量を割り当てたり、「1」「2」キーに好きなアプリケーションを割り当てることができます(「Execute」で実行ファイルを選んでから「Set」するのを忘れずに)。
+
+
+「IR Sensor」では「赤外線が見えないときは加速度センサーを使う」というチェックボックスと、LEDが視界の外に出た場合の安定性を調整するための「見失った時の調整枠を表示(垂直方向)」があります。
+
+「Nunchuk」ではアナログスティックをカーソルモードで使用した場合の速度と、上下左右方向の逆転用チェックボックスがあります。
+</subsection>
+
+<subsection title="重力を観察してみよう">
+さて、さきほど紹介した「Motion Sensor」では、加速度のリアルタイム値を3色{X,Y,Z}＝{青,赤,緑}で表示しています。WiiRemoteのX,Y,Z軸とはそれぞれ、ボタンの付いている面を机の上に置いたとして、側面のボタンが付いていない方向がX、赤外線センサーが付いている方向がY、ボタン面の上下方向がZとなります。
+
+そして、よくみると、3つの色の線はいつも同じレベルにはありません。ボタン面を上にしている時は緑が他に比べて少し低く、右側を下にするかたちで横に寝かせると青が低く、そして赤外線センサー部分を下にして立たせると、赤が低くなります。
+
+<figure id="WiinRemoteGBR.png" src="png/WiinRemoteGBR.png" title="WiinRemoteで重力を観察">
+ <attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+
+これはいったい何でしょう？そうです！これが地球上の全ての物質に働く『万有引力』です。普段は直接我々の目に見えない重力加速度が、各軸の下向きに働く加速度として観察できているといえます。当たり前のことなのですが、ちょっとした感動が味わえませんか？これを利用することで、WiiRemoteの傾きも検出できます。加速度センサーグラフの右側ではそのようにして姿勢を推定しているようです。ただし、気をつけなければなりません、時には人間がWiiRemoteを強く振るときには重力よりも大きな値を入力することになります。そんなとき、この姿勢推定はどんな様子になるか、観察してみてください。
+</subsection>
+
+<subsection title="PowerPointでプレゼンテーション">
+さて、シンプルでパワフルな「WiinRemote」ですが、実用的に使うために、少し設定してみましょう。ここではプレゼンテーションソフト「PowerPoint」での利用を想定してみます。
+
+まずは「HOME」ボタンでパワーポイントを起動できるようにしましょう。
+Ctrl+Pで設定画面を表示させて「Button Assign」の「Button」を選んで「Home」に変更、そしてすぐしたの「Assign」を「Execute」に変更します。さらに下のExecuteに「C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE」をファイルブラウザなどを使って設定し、最後に「Set」を押します。「Apply」を押して、いったん設定画面を閉じて、HOMEボタンを押したらパワーポイントが表示されるのを確認しましょう。表示されたら、好きなプレゼンテーションファイルを開いておくとよいでしょう。
+
+
+同じ要領で、以下のように割り当ててみてください。
+
+<table>
+<thead>Button,Assign,機能</thead>
+<tbody>
+Up,Up,スライド戻し(変更なし)
+Down,Down,スライド送り(変更なし)
+Right,Keys [PgDn],ページ送り
+Left,Keys [PgUp],ページ巻き戻し
+A,Mouse->Left Click,マウスクリック(変更なし)
+B,Cursor On/Off＆Speed,カーソルモード＆速度切替(変更なし)
+Plus,Mixer->Volume Up,再生音量アップ
+Minux,Mixer->Volume Down,ビデオ等の再生音量ダウン
+1,Keys [Esc],いざというときのための終了
+2,Keys [F5],プレゼンテーション再生
+</tbody>
+</table>
+
+
+どうでしょう？いつものPowerPointが、よりカッコよく操作できるようになりました。この応用で、特にプログラムを書かなくても、様々なアプリケーション用にWiiRemoteが使えるようにカスタマイズすることができます。
+</subsection>
+
+ここではフリーウェア「WiinRemote」を使って、WiiRemoteの接続後の動作確認と、PowerPointをWiiRemoteで操作するための設定を解説しました。WiinRemoteはシンプルですが、スタートが速かったことで多くの人々に支えられ、様々なスタックで安定動作することが特徴です。インストールも不要で、サイズも小さいので、いざというときの動作確認のために持ち歩いておくと便利です。
+
+このようにWiinRemoteは様々なアプリケーションに合わせて、GUIだけでボタンの割り当てなどを設定することができ便利ですが、その固有の設定を保存してあとで読み込んだり、切り換えたりすることには向いていません。またジョイスティックの代わりの信号を出すことも残念ながらできません。そのような用途には次節で解説する「GlovePIE」が適しているでしょう。
+
+<fyi title="よく聞く“キャリブレーション”って何？">
+「キャリブレーション」とは、デバイス系制御ではよく出てくる用語です。
+センサーや測定器など、ある信号の入力と測定の対象と、出力される値との関係を、再現性のある基準に合わせて決定付ける作業です。デバイス制御系のプログラミングでは、デバイスの「生の値」(raw data)を、使用できるデータに変換するための操作ともいえます。
+
+この変換は用途や特性によりさまざまな変換が実施されます。初期値や原点をセットすればいいものから、較正曲線といった二次曲線を利用する方法、ある値域だけを利用するバンドパスフィルタを組み合わせた方法など、その調整方法についてはさまざまです。
+
+なお昔は「較正」とも標記されていましたが、近年では計量法で「校正」と表記されており、正式には「校正」の概念には「調整」が含まれないそうです。よって最近では「キャリブレーション」のままカタカナ翻訳される事が多いようです。
+
+ユーザーインターフェースなどでキャリブレーションする、といった場合はたいてい原点のリセットなどを行って、そこを基準にする、という行動であることが多いです。例えばタブレットPCなどのタッチパネルを初めて使うとき画面に表示された「＋」をクリックしてください、というメッセージが数回出ることがありますが、内部では4点の表示上の位置と、タッチパネルデバイスから送られてくる信号を適合させるための「キャリブレーション」を行っています。
+
+WiiRemoteは計測機器ではなく、ゲーム用のインターフェイスですから、測量や重力の再現性はそこそこもとめられますが、測定器ほどではありません。再現性の不備や、経年変化などで誤りがあったとしても、同じような体験が再現できればいいわけです。
+
+そのため、WiiRemoteには、加速度センサーの重力に対する補正値が保存されているようです。また赤外線センサーの強度は距離、すなわち使用する部屋の空間に依存しますので、Wii本体側で4段階に設定することができるようです。
+その他、必要になるキャリブレーションの仕組みはアプリケーション開発者側で考えて実装する必要があります。
+もちろんキャリブレーションの必要のない、極力少ない手順で安定して利用できる仕組みが実現できればすばらしいです。
+
+</fyi>
+
+</body>
+</doc>

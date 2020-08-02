@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+<doc xml:lang='ja'>
+<head>
+<title>Visual C++ 2008 Express Editionのセットアップ</title>
+<author>白井暁彦</author>
+<date>2008年5月16日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+ここではMicrosoft Visual C++ 2008 Express Editionのセットアップ、サンプル開発について解説します。既にVisual C++や.NETといった開発環境をお使いの方は、読み飛ばしていただいても問題ありません。
+
+
+まずマイクロソフトのホームページからMicrosoft Visual C++ 2008 Express Editionをダウンロードします。
+
+<fyi title="Visual C++ 2008 Express Edition">
+http://www.microsoft.com/japan/msdn/vstudio/express/
+</fyi>
+<figure id="fig:vstudio-hps" src="png/vstudio-hps.png" title="Microsoft Visual Studio Express製品のホームページ">
+</figure>
+
+「Web インストール (ダウンロード)」をクリックすると、Web インストール版セットアップファイル「vcsetup.exe」をダウンロードすることができます。このホームページにはVisual Studio製品を使う上での役に立つ情報がたくさんあります。とりあえずVC2008を使ってみたい方は「はじめての方のためのインストール方法」を読んでみるとすると良いでしょう。
+
+
+必要なハードディスク容量の確認、起動中のアプリケーションの終了などを行ってからインストール ウィザード「vcsetup.exe」を起動します。
+
+<figure id="fig:VC2008Inst1" src="png/VC2008Inst1.png" title="VC2008インストール ウィザード(step1)">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+「セットアップの品質向上プログラム」はチェックしてもしなくても、どちらでもかまいません。「次へ」をクリックして進みます。
+
+
+<figure id="fig:VC2008Inst2" src="png/VC2008Inst2.png" title="VC2008インストール ウィザード(step2)">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+ライセンス条項をよく読んで「同意する」を選んでください。また「Visual StudioでオンラインのRSSコンテンツを受信して表示できるようにする」も特に問題がなければチェックしましょう。イベントやサービスパックなどの更新情報がVC2008起動直後に表示されるスタートページに自動的に表示されるようになります（ここでのRSS受信の設定は後でもオプション→環境→スタートアップで変更できます）。「次へ」をクリックして進みます。
+
+<figure id="fig:VC2008Inst3" src="png/VC2008Inst3.png" style="width=:5cm" title="VC2008インストール ウィザード(step3)">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+「インストール オプション」を選択します。ここで表示されている3つのオプションは、どれもインストールしなくても問題ありません。「MSDN Express ライブラリ」はF1キーで呼び出せるドキュメントで、オンライン版の方が充実しているのですが、筆者は電車の中でコーディングをすることが多いのでインストールしています（オンライン版と統合して利用できます）。「SQL Server 2005」、「Silverlight」は使う予定がなければインストールしなくて良いでしょう。「次へ」をクリックして進みます。
+
+
+<figure id="fig:VC2008Inst4" src="png/VC2008Inst4.png" style="width=:5cm" title="VC2008インストール ウィザード(step4)">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+「コピー先フォルダ」とダウンロードパッケージのリストです。「インストールするフォルダ」は本書ではデフォルトのままとして解説します。ダウンロードリストの中に「Windows SDK」が入っているのが助かります(以前のExpress Editionでは別途インストールする必要がありました)。「インストール」をクリックするとダウンロードとインストールが実行されます。
+
+
+<figure id="fig:VC2008Inst5" src="png/VC2008Inst5.png" style="width=:5cm" title="VC2008インストール ウィザード(step5)">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+以上はWindowsXPシリーズにおけるVC2008セットアップの流れです（Windows Vistaの場合は「管理者権限で実行」をする必要がある点などいくつか細かい点が異なりますがほぼ同じ流れです）。興味がある方はVC2008のウィザードやオンラインチュートリアルなどを使って簡単なプログラミングを試してみると良いでしょう。
+
+
+
+</body>
+</doc>

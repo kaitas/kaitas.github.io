@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<doc xml:lang='ja'>
+<head>
+<title>WiiRemoteプログラミング入門</title>
+<author>白井暁彦</author>
+<date>2008年11月3日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+<abstract>
+ このPDFファイルはSmartDocによって自動生成されています。
+オリジナルファイルは「LearnMathPhysicsWithWiiRemote.sdoc.xml」です。
+
+このPDFはだいたいのページ数をつかんだり、編集作業のために利用しております。最終的な印刷物とは全く違うものです。もちろん著作権は白井暁彦とその共著者にありますので無断コピーや配布はしてはいけません。
+
+【この版における凡例】
+<ul>
+  <li>「★」執筆中、まだ完成していない章・セクション</li>
+  <li>「☆」日付など更新が必要な標記</li>
+  <li>「※」事実確認が必要な標記</li>
+  <li>「▽」没予定</li>
+</ul>
+
+
+</abstract>
+
+
+</head>
+<body>
+
+<chapter title="WiiRemoteのススメ">
+ <section title="はじめに" src="1-1-Hajimeni.sdoc.xml"></section>
+ <section title="★本書の構成"></section>
+ <section title="WiiRemoteの基礎知識" src="1-3-Basics.sdoc.xml"></section>
+ <section title="★WiiRemoteで何が創れる？" src="1-4-PastProjects.sdoc.xml"></section>
+</chapter>
+
+<chapter title="PC上で利用するWiiRemote事始め" src="2-Kotohajime.sdoc.xml">
+</chapter>
+<section src="C-GrayArea.sdoc.xml"/>
+
+<chapter title="BluetoothでWindowsPCと接続する" src="3-BlueTooth.sdoc.xml">
+</chapter>
+<section src="C-OsusumeBT.sdoc.xml"/>
+
+<chapter title="実験してみよう">
+ <section title="WiinRemoteを使ってみる" src="4-1-WiinRemote.sdoc.xml"/>
+ <section title="GlovePIEを使ってみる" src="4-2-GlovePIE.sdoc.xml"/>
+ <section src="4-3-OtherTools.sdoc.xml"/>
+</chapter>
+<section src="C-Virtools.sdoc.xml"/>
+
+<chapter src="5-SensorBar.sdoc.xml"/>
+<chapter src="6-SetupVC.sdoc.xml"/>
+<subsection src="C-VirtualCD.sdoc.xml"/>
+<subsection src="C-VersionSelector.sdoc.xml"/>
+
+<chapter title="API紹介">
+ <section src="7-1-TinyHID.sdoc.xml"/>
+ <section src="7-2-WiiYourself.sdoc.xml"/>
+ <section title="7.3 その他のAPI">
+  <subsection title="7.3.1 Wiim">
+   <subsubsection title="懐かしゲーム「Wiim Landar」">
+Wiim(http://digitalretrograde.com/projects/wiim/)はeric\_hcr80氏によって開発されたAPIで、GNU Lesser General Public Licenseで公開され、2007年☆に開発が終了しています。数あるWiiRemoteのAPIの中でも、唯一ゲームらしいゲーム「Wiim Landar」のソースコードが付属しています。機能的には加速度センサ、ボタン状態検出、LED・バイブレータ出力、マルチWiiRemoteへのアクセスなどが実装されています。Vectorクラスを利用し、コーディングはしやすいのですが、赤外線関係とヌンチャクなど外部端子の機能は未実装のままプロジェクトは終了しているようです(本人曰く、他のプロジェクトの急速な成長により、とのことです)。
+
+
+   </subsubsection>
+   <subsubsection title="★Wiim Landarの改良">
+まずはWiimのホームページからデモの実行ファイル「wiim\_lander\_demo.zip」を入手しましょう。こちらのアーカイブにはビルド済みの実行ファイルが含まれています。解凍したフォルダにはSDL.dll、SDL\_gfx.dll、そして実行ファイルWiimDemo.exeの3つのファイルがあるはずです。まずは「WiimDemo.exe」をダブルクリックしてみましょう。もしここで「このアプリケーションの構成が正しくないため、アプリケーションを開始できませんでした。アプリケーションを再度インストールすることにより問題が解決する可能性があります。」と表示された場合、★可能性があります。もしそれ以外のエラーが出た場合はランタイムがインストールされている状態です。今度はBluetooth接続を行ってから実行してみてください。
+
+
+   </subsubsection>
+  </subsection>
+  <subsection title="7.3.2 WiimoteLib"></subsection>
+  <subsection title="7.3.3 APIを使用しない接続方法"></subsection>
+ </section>
+</chapter>
+
+<chapter title="WiiRemoteプログラミング入門">
+ <section title="8.1 最小のWiiRemoteプログラム"></section>
+ <section title="8.2 WiiRemoteテルミン"></section>
+ <section title="8.3 PowerPointコントローラー"></section>
+ <section title="8.4 姿勢検出"></section>
+ <section title="8.5 赤外線4点検出"></section>
+ <section title="8.6 赤外線LEDを使った測量">
+  <subsection title="8.6.1 より広範囲を測定する場合"></subsection>
+ </section>
+ <section title="8.7 バイブレータとLED"></section>
+ <section title="8.8 ポーリング受信と動作周波数の測定"></section>
+ <section title="8.9 認識の基本"></section>
+ <section title="8.10 Socket通信"></section>
+ <section title="8.11 重力加速度を見る"></section>
+ <section title="8.12 振りぬく力・パンチ力測定"></section>
+ <section title="8.13 モーション解析"></section>
+</chapter>
+
+<chapter title="3DCG応用編">
+ <section title="フリースロー"></section>
+ <section title="9.1 3DCG＋物理エンジンとの組み合わせ(高橋さん担当分)">
+  <subsection title="9.1.1 Direct3D9の初期化(固定機能？)"></subsection>
+  <subsection title="9.1.2 Bulletの準備と初期化"></subsection>
+  <subsection title="9.1.3 球やボックスのような基本形状の利用"></subsection>
+  <subsection title="9.1.4 「pick」3Dオブジェクトを持ち上げて遊ぶ"></subsection>
+  <subsection title="(割愛予定)「だるま落とし」"></subsection>
+  <subsection title="(割愛予定)「ヌンチャク」ジョイントを使った例"></subsection>
+ </section>
+</chapter>
+
+
+<chapter title="プロジェクトサンプル">
+ <section title="10.1 レースゲームへの応用"></section>
+ <section title="10.2 赤外線マーカーを使ったモーションキャプチャ"></section>
+ <section title="10.3 お絵かきソフトへの応用"></section>
+ <section title="10.4 「振る」の認識"></section>
+ <section title="10.5 剣術アクションへの応用"></section>
+</chapter>
+
+
+<chapter title="Wii Flash を使ってみよう(ActionScript編)">
+ <section title="11.1 環境設定 (CS3のセットアップ DLとインストール)"></section>
+ <section title="11.2 WiiFlashのダウンロードとセットアップ"></section>
+ <section title="11.3 WiiFlashの基本機能"></section>
+ <section title="11.4 サンプルのテストでみる基本的な使い方"></section>
+ <section title="11.5 WiiFlashプロジェクトサンプル">
+  <subsection title="11.5.1 なりきりライトセーバー(原さん)"></subsection>
+  <subsection title="11.5.2 おえかき(尾崎さん)"></subsection>
+  <subsection title="11.5.3 DropShadow(尾崎さん)"></subsection>
+  <subsection title="11.5.4 ChunChun(原さん)"></subsection>
+ </section>
+</chapter>
+
+<chapter src="12-WiiProcessing.sdoc.xml"/>
+
+<chapter src="samplechapter.sdoc.xml"/>
+
+
+<chapter src="12-ColumnBuffer.sdoc.xml">
+ <section src="C-WiiFit-Who.sdoc.xml"></section>
+</chapter>
+
+<appendix title="付録">
+ <section title="索引"></section>
+ <section title="参考文献"></section>
+ <section title="登録商標">
+Wii\texttrademark 
+Wiiは任天堂の登録商標です。
+</section>
+</appendix>
+<!--<chapter src="test.sdoc.xml"></chapter>-->
+
+
+
+</body>
+
+</doc>

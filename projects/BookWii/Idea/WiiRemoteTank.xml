@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>ラジコンカーへ合体「WiiRemoteTank」</title>
+<author>小坂先生 rewrite by 白井暁彦</author>
+<date>14:38 2009/06/28</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+WiiRemoteを使ってラジコンカーを操作しようというアイディアを実現した人は(世界には)意外にいるようです。
+<fyi title="WiiRemoteをつかってラジコンカーを操作">
+http://gigazine.net/index.php?/news/comments/20061222_wii_rc/
+
+http://www.inside-games.jp/news/329/32904.html
+</fyi>
+この2006年12月のニュース(Gigazine)で紹介されている例は、WiiRemoteからの信号をBluetooth経由でPCに受信して、それをラジコンカーのコントローラー(プロポ)などに送信する方法です。
+
+
+「WiiRemote → PC →ラジコンプロポ→ラジコン」
+
+
+もうひとつの動画も同様で、WiiRemoteに飽きたらず、ヌンチャクやWiiBoard、さらにiPhoneを使ってラジコンカーを操作する動画を公開しています。
+
+
+<subsection title="ロボット兵器「WiiRemoteTank」">
+人がやったことをただ真似ても面白くありません。ここでは、上のような構成ではなく、
+
+
+「Wiiremote → PC → WiiRemote→ラジコン」
+
+
+というプロポすら使わない方法で、ラジコンを操作してみたいと思います。
+
+正確には「WiiRemoteでラジコンを操作」ではなく、WiiRemoteをラジコンと合体、つまり「WiiRemoteをラジコン化」した『WiiRemoteTank』を開発します。
+
+<figure src="Idea/kosaka/WiiTank1.png" title="ロボット兵器「WiiRemoteTank」">
+ <attribute locale="latex2e" name="style">width:5cm</attribute>
+</figure>
+
+ほとんどロボット兵器です。武器はありません。
+
+原理は簡単です。WiiRemoteあるプレイヤーインジゲーター(4つの青色LED)は、WiimoteLibのSetLEDs関数で信号を送るだけで、ON/OFFの出力ができます。このLEDの電力をモータードライバーに接続することでモーターを制御することができます。
+
+モータードライバーとは、その名の通りモーターを制御する電子部品です。2つの信号の組み合わせによって、モーターの回転、反転、停止を行うことができます。たとえば「[01]で前進」「[10]で反転」「[00]でストップ」といった2bitのデジタル信号で制御できますので、LEDの点灯制御を出力させてやるだけで、モーターの動作をコントロールできるわけです。
+</subsection>
+
+<subsection title="「WiiRemoteTank」の開発">
+ここではロボットの開発を演習している、大阪大学 応用理工学科機械系3年生の演習「機械創成工学演習」の教科書を参考にしています。
+<fyi title="大阪大学 細田耕先生による「機械創成工学演習III」テキスト">
+[URL] http://www.robot.ams.eng.osaka-u.ac.jp/hosoda/enshu/start.html
+
+
+■Toshibaのモータードライバー「TA7291P」データーシート
+
+[URL] http://www.robot.ams.eng.osaka-u.ac.jp/hosoda/enshu/doc/TA7291F_TA7291SG_ja_datasheet_070613.pdf
+</fyi>
+
+ここで紹介されているモータードライバー「TA7291P」を使います。WiiRemoteのLEDは4つあるので、このドライバーを使って2個のモーターを制御することが可能です。
+モーター2個で操作できる戦車といえば、「タミヤ タンク工作基本セット」でしょう。オンラインで1,500円で購入できます。
+<fyi title="[URL]タミヤ タンク工作基本セット">
+http://tamiyashop.jp/shop/product_info.php?cPath=17_149＆products_id=70108
+</fyi>
+
+続いてコントローラー用のWiiRemoteと制御用のWiiRemoteの2台を用意します。
+まず制御用のWiiRemoteを分解し、LEDの信号を取り出します。
+
+<fyi title="WiiRemoteを「分解」...？">
+　小坂先生は「WiiRemoteを分解」とあっさり書かれていますが、WiiRemoteのネジは特殊なドライバーでなければ回すことすらできません。もちろん全く保証外の行為ですが、そのようなドライバーなど無くても開けようと思えば開けることはできます。
+
+【参考】
+[URL] http://ameblo.jp/akihiko/entry-10056910390.html
+
+　特殊ネジをはずしたら、普通のネジを入れておきましょう。
+
+<figure src="Idea/png/Bunkai.png" title="精密ドライバーとペンチを使う"/>
+</fyi>
+
+さて、この先一番難しいのは、「WiiRemoteを分解しLEDに配線し、元通りに収めること」かと思います。かなりの集中力が要求されます。小坂研究室のTipsにWiiRemoteのLEDを換装する記事があるので参考にしてください。
+
+<fyi title="小坂研究室Tips「Wiiリモコンの青色LEDを赤色LEDに変更」">
+[URL] http://www.kosaka-lab.com/tips/2009/05/wiiledled.php
+</fyi>
+
+テスターを使って確認しながら進めてください。LEDのための信号を拾って、モータードライバーに接続します。
+
+コントローラー用のWiiRemoteの傾きをPCが読み取り、その傾きに合わせて、制御用WiiRemoteに信号を送るプログラムを別途作成しておきます。
+
+モーターが2つありますので、加速度センサーの傾きに合わせて2つのLEDに対して[00]～[11]を出力するようなプログラムで十分でしょう。
+
+<figure src="Idea/kosaka/WiiTank2.png" title="LED信号をモータードライバーに接続">
+<!-- <attribute locale="latex2e" name="style">width:7cm</attribute>-->
+</figure>
+
+</subsection>
+
+
+完成版の動画は小坂研究室にて見ることができます。
+<fyi title="小坂研究室Tips「Wiiでラジコン」">
+[URL] http://www.kosaka-lab.com/tips/2009/05/wii-2.php
+</fyi>
+コントローラー用WiiRemoteを傾けると、WiiRemoteTankが進みます。
+今回はWiiRemoteをプロポにして操作していますがWiiBoardなどで操作しても面白そうです。
+
+LEDの出力はまだ2チャンネル分残っていますから、他にも武器やデコレーションを装備したり、WiiRemoteの赤外線カメラを利用して、赤外線を自動に追尾して動くロボットや、ライントレーサー(黒い線に従って動くロボット)としても展開することができるでしょう。
+
+<subsection title="【演習問題】WiiRemoteによるロボット開発">
+<dl>
+  <dt>【演習】☆☆☆</dt>
+  <dd>WiiRemoteTankを応用して、周囲の赤外線を探して近づいてくる「ロボットペット」を開発せよ。</dd>
+</dl>
+
+今回はWiiRemoteをロボットへ内装する例として、LEDから信号をとる方法を紹介しました。LED以外にスピーカーのアナログ出力や、拡張端子のI2Cインターフェースを使方法も可能性がありそうです。ここでの例ではロボット戦車ですが、かわいらしいモンスターのぬいぐるみを着せたり、ゲームと連動させたりすると、ビッグなビジネスチャンスがありそうです(笑)。
+
+</subsection>
+
+
+</body>
+</doc>

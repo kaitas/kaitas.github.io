@@ -1,0 +1,36 @@
+/* 文章全体に関係する指定 */
+BODY
+{
+ font-family:sans-serif; /* ゴシック系フォント */
+ font-size:80%;          /* こころもち小さく */
+ color:black;            /* 文字色白 */
+ background-color:white; /* 背景は黒板の色 */
+}
+
+/* リンクタグ全体に関する指定 */
+A { color:white; } /* 基本は白。以下背景の色を状態によって変える */
+A:link    { background-color:maroon; } /* 未参照のリンク */
+A:visited { background-color:green; }  /* 参照済のリンク */
+A:active  { background-color:red; }    /* アクティブなリンク */
+A:hover   { background-color:aqua; }   /* マウスオーバー時 */
+
+.toptitle  /* ページトップ等につかう */
+{
+ font-family:cursive; /* 手書き系フォント */
+ font-size:200%;      /* 文字は大きく */
+ color:white;         /* 文字色は白 */
+ text-align:center;   /* センタリング */
+ border:dashed;       /* 破線で囲む */
+ padding:10pt;        /* 周囲10ポイント空ける */
+ background-color:green; /* 背景は緑(ちょっと明るい) */
+}
+
+.title /* 段落中のタイトルなどに使う */
+{
+ font-family:sans-serif; /* ゴシック系 */
+ font-size:100%;         /* (サイズ普通)比べてちょっと大きい */
+ color:white;            /* 文字色は白 */
+ text-align:center;      /* センタリング */
+ padding:10pt;           /* 周囲10ポイント開ける */
+ background-color:green; /* 背景は緑(ちょっと明るい) */
+}

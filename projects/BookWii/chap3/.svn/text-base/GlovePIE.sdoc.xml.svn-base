@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>GlovePIEで実験</title>
+<author>白井暁彦</author>
+<date>2009年5月10日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai at mail.com</email>
+
+</head>
+<body>
+
+<subsection title="GlovePIEとは">
+
+GlovePIEは最も使用されている、WiiRemoteをサポートするコントローラエミュレーターです。Carl Kennerによって開発されています。GlovePIEとは「Glove Programmable Input Emulator」の意味で、もともとヴァーチャルリアリティのためのデータグローブ製品「5DT」を使って、さまざまなゲームをプレイするためにジョイスティックやマウスをエミュレーションするために開発されていたようです。その成長の過程でWiiRemoteをサポートし、有名になりました。
+特徴として、すべてのエミュレーションを専用のスクリプトで記述します。例えば「Aボタンをショット、Bボタンをボムに」といったゲームそれぞれの割り当てを、自分で書くことができるのです。
+
+例えば、「DOOM」などの一人称シューティングゲームでよく使われる[W][A][S][D]キーがそれぞれ前後左右の移動キーに割り当てられている場合、GlovePIEスクリプトでは、データグローブの位置を使って
+<program><![CDATA[
+W = glove.z > -50 cm
+S = glove.z < -70 cm
+A = glove.x < -10 cm
+D = glove.x > 10 cm
+]]></program>
+と表現することができます。他にもジョイスティックやマウス、キーボードも複数のキー入力を連続したマクロとして扱うことなどもでき、SAPI(音声出力API)や、電子音楽で使われるMIDIやOpenSound Control(OSC)などの出力もサポートしており、非常に高機能なツールといえます。
+
+</subsection>
+
+<subsection title="GlovePIEのインストール">
+
+GlovePIEのインストールは非常に簡単です。公式ホームページに行き、最新版をダウンロードし、アーカイブを展開するだけです。
+<fyi title="GlovePIEのホームページ">
+http://carl.kenner.googlepages.com/glovepie_download
+</fyi>
+
+最新版はバージョン0.30なのですが、深刻なバグ(赤外線センサー使用時に加速度センサーキャリブレーションに不具合)を理由に公開が中止されています。ジェスチャー認識などたくさんの新機能が盛り込まれているようなのですが、「公開されるまでの間0.29をお使いください」と書かれたまま、ずいぶんと長い時間が経ってしまっています。Ver.0.29の公開は2007年1月4日と少々古いのですが特に問題はないので、こちらをダウンロードしましょう。
+
+<figure id="GlovePIEDL.png" src="png/GlovePIEDL.png" title="GlovePIEのホームページ：ダウンロードに関して">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+
+ダウンロードのリンクも帯域の制限などで4箇所ありますので、確実にダウンロードできているかどうか確認しながら「GlovePIE029.zip」をダウンロードしてください。
+
+<figure id="GlovePIE029.png" src="png/GlovePIE029.png" title="GlovePIE ver.0.29を展開したところ">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+
+ダウンロードしたZIPファイルを展開すると、たくさんのファイルが現れます。実行ファイルは「GlovePIE.exe」ですが、まずはライセンス関係を確認するために「readme.txt」を開きましょう。
+
+ライセンスに関しては、以下のように記述されています。
+<program>
+This software is copyright (c) Carl Kenner, except for scripts by other authors.
+By using this software you agree to obey the following license conditions:
+
+* You can't make money using this software as part of a baseball simulation. This is for contractual reasons. But you can make as much money as you like using it for anything else.
+
+* You may not use this software directly or indirectly for any military purpose. This includes, but is not limited to, training, research and development, controlling military hardware, directing military personel, or troop entertainment. You may not use this software anywhere on a military base or vessel. This applies to all versions of PIE.
+
+* You may not export this software to Israel, or use it in Israel (including the occupied territories), until Israel has ended its occupation of the West Bank, Gaza Strip, Lebanon, Syria, and anywhere else it may occupy. If you try to run it in Israel it will give you an error.
+
+* Missionaries may not use this software. It may not be used for any missionary purpose. Or any other genocidal purpose.
+
+* You may not use this software to cheat at online or multiplayer games. What constitutes cheating depends on the game and the server. Just using a different input device shouldn't be considered cheating, but complex scripted actions to make things easier may be considered cheating. Don't get GlovePIE banned, or you will hurt everyone who wants to play with a VR glove. But feel free to cheat at single player!
+</program>
+
+意訳すると、以下のようになります。
+「このソフトウェアのコピーライトは(c)Carl Kennerです。他の著者による著作(スクリプト)を除きます。このソフトウェアを使用することにより、以下のライセンス条項に従うことに同意します。あなたは、このソフトウェアを野球シミュレーションの一部のようにして、お金を儲けることができませんが、これは契約上の理由です。他の何かに使うことで、好きなだけお金を儲ける機能を有します。直接または間接的に、このソフトウェアを軍用目的に使用してはいけません。これはトレーニング、研究開発、軍用ハードウェアの制御、部隊指示、部隊の娯楽などを含み、限定されません。このソフトウェアを軍用基地もしくは軍用艦内で使用してはいけません。これはPIEのすべてのバージョンに該当します。このソフトウェアを、イスラエルがウエストバンク(ヨルダン川西岸)のその占領、ガザ地区、レバノン、シリアと他の占領区の占有を終えるまで、イスラエルに輸出もしくはイスラエル(占有された領土を含む)で使用してはいけません。もしあなたがこのソフトウェアをイスラエルで実行しようとすれば、あなたにエラーを与えます。宣教師は、このソフトウェアを使用してはいけません。いかなる伝道目的、もしくは他のいかなる大量虐殺目的にも使われてはいけません。オンラインまたはマルチプレーヤーゲームでいかさまをするために、このソフトウェアを使用はしてはいけません。不正行為を意味するところは、ゲームとサーバーに依ります。普段と異なる入力デバイスを使うことは不正行為とされるべきではありませんが、物事をより簡単にするための、複雑なスクリプト化されたアクションは不正行為になるでしょう。GlovePIEを禁止されないようにしてください。もし、VRグローブでみんなを傷つける遊びをしたいなら、シングルプレーヤーで不正行為を遠慮なくやってください！」
+
+本書を読んでいらっしゃる方で、このライセンス条文が問題になる人はまずいないでしょう。
+もしこのソフトを使ってお金持ちになったなんていい話があったら、ホームページの「Donate」から、作者のCarl Kenner氏に募金をするとよいかもしれません。特に、新しい機能についてのアイディアなども募金と共に募集しています。
+</subsection>
+
+<subsection title="GlovePIEの基本操作">
+まず、3.1章の流れに沿って、WiiRemoteをBluetooth接続してください。無事接続が終わったら「GlovePIE.exe」を起動します。
+
+<figure id="GP01.png" src="png/GP01.png" title="GlovePIEを起動したところ">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+この後、サンプルスクリプトを読み込んで、実際にWiiRemoteを使って操作を行う実験を行います。
+ここで注意です。スクリプトが想定外の動作をすることで、正常な操作ができなくなる可能性があります。そうなったときに慌てないために[Shift+P+I+E]もしくは[Alt+R]→[S]で「スクリプトの停止」ができることを覚えておくとよいでしょう([Shift+PIE]は動作しないこともあります)。
+
+まずは最も簡単なWiiRemoteを使うサンプルスクリプトを試してみましょう。
+「File」メニューから「Open」を選んで、GlovePIEと同じ階層にある「WiimoteScripts」フォルダ内にある「Wiibrator.PIE」をロードします。
+なおこのディレクトリには大量の面白そうなファイル名が並んでいます。PIEスクリプトというテキストファイルで、様々なゲームのエミュレーターや、Windows上でWiiRemoteを使うためのサンプルが用意されています。メモ帳などのテキストエディタで開いたり編集することもできますが、この際なので「.PIE」という拡張子をGlovePIEに関連づけてしまうのもよいでしょう。
+
+
+<figure id="GP02.png" src="png/GP02.png" title="サンプル「Wiibrator.PIE」をロード">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+スクリプトがロードされると、以下のように表示されているはずです。
+
+<program title="Wiibrator.PIE">
+//Wiibrator 
+//By deceased 
+
+// Does not control mouse so feel free to surf ^^ 
+
+// D pad up turns it on 
+// D pad down turns it off 
+if wiimote.Up 
+  wiimote.Rumble = 1 
+endif 
+if wiimote.Down 
+  wiimote.Rumble = 0 
+endif
+</program>
+
+さて、このスクリプトは十時キーを使ってバイブレーターをOn/Offするだけのスクリプトですので安心して実行できます。[F9]もしくは、メニューの[Run!]から[Run!]を選んで実行してみましょう。
+
+緑の三角矢印が「Run」から「Stop」に変わり、スクリプト表示エリアがグレーになったら実行中です。接続したWiiRemoteの十時ボタンの上(POWERボタン側)を押してみましょう。バイブレーターが作動します。あわてず十時ボタンの下(Aボタン側)を押すと、止まります。何度でも繰り返し遊んでみてください。ひととおり遊んだら、GlovePIEウィンドウ内の「Stop」を押してスクリプトを止めましょう。
+
+さて、スクリプトを解説してみます。「//」で始まる行はコメントなので、実質6行のスクリプトです。
+まず、PIEスクリプトは非常に動的でユーザーフレンドリーなスクリプトで、ほとんどのケースで初期化コードが不要です。
+一番上から実行され、一番下までいくと、また上から実行されます。
+この場合も宣言や初期化などしなくても
+<program>
+if wiimote.Up
+</program>
+とすることで、WiiRemoteが初期化され、現在のボタンの状態を「wiimote.Up」で取得することができます。
+ここが「True/1」になったときに
+「wiimote.Rumble = 1」となりバイブレーターを駆動し、「endif」でif文を抜けます。
+下を押した場合つまり「if wiimote.Down」の場合も同様で、バイブレーターの振動を意味する「wiimote.Rumble」を「0」にすることで振動を止めます。
+
+例えば、ここで新しくシンプルなスクリプトを作成してみましょう。
+「File」メニューから「New」を選びます。「Clear text box without saving changes?(保存しなくてもいいですか？)」という質問が出たら「Yes」で問題ありません。新しいスクリプトとして以下をテキストボックスに書きます。
+<program>
+wiimote.Rumble = wiimote.A
+</program>
+たった一行のスクリプトですが、Aボタンを押している間だけ、バイブレーターが鳴ります。
+GlovePIEはスクリプト記述についても支援機能があり、「wiimote.」といったように予約されたクラス名とピリオドまで書くと、自動的にその先のプロパティ名などをリストしてくれます。これでマニュアルがなくても簡単にスクリプトが書けますし、またシンタックスエラー(文字の書き損じによる間違い)も大きく減らすことができます。
+
+書き終わったら、まずはシンタックスを確認しましょう。メニューの「Run!」から「Check for errors」を選びます。何か間違いがあると、該当する行がピンク色に変わります。間違いがなければ何も起きませんので、[F9]で実行しましょう。無事に、Aボタンを押している間だけバイブレーターが鳴れば成功です。「Aボタン連打！」などしてみて、バイブレーターの鳴り具合を確認してみるとよいでしょう。
+
+もし挙動がおかしい、反応がない、といったときは、接続を確認するために、WiinRemoteなど確実に動くツールを起動してみるとよいでしょう。Bluetoothが時間切れで自動切断されている場合もあります。単純なスクリプトなので、挙動がおかしいときは、単にGlovePIEやPCを再起動してみるのも解決策になるときもあります。
+
+
+<fyi title="バイブレーターを“暴走”させてみよう">
+ここでバイブレーターに関する注意を実験を通して確認します。バイブレーターを起動した状態でスクリプトを止めると何が起きるでしょう？上記のスクリプトでは、Aボタンを押しっぱなしにした状態で、GlovePIEをスクリプトを停止させます。するとスクリプトは終了しているのに、バイブレーターは鳴り続けます。大変です。暴走状態です。この状態でしばらく放っておくとあっという間に電池が切れてしまいます。しかし、スクリプトを再度起動しても、Aボタンを連打しても、バイブレーターは止まらないかもしれません(これはバグではないかと見ています)。
+
+こういうときは、慌てず騒がず、GlovePIEを終了します。スクリプトの保存が必要なら保存をしておきます。そして、再度、GlovePIEを起動し「Wiibrator.PIE」などのバイブレーターを使用するスクリプトを読み込んで、Runすればバイブレーターの暴走は止まります。
+</fyi>
+
+</subsection>
+
+</body>
+</doc>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

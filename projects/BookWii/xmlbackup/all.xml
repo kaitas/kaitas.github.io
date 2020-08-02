@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<doc xml:lang='ja'>
+	<head>
+		<title>WiiRemoteプログラミング入門</title>
+		<author>白井暁彦</author>
+		<date>2008年11月26日版</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+		<abstract>このPDF、HTMLファイルはSmartDocによって生成されています。 PDFはだいたいのページ数をつかんだり、編集作業のために利用しております。HTMLも関係各位に内容を確認するために出力しています。最終的な印刷物とは全く違うものです。もちろん著作権は白井暁彦とその共著者にありますので、無断コピーや配布はしてはいけません。 【この版における凡例】 
+		<ul>
+			<li>「★」執筆中、まだ完成していない章・セクション</li>
+			<li>「☆」日付など更新が必要な標記</li>
+			<li>「※」事実確認が必要な標記</li>
+			<li>「▽」没予定</li>
+		</ul></abstract>
+	</head>
+	<body>
+
+		<chapter src="chapter1.xml" title="WiiRemoteのススメ"/>
+		<chapter src="chapter2.xml" title="PC上で利用するWiiRemote事始め"/>
+		<chapter src="chapter3.xml" title="プログラミング環境のセットアップ"/>
+		<chapter src="chapter4.xml" title="WiiRemoteプログラミング入門"/>
+		<chapter src="chapter5.xml" title="API紹介"/>
+		<chapter src="chapter6.xml" title="プログラミング応用編"/>
+		<chapter src="chapter7.xml" title="3DCG応用編"/>
+		<chapter src="chapter8.xml" title="Wii Flashを使ってみよう(ActionScript編)"/>
+		<chapter src="chapter9.xml" title="WiiFlashを使いこなしてみよう(Processing編)"/>
+		<chapter src="chapter10.xml" title="センサーバーを自作してみよう" />
+		<chapter src="chapter11.xml" title="プロジェクト紹介"/>
+		<!--
+		<chapter src="samplechapter.sdoc.xml"/>
+		<chapter src="12-ColumnBuffer.sdoc.xml">
+		 <section src="C-WiiFit-Who.sdoc.xml"></section>
+		</chapter>
+
+		<appendix title="付録">
+		 <section title="索引"></section>
+		 <section title="参考文献"></section>
+		 <section title="登録商標">
+		Wii\texttrademark 
+		Wiiは任天堂の登録商標です。
+		</section>
+		</appendix>
+		<chapter src="test.sdoc.xml"></chapter>
+		-->
+		<!--<cite idref="javatips">ご参考</cite>というようにして使います。-->
+		<bibliography>
+			<book id="javatips">
+				<author>浅海智晴</author>
+				<title>Java Super Tips</title>
+				<publisher>秀和システム</publisher>
+				<year>2000</year>
+			</book>
+			<book id="xmldom">
+				<author>浅海智晴</author>
+				<title>XML/DOM Programming</title>
+				<publisher>秀和システム</publisher>
+				<year>2001</year>
+			</book>
+		</bibliography>
+		<!--
+		<appendix title="appendix">
+		appendix
+		</appendix>
+		-->
+	</body>
+</doc>

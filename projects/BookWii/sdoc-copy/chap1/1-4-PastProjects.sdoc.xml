@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiiRemoteで何が創れる？</title>
+<author>白井暁彦</author>
+<date>2009年3月31日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+
+現在、世界中の有志により、WiiRemoteをPCで利用できるようにする取り組みがされています。
+そして、それらのツールやオープンソースのAPIを利用して、世界中の学生を中心にさまざまなWiiRemoteを使った革新的なプロジェクトが開発されています。
+
+ここではまずWiiRemoteを使ったプログラミングで、どんな楽しいことが実現できるか、最新の学生プロジェクトを中心に紹介していきたいと思います。
+
+
+
+<subsection title="巨大なイカロボット「IKABO」を操作する">
+まずは北海道から、巨大なロボットをWiiRemoteで操作するプロジェクト「未来大 IKABO Project」を紹介します。
+
+制作者のひとり、はこだて未来大の味岡真広さんによると『設計図や仕様書のようなものは、学生がゴリゴリ作ったものなのでありません』と、きっぱり。もともとは｢ロボットフェス･インはこだて｣市民の会という組織が中心となって作った「観光用の巨大イカロボット」で、はこだて未来大学の3年生が中心となって、ソフトウェアの部分を開発したそうです。
+ロボットの詳細はIKABO公式サイト(http://ikarobo.com/)に記載されていますが、身長220cm、重量約200kg、エアシリンダーによるアクチュエーターで、足1本につき3つの関節、さらに1つの関節に3つのエアシリンダーを搭載しており、足1本につき512通りの動作の実現しています。足は2対ありますので、合わせて約25万通りの動作、さらに目や頭も動きますので、WiiRemoteを使うことで、イカロボット独特の多様なポーズの設定ができるようになっています。
+
+このような複雑なロボットの操作であっても「どんな人でも簡単に操作できるように」と、過去にタッチパネルを用いた操作ツールも開発したようです。その後、WiiRemoteをつかった独特の操作として、両手にWiiRemoteを持ち、操作者が腕を動かす動きに対応して、IKABOの足が動作させる方法をに辿り着きました。これにより操作者の動きに合わせた自由な動作、複雑な動きやユニークな動きを実現することができるようになったそうです。
+
+<figure id="fig:IKABO1.jpg" src="chap1/png/IKABO1.png" title="イカ型ロボット「IKABO」">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+<!-- <attribute locale="latex2e" name="style">BoundingBox: 0 0 336 448</attribute>-->
+</figure>
+
+<figure id="fig:IKABO2.jpg" src="chap1/png/IKABO2.png" title="WiiRemoteをつかってIKABOを操作する">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+<!--
+<figure id="fig:IKABO3.jpg" src="jpg/IKABO3.jpg" title="IKABO3">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+開発プラットフォームはVisual C++ MFCアプリケーションで、APIは「WiiYourself! - native C++ Wiimote library  v0.96b」を使用しています。WiiRemoteから3軸加速度+ボタンの情報を取得し、3軸加速度から3軸の傾き情報にプログラム上で変換し、イカロボットの腕の動作を決めています。その情報を有線シリアル通信(USB)もしくはネットワーク(DirectPlay)でイカロボット実機へ動作指示を通信し、イカロボット内にあるマイコンボートに送信しています。
+
+実際の操作は、イカロボットが目の前にいるなら目で、遠いところにいるなら、操作ソフトに組み込んだリアルタイム動画配信によってイカロボットが動いているのを見て行うそうです。WiiRemoteで実物のロボットを動かすことで、ユーザの動きをイカロボットが真似てくれる、という点が楽しいそうです。
+
+実際に地元のお祭りでも盛り上がっているようで、YouTube上で大観衆の中、クネクネ動くIKABOのアツい動画を見ることができます（http://jp.youtube.com/watch?v=4P_alu527SY）。
+</subsection>
+
+<subsection title="自由に氷柱を生やす「Gla&#231;on」(奈良先端大)">
+続いて、奈良先端科学技術大学院大学(NAIST)情報科学研究科の学生チーム『サムい人たち』(千原研・横矢研・加藤研)が、第16回国際学生対抗VRコンテスト（IVRC2008、http://ivrc.net/）で製作した「Gla&#231;on」(グラソン)を紹介します。「Gla&#231;on」はフランス語で「氷・ツララ」を意味しますが、WiiRemoteを使って『自由に天井から生える氷柱をのばすことができる』という作品です。
+<figure id="glacon1" src="chap1/png/glacon1.png" title="「Gla&#231;on」体験の様子">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+<figure id="glacon2" src="chap1/png/glacon2.png" title="WiiRemoteを内蔵したライトを向けると神秘的な氷柱が伸びる">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+チーム代表の吉竹大輔さんによると「温暖化により失われゆく地球の神秘さや魅力を、メディアアート的なアプローチにより表現することを目指しました。ブースの天井をWiiRemoteを使ったライト型デバイスで照らすことで、天井からツララが伸び、水滴が床へ滴るなどのインタラクションが生まれます。 複数人が協調してツララと関わり合う過程において、自然現象や環境問題を、そして自分たちが自然と関わり合う中で何ができるのかを考えるきっかけとなることを願い、この作品は制作しました」とのことです。
+
+開発プラットフォームは、ViualStudio 2005(C++)、Bluesoleil 1.6.1で、オープンソースなどのAPIは使用せず、Windows Driver Kit(WDK)をつかって研究室のスタッフとともに開発したそうです。
+
+インタラクション技術としては、ユーザーが天井を指すことにより、指した天井の位置を計算する点でなかなか難しいことを実現しています。仕組みとしては、床と垂直な平面(壁)のセンサ面に赤外線LEDを4点、正方形の角となるように配置し、その4点の座標をWiiRemoteで取得、それらの位置関係(正方形の変形の度合い)からセンサ面に対するWiiRemoteの入射角を画像処理ライブラリ「OpenCV」を使って求めているそうです。この角度と4点の座標から天井のどの位置をWiiリモコンが指しているかを推定し、天井のつららを制御するモータを回転させたり、床の光の波紋を発生させたりしています。
+
+残念ながらコンテストでは東京予選で敗退してしまいましたが、作品開発の様子はYouTubeで見ることができます(http://jp.youtube.com/watch?v=waVNvmwKWaM)。
+
+</subsection>
+
+<subsection title="ニオイの吹き矢「La fl&#232;che de l'odeur」(金沢高専)">
+こちらもIVRC2008で発表された作品、ニオイの吹き矢で遊ぶゲーム「La fl&#232;che de l'odeur（ラ・フレッシュ・デ・ロドー）」。
+タイトルを日本語訳すると『ニオイの矢』。フランス語で『ニオイ・ダーツ』とも訳せます。金沢工業高等専門学校・小坂研究室による『飲食物を飲食しながら口臭を変化させ、口臭を用いてモンスターを倒す』ゲーム作品で、高専学生が匂いセンサーとWiiRemoteを組み合わせて開発したものです。
+
+チームリーダーの金沢工業専門学校、国際コミュニケーション情報工学科 岩本拓也さんにインタビューしたところ「人に不快感や嫌悪感をえる口臭に着目し、口臭を入力としたデバイス“吹き矢型デバイス”及びそれを応用したコンテンツ『La fl&#232;che de l'odeur』を提案しました。吹き矢型デバイスはプレイヤーがの吹き込む息を計測することによって息の速さ、そして臭いセンサを用いて口臭の要素を計測し、WiiRemoteが吹き矢型デバイスの向きを検出しています。ゲームの中では、スクリーンに現れるモンスターを、吹き矢型デバイスを吹いて撃退していきます。モンスターには弱点となるニオイがあって、プレイヤーはプレイ中に実際にポテトチップやチーズなどの食べ物を飲食しながら口臭を変化させて遊びます。二人同時にプレイして、モンスターの弱点となる種類の口臭の吹き矢を上手に選べば、モンスターを上手に撃退することができます」といったコメントをいただきました。
+
+ゲームとしての完成度は非常に高く、美麗なグラフィックスの最後に現れるラスボスは「（水を口でゆすいで）"清い息"で倒す」とインタラクションデザインも秀逸です。グラフィックスはDirectXで開発し、観客をリアルタイムで動画合成したり、扇風機を制御したりと、WiiRemoteの活用だけでなく演出面の技術的も高度なことを実現しています。
+
+
+<figure id="LaFlecheSystem" src="chap1/png/LaFlecheSystem.png" title="「La fl&#232;che de l'odeur」のシステム構成図・小坂研究室提供">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+
+<figure id="LaFlechePlaying" src="chap1/png/LaFlechePlaying.png" title="ニオイの出る食べ物を食べて、吹き矢を吹いてプレイ！">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+<figure id="LaFlecheScreen" src="chap1/png/LaFlecheScreen.png" title="DirectXで開発されたグラフィックスの作り込みもすばらしい">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+開発環境は、Windows Vistaに、Microsoft .Net Framework 2.0、Visual C#、Microsoft XNA、Microsoft DirectX August 2007という組み合わせで、WiiRemoteとの接続APIは「WiimoteLib」を使用しています。
+
+コンテストでは見事最終選考に残り、総合3位にあたる「各務原市長賞」を受賞しました。なおこのWiiRemoteと臭いセンサーを使った吹き矢型のデバイスは特許申請中で、メディアアート作品の登竜門であるNHK-BS「デジタルスタジアム」で紹介されるなど高く評価されています。学生VRコンテストのスポンサーである岐阜県各務原市の名産「各務原キムチ」のニオイに注目して脚光を浴びせるなど、新たな展開も期待できそうです。作品の開発や体験の様子も動画で公開されています(http://jp.youtube.com/user/KosakaChannel)。
+なお、この作品の制作を監修した金沢工業高等専門学校の小坂崇之先生には、プログラミング入門編で協力を頂いております。
+
+</subsection>
+
+<!--
+<subsection title="★アリの巣を可視化する(米国)">
+"Atta Texana Leafcutting Ant Colony: A View Underground"
+http://www.siggraph.org/s2008/attendees/newtech/23.php
+
+The Atta project maps tunnels and chambers of a vast leafcutting ant colony. A ground-penetrating-radar scan was translated into a 3D model that can be viewed on an immersive visualization system that scales the viewer to ant size. The scanning is nondestructive and is the first time GPR has been used to map a living ant colony.
+
+To achieve this goal, the project combines the site-specific nature of an indexical system, GPR, with the ability of an algorithm to parse the data. The model retains a formal connection with its subject and can be distributed and viewed in many different ways.
+
+Enhanced Life
+When combined, all ants in the world weigh about as much as all humans. Yet we tend to view ants as tiny individuals rather than the superorganisms scientists have discovered them to be. The immersive system scales the viewer to ant size and reveals a different perspective on colony architecture.
+
+Goal
+Methods of modeling ant colonies include pouring casting material into a nest, digging it up and piecing it back together, or using a bulldozer to scrape away successive layers of soil and measuring the diameter of the holes. The goal of this project was to find a nondestructive way to create a model.
+
+Innovations
+This is the first time GPR has been used to model an ant colony. A method was developed to translate data from proprietary scanning software to a format suitable for high-end 3D modeling, by building layers around known voids. The system may be adaptable to other projects with similar parameters.
+
+Vision
+This project is part of a larger endeavor to document a landscape using technology in nondestructive ways. One might think of threatened ecosystems as exotic and distant, but much rural land continues to disappear beneath development. There is still much to be discovered in a single patch of one's backyard.
+
+Contributors
+Carol LaFayette
+Fred Parke
+Lauren Simpson
+Audrey Wells
+Igor Kraguljac
+Visualization Department, Texas A and M University
+
+Carl J. Pierce
+St. Lawrence University
+
+Tatsuya Nakamura
+Starz Animation 
+
+http://news.bbc.co.uk/2/hi/technology/7563372.stm 
+
+http://www.youtube.com/watch?v=8auq5Jx-0bI 
+</subsection>
+-->
+
+<subsection title="WiiFitを使った文学作品『人間椅子』">
+こちらも学生VRコンテストIVRC2008より、東京大学大学院の学生によるWiiFit「バランスWiiボード」を使った“文学作品”『人間椅子』を紹介します。
+この作品は情報理工学系研究科の家室 証さんらによる、江戸川乱歩の小説『人間椅子』に着想を得たシステムです。『人間椅子』という短編小説のプロット『ある椅子職人が自分の作製した椅子の中に隠れ、上に座ってきた様々な人の感触を全身で楽しんだ』という物語、つまり、椅子の中に人間が隠れ、上に座ってきた人の感触を楽しむという体験を提供する恐ろしくも甘美な発想による作品です。システムは潜伏椅子と安座椅子の2つの椅子で構成されており、潜伏椅子に座った体験者は、まるで安座椅子に座っているもう1人の体験者が自分の太ももの上に座っているかのような感覚を得ることができるという設計です。
+
+この怪しさ満点の作品のどこにバランスWiiボードが使われているかというと、安座椅子における座面への荷重の取得のために、2台のバランスWiiボードが用いられています。これによって得られる荷重情報を基にして、潜伏椅子に実装されたモータとベルトを用いた機構に、重さが提示されます。また同時に、太もも上におかれたパッド内のヒータで熱を太ももを温めることで、まるで本当に人が乗っているような温かさと重さが再現されます。
+
+<figure id="NingenIsu" src="chap1/png/NingenIsu.png" title="『人間椅子』右側の椅子に2台のバランスWiiボードが内蔵されている">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+作品の最大の特徴は、小説『人間椅子』の体験を再現しようとしたことにあると言えるでしょう。
+このような「人に上に座られる」という体験から要素を抽出し、さらにバランスWiiボードという、安定して座っている人間の状態を取得できるデバイスを使い、2台の椅子によってシステムを構築することによって、この作品は他では味わえない「空間的・時間的に離れた人に座られる」という特異な体験を提供しています。 
+
+バランスWiiボードを用いた事により、荷重の取得を高速かつ安定に行うことが可能になっており、潜伏椅子に座った体験者は、安座椅子に座った体験者の動きをリアルタイムに感じることができる。バランスWiiボード自体は4本の脚に加わる荷重を独立に取得可能なため、体験者の両足の尻側、膝側という計4つの荷重を取得するには最低限1台のボードがあればよいのですが、様々な体験者の体型や座り方に対して安定に値を取得するため、このシステムでは2台のボードを用いて、1台につき片足の尻側と足側の2つの荷重値の取得を行っています。
+
+このようにして得られた計4つの荷重値を基に、潜伏椅子に配置された4つのモータへの出力電流が決定され、モータを用いてベルトを巻き取り、太もも上に置かれたパッドを太ももに押しつけるというシンプルな構造によって、体験者の太ももに対して重さの提示が行われています。
+<!--提示可能な力の大きさがモータ1つにつき約3kg程度と小さいため、得られた荷重値に適当なスケーリングを施して出力を決定している.-->
+
+
+バランスWiiボードを用いた荷重取得には、同じ東京大学の先輩、南澤さんが公開している「WiiBoard to PC ver.2.0」が使用されています。このサンプルプログラムによって、BluetoothでPCと接続されたバランスボードから、荷重値を取得することができます（http://minamizawa.jp/wii/）。
+
+さて作品『人間椅子』はコンテストでは最終選考まで勝ち残ることができました。作品の様子はIVRCの公式サイトで見ることができます(http://ivrc.net/2008/）。
+
+</subsection>
+
+
+<subsection title="赤外線をつかったモーションキャプチャ「SoundQuest」(フランス・ラヴァル)">
+<figure id="SoundQuest2" src="chap1/png/SoundQuest2.png" title="「Sound Quest」天井にも赤外線検出用のWiiリモコンが設置されている"><attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+
+日本の学生の活動だけではありません。世界中の学生がWiiRemoteを使って新しいインタラクティブ技術を生み出しています。フランス西部のラヴァル(Laval)にあるENSAM(国立工芸大)Presence ＆ Innovation研究所の学生さん、アレクシィ・ゼルーグ(Alexis Zerroug)は、『SoundQuest』というWiiRemoteの赤外線センサーを安価なモーションキャプチャとして使うことで『映像を全く使わないゲーム』を開発しました。『視覚を使わない』というコンセプトのテーマパークのアトラクション開発のためのプロトタイプで、フランスで毎年開催されているヨーロッパ最大のヴァーチャルリアリティのイベント「Laval Virtual ReVolution 2008」で発表されました。Wiiリモコンを天井に吊り、ユーザーは別のWiiRemoteが内蔵された無線ヘッドフォンを装着します。ヘッドフォンの上には赤外線マーカーが付いており、天井のWiiRemoteでユーザーの頭を検出できるモーションキャプチャとして利用しています。3次元音響空間の中にいるヴァーチャルキャラクターを探し出したり、手元のヌンチャクコントローラーを使ってインタラクションするというもの。
+
+モーションキャプチャシステムは人間の動きを高速にとらえることができますが、高額な装置で、準備や装着に時間がかかるので、一般的には映像制作会社などプロ用途でしか使われていません。このプロジェクトが秀逸なのは、数百万円するモーションキャプチャを安価なWiiRemote複数台で作っている点です。天井から吊したWiiRemoteによって、頭につけた三角に配置した赤外線LEDのマーカーによって、ユーザーの頭の向きを検出しています。つまり、頭にヘッドホンを装着するだけで位置や方向が検出できるので、いろいろな応用ができそうです。
+
+<figure id="SoundQuest1" src="chap1/png/SoundQuest1.png" title="無線ヘッドホンとWiiRemoteを内蔵した赤外線マーカー">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+<figure id="SoundQuestFig" src="chap1/png/SoundQuestFig.png" title="SoundQuestのシステム概要図">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+
+開発はVirtoolsという産業用ヴァーチャルリアリティプロトタイプ開発ツールで行っています。VirtoolsはちょうどFlashのようなコンテンツオーサリング環境なのですが、付属のSDKとC++をつかって独自のプラグインを開発し、機能を拡張できます。WiiRemoteと通信するプラグインを開発して、赤外線LED3点から向きを算出するプラグインを開発しています。
+
+ちなみにこのシステムを開発したアレクシス・ゼルーグ氏は筆者のフランス時代の教え子でもありますが、現在、東大に留学中です。開発の様子はYouTubeで公開されています(http://jp.youtube.com/watch?v=TMK7ULUG7S4)。
+
+<!--(Beta1) http://jp.youtube.com/watch?v=UlzTlCeQw4g-->
+</subsection>
+
+
+
+さて、ここまで世界中で取り組まれているWiiRemoteをつかった学生プロジェクトを紹介してきました。
+どのプロジェクトも、非常にエキサイティングです。また紹介しきれなかった面白い物もたくさんあります。初心者の読者にとっては、専門用語など難しい点もあったかもしれませんが、上で紹介した方々には後に続くパートで解説やサンプル作成に協力していただいておりますので、本書を読み進めていくことで、いずれ自分自身のアイディアを実現することもできるかもしれません。
+
+さあ次は、皆さんの番です！
+
+</body>
+</doc>

@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>(notitle)</title>
+<author>白井暁彦</author>
+<date>2008年11月21日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+
+現在、世界中の有志により、WiiRemoteをPCで利用できるようにする取り組みがされています。
+そして、それらのツールやオープンソースのAPIを利用して、世界中の学生を中心にさまざまなWiiRemoteを使った革新的なプロジェクトが開発されています。
+
+ここではまずWiiRemoteを使ったプログラミングで、どんな楽しいことが実現できるか、最新の学生プロジェクトを中心に紹介していきたいと思います。
+
+
+
+<subsection title="巨大なイカロボットを操作する「IKABO Project」">
+まずは北海道・はこだて未来大から<a href="http://ikarobo.com/">「未来大 IKABO Project」</a>を紹介します。
+
+もともとは｢ロボットフェス･インはこだて｣市民の会という組織が中心となって作った「観光用の巨大イカロボット」で、はこだて未来大学の3年生が中心となって、ソフトウェアの部分を開発しているようです。
+
+以下、製作者の味岡真広さんからいただいた情報ですが『設計図や仕様書のようなものは、学生がゴリゴリ作ったものなのでありません』詳細はIKABO公式ページに記載されていますが、身長220cm、重量約200kg、エアシリンダーによるアクチュエーターで、足1本につき3つの関節、さらに1つの関節に3つのエアシリンダーを搭載しており、足1本につき512通りの動作の実現しています。足は2対ありますので、合わせて約25万通りの動作、さらに目や頭も動きますので、多様性から様々なポーズの設定ができるそうです。
+
+しかしこのような複雑なロボットの操作であっても、どのような人でも簡単に操作できるように、とタッチパネルを用いた操作ツールも開発したようです。さらにWiiRemote式の操作として、両手にWiiRemoteを持ち、操作者が腕を動かすとその動きに対応してIKABOの足が動作し、操作者の動きに合わせた自由な動作、複雑な動きやユニークな動きを実現することができるようになったそうです。
+
+<figure id="fig:IKABO1.jpg" src="jpg/IKABO1.jpg" title="IKABO">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+<!-- <attribute locale="latex2e" name="style">BoundingBox: 0 0 336 448</attribute>-->
+</figure>
+
+<figure id="fig:IKABO2.jpg" src="jpg/IKABO2.jpg" title="IKABO">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+<figure id="fig:IKABO3.jpg" src="jpg/IKABO3.jpg" title="IKABO">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+プログラミングプラットフォームはVisual C++ MFCアプリケーションで、使用しているWiiRemoteのAPIは「WiiYourself! - native C++ Wiimote library  v0.96b」です。WiiRemoteから3軸加速度+ボタンの情報を取得し、3軸加速度から3軸の傾き情報にプログラム上で変換し、イカロボットの腕の動作を決めています。その情報を有線(USB)もしくはネットワーク(DirectPlay)でイカロボット実機へ動作指示を通信し、イカロボット内にあるマイコンボートに送信しています。
+
+実際の操作は、イカロボットが目の前にいるなら目で、遠いところにいるなら、操作ソフトに組み込んだリアルタイム動画配信によってイカロボットが動いているのを見て行います。
+
+WiiRemoteで実物のロボットを動かすことで、ユーザの動きをイカロボットが真似てくれる、という点が楽しいそうです。
+
+実際に地元のお祭りでも盛り上がっているようで、YouTube上で大観衆の中、クネクネ動くIKABOの動画を見ることができます（http://jp.youtube.com/watch?v=4P_alu527SY）。
+
+
+</subsection>
+
+<subsection title="★自由に氷柱を生やす(奈良先端大)">
+</subsection>
+
+<subsection title="★ニオイで攻撃できるゲームを作る(金沢高専)">
+</subsection>
+
+<subsection title="★超音波で触れるディスプレイを作る(東大)">
+</subsection>
+
+<subsection title="★モーションキャプチャ構築し、暗闇と音で遊ぶ「SoundQuest」(フランス)">
+</subsection>
+
+<subsection title="★アリの巣を可視化する(米国)">
+"Atta Texana Leafcutting Ant Colony: A View Underground"
+http://www.siggraph.org/s2008/attendees/newtech/23.php
+
+The Atta project maps tunnels and chambers of a vast leafcutting ant colony. A ground-penetrating-radar scan was translated into a 3D model that can be viewed on an immersive visualization system that scales the viewer to ant size. The scanning is nondestructive and is the first time GPR has been used to map a living ant colony.
+
+To achieve this goal, the project combines the site-specific nature of an indexical system, GPR, with the ability of an algorithm to parse the data. The model retains a formal connection with its subject and can be distributed and viewed in many different ways.
+
+Enhanced Life
+When combined, all ants in the world weigh about as much as all humans. Yet we tend to view ants as tiny individuals rather than the superorganisms scientists have discovered them to be. The immersive system scales the viewer to ant size and reveals a different perspective on colony architecture.
+
+Goal
+Methods of modeling ant colonies include pouring casting material into a nest, digging it up and piecing it back together, or using a bulldozer to scrape away successive layers of soil and measuring the diameter of the holes. The goal of this project was to find a nondestructive way to create a model.
+
+Innovations
+This is the first time GPR has been used to model an ant colony. A method was developed to translate data from proprietary scanning software to a format suitable for high-end 3D modeling, by building layers around known voids. The system may be adaptable to other projects with similar parameters.
+
+Vision
+This project is part of a larger endeavor to document a landscape using technology in nondestructive ways. One might think of threatened ecosystems as exotic and distant, but much rural land continues to disappear beneath development. There is still much to be discovered in a single patch of one's backyard.
+
+Contributors
+Carol LaFayette
+Fred Parke
+Lauren Simpson
+Audrey Wells
+Igor Kraguljac
+Visualization Department, Texas A and M University
+
+Carl J. Pierce
+St. Lawrence University
+
+Tatsuya Nakamura
+Starz Animation 
+
+http://news.bbc.co.uk/2/hi/technology/7563372.stm 
+
+http://www.youtube.com/watch?v=8auq5Jx-0bI 
+</subsection>
+
+
+</body>
+</doc>

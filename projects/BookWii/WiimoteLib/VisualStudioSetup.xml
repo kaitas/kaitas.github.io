@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>プログラミング環境のセットアップ</title>
+<author>白井暁彦</author>
+<date>2008年3月31日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+
+<subsection title="Visual C++ 2008 Express Editionのセットアップ">
+ここではMicrosoft Visual C++ 2008 Express Editionのセットアップ、サンプル開発について解説します。既にVisual C++や.NETといった開発環境をお使いの方は、読み飛ばしていただいても問題ありません。
+
+
+
+<section title="WindowsDDKのセットアップ">
+VC2008のセットアップが終わったら、次はDDK(WDK)のセットアップを行います。DDKはその名が示すとおり、ドライバ開発のためのキットであり、WindowsのOS内部とユーザのアプリケーションプログラムの中間に位置するドライバプログラムを開発しやすくするためのヘッダやライブラリが含まれています。WiiRemoteを使ったプログラミングでは主にBluetooth経由の通信のためにこのヘッダやライブラリを必要とします(すべてのファイルが必要になるわけではありません、詳細は後述)。
+
+まずこちらのマイクロソフトのDDKのホームページを訪問し、「Windows Server 2003 SP1 DDK」のISOファイルを入手してください。
+
+<fyi title="Windows Server 2003 SP1 DDK">
+http://www.microsoft.com/japan/whdc/DevTools/ddk/default.mspx
+</fyi>
+「Windows Server 2003 SP1 DDK」とありますが、WindowsXP等でも利用できます。「Windows XP SP1 DDK」以前のDDK(NT,98,2000など)は既にサポートが終了していますので持っていても使用しない方が良いでしょう。現状の主力OSである、Windows Vista、Windows Server 2003、Windows XP、そしてWindows 2000上で動作するドライバをビルドするには、このWindows Server 2003 SP1 DDKに含まれる「Windows 2000向けビルド環境」を使用する必要があります（このWDK内のWindows 2000用ビルド環境には、更新されたヘッダーとライブラリが含まれています）。
+
+まず、ダウンロードしたISOファイルを使ってCD-ROMを作成します。ISOファイルをドライブとしてマウントできる仮想CDのようなソフトウェアがあればそちらでもかまいません。
+
+作成したCD-ROMを挿入し「setup.exe」を実行します。
+
+<figure id="fig:DDK1" src="png/DDK1.png" style="width=:5cm" title="Windows Driver Development Kitのインストール"/>
+
+エンドユーザライセンス承諾書(EULA)を確認します。
+
+<figure id="fig:DDK2" src="png/DDK2.png" style="width=:5cm" title="EULAの確認"/>
+
+インストール先は本書ではデフォルトの「C:\WINDDK\3790.1830」とします。
+
+<figure id="fig:DDK3" src="png/DDK3.png" style="width=:5cm" title="DDKインストール先の指定"/>
+
+ここでインストールするファイルを選択します。デフォルトのまま、もしくはすべてを選択しても良いのですが、ヘッダファイルのような小さなテキストファイルが700MB以上ありますのでインストールに軽く1時間ぐらいかかってしまいます。
+
+<figure id="fig:DDK32" src="png/DDK32.png" style="width=:5cm" title="DDKインストールするファイルの選択"/>
+
+大量のファイルをインストールすることに特に抵抗がない方はすべてにチェックを入れても良いでしょう。余計なファイルは必要ない、という方は最低限「Build Environment」の該当するプラットフォームにチェックが入っていればよいでしょう(Windows XP Headers, X86 Libraries)。具体的には「C:\WINDDK\3790.1830\inc\wxp」にある「hidpi.h, hidsdi.h, hidusage.h, setupapi.h」というヘッダファイルと、「C:\WINDDK\3790.1830\lib\wxp\i386\」にある「hid.lib, setupapi.lib」というライブラリファイルが必要です。その他のファイル、ツール類はインストールして試してみても良いですが、本書では扱いません。
+
+<figure id="fig:DDK4" src="png/DDK4.png" style="width=:5cm" title="DDKインストール、1時間強必要。"/>
+
+DDKのインストールが終わったら、さっそく次の章でリビルドを試してみます。
+
+<subsection src="chap3/C-VirtualCD.sdoc.xml"/>
+<subsection src="chap3/C-VersionSelector.sdoc.xml"/>
+
+
+</section>
+
+
+
+</body>
+</doc>

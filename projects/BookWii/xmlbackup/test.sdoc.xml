@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>PC上で利用するWiiRemote事始め</title>
+<author>白井暁彦</author>
+<date>2008年9月22日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+
+<program src="testsrc.cpp" title="testプログラムソースコード">
+</program>
+
+<program normalizer="javasrc" javasrcKeyword="SetReportType" src="testsrc.cpp" title="testソースコードの一部">
+</program>
+
+<chapter title="test">
+<section title="参考">
+参考として、・・・
+
+最も簡単なのは、カンマ","で区切った形を使うものでしょう。
+<table title="外宇宙定期便就航表">
+<thead>
+航路,便名,所属
+</thead>
+<tbody>
+ガニメデ49,GSL101,ガニメデ宇宙旅客輸送
+タイタン221,FSS233,フェデレーションスペース
+</tbody>
+</table>
+ 
+
+
+<table title="外宇宙定期便就航表">
+<thead>
+<tr>
+ <th>航路</th>
+ <th>便名</th>
+ <th>所属</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+ <td>ガニメデ49</td>
+ <td>GSL101</td>
+ <td>ガニメデ宇宙旅客輸送</td>
+</tr>
+<tr>
+ <td>タイタン221</td>
+ <td>FSS233</td>
+ <td>フェデレーションスペース</td>
+</tr>
+</tbody>
+</table>
+
+
+<table title="外宇宙定期便就航表">
+<thead>
+航路,便名,所属
+</thead>
+<tbody>
+ガニメデ49,GSL101,ガニメデ宇宙旅客輸送
+タイタン221,FSS233,フェデレーションスペース
+</tbody>
+<tnote>
+<ul>
+<li>航路は木星・土星系のみ表記</li>
+<li>便名は太陽系惑星航行機関コードによる</li>
+</ul>
+</tnote>
+</table>
+
+<table title="外宇宙航行船型式と採用会社">
+<thead>
+<tr>
+ <th>型式</th>
+ <th>グレード</th>
+ <th>所属</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+ <td rowspan="2">ファサード</td>
+ <td>アルファ</td>
+ <td>マーシャルスペース</td>
+</tr>
+
+<tr>
+ <td>ベータ</td>
+ <td>ガニメデ宇宙旅客輸送</td>
+</tr>
+
+
+<tr>
+ <td colspan="2">メメント</td>
+ <td>フェデレーションスペース</td>
+</tr>
+
+</tbody>
+</table>
+</section>
+
+</chapter>
+<!--</part>-->
+<appendix title="これはappendixです">
+appendixというのがあったので記述してみました。
+</appendix>
+<chapter title="これはpartの外側に置いたchapterです">
+このように、partタグの中に入れずに独立してchapterを置くこともできます。
+</chapter>
+<section title="これはpart,chapterの外側に置いたsectionです">
+sectionも独立して置いてみました。
+</section>
+<subsection title="これはpart,chapter,sectionの外側に置いたsubsectionです">
+subsectionも同じように独立して置いてみました。
+今回はこんなもんです。
+</subsection>
+
+<a href="http://www.alles.or.jp/~torutk/oojava/maneuver/2000/9-1.html">参考書</a>
+
+
+</body>
+</doc>

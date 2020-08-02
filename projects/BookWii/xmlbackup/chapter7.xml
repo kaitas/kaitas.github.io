@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='shift_jis'?>
+<doc xml:lang='ja'>
+	<head>
+		<title>3DCG応用編</title>
+		<author>白井暁彦</author>
+		<date>2008年11月25日最終更新</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+	</head>
+	<body>
+		<section title="フリースロー"></section>
+		<section title="3DCG＋物理エンジンとの組み合わせ(高橋さん担当分)">
+			<subsection title="Direct3D9の初期化(固定機能？)"></subsection>
+			<subsection title="Bulletの準備と初期化"></subsection>
+			<subsection title="球やボックスのような基本形状の利用"></subsection>
+			<subsection title="「pick」3Dオブジェクトを持ち上げて遊ぶ"></subsection>
+			<!--  <subsection title="(割愛予定)「だるま落とし」"></subsection>
+								<subsection title="(割愛予定)「ヌンチャク」ジョイントを使った例"></subsection>-->
+		</section>
+	</body>
+</doc>

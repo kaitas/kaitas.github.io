@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>バイブレータのON/OFF</title>
+<author>白井暁彦＋小坂崇之</author>
+<date>2009年5月16日版</date>
+<!--
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+-->
+
+</head>
+<body>
+
+ここからは、さらにWiimoteLibのAPIを用いてプログラミングを行っていきます。
+解説はC++とC#を並列して解説していきますが、.NETフレームワークのおかげでGUIの設計などはまったく同じ操作で開発を進めることができます。
+
+
+まず、PC画面上に表示されるFormボタンによって、WiiRemoteの振動機能(バイブレーター)の動作をあやつるするプログラムを作ります。
+
+<subsection title="WiimoteLibの宣言と接続">
+前節のとおり、WiimoteLibを組み込んだプロジェクトのメインのコード（Form1.csもしくはForm1.h）に以下の3行を追加します。
+<program title="Form1.cs[C#]">
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+|   using WiimoteLib;	//WiimoteLibを宣言
+
+    namespace WiimoteLib01 {
+     public partial class Form1 : Form {
+
+|       Wiimote wm = new Wiimote();	//Wiimoteクラスの作成
+
+      public Form1() {
+       InitializeComponent();
+|       wm.Connect();      	//Wiimoteに接続
+      }
+     }
+    }
+＜以下略＞
+</program>
+
+<program title="Form1.h[C++]">
+#pragma once
+namespace WiimoteLib01cpp {
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+|	using namespace WiimoteLib;	//WiimoteLibを宣言
+＜中略＞
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+|	public:	Wiimote^ wm;	//Wiimoteクラスの入れ物
+	public:
+		Form1(void)
+		{
+|			wm = gcnew Wiimote(); //Wiimoteクラスの作成;
+			InitializeComponent();
+			//
+			//TODO: ここにコンストラクタ コードを追加します
+			//
+|			wm->Connect();	//Wiimoteに接続
+			
+		}
+＜以下略＞
+</program>
+
+
+C#もC++も多少の記号や予約語は違えど、ほとんど同じであることがお分かりいただけたでしょうか？
+C++ではwmという入れ物をForm1クラスのPublicメンバーとして用意しています。
+
+</subsection>
+
+<subsection title="バイブレーターON/OFFボタンの作成">
+まず、フォームにボタンを貼り付けてください。C#では、ツールボックスからドラッグしてForm1の好きな位置に配置します。
+(C++でも同様です)表示されていない場合、[表示]から[デザイナ]としてForm1のデザインを表示し、再度[表示]から[ツールボックス]を選ぶことで右側にツールボックスウィンドウが現れます(C++は左側)。「コモンコントロール」に「Button」がありますので、フォームの上にドラッグしてください。
+
+<figure id="03-01" src="WiimoteLib/png/03-01.png" title="ツールボックスからボタンをドラッグして配置">
+ <attribute locale="latex2e" name="style">width:10cm</attribute></figure>
+
+次に、貼り付けた「button1」のプロパティシートの「Text」を「button1」から「ON」に変更します。これでフォーム上のボタンに書かれているテキストが「ON」に変わるはずです。 
+
+<figure id="03-02" src="WiimoteLib/png/03-02.png" title="Textのプロパティを「button1」から「ON」に書き換える">
+ <attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+Form1上に配置したボタン「ON」をダブルクリックすると、ボタンクリック時のイベントを指定するコードが自動的に表示されますので下記のように記述します。
+<program title="Form1.cs[C#]">
+  private void button1_Click(object sender, EventArgs e) {
+   wm.SetRumble(true);  //バイブーションON
+  }
+</program>
+
+<program title="Form1.h[C++]">
+#pragma endregion
+  private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+    wm->SetRumble(true);  //バイブーションON
+  }
+ };
+}
+</program>
+
+気がはやる方はここで[F5]キーを押したくなるかもしれませんが、試すのは次のステップまで進んでからにしましょう！
+このままでは、Bluetooth接続されていませんし、バイブレーターを駆動してもまだ止める方法を実装していませんので、ブルブル鳴りっぱなしの困った状態になってしまいます。
+
+バイブレーターを停止させる「OFF」ボタンを作成します。先ほどと同様に、ツールボックスからボタンを配置します。
+ <figure id="03-03" src="WiimoteLib/png/03-03.png" title="「OFF」のためのボタンをドラッグで配置">
+ <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+先ほどと同じく、貼り付けた「button2」のプロパティのTextを「button2」から「OFF」に変更します。 
+ <figure id="03-04" src="WiimoteLib/png/03-04.png" title="Textのプロパティを「button2」から「OFF」に書き換える">
+ <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+最後に、貼り付けた「button2」をダブルクリックし、下記のようなコードを記述します。
+<program title="Form1.cs[C#]">
+  private void button2_Click(object sender, EventArgs e) {
+    wm.SetRumble(false);  //バイブーションOFF
+ }
+</program>
+
+<program title="Form1.cs[C#]">
+  private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+    wm->SetRumble(false);	//バイブレーションOFF
+  }
+</program>
+
+以上で終了です。これだけのプログラムでWiiRemoteのバイブレーション機能のON/OFF制御が可能になります。 
+
+<program title="Form1.csのC#ソース(全体)">
+
+ using System;
+ using System.Collections.Generic;
+ using System.ComponentModel;
+ using System.Data;
+ using System.Drawing;
+ using System.Linq;
+ using System.Text;
+ using System.Windows.Forms;
+| using WiimoteLib;	//WiimoteLibの読み込み
+
+ namespace WiimoteLib01  {
+  public partial class Form1 : Form {
+|   Wiimote wm = new Wiimote();   //Wiimoteの宣言
+   public Form1() {
+    InitializeComponent();
+|    wm.Connect();	//Wiimoteの接続
+   }
+
+   private void button1_Click(object sender, EventArgs e) {
+|    wm.SetRumble(true);    //バイブーションON
+   }
+
+   private void button2_Click(object sender, EventArgs e) {
+|    wm.SetRumble(false);   //バイブーションOFF
+   }
+  }
+ }
+</program>
+
+<program title="Form1.hのC++ソース(変更点のみ抜粋)">
+<![CDATA[
+#pragma once
+
+＜略＞
+|	using namespace WiimoteLib; //WiimoteLibを宣言
+＜略＞
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm;        //Wiimoteクラスの入れ物
+  public:
+    Form1(void)
+    {
+|     wm = gcnew Wiimote();   //Wiimoteクラスの作成;
+      InitializeComponent();
+      //
+      //TODO: ここにコンストラクタ コードを追加します
+      //
+|     wm->Connect();	//Wiimoteに接続
+
+    }
+＜略＞
+#pragma endregion
+  private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+|     wm->SetRumble(true);   //バイブーションON
+  }
+  private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+|     wm->SetRumble(false);  //バイブレーションOFF
+  }
+ };
+}
+]]>
+</program>
+
+
+</subsection>
+
+<subsection title="実行してみよう">
+まず、お使いのBluetoothスタックからWiiRemoteを接続します。
+ <figure id="03-05" src="WiimoteLib/png/03-05.png" title="Bluetooth接続(図は東芝製スタック)">
+ <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+続いて、Visual C#/C++から「F5」キーを押してプログラムを起動します。エラーがなければ下のようなフォームが起動するはずです。
+ <figure id="03-06" src="WiimoteLib/png/03-06.png" title="「ON」と「OFF」をもつフォームが表示される">
+ <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+もし下のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+ <figure id="03-07" src="WiimoteLib/png/03-07.png" title="接続失敗：Bluetooth接続を確認しよう">
+ <attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+
+無事に起動できた場合、「ON」ボタンをクリックすると、バイブレーションがONになりWiiRemoteが振動します。あわてず騒がず「OFF」ボタンをクリックして、WiiRemoteの振動をとめましょう。
+
+どうでしょうか？非常に簡単にWiiRemoteのバイブレーション制御プログラムが作れました。このようにWiimoteLibとC++/CLIやC#.NETの組み合わせで、簡単にアプリケーションを開発していくことができます。
+</subsection>
+
+WiimoteLibにはバイブレーターの制御以外にもWiiRemoteが制御するための関数がたくさん揃っています。
+
+簡単にプログラムの流れを解説しますと、まず「Connect()関数」でWiiRemoteとの接続を行います。このときWiiRemoteが正しく接続、認識されていなかった場合、例外(Exception)が発生します。今回は例外処理を行っていませんので、実際のアプリケーションでは必要に応じて例外処理を追加してください。
+ボタンを押したときに、「SetRumble()関数」でWiiRemoteのバイブレーションを制御します。()の引数に「true」を入れるとバイブレーションが振動し、「false」を入れるとバイブレーションが停止します。PWM制御(パルス幅変調:Pulse With Modulation)を用いることによってバイブレーションに強弱を付けることができます。簡単に説明すると高速にONとOFFを繰り返すことによってバイブレーションに強弱をつける制御方法です。ここではあえて説明しませんが、余力のある人はチャレンジしてみてください。
+
+
+<subsection title="解説：API関数">
+以下、このプログラムで使ったWiimoteLibのAPI関数です。
+
+<!--
+<dl>
+ <dt>using WiimoteLib;</dt>
+  <dd>C#でWiimoteLibを使うための宣言を行う。WiimoteLibを用いるためには必ず宣言する必要があります。</dd>
+ <dt>Wiimote wm = new Wiimote();</dt>
+  <dd>Wiimoteクラス wmを宣言し初期化を行う。Wiimoteを用いるためには必ず宣言する必要がある。</dd>
+ <dt>wm.Connect();</dt>
+  <dd>WiiRemotoに接続をおこなう。~WiiRemoteが正しく接続していないとエラーになる。</dd>
+ <dt>wm.SetRumble(true);</dt>
+  <dd>WiiRemoteのバイブレーターを振動させる。</dd>
+ <dt>wm.SetRumble(false);</dt>
+  <dd>WiiRemoteのバイブレーターを停止させる。</dd>
+</dl>
+-->
+
+<table>
+<thead>C#,C++,解説</thead>
+<tbody>
+using WiimoteLib;,using namespace WiimoteLib;,ネームスペース宣言
+public Wiimote wm;,public:	Wiimote^ wm;,クラスの宣言
+wm = new Wiimote();,Wiimote^ wm = gcnew Wiimote();,クラス新規作成
+wm.Connect();,wm->Connect();,WiiRemoteに接続
+wm.SetRumble(true);,wm->SetRumble(true);,バイブレーター作動
+wm.SetRumble(false);,wm->SetRumble(false);,バイブレーター停止
+</tbody>
+</table>
+
+いかがでしょう、.NET環境において、C#とC++では何ら代わりのないことがよくわかります。
+GUIによるフォーム作成も、マウスドラッグとプロパティの設定、ダブルクリックによる該当コードの自動生成がありますので非常に快適にコーディングできます。次のステップでは同じ要領で、LEDの点灯を制御していきます。
+
+</subsection>
+</body>
+</doc>

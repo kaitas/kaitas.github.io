@@ -1,0 +1,1309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年5月18日-5/19-5/28-6/1最終更新" lang="ja">
+<title>WiiYourself!とC++で学ぶインタラクション基盤技術</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">WiiYourself!とC++で学ぶインタラクション基盤技術</h1>
+
+<div class="date">2009年5月18日-5/19-5/28-6/1最終更新</div>
+<div class="author">白井暁彦</div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id16" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">古き良きC++用API「WiiYourself!」</a>
+<ul>
+<li> <a href="#doc2_id78" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Wiiyourself!の特徴</a>
+<li> <a href="#doc2_id127" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!の入手</a>
+<li> <a href="#doc2_id139" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">参考訳【Readme.txt】</a>
+<li> <a href="#doc2_id150" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">参考訳【License.txt】</a>
+<li> <a href="#doc2_id160" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!付属デモのテスト</a>
+</ul>
+<li> <a href="#doc1_id18" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!のリビルド</a>
+<ul>
+<li> <a href="#doc3_id189" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DDKのセットアップ</a>
+<li> <a href="#doc3_id228" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プロジェクトファイルの変換と設定</a>
+<li> <a href="#doc3_id243" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!の構成とライブラリのビルド</a>
+</ul>
+<li> <a href="#doc1_id26" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">コマンドラインプログラム</a>
+<ul>
+<li> <a href="#doc4_id272" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">コマンドラインプログラム「Hello, WiiRemote!」</a>
+<li> <a href="#doc4_id296" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!をプログラムに組み込む</a>
+</ul>
+<li> <a href="#doc1_id31" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Win32でつくるWiiRemoteテルミン</a>
+<ul>
+<li> <a href="#doc5_id351" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">テルミンを作ろう</a>
+<li> <a href="#doc5_id357" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">まずは「ボタン操作テルミン」</a>
+<li> <a href="#doc5_id372" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">加速度センサーによるテルミン</a>
+</ul>
+<li> <a href="#doc1_id36" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">計測器としてのWiiRemote</a>
+<ul>
+<li> <a href="#doc6_id455" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「WiiRemote計測器」重力・姿勢・動作周波数</a>
+<li> <a href="#doc6_id579" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">考察「ゲーム機として、計測器として」</a>
+<ul>
+<li> <a href="#doc6_id581" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteは速いか遅いか</a>
+<li> <a href="#doc6_id584" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実際のゲームでどう使うか</a>
+<li> <a href="#doc6_id587" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">物理が苦手なアナタがどう使うか</a>
+<li> <a href="#doc6_id590" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">練習問題「パンチ力測定」と「テニスのモーション」</a>
+<li> <a href="#doc6_id596" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">研究的要素：HMMによるモーション認識</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id38" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Wiiyourself!によるスピーカー再生</a>
+<ul>
+<li> <a href="#doc1_id42" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">専用WAVファイルの準備</a>
+</ul>
+<li> <a href="#doc1_id53" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!の今後</a>
+</ul>
+</div>
+
+<h2 id="doc1_id16">古き良きC++用API「WiiYourself!」</h2>
+
+<p class="first_ja">WiiYourself!はgl.tter氏による、非常に多機能なNative C++用APIです。第4章で紹介したWiimoteLibによる.NET環境での高機能・平易なプログラミングと異なり、古き良きC/C++言語による高速で直接的なプログラミングが行えることが魅力です。</p>
+<p>本章ではWiiYourself!をC++によるコマンドラインプログラミング環境で使ってみることを通して、インタラクション技術の基盤となる技術を学びます。</p>
+
+<h3 id="doc2_id78">Wiiyourself!の特徴</h3>
+
+<div class="fyi">
+<div class="title">WiiYourself!のホームページ</div>
+
+<p class="first_ja">http://wiiyourself.gl.tter.org/</p>
+</div>
+
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/wiiyourselfHP.png" alt="WiiYourself!のホームページ">
+</div>
+
+<p class="first_ja">WiiYourself!のホームページにはWiiYourself!を用いたゲームや、3DCGソフトMayaの操作、空撮カメラの制御などいくつかのプロジェクトが紹介されています。gl.tter氏は実際にFPS(一人称シューティング)ゲーム「GUN FRENZY!2」を制作するためにこのライブラリを作成しているようです。以下は、WiiYourself!のホームページに記載されている機能一覧です。</p>
+
+<ul>
+<li> マルチWiiRemoteのサポート
+<li> ヌンチャク、クラシックコントローラー、ギターコントローラー(Guitar Hero)との信頼性のある接続
+<li> バッテリー、ボタン、加速度センサ、赤外線(4点)、トリガーとジョイスティック(死角込み)の読み込み
+<li> 方向推定(PitchとRoll)
+<li> LEDとバイブレーター出力(非同期動作オプション付き)
+<li> 全てのBluetoothスタックのサポート(出力方法を自動検出)
+<li> (実験的)スピーカーサポート(矩形波とサンプル再生)
+<li> ポーリングとコールバックのサポート
+<li> 接続のロス、切断の検出
+<li> スムースなマルチタスク化スレッド
+<li> 拡張可能デバッグ出力
+<li> 制限は、Windowsでしか動かない事(移植可能、参加歓迎)</ul>
+
+<p>ホームページを読んでみると、WiimoteLibのもととなったBrian Peek氏のプロジェクト「Managed Wiimote Library」と原点を同じくしていることがわかります。WiiYourself!が他のAPIと比較した上での特徴として挙げられるのは、ネイティブC++の静的ライブラリ(.lib)であり、DLL等が不要であること、DirectXなどによる旧来のゲームプログラミング手法に親和性があること、実験的ながらスピーカーへのWAV出力や4点の赤外線の検出など常にアップデートを続けている点が挙げられるでしょう。北米・欧州の多くの開発者が利用しています。APIコアの開発はgl.tter氏が集約的に行っていますが、メーリングリストでのディスカッションが比較的活発で、初心者から研究者まで様々な人が利用しています。購読しているだけでも世界中のWiiRemote利用者が何を考えて、どんなトレンドにあるのかが見えて楽しいです。今後もいろいろな発展が期待できるプロジェクトでしょう。</p>
+
+<h3 id="doc2_id127">WiiYourself!の入手</h3>
+
+<p class="first_ja">WiiYourself!原稿執筆時点の最新版は2008年7月24日に公開された「v1.01a」です。なお公式メーリングリストでは次期バージョンにあたる「v1.11beta」が準備されていますが、大きな変更はないので本書ではメジャーバージョンである「v1.01a」で解説します。WiiYourself!はZIPファイルのダウンロードで入手することができます。</p>
+<div class="fyi">
+<div class="title">WiiYourself! v1.01a</div>
+
+<p class="first_ja">http://wiiyourself.gl.tter.org/WiiYourself!_1.01a.zip</p>
+</div>
+
+<p>このZIPファイルの中に、WiiYourself!のソースコード、静的リンク用ライブラリファイル、デモプログラム、それらをビルドするためのプロジェクトファイル、唯一のマニュアルに当たるREADMEファイル、ライセンスファイルなどが含まれています。</p>
+<p>インストールとしては、どこにファイルを配置してもよいのですが、本書では解説のためにZIPファイルから解凍した「WiiYourself!」フォルダを「C:\WiiRemote\WiiYourself!」というパスに配置することにします。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/WiiyourselfFolders.png" alt="WiiYourself!1.01aのフォルダ構成" width="6cm">
+</div>
+
+<p>なお、WiiYourself!はその名前も個性的ですが、かなり個性的なREADMEとライセンスを持っています。以下、参考訳を掲載します。商用利用可能ということで、個人でシェアウェア作家などをやっていらっしゃる方は嬉しいのではないでしょうか。</p>
+
+<h3 id="doc2_id139">参考訳【Readme.txt】</h3>
+
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">- WiiYourself! - native C++ Wiimote library v1.01 (c) gl.tter 2007-8 - http://gl.tter.org</p>
+</div>
+
+<p class="first_ja">これは完全に無料で完全機能の(現在は)Windows用のWiiRemoteネイティブC++ライブラリです。Brian Peek氏の「Managed Wiimote Library」(http://blogs.msdn.com/coding4fun/archive/2007/03/14/1879033.aspx)をもとに、完全に書き直し、拡張しました。</p>
+<p>いまのところドキュメンテーションはありません。「WindowsでWiiRemote」の全容と一般的な情報についてはBrianの書き込みをチェックしてください。ソースコードは広範囲にわたるコメントがあり、デモアプリは全てを理解する上で助けになるでしょう(難しくはないです)。質問については私のメーリングリストに参加してください。いくつかの使用における制限については「License.txt」を参照してください。</p>
+<p>【付記】</p>
+<p>・VC 2005 C++のプロジェクトが含まれています(VC 2008に読み込ませてください)。リンクエラーを防ぐために、プロジェクトのプロパティ→「C/C++」→「コード生成」で「ランタイムライブラリ」の設定を適応させる必要があります。</p>
+<p>・MinGW環境のためのMSYS makefileが含まれています。MSYSプロンプトにおいて、「make -f Makefile.MSYS」と入力してください。MinGWという名前のフォルダと適切なフォルダ構造によるバイナリを生成します。</p>
+<p>・ビルドにはマイクロソフトのDriver Development Kit(DDK)が必要となります(HID APIのため)。登録の必要なし、無料でダウンロードできます。</p>
+<div class="fyi">
+<div class="title">Windows Server 2003 SP1 DDK</div>
+
+<p class="first_ja">http://www.microsoft.com/whdc/devtools/ddk/default.mspx</p>
+</div>
+
+<p>インクルードパスにDDKの「inc/wxp」を追加し、ライブラリパスに「lib/wxp/i386」を追加してください。(利点はないと思いますが)より最近のヘッダファイル、APIを含むWinDDKを使うこともできます。</p>
+<p>・ライブラリはtchar.hでUnicode化可能です（VCプロパティのビルドオプション「U」をつけてあります）。</p>
+<p>・VCを使っていないなら、以下のライブラリをリンクする必要があります。「setupapi.lib」、「winmm.lib」、「hid.lib(DDKから入手)」。</p>
+<p>【WiiRemoteインストールに関する付記】</p>
+<p>WiiRemoteは使用したいPCに事前に「paired」の状態、つまりBluetooth接続された状態にある必要があります。[1]+[2]ボタンを同時に押しておくことで、数秒間、発見可能(discoverable)モードに入ります(LEDが点滅します、LEDの数はバッテリーレベルに依存)。「Nintendo RVL-CNT-01」として発見されます。</p>
+<p>■スタック特有の解説：</p>
+<p>＜本書では既に3章で解説済みなので割愛します＞</p>
+<p>・切断方法(各スタック共通)</p>
+<p>WiiRemoteのPOWERボタンを数秒押してください。これで自動的に切断できます。([1]+[2]ボタンを押して)再度ペアリングモードに入って、LEDが数秒点滅している状態でタイムアウトさせれば、効果的に電源を切ることができます。</p>
+<p>メーリングリストにサインアップして、フィードバックを与え、アイディアを交換し、参加するというループに入ってください。</p>
+<p>http://wiiyourself.gl.tter.org/todo.htm</p>
+<p>もし貴方がWiiYourself!を使っているなら、是非教えてください。リンクを張らせていただきたいと思います。楽しんで！</p>
+<p>gl.tter (glATr-i-lDOTnet)</p>
+
+<h3 id="doc2_id150">参考訳【License.txt】</h3>
+
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">- WiiYourself! - native C++ Wiimote library v1.01 (c) gl.tter 2007-8 - http://gl.tter.org</p>
+</div>
+
+<p class="first_ja">■ライセンス：私のWiiRemoteライブラリはいかなる利用(商用含む)に関しても、以下の条件において無料です。</p>
+<p>(1)直接、間接にかかわらず人を傷つけるために使わないでください。軍事利用を含みますがそれに限ったことではありません(エゴを叩くのはいいことです・笑)。</p>
+<p>(2)バイナリ形式のいかなる配布(例：あなたのプログラムにリンクされたもの)においても、以下のテキストをReadMeファイル、ヘルプファイル、AboutBoxやスプラッシュスクリーンに含めてください。</p>
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">contains WiiYourself! wiimote code by gl.tter</p>
+<p>http://gl.tter.org</p>
+</div>
+
+<p>(3)ソースコード形式のどんな配布形式でも、オリジナルの私の著作権表示を変更しないで保持すること(あなたが加えた変更は追加できます)、そしてこのライセンス文を含めてください（このファイルをあなたの配布物に含むか、あなた自身のライセンス文に貼り付けてください）。</p>
+<p>(4)あなた自身がかなり書き直さない限り、このコードに競合するライブラリを生み出す行為に使わないでください(例：他の言語にコンバートするなど、まず相談してください)。</p>
+<p>その代わり、後に新機能、バグフィックスやアイデアを提供してください。</p>
+<p>gl.tter (http://gl.tter.org | glATr-i-lDOTnet)</p>
+
+<h3 id="doc2_id160">WiiYourself!付属デモのテスト</h3>
+
+<p class="first_ja">さて、ライセンスなどを理解したら、まずはDemoフォルダにある「Demo.exe」を起動してみましょう。事前にWiiRemoteに接続しておくのを忘れずに(詳細は第3章で解説)。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WiiYourselfDemo.png" alt="WiiYourself!付属Demoのスクリーンショット">
+</div>
+
+<p>一見、地味なデモに見えますが、実は非常に多機能です。特に[A],[1],[2]ボタンを押すことでWiiRemoteのスピーカーから音が出ることを確認してください。高音質ではありませんが、音声が再生されています。[A]で矩形波(くけいは；square)、[1]でサイン波、[2]で音声のような物(DAISY)、[B]でバイブレーター駆動です。その他、各ボタンのステータスと加速度の表示、LEDのナイトライダー的アニメーション、バッテリー残量、4点の赤外線(サイズ測定付き)、拡張端子へのヌンチャクの挿抜が「Extnsn.」に表示されています。面白いのは「Orient:」の行に「Pitch, Roll」といった姿勢推定に加えて「UpdateAge」として、測定頻度の計測があることです。シンプルですが非常によくできたデモです。また多くの情報がこのソースコードであるDemo.cppに記載されていますので余裕がある人は、解読してみるとよいのですが、まずは次の章に進みWiiYourselfのリビルドを行い、実行して、動作を見ながら自分のものにしていくことにしましょう。</p>
+
+<h2 id="doc1_id18">WiiYourself!のリビルド</h2>
+
+<p class="first_ja">WiiYourself!付属の「Demo.exe」について、一通りの動作を試したら、次はリビルドです。ここではVisual C ++ 2008 Expressなど無料で入手できる環境でWiiYourself!をリビルドできるよう、順を追って解説します。</p>
+
+<h3 id="doc3_id189">DDKのセットアップ</h3>
+
+<p class="first_ja">本書の読者のほとんどは、既に第4章でVisual C++ 2008もしくはVisual Studio 2008(以下VC 2008)のセットアップをすませていることでしょう。次にリビルドに必要になる、Driver Development Kit (DDK)もしくはWindows Driver Kit (WDK)のセットアップを行います。DDKはその名が示すとおり、ドライバ開発のためのキットであり、WindowsのOS内部とユーザのアプリケーションプログラムの中間に位置するドライバプログラムを開発しやすくするためのヘッダやライブラリが含まれています。WiiRemoteを使ったプログラミングでは主にBluetooth経由のHID(Human Interface Device)との通信のためにこのヘッダやライブラリを必要とします。</p>
+<p>WDKはDDKの後継で、DDKやWindowsドライバーの安定性や信頼性をチェックするためのテストを含む「統合されたドライバー開発システム」です。現在のところWiiRemote関係において、WDKを利用するかDDKを利用するか、内容的な大きな差は見あたりません。またWDKの入手にはMSDNサブスクリプションへの契約か、Microsoft Connectへの参加が必要になりますので、本書では「誰でも簡単に入手できる」という視点でDDKを中心に解説します。</p>
+<p>なお、WiiRemoteプログラミングを行う上で、DDKのすべてのファイルが必要になるわけではありません。実際に必要になるヘッダファイルとライブラリファイル6つが揃ってしまえば、あとは(ライセンス上問題がなければ)ファイルコピーでも全く問題ありません。</p>
+<p>それでは、DDKのインストールを始めましょう。まずマイクロソフトのDDKのホームページを訪問し、「Windows Server 2003 SP1 DDK」のISOファイルを入手します。</p>
+<div class="fyi">
+<div class="title">Windows Server 2003 SP1 DDK</div>
+
+<p class="first_ja">http://www.microsoft.com/japan/whdc/DevTools/ddk/default.mspx</p>
+</div>
+
+<p>「Windows Server 2003 SP1 DDK」とありますが、WindowsXP等でも利用できます。「Windows XP SP1 DDK」以前のDDK(NT,98,2000など)は既にサポートが終了していますので、WDKなどできるだけ新しい物を利用した方が良いでしょう。現状の主力OSである、Windows Vista、Windows Server 2003、Windows XP、そしてWindows 2000上で動作するドライバをビルドするには、最低でもこのWindows Server 2003 SP1 DDKに含まれる「Windows 2000向けビルド環境」を使用してください。</p>
+<p>まず、ダウンロードしたISOファイルを使ってCD-ROMを作成します。ただしこのCD-ROMは一度しか使いません。ISOファイルをドライブとしてマウントできる仮想CDのようなソフトウェアがあればそちらを利用してもかまいませんし、最近では「7-zip」というオープンソースのソフトウェアを使ってISOファイルを直接展開することができます。</p>
+<div class="fyi">
+<div class="title">7-zip</div>
+
+<p class="first_ja">http://sevenzip.sourceforge.jp/</p>
+</div>
+
+<p>作成したCD-ROM、もしくは展開したフォルダから「setup.exe」を実行します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/DDK1.png" alt="Windows Driver Development Kitのインストール" width="6cm">
+</div>
+
+<p>エンドユーザライセンス承諾書(EULA)を確認します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/DDK2.png" alt="EULAの確認" width="6cm">
+</div>
+
+<p>インストール先は本書ではデフォルトの「C:\WINDDK\3790.1830」とします。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/DDK3.png" alt="DDKインストール先の指定" width="6cm">
+</div>
+
+<p>ここでインストールするファイルを選択します。デフォルトのまま、もしくはすべてを選択しても良いのですが、ヘッダファイルのような小さなテキストファイルが700MB以上ありますので、環境によってはインストールに軽く1時間ぐらいかかってしまいます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/DDK32.png" alt="DDKインストールするファイルの選択" width="6cm">
+</div>
+
+<p>大量のファイルをインストールすることに特に抵抗がない方はすべてにチェックを入れても良いでしょう。余計なファイルは必要ない、という方は最低限「Build Environment」の該当するプラットフォームにチェックが入っていればよいでしょう(Windows XP Headers, X86 Libraries)。具体的には「C:\WINDDK\3790.1830\inc\wxp」にある「hidpi.h, hidsdi.h, hidusage.h, setupapi.h」というヘッダファイルと、「C:\WINDDK\3790.1830\lib\wxp\i386\」にある「hid.lib, setupapi.lib」というライブラリファイルが必要です。その他のファイル、ツール類はインストールして試してみても良いですが、本書では扱いません。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/DDK4.png" alt="このステップが非常に時間がかかります" width="6cm">
+</div>
+
+<p>DDKのインストールが終わったら、さっそく次の章でWiiYourself!のリビルドを通してライブラリの設定を行います。</p>
+
+<h3 id="doc3_id228">プロジェクトファイルの変換と設定</h3>
+
+<p class="first_ja">VCに知識のある方であればそれほど難しい作業ではありませんが、最初のリビルドを円滑に進めるために以下の手順に従ってください。まずVC2008を先に立ち上げて、「ファイル」→「開く」→「プロジェクト/ソリューション」から、「C:\WiiRemote\WiiYourself!」フォルダにある「WiiYourself!.sln」というVC2005(VC8)のソリューションファイルを開きます。「Visual Studio変換ウィザード」が起動しますので、VC2008(VC9)用のプロジェクトに変換してください。問題なく変換は終了するはずです。「Ctrl+Shift+B」でリビルドしてみてください。</p>
+
+<pre id="doc3_id230" class="console">
+1&gt;<kbd class="kbd">------ ビルド開始: プロジェクト: WiiYourself! lib,</kbd>
+ 構成: Debug Win32 ------
+1&gt;コンパイルしています...
+1&gt;wiimote.cpp
+1&gt;c:\wiiremote\wiiyourself1\wiimote.cpp(41)
+ : fatal error C1083: include ファイルを開けません。
+ 'hidsdi.h': No such file or directory
+</pre>
+
+<p>このようにエラー「C1083」が出て、「hidsdi.h」のインクルードが要求されれば正常です。次にDDKのディレクトリを設定します。</p>
+<p>ソリューションエクスプローラーの「WiiYourself! lib」のアイコンの上で右クリックしてプロジェクトのプロパティページを開いてください。まず「構成」を「すべての構成」とし、「構成のプロパティ」→「C/C++」→「全般」の「追加のインクルードディレクトリ」に「C:\WINDDK\3790.1830\inc\wxp」を設定、続いて、「ライブラリアン」→「全般」の「追加のライブラリディレクトリ」に「C:\WINDDK\3790.1830\lib\wxp\i386」を設定します。</p>
+<p>設定が終わったら「Ctrl+Alt+F7」でリビルド(一旦クリーンな状態にしてからビルド)を行います。1件、Unicodeに関する警告(C4819)が出ますが、無視してかまいません。問題なく、</p>
+
+<pre id="doc3_id233" class="console">
+1&gt;<kbd class="kbd">ライブラリを作成しています...</kbd>
+1&gt;ビルドログは &quot;file://c:\WiiRemote\WiiYourself!
+ \Debug\BuildLog.htm&quot; に保存されました。
+1&gt;WiiYourself! lib - エラー 0、警告 1
+========== すべてリビルド:
+ 1 正常終了、0 失敗、0 スキップ ==========
+</pre>
+
+<p>このように表示されればライブラリのリビルドは成功です。次のステップに進んでください。再度「ファイル」→「開く」→「プロジェクト/ソリューション」から、今度は「C:\WiiRemote\WiiYourself!\Demo」フォルダにある「Demo.sln」というVC2005(VC8)のソリューションファイルを開きます。これは同梱のデモアプリケーションです。同様に「Visual Studio変換ウィザード」が起動しますので、VC2008用のプロジェクトに変換してください。いきなり「完了」を選んでも問題なく変換は終了するはずです。変換後、「Ctrl+Alt+F7」でリビルドしてみてください。</p>
+
+<pre id="doc3_id236" class="console">
+2&gt;<kbd class="kbd">Demo.cpp</kbd>
+2&gt;リンクしています...
+2&gt;LINK : fatal error LNK1104: ファイル 'hid.lib' を開くことができません。
+</pre>
+
+<p>最後に、「Alt+F7」でプロジェクト(この場合「Demo」)のプロパティを開き、「全ての構成」の「構成プロパティ」→「リンカ」→「全般」→「追加のライブラリディレクトリ」にDDKのライブラリパスである「C:\WINDDK\3790.1830\lib\wxp\i386」を設定してください。これで特に大きなエラーも出ずにリビルドに成功するはずです。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/LibPath.png" alt="DDKのライブラリパスを[Demo]の「追加のライブラリ」に設定する">
+</div>
+
+<p>WiiRemoteとのBluetooth接続を行ってから、「F5」キーでデバッグ開始(実行)です。無事にデモプログラムが実行できましたでしょうか？以上の流れに沿えば簡単なのですが、手順を間違える、例えば先にDemo.slnの変換を行ってしまうと、VC2005のプロジェクトの変換を通してWiiYourself!を参照するライブラリ名が変わってしまったりして、意図せず時間がかかってしまいますので注意を。さて、これでgl.tter氏のデモソースコード「demo.cpp」を改変してWiiYourself!を学ぶ環境が整いました。コマンドラインプログラムやC/C++に詳しい方は、このままソースコードを掘り下げていくことができると思います。</p>
+
+<h3 id="doc3_id243">WiiYourself!の構成とライブラリのビルド</h3>
+
+<p class="first_ja">前節で[Demo.sln]のリビルドに成功しましたので、その続きからはじめましょう。このソリューションは「Demo」というアプリケーションのプロジェクトと、「WiiYourself! lib」というライブラリ部分の2つのプロジェクトから構成されています。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WYS-SolutionDemo.png" alt="WiiYourself!同梱「Demo」プロジェクトの構成">
+</div>
+
+<p>「Demo」には、コマンドラインサンプルアプリケーションの本体である「Demo.cpp」と「Demo.h」のソースコード、それからwav,rawファイル形式によるスピーカー再生のための音声ファイルが置かれています。</p>
+<p>ライブラリ部分は「C:\WiiRemote\WiiYourself!\Demo\lib」というディレクトリ(※今後リリースされる予定のv1.11Betaでは若干フォルダ構成が変わる可能性があります)に各々プロジェクトの構成により「Release」もしくは「Debug」そして、Unicode対応と非対応のライブラリを生成します。WiiYourself!の配布初期状態ではそれぞれ4つのlibファイルが存在するはずです(既にリビルド作業により削除されているかもしれません)。「WiiYourself!_d.lib」がデバッグ用、「WiiYourself!_dU.lib」がUnicode版デバッグ、「WiiYourself!_U.lib」がUnicode版リリース、無印の「WiiYourself!.lib」が非Unicodeリリース版、つまり最も最適化され、最も軽い(デバッグ情報の処理などを省いた)ライブラリです。</p>
+<p>「Wiiyourself! lib」プロジェクトには、このライブラリのソースコードも含まれています。「wiimote.cpp」、「wiimote.h」、「wiimote_state.h」がソースコードです。これらのコードとプロジェクトが付属しているおかげで、WiiYourself!は非常に勉強しやすい状況になっています。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WYS-RebuildLib.png" alt="このプルダウンで構成を切り替えられる">
+</div>
+
+<p>ではさっそく各々のライブラリをビルドしてみましょう。VC2008のメニュー「ビルド」→「構成マネージャ」から「アクティブソリューション構成」で、現在の構成を「Release」に切り替え「閉じる」を押します。Ctrl+Alt+F7で「リビルド」することができます。「Demo」は「WiiYourself! lib」プロジェクトに『依存』する設定にしてありますので、変更したアクティブな構成に従って、生成されるライブラリも、それぞれ異なる.libファイルが生成していることを、ファイルエクスプローラーで確認してみるとよいでしょう。</p>
+<div class="fyi">
+<div class="title">“コピペ・コーディング”脱出→貢献のススメ</div>
+
+<p class="first_ja">　「誰かが作ったプログラムを利用する」という行為はAPIプログラミングを代表として、日常的に「よくあること」なのですが、さもすると内部の動作などはブラックボックス化してしまいがちです。学生さんなど、Googleでどこからか「良さそうな使えそうなコード」を探してきて、コピペ(コピー→張り付け)して「先生、(なんとなく)できました！」なんていうプログラミング「らしきこと」をしている光景もよく見かけたりします。</p>
+<p>　筆者にもそういう経験はあるのですが、もしあなたが大学生～大学院生の理工系の学生さんなら「その習慣」は今すぐ戒めた方が良いと思います。その「コピペ病」は貴方のプログラミングスキルを確実に落としていきます…。</p>
+<p>　話を戻して、OSなどのプラットフォームAPIに従ったプログラミングであれば、ドキュメントなどの仕様書を参照すればよいのですが、WiiRemoteのような未知のデバイス系プログラミングでは必ずしも満足なドキュメントがあるわけではありませんし、提供されているAPIも内部の挙動としては、ユーザーの意図と異なる、ひどいときには間違っている…という可能性すらあります(次世代ゲーム機なんてその最たる例...おっと)。オープンソースのプロジェクトであれば、利用者自身でコードよ読んだり、掘り下げたり、機能を追加したりすることができますし、作者に間違いを指摘したり機能追加を共有したりすることもできるでしょう。</p>
+<p>　非常に地味なやり方ではありますが、「(英語が苦手だから)オープンソースは使っても、貢献はしないよ/できないよ」という方々にはぜひ一度試してみていただきたいトレーニングです。オープンソースの世界で作者の心意気を読み、言語の壁を越えて、コードで共有するための最短ルートです。</p>
+<p>　そう、我々は英語よりも便利な世界共通言語である「C/C++言語」が使えるではないですか！「コピペ」よりも「貢献」です。</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id26">コマンドラインプログラム</h2>
+
+<p class="first_ja">新しい言語や環境などでプログラミングを学ぶときには、大きく分けて、2つの方法があるのではないでしょうか。非常によくできたサンプルプログラムを改造しながら学習する方法と、さまざまな装飾要素を取り払い、ゼロから自分で一歩一歩組み上げていく方法です。WiiYourself!の「Demo.cpp」は良くできたデモですが、装飾要素が多いため、初心者にはお勧めできそうにありません。</p>
+<p>このセクションでは、まず大学の最初のC言語の授業で出てくるような「Hello, world!」と呼ばれる初歩の初歩のプログラムから、オープンソースであるWiiYourself!を自分のプロジェクトに組み込んでいくことでWiiYourself!を理解するという「ちょっと回り道」をします。</p>
+<p>C++のプログラミングに詳しい方は、ナナメ読みでもかまいません。</p>
+
+<h3 id="doc4_id272">コマンドラインプログラム「Hello, WiiRemote!」</h3>
+
+<p class="first_ja">それではまず、Visual C 2008 Express(以下VC2008)上で、プログラミングの最初の一歩「Hello, world!」プログラムをつくってみましょう。これは「Hello, world!」と画面に表示するだけのプログラムです。文字は何でも良いのですが歴史的に「Hello, world!」という文字であることが多く、こう呼ばれています。VC2008においても、同様のチュートリアルが用意されています。VC2008をインストールするとスタートページ「作業の開始」に「最初のアプリケーションを作成」というリンクが現れます。このセクションでは、ここからたどれる「標準C++プログラムの作成(C++)」というマイクロソフト提供のドキュメントを参考にしています。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/WYS-MyApp.png" alt="Win32コンソールアプリケーションの作成" width="6cm">
+</div>
+
+<p>まずは新しいプロジェクトを作成します。[ファイル]メニューの[新規作成]から、[Visual C++]プロジェクト[Win32]をクリックし、次に[Win32コンソールアプリケーション]をクリックします。プロジェクト名は何でも良いのですが、この先もしばらく使いますので「WiiMyself」としておきます。[場所]には「C:\WiiRemote\WiiYourself!」を指定して、[OK]をクリックして、新しいプロジェクトを作成します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/WYS-AppWzd.png" alt="Win32 アプリケーションウィザード" width="6cm">
+</div>
+
+<p>「Win32アプリケーションウィザード」が起動しますので、[空のプロジェクト]を選択して[完了]をクリックします。このあと、何もおきていないように見える場合、「ソリューションエクスプローラ」が表示されていないのかもしれません。[表示]メニューの[ソリューションエクスプローラ]をクリックして表示します。ウィンドウレイアウトがいつもと違う場合は「ウィンドウ」→「ウィンドウレイアウトのリセット」を実行するとよいでしょう。</p>
+<p>ソリューションエクスプローラの[ソースファイル]フォルダを右クリックし、[追加]をポイントして[新しい項目]をクリックします。[コード]ノードの[C++ファイル(.cpp)]をクリックし、ファイル名[main.cpp]を入力して[追加]をクリックし、プロジェクトに新しいソースファイルを追加し、以下のコードを記述します。</p>
+
+<div id="doc4_id286" class="caption">Hello, world!</div>
+<pre class="program" style="margin-top:0">
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    cout &lt;&lt; &quot;Hello, world!&quot; &lt;&lt; endl;
+    return 0;
+}
+</pre>
+
+<p>さて、[F7]キーでコンパイルを通したら、実行環境を立ち上げましょう。[F5]キーで実行してもよいのですが一瞬で終了して、消えて見えなくなってしまうからです。エクスプローラーで生成された「WiiMyself.exe」をダブルクリックしても同様です。</p>
+<p>そこで「Windowsキー+R」で「ファイル名を指定して実行」ダイアログを立ち上げて「cmd」とタイプして「ok」を押します。コマンドラインウィンドウが表示されたら、</p>
+
+<pre id="doc4_id289" class="console">
+cd C:\WiiRemote\WiiYourself!\WiiMyself\Debug
+</pre>
+
+<p>として、今コンパイルにより生成した「WiiMyself.exe」のあるディレクトリに移動します。長いパス名をタイプするのは面倒ですので、まず「cd (＋半角スペース)」とタイプしてから、エクスプローラーのショートカット(フォルダのアイコン)をコマンドラインウィンドウにドラッグ＆ドロップすると、パス名が表示されて便利です。[Enter]を押してコマンドを入力します。またクリップボードも使えます。コマンドラインウィンドウの左上をクリックすることで「編集」→「貼り付け」として、利用できますので覚えておくとよいでしょう。</p>
+<p>さて「cd」コマンドで現在のパスを移動したら、WiiYourself!を実行します。</p>
+
+<pre id="doc4_id292" class="console">
+C:\WiiRemote\WiiYourself!\WiiMyself\Debug&gt;<kbd class="kbd">WiiMyself.exe</kbd>
+Hello, world!
+</pre>
+
+<p>無事に有名な「Hello, world!」が表示されましたでしょうか？以上がコマンドラインプログラムの作成の基本です。</p>
+
+<h3 id="doc4_id296">WiiYourself!をプログラムに組み込む</h3>
+
+<p class="first_ja">「Hello world!」で喜んでいる場合ではありません。続いて、WiiYourself!を組み込んでいきます。ソリューションエクスプローラーの「ソリューション'WiiMyself'」を右クリックして「追加」→「既存のプロジェクト」として一つ上のフォルダにある「WiiYourself!.vcproj」を選んでください。</p>
+<p>図のようにソリューションが取り込まれます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/WYS-Solution.png" alt="ソリューションに「WiiYourself! lib」が取り込まれた" width="6cm">
+</div>
+
+<p>続いて、「WiiMySelf」(自分のプロジェクト)のアイコンの上で右クリックしてプロジェクトのプロパティページを開いてください。まず「構成」を「すべての構成」とし、「構成のプロパティ」→「C/C++」→「全般」の「追加のインクルードディレクトリ」に「C:\WINDDK\3790.1830\inc\wxp」を設定、続いて、「リンカ」→「全般」の「追加のライブラリディレクトリ」に「C:\WINDDK\3790.1830\lib\wxp\i386」を設定します。</p>
+<p>最後にメニュー「プロジェクト」→「プロジェクトの依存関係」で自分のプロジェクトが「WiiYourself! lib」に依存することを明示的にチェックします。この作業により、「WiiMySelf」の親として「WiiYourself! lib」を設定したことになります。これを忘れると、ライブラリ本体の更新が、WiiMySelfに伝わりませんし、継承関係が見えずうに思わぬ失敗を呼ぶことがありますので必ずチェックしてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/WYS-Depend.png" alt="依存関係：「WiiYourself! lib」に依存することを明示する" width="6cm">
+</div>
+
+<p>これで、自分のプロジェクトからWiiYourself!のオブジェクトを参照することができるようになりました。実験してみましょう。さきほどのHello, world!を以下のように書き換えます。ついでですからWiiYourself!のライセンスに従って、ライセンス表示もしましょう。</p>
+
+<div id="doc4_id310" class="caption">Hello, WiiRemote!</div>
+<pre class="program" style="margin-top:0">
+#include &quot;../../wiimote.h&quot;
+int _tmain(int argc, _TCHAR* argv[])
+{
+  wiimote cWiiRemote;
+  _tprintf(_T(&quot;Hello, WiiRemote!\n&quot;));
+  _tprintf(_T(&quot;contains WiiYourself! wiimote 
+     code by gl.tter\nhttp://gl.tter.org\n&quot;)); //ライセンス表示
+  return 0;
+}
+</pre>
+
+<p>main関数がtmainになり、unicodeと引数をサポートする形にしたり、coutではなくtprintfにして、wiimoteオブジェクトを作成している以外は何も変わりません。「Ctrl+Alt+F7」でリビルドします。コマンドラインウィンドウに移り、実行結果を確認してください。</p>
+
+<pre id="doc4_id313" class="console">
+C:\WiiRemote\WiiYourself!\WiiMyself\Debug&gt;<kbd class="kbd">WiiMyself.exe</kbd>
+Hello, WiiRemote!
+contains WiiYourself! wiimote code by gl.tter
+http://gl.tter.org
+</pre>
+
+<p>まず最初の実験はクリアです、次はVC2008でクラスが参照できているか実験です。ソースコードウィンドウ「wiimote cWiiRemote」というあたりにマウスを持っていき「wiimote」を右クリックして「宣言へ移動」を試してみてください。WiiYoureself!のソースコードである、ヘッダファイル「wiimote.h」が表示されれば正しい動作です。</p>
+<p>さて実験を続けます。VC2008では「Intellisense」という入力補完機能がとても便利です(これが使いこなせなければ、VCはテキストエディタとあまり役割が変わりません！)。試しに「cWiiRemote.」とタイプしてみてください。クラスのプロパティやメソッドの一覧が表示されれば成功です。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WYS-Intellisense.png" alt="Intellisenseによる補完機能">
+</div>
+
+<p>では次に、このプログラムを「WiiRemoteに接続し、Bボタンで振動する」というプログラムまで拡張してみましょう。</p>
+
+<div id="doc4_id319" class="caption">LED,バイブレーター、ボタンイベントの取得</div>
+<pre class="program" style="margin-top:0">
+#include &quot;../../wiimote.h&quot;
+int _tmain(int argc, _TCHAR* argv[])
+{
+  wiimote cWiiRemote;
+  _tprintf(_T(&quot;Hello, WiiRemote!\n&quot;));
+_tprintf(_T(&quot;contains WiiYourself! wiimote code by \
+    gl.tter\nhttp://gl.tter.org\n&quot;));
+  //WiiRemoteと接続
+  while(!cWiiRemote.Connect(wiimote::FIRST_AVAILABLE)) {
+   _tprintf(_T(&quot;Connecting to a WiiRemote.\n&quot;));
+   Sleep(1000);
+  }
+  _tprintf(_T(&quot;connected.\n&quot;));
+  cWiiRemote.SetLEDs(0x0f);  //LEDを全点灯
+  Sleep(1000);
+  cWiiRemote.SetReportType(wiimote::IN_BUTTONS);
+  //Homeボタンで終了
+  while(!cWiiRemote.Button.Home()) {
+    while(cWiiRemote.RefreshState() == NO_CHANGE) {
+	 Sleep(1);
+    }
+    //Bボタンでバイブレーターが振動
+    cWiiRemote.SetRumble(cWiiRemote.Button.B());
+  }
+  //切断・終了
+  cWiiRemote.Disconnect();
+  _tprintf(_T(&quot;Disconnected.\n&quot;));
+  return 0;
+}
+</pre>
+
+<p>まだ全ての行が理解できているわけではないかもしれませんが、「//」で記述されたコメントを頼りに、Intellisenseを使ってプログラム全文を自分で打ち込んでみてください。完成したら、「Ctrl+S」で保存して、「Ctrl+Alt+F7」でリビルドします。</p>
+<p>まずはWiiRemoteをBluetooth接続してから、コマンドラインで「↑」キーを押して過去のコマンドを探し、「WiiMyself.exe」を見つけたら「Enter」を押して起動してください。接続成功するとLEDを点灯し、[B]ボタンを押すとバイブレーターが振動します。[Home]ボタンをおすとプログラム終了です。</p>
+
+<pre id="doc4_id322" class="console">
+C:\WiiRemote\WiiYourself!\WiiMyself\Debug&gt;<kbd class="kbd">WiiMyself.exe</kbd>
+Hello, WiiRemote!
+contains WiiYourself! wiimote code by gl.tter
+http://gl.tter.org
+connected.
+＜ここでBボタンを押すとバイブレーターが振動＞
+Disconnected.
+</pre>
+
+<p>あまりに地味な画面なのですが、ちゃんとLEDが点灯し、Bバイブレーターが振動していることが確認できます。Homeボタンで終了します。.NET版に比べて起動時の待ち時間がほとんどないのがコマンドラインプログラムの特徴です。</p>
+<div class="fyi">
+<div class="title">.NETとコマンドライン、どっちが軽い？</div>
+
+<p class="first_ja">　.NETはマイクロソフトが提供する現在主流のプログラミング環境です。対してコマンドラインは古くから使われているだけに、互換性や無駄を省いた実行速度などに利点があります。</p>
+<p>　たしかに.NET環境でつくったフォームによるプログラムとコマンドラインプログラムでは起動時初期化の時間の差があります。これはおそらく共通言語ランタイム(CLR)を経由して、.NETのフォームに関係のあるDLLを読み込んでから実行することに起因する差でしょう。コマンドラインプログラム命！という読者(筆者も好きです)は、実行速度以外の優位点として「EXEファイルサイズもきっと小さいに違いない」と思われるかもしれません。そこで上記の「WiiMyself.exe」を調べてみるとデバッグ版83.5KB、リリースビルドでは35KBと確かに小さいです。このコードはボタンイベントだけですから、ほぼWiiYourself!のwiimoteのオブジェクトの大きさでしょう。しかし.NETの同様の実行ファイルの大きさを調べてみると…なんと「10KB以下」。たしかに.NET FrameworkにかかわるDLLはOS側に存在するわけですから当然といえば当然、しかし画面のフォームのためのコードやWiimoteLibオブジェクトはどこにいってしまったのでしょう？あまりに差が大きすぎますよね？そうです…隣にある「WiimoteLib.DLL」のファイルサイズも忘れてはいけません。調べてみると32.5KB。足すと42.5KBですから、これでだいたい計算が合いますね。</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id31">Win32でつくるWiiRemoteテルミン</h2>
+
+
+<h3 id="doc5_id351">テルミンを作ろう</h3>
+
+<p class="first_ja">前のセクションでは、シンプルな「Hello, WiiRemote!」プログラムを作ることで、自分自身でWiiYourself!を使って学ぶ第一歩を踏んでみることにしました。このように「自分自身で{ゼロから/いちから}書いてみる」という手法は、C/C++などのプログラミングを一通り勉強したけれど『挫折しました』という方には特にお勧めの方法です。</p>
+<p>しかし地味なコマンドラインプログラムが続いています。続くこのセクションでは、ちょっと派手なことをしてみましょう。コマンドラインプログラムを使って「テルミン(Theremin)的なもの」を作ってみます。テルミンとは電波をつかった不思議な楽器ですが、ここではWiiYourself!からWindowsのプラットフォームAPIであるWin32を利用し、ソフトウェアMIDIを叩くことで、PCから音を鳴らします。せっかくのWiiRemoteですから、たくさんあるボタンや加速度センサーを使った操作を実装したいと思います。</p>
+<p>プログラミング的にも、Win32など既存のC++環境で強力に利用できるプラットフォーム関数群をつかっていきます。プログラミング行数は短くても、非常に実用的なプログラミングを行えることがWiiYourself!を使う利点でもあります。</p>
+<div class="fyi">
+<div class="title">電波楽器テルミン「Терменвокс」とは</div>
+
+<p class="first_ja">　通称テルミン(Терменвокс[thereminvox]チルミンヴォークス)は、1920年にロシアの音響物理学者・アマチュア音楽家であったレオン・テルミン(Leon Theremin)が「エテロフォン」として発表した世界初の電波楽器です。「世界初の電気楽器」として有名ですが、実際には19世紀後半のエジソンによる「歌うアーク灯」などがありますので、テルミンはその演奏方法として特色のある「電波を使った無線演奏」が世界初の特徴としてふさわしいのかもしれません。電子回路的にはシンプルで、アナログラジオの特性を利用した音波生成なのですが、本書ではこともあろうに電子楽器インタフェースであるMIDI(Musical Instrument Digital Interface、電子楽器デジタルインタフェース)を利用して、さらにこともあろうにPCに付属しているソフトウェアMIDIを利用して実現しています。WiiRemoteを用いた入力方法は「テルミン的」ではありますが、発音方法がこんなにデジタルでは本来のテルミンを語るにはあまりにデジタル的で「Digital Theremin」とでも呼ばなければならない代物です。解説のためとはいえ、テルミンファンの皆さん、ごめんなさい。</p>
+<p>　ところで、このような「似て非なる創作」というのは、テクノロジーやメディアを駆使したアート分野である「メディアアート」の世界でも多々起きるようになってきました。学生さんなどが制作するときに、そのアイディアの元になるものの歴史や魂をきちんと調べて理解してから制作に臨まないと、このようなまがい物が氾濫してしまいます(それはそれでアートなのかもしれませんが！)。あまり説教じみたことにはしたくはありませんので、まずは「本物のテルミン」の演奏、音色を聴いてみてください。</p>
+<p>■Theremin by Masami Takeuchi (Youtube)</p>
+<p>　http://www.youtube.com/watch?v=XwqLyeq9OJI</p>
+<p>　そしてチャンスがあったら、本物のテルミンを演奏してみてください。簡単に演奏できる楽器ではありません。でもピアノだって最初は同じですよね？楽器としての「難度」と「習熟」が、その神秘的な音楽的美しさに直結していることだってあるわけです…。</p>
+</div>
+
+
+<h3 id="doc5_id357">まずは「ボタン操作テルミン」</h3>
+
+<p class="first_ja">さて、最初のステップとして「ボタン操作で音が鳴るテルミン」を作ります。ボタンのイベントでMIDIを鳴らすだけなので、なんだかテルミンらしくはないですが、玩具としては十分楽しめるものです。プロジェクトとしては先ほどまでの「WiiMyself」をそのまま改造していきましょう。</p>
+<p>まずはプログラムの前半を解説します。</p>
+
+<div id="doc5_id359" class="caption">ボタン操作テルミン(前半)</div>
+<pre class="program" style="margin-top:0">
+#pragma comment(lib,&quot;winmm.lib&quot;)
+#include &lt;windows.h&gt;
+//MIDI特有のエンディアンを変換するマクロ
+#define MIDIMSG(status,channel,data1,data2) ( (DWORD)((status&lt;&lt;4) | channel \
+    | (data1&lt;&lt;8) | (data2&lt;&lt;16)) )
+#include &quot;../../wiimote.h&quot; //WiiYourself!を取り込む
+
+static HMIDIOUT hMidiOut;  //MIDIハンドラ
+static BYTE note=0x3C, velocity=0x40; //音階と音量
+static BYTE program=0x0;   //音色
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+  wiimote cWiiRemote;
+  HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+  printf(&quot;WiiRemote-Theremin button version by Akihiko SHIRAI\n&quot;);
+  //LICENSE
+printf(&quot;contains WiiYourself! wiimote code by \
+    gl.tter\nhttp://gl.tter.org\n&quot;);
+  //MIDIを開く
+  midiOutOpen(&amp;hMidiOut,MIDIMAPPER,NULL,0,CALLBACK_NULL);
+  //最初につながったWiiRemoteに接続する
+  while(!cWiiRemote.Connect(wiimote::FIRST_AVAILABLE)) {
+   printf(&quot;WiiRemoteに接続してください(0x%02X)\n&quot;,program);
+   midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,0)); //ミュート
+   Sleep(1000);
+   program++;
+   midiOutShortMsg(hMidiOut,MIDIMSG(0xC,0,program,0)); //音色変更
+   //接続失敗するたびに鳴る
+   midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+  }
+  printf(&quot;接続しました！\n [1]/[2]音色 [↑]/[↓]音階 [←][→]音量 [Home]終了\n\n&quot;);
+  Sleep(1000);
+</pre>
+
+<p>まずプログラムの冒頭部分で、MIDIを扱うために&quot;windows.h&quot;と&quot;winmm.lib&quot;を取り込んでいます。さらにMIDI特有のメッセージ形式を簡単に発行するためにマクロという、単純な命令を変換する変換式を定義しています。HMIDIOUTはMIDIハードウェアそのものを捕まえるためのハンドルと呼ばれるもので、BYTE型変数「note, velocity, program」はそれぞれ音階、音量、音色を格納する変数です。</p>
+<p>プログラムのタイトルとライセンス表示をして、WiiRemoteに接続しています。ちょっとした演出で、接続されるまで音色(program)がだんだん変わっていきます。</p>
+<p>このままではコンパイルも実行もできない状態ですから、続きのコードを書いていきましょう。</p>
+
+<div id="doc5_id362" class="caption">ボタン操作テルミン(後半)</div>
+<pre class="program" style="margin-top:0">
+  //今回はボタンイベントだけが更新を伝える
+  cWiiRemote.SetReportType(wiimote::IN_BUTTONS);
+  while(!cWiiRemote.Button.Home()) {  //Homeで終了
+    while(cWiiRemote.RefreshState() == NO_CHANGE)
+	  Sleep(1); //これがないと更新が速すぎる
+    cWiiRemote.SetRumble(cWiiRemote.Button.B()); //Bで振動
+    switch (cWiiRemote.Button.Bits) { //ボタンごとでswitchする例
+      //音量 [←]/[→]
+      case wiimote_state::buttons::RIGHT :
+        if(velocity&lt;0x7F) velocity++;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      case wiimote_state::buttons::LEFT :
+        if(velocity&gt;0) velocity--;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      //音色(=program) [1]/[2]
+      case wiimote_state::buttons::ONE :
+        if(program&gt;0) program--;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0xC,0,program,0)); //音色変更
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      case wiimote_state::buttons::TWO:
+        if(program&lt;0x7F) program++;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0xC,0,program,0)); //音色変更
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      //音階 up/down
+      case wiimote_state::buttons::UP :
+        if(note&lt;0x7F) note++;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      case wiimote_state::buttons::DOWN:
+        if(note&gt;0) note--;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      //[A]/[B]で同じ音をもう一度鳴らす
+      case wiimote_state::buttons::_A :
+      case wiimote_state::buttons::_B :
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        break;
+      //その他のイベント、つまりボタンを離したときミュート。
+      default :
+        midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,0));
+    }
+    //現在のMIDIメッセージを同じ場所にテキスト表示
+	COORD pos = { 10, 7 };
+	SetConsoleCursorPosition(console, pos);
+    printf(&quot;音色 = 0x%02X , 音階 = 0x%02X , 打鍵強度 = 0x%02X\n&quot;,
+          program,note,velocity);
+  }
+  //終了
+  midiOutReset(hMidiOut);
+  midiOutClose(hMidiOut);
+  cWiiRemote.SetLEDs(0);
+  cWiiRemote.SetRumble(0);
+  cWiiRemote.Disconnect()
+  printf(&quot;演奏終了\n&quot;);
+  CloseHandle(console);
+  return 0;
+}
+</pre>
+
+<p>ボタンイベントの部分が長いのですが、前のセクションの改造ですし、ここは「コピペ」してもかまいません、編集や符号の向きに気をつけて「他の行との違いを意識しながら」コピペをするのがテクニックです。またprintf()の表示部分は英語や好きなメッセージに変えていただいてもかまいません。</p>
+<p>無事にコンパイルができたら、WiiRemoteをBluetoothに接続する準備をして、実行してみましょう。</p>
+
+<pre id="doc5_id365" class="console">
+WiiRemote-Theremin button version by Akihiko SHIRAI
+contains WiiYourself! wiimote code by gl.tter
+http://gl.tter.org
+WiiRemoteに接続してください(0x00)
+WiiRemoteに接続してください(0x01)
+...
+</pre>
+
+<p>というように表示されPCのスピーカーから音が鳴り始めたら成功です。WiiRemoteをBluetoothに接続してみてください。もしこの時点で音がなっていなかったら、PCのマスターボリュームを確認します。音声関係のボリュームがすべて正常で、他のプログラムからは音が出るのに「なぜかMIDIだけ鳴らない！」というときは、コントロールパネルの「サウンドとオーディオデバイス」から「デバイスの音量」の「詳細設定」を選んで「SWシンセサイザ」の音量がゼロ(ミュート)になっていないか確認してください(筆者はこの設定のおかげでプログラムが間違っているのかと何日も悩んだ経験があります...)。</p>
+<p>さて、無事に音が出ていたら、以下のような画面になっているはずです。</p>
+
+<pre id="doc5_id368" class="console">
+接続しました！
+ [1]/[2]音色 [↑]/[↓]音階 [←][→]音量 [Home]終了
+          音色 = 0x00 , 音階 = 0x50 , 打鍵強度 = 0x6A
+</pre>
+
+<p>WiiRemoteの十字キーの右や上を押すと表示されている値が変わることを確認してください。[A]ボタンを押すと「ポーン」という電子ピアノの音が鳴るはずです。[B]ボタンを押すとMIDIの発声に加えてバイブレーターが鳴るはずです。[1][2]ボタンで音色、すなわちMIDIの楽器(インスツルメント)を変えることができます。[Home]ボタンを押すと終了です。</p>
+<p>さて、これでボタンイベントによるMIDI発声は完成しました。MIDIの楽器(program)は127種類もあります。筆者は[0x76]あたりの打楽器系のインスツルメントが好きです。</p>
+
+<h3 id="doc5_id372">加速度センサーによるテルミン</h3>
+
+<p class="first_ja">次はよりテルミンらしく加速度センサーでMIDIを鳴らせるようにしましょう。復習もあわせて、今まで使ってきたソリューションに新しい「Thermin-Acc」を加えることで新しいプロジェクトの作り方も学びます。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WYS-Theremin-Acc-1.png" alt="プロジェクトの新規追加">
+</div>
+
+<p>既に「WiiYourself! lib」や現在ボタン式テルミンになっているはずの「WiiMyself」を含むソリューション「WiiMyself」を右クリックして「追加」→「新しいプロジェクト」を選びます。「新しいプロジェクトの追加」ダイアログが現れたら「プロジェクト名」を「Theremin-Acc」とします。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WYS-Theremin-Acc-2.png" alt="空ではない「コンソールアプリケーション」を作成">
+</div>
+
+<p>「Win32アプリケーションウィザード」が起動しますので、ステップに従い「コンソールアプリケーション」をクリック、「空のプロジェクト」のチェックが外れていることを確認してください。完了すると新しいプロジェクトが現れます。</p>
+<p>次に、ソリューションエクスプローラーで「Theremin-Acc」を右クリックし「スタートアッププロジェクトに設定」します（これを忘れると、[F5]キーでデバッグしたときに「ボタン版テルミン」が起動してしまいます）。この状態で[F5]キーによるビルドとデバッグを試すことはできますが、WiiYourself!の組み込みまで終わらせてしまいましょう。</p>
+<p>メニューバーの「プロジェクト」→「プロジェクトの依存関係」を表示して「Theremin-Acc」に対して「WiiYourself! lib」にチェックします。</p>
+<p>最後に、プロジェクトのプロパティを追加します。プロパティを表示し「アクティブ(Debug)」となっている構成を「全ての構成」に切り替えて、「C++」→「全般」→「追加のインクルードディレクトリ」に「C:\WINDDK\3790.1830\inc\wxp」を設定します。同様に「すべての構成」に対して、「リンカ」→「全般」→「追加のライブラリディレクトリ」に「C:\WINDDK\3790.1830\lib\wxp\i386」を設定します。</p>
+<p>さて、これで準備完了です。前回作成したボタン版テルミンから一部コードを流用して、プログラミングを進めていくと楽でしょう。1/3づつ解説していきます。</p>
+
+<div id="doc5_id378" class="caption">加速度センサーによるテルミン(1/3)</div>
+<pre class="program" style="margin-top:0">
+#include &quot;stdafx.h&quot;
+#pragma comment(lib,&quot;winmm.lib&quot;)
+#include &lt;windows.h&gt;
+//MIDI特有のエンディアンを変換するマクロ
+#define MIDIMSG(status,channel,data1,data2) ( (DWORD)((status&lt;&lt;4) | channel \
+    | (data1&lt;&lt;8) | (data2&lt;&lt;16)) )
+#include &quot;../../wiimote.h&quot; //WiiYourself!を取り込む
+static HMIDIOUT hMidiOut;  //MIDIハンドラ
+static BYTE note=0x3C, velocity=0x40; //音階と音量
+static BYTE program=0x0;   //音色
+int _tmain(int argc, _TCHAR* argv[]) {
+  wiimote cWiiRemote;
+  HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+  SetConsoleTitle(_T(&quot;WiiRemote-Theremin Acceleration version&quot;));
+  printf(&quot;WiiRemote-Theremin Acceleration version by Akihiko SHIRAI\n&quot;);
+  //LICENSE
+printf(&quot;contains WiiYourself! wiimote code by \
+    gl.tter\nhttp://gl.tter.org\n&quot;);
+  //MIDIを開く
+  midiOutOpen(&amp;hMidiOut,MIDIMAPPER,NULL,0,CALLBACK_NULL);
+  //最初につながったWiiRemoteに接続する
+  while(!cWiiRemote.Connect(wiimote::FIRST_AVAILABLE)) {
+   printf(&quot;WiiRemoteに接続してください(0x%02X)\n&quot;,program);
+   midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,0)); //ミュート
+   Sleep(1000);
+   program++;
+   midiOutShortMsg(hMidiOut,MIDIMSG(0xC,0,program,0)); //音色変更
+   midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity)); //接続しないたび鳴る
+  }
+  printf(&quot;接続しました！\n&quot;);
+  printf(&quot;\n\t  [B]打鍵 [Roll]音量 [Pitch]音階 [1]/[2]音色 [Home]終了\n&quot;);
+  Sleep(1000);
+</pre>
+
+<p>さて、ここまでは前回のボタン版テルミンとほとんど何も変わりません。余裕があればテキスト表示部分なども好きに変えてみるとよいのではないでしょうか(ただしライセンス表示を変えないように注意!)。</p>
+
+<div id="doc5_id381" class="caption">加速度センサーによるテルミン(2/3)</div>
+<pre class="program" style="margin-top:0">
+  //今回はボタン＋加速度イベントが更新を伝える
+  cWiiRemote.SetReportType(wiimote::IN_BUTTONS_ACCEL);
+  while(!cWiiRemote.Button.Home()) {  //Homeで終了
+    //RefreshStateは内部更新のために呼ばれる必要がある
+    while(cWiiRemote.RefreshState() == NO_CHANGE) {
+	  Sleep(1); //これがないと更新が速すぎる
+    }
+    switch (cWiiRemote.Button.Bits) { //ボタンごとでswitchする
+      //音色(=program) [1]/[2]
+      case wiimote_state::buttons::ONE :
+        if(program&gt;0) program--;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0xC,0,program,0)); //音色変更
+        break;
+      case wiimote_state::buttons::TWO:
+        if(program&lt;0x7F) program++;
+        midiOutShortMsg(hMidiOut,MIDIMSG(0xC,0,program,0));
+        break;
+      default:
+        //音量 [傾きPitch]
+velocity = \
+    (int)(127*(cWiiRemote.Acceleration.Orientation.Pitch+90.0f)/180.0f);
+        if(velocity&gt;0x7F) velocity=0x7f;
+        if(velocity&lt;0x00) velocity=0x00;
+
+        //音階 [傾きRoll]
+note = (int)(127*(cWiiRemote.Acceleration.Orientation.Roll+90.0f)/180.0f);
+        if(note&gt;0x7F) note=0x7F;
+        if(note&lt;0)    note=0;
+
+        if(cWiiRemote.Button.B()) {         //[B]打鍵
+          midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,velocity));
+        } else {
+          midiOutShortMsg(hMidiOut,MIDIMSG(0x9,0x0,note,0));
+        }
+</pre>
+
+<p>注意深く読めば、それほど難しいことはしていないことに気づくと思います。「cWiiRemote.SetReportType(wiimote::IN_BUTTONS_ACCEL)」で、前回はボタン更新だけだったリポートモードを、ボタンと加速度の変化があったときにリポートする、というモードに変えています。これも「::」をタイプすると、Intellisenseが自動で表示してくれますから、適切なモードを選択肢から選びましょう。</p>
+<p>なおボタンイベントはコールバックで処理してもいいのですが、多くの読者の理解のために「switch (cWiiRemote.Button.Bits)」として表現しています(コールバック化したい方は後の「demo.cpp」を参考にするとよいでしょう)。Case文で音色変更に必要となるボタン[1][2]を分岐させて、音色(program)を変更し、MIDIコマンドを送信しています。なお前回のボタン版と違って、音色の変更だけで打鍵はしていません。</p>
+<p>そしてこのswitch文におけるほとんどのイベントは「default:」に流れます。ここで加速度センサーの値、特にWiiYourself!で取得できる姿勢推定による「Pitch(仰角；首を上下にする方向)」と「Roll(ロール；首を左右に傾ける方向)」をそのまま「音量」と「音階」にわりあててみました。</p>
+<p>…『割り当ててみました』という表現をあえて使ったのは、これは別に「cWiimote.Acceleration.RawX」などの値でも全く問題ない、ということです(そのほうが変換も不要)。この場合、PitchやRollは&plusmn;90度(-90度～+90度)の値をとります。</p>
+
+<pre id="doc5_id384" class="program">
+velocity = \
+    (int)(127*(cWiiRemote.Acceleration.Orientation.Pitch+90.0f)/180.0f);
+ note = (int)(127*(cWiiRemote.Acceleration.Orientation.Roll+90.0f)/180.0f);
+</pre>
+
+<p>この式を参考にすることで、たいていの入力は自分の望みの値域に変換できるよう、例として、今回はこのような変換式を利用しています。インタラクションをデザインする上で、必要なボタン、必要な角度、わかりやすい利用方法などなど適切と思われる変換式を考える必要があります。参考にしてください。</p>
+
+<div id="doc5_id387" class="caption">加速度センサーによるテルミン(3/3)</div>
+<pre class="program" style="margin-top:0">
+        //座標指定テキスト表示
+        COORD pos = { 10,  7 };
+        SetConsoleCursorPosition(console, pos);
+printf(&quot;加速度 X = %+3.4f[0x%02X] Y = %+3.4f[0x%02X] Z = %+3.4f[0x%02X] &quot;,
+          cWiiRemote.Acceleration.X, cWiiRemote.Acceleration.RawX,
+          cWiiRemote.Acceleration.Y, cWiiRemote.Acceleration.RawY,
+          cWiiRemote.Acceleration.Z, cWiiRemote.Acceleration.RawZ
+          );
+        pos.X=10; pos.Y=9;
+        SetConsoleCursorPosition(console, pos);
+        printf(&quot;姿勢推定 Pitch = %+3.4f  Roll = %+3.4f  Update=%d  &quot;,
+          cWiiRemote.Acceleration.Orientation.Pitch,
+          cWiiRemote.Acceleration.Orientation.Roll,
+          cWiiRemote.Acceleration.Orientation.UpdateAge
+          );
+        pos.X=10; pos.Y=11;
+        SetConsoleCursorPosition(console, pos);
+        printf(&quot;音色 = [0x%02X] , 音階 = [0x%02X] , 打鍵強度 = [0x%02X] &quot;,
+          program,note,velocity);
+        break;
+    }
+  }
+  //終了
+  midiOutReset(hMidiOut);
+  midiOutClose(hMidiOut);
+  cWiiRemote.SetLEDs(0);
+  cWiiRemote.SetRumble(0);
+  cWiiRemote.Disconnect();
+  printf(&quot;演奏終了\n&quot;);
+  CloseHandle(console);
+  return 0;
+}
+</pre>
+
+<p>最後のパートは「プログラムの見た目」に関わる場所です。コマンドラインプログラムですから地味でもいいのですが、現在の加速度の変換前の値、つまりWiiRemoteからの生値である「RawX」、「RawY」、「RawZ」を観察して見る価値はあるので、あえて16進数で表現しています。地味な16進数表示ではなく、テルミンらしいアンテナや、何か派手なものを表示するプログラムに変えていただいても全く問題ありません。</p>
+<p>最後に、終了パートでMIDIを閉じて、LEDやバイブレーターを停止させてから切断しています(バイブレーターは使っていませんが、これを忘れるとバイブレーターを使ったまま、間違えて終了してしまったときなど大変です)。</p>
+<p>なおcWiiRemoteオブジェクトの終了方法ですが、裏で走っている測定スレッドは必要が無くなれば自動的に削除されるので、「Disconnect()」をコールして切断さえしておけばこのまま終了してもよいようです。</p>
+<div class="fyi">
+<div class="title">「地味ではない」コマンドラインプログラム</div>
+
+<p class="first_ja">地味なコマンドラインプログラムですが「SetConsoleCursorPosition」を使うことで昔懐かしいBASICでのLOCATE文にあたる表示位置指定を扱うことができます。ここでは目的の位置にprintfを表示させるためだけに使っていますが、1980年代の子供たちはこれで「ブロック崩し」ぐらいは作ったものです。他にもWiiYourself!の「demo.cpp」には色をつけたり、点滅させたり、音を鳴らしたりといった往年のコマンドラインプログラムの技が随所に見られます。最近のグラフィックスは「ブロック崩し」の数万倍も高解像度ですが、テキストグラフィックス(文字を使った絵作り)も使いこなせばなかなかに「クールな技」になるのではないでしょうか。…単に人々の想像力が低下しているだけなのかも？</p>
+</div>
+
+<p>さて、これでプログラムは完成です。無事にコンパイルが通ったら、WiiRemoteにBluetoothを接続して、カッコよく構えましょう。何か面白いことをする上で「間(ま)と構え」は非常に重要です。</p>
+
+<div class="figure">
+<img class="figure" src="Wiiyourself/WYS-Theremin-Acc-3.png" alt="加速度版テルミン実行画面(スクリーンショット)">
+</div>
+
+<p>まずものすごいスピードで何かが測定できているのが見れるはずです。</p>
+
+<pre id="doc5_id396" class="console">
+[B]打鍵 [Roll]音量 [Pitch]音階 [1]/[2]音色 [Home]終了
+加速度 X = -0.3846[0x7B]  Y = -0.5556[0x77]  Z = +0.6923[0x97]
+姿勢推定 Pitch = +35.0491  Roll = -23.4268  Update=0
+音色 = [0x00] , 音階 = [0x2E] , 打鍵強度 = [0x58]
+</pre>
+
+<p>この値は高速に動いている数字は何でしょう？そうです「加速度センサー」の値です。ものすごいスピードで取得できていることがわかります。さて、[B]ボタンで「打鍵」(鍵盤を叩くこと)をしてみましょう。「ボロロロローン」と、情熱的かつ前衛的なピアノ演奏が聞こえれば、成功です。時には指揮者のように、時には舞踊のように、[B]ボタンを押しながら、WiiRemoteに仰角やロール角を与えてみましょう。腕の曲げ伸ばしが「音階」、ひねりが「音量」になんとなく当てはまっているはずです(制御はとても難しいのですが、不可能ではないはず)。[2]ボタンを押して、音色を変えたりして試してみましょう。飽きるまで遊んだら[Home]ボタンで終了します。</p>
+<p>多くの読者はここで、すぐに記述したコードを変更してみたくなったはずです。これが「正しいプログラミング姿勢」です。このページにしおりを挟んだら、思う存分、テルミンのチューニングや、画面の表示デコレーションを変更して遊んできてください。</p>
+<p>なお改良のヒントとしては以下のような要素があります。</p>
+
+<dl>
+<dt>音楽性を変更
+<dd>「この情熱的なビブラート」は音色を変えてもいずれ飽きがきます。打鍵速度をSleep()などを使うことでコントロールして、ひとつひとつのノートを丁寧に発音させることもできますが、お勧めなのはRollからnoteへの変換式を改良することです。今のように細かい動きやノイズを直接音階に割り当てると、あまりに聞き苦しいので、より少ない幅の音階を広い動きに割り当てることで、丁寧に、狙った音階を演奏することができるようになるでしょう(訓練は必要かも)。また入力をWiiYourself!の関数による姿勢推定Rollを使うのではなくRowYなど生の測定値を利用するのもよいでしょう。
+<dt>利便性を向上
+<dd>[1],[2]ボタンで楽器を選ぶのはあまりに当たり前すぎてカッコよくないです。例えば、あらかじめ「使えそうな楽器」を探しておいて、[+][-]ボタンで割り当ててしまうというのはどうでしょうか。
+<dt>画面の見た目を向上
+<dd>いまの画面はまるで一昔前の「銀行のATM」や「医療用計測機器」といった雰囲気です。それはそれでいいのですが、入力された値をそのままテキストの座標につかうことで、よりカッコいい感じのテキストグラフィックスを作ることができます。
+<dt>MIDI信号を高度に
+<dd>DTMやMIDIに知識のある方なら、この時点ですばらしいMIDI入力装置を手に入れたことになります。他のMIDIファイルをボタンに割り当てて演奏させることもできますし、シーケンサーの役割をするプログラムと組み合わせて「音ゲー」を作ることもできます。外部のMIDI音源や、MIDI信号をサポートする他のフィジカルコンピューティングなガジェットを操作することも、このプログラムを基点として開発することもできるからです。</dl>
+
+<div class="fyi">
+<div class="title">MIDI制御プログラムについて</div>
+
+<p class="first_ja">　本プログラムのWin32によるMIDI制御はこちらのWebサイトでの解説を参考にしています。</p>
+<p>■Windowsプログラミング研究所(kymats氏)</p>
+<p>　http://www13.plala.or.jp/kymats/study/MULTIMEDIA/midiOutShortMsg.html</p>
+<p>　他にもMIDIを制御する方法はたくさんありますが、こちらのサンプルがもっとも「テルミン向き」でした。たくさんの使えるサンプルを用意されている、作者のkymatsさんにはこの場をお借りして感謝を述べさせていただきます。</p>
+</div>
+
+<p>以上でWiiYourself!によるWin32を用いたテルミンの開発を終わります。Win32の資産やその他のプロジェクトを利用する上での実際的な助けになったでしょうか？</p>
+<p>またゲームプログラマー的な思考をする方は、テルミンの実行を通して「WiiRemoteは一体どれぐらいの速度で動いているんだろう？」「どうやったら最大のパフォーマンスを出せるのだろう？」といった疑問も出てきたのではないでしょうか？この疑問に対するコーディングと実験は次のセクションに続きます。</p>
+<div class="fyi">
+<div class="title">研究と遊びと実験のはざまに</div>
+
+<p class="first_ja">　なお筆者はこのセクションで2つも玩具プログラムができたので、「インタラクション技術の研究者」という科学的な興味から、自分の子供たちで実験をしてみました。結果だけ述べると、6歳の息子はどちらかというと加速度センサー版のテルミンのほうが好きなようでした。しかし2歳の子供はボタン式のほうが断然好きで、しかも音色は「バキュン!バキュン!」という[0x7F]を確実に嗜好していることが観察から見て取ることができました。どちらの場合も、被験者(あえてこう呼ぶ)は、画面やPCのスピーカーと、手元のWiiRemoteが関係があるということは確実にわかっていましたが、表示されているものが何なのかは理解していないようです。</p>
+<p>＜★この辺イラストあったほうが良いですか？＞</p>
+<p>　子供の嗜好というのは同じ環境で育っていても異なりますし、年齢によってもその理解や楽しさは異なります。「あたりまえのこと」ではありますが、この種の地味な実験は、最近のゲームデザインでは、意外と忘れられている点でもあります(倫理規定によるレーティングはありますが、インタラクション可能か？楽しめるかどうか？という点で)。しかもこのような「興味を引くか・楽しめるか」という視点での実験は最新の認知科学の話題にアプローチする科学の実験であるともいえるでしょう。それがこんな数十行たらずのプログラムでも行えるわけです。</p>
+<p>　しかし注意があります。一般の子供を使ったこの種の心理実験やデータ取得には、同意書の取得などが必要です(言語やサインが理解できない年齢ではより困難です)。本書は、掲載したプログラムを利用した実験などによる直接・間接的障害や損害について一切責任を負いません。人間を使った実験(嫌な言い方をすれば「人体実験」)に関わる倫理規定について興味がある方は「ヘルシンキ宣言」を参考にするとよいでしょう。研究を進める上での考え方としては「ポケモン光てんかん」などの規定策定に関わられた国立小児病院の二瓶健次先生による「バーチャルリアリティは子どもに何ができるか-臨床場面でのVR-」などが非常によくまとまっていて参考に値します。さまざまなエンタテイメント技術を研究対象にする上での基本的な考え方として引用できる論文としては、筆者の博士論文の一部である「エンタテイメントシステム」(芸術科学会論文誌第3巻vol.1)が参考になるかもしれません。</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id36">計測器としてのWiiRemote</h2>
+
+<p class="first_ja">このセクションではWiiYourself!によるコマンドラインプログラムを使うことで、WiiRemoteをより高度な計測器として利用することに挑戦してみます。</p>
+<p>重力・姿勢・動作周波数を測定するプログラムを作成し、WiiRemoteの更新パラメータを変えることで、加速度センサーが『いったいどれぐらいの速度で動いているのか？』を測定してみます。</p>
+<p>この後、WiiRemoteを使いこなす上で非常に重要な実験なのですが、非常に地味な上に「物理が苦手すぎて寝てしまいます！」という読者はナナメ読みでもかまいません。無理強いは体によくないので、結果だけ利用しましょう。</p>
+
+<h3 id="doc6_id455">「WiiRemote計測器」重力・姿勢・動作周波数</h3>
+
+<p class="first_ja">先ほどの加速度センサー版テルミンと同じく、今度もまた新しいプロジェクト「Measurement」をソリューションに追加してみましょう(せっかく作ったテルミンを壊してもいいのであれば、止めません)。面倒な人は現在、ボタン版テルミンになっている「WiiMyself」のmain.cppを置き換える形で作成してもよいでしょう(少しでも未練がある人は、コメントアウトして活用するとよいでしょう)。</p>
+<p>測定プログラムは60行程度です。_tmain()関数しか使いません。理解のしやすさと解説の都合から2つのパートに分けますが、テルミンからのソースが利用できる箇所も多々ありますので、可能であれば一気にコーディングしてしまうとよいでしょう。</p>
+
+<div id="doc6_id457" class="caption">WiiRemote測定器(1/2)</div>
+<pre class="program" style="margin-top:0">
+#include &quot;../../wiimote.h&quot;
+#include &lt;mmsystem.h&gt;   // for timeGetTime()
+#include &lt;conio.h&gt;      // for _kbhit()
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	wiimote cWiiRemote;
+    DWORD currentTime=0; //現在の時刻を格納する変数
+    //動作周波数測定用
+    DWORD startTime=0, Refreshed=0, Sampled=0;
+    float duration=0.0f; //経過時間[秒]
+    bool  continuous=false;
+	_tprintf(_T(&quot;WiiRemote Measurement\n&quot;));
+	_tprintf(_T(&quot;contains WiiYourself! wiimote code by \
+    gl.tter\nhttp://gl.tter.org\n&quot;));
+	while(!cWiiRemote.Connect(wiimote::FIRST_AVAILABLE)) {
+		_tprintf(_T(&quot;Connecting to a WiiRemote.\n&quot;));
+		Sleep(1000);
+		}
+	_tprintf(_T(&quot;connected.\n&quot;));
+    cWiiRemote.SetLEDs(0x0f);
+	Sleep(1000);
+    //何か引数が設定された場合、周期モードに設定
+    if (argv[1]) {
+     _tprintf(_T(&quot;ReportType continuous = true [%s]\n&quot;), argv[1]);
+     continuous = true;
+    }
+    //ボタンか加速度に変化があったときにリポートするよう設定
+    //第2引数をtrueにすることでデータ更新を定期化(10msec程度)する
+    //デフォルトはfalseでポーリング(データがあるときだけ)受信モード
+	cWiiRemote.SetReportType(wiimote::IN_BUTTONS_ACCEL, continuous);
+    startTime=timeGetTime();  //開始時の時間を保存
+</pre>
+
+<p>コメントにも記載はしていますが、大事なところを補足しておきます。</p>
+
+<dl>
+<dt>mmsystem.h
+<dd>timeGetTime()という現在の時刻を測定するWindowsプラットフォームAPIを利用するために#includeしています。
+<dt>conio.h
+<dd>_kbhit()というキーボード入力を受け付ける関数を利用して、プログラム終了時に画面が消えてしまうのを防ぐために#includeしています。
+<dt>DWORD startTime=0, Refreshed=0, Sampled=0;
+<dd>timeGetTime()はとても大きな整数なのでDWORD型の変数を用意しています。同様にDWORD型でCPU側の更新回数をカウントするRefreshedと、実際にデータ取得が成功した回数を数える整数型変数Sampledを用意しています。
+<dt>float duration=0.0f;
+<dd>timeGetTime()はミリ秒単位で現在のシリアル時間を渡します。これを1/1000にして、開始時間(startTime)との差を秒単位で表現するduration(期間)という名前のfloat型変数です。
+<dt>bool continuous=false;
+<dd>プログラムの起動時に引数指定をすることで変数argv[1]に文字列を渡すことができます。ここでは、注目したい関数「SetReportType(wiimote::IN_BUTTONS_ACCEL, continuous);」の第2引数を変更して、再コンパイルしなくても実験できるようにcontinuousを実行時の引数として渡せるようにしています。なお指定しないときはfalseです。</dl>
+
+<p>WiiYourself!のAPI関数「SetReportType()」の詳細が気になっていた読者もいると思います。この関数は2つのフォーマットがあり、いままでは「bool continuous」が無いタイプを使って、ボタンや加速度の変化といったリポートモードを指定していました。関数を右クリックして「宣言へ移動」すると、以下のようなgl.tter氏のコメントを読むことができます。</p>
+
+<pre>
+//set wiimote reporting mode (call after Connnect())
+//continous = true forces the wiimote to send constant updates, even when
+//            nothing has changed.
+//          = false only sends data when something has changed (note that
+//            acceleration data will cause frequent updates anyway as it
+//            jitters even when the wiimote is stationary)
+  void SetReportType  (input_report type, bool continuous = false);
+【参考訳】WiiRemoteのリポートモードを設定します、Connect()の後にコールして下さい。
+continuousをtrueにすることで、WiiRemoteに変更があったかどうかに関わらず、周期的に更新を送らせるよう設定できます。falseのときは何か変化があったときだけデータを送信します。WiiRemoteががっちりしたところに置かれているときはビクビク(jitter)してしまいますが、加速度データはよく(frequnet)更新をするでしょう。
+</pre>
+
+<p>この「更新があったときだけ送信」という通信方法を通信用語で「ポーリング(polling)」といいます。送信要求を受けたデバイスが『あるよ～』と答えたときだけ、実際にデータが流れるので通信帯域を節約できます。実際にボタン、加速度、赤外線、拡張端子…とフルスペックである「IN_BUTTONS_ACCEL_IR_EXT」を宣言すると、Bluetoothの帯域を圧迫してしまうこともあるようですので、これは調べてみなければなりません。</p>
+<p>それでは後半のコード、接続後のループに続きます。</p>
+
+<div id="doc6_id496" class="caption">WiiRemote測定器(2/2)</div>
+<pre class="program" style="margin-top:0">
+    //Homeがおされるまで、もしくは10秒間測定
+	while(!cWiiRemote.Button.Home() &amp;&amp; duration&lt;10)
+	  {
+        while(cWiiRemote.RefreshState() == NO_CHANGE) {
+            Refreshed++; //リフレッシュされた回数を記録
+            Sleep(1);    //CPUを無駄に占有しないように
+      }
+      Sampled++; //データに変更があったときにカウントアップ
+	  cWiiRemote.SetRumble(cWiiRemote.Button.B());
+_tprintf(_T(&quot;TGT:%d %+03d[msec] R:%d S:%d D:%1.0f Accel: X %+2.3f Y %+2.3f \
+    Z %+2.3f\n&quot;),
+        timeGetTime(), //現在の時刻
+        timeGetTime() - currentTime,
+        Refreshed, Sampled,duration,
+        cWiiRemote.Acceleration.X,
+        cWiiRemote.Acceleration.Y,
+		cWiiRemote.Acceleration.Z);
+      currentTime = timeGetTime();  
+      duration = (timeGetTime()-startTime)/1000.0f;
+    }
+	cWiiRemote.Disconnect();
+	_tprintf(_T(&quot;Disconnected.\n&quot;));
+    duration = (timeGetTime()-startTime)/1000.0f;
+    printf(&quot;接続時間%4.2f秒 更新%d回 データ受信%d回\n 更新周波数%.2fHz サンプリング%.2fHz\n&quot;,
+      duration, Refreshed, Sampled,
+      (float)Refreshed/duration, (float)Sampled/duration);
+    while (true) 
+      if (_kbhit()) {break;} //何かキーを押すまで待つ
+	return 0;
+}
+</pre>
+
+
+<dl>
+<dt>while(cWiiRemote.RefreshState() == NO_CHANGE) {
+<dd>RefreshState()とその下にあるSleep(1);が一体なんの役に立っているのか、疑問に思っていた人はいないでしょうか？ここで変数Refreshをインクリメント(=毎回+1)することで、いったいここで何が起きているのか調査したいと思います。
+<dt>Sampled++
+<dd>上記のwhileを抜けて、実際に何か変化が起きたときにインクリメントされます。プログラムのループの速度とは別に、実際のWiiRemoteが加速度を測定して送信できる限界速度をカウントするというわけです。
+<dt>timeGetTime() - currentTime
+<dd>プログラムがここを通過したとき、すなわちデータに変化が起きたときの時間を、前回の更新時との差(ミリ秒)で表現します。なおtimeGetTime()はマルチメディアタイマーと呼ばれる便利な関数ですが、50ミリ秒以下の計測精度・信頼性はありませんので注意。
+<dt>duration = (timeGetTime()-startTime)/1000.0f;
+<dd>現在の時間をtimeGetTime()で取得して、開始した時間(startTime)を引いて、1000で割ると、WiiRemoteへの接続開始から現在までの秒数がfloatで出ます。今回は10秒測定して自動でプログラムを止めるのにも使っていますが、実際にはその後にある、周波数を計算するのに使うのが目的です。</dl>
+
+<p>さて、コーディングが終わり、コンパイルが通ったら、WiiRemoteをBluetooth接続して、机の上などに立てて置いてみましょう。下の実行例では、拡張端子を下にして安定した机の上に立てています。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/Measured.png" alt="測定終了" width="6cm">
+</div>
+
+
+<div id="doc6_id533" class="caption">Measurementの実行例</div>
+<pre class="console" style="margin-top:0">
+...
+TGT:189427129 +10[msec] R:4818 S:582 D:10 Accel: X +0.538 Y \
+    -0.407 Z -0.308
+TGT:189427139 +10[msec] R:4823 S:583 D:10 Accel: X +0.423 Y \
+    -0.370 Z -0.231
+TGT:189427149 +10[msec] R:4828 S:584 D:10 Accel: X +0.308 Y \
+    -0.222 Z -0.115
+TGT:189427159 +09[msec] R:4833 S:585 D:10 Accel: X +0.231 Y \
+    -0.037 Z +0.115
+TGT:189427168 +08[msec] R:4837 S:586 D:10 Accel: X +0.192 Y \
+    +0.148 Z +0.385
+Disconnected.
+接続時間10.21秒 更新4837回 データ受信586回
+ 更新周波数473.84Hz サンプリング57.41Hz
+</pre>
+
+<p>引数は指定していないのでポーリング受信モードで動作しています。最後に表示されるメッセージとその解釈について解説します。</p>
+
+<dl>
+<dt>接続時間10.21秒
+<dd>durationで測定した時間です。「10.21秒」とあります。理論的には10秒であるはずなのですが、普通にif文で書いてもこれぐらいの誤差は発生するわけです。
+<dt>更新4827回
+<dd>while文、Sleep(1)で通過しているリフレッシュした回数「Refreshed」の値です。
+<dt>データ受信586回
+<dd>この10秒間の間に実際に更新されてプログラムに届いたデータです。ポーリングの場合、測定時の状況で大きく変わります。
+<dt>更新周波数473.84Hz
+<dd>whileループの中にいるRefreshedをdurationで割ったものですから、いわゆるCPUの速度が「？GHz」といっているもののと意味的にはに近いです。それにしてはなんだか少ない感じがするという人は、ためしにSleep(1)をコメントアウトしてみると驚ける数字になるかもしれません(MHzにはなるでしょう)。
+<dt>サンプリング57.41Hz
+<dd>実際の加速度データ取得更新が1秒間に57回行われた、ということを意味します。</dl>
+
+<p>何かボタンを押すと終了します(_kbhit関数)。安定な場所にいると、本当に少ししかデータが流れませんが、手に持っていたりすると、ものすごい速さでデータが流れているのがわかります。</p>
+<p>ポーリングモードではない、周期モード(continuous)も試してみましょう。デバッグ時の引数指定は簡単です。プロジェクトのプロパティ「デバッグ」→「コマンドの引数」に何か文字を書いてあげることでtrueになります。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Wiiyourself/Measure-Argv.png" alt="デバッグ時の引数指定" width="6cm">
+</div>
+
+<p>今度はWiiRemoteを持っているかどうかによらず、以下のような結果になったのではないでしょうか？</p>
+
+<pre id="doc6_id575" class="console">
+接続時間10.21秒 更新5076回 データ受信993回
+ 更新周波数497.16Hz サンプリング97.26Hz
+</pre>
+
+<p>周期モードは10msecごとに1回データを送るようですから、10秒で1000回、周波数にして100Hzとなり、上記の結果とほぼ一致します。</p>
+<p>他にもリビルドが必要になりますが、リポートモードに「IN_BUTTONS」や「IN_BUTTONS_ACCEL_IR_EXT」を入れて、変化を見てみると良いでしょう。なおWiiYourself!で実験したところでは、赤外線系モードにおいては周期モードが基本になっているようです。</p>
+
+<h3 id="doc6_id579">考察「ゲーム機として、計測器として」</h3>
+
+
+<h4 id="doc6_id581">WiiRemoteは速いか遅いか</h4>
+
+<p class="first_ja">さて、この節ではWiiRemoteの加速度センサーを計測器として使うための実験プログラムを作成して、各リポートモードのベンチマーク的なことを行ってみました。WiiYourself!においてはAPIとして隠蔽されているわけではないので、発見も多かったのではないでしょうか？</p>
+<p>測定してみると、WiiRemoteは周期モードなら100Hzぐらい、ポーリングなら60-80Hzぐらいで動作できるようです。ゲームコントローラや計測器として考えたときに、これは高速なのでしょうか？</p>
+<p>たとえば普通のゲーム機が1秒あたり30-60回のグラフィックスを更新し、Webカメラが1秒当たり15-30回の画像を取得して、そこから画像処理をして座標を検出しているわけですから、WiiRemoteの動作速度は「かなり速い」と表現できるのではないでしょうか。サンプリング定理を引用すると、実行周波数の倍は必要、ということで少なくともゲームに使うなら「十分な速度」といえるかもしれません。</p>
+<p>しかし、計測器としてみるとちょっと足りないかもしれません。まず加速度センサーは8bit(256レベル)あるのですが、世の中の携帯電話には12bit(1024レベル)とれるものも実装されていたりします。どれぐらい違うかというと、ポーリングモードのときに、机に置いたり「そーっと動かしてもデータが取れる」というレベルです。センサーの精度特性にも関係があるので一概にbit数では語れませんが、物理的な計測として、加速度と時間がわかれば、そこから速度と距離が算出できるはずですが、WiiRemoteの分解能では「そーっと動かしたぐらいで針がふれない」ので、一番最初の「加速度」が取れていないことになります。つまりこの方法で加速度の積算から速度や距離を算出するのはとても困難であることが想像できるでしょう(赤外線を組み合わせれば不可能ではないですが)。</p>
+<p>しかしこのセクションで紹介したプログラムの実行結果を見ると「握って普通に動かした状態」では加速度が高速に取得できているようです。これは「重力加速度」なのですが、この値を使うことで「WiiRemoteの姿勢」も推定できますし「重力加速度よりも強い力の入力」たとえば、テニスのスイングやボクシングのパンチなどを簡単に見分けることができます。良くも悪くも「ゲームのために設計されたデバイス」なのでしょう。</p>
+
+<h4 id="doc6_id584">実際のゲームでどう使うか</h4>
+
+<p class="first_ja">さて読者の多くはこの節で「動作周波数」や「サンプリング周波数」など普段聞きなれない言葉を目にしたのではないでしょうか。玄人のゲームプログラマーや研究者でも無い限り、普段はこういったことに目を向けたりはしないと思います。しかしプログラミングの上でインタラクションを考えると、すぐにこの挙動特性については問題が出てきます。</p>
+<p>たとえば有名な格闘ゲーム「ストリートファイター」シリーズにおいて、波動拳や昇竜拳といったボタン連携によるイベント発生があります。例えば波動拳の場合は【←、→、→＋強パンチ】といったボタンコンビネーションになっており、これを確実に入力できることがゲームを有利に進めるスキルになるのですが、一方でゲームプログラムがこのボタンコンビネーションを認識するためには「ポーリングかどうか？」、「どれぐらいの更新速度で」、という情報を理解して、ゲームの『操作感』(feeling of controling)や『操作難易度』(difficulty of controlling)を設定することが重要になります。そういった特性をつかむ上で、この手のレポートモードの精査、実験プログラムの作成は「すばらしい操作感」を実現するために非常に重要な策定パラメーターであり、ゲーム会社のエンジニアにとって、このプログラムはそのための予備実験なのです(地味ですが)。</p>
+<p>実際のゲーム開発においては、グラフィックスの速度などもこのプログラムの上に載ってきますし、最大のパフォーマンス(例えば、弾幕を何個描くと動作が遅くなるか、といった最大処理能力)を設計する上で、どこに描画ループをおき、当たり判定をおき、入力更新をおくのか、といった設計は、アクション性の高いゲームの開発の初期段階において、最高に重要な実験要素になります。上記のプログラムにおける「Sleep(1)」の場所にどれぐらい余裕があるのか、という話ですね。</p>
+<p>WiiRemoteの加速度センサーも、実は基本は昇竜拳を判定するボタンと考え方にあまり変わりはありません。加速度センサー特有のデータ利用(セガ「レッツタップ」のような)ではなく、入力されたアクションに対してボタンを割り当てるようなときは、「どれぐらいの秒数で」、「どのような特性を持った」、「どれぐらいの強度で」といった情報を、いかに「誰でも操作できるように」というように割り当てる必要があります。これはをif文などで書いていくのは大変な作業ですし、WiiRemoteをブンブン振って試しているうちに「自分の動作がはたして一般的なのか？」と疑問になってしまうこともあるでしょう。実際そういった「操作が大変なゲーム」もWii初期には多く発売されておりますが、「新しいエンタテイメント体験を作り出すこと」と「ユーザインタフェースとしての一般性を維持すること」というのはとても難しいトレードオフであることがわかります。</p>
+
+<h4 id="doc6_id587">物理が苦手なアナタがどう使うか</h4>
+
+<p class="first_ja">「私は物理が苦手なんですが...」そんな読者の方には、意外に簡単な結論があります。まず「ポーリングではなく、周期モード」を使うことです。動作環境によるプログラムの詰まりを軽減し、10ミリ秒に一度確実に値が返ってくるというモードです。</p>
+<p>しかもWiiRemoteの計測周波数特性については、もうこのセクションで実験してしまいましたので、「取得できた加速度センサーの値は1/100秒あたりのデータである」と推定してしまってよいでしょう(WiiYourself!を使った場合の、ですが)。</p>
+<p>例えば、何か一つのモーションを入力したときに、100回データが入ったら、それは「1秒かかるモーション」だった、ということです。「1秒間に16回のボタン連打」を入力として検出したかったら、「6.25回のサンプリングに対し1回ボタン入力のOff-On-Offが実現できればいい」ということになります。逆に1/100秒の更新周期ならどんなに頑張っても(ズルしても)、論理上は1秒間あたり50回しかボタンのOn→Offは入力しようがありません。小難しい数学や物理よりも、こういったことがしっかりイメージできるかどうかのほうがインタラクションを支える技術としては大事で、今回紹介したような細かい実験を沢山作ることで、インタラクションを支えるプログラミング技術はグングン上がっていきます。</p>
+
+<h4 id="doc6_id590">練習問題「パンチ力測定」と「テニスのモーション」</h4>
+
+<p class="first_ja">ここに例題を出しておきます。アメリカの古い映画のフェスティバルのシーンなどにに出てくる「ハンマーで叩いた力を測定するゲーム」をご存じでしょうか。正式名称がわからないので「パンチ力測定」としておきます。いままでの測定プログラムの応用で、この「パンチ力測定」ゲームを作ることができるはずです。</p>
+<p>力の大きさを計算するには、マグニチュード、すわなち「加速度センサー各軸の要素を二乗した物の和」で算出できます。</p>
+
+<pre id="doc6_id592" class="program">
+ F = X * X + Y * Y + Z * Z;
+</pre>
+
+<p>このFが大きくなれば大きくなるほど、測定時間あたりの力が大きいことがわかります(この式は正の値しかとりません)。ちなみに、筆者のWiiRemoteの設置状態では重力加速度はある軸に約1.0弱で検出され、他の軸はゼロになっていますから「F≒1.0」…これが何もしていない状態の地上の重力を示しています。これを仮にGと呼びます。</p>
+<p>ここで思いっきりWiiRemoteを握りしめ(ストラップもつけてくださいね！)、ハンマーよろしく『ブンッ』と降りおろしたときの最大のFがGの何倍か、を算出することで、パンチ力測定ができるわけです(試してみると、だいたい5G～16Gがゲームになるあたりです)。</p>
+<p>では次は、これを応用して「テニスのモーション」を作ってみましょう。実はこれは意地悪な練習問題です。実際に作っていろんな人で測定してみると、テニスのモーションは、ハンマーゲームとは似て異なり、同じような加速度の振る舞いとして測定されません。多くの人が、(素振りとは異なり)ボールが当たるであろう「インパクトの瞬間」に『グッ』と力を込めて止めてしまいますので、一番良い瞬間に逆向きのGがかかってしまうのです。しかも、この逆向きの力もかからず、きれいに「フォロースルー」を入力できる人もいます。何故かインパクトの瞬間にねじれる人もいます。またゲーム的にもパンチ力測定のように「さあ叩いてください！」という感じにも作りづらいです(ボールが弾んだ瞬間を使うと良いでしょう)。どの瞬間にサンプリングを開始して、どれぐらいの長さの記録をして、どのような検出アルゴリズムを作るのか、ここまで学んだ皆さんはぜひ「if文のカタマリ」以外で作ってみることに挑戦してください！</p>
+
+<h4 id="doc6_id596">研究的要素：HMMによるモーション認識</h4>
+
+<p class="first_ja">ここまでWiiYourself!の深みを実験したあなたはもう、加速度センサーについて基礎的なことは学ぶことはない、と思うかもしれません。たしかにここまでのサンプルプログラムを使うことで「レッツタップ」のようなアクションは作れそうです(目コピでゲームをまねして開発するのはプログラミングの勉強にはなりますが、本書では避けることにします！)。上記の練習問題「テニスのモーション」もぜひやってみてください、以外と奥深いです。</p>
+<p>それから、大学で信号処理を勉強している人は、if文による条件分岐、数式によるエレガントな認識を延長して、ぜひここで信号処理の技術をWiiRemoteに適用してみてください。バンドパスフィルターや分類器、機械学習といった理論が面白いほど加速度センサーに利用できますし、まだまだ未開拓の部分でもあります。</p>
+<p>そして研究者のアナタ、「もうWiiRemote研究はやり尽くされた」と思っていませんか？私はまだまだ可能性があると感じています。認識にHMM(Hidden Markov Model；隠れマルコフモデル)やSVM(Support Vector Machine)などの分類器も使えるかもしれません。</p>
+<p>おっと、「SVM」や「HMM」がなんだかわからない人は、ごめんなさい。簡単に表現すると「人工知能がWiiRemoteから入力された信号を認識できる」という話で、ある「モーションA」と、別の「モーションB」をそれぞれサンプルとして学習させると、その違いを自動的に認識して、以後は「なんだかよくわからない入力」が入力されても「A」か「B」に分類することができるという仕組みです。HMMは入力の前後関係を自動で獲得します。SVMは手書き認識に使われたりもしています。</p>
+<p>最近では特に機械学習系の話題は面白く、ドイツのOldenburg大の学生Benjamin Poppinga氏による「WiiGee」というプロジェクトはJava5.0とJSR-82というBluetoothライブラリを使ってHMMを利用したモーション認識を実現しています。</p>
+<div class="fyi">
+<div class="title">WiiGee</div>
+
+<p class="first_ja">■WiiGee</p>
+<p>http://www.wiigee.org/</p>
+</div>
+
+<p>ところで「AiLive」というゲーム開発者用の製品を任天堂からライセンスを得て販売しているアメリカ・シリコンバレーの会社もあります。実はもうWii本体用のゲームプロダクトには利用されはじめているのかもしれませんね。</p>
+<div class="fyi">
+<div class="title">AiLive社</div>
+
+<p class="first_ja">■AiLive(日本語ページ有り)</p>
+<p>http://www.ailive.net/</p>
+<p>ちなみにこの会社の採用ページでは「Artificial Intelligence Researcher(人工知能の研究者)」を募集しています。腕に自信がある人は採用試験を受けてみては？</p>
+</div>
+
+
+<h2 id="doc1_id38">Wiiyourself!によるスピーカー再生</h2>
+
+<p class="first_ja">このセクションではWiiYourself!が現在有する実験的機能のうちでも最も先進的な「スピーカーの再生」を利用します。もちろん実験的機能なので、制限もあり、品質も十分ではないですが、試してみる価値は十分にあります。</p>
+<p>WiiRemoteに搭載されているサウンドプロセッサが非常に特殊なので、世界中のハッカーたちが挑戦していますが、特定の周波数以外鳴らすのは非常に難しいらしく、WiiYourself!だけがWAVファイルからの再生に成功しています。とはいえ、まだ完全な状態ではありません。</p>
+<p>※この実験はWiiYourself!v1.01で試しています。またTOSHIBA製スタックとBroadcom製スタックでのみ実験しています。お使いの環境で「Demo.exe」を起動して「2」ボタンを押してDAISYモードで何も聞こえない環境ですと、この実験は徒労に終わるかもしれません。</p>
+
+<h3 id="doc1_id42">専用WAVファイルの準備</h3>
+
+<p class="first_ja">まず、WiiYourself!で利用できる音声ファイルを用意しましょう。現在のところ、サポートしているのは「16ビット・モノラル」の非圧縮WAVファイルで、さらにサンプリング周波数は「2470～4200Hz」となっています(詳細はWiiYourself!の「Load16bitMonoSampleWAV」関数を参照)。こんな形式のWAVファイルが簡単に手にはいるわけではありませんので、ツールを使ってコンバートしましょう。</p>
+<p>こんな用途のために便利なツールを見つけました。「KanaWave」という、好きなひらがなからWAVファイルを作成するツールと、「SCMPX」というch3氏の公開している再サンプリングが可能なツールです。</p>
+<div class="fyi">
+<div class="title">WAVファイル作成のための便利ツール</div>
+
+<p class="first_ja">■KanaWave(河合章悟氏)</p>
+<p>http://www.vector.co.jp/soft/win95/art/se232653.html</p>
+<p>■SCMPX(CH3氏)</p>
+<p>http://www.din.or.jp/~ch3/</p>
+</div>
+
+
+<div class="figure">
+<img class="figure" src="APIs/Wiiyourself/KanaWave.png" alt="KanaWaveにWAVファイル作成。驚くほど簡単。">
+</div>
+
+<p>「KanaWave」は説明が不要なぐらい簡単なツールです。ひらがなで作りたい音の雰囲気を擬音で書くと、その音にあった波形を生成します。ここでは「うぃーん」という音を作ってみました(文字を入れた他は、雰囲気を出すために音の高さを1目盛りだけ下げてみています)。再生ボタンを押して視聴して、気に入ったら「KanaWave」メニューから「Waveファイルに変換」として保存します。ここでは「Wiin.wav」としました。</p>
+<p>次に変換です。「SCMPX」を起動したら「CONVERT」から「Single file...」→「Resample...」を選んでください。ファイル選択ダイアログが表示されますので、先ほどKanaWaveで生成したWAVファイル、もしくは特にWAVファイルがなければ「C:\Windows\Media」より聞き慣れたWindows提供のWAVファイルを選んでください。</p>
+
+<div class="figure">
+<img class="figure" src="APIs/Wiiyourself/SCMPX.png" alt="SCMPXによる変換。パラメータに注意。">
+</div>
+
+<p>サンプルレートは「4200」(現在WiiYourself!がサポートしている最高音質)、量子化ビットは「16bit」、チャンネルは「mono」で保存します(ここでは「Wiin_rs.wav」になりました)。</p>
+<p>このファイルをWiiYourself!の「Demo」フォルダ内「Daisy16 (3130).wav」と置き換えるか、ソースコードのLoad16bitMonoSampleWAV関数での読み込みファイル名「Wiin_rs.wav」と変更することでロードすることができます。ファイル内部の形式が少しでも間違っているとエラーになってしまいますが、上記の方法に従って生成したWAVファイルなら、必ずこの方法でロードは成功します。根性のある人はVCのデバッグ機能を使って根気よく追いかけることで、WAVファイル読み込みの内部動作も理解できるので玄人にはお勧めです。</p>
+<p>「Demo.exe」実行時にエラーが出なければ「2」ボタンを押すことで再生されます。明らかに音が出ていない場合は「A」ボタンを押して、矩形波(ピー...)を出してみると、復活したりします。いずれにせよ4.2KHzですから音質については課題があります。また音声ファイルを再生中に突然WiiRemoteから切断されたりもします。</p>
+<p>以上で「スピーカー利用実験」は終わりです。本書を執筆している時点では安定性、音質面双方で「あまり実用的ではない」と表現しておきましょう。しかしWii本体のゲームプロダクトでは、そこそこの音質で表現力豊かに再生できていますので、任天堂がゲーム開発者に提供している公式開発ツールでは比較的簡単に変換できてしまうのかもしれません。原理的には不可能ではないのでしょうが、搭載しているサウンドチップの解析が進む、もしくは波形再生時など、もっと気を遣わないといけないことがあるのかもしれません。いずれにせよ、本書で扱う範囲としては、ここまででとどめておくことにいたします。</p>
+<p>WAVファイルからの再生は上記の通り、残念ながら完璧ではないのですが、不可能とも言い難い状態です。しかし冷静に考えれば、今も既に「Demo.exe」で「A」ボタンや「1」ボタンを押すことで、矩形波やサイン波など単純な波形は出力できるので「目覚まし時計」ぐらいに使えるかもしれません(その場合は切断切れ＆電池切れに注意です)。そもそも多くのサウンドプログラマが「それぐらいの波形」だけでいろんな音楽を作っている歴史もありますので、贅沢は言えないでしょう。</p>
+
+<h2 id="doc1_id53">WiiYourself!の今後</h2>
+
+<p class="first_ja">さて、これで本章は終わりです。WiiYourself!についてかなりディープに取り組んでみましたが、ついてくることができたでしょうか？コマンドラインプログラムに関する細かいテクニックもかなり扱いました。これを機会にC++によるプログラミングを勉強し直しできた人も多いのではないでしょうか。</p>
+<p>しかし、WiiYourself!はコマンドラインプログラムのためだけにあるのではありません。gl.tter氏の3Dシューティングゲームの例を挙げるまでもなく、これはネイティブC言語が使える環境なら、何にでも利用できるライブラリです。具体的にはDirectXやOpenGLといったリアルタイム3DCG、MayaやVirtoolsといったコンテンツ制作ソフトウェアのプラグインなど、かなり幅広く使えるわけです。</p>
+<p>また、作者のgl.tter氏はとても個性的な人です。「真面目なハッカー」で、今でもWiiYourself!を更新しています(筆者もかなり手伝っていますが…)。近々新しいバージョンがリリースされることも確実ですし、本章では扱わなかった、赤外線機能も「4点検出＋大きさ」も扱えます。スピーカー機能の拡張や、バランスボードのサポートなどもより高度になっていくでしょう。.NETによるWiimoteLibとはまた違った魅力があるプロジェクトですので、読者の皆さんが「利用する→参加する→貢献する」という輪に入ることで、どんどん高機能になっていくでしょう。これからも楽しみなプロジェクトです。</p>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>ボタンイベントの取得</title>
+<author>白井暁彦+小坂崇之</author>
+<date>2009年5月16日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka  neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+
+次のステップではWiiRemoteのボタン入力について学びます。
+ボタンのON/OFFを取得して、フォームに表示するシンプルなプログラムを作成します。
+
+<subsection title="ラベルの作成">
+さきほどまでのプログラムと同様に、新しいプロジェクトを作成し、参照設定にWiimoteLibを追加して準備ができたら、「Form1」にラベル(Labelコントロール)を4つ貼り付けてください。 
+ <figure id="05-01" src="png/05-01.png" title="新しいプロジェクトにラベルを4つ配置">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+このLabelの文字は、後ほどプログラム側から書き換えますので設定は不要です。
+</subsection>
+
+<subsection title="プログラム">
+WiiRemoteのボタンを押したときに発生するイベントを利用して、このラベルを表示する値を変更することで、現在のボタン入力の状態を表示するという設計でプログラムを作っていきます。
+
+Form1.cs(C#)もしくはForm1.h(C++)に以下の部分を追加します。 
+<program title="ボタン入力に対応させる(Form1.cs)[C#]"><![CDATA[
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace WiimoteLib_Sample  //←作成したプロジェクト名
+{
+  public partial class Form1 : Form
+  {
+|   Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1()
+    {
+|    Control.CheckForIllegalCrossThreadCalls = false; //おまじない
+     InitializeComponent();
+|    wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|    wm.Connect();                          //WiiRemoteと接続
+    }
+|   //Wiiリモコンの値が変化したときに呼ばれる関数
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)
+|   {
+|    WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|    this.DrawForms(ws);            //フォーム描写関数へ
+|   }
+|   //フォーム描写関数
+|   public void DrawForms(WiimoteState ws)
+|   {
+|    this.label1.Text = "Button A:" + (ws.ButtonState.A);  //ボタンA
+|    this.label2.Text = "Button B:" + (ws.ButtonState.B);  //ボタンB
+|    this.label3.Text = "Button 1:" + (ws.ButtonState.One);//ボタン1
+|    this.label4.Text = "Button 2:" + (ws.ButtonState.Two);//ボタン2
+|   }
+  }
+}
+]]></program>
+
+<program title="ボタン入力に対応させる(Form1.h)[C++]"><![CDATA[
+#pragma once
+namespace WiimoteLib_Sample {     //←作成したプロジェクト名
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+	/// <summary>
+＜略＞
+	/// </summary>
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|  public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+   public:
+   Form1(void)
+    {
+|    Control::CheckForIllegalCrossThreadCalls = false; //おまじない
+|    wm = gcnew Wiimote();  //Wiimoteクラスを作成
+     InitializeComponent();
+|    //イベント関数の登録
+|    wm->WiimoteChanged +=
+|    gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|     this, &Form1::wm_WiimoteChanged);
+|    wm->SetReportType(InputReport::Buttons, true); //レポートタイプの設定
+|    wm->Connect(); //WiiRemoteと接続
+|   }
+  public:
+|   void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){
+|    WiimoteState^ ws;
+|    ws = args->WiimoteState;
+|    this->DrawForms(ws);
+|   }
+| public: void DrawForms(WiimoteState^ ws) {
+|    this->label1->Text = "Button A:" + (ws->ButtonState.A); 
+|    this->label2->Text = "Button B:" + (ws->ButtonState.B);
+|    this->label3->Text = "Button 1:" + (ws->ButtonState.One);
+|    this->label4->Text = "Button 2:" + (ws->ButtonState.Two);
+| }
+ protected:
+＜略＞
+]]></program>
+</subsection>
+
+<subsection title="実行してみよう">
+さて、実行してみましょう。まずお使いのBluetoothスタックから、WiiRemoteをBluetoothでPCに接続します。接続が確認できたら、Visual C#/C++上で[F5]キーを押して実行します。コンパイルがとおり、正しく実行されると下図のようなアプリケーションが起動します。もしここでエラーが発生する場合、ほとんどがBluetooth接続がうまく接続されていないケースです。WiiRemoteが正しく接続されているか確認してください。
+
+ <figure id="05-02" src="png/05-02.png" title="実行直後、ラベルの表示に注目">
+ <attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+
+WiiRemoteのAボタンを押し続けます。
+
+ <figure id="05-03" src="png/05-03.png" title="ラベルの表示が変わる">
+ <attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+
+フォーム上の「Label1」の箇所に「Button A: True」と表示されれば成功です。さらにWiiRemoteのすべてのボタンから手を離して、すべてのボタンを押さない状態にしたとき、フォーム上のボタンのステータスを表す表示が全て「False」になれば成功です。
+
+ <figure id="05-04" src="png/05-04.png" title="ボタンから手を離すと、すべてFalseになる">
+ <attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+WiiRemoteのAボタンとBボタンを同時に押しこんでみます。
+ <figure id="05-05" src="png/05-05.png" title="A,BがTrueになる">
+ <attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+最後に、WiiRemoteの1ボタンと2ボタンを同時に押しこんでみます。
+ <figure id="05-06" src="png/05-06.png" title="1,2がTrueになる">
+ <attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+
+一通りの実験が終わったら、マウスで「×」をクリックするか、キーボードから[Alt+F4]をおして、プログラムを終了させます。
+</subsection>
+
+<subsection title="解説：ボタンイベントの取得">
+WiiリモコンのボタンのON/OFFによってFormのラベルを変化させています。
+FalseがOFF(手を離した状態), TrueがON(押下)に対応しています。
+以下、利用したAPI関数を解説します。
+
+<program title="イベント関数の登録"><![CDATA[
+[C#]  wm.WiimoteChanged += wm_WiimoteChanged;
+[C++] wm->WiimoteChanged +=
+            gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+            this, &Form1::wm_WiimoteChanged);
+]]></program>
+WiiRemoteのボタンが押された、加速度センサーの値が変わった、など、状態に変化があったときに呼ばれる関数を登録しています。
+プログラミング用語で「コールバック関数」といい、関数名を登録することで、そのイベントが発生したときに自動的にその関数が実行されるように決められた方法で指定します。
+ここでは、WiiRemoteのボタン状態に変化があった場合「wm_WiimoteChanged」という関数が呼ばれるように設定しています。カッコや引数などはあらかじめ規定された形式に沿っていますので、関数名を渡すだけでだけでよいのです(C++のコードが少し長いのはそのためです)。
+
+<program title="WiimoteStateの値を取得">
+[C#]  WiimoteState ws = args.WiimoteState;
+[C++] WiimoteState^ ws;
+      ws = args->WiimoteState;
+</program>
+ここでWiiリモコンのステータス(状態)をwsという名前の"イレモノ"にとりこんでいます。
+正式にはここで使っているWiimoteStateはクラスですが、その名前から想像できるように、イベントで発生したボタンなどの値が取り込まれます。
+以下、使い方を見てみましょう。
+
+<program title="ボタンの状態を取得">
+[C#]  this.label1.Text   = "Button A: " + (ws.ButtonState.A);
+[C++] this->label1->Text = "Button A:" + (ws->ButtonState.A); 
+</program>
+WiiRemoteのAボタンの値をlabel1に表示しています。
+ボタンが押されていたら、True を表示します。
+ボタンが離されていたら、Falseを表示します。 
+実際には「ws.ButtonState.A」が意味する値はTrueかFalseという真偽の値ですが、左側が「label1.Text」なので自動的に文字列に変換されています(.ToString()する必要はない)。
+
+同様に「ws.ButtonState.b」などとすることでWiiRemoteのBボタン、その他全てのボタンの状態を取得することができます。
+
+どうでしょう？とっても簡単ですね！
+このイベントのコールバック関数でステートを取得する方法は他のいろいろな入力に応用できます。
+しかし、この完成したコールバックの仕組みを簡単に利用できる背景には、様々な複雑なプログラミングの内側の技術があります。
+実はフォームのコンストラクタで、1つだけ、おまじないをしていました。
+
+<program title="おまじない">
+[C#]  Control.CheckForIllegalCrossThreadCalls  = false;
+[C++] Control::CheckForIllegalCrossThreadCalls = false;
+</program>
+
+余裕のある人は、この行をコメントアウトして、実行してみてください。
+なぜか実行時にボタンを押すとエラーが出てしまいます。これは、マルチスレッド(スレッド;Thread≒処理の流れ)に関わる問題です。上のボタンの状態を読み込むWiimoteLibのスレッドと、フォームの書き換えを行うスレッドがそれぞれ異なるので「スレッドセーフでない」つまり、複数のスレッドにおける処理の順序などが保証できないため実行時エラーになってしまいます。WiimoteLibの公式で紹介されている方法で、
+<program title="Invoke(),delegate()を使う方法">
+//Wiiリモコンの値が変化したときに呼ばれる関数[C#]
+void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args){
+  WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+  if (this.IsHandleCreated) {
+    this.Invoke( (MethodInvoker)delegate() {
+    this.DrawForms( ws );            //フォーム描写関数へ
+  });
+ }
+}
+</program>
+このように、Invoke()というメソッドを使う方法もありますが、ちょっと初心者には不明瞭な書き方です。何が起きていて、どんなリスクがあるか(フォームの書き換えがスレッドセーフでなく上書きされる)ということがわかっているなら
+<program>
+Control.CheckForIllegalCrossThreadCalls=false;
+</program>
+として、不正なスレッド間コールのチェックをしない、と宣言する方法もあるので、本章では「おまじない」として以後この方法を採用することにします。
+</subsection>
+
+   <native format="latex">\clearpage</native>
+
+<fyi title="WiimoteStateのメンバー">
+ここでWiimoteStateで参照できるメンバーを表で紹介しておきます。
+<table title="WiimoteStateのメンバ(WiimoteLib ver.1.7)">
+ <thead>名称,解説</thead>
+ <tbody>
+ AccelCalibrationInfo,現在の加速度センサーのキャリブレーション情報
+ AccelState,現在の加速度センサーの状態
+ BalanceBoardState,現在のWiiFitバランスボードの状態
+ Battery,算出された現在のバッテリーレベル
+ BatteryRaw,現在のバッテリーレベルの計算前の値(生値)
+ ButtonState,現在のボタンの状態
+ ClassicControllerState,現在の拡張クラシックコントローラーの状態
+ DrumsState,現在の拡張ドラムコントローラーの状態
+ Extension,拡張コントローラーが挿入されているか
+ ExtensionType,拡張コントローラーが挿入されている場合その種類
+ GuitarState,現在の"GuitarHero"拡張ギターコントローラーの状態
+ IRState,現在の赤外線センサーの状態
+ LEDState,現在のLEDの状態
+ NunchukState,現在の拡張ヌンチャクコントローラーの状態
+ Rumble,現在のバイブレーターの状態</tbody>
+</table>
+WiimoteLibには実に様々な拡張コントローラーが実装されており、このメンバーから状態を取得できることがわかります。
+これらの値やメソッドなどは、Visual StudioのIntellisense機能を使ってどんどん効率化していきましょう。先ほどのボタンの例なども、「ws.ButtonState.」と「.」を押した瞬間には正しい標記の選択肢が現れます。ボタンの名称などはいちいち覚えていられませんので、非常に便利です。なおIntellisenseはCtrl+Spaceでいつでもどこでも呼び出せます。全てのグローバルなオブジェクトが表示されます。辞書代わりに使うとよいでしょう。
+
+<figure id="Intellisense" src="png/IntellisenseS.png" title="Intellisenseによる補完機能を使いこなそう">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+</fyi>
+
+   <native format="latex">\clearpage</native>
+
+<subsection title="ランチャーを作る">
+さて、これまでWiimoteLibを使って、基本的な入出力を学んできました。
+このあたりで、実用的なプログラムの例として「ランチャー」を作成してみましょう。
+ボタンを押すたびに、Windowsのアクセサリ「メモ帳」や「電卓」など外部プログラムが起動するプログラムです。
+
+<subsubsection title="外部プログラムの起動">
+前節の「ボタンイベントの取得」と基本は同じです。WiimoteLibの宣言を行い、コールバック関数内で外部プログラムを起動したり、アプリケーション自身を終了させたりします。
+
+新しいプロジェクトを作成し、WiimoteLibを参照に追加し、Form1を右クリックして「コードを表示」し、下のコードを記述します。前節のプログラムの改造から始めても良いでしょう。
+
+<program title="ボタンイベントで外部プログラムを起動する(Form1.cs)[C#]"><![CDATA[
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace WL_Launcher
+{
+    public partial class Form1 : Form
+    {
+|        Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+        public Form1()
+        {
+|            Control.CheckForIllegalCrossThreadCalls = false; //おまじない
+            InitializeComponent();
+|            wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|            wm.Connect();                          //WiiRemoteと接続
+        }
+|        //Wiiリモコンの値が変化したときに呼ばれる関数
+|        void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)
+|        {
+|            WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|            //Aボタンが押されたらメモ帳を起動
+|            if (ws.ButtonState.A == true)
+|            {
+|                System.Diagnostics.Process.Start("notepad.exe");
+|            }
+|            //Bボタンが押されたら電卓を起動
+|            if (ws.ButtonState.B == true)
+|            {
+|                System.Diagnostics.Process.Start("calc.exe");
+|            }
+|            //HOMEボタンが押されたらこのアプリを終了
+|            if (ws.ButtonState.Home == true)
+|            {
+|                Environment.Exit(0);
+|            }
+|        }
+    }
+}
+]]></program>
+
+<program title="ボタン入力に対応させる(Form1.h)[C++]"><![CDATA[
+#pragma once
+
+namespace WLCLauncher {
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+  public:
+   Form1(void)
+    {
+|    Control::CheckForIllegalCrossThreadCalls = false; //おまじない
+|    wm = gcnew Wiimote();  //Wiimoteクラスを作成
+     InitializeComponent();
+|    //イベント関数の登録
+|    wm->WiimoteChanged +=
+|      gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|        this, &Form1::wm_WiimoteChanged);
+|    wm->SetReportType(InputReport::Buttons, true); //レポートタイプの設定
+|    wm->Connect(); //WiiRemoteと接続
+|   }
+  public:
+   void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){
+|     WiimoteState^ ws;
+|     ws = args->WiimoteState;
+|     //Aボタンが押されたらメモ帳を起動
+|     if (ws->ButtonState.A) {
+|       System::Diagnostics::Process::Start("notepad.exe");
+|     }
+|     //Bボタンが押されたら電卓を起動
+|     if (ws->ButtonState.B) {
+|       System::Diagnostics::Process::Start("calc.exe");
+|     }
+|     //HOMEボタンが押されたらこのアプリを終了
+|     if (ws->ButtonState.Home) {
+|       Environment::Exit(0);
+|     }
+|   }
+＜以下略＞
+]]></program>
+
+</subsubsection>
+
+<subsubsection title="実行してみよう">
+まずは、いつも通りWiiRemoteを接続してください。そしてVisual Studioの[F5]キーを押して、作成したプログラムを実行します。
+もしここでエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+
+WiiRemoteのAボタンを押すと、メモ帳が起動し、Bボタンを押すと、電卓が起動します。 
+<!--
+ <figure id="06-01" src="png/06-01.png">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+ <figure id="06-02" src="png/06-02.png">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+WiiRemoteのBボタンを数回おすと、押した回数だけ、電卓が起動します。 
+
+<figure id="06-03" src="png/06-03.png" title="Bボタンを押した回数だけ電卓が起動する">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+WiiRemoteのHomeボタンを押すと、ランチャープログラムが終了します。
+
+このプログラムの「notepad.exe」や「calc.exe」を好きな外部プログラムに書き換えれば、何でも起動できるというわけですね。なんだかいろいろなことができそうです。楽しくなってきませんか？
+</subsubsection>
+
+<subsubsection title="解説：ボタンイベントによるアプリ起動">
+WiiRemoteのボタンが押されることによって設定したアプリケーションが起動するためには、先ほどのプログラムのDrawForm()で処理したような、ラベルのテキストを書き換える代わりに、.NETで用意されている仕組みを利用して、外部プログラムを起動します。
+<program>
+if (ws.ButtonState.A == true) {
+     //Aボタンがおされたらメモ帳を起動
+      System.Diagnostics.Process.Start("notepad.exe");
+}
+</program>
+「System.Diagnostics.Process.Start()」についてはいろいろな応用があります。テキストファイルなどを指定することで関連づけられたプログラムを使って開くことなども可能です。詳しくはインターネットで公開されている.NET Framework クラスライブラリのマニュアルや「Process.Start」をキーワードに検索してみると良いでしょう。
+
+以上は、C#での記述ですが、C++/CLIでも全く違和感なく互換性が保たれています。C++でHomeボタンを押して終了する箇所のコードを見てみましょう。
+<program>
+ //HOMEボタンが押されたらこのアプリを終了
+ if (ws->ButtonState.Home) {
+   Environment::Exit(0);
+ }
+</program>
+以上のように「Environment::Exit(0);」で、自分自身のアプリケーションを終了できます。
+
+さて、こんな便利なコールを覚えると、ランチャーで起動したプログラムの終了などもやってみたくなると思います。
+<!--起動したプロセス簡単に終了させるコールはないので、一番簡単な方法は「Alt+F4」を送ることですね。-->
+この先の赤外線ポインタを用いてマウスを作成する例を学習してから、さらに高機能に改造してみるとよいでしょう。
+
+</subsubsection>
+</subsection>
+
+</body>
+</doc>

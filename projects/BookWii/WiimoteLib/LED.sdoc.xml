@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>LEDの点灯と消灯</title>
+<author>白井暁彦+小坂崇之</author>
+<date>2009年5月16日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+</head>
+<body>
+次にWiiRemoteのLED制御についてプログラミングを行っていきます。
+ここでは、Formボタンをクリックする毎にWiiRemoteの「プレイヤーインジケーター」と呼ばれる青色LEDをカウントアップさせていきます。
+
+準備にあたっての基本的なプログラミングの流れは前節のバイブレーターの制御の場合と同じです。
+新しいプロジェクトを作成し、プロジェクトのクラスの参照設定にWiimoteLibを追加し、以下の初期化コードを書き足してください。
+
+
+<subsection title="WiimoteLibの宣言と接続">
+<program title="Form1.csに以下の部分を追加[C#]"> 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;  //WiimoteLibの使用を宣言
+
+namespace WindowsFormsApplication1 { //←プロジェクト名によって異なる
+ public partial class Form1 : Form {
+
+|Wiimote wm = new Wiimote();   //Wiimoteの宣言
+|int count=0;                  //カウントの宣言
+
+  public Form1() {
+   InitializeComponent();
+|      wm.Connect();	//WiiRemoteへ接続
+  }
+ }
+}
+</program>
+
+ <program title="Form1.hに以下の部分を追加[C++]">
+#pragma once
+namespace WLCLED { //←プロジェクト名によって異なる
+
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+
+| using namespace WiimoteLib;	 //WiimoteLibの使用を宣言
+＜略＞
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm;  //Wiimoteオブジェクトwmの宣言
+| public: int count;    //LEDカウント用の変数countの宣言
+  public:
+    Form1(void)
+    {
+|     wm = gcnew Wiimote(); //Wiimoteインスタンスの作成
+      InitializeComponent();
+      //
+      //TODO: ここにコンストラクタ コードを追加します
+      //
+|     wm->Connect();	//WiiRemoteへ接続
+    }
+
+  protected:
+＜略＞
+ </program>
+確認のためにここでWiiRemoteのBluetooth接続を行い、[F5]キーで実行を試してみることをお勧めします。コンパイルエラーやWiimoteLib.dllの追加わすれなど、ただの空白のフォームが表示されるだけの状態ですが、確認は大事です。今後も、この初期化コード作成までの流れ何度も行いますので、カラダで覚えてしまいましょう。
+
+なおC++では、int型の変数countや、Wiimoteオブジェクトを格納するwmの宣言を、Form1のインスタンスとは別に行う必要があります。そうしなければ他のメソッドから扱うことができません。今後、細かいところでC#と違いが出てきますので注意してください（興味のある人は、わざと間違えてみるのも勉強になっていいかもしれませんが）。
+
+ </subsection>
+
+ <subsection title="LEDカウントアップボタンの作成">
+次はC#/C++で共通の作業です。先ほどのバイブレーターの例と同様にフォーム「Form1」にボタンを貼り付けてください。ボタンを押すたび表示が変わる仕組みも取り入れますので、ボタンは少し大き目、横長にしておくと良いでしょう。
+<figure id="03-01" src="WiimoteLib/png/03-01.png" title="フォームに大きめなボタンを配置[C#]">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="03-01vc" src="WiimoteLib/png/03-01vc2.png" title="フォームに大きめなボタンを配置[C++]">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+ 次に貼り付けた「button1」をダブルリックして、以下のコードを追加します。 
+
+<program title="ボタンクリック時の処理を追加[C#]">
+   private void button1_Click(object sender, EventArgs e) {
+    this.button1.Text ="wm.SetLEDs("+ count+") を表示中";
+   this.wm.SetLEDs(count);
+   count++;
+}
+</program>
+
+<program title="ボタンクリック時の処理を追加[C++]">
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+	button1->Text = "wm->SetLEDs("+ count +")を表示中";
+	wm->SetLEDs(count);
+	count++;
+}
+</program>
+
+以上でコーディングは終了です。たったこれだけのプログラムでWiiRemoteのLED制御が可能になります。 
+
+<program title="完成したForm1.cs[C#]">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;
+
+namespace WL_LED
+{
+    public partial class Form1 : Form
+    {
+|        Wiimote wm = new Wiimote();
+|        int count = 0;
+        public Form1()
+        {
+            InitializeComponent();
+|            wm.Connect();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+|            this.button1.Text = "wm.SetLEDs(" + count + ")を表示中";
+|            wm.SetLEDs(count);
+|            count++;
+        }
+    }
+}
+</program>
+
+<program title="完成したForm1.h[C++]"><![CDATA[
+#pragma once
+namespace WLCLED { //作成したプロジェクト名、自由。
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+| using namespace WiimoteLib;
+  /// <summary>
+＜略＞
+  /// </summary>
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|  public: Wiimote^ wm;	//Wiimoteオブジェクトwmの宣言
+|  public: int count;    //LEDカウント用の変数countの宣言
+   public:
+    Form1(void)
+    {
+|    wm = gcnew Wiimote();
+     InitializeComponent();
+      //
+      //TODO: ここにコンストラクタ コードを追加します
+      //
+|     wm->Connect();	//WiiRemoteへ接続
+    }
+  protected:
+    /// <summary>
+    /// 使用中のリソースをすべてクリーンアップします。
+    /// </summary>
+   ~Form1()
+   {
+   if (components)
+    {
+     delete components;
+    }
+   }
+    private: System::Windows::Forms::Button^  button1;
+    protected: 
+＜略＞
+#pragma endregion
+   private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+|   button1->Text = "wm->SetLEDs("+ count +")を表示中";
+|   wm->SetLEDs(count);
+|   count++;
+   }
+  };
+}
+]]>
+</program>
+若干C++のほうがコードが長くなりますが、自動で追加された以外の箇所の意味合いはC#でもC++でも、ほぼ同じであることがわかります。
+</subsection>
+ 
+<subsection title="実行してみよう">
+それでは早速実行してみましょう。
+<!-- <figure id="03-05" src="png/03-05.png">
+ <attribute locale="latex2e" name="style">width:4cm</attribute></figure>-->
+次に、Visual C#/C++の[F5]キーを押して実行してください。実行すると下図のようなアプリケーションが起動します。 
+ <figure id="04-01" src="png/04-01.png" title="大きなボタンがひとつだけのフォームが表示される">
+ <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+もし下図のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。 
+ <figure id="03-07" src="png/03-07.png" title="Bluetooth接続を忘れるとエラーになる">
+ <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+フォームに表示されるボタンをクリックしていくと、WiiRemote下部のLEDが次々と光っていきます。
+
+<figure id="04-02" src="png/04-02.png" title="フォームに文字が表示される">
+<attribute locale="latex2e" name="style">width:6cm</attribute></figure>
+
+<figure id="04-w000" src="png/04-w000.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w001" src="png/04-w001.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w002" src="png/04-w002.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w003" src="png/04-w003.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w004" src="png/04-w004.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w015" src="png/04-w015.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+
+「×」をクリックして終了します。
+</subsection>
+
+
+<subsection title="解説：LEDの点灯制御">
+LEDの点灯と消灯はこのAPIを利用します。
+<program>
+ SetLEDs(int32 leds); </program>
+この関数の引数「leds」にint32形式の数値をを入れることで、対応するLEDが変化します。
+このプログラムでは変数countの値を入れ「SetLEDs(count);」としています。
+Formに配置されたボタンをクリックすると、count値が+1されていきます。
+
+<figure id="04-09" src="png/04-09.png"> <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+
+引数は整数(int32形式)で与えますが、これはWiiRemoteを逆さまにした状態の各LEDを4ビットの2進数で表現して、各ビットを0から15まで足していったものです。
+2進数に馴染みがない方のために、表で表現してみました（●が消灯、○が点灯です）。
+
+<table title="LEDの点灯でまなぶ、2進数対応表">
+<colgroup>
+ <col align="center" class="key" />
+</colgroup>
+<colgroup span="4">
+ <col align="center"/>
+ <col align="center"/>
+ <col align="center"/>
+ <col align="center"/>
+</colgroup>
+ <thead>10進数(int),LED4,LED3,LED2,LED1</thead>
+<tbody>0,●,●,●,●
+1,●,●,●,○
+2,●,●,○,●
+3,●,●,○,○
+4,●,○,●,●
+5,●,○,●,○
+6,●,○,○,●
+7,●,○,○,○
+8,○,●,●,●
+9,○,●,●,○
+10,○,●,○,●
+11,○,●,○,○
+12,○,○,●,●
+13,○,○,●,○
+14,○,○,○,●
+15,○,○,○,○</tbody>
+</table>
+フォーム上のボタンを押し続けて、countに10進数の16になると、LED0～LED4の桁はそれぞれ0になりLEDは全て消えますが、それ以上の値(17,18,19,...)が入っても、また下位ビットに値が入りますので、LEDはカウントアップしつづけます。
+
+プログラムによっては2進数→10進数ではなく、個々のLEDを指定して光らせたいときもあるでしょう。
+そういったときは、関数フォーマットが異なる以下の形式を利用します：
+<program>
+ SetLEDs(bool led1 ,bool led2 ,bool led3,bool led4); 
+</program>
+同じ関数でも、引数を4つ指定することで、各々のLEDを制御することが可能になります。
+(プログラミング用語では、このような関数の利用の仕方をオーバーロードといいます）
+
+以上でLEDの制御は終わります。非常にシンプルですが、アイディア次第でいろいろなことができますので、ぜひ発想を豊かにして何に使えるか考えてみてください。またその表現に合わせた便利な出力用関数も作ってみるとよいでしょう。例えば、筆者は「SetLEDbyValue(int)」という関数を作って、4段階の値を表示できるようにしました。「レースゲームでのシールド残量」や「受けたダメージの表現」、それから処理の段階を表すプログレスバーにもLEDが使えます。
+</subsection>
+
+<fyi title="ヘルプファイルを活用しよう">
+上記の「SetLEDs」のようなWiimoteLibに実装されているAPI関数それぞれの機能は、WiimoteLibの「docs」フォルダにあるヘルプファイル「WiimoteLib.chm」を参照することで探すことができます。例えば、このAPI関数の場合は以下のように記載されています。
+
+＜Wiimote.SetLEDs Method ＞
+Overload List
+<table>
+<thead>Name,Description</thead>
+<tbody>SetLEDs(Int32),Set the LEDs on the Wiimote
+SetLEDs(Boolean, Boolean, Boolean, Boolean),Set the LEDs on the Wiimote</tbody>
+</table>
+See Also
+ Wiimote Class
+ Wiimote Members
+ WiimoteLib Namespace
+
+つまり関数「SetLEDs()」には、今回のようにInt32の値1つで指定する方式と、Booleanつまり点灯するかどうかの真偽(true/false)の4つで指定する方法の2種類が用意されているということです。どちらも同じ結果ではあるのですが、このようにして、WiimoteLibなどのAPIを作った人は便利にアクセスできるように、たくさんの気の利いた関数を開発しているということですね。下の「See Also」には所属しているクラスやメンバー関数などへのリンクがあります。
+
+わからないことがあったり「こんな機能ないかな？」と思ったときは、このヘルプファイルを活用しましょう。このヘルプファイルはプログラムコードから自動生成されているようですが、検索機能も備えており、C#とVBのコードも含まれていて、勉強になります。
+</fyi>
+
+</body>
+</doc>

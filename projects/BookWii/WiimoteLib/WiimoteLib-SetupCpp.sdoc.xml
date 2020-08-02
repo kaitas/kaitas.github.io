@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiimoteLibをプロジェクトに組み込む【C++編】</title>
+<author>白井暁彦</author>
+<date>2009年5月16日版</date>
+<!--
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+-->
+
+</head>
+<body>
+次はVisual C++ 2008 Express(以後「C++」と標記)を使って、WiimoteLibでのプログラミングを体験していきます。
+一度流れを覚えたら、以後は共通です。言語もC++かC#、どちらでもかまいません。ご自身が使いやすい言語を選んでみてください。
+
+ <subsubsection title="空のプロジェクトの作成">
+Visual C++ 2008 Express Editionを起動します。
+<!--
+ <figure id="CppNewProject" src="WiimoteLib/png/CppNewProject.png" title="新しいプロジェクトを作成">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+ </figure>
+-->
+ <figure id="WiimoteLib01cpp" src="WiimoteLib/png/WiimoteLib01cpp.png" title="新規プロジェクトの作成[C++]">
+ </figure>
+
+[ファイル(F)]→[新しいプロジェクト(P)]から、[CLR]の[Windowsフォームアプリケーション]を選択します。
+
+
+
+「プロジェクト名」に「WiimoteLib01cpp」という名前を付けて[OK]ボタンをクリックします。
+
+新しいプロジェクトが作成されました。興味があればここで[F5]キーを押して、実行してみると良いでしょう。何もないフォームが表示され、「×」ボタンを押すと終了します。
+</subsubsection>
+
+<subsubsection title="WiimoteLibの追加[C++]">
+先ほど作成したプロジェクトにWiimoteLibを組み込んでいきましょう。
+ソリューションエクスプローラでプロジェクト(ここでは「WiimoteLib01cpp」)を右クリックして[参照]を選択します。
+<figure id="WiimoteLib01cppAdd" src="WiimoteLib/png/WiimoteLib01cppAdd.png" title="プロジェクトを右クリックして[参照]設定"> <attribute locale="latex2e" name="style">width:6cm</attribute>
+ </figure>
+
+プロジェクトのプロパティページから[新しい参照の追加(N)...]をクリックし、[参照]タブをクリックし、ファイル選択ダイアログで、マイドキュメントの「Visual Studio 2008\Projects」においた「WiimoteLib_1.7\WiimoteLib.dll」を選択し[OK]ボタンをクリックします。
+
+<figure id="AddLib" src="WiimoteLib/png/AddLib.png" title="WiimoteLibを追加">
+ <attribute locale="latex2e" name="style">width:9cm</attribute></figure>
+<figure id="WiimoteLibAdded" src="WiimoteLib/png/WiimoteLibAdded.png" title="WiimoteLibが参照設定に追加された"> <attribute locale="latex2e" name="style">width:9cm</attribute></figure>
+
+次に、WiimoteLibの初期化コードを書きます。ソリューションエクスプローラの「Form1.h」を右クリックして「コードの表示」を選ぶと、Form1.hのコードが表示されます。このコードの先頭12行目に以下のように、必要な1行を書き加えてください。
+
+<program title="WiimoteLibクラスを宣言(Form1.h)">
+#pragma once
+
+namespace WiimoteLib01cpp { //←指定したプロジェクト名
+
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+
+| using namespace WiimoteLib;  //これを1行追加します
+
+＜以下略＞
+</program>
+ 
+以上がC++/CLIでWiimoteLibを用いるための必要最低限のプログラムです。
+[F5]キーを押してプログラムを実行させてみましょう。
+
+プログラムにエラーがなければC#と同様、何もないフォームが表示されるはずです。
+いまのところ、このプログラムは単にフォームを生成するだけのプログラムですが、WiimoteLibのクラスがusing namespace宣言によって問題なく組み込まれていることがわかります。
+以後、このプログラムをベースにWiiRemoteを制御するプログラムを追加していきます。
+</subsubsection>
+
+</body>
+</doc>

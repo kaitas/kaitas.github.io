@@ -1,0 +1,315 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+<doc xml:lang='ja'>
+<head>
+<title>加速度センサーを使う</title>
+<author>白井暁彦+小坂崇之</author>
+<date>2009年5月16日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+
+</head>
+<body>
+
+
+<subsection title="加速度センサーについて">
+次は、WiiRemoteの加速度センサーを使ったプログラミングを実験していきます。2章で解説したとおり、WiiRemoteにはX軸、Y軸、Z軸に対応した3軸の加速度センサーが内蔵されています。
+
+<figure id="Pyr" src="WiimoteLib/png/Pyr.png" title="加速度センサー(★http://www.wiili.orgより借用)">
+<!--<figure id="07-01" src="WiimoteLib/png/07-01.png">-->
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+WiiRemoteに内蔵された3軸マイクロ加速度センサーは、それぞれの軸に対して8bit、つまり0～255の値を持ちます。このセクションでは、まず値がとれるプログラムを作成し、その後、応用アプリケーションの開発を通して、加速度センサーの基本的な利用に挑戦します。
+</subsection>
+
+<subsection title="加速度センサーの値を表示">
+ここでは、まず手始めに、WiiRemoteの加速度を取得するプログラムを作成します。
+先ほどまでと同様、Visual Studio(C#/C++どちらでもかまいません！)で、新しいプロジェクトを作成し、参照に「WiimoteLib」を追加します。
+自動的に生成されているフォーム「Form1」に、ツールボックスからラベル(Label)を3つ貼り付けてください。ここに加速度センサーX,Y,Zのリアルタイム測定値を表示します。
+
+続いてコーディングです。Form1を右クリックして「コードを表示」して、以下のプログラムのコメントアウトしている箇所を書き足していきます(自動生成されたコメント行は割愛しています)。また冒頭のusing句によるクラスの宣言ですが、最小限必要な物のみにしています。
+
+
+<program title="加速度センサーの値を表示する(Form1.cs)[C#]"><![CDATA[
+  using System;
+  using System.Windows.Forms; 
+| using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace WL_Accel
+{
+  public partial class Form1 : Form
+  {
+|   Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1()
+    {
+|     Control.CheckForIllegalCrossThreadCalls = false; //おまじない
+      InitializeComponent();
+|     wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|     wm.SetReportType(InputReport.ButtonsAccel, true); //レポートタイプの設定
+|     wm.Connect();                          //WiiRemoteと接続
+    }
+|   //Wiiリモコンの値が変化したときに呼ばれる関数
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+|     WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|     this.DrawForms(ws); //フォーム描画関数へ
+|   }
+|   //フォーム描画関数
+|   public void DrawForms(WiimoteState ws)  {
+|     this.label1.Text = "X軸:" + (ws.AccelState.Values.X);
+|     this.label2.Text = "Y軸:" + (ws.AccelState.Values.Y);
+|     this.label3.Text = "Z軸:" + (ws.AccelState.Values.Z);
+|   }
+  }
+}
+]]></program>
+
+<program title="加速度センサーの値を表示する(Form1.h)[C++]"><![CDATA[
+#pragma once
+namespace WLCAccel {
+  using namespace System;
+  using namespace System::Windows::Forms;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+  public:
+    Form1(void) {
+|     Control::CheckForIllegalCrossThreadCalls = false; //おまじない
+|     wm = gcnew Wiimote();  //Wiimoteクラスを作成
+      InitializeComponent();
+|     //イベント関数の登録
+|     wm->WiimoteChanged +=
+|       gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|       this, &Form1::wm_WiimoteChanged);
+|     wm->SetReportType(InputReport::ButtonsAccel, true); //レポートタイプの設定
+|     wm->Connect(); //WiiRemoteと接続
+    }
+| public:
+|   void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){
+|     WiimoteState^ ws;
+|     ws = args->WiimoteState;
+|     this->DrawForms(ws);
+|   }
+| public:
+|   void DrawForms(WiimoteState^ ws) {
+|     this->label1->Text = "X軸:" + (ws->AccelState.Values.X);
+|     this->label2->Text = "Y軸:" + (ws->AccelState.Values.Y);
+|     this->label3->Text = "Z軸:" + (ws->AccelState.Values.Z);
+|   }
+＜以下略＞
+]]></program>
+
+</subsection>
+
+<subsection title="実行してみよう">
+それでは実験してみましょう。まずWiiRemoteをお使いのBluetoothスタックで接続してください。
+
+次にVisual Studio上で[F5]キーを押して実行してください。正しくプログラムが書かれておらず、エラーなどが出る場合はよく確認して、修正してください。
+
+フォームが表示されたら、WiiRemoteを振りまわしてみてください。このとき、調子に乗って振り回しすぎて飛んでいくと危険なので、大振りするときは必ずストラップをしてください。 
+
+<!--<figure id="07-02" src="WiimoteLib/png/07-02.png">-->
+<figure id="07-03" src="WiimoteLib/png/07-03.png">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+フォームに張り付けた、加速度のX,Y,Zの値が素早く動いていることがわかります。
+
+【注意】
+起動時に3つの値がゼロのままだった場合、一旦作成したアプリケーションを終了させて、WiimoteLibのサンプル「WiimoteTest.exe」を実行してみてください。一度このサンプルを起動してから、今回作成したアプリケーションを起動すると値がとれることがあります(エラー処理や初期化を丁寧にしていないからかもしれません)、不具合があったときは試してみてください。
+
+また、終了時に「Dispose」に関するエラーが出るときがありますが、これもいまのところ無視してかまいません。
+
+<figure id="DisposeErr" src="WiimoteLib/png/DisposeErr.png" title="Disposeでエラーがあるが今は無視">
+<!-- <attribute locale="latex2e" name="style">width:3cm</attribute>-->
+</figure>
+
+</subsection>
+
+<subsection title="解説：レポートタイプと加速度センサー">
+
+WiiRemoteの3軸の加速度センサーのリアルタイム値を表示しました。
+<program title="レポートタイプの設定">
+[C#]   wm.SetReportType(  InputReport.ButtonsAccel, true); 
+[C++]  wm->SetReportType(InputReport::ButtonsAccel, true);
+</program>
+
+レポートタイプ、すなわちイベントが起きたときに報告するようにWiiRemoteにお願いする「種類」をここで設定しています。
+「ButtonsAccel」は加速度センサーとボタンイベントを取得しています。
+
+<program title="加速度センサーの生値取得">
+[C#]  ws.AccelState.Values.X
+[C++] ws->AccelState.Values.X
+</program>
+
+WiiRemoteに内蔵された加速度センサー各軸の生値をfloatで取得します。
+
+<program title="おまじない">
+[C#]  Control.CheckForIllegalCrossThreadCalls = false;
+[C++] Control::CheckForIllegalCrossThreadCalls = false;
+</program>
+
+前回と同じく、別のスレッドからフォームを書き換えることを許可します。
+
+レポートタイプに「ButtonsAccel」を指定しているので、この状態でボタンイベントなども取得できます。余力のある人は試してみましょう。
+そして、実際にどれだけの値が出力されるか実験してみましょう。
+ブンブン振ってみると、実測でだいたい±5程度の値が計測されます。
+WiiRemoteを直立させると、X,Zなど2つの値はゼロになりますが、もうひとつの軸、たとえばY軸にはかならず±0.9程度の値が残ります。
+
+<figure id="AccelXZ0" src="WiimoteLib/png/AccelXZ0.png" title="Y軸に検出されているのは...「重力加速度」">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+これは何でしょう……？そうです、重力加速度です！
+普段は目に見えない重力加速度を目で見ることができます。
+
+</subsection>
+
+<fyi title="コラム：レポートタイプとは？">
+「レポートタイプ」とはWiiRemoteに問い合わせするときのモードのことで、このレポートタイプによって、WiiRemoteが返す返事が異なります。
+
+WiimoteLib1.7ではInputReport内で以下のレポートタイプが定義されているようです。
+<!--        Status = 32,
+        ReadData = 33,
+        OutputReportAck = 34,-->
+<ul>
+<li>Buttons</li>
+<li>ButtonsAccel</li>
+<li>IRAccel</li>
+<li>ButtonsExtension</li>
+<li>ExtensionAccel</li>
+<li>IRExtensionAccel</li>
+</ul>
+
+レポートタイプは、データのフォーマットを設定する目的の他にも、限りある通信帯域や処理速度を最適に設定する目的があるようです。上記のWiimoteLibで実装されているレポートタイプ以外にも、わかっているだけでも、ボタンのみの入出力から、加速度センサー3種、ヌンチャク付き6種、赤外線付きかどうか、といったより高速でシンプルな入出力モードから、たくさんの値をやりとりするモードまで、各種揃っています。また赤外線センサーについても、最大4点まで扱えるモードに対して2点高速モードなど、隠しモード的なレポートタイプも存在するようです(WiimoteLibでは4点のみサポートしています)。
+
+</fyi>
+
+
+<subsection title="加速度センサーで作るWiiRemote太鼓">
+せっかくWiiRemoteの特徴のひとつである加速度センサーの値が取得できるようになったので「太鼓もどき」を作ってみましょう。
+太鼓と呼ぶには大げさかもしれませんが、加速度センサーに入力された強さが一定より強くなると...たとえば先ほどの実験で±5程度の値が測定できましたので、この値を超えた場合に、WAVファイルを再生することにします。
+
+<subsubsection title="応用：振るとWAVファイルを再生">
+先ほどの加速度センサーを使うプログラムの続きから始めると良いでしょう。
+フォーム「Form1」のコードを表示して、以下のように追記します。
+
+<program title="振るとWAVファイルを再生(Form1.cs)[C#]"><![CDATA[
+  using System;
+  using System.Windows.Forms;
+| using WiimoteLib;    //WimoteLibの使用を宣言
+| using System.Media;  //System.Mediaの宣言
+
+namespace WL_Taiko
+{
+  public partial class Form1 : Form
+    {
+|     Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+|     string path = null;         //Wavファイル名
+|     SoundPlayer wavePlayer;     //SoundPlayerを宣言
+
+      public Form1() {
+        InitializeComponent();
+|       wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|       wm.SetReportType(InputReport.ButtonsAccel, true); //レポートタイプの設定
+|       wm.Connect();                           //WiiRemoteと接続
+|       path = @"C:\WINDOWS\Media\chord.wav";   //再生するWAVファイルを指定
+|       wavePlayer = new SoundPlayer(path);     //プレイヤーにWAVファイルを渡す
+      }
+|     //Wiiリモコンの値が変化したときに呼ばれる関数
+|     void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+|       WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|       //WAVファイルが読み込まれているか確認
+|       if (this.path != null) {
+|         float AX = Math.Abs(ws.AccelState.Values.X); //X軸の絶対値
+|         float AY = Math.Abs(ws.AccelState.Values.Y); //Y軸の絶対値
+|         float AZ = Math.Abs(ws.AccelState.Values.Z); //Z軸の絶対値
+|         //X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+|         if ((AX+AY+AZ) >= 5) {
+|           wavePlayer.PlaySync();  //音を鳴らす
+|         }
+|       }
+|     }
+    }
+}
+]]></program>
+<program title="振るとWAVファイルを再生(Form1.h)[C++]"><![CDATA[
+#pragma once
+namespace WLCTaiko {
+  using namespace System;
+  using namespace System::Windows::Forms;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+| using namespace System::Media;  //System.Mediaの宣言
+
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|   public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+|   public: String^ path;         //WAVファイルパス格納用
+|   public: SoundPlayer^ wavePlayer;  //SoundPlayerを宣言
+    public:
+      Form1(void) {
+|       wm = gcnew Wiimote();  //Wiimoteクラスを作成
+        InitializeComponent();
+|       //イベント関数の登録
+|       wm->WiimoteChanged +=
+|         gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|           this, &Form1::wm_WiimoteChanged);
+|       wm->SetReportType(InputReport::ButtonsAccel, true); //レポートタイプの設定
+|       wm->Connect(); //WiiRemoteと接続
+|       path ="C:\\WINDOWS\\Media\\achord.wav";   //再生するWAVファイルを指定
+|       wavePlayer = gcnew SoundPlayer(path);     //プレイヤーにWAVファイルを渡す
+      }
+  public:
+      void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){
+|       WiimoteState^ ws;
+|       float AX, AY, AZ;
+|       ws = args->WiimoteState;
+|       if (this->path!=nullptr) {
+|         AX = Math::Abs(ws->AccelState.Values.X); //X軸の絶対値
+|         AY = Math::Abs(ws->AccelState.Values.Y); //Y軸の絶対値
+|         AZ = Math::Abs(ws->AccelState.Values.Z); //Z軸の絶対値
+|         //X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+|         if ((AX+AY+AZ)>=5) {
+|           wavePlayer->PlaySync();		//音を鳴らす
+|         }
+|       }
+|     }
+＜以下略＞
+]]></program>
+
+Visual C#は[F6]、Visual C++は[F7]キーを押してコンパイルエラーがないことなどを確認したら、BluetoothスタックからWiiRemoteを接続してください(切断されていなければそのまま続行してかまいません)。
+
+Visual Studioの[F5]キーを押して実行してください。無事にエラーなく実行されると、フォームが表示されます。このフォームは今回使用しませんが、WiiRemoteを振ってみると、振りに合わせて、なんだか音が聴いたことのある音が鳴ります。
+
+</subsubsection>
+<subsubsection title="解説">
+WiiRemoteの3軸の加速度センサの値を取得して、指定した加速度を検出すると指定したWAVファイルを鳴らします。
+
+<program title="再生するWAVファイルを指定">
+[C#]   path = @"C:\WINDOWS\Media\achord.wav"; 
+[C++]  path ="C:\\WINDOWS\\Media\\achord.wav"; 
+</program>
+この「@」は「@-quoted string」といって、これが先頭に着いている文字列は「\」をバックスラッシュを特殊な文字としてではなく、ファイルパスとして簡単に処理できます。C++にはそれに該当する標記がないようなので「\\」として「\」を特別な1文字として扱っています。
+
+さてここで再生するファイルを指定しています。鳴らしたいWAVファイルを指定してください。このプログラムではWindowsに用意されたWAVファイルとして、Windowsのシステムに最初から入っているWAVを指定しましたが、ご自身で用意された音楽や効果音を指定しても良いでしょう。
+
+<program title="絶対値">
+[c#]  float AX = Math.Abs(ws.AccelState.Values.X); //X軸の絶対値
+[c++] AY = Math::Abs(ws->AccelState.Values.Y);     //Y軸の絶対値
+</program>
+
+WiiRemoteのX,Y,Z軸の値を取得し、その絶対値をとります。 
+<program title="判定">
+//X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+if ((AX+AY+AZ)>= 5) {
+	wavePlayer.PlaySync();
+}
+</program>
+X,Y,Z軸の加速度の絶対値の和が[5]を超えると音を鳴らすとは、いかにも簡単です。
+この[5]という値を、小さくすれば少ない動作で反応します。反対に増やせば、大きい動作で反応します。自分の好みの数字に置き換えてみて、調整してみてください。 
+なお今回は、音が再生中にWiiRemoteを振っても反応しません(再生中にも音を連続再生したい場合はスレッド処理などを用いる必要があります)。
+ </subsubsection>
+
+</subsection>
+
+</body>
+</doc>

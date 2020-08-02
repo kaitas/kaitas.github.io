@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>本書の構成</title>
+<author>白井暁彦</author>
+<date>2008年11月13日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+</head>
+<body>
+<subsection title="▽バイオリンを作る">
+Project Title: Wiiolin
+Creator: Jace Miller
+Platform: Windows
+API: Wiiuse for Wii remote interaction, also FMOD library for sound sample
+playback
+Short abstract: The Wiiolin is a virtual violin that uses Nintendo's Wii
+controller and sensor bar to produce music in a unique way.  To play the
+Wiiolin, the Wii remote is held in the left hand like the neck of a violin
+and the sensor bar is used as a bow.  The motion and orientation of the
+sensor bar is analyzed at interactive rates to determine which virtual
+string is being played.  Button presses on the Wii remote are mapped to
+similar finger positions on the violin.  The virtual bow motion and finger
+position information is combined to determine which pre-recorded note sample
+should be played.  Tilting the Wii remote downwards allows the Wiiolin to be
+played like a cello, with sound samples to match the instrument.
+Technical/artistic advantage: This is the only work I am aware of that
+attempts to recognize sensor bar movement as a primary means of music
+generation.
+
+I'll have to check with the professor in charge of the Immersive
+Visualization project at the university if he wants to publish information
+about the immersive system that was displaying the ant colony scenes, but
+I'll e-mail you back with the details if they agree.
+
+Your book sounds like a good project.  Let me know when it is finished and I
+may look for a copy of it.
+</subsection>
+
+</body>
+</doc>

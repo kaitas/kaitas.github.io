@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<doc xml:lang='ja'>
+<head>
+<title>C++とC#でまなぶWiiRemoteプログラミング</title>
+<author>白井暁彦＋小坂崇之</author>
+<date>2009年3月24日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai at mail.com</email>
+</head>
+<body>
+この章ではWiimoteLibというAPIを利用して、WiiRemoteのプログラミングの基礎を解説していきます。プログラミング環境として、無料で利用できる「Visual C++ 2008 Express Edition」もしくは「Visual C# 2008 Express Edition」を使います。つまりプログラミング言語として、C++とC#を同時に並列して扱います。
+
+また、本章のC#.NETによるプログラミングサンプルは金沢工業専門高等学校の小坂崇之先生(http://www.kosaka-lab.com/)の協力によるものです。プログラミング初心者でもわかりやすく理解できるように、できるだけ多くのサンプルを丁寧に順を追って解説することで、WiiRemoteプログラミングを体験することができるようになっています。
+
+<section title="プログラミング環境のセットアップ">
+
+
+<!--
+ここでは、これ以降の開発の基本となる、Windows環境でWiiRemoteを使ったプログラミングを行うための環境構築について解説します。
+本書ではWiiRemoteのためのプログラミングに必要なコーディング言語として、もっとも一般的なC/C++を解説します。現在、世界中のボランティアにより、Javaをはじめ様々な言語に移植されてきていますが、環境の違いなどによる混乱を防ぎ、シンプルに理解できるよう、C/C++言語を採用しました。WiiRemoteのようなデバイスとの通信プログラムにおいては、実際にはオブジェクト指向プログラミングに特化した実装は少ないため「(C++ではなく)C言語しか知らない」という読者にも理解は難しくないはずです。
+
+以後の解説は「プログラミングの経験はあるが普段使わないので忘れてしまった」、「(大学の研究や自主制作などで)WiiRemoteを使いたいがプログラミングは苦手...」、「普段はゲームプログラミングなどでグラフィックスプログラミングなどをしているが、デバイス制御などはほとんど経験がない」といった幅広い読者を考慮して解説します（そのため、若干冗長な解説になる場合もあることをお許しください）。
+-->
+このセクションでは、無料で利用できる「Visual C++ 2008 Express Edition」と「Visual C# 2008 Express Edition」をセットアップします。既にこれらの製品の上位バージョン(Standard Editionなど)をインストールされている方や、C++、C#のいずれかしか必要でない方は、必要なところだけ参照してください。
+
+<!--
+セットアップの流れとしては以下のようになります。
+
+<dl>
+  <dt>Visual C++/C#のセットアップ</dt>
+  <dd>コンパイラ、IDE(統合開発環境)であるMicrosoftのVisual C++ 2008(以下、VC2008)をインストールします（無料で利用できます）。Visual Studioをお使いの場合や、VC2003以降をお使いの方は、特に新規にインストールし直す必要はありません。</dd>
+  <dt>WindowsDDKのセットアップ</dt>
+  <dd>Windows Driver Development Kit(以下、DDK)のセットアップを行います（無料で利用できます）。こちらのDDKには、HIDデバイスとPCの通信を円滑に行うためのライブラリが含まれています。なお、DDKは最新のマイクロソフト用語ではWindows Driver Kit(WDK)と呼ばれるようになりました（WDKにはDDKに開発したドライバのテストツールなどが付属しています）。</dd>
+  <dt>APIのセットアップ</dt>
+  <dd>上記(1),(2)だけでもWiiRemoteを使ったプログラミングはできるのですが、WiiRemoteの機能を使いこなすためには世界中の開発者が開発したAPI(ドライバ、SDKなど呼び方は様々ですが本書ではApplication Programming Interface;APIに統一)を利用するのが近道です。オープンソースで開発され、公開されているものが多く、たいていは無料で利用できます（ライセンスによる）。本書では主に「WiiYourself!v1.0」を利用して解説します。</dd>
+  <dt>サンプルプログラムのリコンパイル</dt>
+  <dd>最後に簡単なプログラムのリコンパイルと動作確認を行います。</dd>
+</dl>
+-->
+ <subsection title="Visual C# 2008 Express Editionのセットアップ">
+Visual C# 2008 Express Editionのセットアップについては、マイクロソフトの公式サイトに丁寧に解説されております。
+
+http://www.microsoft.com/japan/msdn/vstudio/express/beginners/2008/vcsharp.aspx
+
+Express EditionのWebインストールをダウンロードし、時計を表示するアプリケーションを実際に作ってみることができます。C#はしばらく使う予定はないけれども、インストールしてみよう、という方は是非試してみてください。
+
+ </subsection>
+
+ <subsection src="WiimoteLib/VC2008Setup.xml"/>
+
+
+ <fyi src="WiimoteLib/C-VersionSelector.sdoc.xml"/>
+
+</section>
+
+<section src="WiimoteLib/WiimoteLibAbout.sdoc.xml"/>
+<section src="WiimoteLib/WiimoteLibLicence.sdoc.xml"/>
+<section src="WiimoteLib/WiimoteLibSetup.sdoc.xml"/>
+
+<section src="WiimoteLib/WiimoteLib-Vibro.sdoc.xml"/>
+ <section src="WiimoteLib/LibCS-LED.sdoc.xml"/>
+ <section src="WiimoteLib/LibCS-Button.sdoc.xml"/>
+ <section src="WiimoteLib/LibCS-Launcher.sdoc.xml"/>
+ <section src="WiimoteLib/LibCS-Acc1.sdoc.xml"/>
+
+<fyi title="コラム：レポートタイプとは？">
+「レポートタイプ」とはWiiRemoteに問い合わせするときのモードのことで、このレポートタイプによって、WiiRemoteが返す返事が異なります。レポートタイプは、データのフォーマットを設定する目的の他にも、限りある通信帯域や処理速度を最適に設定する目的があるようで、わかっているだけでも、ボタンのみの入出力から、加速度センサー3種、ヌンチャク付き6種、赤外線付きかどうか、といったより高速でシンプルな入出力モードから、たくさんの値をやりとりするモードまで、各種揃っています。また赤外線センサーについても、2点だけでなく最大4点まで扱えるモードなど、隠しモード的なレポートタイプも存在するようです。
+</fyi>
+
+
+ <section src="WiimoteLib/LibCS-Acc2.sdoc.xml"/>
+ <section src="WiimoteLib/LibCS-IR1.sdoc.xml"/>
+
+ <section title="赤外線カメラ(2) 赤外線点数を数える">http://www.kosaka-lab.com/tips/2009/02/wii-ir2.html</section>
+ <section title="赤外線カメラ(3) 座標を描画">http://www.kosaka-lab.com/tips/2009/02/wii-ir3.html</section>
+ <section title="赤外線カメラ(4) マウスポインタを操作">http://www.kosaka-lab.com/tips/2009/02/wii-ir4.html</section>
+ <section title="赤外線カメラ(5) WiiRemoteマウスを作る">http://www.kosaka-lab.com/tips/2009/02/wii-ir5.html</section>
+</body>
+</doc>

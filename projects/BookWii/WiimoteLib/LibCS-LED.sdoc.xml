@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>LEDの点灯と消灯</title>
+<author>小坂崇之</author>
+<date>2009年3月6日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+</head>
+<body>
+次にWiiRemoteのLED制御についてプログラミングを行っていきます。
+ここでは、Formボタンをクリックする毎にWiiRemoteの「プレイヤーインジケータ」と呼ばれる青色LEDをカウントアップさせていきます。
+基本的なプログラミングの流れは前節のバイブレーターの制御と同じです。
+
+
+ <subsection title="WiimoteLibの宣言と接続">
+ <program title="Form1.csに以下の部分を追加"> 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;						 //WiimoteLibの使用を宣言
+
+namespace WindowsFormsApplication1 {
+ public partial class Form1 : Form {
+
+Wiimote wm = new Wiimote();				 //Wiimoteの宣言
+int count=0;               				 //カウントの宣言
+
+  public Form1() {
+   InitializeComponent();
+      wm.Connect();  		             //Wiimoteの接続
+  }
+ }
+}
+  </program>
+ </subsection>
+ <subsection title="LEDカウントアップボタンの作成">
+ まず、先ほどのバイブレーターの例と同様にフォームにボタンを貼り付けてください。ボタンは少し大き目に配置すると良いでしょう。
+  <figure id="03-01" src="kosaka/png/03-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ 次に貼り付けた「button1」をダブルリックして、以下のコードを追加します。 
+
+ <program>
+   private void button1_Click(object sender, EventArgs e) {
+    this.button1.Text ="wm.SetLEDs("+ count+") を表示中";
+   this.wm.SetLEDs(count);
+   count++;
+}
+</program>
+以上で終了です。たったこれだけのプログラムでWiiRemoteのLED制御が可能になります。 
+
+<program title="Form1.csのソース">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;
+
+namespace WindowsFormsApplication1 {
+ public partial class Form1 : Form {
+  Wiimote wm = new Wiimote(); 	//Wiimoteの宣言
+  int count=0;                  //カウントの宣言
+
+  public Form1() {
+   InitializeComponent();
+    wm.Connect();               //Wiimoteの接続
+  }
+
+  private void button1_Click(object sender, EventArgs e) {
+   this.button1.Text = "wm.SetLEDs(" + count + ") を表示中";
+   this.wm.SetLEDs(count);
+   count++;
+  }
+
+ }
+}
+</program>
+ </subsection>
+ 
+ <subsection title="実行してみよう">
+まずはお使いのBluetoothスタックからWiiRemoteを接続してください。 
+ <figure id="03-05" src="png/03-05.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+次に、Visual C#の[F5]キーを押して実行してください。実行すると下図のようなアプリケーションが起動します。 
+ <figure id="04-01" src="png/04-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+　※もし下図のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。 
+ <figure id="03-07" src="png/03-07.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+フォームに表示されるボタンをクリックしていくと、WiiRemote下部のLEDが次々と光っていきます。
+
+<figure id="04-02" src="png/04-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+<figure id="04-w000" src="png/04-w000.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w001" src="png/04-w001.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w002" src="png/04-w002.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w003" src="png/04-w003.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w004" src="png/04-w004.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+<figure id="04-w015" src="png/04-w015.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+
+「×」をクリックして終了します。
+</subsection>
+
+
+<subsection title="解説">
+<program>
+ SetLEDs(int32 leds); 
+</program>
+
+この関数の引数に数値をを入れることで、対応するLEDが変化します。
+このプログラムでは変数countの値を入れ「SetLEDs(count);」としています。
+Formに配置されたボタンをクリックすると、count値が+1されていきます。
+
+<figure id="04-09" src="png/04-09.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+引数は整数(int)で与えますが、これはWiiRemoteを逆さまにした状態の各LEDを2進数で表現して、各ビットを足したものです。
+2進数に馴染みがない方のために、表で表現してみました（●が消灯、○が点灯です）。
+
+<table>
+<colgroup>
+ <col align="center" class="key" />
+</colgroup>
+<colgroup span="4">
+ <col align="center"/>
+ <col align="center"/>
+ <col align="center"/>
+ <col align="center"/>
+</colgroup>
+ <thead>
+ 10進数(int),LED4,LED3,LED2,LED1
+ </thead>
+ <tbody>0,●,●,●,●
+1,●,●,●,○
+2,●,●,○,●
+3,●,●,○,○
+4,●,○,●,●
+5,●,○,●,○
+6,●,○,○,●
+7,●,○,○,○
+8,○,●,●,●
+9,○,●,●,○
+10,○,●,○,●
+11,○,●,○,○
+12,○,○,●,●
+13,○,○,●,○
+14,○,○,○,●
+15,○,○,○,○</tbody>
+</table>
+フォーム上のボタンを押し続けて、countに10進数の16になると、LED0～LED4の桁はそれぞれ0になりLEDは全て消えますが、それ以上の値(17,18,19,...)が入っても、また下位ビットに値が入りますので、LEDはカウントアップしつづけます。
+
+プログラムによっては2進数→10進数ではなく、個々のLEDを指定して光らせたいときもあるでしょう。
+そういったときは、関数フォーマットが異なる以下の形式を利用します：
+<program>
+ SetLEDs(bool led1 ,bool led2 ,bool led3,bool led4); 
+</program>
+同じ関数でも、引数を4つ指定することで、各々のLEDを制御することが可能になります。
+(プログラミング用語では、このような関数の利用の仕方をオーバーロードといいます）
+
+このようなAPI関数それぞれの機能は、WiimoteLibの「docs」フォルダにあるヘルプファイル「WiimoteLib.chm」を参照することで探すことができます。例えば、このAPI関数の場合は以下のように記載されています。
+
+<pre>
+＜Wiimote.SetLEDs Method ＞
+
+Overload List
+   Name Description 
+ SetLEDs(Int32) Set the LEDs on the Wiimote  
+ SetLEDs(Boolean, Boolean, Boolean, Boolean) Set the LEDs on the Wiimote  
+
+See Also
+ Wiimote Class
+ Wiimote Members
+ WiimoteLib Namespace
+</pre>
+
+わからないことがあったり「こんな機能ないかな？」と思ったときは、このヘルプファイルを活用しましょう。プログラムコードから自動生成されているようですが、勉強になります。
+
+</subsection>
+
+
+</body>
+</doc>

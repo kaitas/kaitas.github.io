@@ -1,0 +1,474 @@
+\documentclass{tcjournals}
+
+\begin{document}
+\type{Research Article}
+
+\title{``WiiMedia:Papier Poupee Painter'', position detection methods of a new game controller for children's art media}
+
+\author{Akihiko SHIRAI\textsuperscript{1}, Kyoko MURAKAMI\textsuperscript{2},\\
+ Abdelmajid KADRI\textsuperscript{3}, Reiji TSURUNO\textsuperscript{4}, Etsuo GENDA\textsuperscript{4} and Simon RICHIR\textsuperscript{3}}
+%\correspauthor{Name and email of the corresponding author}
+\correspauthor{Akihiko SHIRAI (shirai@mail.com)}
+
+%\address{%
+%\textsuperscript{1}shirai@mail.com\\
+%\textsuperscript{2}Address of the second author\\
+%\textsuperscript{3}kadri_abd@hotmail.com
+%}
+\address{%
+\textsuperscript{1}ENSAM Presence \& Innovation Laboratory / JSPS, shirai@mail.com\\
+\textsuperscript{2}Prometech Software Inc., murakami@prometech.co.jp\\
+\textsuperscript{3}ENSAM Presence \& Innovation\\
+\textsuperscript{4}Faculty of Design, Kyushu University}
+
+
+\abstract{
+This paper describes the development of the ``Papier Poupee Painter'', a drawing computer application specially designed for young children (3 to 5 years old).
+We had already developed the gPastel Draw Engine that could render realistic pastel strokes by using multiple illuminated paper photographs,
+instead of simulating interaction between the pigments and the paperfs surface.
+
+In this project, we applied the engine to create three types of pastel drawing softwares. Originally created for adults, it was made with a high-end tablet that can have several modes of input as in the amount of pressure, the altitude and the azimuth of the stylus.
+For children usage, we developed three attractive prototypes with the WiiRemote, Nintendo's new generation game controller, and then evaluated their different interaction designs for several user age groups.
+The ``WiiMedia:Draw'' and ``spray-can interaction'' mainly use infrared sensors for drawing. Another prototype, the ``Papier Poupee Painter'', has a baby doll interface and a robust interaction using acceleration sensors for coloring.
+These were exhibited on some public events in order to evaluate in circumstances similar to actual playing conditions.
+}
+
+\maketitle
+
+\section{Introduction}\label{sec:1}
+
+It is very important to develop a drawing software for children. Not only is it giving digital drawing and/or painting functions, but it is expanding the children's imagination with computer augmented techniques; which ``for children'' generate a lot of complex requirements. Especially when considering early childhood, 3 to 5 year old children do not know how to operate a GUI, like tools and pallets, with a mouse. Also, they are not free with a real paper drawing.
+
+Most of the approaches of drawing software for children are limited and decrease reality to simplify interaction (like stamps and thick pens without latitudes).
+
+Even if some drawing systems exist, most of the softwares' goals are training with the PC mouse usage; then the software designs are assuming the usage of a pointing device like a mouse or a tablet. Moreover, it may not be suitable for children in their early childhood to have such expensive and fragile computer systems with the glare of a video projector.
+Especially since a video projector and a tablet may not be ``a normal peripheral for private individuals'' now.  
+
+In this paper, we will rather explore an opposite way. We focused on building a realistic sketching engine that aims to give the impression of pastel drawing.
+Then we developed a core software for adults with a tablet device as an art media that can be precise enough to express art imagination\cite{MurakamiNSD}.
+
+%After that, we developed attractive drawing applications with the WiiRemote, a new game controller which is a cost effective, generic and easy to obtain device.
+%The techniques and results based on the same software core and intuitive interaction designs which would be able to awake the imagination of children for several age groups.
+%Additionally, the new usage of a cost effective game controller will be useful for scientists, artists , but also for game developers.
+%It might be a new media usage instead of a new game controller\cite{Sandbox2007WiiMedia}.
+
+%(Aki rewrote here)
+After that, we developed attractive drawing applications with the WiiRemote, a new game controller which is a cost effective, generic and easy to obtain device.
+%We already have software application projects which are part the ``WiiMedia'' framework, using the WiiRemote as a new media for scientists, artists and hobby programmers\cite{Sandbox2007WiiMedia}.
+We already have a series of projects named ``WiiMedia'', using the WiiRemote to create a new media for scientists, artists and hobby programmers\cite{Sandbox2007WiiMedia}.
+In the first WiiMedia projects we studied the creation of new applications like a sword fighting with  motion analysis and a racing game without any button actions, which thanks to the acceleration sensor on the WiiRemote.
+For this article, we concentrated on the development of applications in a more artistic field within the same framework.
+Creating a new painting software for children raises some technical issues, of which the resulting solutions may produce useful knowledge for professional game projects and its developers.
+
+
+\section{Related works}
+\subsection{Paint software with a new device}
+Some famous paint softwares ``for children'' like ``KidPix'' or ``TuxPaint'' have characteristics focused around funny experiments that handle electrical pigments with sound interactions.
+Of course, one can draw a picture freely and easily. However, their software designs usually assume the use of some pointing device, like a mouse or a tablet. Also they do not support realistic interactions like mixing colors, cracked pigments and/or pen pressure controlled latitude, etc.
+
+%(Gill) 'When we reviewed the history' -> 'When we review the history' [other wise past+present tense in same sentence]
+%(Gill) Added a ',' between 'research' & 'instead of'
+%(Gill) When using possessive, try if possible to leave out the 'the' :
+%       Greene's ``The drawing prism'' -> Greene's ``Drawing prism''
+When we review the history of drawing software research, instead of ``for children'', in retrospect we can find a lot of device usages other than pen tablets.
+Greene's ``Drawing prism''\cite{Greene:prism} was used to capture the shape of brush by using a large prism and a videocamera. Bleser's ``Charcoal sketching'' \cite{42230} had a 5 DoF stylus (pressure, tilt, rotation, x, y) to realize charcoal drawing. Baxtar's ``DAB''\cite{DAB} used a Phantom device; a motor controlled pen type force feedback device for professional oil painting.
+
+
+\subsection{NPR Drawing}
+Recreating traditional painting or drawing materials and techniques on interactive painting software is an ongoing and open-ended topic in NPR graphics.
+Various drawing/painting tools are implemented with their individual strokes such as oil paint\cite{DAB}\cite{987665}, pen-and-ink\cite{192185}, water color \cite{258896}\cite{1187186}, pencil \cite{Sousa:2000:OMG}, colored pencil \cite{826498}, charcoal\cite{42230}\cite{732296} and so on.
+
+%(Gill) 'For ordinal infants' -> What does this mean?
+Nowadays, complicated, time consuming simulations and/or more realistic expressions are accelerated by using GPUs.
+Oil paintings and watercolors are impressive; however, they are not suitable for children in their early childhood. For ordinary infants, most popular painting tools are crayons or pastels that can be easy to grab and draw with.
+
+
+\section{Pastel Draw Engine}
+
+When children in their early childhood draw a picture for their first time, they ordinarily use drawing media that physically deposit pigments on paper, such as crayons, charcoals and pastels. In this study, we use the ``Pastel Draw Engine'' method \cite{MurakamiNSD} of Murakami et al.; which allows us to obtain realistic strokes similar to such drawing media that can be used in real time system.
+
+A Similar method is implemented in Painter\cite{Painter} or ArtRage\cite{ArtRage}. However, we use multiple illuminated paper textures, instead of simulating interaction between the pigments and the paper's surface, and draw realistic strokes in real time without GPUs or huge calculations.
+
+
+\subsection{Multiple illuminated paper texture}
+
+The Pastel Draw Engine focuses on realistic pastel strokes; which when drawn on a paper's surface in different directions, cause different patterns to appear along those drawing directions as shown in Figure \ref{PPPfig1.eps}.
+
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=7cm]{PPPfig1.eps}
+\caption{Appearance of paper texture for real pastel strokes from different directions.}
+\label{PPPfig1.eps}
+\end{figure}
+
+Figure \ref{PPPfig2.eps} depicts this phenomenon as a pattern diagram using a cross section of a paper's surface and its height field. When a stroke is drawn on paper, pigments scraped by irregularities (uneven parts) in the paper are deposited not on top of the convex area but on an area near the top (upper left). Therefore, to obtain a realistic stroke representation by using the height field as a paper height, there needs to be an interaction between the drawing tool and the paper's surface (upper right). In contrast, when an irregular paper's surface is illuminated from one direction, causing shade and a shadow to appear, the brightest part is not the highest part; an area slightly lower than the highest part in the direction of the light (lower left) however, will.
+Based on this similarity, the illuminated paper texture is used as a height field for simulating pigment deposition by a stroke drawn in one direction(lower right). When a stroke is drawn, the stroke uses a height field consisting of the converted paper texture illuminated by a light coming from the same direction as the stroke.
+In our engine, we captured twelve paper textures as key textures and interpolate between them for an arbitrary drawing direction.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=7cm]{PPPfig2.eps}
+\caption{Pigment adhesion model with height map from a light source for a paper.}
+\label{PPPfig2.eps}
+\end{figure}
+
+%\subsection{Stroke generation and pen properties}
+\subsection{Implementation for a tablet}
+
+We use the WinTab API (LCS/Telegraphics Configdential \cite{WinTab}) to obtain information from a tablet as packets (Figure \ref{tablet.eps}).
+A packet contains informations from pen inputs and we use three parameters from the packet, normalized as such:
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=6cm]{tablet.eps}
+%\caption{Interaction Pastel Draw with a tablet.}
+%\label{tablet.eps}
+%\end{figure}
+
+\begin{figure}[bhtp]
+\centering
+\includegraphics[width=6cm]{tablet2.eps}
+\caption{Interaction Pastel Draw with a tablet.}
+\label{tablet.eps}
+\end{figure}
+
+\begin{itemize}
+ \item pen pressure [0, 1],
+ \item pen azimuth [0, 360],
+ \item pen altitude[-1, 1].
+\end{itemize}
+
+A base path is generated by the packets. The stroke width is then added to both sides of the base path.
+The widths of the strokes become broader when the pen pressure is high and the pen altitude is low, and becomes narrow when the pen pressure is low and the pen altitude is high. The stroke width is also calculated by using the pen's azimuth, as it is perpendicular to its direction. The pen's azimuth is 0 when the tip of a stylus reaches top of the tablet, and becomes maximum when the tip reaches the bottom.
+Figure \ref{PPPstrokes.eps} shows our stroke variation by applying these parameters.
+
+\begin{figure}[bhtp]
+\centering
+\includegraphics[width=6cm]{PPPstrokes.eps}
+\caption{Our stroke variation.}
+\label{PPPstrokes.eps}
+\end{figure}
+
+
+\section{WiiMedia:Draw}
+The Pastel Draw Engine with a tablet is completed as a NPR sketching system, however it has some issues when used as a drawing environment for children:
+\begin{itemize}
+ \item High-end tablet is expensive, fragile and difficult to obtain.
+ \item Not so attractive for children.
+ \item The tip of stylus is not matched with a drawing point on the user's view.
+\end{itemize}
+
+%(Aki)
+%These issues are caused by using tablet devices but it has a chance to innovate in creating a new drawing media if we can solve them by applying another human interface, and if this new interface can support the same inputs as the tablet. also it can support similar input with tablet.  
+%We already studied new usage of WiiRemote, Nintendo's new generation game controller for non-game  use like media arts and scientific researches as ``WiiMedia'' activity \cite{Sandbox2007}.
+%WiiRemote has three dimensional acceleration sensors, one image sensor that can detect two groups of infrared (IR) LED, vibrator, four LEDs, eleven digital buttons and BlueTooth connection.
+
+%Our WiiMediaAPI can allow the access to WiiRemote from own coded programs on PC.
+%Then ``WiiMedia:Draw'', our prototype of using Pastel Draw Engine can obtain the data from WiiRemote directly.
+
+
+%(Gill) sensor -> sensors
+These issues are caused by using tablet devices, but innovation in order to create a new drawing media can be achieved through solving those problems by applying another human interface. If a new interface can support the same inputs as the tablet, it can be driven by both a tablet or the new interface.
+We already studied a new usage of the WiiRemote, Nintendo's new generation game controller; for non-game use, like media arts and scientific research, as ``WiiMedia'' activity \cite{Sandbox2007WiiMedia}.
+The WiiRemote has a three-dimensional acceleration sensor, an image sensor that can detect two groups of infrared (IR) LEDs, a vibrating device, four LEDs, eleven digital buttons and a BlueTooth connection.
+
+Our WiiMedia APIs can allow the access to the WiiRemote from selfmade programs on a PC.
+``WiiMedia:Draw'', our prototype using the Pastel Draw Engine, can thus obtain the data directly from the WiiRemote.
+
+
+ 
+
+\subsection{Characteristic of infrared sensor}
+The WiiRemote device has a two dimensional infrared position sensor; however, it has some issues to be used as an optical motion capture device.
+
+%\begin{figure}[btph]
+%\centering
+%\includegraphics[width=8.2cm]{WiiIRcalib1.eps}
+%\caption{Measurement of WiiRemote's IR coordinates. PosZ means measured physical position.}
+%\label{WiiIRcalib1.eps}
+%\end{figure}
+First, the output coordinates of IR sensors are not absolute 3D coordinates; it outputs relative 2D coordinates $(IrX, IrY)$. These 2D coordinates translate to the center of gravity of the IR intensity instead of a pixel image matrix. Ideally, it should be a linear mapping like for laser pointers but it has distortion. Moreover since this sensor supports the detection of two groups of IR, we can estimate depth ($Z$) with geometry and distance of both groups of IR LEDs.
+
+The second issue is the limitation of the viewing area of the IR sensor. Our measurement of its scope gave us a value of approximately 36 degrees.
+For instance, if we place a WiiRemote in front of two IR-LEDs and maximize the two LEDs detection chances, we obtain what we call a safe area. Figure \ref{WiiIRcalib2.eps} is a data on $Y=0$ plane with a set of IR LEDs (distance; $d = 200mm$). A data line means a same set of $PosX$, a physical position. Unmarked points correspond to the outside of sensor's view range. On the plane of $PosZ=1200mm$, the width of range is only 800mm.
+
+We measured the horizontal range of a 4-year-old's hands to be 900mm at maximum as an activity area, making it a big issue that should be resolved as a human interface for young children.
+
+\subsection{Position calibration method}
+
+
+Figure \ref{WiiIRcalib2.eps} also shows that the values of IR coordinates ($IrX$, $IrY$) change widely with the depth ($PosZ$). For example, if the WiiRemote outputs ``$IrX = 768$'', the physical position $(PosX, PosZ)$ might be (0, 660), (-330, 1000), (-330, 2310) or (-660, 3000). Also there are no guaranties that the WiiRemote has no rotation on the Y-axis. In fact, IR sensors can possibly be used to obtain relative coordinates instead of an absolute position directly. This may limit the interaction using the WiiRemote with the IR sensor.
+
+
+\begin{figure}[btph]
+\centering
+\includegraphics[width=8.2cm]{WiiIRcalib2.eps}
+\caption{Calibration for IR coordinates to obtain physical coordinates.}
+\label{WiiIRcalib2.eps}
+\end{figure}
+
+
+We tried to obtain more precise absolute positions with IR coordinates ($IrX_1$, $IrY_1$, $IrX_2$, $IrY_2$) and known distances between a couple of IR-LED groups ($d=200mm$). Figure \ref{WiiIRcalib2.eps} Left shows the difference of each $IrX$.
+\begin{eqnarray}
+IrZ =  \mid  IrX1 - IrX1 \mid
+\end{eqnarray}
+Then it shows the same curve in several PosZ plane. It also shows an inverse proposition.
+\begin{eqnarray}
+Z=k/X
+\end{eqnarray}
+
+To obtain the factor $k$, substitute a static value, 200mm as a distance between LEDs (Figure \ref{WiiIRcalib2.eps} right). Then we can say the factor $k$ is a linear function of $PosZ$. Finally, we can get the actual position PosZ from the differences of $IrX_1$ and $IrX_2$ (Figure \ref{WiiIRcalib3.eps} right).
+
+\begin{figure}[btph]
+\centering
+\includegraphics[width=8.2cm]{WiiIRcalib3.eps}
+\caption{Calibrated result for depth.}
+\label{WiiIRcalib3.eps}
+\end{figure}
+
+
+After this calibration, when the WiiRemote can receive the intensities from two IR-LEDs on a frame, one can obtain the distance between $IrX$ and $IrY$. The depth length and rotation can be used as the pressure and azimuth of the stylus. The altitude of stylus can be emulated by a value from acceleration sensor.
+
+
+
+
+\section{Prototypes of ``WiiMedia:Draw''}
+%\subsection{Evaluation of a prototype}
+We developed four different interface prototypes of ``WiiMedia:Draw'' for each user age groups (Table \ref{Prototypes}).
+
+\begin{table}[h]
+ \caption{Prototypes of ``WiiMedia:Draw''; Interaction methods and targeted age groups}
+ \label{Prototypes}
+ \begin{center}
+  \begin{tabular}{l||l|l}
+  \hline
+  Methods & Inputs & Targets\\
+  \hline
+  Tablet & Pos., Alt., Azim., Press. & Adult \\
+  Splay  & Pos., Alt. & Youth\\
+  Infrared & Pos. & Childhood \\
+  Shaking & Acceleration & Infancy\\
+  \hline
+ \end{tabular}
+ \end{center}
+\end{table}
+
+The original system, which is a full function system of Pastel Draw Engine, uses a professional tablet for adults\cite{MurakamiNSD}. In this chapter, we focus on describing the interaction design of three prototypes,ie. the ``Infrared pointing'', the ``spray-can interaction'' and the ``doll shaking'' methods.
+
+\subsection{Spray-can interaction}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=5cm]{VirtualSprayA1s.eps}
+\caption{``spray-can interaction''}
+\label{VirtualSprayA1s.eps}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=8cm]{Polar.eps}
+\caption{Two different algorithms of position detection with IR coordinates and gravity detection (right).}
+\label{polar.eps}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4cm]{miniIR.eps}
+\caption{A small set of infrared LEDs (20mm length for 2 LEDs).}
+\label{miniIR.eps}
+\end{figure}
+
+
+``spray-can interaction'' is an idea that places the IR-LEDs on the lower or upper side and needs the user to grab the WiiRemote downward (Figure \ref{VirtualSprayA1s.eps}, \ref{polar.eps} left). To expand the detection area, we can switch the detection algorithm with the gravity direction from the acceleration sensors (Figure \ref{polar.eps} right). For that purpose, we created another set of IR-LEDs as smaller (Figure \ref{miniIR.eps} ).  
+
+To enlarge the detection area of IR sensors (Figure \ref{polar.eps}), we chose a polar coordinate method using the gravity detection done by the acceleration sensors.
+This method is not limited in the direct position, so the movement area is larger than a normal usage of the WiiRemote. In fact, this method is specialized for ``spray-can interaction''; because there is no motion sensor axis on the WiiRemote that can detect this rotation in the normal posture.
+
+
+\subsection{Drawing by Infrared pointing}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4cm]{penguiin.eps}
+\caption{Sample drawing by an adult with a prototype of ``Infrared pointing''.}
+\label{penguiin.eps}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=5cm]{NaruIR.eps}
+\caption{A behavior of a child (4 years old) with ``Infrared pointing''.}
+\label{NaruIR.eps}
+\end{figure}
+
+%(Fabien)
+Figure \ref{penguiin.eps} is a sample drawing by an adult. Figure \ref{NaruIR.eps} shows a behavior of an experiment with a prototype. The product design of the WiiRemote is very attractive for children; however, as the WiiRemote has a limitated IR detection area and as most children play by ``swinging'' it instead of actually ``drawing'', they often leave the IR range.
+
+\subsection{Errors of acceleration sensors for position detection}
+
+We tried to use the acceleration sensors for position detection. Ideally, we can compute absolute positions using Newton's physics. If we can obtain an acceleration vector $\vec{a}$ of the WiiRemote and a duration of sampling ($\delta t$), a velocity vector $\vec{v}$ and a position movement vector $\vec{p}$ are expressed by following expression. 
+
+\[
+\vec{v} = \vec{a} \cdot \Delta t, \vec{p} = \vec{v} \cdot \Delta t
+\]
+Normally, the obtained acceleration $\vec{r}$ contains the gravity, $\vec{r}$ is a resultant of $\vec{g}$ and $\vec{a}$.
+
+\[
+\vec{p} = ( \vec{r} - \vec{g} ) \cdot \Delta t^{2}
+\]
+
+The integration of $\vec{p}$ for each $\Delta t$ means a current location in 3D space. However, this line of thought has some errors in the implementation with the WiiRemote. Normally, this method increases the error from noises. The noises are coming from the quantization (resolution) and precision of $\Delta t$.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=8cm]{AccelPos.eps}
+\caption{A difference of behavior between an adult and a child (4 years old) using a ``swing motion (30cm)''.}
+\label{AccelPos.eps}
+\end{figure}
+
+These errors are especially fatal for young children's applications.
+Figure \ref{AccelPos.eps} is a result of an experiment which focuses on differences of behavior between an adult and a child during a swing motion. The adult can swing the WiiRemote regularly, in a short time, with a static frequency. However the child (4 years old) is slower and more irregular. Sometimes, one stroke of 30 cm has a flatter peak; meaning the acceleration sensor may lose the data which should be integrated as one stroke.
+As a result, the input motion should be designed explicitly as ``shaking'' instead of ''swinging''.
+
+
+\subsection{``Shaking interaction''}
+ 
+We tested our prototypes on some public events (Laval Virtual 2007 and a game festival in Laval city). It attracted a lot of children. However, we found some issues as stated that can decrease the distance between below:
+
+\begin{enumerate}
+ \item The affordance of WiiRemote's original product design was strongly affected. Most children including infants did not use the WiiRemote as a spray.
+ \item Users were often occluding the IR sensor.
+ \item The modulated resolution of drawing with acceleration sensors did not have a sufficient precision.
+ \item Most children played by ``shaking'' the WiiRemote instead of ``drawing''. They watched the behaviors on the screen of their instinctive actions.
+\end{enumerate}
+
+The issue of affordance might be solved if the looks and feels of the WiiRemote interface would not be as game controller.
+
+About the occlusion of IR, WiiRemote was originally designed to face a TV and a ``Sensorbar'', when it is played with the Wii main console. However, if a user grasps a WiiRemote by a vertical posture, conditions of IR-LEDs will not be ideal. This makes horizontal movements , like a drawing action with a tablet, in such conditions difficult because there are no feedback for users. The human cannot see the infrared illumination and children can't understand the mechanism of infrared detection either.
+
+% I see what you mean, but I don't know what context you want to put it in, so I can't rewrite
+Concerning the resolution of drawing, if we use a robust algorithm for wider area, the resolution will certainly be decreased. In fact, the acceleration sensors of the WiiRemote only have 8bit each. It is hard to estimate a posture of the WiiRemote with this precision.
+
+
+We have three main reasons for having the user use the ``shaking'' action. First, the users cannot control the pointer perfectly because of the IR occlusion. Second, there are no actual tasks like gaming or coloring. Third, the shaking action and interaction are also attracting children. Children watch their interaction on the screen while shaking the WiiRemote.
+%(Gill)
+
+
+\section{WiiMedia:``Papier Poupee Painter''}
+\subsection{Concept and system design}
+Based on the experiments of ``WiiMedia:Draw'', we determined the main concepts for our drawing software aimed at early childhood children as follows:
+\begin{itemize}
+ \item Attractive
+ \item Robust
+ \item Simplest
+\end{itemize}
+%(Gill)
+``Attractive'': using the WiiRemote attracts the interest of children but it looks like a game controller on the exterior. We tried to mix together kindness and function with a doll decoration (Figure \ref{Poupee2.eps}).
+
+``Robust'': giving our experiments with "WiiMedia:Draw", we determined only acceleration sensors can be used for all generations of users. If we can realize a drawing interaction using only the acceleration sensors, it would be a robust system.
+
+``Simple'': we focused on ``coloring'', the most simple drawing action in early childhood.
+
+
+We propose the ``Papier Poupee Painter'', an attractive coloring art media software which can awake early childhood children's imaginations.
+The tool should be robust, enduring and attractive, for it to be used by children in their early childhood; which can be accomplished by realizing new interactions instead of using the widely known mouse or tablet.
+Concretely, the painting brush material using the WiiRemote was hidden in a ``Poupee'' (French for doll for children in a security blanket).
+The drawing system has a realistic drawing stroke simulator.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4cm]{Poupee2.eps}
+\caption{Drawing material of Papier Poupee Painter.}
+\label{Poupee2.eps}
+\end{figure}
+
+We estimate speed and position through the acceleration sensor and define a stroke vector. Acceleration (Ax, Ay, Az) is also assigned to colors (R, G, B). Thus the users can play at coloring with a pastel feeling with a lot of colors by changing impact, direction, twisting, etc.
+
+
+We watched how many seconds the players played with each method. Normally if a method is attractive, the playing time is longer than for the other methods.
+
+During the evaluation, early childhood girls were generally more curious about trying it out than boys. However, some of the very young children were scared of this new interactive system. In the expo hall, it was dark, making it a little difficult to show a tangible toy for drawing.
+
+%
+As a result of the evaluation for input methods, the acceleration sensor interaction was the most frequently played during a long time. The reason is, it is simple and too easy, and users never tried to draw a specific complex image.
+But the action of just swinging it and see the resulting behavior of pigmentation is quite an interesting form of play (Figure \ref{PPPpic.eps}).
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=7.5cm]{PPPdemo.eps}
+\includegraphics[width=7.5cm]{PPPpic.eps}
+\caption{A result on ``Papier Poupee Painter'' by a child}
+\label{PPPpic.eps}
+\end{figure}
+
+
+
+%(Aki rewriting;)
+\section{Conclusion and future works}
+%We are sure to give an attracting sense with pastel taste drawing and the approach to make decoration to the WiiRemote. However, during several experiments, some girls afraid about that because it looks strange. In this case, we should use a decoration of crayons or pastels.
+%In the technique of WiiRemote, it has a weak point that cannot detect some lower level of accelerations. For example, if a user draw slowly, the WiiRemote cannot detect the movement. We should find other solution like ``pointer movement modes''.
+%As future works, we will try to detect more detailed posture and motions like rotation, azimuth, upside-down and/or swinging to erase the screen, etc...
+%Also if the system has some other tasks and interactions like a coloring, sound feedback or narrative, the usage will be extend.
+
+%(Aki rewrote...done..sorry not yet now->et voila, c'est fini)
+In this article, we reported about the use of the Pastel Draw Engine, which can draw a realistic pastel stroking through a real-time interaction, with the WiiRemote. Through a series of WiiMedia projects, we are trying to create a new interactive media with the WiiRemote outside the scope of consumer video game developments. The developments and experiments around Infrared sensors and the ``WiiMedia:Papier Poupee Painter'', which has a ``Doll Shaking'' interface using the WiiRemote, allowed us to achieve a realistic intuitive sketching media for young children.
+
+Through some evaluations, we have defined the concept and system design for young children as ``Attractive'', ''Robust'' and ``Simple'' to use. These core concepts seem to be acceptable for the targeted users but should still needs improving.
+In the prototype, the acceleration sensor information was used to define stroke vector and colors. This design was brought forth from the ``Simplest'' concept but we might suggest interfaces other than a WiiRemote, like favorite pens, to choose colors more naturally.
+
+As a future work,
+we assume the acceleration sensors on the WiiRemote could detect more posture information and actions like rotation, azimuth, upside-down, force and/or swinging; to erase the screen and so on.
+The ``Papier Poupee Painter'', having a Doll Shaking interface has a funny look and feel but it also has some advantages.
+Now, the precision is rough for position detection but very robust for several age groups. If we can apply some techniques like handwriting recognition using machine learning, it can widely enlarge the interaction with tangible media and do it cost effectively; extending the possibility of computer entertainments other than the current video games.
+
+
+
+
+%The WiiMedia project is just getting started. We will continue to improve our techniques especially for motion and position detection. For better motion detection, some machine learning algorithm will be useful.  For example, Support Vector Machine (SVM) or context learning like hand writing recognition techniques may be applied.
+%On the other side, now we have some applications that use the WiiRemote. We have basic APIs, utility APIs and Virtools building block codes. They will be given as open source to share the knowledge. In fact, a lot of students in our laboratory used WiiRemote for their projects. I would be very happy if this article and knowledge may help a project that is motivated with a new human interface in entertainment like the WiiRemote.
+%As a first study of WiiMedia, we developed three applications for several user categories
+%The first application is "AceSpeeder2Wii" for teens. It is a basic usage of the WiiMedia:APIs on an actual game product. It also told us a new problem which is movements conflicting with physics, with wireless game controllers.
+%The second one is "Papier Poupee Painter", an real-time paper and stroke simulation drawing software with a doll interface. The input methods for drawing will be useful in the game industry. It should be further developed in order to establish a better way of interaction. Also it is very interesting to improve the drawing software using a competence of paper and stroke simulation engine and WiiRemote.
+%The third one is "JaWii's Virtual Fencing" for 7 to 12 years old children. It is a sword play fighting action game with a famous dramatist Alfred JARRY. Especially it was created with a city and a professional fencing player to archive a classic sword play with real-time animations.
+%There are a lot of problems in the motion detection with the WiiRemote. In this article, it was described as precise information with some solutions and ideas.  
+%\end{document}  % This is where a 'short' article might terminate
+
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+This research was partially supported by JSPS (Japan Society for the Promotion of Science).
+We would like to express our special thanks to Gill Van Herzele (Kawaii Menee) for his writings.
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+%\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+\bibliography{WiiMediaPPP}  % sigproc.bib is the name of the Bibliography in this case
+
+
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+%\appendix
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=7cm]{PPPfig3.eps}
+%\caption{unused figures}
+%\end{figure}
+
+%\balancecolumns
+% That's all folks!
+\end{document}
+
+
+

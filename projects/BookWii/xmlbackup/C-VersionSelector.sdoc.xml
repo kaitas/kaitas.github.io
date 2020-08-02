@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>コラム：VC混在環境を解決するVersion Selector</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+もし、既にVisual C++やVisual Studioの過去のバージョン(.NET2003/2005など)をお使いで、かつ2008年時点の最新版であるVisual C++ 2008 Express（以下VC2008）を試してみたいの読者は、ここでちょっと回り道をして試してみることをおすすめします。VC2008はVersion Selectorという機能があり、異なるバージョンのVisual Studio製品の混在を可能にします。各バージョンにおいてソリューションファイルは拡張子「.sln」と変わりませんが、自動的にこの拡張子「.sln」に関連づけられたアプリケーションである「Version Selector」がファイル内部のバージョン記述を自動的に読み取り、ファイルがダブルクリックされたときは適切なバージョンのVCを起動します。この機能のおかげで複数のバージョンの開発環境を安全してインストールできるようになります。
+</body>
+</doc>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<doc xml:lang='ja'>
+	<head>
+		<title>WiiRemoteプログラミング入門</title>
+		<author>白井暁彦</author>
+		<date>2009年3月31日版</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+		<abstract>このPDF、HTMLファイルは<a href="http://www.asahi-net.or.jp/~DP8T-ASM/java/tools/SmartDoc/index_ja.html" title="SmartDoc">SmartDoc</a>によって<native format="latex2e">\LaTeX </native><native format="html4">
+L&lt;small&gt;A&lt;/small&gt;T&lt;sub&gt;E&lt;/sub&gt;X
+</native>で生成されています。
+		だいたいのページ数をつかんだり、執筆作業のために仮でレイアウトしたPDFです。HTMLも関係各位に内容を確認していただくために出力しています。
+		つまり最終的な出版書籍とは全く異なるものです。
+		著作権は白井暁彦とその共著者にありますので、無断コピーや配布はしてはいけません。
+		
+		 【この版における凡例】 
+		<ul>
+			<li>「★」執筆中、まだ完成していない章・セクション</li>
+			<li>「☆」日付など更新が必要な標記</li>
+			<li>「※」事実確認が必要な標記</li>
+			<li>「▽」没予定</li>
+		</ul>
+		【作業メモ】
+		<ul>
+		 <li>第1章・脱稿</li>
+		 <li>第9章・脱稿</li>
+		 <li>第2章・2-3-3以降確認リライト中</li>
+		 <li>第4章・3/30締切に向けて執筆中</li>
+		</ul>
+<!--
+-->
+<!--
+【<index>SmartDoc</index>テスト用】(この節は削除されます)
+<table><tbody>
+span,<span>テキストの範囲指定</span>
+em,<em>強調</em>
+strong,<strong>強い強調</strong>
+dfn,<dfn>用語の定義</dfn>
+code,<code>プログラムコード</code>
+b,<b>ボールド体</b>
+i,<i>イタリック体</i>
+tt,<tt>タイプライタ体</tt>
+</tbody></table>
+
+<console title="プログラムをコンパイルする図">
+$ javac Hello.java
+</console>
+
+<program title="Hello.java">
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World!!");
+    }
+}
+</program>
+
+<figure src="example" title="例">
+<attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+
+
+<fyi>
+【属性要素/参考文献要素】
+http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/preview/beta/index_p1_c4.html
+</fyi>
+
+<table>
+<thead>,,</thead>	
+<tbody align="center">
+title,タイトル属性,SmartDoc独自
+attribute,属性値の指定,SmartDoc独自
+bibliography,参考文献,BibTeX
+bibliopole,参考文献データ,SmartDoc独自
+book,書籍,BibTeX
+article,記事,BibTeX
+journal,雑誌,BibTeX
+author,著者,BibTeX
+editor,編者,BibTeX
+title,タイトル,BibTeX
+subtitle,サブタイトル,SmartDoc独自
+edition,エディション,BibTeX
+publisher,出版社,BibTeX
+year,年,BibTeX
+month,月,BibTeX
+volume,巻,BibTeX
+number,号,BibTeX
+a,URI,SmartDoc独自
+</tbody>
+<tfoot>,,</tfoot>
+</table>
+-->
+
+		</abstract>
+	</head>
+	<body>
+
+		<chapter src="chapter1.xml" title="[脱稿]WiiRemoteのススメ"/>
+		<chapter src="chapter2.xml" title="[80％]PC上で利用するWiiRemote事始め"/>
+	  <chapter title="[60%]まずは実験してみよう">
+     <section src="chap2/2-3-BTConnect.sdoc.xml" />
+     <section title="コラム：おすすめBluetoothアダプタは？" src="chap2/C-OsusumeBT.sdoc.xml"/>
+     <section title="WiinRemoteで実験" src="chap2/2-4-WiinRemote.sdoc.xml" />
+     <section title="GlovePIEで実験" src="chap2/2-4-GlovePIE.sdoc.xml" />
+     <fyi src="chap2/C-Virtools.sdoc.xml" />
+    </chapter>
+    <chapter title="[60％]C++とC#でまなぶWiiRemoteプログラミング" src="WiimoteLib.xml">
+		</chapter>
+		<chapter src="chapter5.xml" title="★API紹介">
+     <section title="APIを使用しない接続"/>
+    </chapter>
+		<chapter src="chapter8.xml" title="[くるくる研]Wii Flashを使ってみよう(ActionScript編)"/>
+		<chapter src="kimura/kimura.xml" title="[脱稿]WiiFlashを使いこなしてみよう(Processing編)"/>
+		<chapter src="chapter4.xml" title="★WiiRemoteプログラミング応用編">
+		 <section title="WiiRemoteテルミン"></section>
+ 	 	 <section title="赤外線4点検出"></section>
+		 <section title="赤外線LEDを使った測量">
+			<subsection title="広範囲を測定する"></subsection>
+			<subsection title="向きを測定する"></subsection>
+ 		 </section>
+     <section title="ヌンチャクでつくるファントムセンセーション実験装置"/>
+     <section title="傾きによるWiiRemoteマウス">http://www.kosaka-lab.com/tips/2009/02/wii-raw.html</section>
+     <section title="高度なバイブレーター制御">http://www.kosaka-lab.com/tips/2009/02/wii-pwm.html</section>
+     <section title="複数のWiiRemoteと接続">http://www.kosaka-lab.com/tips/2009/02/wii.html</section>
+     <section title="バランスWiiボード(Wii Fit)を使う">http://www.kosaka-lab.com/tips/2009/02/wiiwii-fit.html</section>
+		</chapter>
+
+		<chapter src="chapter11.xml" title="★おわりに">
+     <section title="★プロジェクト紹介"/>
+     <section title="隠しマルコフモデルを使った動作認識"/>
+		 <section src="chapter10.xml" title="★センサーバーを自作してみよう" />
+ 		 <section src="column/WiiFit-Who.sdoc.xml"/>
+    </chapter>
+		<!--
+		<chapter src="samplechapter.sdoc.xml"/>
+		<chapter src="12-ColumnBuffer.sdoc.xml">
+		</chapter>
+
+		<appendix title="付録">
+		 <section title="索引"></section>
+		 <section title="参考文献"></section>
+		 <section title="登録商標">
+		Wii\texttrademark 
+		Wiiは任天堂の登録商標です。
+		</section>
+		</appendix>
+		<chapter src="test.sdoc.xml"></chapter>
+
+SmartDocでは2種類の引用のための要素が用意されています。
+
+<blockquote>
+長い引用はこんな感じになります。
+
+長い引用なので2つ以上のパラグラフで構成されることになるでしょう。
+</blockquote>
+
+短い引用は次のようになります。
+
+<q>
+短い引用はこんな感じです。
+</q>
+インデックス関係
+http://www.alles.or.jp/~torutk/oojava/maneuver/2000/9-1.html
+
+		-->
+		<!--<cite idref="javatips">ご参考</cite>というようにして使います。
+		リンク集をここにまとめています
+		http://ameblo.jp/akihiko/entry-10184253601.html
+		-->
+		<bibliography>
+			<book id="SmartDocManual">
+				<author>浅海智晴</author>
+				<title>XML SmartDoc公式リファレンスマニュアル</title>
+				<publisher>ピアソンエデュケーション</publisher>
+				<year>2002</year>
+				<ISBN>489471521X</ISBN>
+			</book>
+<!--		 
+			<book id="javatips">
+				<author>浅海智晴</author>
+				<title>Java Super Tips</title>
+				<publisher>秀和システム</publisher>
+				<year>2000</year>
+			</book>
+			<book id="xmldom">
+				<author>浅海智晴</author>
+				<title>XML/DOM Programming</title>
+				<publisher>秀和システム</publisher>
+				<year>2001</year>
+			</book>
+-->
+		</bibliography>
+		<appendix title="付録">
+		自分で作るAPI
+		</appendix>
+	</body>
+</doc>

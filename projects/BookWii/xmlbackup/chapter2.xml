@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='shift_jis'?>
+<doc xml:lang='ja'>
+	<head>
+		<title>PC上で利用するWiiRemote事始め</title>
+		<author>白井暁彦</author>
+		<date>2008年11月26日最終更新</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+	</head>
+	<body>
+			<section src="2-1-Shikumi.sdoc.xml" />
+			<subsection src="C-GrayArea.sdoc.xml" />
+			<section title="Bluetooth製品を選ぶ" src="2-2-BlueTooth.sdoc.xml" />
+			<subsection src="C-OsusumeBT.sdoc.xml" />
+			<section src="2-3-BTConnect.sdoc.xml" />
+			<section title="実験してみよう">
+				<subsection title="WiinRemoteを使ってみる" src="2-4-WiinRemote.sdoc.xml" />
+				<subsection title="GlovePIEを使ってみる" src="2-4-GlovePIE.sdoc.xml" />
+				<!--  <subsection src="4-3-OtherTools.sdoc.xml"/>-->
+				<subsection src="C-Virtools.sdoc.xml" />
+			</section>
+	</body>
+</doc>

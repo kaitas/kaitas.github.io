@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>BluetoothでWindowsPCと接続する</title>
+<author>白井暁彦</author>
+<date>2008年11月26日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+ここでは前節で紹介した内容をより具体的に、WiiRemoteをWindowsPCで利用する手順について解説します。Bluetooth接続に関わる問題は、PC上でWiiRemoteでいろいろなアプリケーションを開発する上で、常に頭を悩ませるブラックボックスとなることが多いので『自分の環境では問題なく使えているよ！』という人もこのステップで、知識として知っておくことをお勧めします。
+
+ WiiRemoteを使ったPC上の開発で、最も良いスタートを得る方法は、実績のあるBluetooth製品を選ぶことです。コンシューマーゲーム機周辺機器とはいえ、ここから先は何の保証もない世界です。先人の知恵を共有し、不要な労力を避けるためにも、まずは安定して動作する環境を準備しましょう。本節では、多く実績が報告されている順にBluetooth製品を紹介していきます。
+
+  <subsubsection title="IVT BlueSoleil">
+  世界中のハッカーによるレポートを読んでいると、「IVT BlueSoleil(ブルーソレイユ)」Bluetoothスタック＆ドライバが最もよく使われているようです。IVT社のホームページによると\cite{IVT}、1999年からBluetoothソフトウェア製品の開発をリードし続けており、BlueSoleilは2008年4月現在で2500万ライセンスが販売されているそうです。実際、BlueSoleilはBluetoothホストアダプタを製品にしている周辺機器メーカーにOEMとして採用されていて、多くの製品において、購入したUSB Bluetoothアダプタにドライバとして同梱されています(一部機能制限版の場合もあるようです)。もちろんBlueSoleilのホームページ\cite{BlueSoleil}においてオンライン購入することができます。
+  
+
+<figure id="fig:BlueSoleilHP" src="fig/BlueSoleilHP.png" title="BlueSoleilのホームページ">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+
+☆2008年6月時点での最新のバージョンは「BlueSoleil 6.0 Mobile」で価格は19.95ユーロです。WiiRemoteとの接続以外にも、携帯電話との接続やワイヤレスヘッドセットなどにも利用できますので、手持ちのBluetooth製品が不満で、かつ運良くBlueSoleilがサポートしていれば、買っても損はないでしょう(特にWindowsXPからVistaに乗り換えた場合など)。BlueSoleilのホームページから「Download」を選ぶと製品版と同じソフトウェアをダウンロードできますので、動作が確認できたらライセンスを購入すると良いでしょう。
+
+  </subsubsection>
+
+  <subsubsection title="東芝製スタック">
+  DELLやLenovoなどのノートPCに装備されている内蔵Bluetoothスタックとして有名なものは、OEMで供給されているTOSHIBA製のスタックです。Bluesoleilとは若干異なった挙動をするため注意が必要ですが、WiiRemoteとの接続は可能なものが多く、BlueSoleilとの互換も多いようです。
+筆者が発見している東芝製スタックの問題は「4つ以上のWiiRemoteと同時接続できない」という点です(ソフト的な問題なので将来的には解決するかもしれませんね)。
+  </subsubsection>
+
+  <subsubsection title="Microsoft製スタック">
+  
+Windows XPやWindwos Vistaもコントロールパネルに「Bluetoothデバイス」というアイコンがあります。こちらはMicrosoft製のBluetoothスタックで、対応しているBluetooth製品が装着されていると動作します。しかし残念なことに、WiiRemoteとは相性が悪いようです。Windows Vista環境においてはペアリングに失敗する、接続できても値の取得に失敗する、といった多くの不具合が報告されています(意外にもMicrosoft製のスタックの方が不具合が多いというのは残念なことですが)。
+Windows XP上においては、ペアリングにコツがあり「接続が完全に終了するまで1+2ボタンを押しっぱなしにすること」でうまく接続できるようです。この現象は、MicrosoftのBluetoothスタックが、サービスを列挙しPIN(≒パスワード)を求めている間に、WiiRemoteの同期モードが終了してしまうということが原因かもしれません。
+
+  </subsubsection>
+  <subsubsection title="3.1.4 その他の環境について">
+  Windows環境において、上記で紹介のないその他のスタックについては、「購入できない」、「試してみたが現在のところ成功していない」、「WiiRemoteとのペアリングが成功しない」といった状況です。もし手持ちのBluetooth製品で成功しているものがあれば是非皆さんで共有した方が良いでしょう。
+
+また本書では扱いませんが、Windows以外の環境ではMacOSとLinuxで比較的簡単にWiiRemoteが利用できる状況になってきました。
+特に、MacOSではBluetoothはOSの標準機能で利用でき、接続ツール、アプリケーションなど様々なソフトウェアが登場してきています。「OSX Wiimote Enabler」という、近くにあるWiiRemoteを見つけてペアリングしてくれるソフトウェアなどは便利そうです。
+
+MacOSXと同じく、Linux環境ではBluetoothとの接続に特別なソフトウェアは必要ありません。特に最近急速にユーザ数が増えているディストリビューション「Ubuntu」ではUbuntu7.10(Gutsy)以降、標準的なソフトウェアで利用できるようになってきています。
+ </subsubsection>
+
+
+</body>
+</doc>

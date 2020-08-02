@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>☆コラム：Virtools(3DVia)+WiiRemote</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+CAD(Computer Aided Design)や3DStudioMaxなどの3Dデータから、インタラクティブな3Dグラフィックスアプリケーションを制作できるツールに「Virtools(ヴァーツールス)」があります(http://www.virtools.com/)。世界最大のCADメーカー、フランス「ダッソーシステムズ(Dassault Systemes)」のグループで、最近では「3dvia」というブランドで展開されています。
+
+Virtoolsは高価な産業向け製品であることもあり、日本ではそれほど有名ではありませんが、欧米では最も利用されている可視化プラットフォームです(筆者もフランスでは日常的に使っていました！)。モデルや画像などのリソースにGUIだけでほとんどのインタラクティブデザイン関係が作れてしまう、という点が画期的で、プログラミング不要です。もちろん深い開発をする場合はプログラミングも必要ですが、レンダラーやプラグインなどほとんどのソースは公開されています。
+
+産業用のCADデータから、Virtoolsを使ってWeb上で公開されるインタラクティブな商品広告の開発、プロトタイプ製品のユーザ試験などを開発することができますが、もともとVirtoolsはゲーム用プロトタイピングツールでした。ゲーム開発のプロトタイプ、つまりゲームの流れや面白さの根幹に関わる部分の設計をプランナーがGUIで行って、最終工程である最適化やプラットフォームの独自部分などをプログラミングで行う、といったゲーム開発手法です。
+
+Virtoolsは公式にライセンスを受けたツール開発パートナーですので、ソニーPSP用や任天堂Wii用のVirtoolsが存在します。任天堂Wiiの開発ライセンスを持っているゲーム開発企業であれば、WiiRemote関係のプラグインを入手することもできるそうです。
+
+Virtoolsの開発者コミュニティは活発で、スワップミート(http://www.theswapmeet-forum.com/)で様々な情報やソース、プラグインが共有されています(PC上で利用できるWiiRemoteのプラグイン関係も多数あります)。将来ゲーム制作を目指す学生さんや、フリーのゲーム企画者にとって、これは協力なソリューションです。Virtoolsを使ってPC上でゲームのプロトタイプを制作すれば、すばやくアイディアを形にできますし、資金や技術的なリスクを回避できるからです。
+
+筆者もVirtools上でWiiRemoteを利用するゲームを何件か開発しましたが(後述)、プラグインの開発を含め非常に高速に、凝ったものを作ることができました。お勧めです。是非Virtoolsのホームページから各種デモを見てみてください。
+
+☆Virtools(3DVia)に関する情報
+■Virtools(英語)
+http://www.virtools.com/
+
+日本では三徳商事とクレッセントが代理店を行っています。コンテンツの制作サポートや技術サポート、教育支援、学校向けライセンス販売などリセラー各社の得意分野がありますから、ぜひ問い合わせてみてください。
+
+■三徳商事(Virtools関係)
+http://www.san-toku.co.jp/VirtoolsOnlinePage/VirtoolsIndex.htm
+
+■株式会社クレッセント
+http://www.crescentvideo.co.jp/virtools/
+
+
+<!--
+<fyi title="Wii controller in virtools (the Swapmeet)">
+http://www.theswapmeet-forum.com/viewtopic.php?t=9337&start=0&postdays=0&postorder=asc&highlight=wiiyourself
+</fyi>
+-->
+☆WiiYourself! on Virtools
+Se'bastion Kuntz (http://cb.nowan.net/blog/) 
+
+
+
+</body>
+</doc>

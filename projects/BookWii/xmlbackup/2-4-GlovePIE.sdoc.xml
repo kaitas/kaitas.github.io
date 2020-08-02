@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>GlovePIEを使ってみる</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+GlovePIEは最も使用されているコントローラエミュレーターです。Carl Kennerによって開発されています。もともとヴァーチャルリアリティのためのデータグローブ「5DT」で、さまざまなゲームをプレイするためにジョイスティックやマウスをエミュレーションするために開発されていたようですが、その成長の過程でWiiRemoteをサポートし、有名になりました。特徴として、すべてのエミュレーションを専用のスクリプトで記述します。例えば「Aボタンをショット、Bボタンをボムに」といったゲームそれぞれの割り当てを、自分で書くことができるのです。
+
+http://carl.kenner.googlepages.com/glovepie_download
+
+
+★スクリーンショット、使い方の流れなど。
+
+
+<subsection title="GlovePIEスクリプト">GlovePIEスクリプトについてサンプル</subsection>
+
+このサンプルコードで、センサバーを使ってWiiRemoteをマウスのように使うことができます。
+<program src="IRMouse.PIE" title="IRMouse.PIE">
+</program>
+
+<!--
+<figure id="fig:WiiRemote.jpg" src="jpg/WiiRemote.jpg" title="WiiRemote">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+
+
+</body>
+</doc>

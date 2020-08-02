@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='shift_jis'?>
+<doc xml:lang='ja'>
+	<head>
+		<title>API紹介</title>
+		<author>白井暁彦</author>
+		<date>2008年11月25日最終更新</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+	</head>
+	<body>
+		<!-- <section src="7-1-TinyHID.sdoc.xml"/>-->
+		<section src="5-1-WiiYourself.sdoc.xml" />
+		<section title="Wiim">
+			<subsection title="懐かしゲーム「Wiim Landar」">Wiim(http://digitalretrograde.com/projects/wiim/)はeric_hcr80氏によって開発されたAPIで、GNU Lesser General Public Licenseで公開され、2007年☆に開発が終了しています。数あるWiiRemoteのAPIの中でも、唯一ゲームらしいゲーム「Wiim Landar」のソースコードが付属しています。機能的には加速度センサ、ボタン状態検出、LED・バイブレータ出力、マルチWiiRemoteへのアクセスなどが実装されています。Vectorクラスを利用し、コーディングはしやすいのですが、赤外線関係とヌンチャクなど外部端子の機能は未実装のままプロジェクトは終了しているようです(本人曰く、他のプロジェクトの急速な成長により、とのことです)。</subsection>
+			<subsection title="★Wiim Landarの改良">まずはWiimのホームページからデモの実行ファイル「wiim\_lander\_demo.zip」を入手しましょう。こちらのアーカイブにはビルド済みの実行ファイルが含まれています。解凍したフォルダにはSDL.dll、SDL\_gfx.dll、そして実行ファイルWiimDemo.exeの3つのファイルがあるはずです。まずは「WiimDemo.exe」をダブルクリックしてみましょう。もしここで「このアプリケーションの構成が正しくないため、アプリケーションを開始できませんでした。アプリケーションを再度インストールすることにより問題が解決する可能性があります。」と表示された場合、★可能性があります。もしそれ以外のエラーが出た場合はランタイムがインストールされている状態です。今度はBluetooth接続を行ってから実行してみてください。</subsection>
+		</section>
+		<section title="WiimoteLib"></section>
+	</body>
+</doc>

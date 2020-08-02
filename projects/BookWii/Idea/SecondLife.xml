@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+<doc xml:lang='ja'>
+<head>
+<title>SecondLifeで使う</title>
+<author>渡邉英徳先生 rewrite by 白井暁彦</author>
+<date>15:56 2009/06/28</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+</head>
+<body>
+
+世界的に有名なバーチャルワールドサービス「SecondLife」でWiiRemoteを使えるようにしてみましょう。SecondLifeは無料で利用できるバーチャルリアリティ空間共有サービスです。リンデンラボという会社が運営しており、リンデンドルという実社会に似た通貨を買ったり、土地の売買や建築、キャラクターの装飾やプログラミングといったユーザーによるコンテンツ作成が行えるのが特徴です。よくわからない人は「ゲームが目的ではない3Dネットゲームのようなもの」を想像すると良いでしょう。
+
+SecondLifeのクライアントソフトのソースコードが公開されているわけではありませんが、第3章で学んだ「GlovePIE」を使えば、プログラミングや改造することなくSecondLifeをWiiRemoteで操作することができるようになります。SecondLifeを使ったバーチャルリアリティ空間の建築作品作りで有名な首都大学東京の渡邉英徳先生が、インタラクティブ技術のイベントのための写真アーカイブ作品「Laval VRchive」の展示用スクリプトを作成していますので紹介します。
+
+<figure id="LavalVRchive.png" src="Idea/png/LavalVRchive.png" title="Second Life作品「Laval VRchive 2009」">
+<!-- <attribute locale="latex2e" name="style">width:6cm</attribute>-->
+</figure>
+
+
+<subsection title="SecondLife用PIEスクリプト">
+
+まず、Google Earth用のPIEスクリプトをベースに、複数回のユーザビリティ検討を行った結果、まずSecondLifeにもとからある前進/後進機能をオフにすることにしました。
+「バーチャルリアリティ空間内で等身大のサイズで過去の体験型イベントの写真を共有する」というコンテンツの設計上、前後に移動することがそれほど重要ではないと判断したのです。このような機能の刈り込みは、ユーザーインターフェースデザインを向上させる上で重要な機能制限といえますし、GlovePIEで入力させなければ良いので、比較的簡単に検討することができました。
+
+しかし再検討を重ねていく上で、最終的には「十字キーで前後移動＋左右転回，『[B]ボタンを押しながら↑↓』もしくは『＋－ボタン』で上昇下降」という仕様に落ち着きました。赤外線センサーの値はマウスポインタに割り当ててあります。USB給電できるセンサーバーをプロジェクタースクリーンの下に設置し、SecondLife内の「指さし」と同じ感覚で、作品中のオブジェクトにWiiRemoteを向けて、[A]ボタンを押すことで操作することができます。
+
+SecondLifeではちょっとしたことでカメラアングルがずれてしまうので、[Home]ボタンでリセットできるようになっています。またSecond Lifeのコンテンツを展示する場合、メニューバーが邪魔になるため、ディベロッパーモード[Ctrl+Shift+D]に切り替え、「インターフェイスをoff」[Ctrl+Shift+1]というモードにしています。この場合、画面上部のメニューバーは不可視にはなっていますが、メニューバーそのものは存在しているため、画面の上下端で[A]をクリックすると誤動作する恐れがあります。今回のスクリプトでは実装していませんが、画面の上下端にマウス移動のリミッターを付けることが望ましいかもしれません。
+
+<figure id="LavalVRchiveC.png" src="Idea/png/LavalVRchiveC.png" title="WiiRemoteを使って片手で操作できる">
+<!-- <attribute locale="latex2e" name="style">width:6cm</attribute>-->
+</figure>
+
+<program title="[GlovePIE]SecondLife「Laval VRchive 2009」展示用PIEスクリプト(抜粋)"><![CDATA[
+Mouse.LeftButton = Wiimote.A
+Keyboard.ESC = Wiimote.Home
+Keyboard.Up = Wiimote.Up
+Keyboard.Down = Wiimote.Down
+Keyboard.Left = Wiimote.Left
+Keyboard.Right = Wiimote.Right
+Keyboard.E = Wiimote.Plus
+Keyboard.C = Wiimote.Minus
+if Wiimote.B & Wiimote.Up Then
+ KeyBoard.Up = False
+ Keyboard.E = True
+ Wait 600ms
+ Keyboard.E = False
+endif
+if Wiimote.B & Wiimote.Down Then
+ KeyBoard.Down = False
+ Keyboard.C = True
+ Wait 600ms
+ Keyboard.C = False
+endif
+＜以下、赤外線センサーの利用や安定感向上のためのスクリプト＞
+]]></program>
+</subsection>
+
+<subsection title="【演習問題】SecondLife＋GlovePIEを極めよう">
+<dl>
+  <dt>【演習】☆☆☆</dt>
+  <dd>上記PIEスクリプトと、本書3章を参考にして、「GlovePIE」と「SecondLife」を使って、自由にバーチャルリアリティ空間を散歩できるPIEスクリプトを作成せよ。その際ヌンチャクなども利用して、展示向け、デスクトップ向けなどのカスタムバージョンも検討せよ。</dd>
+</dl>
+</subsection>
+<fyi title="WiiRemoteから自動切断されないようにしたい">
+　<!--Laval Virtual 2009にて「SecondLife」と「GlovePIE」をつかった『Laval VRchive 2009』の展示をサポートしていて気がついたのですが、-->WiiRemoteの更新が長時間なにもないと、いつの間にか切断されてしまいます。赤外線を見せるなどして、切断されないリポートモードを使うと確かに切断はされないのですが、今度は電池が切れてしまいます。実験するには長い時間がかかりますが、時々LED出力などの信号を送ってあげるとよいのかもしれません。なおWii本体では、同様にWiiRemoteが長時間操作しないとスリープモードに入るのですが、何かWiiRemoteのボタンを押すと、本体側から再度Bluetoothのペアリングを要求するらしく、接続が復旧するようになっています。
+
+　Windows環境においてはまだBluetooth自動接続に成功したソフトウェアはありませんが、試している人がいないわけではありません。原理的にはDDKがあるので不可能ではないはずです(専用のHIDドライバを作った方が早いのかもしれませんが...)。そのうちこういった高度なWiiRemote管理もオープンソースのAPIで可能になるかもしれませんね。
+</fyi>
+
+</body>
+</doc>

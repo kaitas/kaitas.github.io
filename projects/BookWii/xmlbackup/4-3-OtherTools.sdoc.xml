@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>★その他のツール紹介</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+  <subsection title="★WiiAcc">
+  VisualBasicで作成された、加速度センサの値を確認するプログラムです。
+  </subsection>
+  <subsection title="★WiiFlash">
+  WiiFlashはFlash環境でWiiRemoteを使えるようにするツールです。
+</subsection>
+
+
+
+
+</body>
+</doc>

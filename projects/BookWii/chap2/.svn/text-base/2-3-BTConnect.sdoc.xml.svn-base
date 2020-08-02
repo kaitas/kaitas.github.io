@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+<doc xml:lang='ja'>
+<head>
+<title>WiiRemoteとPCをBluetoothで接続する</title>
+<author>白井暁彦</author>
+<date>2009年4月5日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+ここでは前節で紹介したスタックを使って、実際にPCからWiiRemoteにBluetoothスタックで接続する方法をステップバイステップで解説していきます。
+
+<subsection title="インストール時の注意">
+インストールは製品付属のマニュアルを良く読んで行ってください。
+まず、製品に同梱されているソフトウェアCD-ROMのインストーラーを使ってソフトウェアをセットアップします。USBメモリなどと異なり、Bluetoothホストアダプタは初めて挿入する前に、付属ソフトウェアのインストールを必要とする場合がほとんどです。またBluetooth機器のドライバーはサービスとしてインストールされるものが多いので、インストール後は再起動しましょう。Bluetoothヘッドホンなどの音声関係のサービスや、ファイル転送関係のサービスは、WiiRemoteだけで利用する場合は全く使用しませんので追加でインストールしたり、起動する設定にする必要はありません。無事に再起動したら、タスクバーにあるBluetoothアダプタのアイコンをダブルクリックすると「Bluetooth設定」というウインドウが起動します。ヘルプ→バージョン情報で「Bluetooth Stack for Windows by Toshiba Version v5.10.15」といったバージョン情報を確認することができます。
+
+<figure id="BT-Toshiba" src="png/BT-Toshiba.png" title="東芝製Bluetoothスタック:バージョン情報">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+</subsection>
+
+<subsection title="PTM-UBT3S(東芝製スタック)でのペアリング">
+PTM-UBT3Sはプリンストンテクノロジーから販売されている、手軽に入手できるUSB外付けタイプのBluetoothアダプタです。筆者が購入したPTM-UBT3Sのパッケージに同梱されていたスタックは東芝製でした(メーカーによってはロットによって同梱されているスタックが変わることもありますので注意！)。早速なので、WiiRemoteと接続してみましょう。
+
+全てのBluetooth機器は「ペアリング」という接続認証を行う必要があります。これは適切な周辺機器が適切なユーザに確認の上接続されることを保証するためにあります。携帯電話などの機器は、接続にPIN(パスコード)が必要になりますが、WiiRemoteの場合にはPINは設定されていません。タイミングを合わせてボタンを押すだけでペアリングできます。
+<figure id="BT-Stack" src="png/BT-Stack.png" title="東芝製Bluetoothスタック">
+<attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+「新しい接続」をクリックすると「新しい接続の追加ウィザード」が起動します。
+「エクスプレスモード(おすすめ)」のまま次にすすめましょう。
+<figure id="BT-Step1" src="png/BT-Step1.png" title="ペアリングの開始">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+<figure id="BT-Step2" src="png/BT-Step2.png" title="ここでWiiRemoteを同期モードにする">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+「Bluetooth機器を探しています」と表示されたら、すかさずWiiRemoteの「1」ボタンと「2」ボタンを同時に押しましょう。WiiRemoteの電池フタを開けたところにある、赤い「Syncボタン」と同様、外部からの接続要求を数秒間の間、受け入れることを意味します。プレイヤーインジゲーター(WiiRemote下部にある4個の青色LED)が点滅し「接続認証待ち」の状態になります。
+
+<figure id="BT-Step3" src="png/BT-Step3.png" title="Bluetooth機器としてWiiRemoteが表示された">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+次に「使用するBluetooth機器を選択してください」というダイアログが表示され、そこに図のように「Nintendo RVL-CNT-01」、つまりWiiRemoteが表示されたら「次へ」をクリックしてください。
+
+<figure id="BT-Step4" src="png/BT-Step4.png" title="この時にWiiRemoteは接続認証待ちになっていること">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+「Bluetooth機器に接続しています」というダイアログが表示されたら、WiiRemoteをみて、青色LEDが点滅していることを確認します。もし点滅していなかったら、再度「1,2ボタン」を押して、接続認証待ちの状態にしてください。
+
+<figure id="BT-Step5" src="png/BT-Step5.png" title="Bluetooth機器としてWiiRemoteが表示された">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+PINコードは必要ないので、自動的に接続完了の状態になるはずです。これで無事接続できました。なお、WiiRemoteには節電機能があり、しばらくの間、通信やボタン操作がないと、自動的に接続を終了し、電源断の状態になります。そうすると、Bluetooth管理ソフトウェアでの表示は下のようになります。
+
+<figure id="BT-Step6" src="png/BT-Step6.png" title="WiiRemoteは登録されているが切断されている">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+この状態は「WiiRemoteは登録されているが切断されている」という状態です。
+ダブルクリックすると、
+
+<figure id="BT-ToshibaReady" src="png/BT-ToshibaReady.png" title="WiiRemoteの1,2ボタンを押して再接続">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+「HIDデバイスの接続の準備をしてからOKボタンを押してください」と表示されます。ここで再度WiiRemoteの1,2ボタンを押して、接続認証待ちの状態にしてから、OKボタンを押せば再接続できます。
+
+なお複数のWiiRemoteが混在する可能性がある場合、不要な接続設定は右クリックでメニューを表示し「削除」しておくと良いでしょう。うまく接続できないときも、一旦設定を削除して、最初のステップからやり直すと良いでしょう。
+
+<figure id="BT-Step7" src="png/BT-Step7.png" title="登録されたWiiRemote接続の詳細情報">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+また右クリックのメニューから「詳細」を表示することができます。ここにはWiiRemoteの個体番号「デバイスアドレス」などが表示されています(ネットワークカードのMACアドレスに相当する固有のID)。複数のWiiRemoteが混在する環境だと、個々のWiiRemoteを見分けるにはこのデバイスアドレスがたよりです。下4桁などをシールなどにして貼っておくと良いでしょう。
+
+</subsection>
+
+<subsection title="ThinkPad(Broadcom社製スタック)でのペアリング例">
+次に、代表的なノートPC「ThinkPad」標準搭載Bluetoothアダプタでの接続例を紹介します。ここでは筆者が使用しているThinkPad X61を例にしています。
+
+以下は筆者が利用しているWindowsXP搭載ThinkPadにおけるコントロールパネルの例です。「コントロールパネル」には「Bluetooth設定」というアイコンがあり、「診断」タブを見ると「Broadcom Corporation」、「ファームウェアリビジョン Version 2.1.211.299」とありました。
+
+<figure id="BT-ThinkPad" src="png/BT-ThinkPad.png" title="ThinkPadに搭載されているBroadcom社製Bluetoothスタック">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+Broadcom社はBluetooth業界では大手で、WiiRemote本体にもそのチップが搭載されています。またBroadcomが供給するドライバソフトウェアは周辺機器として販売されているBluetoothアダプタや、最近のThinkPadなど多く採用されています。実はかつて、BroadcomのスタックはMicrosoft社製のものと同様、Bluesoleilとは接続手順が異なり、WiiRemoteとは相性が良くないといわれていたのですが、最近では接続できるものも登場してきたので、以下接続のコツとともに紹介します★。
+
+
+
+★次に「クライアントアプリケーション」のタブをクリックしてみましょう。これから利用する「HID(Human Interface Device)」のセキュリティ保護が「不要」になっていることを確認してください。
+<figure id="BT-B0" src="png/BT-B0.png" title="Broadcom社製Bluetoothスタック：クライアントアプリケーションのタブ">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+もしこの段階で正しく表示されていない場合、Bluetoothアダプタが故障しているか、存在しないもしくは、BIOSで有効にされていない可能性があります。特にBIOSでの無効化は見落としがちなので、確認してみると良いでしょう。
+
+無事に作動しているようでしたら、実際に接続してみましょう。「マイコンピュータ」に「マイ Bluetooth」というアイコンがあるはずですので、ダブルクリックしてください。最初は何も表示されませんので、WiiRemoteの「1」と「2」のボタンを押して、検索可能状態にした状態で「範囲内のデバイスの検索」を実行してみてください。
+
+<figure id="BT-B1" src="png/BT-B1.png" title="Broadcom社製Bluetoothスタック：範囲内のデバイスの検索">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+近くに携帯電話などあると表示されます。またマウスポインタを近づけたり、プロパティを見るとデバイスアドレスを見ることができます。これはLANカードのMACアドレスに当たるものです。私の例では「00:1d:bc:2e:d5:4e」となっており、前半はハードウェアのメーカーなどの情報で共通、後半は個々のWiiRemoteで異なります。複数のWiiRemoteが混在する環境では、混線を避けるために電池フタの裏にでも下4桁をメモしておくと便利です。
+
+さて、ここでつい、ダブルクリックして「デバイスの接続」を実行してしまいがちなのですが、この方法では永遠にWiiRemoteとのペアリングを実現することはできません。ペアリングのためのPINコードを必須として要求されるのですが、WiiRemoteには「空白のパスワード」が設定されているため、空白のパスワードを受け付けないこのスタックでは認証ができないのです。これはおそらくBroadcomのスタックにおけるバグか仕様ミスなのですが、実は接続する方法がありました。ちょっとしたコツがあります。
+
+<figure id="BT-BErr" src="png/BT-BErr.png" title="Broadcom社製Bluetoothスタック：このエラーが表示され先に進めない">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+まず、一度、検索結果の個々のデバイスアイコンではない部分をクリックしてください。すると左側のタスクの一覧に「Bluetooth デバイスの追加」というタスクが現れます。これをクリックすると「Bluetooth セットアップ ウィザード」が起動します。
+
+<figure id="BT-BW1" src="png/BT-BW1.png" title="Broadcom社製Bluetoothスタック：セットアップウィザード">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+検索を開始し、WiiRemoteが現れたらそのアイコンをクリックして「次へ」のボタンを押します。ここからWiiRemoteの「1」と「2」のボタンを押しっぱなしにして指をはなさないでください。
+<figure id="BT-BW2" src="png/BT-BW2.png" title="Broadcom社製Bluetoothスタック：セットアップウィザード(2)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+PINを要求する画面が表示されますが、WiiRemoteのボタンを片手で押したまま「スキップ」をクリックします。そのまま3秒ほど待ってみてください。
+<figure id="BT-BW3" src="png/BT-BW3.png" title="Broadcom社製Bluetoothスタック：セットアップウィザード(3)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+すると、エラー画面は表示されず、無事、WiiRemoteのHIDサービスを選択する画面が表示されます。チェックボックスをONにして「完了」してください。
+<figure id="BT-BW4" src="png/BT-BW4.png" title="Broadcom社製Bluetoothスタック：セットアップウィザード(4)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+これで無事Broadcom社のスタックも利用できるようになります。PINが要求される画面でも「1」+「2」ボタンを押しっぱなしにしておくのがポイントです。接続し直す時も同じ手順を踏む必要があるのが面倒ですが、使えないよりは幾分ましでしょう。Microsoft社製のスタックでうまくいかない場合も同様の方法で接続できることが報告されています。
+
+</subsection>
+
+<!--
+<subsection title="その他の環境における注意">
+</subsection>
+-->
+<!--  Windows Vistaは結局安定して動作する環境がないので割愛→SP1から動作し始めるので簡単に扱う？）-->
+
+<figure id="BT-253-0" src="png/BT-253-0.png" title="(仮置き画像:BT-253-0.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-1" src="png/BT-253-1.png" title="(仮置き画像:BT-253-1.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-2" src="png/BT-253-2.png" title="(仮置き画像:BT-253-2.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-3" src="png/BT-253-3.png" title="(仮置き画像:BT-253-3.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-4" src="png/BT-253-4.png" title="(仮置き画像:BT-253-4.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-5" src="png/BT-253-5.png" title="(仮置き画像:BT-253-5.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-6" src="png/BT-253-6.png" title="(仮置き画像:BT-253-6.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-7" src="png/BT-253-7.png" title="(仮置き画像:BT-253-7.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-8" src="png/BT-253-8.png" title="(仮置き画像:BT-253-8.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-9" src="png/BT-253-9.png" title="(仮置き画像:BT-253-9.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+<figure id="BT-253-10" src="png/BT-253-10.png" title="(仮置き画像:BT-253-10.PNG)">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+</body>
+</doc>

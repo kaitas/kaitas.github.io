@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='shift_jis'?>
+<doc xml:lang='ja'>
+	<head>
+		<title>WiiRemoteのススメ</title>
+		<author>白井暁彦</author>
+		<date>2008年11月25日最終更新</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+	</head>
+	<body>
+		<section title="はじめに" src="1-1-Hajimeni.sdoc.xml" />
+		<section title="本書の構成" src="1-2-Kousei.sdoc.xml" />
+		<section title="WiiRemoteの基礎知識" src="1-3-Basics.sdoc.xml" />
+		<section title="WiiRemoteで何が創れる？" src="1-4-PastProjects.sdoc.xml" />
+	</body>
+</doc>

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>加速度センサーを使う(2)：WAVファイルの再生</title>
+<author>小坂崇之</author>
+<date>2009年3月18日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+
+今回は前回の加速度センサーを用いてWii楽器を作成したいと思います。
+ここでは、Wiiリモコンを振ると音が鳴る。簡単なWii楽器を作成します。
+
+<subsection title="加速度で作るWiiRemote太鼓">
+
+先ほどの加速度センサーを使う(1)で作成したフォームから始めると良いでしょう。
+Form1.csに以下の部分を追加します。
+
+<program title="Form1.cs">
+
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+    using WiimoteLib;                                         //WimoteLibの宣言
+    using System.Media;                                       //System.Mediaの宣言
+
+    namespace WiimoteLib_Sample {
+      public partial class SampleForm : Form {
+
+        Wiimote wm = new Wiimote();                           //Wiimoteの宣言
+
+        string path =null;                                    //Wavファイル名
+        SoundPlayer wavePlayer;                               //SoundPlayerを宣言
+       
+        public SampleForm() {
+
+          InitializeComponent();
+
+          wm.WiimoteChanged += wm_WiimoteChanged;               //イベント関数の登録
+          wm.SetReportType(InputReport.IRExtensionAccel, true);//レポートタイプの設定
+          wm.Connect();                                        //Wiimoteの接続
+
+          path = @"C:\WINDOWS\Media\ding.wav";                 //再生するWavファイルを指定
+          wavePlayer = new SoundPlayer(path);                  //SoundPlayerにWavファイルを設定
+       }
+
+       void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args){
+         WiimoteState ws = args.WiimoteState;                  //WiimoteStateの値を取得
+
+         //Wavファイルが読み込まれていないときは実行しない
+         if (this.path != null) {
+            float AX = Math.Abs(ws.AccelState.Values.X);       //X軸の絶対値
+           float AY = Math.Abs(ws.AccelState.Values.Y);       //Y軸の絶対値
+           float AZ = Math.Abs(ws.AccelState.Values.Z);       //Z軸の絶対値
+
+           //X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+           if ((AX+AY+AZ) &gt;= 5) {
+              wavePlayer.PlaySync();                           //音を鳴らす
+           }
+         }
+       }
+      }
+    }
+</program>
+</subsection>
+
+<subsection title="実行してみよう">
+
+1.WiiRemoteを接続してください。
+
+2.F5キーを押して実行してください。
+※もしエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+
+3.WiiRemoteを振ってください。
+※飛んでいくと危険なので必ずストラップをしてください。
+振りに合わせて、なんだか音が聴いたことのある音が鳴ります。
+
+</subsection>
+<subsection title="解説">
+WiiRemoteの三軸の加速度センサの値を取得して、指定した加速度を検出すると指定したWavファイルを鳴らします。
+
+<program>
+              path = @"C:\WINDOWS\Media\ding.wav";                 //再生するWavファイルを宣言
+</program>
+再生するファイルを指定します。鳴らしたいWavファイルを指定してください。このプログラムではWindowsに用意されているWAVファイルを指定していますが、ご自身で用意された音楽や効果音を指定しても良いでしょう。
+<program>
+                float AX = Math.Abs(ws.AccelState.Values.X);       //X軸の絶対値
+                float AY = Math.Abs(ws.AccelState.Values.Y);       //Y軸の絶対値
+                float AZ = Math.Abs(ws.AccelState.Values.Z);       //Z軸の絶対値
+</program>
+WiiRemoteのX,Y,Z軸の値を取得し、その絶対値をとります。 
+<program>
+               //X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+               if ((AX+AY+AZ) &gt;= 5) {
+                  wavePlayer.PlaySync();                           //音を鳴らす
+               }
+</program>
+X,Y,Z軸の合計の値が[5]を超えると音を鳴らします。
+この[5]という値を、小さくすれば少ない動作で反応します。反対に増やせば、大きい動作で反応します。自分の好みの数字に置き換えてください。 
+
+今回は、音が再生中にWiiリモコンを振っても反応しません。再生中にも音を再生したい場合はスレッド処理などを用いる必要があります。
+ </subsection>
+
+
+</body>
+</doc>

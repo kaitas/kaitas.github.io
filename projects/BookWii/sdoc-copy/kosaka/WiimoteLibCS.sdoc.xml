@@ -1,0 +1,889 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>C#.NETで使うWiimoteLib</title>
+<author>小坂崇之</author>
+<date>2009年2月10日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+この章では金沢工業専門高等学校の小坂崇之先生(http://www.kosaka-lab.com/)の協力をもとに、C#で使うWiimoteLibについて解説します。
+
+<section title="WiimoteLibの概要とインストール">
+
+WiimoteLibはBrian Peek(http://www.brianpeek.com/)による.NET環境で利用できるAPIオープンソースプロジェクトです。Microsoftが支援するオープンソースプロジェクト支援サイト「CodePlex」(<a href="http://www.codeplex.com/"/>)で公開されています。WiimoteLibを用いることで.NET環境で簡単にWiiRemoteを制御することができます。Version1.6.0.0からはWiiRemoteだけでなくWii Fitにも対応しています。
+
+ライセンスは「Microsoft Permissive License (Ms-PL)」です。Ms-PLは、最も制限の緩いマイクロソフトのソースコードライセンスで、ソースコードを商用または非商用の目的で表示、変更、再頒布できます。また希望する場合は、変更したソースコードに対してライセンス料を課金することもできます。
+以下に条文の日本語参考訳を引用しておきます(http://www.microsoft.com/japan/resources/sharedsource/licensingbasics/permissivelicense.mspx)。
+
+<blockquote>
+Microsoft Permissive License (Ms-PL)
+
+公開日: 2007年7月9日
+
+本ライセンスは、付属するソフトウェアの使用に適用されます。本ソフトウェアを使用する場合は、本ライセンスに同意したものとみなします。本ライセンスに同意しない場合、本ソフトウェアを使用することはできません。
+
+1. 定義
+本ライセンスでは、"複製する"、"複製"、"二次的著作物"、および "頒布" という用語は、米国の著作権法の下で使われる場合と同じ意味を有します。
+"コントリビューション" とは、オリジナルのソフトウェア、またはソフトウェアに対する追加もしくは変更を意味します。
+"コントリビューター" とは、本ライセンスの下で自らのコントリビューションを頒布する者を意味します。
+"対象特許" とは、コントリビューションが直接抵触する、コントリビューターの有する特許権の請求範囲を意味します。
+
+2. 権利の付与
+(A) 著作権に関する許諾 - 第 3 条「条件および制限」を含む本ライセンスの条件に従って、各コントリビューターは使用者に対し、コントリビューションを複製し、コントリビューションの二次的著作物を作成し、コントリビューションまたは作成した二次的著作物を頒布する、非独占的、世界全域、無償の著作権ライセンスを付与します。
+(B) 特許権に関する許諾 - 第 3 条「条件および制限」を含む本ライセンスの条件に従って、各コントリビューターは使用者に対し、本ソフトウェアのコントリビューションまたは本ソフトウェアのコントリビューションの二次的著作物を作成し、作成させ、使用し、販売し、販売を提案し、輸入し、および/またはその他の方法で処分する、対象特許に基づく非独占的、世界全域、無償の特許権ライセンスを付与します。
+
+3. 条件および制限
+(A) 商標の除外 - 本ライセンスでは、コントリビューターの名前、ロゴ、または商標を使用する権限は与えられません。
+(B) 使用者が、本ソフトウェアによる侵害を主張する特許に関し、コントリビューターに対して特許侵害を主張する場合、当該コントリビューターによる本ソフトウェアについての使用者に対する特許ライセンスは自動的に終了します。
+(C) 本ソフトウェアの全部または一部を頒布する場合、本ソフトウェアに付属するすべての著作権、特許権、商標、および出所の表示を保持する必要があります。
+(D) 本ソフトウェアの全部または一部をソースコードの形式で頒布する場合は、頒布物に本ライセンスの完全な写しを含めた上で、本ライセンスの条件の下でのみ頒布することができます。本ソフトウェアの全部または一部をコンパイル済みまたはオブジェクトコード形式で頒布する場合は、本ライセンスに抵触しない条件のライセンスの下でのみ頒布することができます。
+(E) 本ソフトウェアは現状有姿にてライセンスされます。本ソフトウェアの使用に伴う危険は、すべて使用者が負うものとします。コントリビューターからの明示的な保証または条件は一切ありません。使用地の法律に基づき、本ライセンスでは変更できないその他の消費者の権利が存在する場合があります。使用地の法律に基づいて許可される範囲で、コントリビューターは、商品性、特定目的に対する適合性、非侵害について、黙示的な保証を否定します。
+
+( 本サイトは http://www.microsoft.com/resources/sharedsource/licensingbasics/permissivelicense.mspx の参考訳です ) 
+</blockquote>
+
+本章ではC#.NETでWiimoteLibを用いて簡単にWiiRemoteを利用する方法について解説します。
+開発環境は「Visual C#2008 Express」を利用します。こちらもC++と同様Express版は無料で入手することができます。
+* http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx
+
+続いてWiimoteLibをダウンロードします。
+最新版は1月19日に公開されたWiimoteLib v1.7です(☆2009年2月現在）。
+* http://www.codeplex.com/WiimoteLib
+
+ダウンロードしZipファイルを解答したものをマイドキュメントのVisual Studio 2008のProjectsにディレクトリごとコピーしておくと良いでしょう。コピーしたファイルの中にあるWiimoteTest.exeを実行します。このとき必ずWiiremoteとPCをBluetooth接続した状態で実行してください。WiiRemoteが接続されていない状態で実行するとエラーが発生します。
+
+正しく実行できると図のように実行できるはずです。WiiRemoteを振ったりボタンを押すことで値が取得できるのが確認できるはずです。
+
+<figure id="WiimoteTest" src="kosaka/png/WiimoteTest.png" title="＜スクリーンショット「WiimoteTest.exe」＞">
+<attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+
+以上でWiimoteLibを使える状況になりました。次からは実際にC#を用いてWiiremoteを制御していきたいと思います。
+
+</section>
+
+<section title="WiimoteLibの使い方">
+ <subsection title="プロジェクトの作成">
+　VisualC# 2008 Express Editionを起動させます。
+ <figure id="02-01" src="kosaka/png/02-01.png" title="Visual C#を起動したところ"/>
+ ※環境によっては画面と異なる場合があります。
+　[ファイル(F)]→[新しいプロジェクト(P)]→[Windowsフォームアプリケーション]を選択します。
+ <figure id="02-02" src="kosaka/png/02-02.png" title="新しいプロジェクトを作成">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+ 「プロジェクト名」に「WiimoteLib01」という名前を付けて[OK]ボタンをクリックします。
+ <figure id="02-03" src="kosaka/png/02-03.png">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+ 新しいプロジェクトが作成されました。
+ <figure id="02-04" src="kosaka/png/02-04.png">
+  <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+ </subsection>
+ <subsection title="WiimoteLibの追加">
+　先ほど作成したプロジェクトにWiimoteLibを組み込んでいきましょう。
+　右側のソリューションエクスプローラの[参照設定]を右クリック、[参照の追加(R)...]を選択します。
+　<figure id="02-05" src="kosaka/png/02-05.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+　参照の追加から[参照]を選択し、WiimoteLib.dllを選択します。
+　マイドキュメントの「Visual Studio 2008\Projects」においた「WiimoteLib_1.6\WiimoteLib.dll」を選択し[OK]ボタンをクリックします。
+  <figure id="02-06" src="kosaka/png/02-06.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+  これでソリューションエクスプローラの参照設定にWiimoteLibが追加されたはずです。
+  <figure id="02-07" src="kosaka/png/02-07.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+  それでは最小限のプログラムの実行結果を表示するためのフォームを作成しましょう。
+　「Form1.cs」をクリックし「using WiimoteLib;」を追加します。
+<program>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;						//ここを1行追加します
+
+namespace WindowsFormsApplication1 {
+	public partial class Form1 : Form {
+
+		public Form1() {
+			InitializeComponent();
+		}
+
+	}
+}
+</program>
+
+ 
+ 以上がC#でWiimoteLibを用いるための必要最低限のプログラムです。
+</subsection>
+
+
+<subsection title="プログラムの実行">
+　[F5]キー、または、[デバック(D)]→[デバック開始(F5)]を押してプログラムを実行させてみましょう。
+<figure id="02-08" src="kosaka/png/02-08.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+
+プログラムにエラーがなければ下図のように表示されるはずです。
+<figure id="02-09" src="kosaka/png/02-09.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+このプログラムは単にウィンドウを生成するプログラムです。
+以後、このプログラムをベースにWiimoteを制御するプログラムを追加していきます。
+</subsection>
+</section>
+<section title="バイブレータのON/OFFプログラム">
+ここからは、実際にWiimoteLibを用いてプログラミングを行っていきます。
+まず、FormボタンによってWiiRemoteのバイブレーションのONとOFFを変更するプログラムを作りましょう。
+
+<subsection title="WiimoteLibの宣言と接続">
+　作成したForn1.csに以下のコードを追加します。
+<program title="Form1.cs">
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+    using WiimoteLib;					//WiimoteLibの読み込み
+
+    namespace WindowsFormsApplication1 {
+     public partial class Form1 : Form {
+
+      Wiimote wm = new Wiimote(); 		//Wiimoteの宣言
+
+      public Form1() {
+       InitializeComponent();
+       wm.Connect();       				//Wiimoteの接続
+      }
+     }
+    }
+</program>
+</subsection>
+<subsection title="バイブレーターON/OFFボタンの作成">
+まず、フォームにボタンを貼り付けてください。ツールボックスからドラッグしてForm1の好きな位置に配置します。
+ <figure id="03-01" src="kosaka/png/03-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+次に、貼り付けた「button1」のプロパティシートの「Text」を「button1」から「ON」に変更します。これでフォーム上のボタンに書かれているテキストが「ON」に変わるはずです。 
+ <figure id="03-02" src="kosaka/png/03-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+Form1上に配置したボタン「ON」をダブルクリックすると、ボタンクリック時のイベントを指定するコードが表示されますので下記のように記述します。
+<program>
+  private void button1_Click(object sender, EventArgs e) {
+   wm.SetRumble(true);  //バイブーションON
+  }
+</program>
+同様にして、2つ目のボタンを作成します。再びForm1にツールボックスからボタンを貼り付けてください。 
+ <figure id="03-03" src="kosaka/png/03-03.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+先ほどと同じく、貼り付けた「button2」のプロパティのTextを「button2」から「OFF」に変更します。 
+ <figure id="03-04" src="kosaka/png/03-04.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+最後に、貼り付けた「button2」をダブルクリックし、下記のようなコードを記述します。
+<program>
+      private void button2_Click(object sender, EventArgs e) {
+       wm.SetRumble(false);  //バイブーションON
+      }
+</program>
+以上で終了です。これだけのプログラムでWiiRemoteのバイブレーション制御が可能になります。 
+
+<program title="Form1.csのソース(全体)">
+
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+    using WiimoteLib;					//WiimoteLibの読み込み
+
+    namespace WindowsFormsApplication1 {
+     public partial class Form1 : Form {
+
+      Wiimote wm = new Wiimote(); 		//Wiimoteの宣言
+
+      public Form1() {
+       InitializeComponent();
+       wm.Connect();       				//Wiimoteの接続
+      }
+
+      private void button1_Click(object sender, EventArgs e) {
+       wm.SetRumble(true); 				 //バイブーションON
+      }
+
+      private void button2_Click(object sender, EventArgs e) {
+       wm.SetRumble(false); 			//バイブーションOFF
+      }
+     }
+    }
+
+</program>
+
+</subsection>
+
+<subsection title="実行してみよう">
+まず、お使いのBluetoothスタックからWiiRemoteを接続します。
+ <figure id="03-05" src="kosaka/png/03-05.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+続いて、Visual C#から「F5」キーを押してプログラムを起動します。エラーがなければ下のようなフォームが起動するはずです。
+ <figure id="03-06" src="kosaka/png/03-06.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+もし下のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+ <figure id="03-07" src="kosaka/png/03-07.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+無事に起動できた場合、「ON」ボタンをクリックすると、バイブレーションがONになりWiiRemoteが振動します。あわてず騒がず「OFF」ボタンをクリックして、WiiRemoteの振動をとめましょう。
+
+どうでしょうか？非常に簡単にWiiRemoteのバイブレーション制御プログラムが作れました。このようにWiimoteLibとC#.NETの組み合わせで、簡単にアプリケーションを開発していくことができます。
+</subsection>
+
+WiimoteLibにはバイブレーターの制御以外にもWiiRemoteが制御するための関数がたくさん揃っています。
+
+簡単にプログラムの流れを解説しますと、まず「Connect()関数」でWiiRemoteとの接続を行います。このときWiiRemoteが正しく接続、認識されていなかった場合、例外(Exception)が発生します。今回は例外処理を行っていませんので、実際のアプリケーションでは必要に応じて例外処理を追加してください。
+ボタンを押したときに、「SetRumble()関数」でWiiRemoteのバイブレーションを制御します。()の引数に「true」を入れるとバイブレーションが振動し、「false」を入れるとバイブレーションが停止します。PWM制御(パルス幅変調:Pulse With Modulation)を用いることによってバイブレーションに強弱を付けることができます。簡単に説明すると高速にONとOFFを繰り返すことによってバイブレーションに強弱をつける制御方法です。ここではあえて説明しませんが、余力のある人はチャレンジしてみてください。
+
+以下、このプログラムで使ったWiimoteLibのAPI関数です。
+<dl>
+<dt>using WiimoteLib;</dt><dd>C#でWiimoteLibを使うための宣言を行う。~WiimoteLibを用いるためには必ず宣言する必要がある。
+</dd>
+<dt>Wiimote wm = new Wiimote();</dt><dd>Wiimoteクラス wmを宣言し初期化を行う。~Wiimoteを用いるためには必ず宣言する必要がある。</dd>
+<dt>wm.Connect();</dt><dd>WiiRemotoに接続をおこなう。~WiiRemoteが正しく接続していないとエラーになる。</dd>
+<dt>wm.SetRumble(true);</dt><dd>WiiRemoteのバイブレーターを振動させる。</dd>
+<dt>wm.SetRumble(false);</dt><dd>WiiRemoteのバイブレーターを停止させる。</dd>
+</dl>
+次は同じ要領で、LEDを制御します。
+
+</section>
+
+<section title="LEDのONとOFF">
+次にWiiRemoteのLED制御についてプログラミングを行っていきます。
+ここでは、Formボタンをクリックする毎にWiiRemoteのLEDを変化させます。
+基本的なプログラミングの流れは前節のバイブレーターの制御と同じです。
+
+ <subsection title="WiimoteLibの宣言と接続">
+ <program title="Forn1.csに以下の部分を追加"> 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;						 //WiimoteLibの使用を宣言
+
+namespace WindowsFormsApplication1 {
+ public partial class Form1 : Form {
+
+Wiimote wm = new Wiimote();				 //Wiimoteの宣言
+int count=0;               				 //カウントの宣言
+
+  public Form1() {
+   InitializeComponent();
+      wm.Connect();  		             //Wiimoteの接続
+  }
+ }
+}
+  </program>
+ </subsection>
+ <subsection title="ボタン１の作成">
+ まず、先ほどのバイブレーターの例と同様にフォームにボタンを貼り付けてください。ボタンは少し大き目に配置すると良いでしょう。
+  <figure id="03-01" src="kosaka/png/03-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ 次に貼り付けた「button1」をダブルリックして、以下のコードを追加します。 
+
+ <program>
+   private void button1_Click(object sender, EventArgs e) {
+    this.button1.Text ="wm.SetLEDs("+ count+") を表示中";
+   this.wm.SetLEDs(count);
+   count++;
+}
+</program>
+以上で終了です。たったこれだけのプログラムでWiiRemoteのLED制御が可能になります。 
+
+<program title="Form1.csのソース">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;
+
+namespace WindowsFormsApplication1 {
+ public partial class Form1 : Form {
+  Wiimote wm = new Wiimote(); 	//Wiimoteの宣言
+  int count=0;                  //カウントの宣言
+
+  public Form1() {
+   InitializeComponent();
+    wm.Connect();               //Wiimoteの接続
+  }
+
+  private void button1_Click(object sender, EventArgs e) {
+   this.button1.Text = "wm.SetLEDs(" + count + ") を表示中";
+   this.wm.SetLEDs(count);
+   count++;
+  }
+
+ }
+}
+</program>
+ </subsection>
+ <subsection title="実行">
+ まずはお使いのBluetoothスタックからWiiRemoteを接続してください。 
+ <figure id="03-05" src="kosaka/png/03-05.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ [F5]キーを押して実行してください。実行すると下図のようなアプリケーションが起動します。 
+ <figure id="04-01" src="kosaka/png/04-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+　※もし下図のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。 
+ <figure id="03-07" src="kosaka/png/03-07.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+[button1]ボタンをクリックしてください。
+
+★書きかけ＠0:12 2009/02/11
+		</subsection>
+		</section>
+
+<!--0:06 2009/02/11
+<table>
+<tbody>
+ <tr><td>
+ <figure id="04-w000" src="kosaka/png/04-w000.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ </td>
+ <td>
+ <figure id="04-02" src="kosaka/png/04-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <img src="http://www.kosaka-lab.com/tips/img/04-02.jpg" />
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ [wm.SetLEDs(0)]ボタンをクリックしてください。
+
+
+<center>
+<blockquote>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w001.jpg" />
+</div></td>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-03.jpg" />
+</div></td></tr></tbody></table></blockquote></center>
+
+<p>&nbsp;</p>5.<span id="window_box">wm.SetLEDs(1)を表示中</span>ボタンをクリックしてください。
+
+<center>
+<blockquote>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w002.jpg" />
+</div></td>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-04.jpg" />
+</div></td></tr></tbody></table></blockquote></center>
+
+<p>&nbsp;</p>6.<span id="window_box">wm.SetLEDs(2)を表示中</span>ボタンをクリックしてください。
+
+<center>
+<blockquote>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w003.jpg" />
+</div></td>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-05.jpg" />
+</div></td></tr></tbody></table></blockquote></center>
+
+<p>&nbsp;</p>7.<span id="window_box">wm.SetLEDs(3)を表示中</span>ボタンをクリックしてください。
+
+<center>
+<blockquote>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w004.jpg" />
+</div></td>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-06.jpg" />
+</div></td></tr></tbody></table></blockquote></center>
+
+<p>&nbsp;</p>8.<span id="window_box">wm.SetLEDs(4)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>9.<span id="window_box">wm.SetLEDs(5)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>10.<span id="window_box">wm.SetLEDs(6)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>11.<span id="window_box">wm.SetLEDs(7)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>12.<span id="window_box">wm.SetLEDs(8)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>13.<span id="window_box">wm.SetLEDs(9)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>14.<span id="window_box">wm.SetLEDs(10)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>15.<span id="window_box">wm.SetLEDs(12)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>16.<span id="window_box">wm.SetLEDs(13)を表示中</span>ボタンをクリックしてください。
+
+<p>&nbsp;</p>17.<span id="window_box">wm.SetLEDs(14)を表示中</span>ボタンをクリックしてください。
+
+<center>
+<blockquote>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w015.jpg" />
+</div></td>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-07.jpg" />
+</div></td></tr></tbody></table></blockquote></center>
+
+<p>&nbsp;</p>18.<span id="window_box">wm.SetLEDs(15)を表示中</span>ボタンをクリックしてください。
+
+<center>
+<blockquote>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w001.jpg" />
+</div></td>
+<td>
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-08.jpg" />
+</div></td></tr></tbody></table></blockquote></center>
+
+<h6 id="page-title-date">解説</h6><font style="FONT-SIZE: 1.25em"><font color="#ff0000">SetLEDs(int leds);</font> </font>
+<p>&nbsp;</p>引数に数値をを入れることで、対応するLEDが変化します。
+このプログラムではcountの値を入れ <font color="#ff0000">SetLEDs(count);</font> としています。 そしてFormに配置されたボタンをクリックすると、count値が+1されます。
+
+<p>&nbsp;</p>　引数の数値は二進数になってWiiRemoteを逆さまにした状態のLEDに対応しています。
+
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04-09.jpg" />
+</div>
+<center>
+<table border="1">
+<tbody>
+<tr>
+<td align="middle" rowspan="2">10進数</td>
+<td align="middle" colspan="8">二進数</td></tr>
+<tr>
+<td align="middle" width="30">LED8</td>
+<td align="middle" width="30">LED7</td>
+<td align="middle" width="30">LED6</td>
+<td align="middle" width="30">LED5</td>
+<td align="middle" width="30">LED4</td>
+<td align="middle" width="30">LED3</td>
+<td align="middle" width="30">LED2</td>
+<td align="middle" width="30">LED1</td></tr>
+<tr>
+<td align="middle" width="100">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">2</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">3</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">4</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">5</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">6</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">7</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">8</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">9</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">10</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">11</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">12</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">13</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">14</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">15</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">1</td></tr>
+<tr>
+<td align="middle" width="100">16</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td></tr>
+<tr>
+<td align="middle" width="100">17</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">0</td>
+<td align="middle" width="30">1</td></tr></tbody></table>0：LED　OFF
+1：LED　ON
+</center>10進数の16になるとLED0～LED4桁目は0になるのでLEDは全て消える。
+
+<p>&nbsp;</p>　また、引数を４つ指定してLEDを制御することが可能である。
+<font style="FONT-SIZE: 1.25em"><font color="#ff0000">SetLEDs(bool led1 ,bool led2 ,bool led3,bool led4);</font> </font>
+<p>&nbsp;</p>引数には、bool型を用いる。boll型はtrue,flaseしかなく、必ずどちらかの値を入れる。
+true:LED ON
+false:LED OFF
+
+<p>&nbsp;</p>例えば、図のようにLEDを1011と点灯さる場合は
+
+<div style="TEXT-ALIGN: center"><img src="http://www.kosaka-lab.com/tips/img/04_w003.jpg" />
+</div><font color="#ff0000">this.wm.SetLEDs(true,true,false,false);</font> とすればよい。</blockquote>
+                                    </div>
+
+
+                                </div>
+                                <div class="asset-footer">
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div id="beta">
+    <div id="beta-inner">
+
+
+    
+    <div class="widget-search widget">
+    <h3 class="widget-header">search</h3>
+    <div class="widget-content">
+        <form method="get" action="http://www.kosaka-lab.com/MTCOM-4.22-ja/mt-search.cgi">
+            <input type="text" id="search" class="ti" name="blog search" value="" />
+
+            <input type="hidden" name="IncludeBlogs" value="11" />
+
+            <input type="hidden" name="limit" value="20" />
+            <input type="submit" accesskey="4" value="search" />
+        </form>
+    </div>
+</div>
+
+
+ <figure id="05-02" src="kosaka/png/05-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="05-03" src="kosaka/png/05-03.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="05-04" src="kosaka/png/05-04.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="05-06" src="kosaka/png/05-06.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+</section>
+
+
+<section title="ボタン制御プログラム">
+ <figure id="06-01" src="kosaka/png/06-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="06-02" src="kosaka/png/06-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="06-03" src="kosaka/png/06-03.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+</section>
+
+<section title="加速度センサを使う">
+ <figure id="07-01" src="kosaka/png/07-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="07-02" src="kosaka/png/07-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+ <figure id="07-03" src="kosaka/png/07-03.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+</section>
+
+
+-->
+
+
+<!--
+白井様へ
+　小坂＠金沢工業高等専門学校より
+
+　こんにちは、小坂でございます。
+IVRCでは大変お世話になりました。IVRCに参加し入賞したことで、
+学生たちは自信に充ち溢れ、現在、LavalとSiggraphに向けて頑張っ
+ております。IVRCは教育の場として最高の場ということを実感いた
+しました。今後も参加していければと思っています。
+
+　学生の岩本より「WiiRemote本」のことで連絡がありました。
+こういう本が出版されるとうことは喜ばしい限りです。しかも、
+我々のチームも紹介していただけるとのことで、チーム一同大変喜
+んでいます。後日、学生から、ご依頼のあったものをメールでお送り
+いたしたいと思います。もうしばらくお待ちください。
+　
+　執筆中の原稿拝見させていただきました。非常にボリュームの
+ある内容で感動しています。IVRCでは大変お世話になりましたので
+恩返しという意味で、高専の教員の視点で見たご意見を述べさせて
+いただきたいと思います。気に障ることがあるかもしれませんが、
+読み飛ばしていただければと思います。
+
+○1.2.2　対象読者が、プログラミングを覚えた中学生・高校生と
+なっていますが、内容を拝読させていただくと、ボリュームが多く
+て我々の金沢高専の５年生でも理解できるか微妙そうです。
+
+○4章 VCではなくVBやC#でのプログラミングを用いたほうが、初心
+者には理解できると思います。我々はIVRCではC#とWiimoteLibを用
+いて制御を行っていました。VCで説明するより簡単に説明できると
+思います。
+
+○4.1　VCのプログラミングのコンパイル方法が分からない。まだ
+執筆中なので追加されるかと思いますが、インストールの方法だけ
+でなく、初心者を対象にするのであればVCの使い方の説明も必要か
+もしれません。
+
+○10章　赤外線LEDだけでなく確認用として通常のLEDも接続すると
+良いです。高専の学生は「作ったのに光らない」と文句を言ってき
+ます。ご存じのように赤外線LEDは人の目には見えませんので、
+通電が確認できる可視光のLEDを併用すると良いです。
+
+○10章　図10.3　高専の学生はLEDの+と-が分かりません。長い方と
+短い方どちらなのか区別がつかないのと、図面が読めないので
+作り方の解説図をもっと詳細に示したほうが良いと思います。
+
+○WiiRmoteとPCとリレー使って100Vの電源を制御すると学生の興味
+を引きます。 WiiRemoteを振ると、テレビの電源が入るなど、PC内
+で完結させないで、外部機器と接続するとWiiRemote活用の幅が広がります。
+
+
+　以上、好き勝手、書いてしまって申し訳ありませんが、
+白井様のお力になれればと思い書かせていただきました。良い本が
+出来上がることを期待しています。
+
+今後ともよろしくお願いいたします。
+
+
+小坂 崇之(Kosaka Takayuki)　博士(工学)
+金沢工業専門高等学校　
+国際コミュニケーション情報工学科　講師
+kosaka@neptune.kanazawa-it.ac.jp
+http://www.kosaka-lab.com/kosaka_laboratory/
+
+〒921-8601
+石川県金沢市久安2-270
+TEL:076(248)9969〔ダイヤルイン〕
+FAX:076(248)5548
+
+
+Wiimote本の件ですが、WiimoteLibのほうであれば可能かと思います。
+
+　サンプルであればいくらでも提供することは可能ですが、本書では、どこまで説明すればいいのでしょうか？
+WiimoteLib関数のヒントとサンプルだけで、「あとは自分見てください」というのであれば簡単ですが、C#の使い方から始めてしまうと、プログラムの書き方、コンパイルの仕方、オブジェクト指向とは、数式の説明・・・と際限がありません。どこかで線引きして「ここまで！」としなければいけない線引きはどのあたりなんでしょうか？
+
+以下に簡単にサンプルを考えてみました。
+●は難しめかと思います。（アルゴリズムなど説明するのが大変）
+
+
+
+○C#でWiiRemotoを使う必要最低限のプログラム
+WiimoteLibの読み込みと接続
+
+○ボタンクリックによるWiiRemotoのLED制御
+　FormのボタンをクリックすることによってWiiRemotoのLEDを制御するプログラム
+
+○ボタンクリックによるWiiRemotoのバイブレーションのON/OFF
+　FormのボタンをクリックすることによってWiiRemotoのバイブレーションを制御するプログラム
+
+○WiiRemotoボタンによるアプリケーションの起動
+　Timerで回してボタン情報を取得後、指定アプリケーション(メモ帳など)を起動
+
+○WiiRemoto加速度によるアプリケーションの起動
+　Timerで回して加速度情報を取得後、指定アプリケーション(メモ帳など)を起動
+
+○WiiRemotoボタンによるWiiRemotoLED制御
+　WiiRemotoのボタンをクリックすることによってWiiRemotoのLEDを制御するプログラム
+　Timerで回してボタン情報を取得後、LED制御
+
+○WiiRemotoボタンによるWiiRemotoバイブレーション制御
+　WiiRemotoのボタンをクリックすることによってWiiRemotoのバイブレーションを制御するプログラム
+　Timerで回してボタン情報を取得後、バイブレーションON/OFF制御
+
+○WiiRemotoで赤外線LED検出
+　WiiRemoto赤外線カメラ画像を画面に表示
+
+○WiiRemotoで赤外線LED検出
+　赤外線を感知したら振動する
+
+●WiiRemotoカーソル１
+　WiiRemotoでマウスカーソルを動かす
+ 赤外線LED は固定で、WiiRemotoを動かすことによって制御
+
+●WiiRemotoカーソル２
+　WiiRemotoでマウスカーソルを動かす
+　WiiRemotoは固定
+　赤外線LED を動かすことによって制御
+
+●WiiRemotoカーソル3
+　WiiRemotoでマウスカーソルを動かす
+ 加速度センサを用いる　傾けると動く
+
+●WiiRemoto楽器
+　WiiRemotoを振ると、ドラムの音が鳴る
+　WiiRemotoのボタンで、音源切り替え
+
+●WiiRemoto　テルミン
+　WiiRemotoをテルミンにする
+
+●WiiRemoto　複数検出
+　WiiRemotoを複数台認識する方式
+
+●WiiRemotoヌンチャク制御
+　WiiRemotoヌンチャクを認識する方式
+
+●WiiRemotoでパワーポイント操作
+　WiiRemotoのボタンにキーボードイベントを割り振る
+
+以上です。いかがでしょうか？ご指摘いただければと思います。
+○のサンプルでしたら、直にでも用意することは可能です。
+-->
+
+</body>
+</doc>

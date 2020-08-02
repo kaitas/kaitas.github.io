@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiimoteLibのセットアップ</title>
+<author>白井暁彦＋小坂崇之</author>
+<date>2009年5月16日版</date>
+<!--
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+-->
+
+</head>
+<body>
+
+ライセンスを確認したら、WiimoteLibをダウンロードします。
+原稿出版時点での最新版は2009年1月19日に公開されたWiimoteLib v1.7です。
+
+http://www.codeplex.com/WiimoteLib
+
+<figure id="WiimoteLib1.7HP" src="WiimoteLib/png/WiimoteLib17HP.png" title="WiimoteLibのホームページ">
+</figure>
+
+ホームページ上部にある「Download」のリンクをクリックすると、ダウンロードページを閲覧できます。
+配布用のパッケージとソースコードが配布されていますが、ソースコードではないほう「WiimoteLib V1.7 (787K)」をダウンロードしてください。
+
+<figure id="WiimoteLibHPDL" src="WiimoteLib/png/WiimoteLibHPDL.png" title="ダウンロードするファイル">
+</figure>
+
+クリックすると、ライセンス条文が英語で表示されますので(確認したら)「I Agree」クリックし、ダウンロードを開始します。
+
+<figure id="WiimoteLibFolders" src="WiimoteLib/png/WiimoteLibFolders.png" title="WiimoteLib1.7の同梱ファイル">
+<attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+
+ダウンロードしたZIPファイルを展開したら、まずは動作確認をします。お使いのBluetoothスタック管理ソフトウェアを起動して、WiiRemoteを1台接続します。接続できたら、展開したフォルダの中にある「WiimoteTest.exe」をダブルクリックして実行してみてください。
+
+<figure id="WiimoteTest" src="WiimoteLib/png/WiimoteTest.png" title="WiimoteLibのデモプログラム「WiimoteTest.exe」">
+<attribute locale="latex2e" name="style">width:10cm</attribute>
+</figure>
+
+正しく実行できると、数秒間の初期化の後、図のような実行画面が表示されるはずです。WiiRemoteを振ったり、ボタンを押すことで、リアルタイムで値が取得できていることが確認できます。
+
+フォームの右上「×」をクリックすると終了します。もし手元に複数のWiiRemoteやセンサーバー、ヌンチャク、ギターコントローラー、WiiFitバランスボードなどありましたら、ぜひ接続して動作を試してみてください。
+
+これでWiimoteLibを使えることが確認できました。エラーが発生した場合、特に「Error reading data from Wiimote...is it connected?」と表示された場合は、Bluetoothでの接続に問題があります。Bluetoothスタックが正しくWiiRemoteを接続しているかどうか、確認してみてください。
+
+<figure id="WiimoteTestError" src="WiimoteLib/png/WiimoteTestError.png" title="「WiimoteTest.exe」の起動に失敗したら接続を確認しよう">
+</figure>
+
+さて、展開したファイルのうち「WiimoteLib.dll」が一番重要なファイルです。「WiimoteTest.ext」もこのDLLが同じディレクトリに存在しなければ正しく動作しません。なおWiimoteLibを開発で利用するにあたり、特にインストーラーなどはありませんので、展開したフォルダごと「マイドキュメント\Visual Studio 2008\Projects\WiimotLib_1.7」に移動しておくとこのあとの作業が楽になるでしょう（WiimoteLib.dllだけでもいいのですが、ヘルプや複数のバージョンのDLLが混在すると後々厄介です）。
+なお「docs」フォルダにある「WiimoteLib.chm」がヘルプファイルです。ドキュメントもしっかりと整備されています。
+
+これでセットアップは終わりです！次の節からは実際に、まずはVisual C#を用いてWiiRemoteを制御していきます。
+<!--
+
+マイドキュメントのVisual Studio 2008のProjectsにディレクトリごとコピーしておくと良いでしょう。コピーしたファイルの中にあるWiimoteTest.exeを実行します。このとき必ずWiiremoteとPCをBluetooth接続した状態で実行してください。WiiRemoteが接続されていない状態で実行するとエラーが発生します。
+-->
+
+  <subsection src="WiimoteLib-SetupCS.sdoc.xml"/>
+  <subsection src="WiimoteLib-SetupCpp.sdoc.xml"/>
+
+</body>
+</doc>

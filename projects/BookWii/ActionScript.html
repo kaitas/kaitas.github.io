@@ -1,0 +1,410 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年3月8日最終更新" lang="ja">
+<title>Wii Flashを使ってみよう(ActionScript編)</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">Wii Flashを使ってみよう(ActionScript編)</h1>
+
+<div class="date">2009年3月8日最終更新</div>
+<div class="author">白井暁彦</div>
+<div class="email"><a href="mailto:shirai at mail.com" onmouseover="hilightHyperlink(this)" onmouseout="normal(this)">shirai at mail.com</a></div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id19" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFlashの基本機能</a>
+<ul>
+<li> <a href="#doc2_id49" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">環境設定 (CS3のセットアップ DLとインストール)</a>
+<li> <a href="#doc2_id51" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFlashのダウンロードとセットアップ</a>
+<li> <a href="#doc2_id60" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFlashを利用する</a>
+</ul>
+<li> <a href="#doc1_id21" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">サンプルのテストでみる基本的な使い方</a>
+<li> <a href="#doc1_id23" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFlashプロジェクトサンプル</a>
+<ul>
+<li> <a href="#doc1_id25" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">なりきりライトセーバー(原さん)</a>
+<li> <a href="#doc1_id27" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">おえかき(尾崎さん)</a>
+<li> <a href="#doc1_id29" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DropShadow(尾崎さん)</a>
+<li> <a href="#doc1_id31" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ChunChun(原さん)</a>
+</ul>
+</ul>
+</div>
+
+<h2 id="doc1_id19">WiiFlashの基本機能</h2>
+
+
+<h2 id="doc2_id49">環境設定 (CS3のセットアップ DLとインストール)</h2>
+
+
+<h2 id="doc2_id51">WiiFlashのダウンロードとセットアップ</h2>
+
+<p class="first_ja">WiiリモコンをFlashとつなげることで、WebサイトのようなコンテンツをWiiリモコンで扱うことができます。この章ではWindows(XP</p>
+<p>Professional SP2)とMacintosh(OSX 10.5)【○ページより】に分けてFlashに接続するまでをご紹介します。</p>
+<p>-WiiFlashの仕組みWiiFlashを触る前に、WiiFlashの仕組みについて理解しましょう。WiiFlashはWiiリモコンとFlashを通信するための仲介をします。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF.png" alt="WF.png" width="4cm">
+</div>
+
+<p>○章で扱ったように、Bluetoothを利用して、Wiiリモコンとパソコンを繋げました。FlashとWiiはWiiFlashというソフトを利用して、繋げることができます。</p>
+<p>WiiFlashとはJoa EbertとThibault Imbertという２人のデヴェロッパにより、WiiリモコンとFlash&reg; applicationsを繋げられるように開発された無料で使えるプロジェクトです。WiiFlashは２つのパートに分けられて提供されています。WiiFlash Server C++もしくは、.NET serverを利用して作られたバイナリソケットサーバーで、Wiiリモコンからの情報をFlashが扱える形に変化して通信します。</p>
+<p>WiiFlash ActionScript API (SWC component) WiiFlashサーバーからの通信に対して、プログラムしやすいように提供されているのが、このActionScript(Flashのプログラミング言語) APIになります。このAPIにより、あまり通信をしている事を意識せずに、プログラムができます。</p>
+<p>また、WindowsとMacintosh(以下Mac)に対応していますので、より多くの環境で楽しむことができます。ただしWindowsとMacではできる事が違うので注意しましょう。</p>
+<p>■環境設定○FlashCS3のインストールまずは一般的なFlashの開発環境であるAdobe Flash CS3(http://www.adobe.com/jp/products/flash/)をパソコンインストールしましょう。ソフトウェアは購入しなくとも、体験版が利用できます。体験版は1ヶ月有効ですので、もし気に入ったら購入しましょう。</p>
+<p>-Adobe Flash CS3 Professionalのダウンロード１．Adobeサイトを開きます。(http://www.adobe.com/jp/downloads/) [FlashR CS3 Professional]-[体験版]を選択</p>
+<p>※ダウンロードにはAdobe IDが必要になります。</p>
+<p>２.インストールダウンロードしたパッケージ（ZIPファイル）を解凍し、付属のインストールガイド（Readme.txt）を参照の上インストールしてください。</p>
+<p>３．アプリケーションを起動インストールが完了したらアプリケーションを起動して確かめてください。体験版利用の場合にはソフトウェアのライセンスキー確認画面が出ますが、30日以内でしたら[体験版として使用する]をクリックすれば、通常版と同じ機能が使えます。▲体験版キャプチャ</p>
+
+<h2 id="doc2_id60">WiiFlashを利用する</h2>
+
+<p class="first_ja">-.NET Framework 3.0が必要です。※Windowsのみ</p>
+<p>WiiFlash Serverは「Microsoft .NET Framework 3.0 Redistributable Package」が必要になります。(http://www.microsoft.com/japan/msdn/windowsvista/general/netfx30.aspx)</p>
+<p>-ダウンロード１．WiiFlashサイトを開きます。(http://wiiflash.bytearray.org/)左側のメニューにある[PAGES]-[Download]を選択します。▲サイトキャプチャ</p>
+<p>画面から[Download WiiFlash]をクリックし、ファイルをダウンロードします。執筆時のバージョン（○○○○○）▲サイトキャプチャ</p>
+<p>○WiiFlashの展開-ファイル内容について・WiiFlash Server (latest version)・WiiFlash API (SWC, sources)・Documentation・CS3 Examples (.fla)</p>
+<p>■環境設定【Macintosh】○FlashCS3のインストールWindowsと同じです。</p>
+<p>○WiiFlashを利用する-ダウンロード１．WiiFlashサイトを開きます。(http://wiiflash.bytearray.org/)左側のメニューにある[PAGES]-[Download]を選択します。▲サイトキャプチャ</p>
+<p>画面から[Download WiiFlash]をクリックし、ファイルをダウンロードします。執筆時のバージョン（○○○○○）▲サイトキャプチャ</p>
+<p>○WiiFlashの展開-ファイル内容について・WiiFlash Server (最新バージョン)・WiiFlash API (SWC, sources)・使い方ドキュメント・CS3 Examples (.fla)</p>
+<p>○WiiFlashの基本機能</p>
+<p>リモコン名系統機能Windows Macintosh</p>
+<p>Wiiリモコン【イベント系】接続ができているのか</p>
+<p>O O</p>
+<p>接続ができたO O</p>
+<p>接続が切れたO O</p>
+<p>ヌンチャクが接続されているかO O</p>
+<p>ヌンチャクが接続されたO O</p>
+<p>ヌンチャクが外れたO O</p>
+<p>赤外線１点目感知O</p>
+<p>赤外線１点目消失O</p>
+<p>赤外線２点目感知O</p>
+<p>赤外線２点目消失O</p>
+<p>【ボタン系】十字キー（上下左右）O O</p>
+<p>AボタンO O</p>
+<p>BボタンO O</p>
+<p>＋ボタンO O</p>
+<p>－ボタンO O</p>
+<p>HOMEボタンO O</p>
+<p>?ボタンO O</p>
+<p>?ボタンO O</p>
+<p>電源ボタンX X</p>
+<p>【3軸加速度センサー】X軸の加速度O O</p>
+<p>Y軸の加速度O O</p>
+<p>Z軸の加速度O O</p>
+<p>Yaw値O O</p>
+<p>Pitch値O O</p>
+<p>Roll値O O</p>
+<p>【赤外線-IR】１点目O</p>
+<p>２点目O</p>
+<p>１点目のX値O</p>
+<p>１点目のY値O</p>
+<p>２点目のX値O</p>
+<p>２点目のY値O</p>
+<p>【その他】バッテリーレベルO O</p>
+<p>バイブレーションO Oヌンチャク【ボタン系】StickX O O</p>
+<p>StickY O O</p>
+<p>CボタンO O</p>
+<p>ZボタンO O</p>
+<p>【3軸加速度センサー】X軸の加速度O O</p>
+<p>Y軸の加速度O O</p>
+<p>Z軸の加速度O O</p>
+<p>Yaw値O O</p>
+<p>Pitch値O O</p>
+<p>Roll値O O</p>
+<p>バランスボード左上の圧力</p>
+<p>右上の圧力</p>
+<p>左下の圧力</p>
+<p>右上の圧力</p>
+<p>○WiiFlashのデモファイルでテストする-WiiリモコンでテストするまずはWiiリモコンでテストしましょう。Wiimote Demo.fla Wiiリモコンをパソコンに繋げて、WiiFlashサーバーを立ち上げましょう。すると下記画面のように「1 Wiimote(s) found」と表示されれば繋がっているので、▲WiiFlash Serverキャプチャ(Windows)</p>
+<p>WiiFlash Serverキャプチャ(Mac)</p>
+<p>ダウンロードしたパッケージの中にある[cs3-examples]-[Wiimote Demo.fla]を開きましょう。このファイルでは、電源ボタンを除く、Wiiリモコンのボタン全てと「Sensor X」「Sensor Y」「Pitch」「Roll」「Yaw」と「Battery level」が確認できます。ボタンを押して動作を確認しましょう。</p>
+<p>確認ができたら、今度はファイルの構成を見てみましょう。</p>
+<p>新規でWiiFlashを使用したアプリケーションを作る際には、必ずAPIが入っている[org]フォルダをflaファイルと同じディレクトリに入れて作成を開始しましょう。また、ライブラリの[synchronize]というムービークリップも必要となりますので忘れずにコピーしましょう。</p>
+<p>○プログラムの解説このサンプルファイルのスクリプトについて重要な部分のみを解説しましょう。</p>
+<p>WiiFlashのライブラリをインポートする。import org.wiiflash.Wiimote; import org.wiiflash.events.ButtonEvent; import org.wiiflash.events.WiimoteEvent; import flash.events.*;</p>
+<p>Wiiリモコンをインスタンス化して、使えるようにします。var myWiimote:Wiimote = new Wiimote();</p>
+<p>WiiFlash Serverに接続します。myWiimote.connect ();</p>
+<p>エラーや接続状況などを管理する[synchronize]というムービークリップをインスタンス化し、画面に配置します。var mySynchronize:Synchronize = new Synchronize(); addChild( mySynchronize ); mySynchronize.x = (stage.stageWidth - mySynchronize.width) / 2; mySynchronize.y = (stage.stageHeight - mySynchronize.height) / 2</p>
+<p>エラーなどのイベントハンドラを登録します。myWiimote.addEventListener( Event.CONNECT, onWiimoteConnect ); myWiimote.addEventListener( IOErrorEvent.IO_ERROR, onWiimoteConnectError ); myWiimote.addEventListener( Event.CLOSE, onCloseConnection );</p>
+<p>○動作のテスト▲サンプルキャプチャ【ボタン】ボタンを使うにはまず、イベントの登録をします。試しに、Aボタンの押すと画面の色が変わるサンプルを作ってみましょう。ボタンのイベント登録は基本的に[on]と[off]を設定します。[ButtonEvent.A_PRESS]はAボタンが押された際にイベントを発動します。[ButtonEvent.A_RELEASE]はボタンが離された際にイベントを発動します。myWiimote.addEventListener( ButtonEvent.A_PRESS, onAPressed ); myWiimote.addEventListener( ButtonEvent.A_RELEASE, onAReleased);</p>
+<p>Aボタンが押された際にイベントが発動して、呼ばれるメソッドがこちらです。画面に配置された[color_mc]のフレームを２フレーム目に変更します。それにより、背景が赤くなります。function onAPressed ( pEvt:ButtonEvent ):void { color_mc.gotoAndStop(2); }</p>
+<p>Aボタンが離された際にイベントが発動して、呼ばれるメソッドがこちらです。画面に配置された[color_mc]のフレームを元の１フレーム目に変更します。それにより、背景が白くなります。function onAReleased ( pEvt:ButtonEvent ):void { color_mc.gotoAndStop(1); }</p>
+<p>このようなスクリプトは予め用意してあるので、このメソッドのなかみを変更するだけで簡単にWiiリモコンを使ったFlashのアプリケーションが作れます。</p>
+<p>【３軸方向加速度センサー】▲サンプルキャプチャ次に値が常に変化する３軸方向加速度センサーを例に、UPDATEイベントを解説しましょう。[WiimoteEvent.UPDATE]は、３軸方向加速度センサーや、赤外線の位置など常に値が変化するものを取得するために作られています。このUPDATE関数は一定間隔で更新されるので、常に値の変化を監視する際に使います。</p>
+<p>-イベント登録まずは、このUPDATE関数が使えるように、イベントの登録をします。myWiimote.addEventListener( WiimoteEvent.UPDATE, onUpdated );</p>
+<p>-メソッド定義画面上の[sensor_txt]にsensorXとsensorYの値を表示します。このメソッドの中に書かれたものは一定間隔で更新されます。</p>
+
+<pre id="doc2_id63" class="program">
+function onUpdated ( pEvt:WiimoteEvent ):void{
+sensor_txt.htmlText += &quot;Sensor X : &quot; + String ( pEvt.target.sensorX ) + \
+    &quot;＜br&gt;Sensor Y : &quot; + String ( pEvt.target.sensorY );
+}
+</pre>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-AdobeID.png" alt="WF-AdobeID.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-CS3.png" alt="WF-CS3.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-Demo.png" alt="WF-Demo.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-DL.png" alt="WF-DL.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-DLCS3.png" alt="WF-DLCS3.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-FW3.png" alt="WF-FW3.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-Mac.png" alt="WF-Mac.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-Tree1.png" alt="WF-Tree1.png" width="4cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/WF-Tree2.png" alt="WF-Tree2.png" width="4cm">
+</div>
+
+
+<h2 id="doc1_id21">サンプルのテストでみる基本的な使い方</h2>
+
+
+<h2 id="doc1_id23">WiiFlashプロジェクトサンプル</h2>
+
+
+<h3 id="doc1_id25">なりきりライトセーバー(原さん)</h3>
+
+
+<h3 id="doc1_id27">おえかき(尾崎さん)</h3>
+
+
+<h3 id="doc1_id29">DropShadow(尾崎さん)</h3>
+
+
+<h3 id="doc1_id31">ChunChun(原さん)</h3>
+
+</body>
+</html>
