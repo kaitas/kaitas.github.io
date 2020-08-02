@@ -118,7 +118,13 @@ Kobe Int’l Conference Center, Room 504+505, Level 5 (日本語コース) ピ�
 
 ## 夜はSake Party!!
 
-SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 - 21:00 会場：アリストンホテル神戸16階バルセロナ 兵庫県神戸市中央区港島中町6-1 [![CSzmaXSUkAA7bEO](http://aki.shirai.as/wp-content/uploads/2015/11/CSzmaXSUkAA7bEO-300x225.jpg)](http://aki.shirai.as/tweets/661156602150412288/cszmaxsukaa7beo/) [![4XUJsp7hrWgEyDa3](http://aki.shirai.as/wp-content/uploads/2015/11/4XUJsp7hrWgEyDa3-300x169.jpg)](http://aki.shirai.as/tweets/661157140686467074/4xujsp7hrwgeyda3/) いやー初日から盛りだくさんですね！！
+SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 - 21:00 会場：アリストンホテル神戸16階バルセロナ 兵庫県神戸市中央区港島中町6-1 
+
+[![SakeParty1](Sake2015-1.jpg)]
+[![SakeParty2](Sake2015-2.jpg)]
+
+
+いやー初日から盛りだくさんですね！！
 
 * * *
 
