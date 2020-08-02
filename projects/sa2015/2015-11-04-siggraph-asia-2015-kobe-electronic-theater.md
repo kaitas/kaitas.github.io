@@ -20,21 +20,32 @@ SIGGRAPH最大の注目イベントであるSIGGRAPH ASIA 2015 Electronic Theate
 
 ## Afternoon Class
 
-Director / Producer: OH Seoro Country: SOUTH KOREA https://youtu.be/gTdURzJvOn8
+Director / Producer: OH Seoro Country: SOUTH KOREA
+[https://youtu.be/gTdURzJvOn8](https://youtu.be/gTdURzJvOn8)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gTdURzJvOn8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Blue Eyes -in HARBOR TALE-
+Director / Producer: Yuichi Ito Country: JAPAN
 
-https://www.youtube.com/watch?v=_3EqFJQZ-SY Director / Producer: Yuichi Ito Country: JAPAN
+[https://www.youtube.com/watch?v=_3EqFJQZ-SY](https://www.youtube.com/watch?v=_3EqFJQZ-SY) 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_3EqFJQZ-SY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Chase Me
 
-Director: Gilles-Alexandre Deschaud Country: FRANCE https://vimeo.com/121548396
+Director: Gilles-Alexandre Deschaud Country: FRANCE
+[https://vimeo.com/121548396](https://vimeo.com/121548396)
+<iframe src="https://player.vimeo.com/video/121548396" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/121548396">Trailer</a> from <a href="https://vimeo.com/user14390582">Gilles Deschaud</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 ## Chaud Lapin
 
-（訳注：温かいウサギ）<iframe src="https://player.vimeo.com/video/100388118" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<iframe src="https://player.vimeo.com/video/100388118" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/100388118">CHAUD LAPIN - Teaser</a> from <a href="https://vimeo.com/chaudlapin">Chaud lapin</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 [CHAUD LAPIN - Teaser](https://vimeo.com/100388118) from [Chaud lapin](https://vimeo.com/chaudlapin) on [Vimeo](https://vimeo.com).
+（訳注：温かいウサギ）
+
 
 ## CHOCOLATE DARWIN
 
@@ -44,7 +55,10 @@ Director: Gilles-Alexandre Deschaud Country: FRANCE https://vimeo.com/121548396
 
 ## Duo
 
-Director: Janis Aussel, Elsa Boyer, Marie-Pierre Demessant, Dorian Lee, Laurent Moing, Guitty Mojabi, Aron Bot Producer: Gobelins, l'école de l'image Country: FRANCE [Duo](http://sa2015.siggraph.org/media/thumbnails/timthumb.php?src=http://sis.siggraph.org/OPAL/Themes/SIS/Asia2015/src/downloads-perm/c111-e79-publicimage.jpg&w=403&h=180)
+Director: Janis Aussel, Elsa Boyer, Marie-Pierre Demessant, Dorian Lee, Laurent Moing, Guitty Mojabi, Aron Bot Producer: Gobelins, l'école de l'image Country: FRANCE 
+[https://www.youtube.com/watch?v=eebQYIUxjGw](https://www.youtube.com/watch?v=eebQYIUxjGw)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eebQYIUxjGw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Electrofly
 
