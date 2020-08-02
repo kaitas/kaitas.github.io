@@ -10,8 +10,8 @@ From June 2018, He is backed to game industry again as a labo director to launch
 ## Projects
 
 - [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
-- [WiiRemoteプログラミング](https://akihiko.shirai.as/project/WiiRemote/index.html)
 - [BookWii](https://akihiko.shirai.as/project/BookWii/index.html)
+- [SIGGRAPH ASIA 2015 Kobe](https://akihiko.shirai.as/project/sa2015/)
 - [projects.shirai.as](https://projects.shirai.as/)
 
 
