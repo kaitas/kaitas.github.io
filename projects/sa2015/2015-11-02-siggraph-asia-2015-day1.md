@@ -120,8 +120,8 @@ Kobe Int’l Conference Center, Room 504+505, Level 5 (日本語コース) ピ�
 
 SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 - 21:00 会場：アリストンホテル神戸16階バルセロナ 兵庫県神戸市中央区港島中町6-1 
 
-[![SakeParty1](Sake2015-1.jpg)]
-[![SakeParty2](Sake2015-2.jpg)]
+[![SakeParty1](sake2015-1.jpg)]
+[![SakeParty2](sake2015-2.jpg)]
 
 
 いやー初日から盛りだくさんですね！！
@@ -133,5 +133,148 @@ SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 -
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/660837010215596032"></a>
 </blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660838208490483715"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660841615645261825"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660847053161914368"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660848084067287040"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660861295839678464"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660861531840602112"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660864725329276928"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660864813598306305"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660872920864944128"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660957532534378496"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660964135442644992"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660965590211801088"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660970186678276100"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660973832577024000"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660975079178633216"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660975361769926656"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660975737097224193"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660976436719808512"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660977327510171649"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660981034926759936"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660992807071428608"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/660996119485255681"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661006207067402244"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661008908543131648"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661010601401970689"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661013706650750976"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661014707097088000"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661030277188157441"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661031370831990784"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661033186428776448"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661033305685422080"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661033400191483905"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661057584724639744"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661065671543951360"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661082644319350784"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661082649121845248"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661083078941523968"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661118744463175680"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661156602150412288"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661157140686467074"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661162728552136704"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661166140824027137"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661166615128440833"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661166880602763268"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661167902234574848"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661183532442619905"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661186257054101504"></a>
+</blockquote>
+<blockquote class="twitter-tweet">
+<a href="https://twitter.com/o_ob/statuses/661191028192374784"></a>
+</blockquote>
 
- https://twitter.com/o_ob/statuses/660838208490483715 https://twitter.com/o_ob/statuses/660841615645261825 https://twitter.com/o_ob/statuses/660847053161914368 https://twitter.com/o_ob/statuses/660848084067287040 https://twitter.com/o_ob/statuses/660861295839678464 https://twitter.com/o_ob/statuses/660861531840602112 https://twitter.com/o_ob/statuses/660864725329276928 https://twitter.com/o_ob/statuses/660864813598306305 https://twitter.com/o_ob/statuses/660872920864944128 https://twitter.com/o_ob/statuses/660957532534378496 https://twitter.com/o_ob/statuses/660964135442644992 https://twitter.com/o_ob/statuses/660965590211801088 https://twitter.com/o_ob/statuses/660970186678276100 https://twitter.com/o_ob/statuses/660973832577024000 https://twitter.com/o_ob/statuses/660975079178633216 https://twitter.com/o_ob/statuses/660975361769926656 https://twitter.com/o_ob/statuses/660975737097224193 https://twitter.com/o_ob/statuses/660976436719808512 https://twitter.com/o_ob/statuses/660977327510171649 https://twitter.com/o_ob/statuses/660981034926759936 https://twitter.com/o_ob/statuses/660992807071428608 https://twitter.com/o_ob/statuses/660996119485255681 https://twitter.com/o_ob/statuses/661006207067402244 https://twitter.com/o_ob/statuses/661008908543131648 https://twitter.com/o_ob/statuses/661010601401970689 https://twitter.com/o_ob/statuses/661013706650750976 https://twitter.com/o_ob/statuses/661014707097088000 https://twitter.com/o_ob/statuses/661030277188157441 https://twitter.com/o_ob/statuses/661031370831990784 https://twitter.com/o_ob/statuses/661033186428776448 https://twitter.com/o_ob/statuses/661033305685422080 https://twitter.com/o_ob/statuses/661033400191483905 https://twitter.com/o_ob/statuses/661057584724639744 https://twitter.com/o_ob/statuses/661065671543951360 https://twitter.com/o_ob/statuses/661082644319350784 https://twitter.com/o_ob/statuses/661082649121845248 https://twitter.com/o_ob/statuses/661083078941523968 https://twitter.com/o_ob/statuses/661118744463175680 https://twitter.com/o_ob/statuses/661156602150412288 https://twitter.com/o_ob/statuses/661157140686467074 https://twitter.com/o_ob/statuses/661162728552136704 https://twitter.com/o_ob/statuses/661166140824027137 https://twitter.com/o_ob/statuses/661166615128440833 https://twitter.com/o_ob/statuses/661166880602763268 https://twitter.com/o_ob/statuses/661167902234574848 https://twitter.com/o_ob/statuses/661183532442619905 https://twitter.com/o_ob/statuses/661186257054101504 https://twitter.com/o_ob/statuses/661191028192374784
