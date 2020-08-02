@@ -4,6 +4,7 @@ SIGGRAPH ASIA 2015 神戸の日本語ポータルです
 
 ## 【予習＆まとめ】
 
+- [オンライン登録延長](2015-10-25-siggraph-asia-2015-extend.md)
 - [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
 - [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
 - [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
@@ -11,22 +12,23 @@ SIGGRAPH ASIA 2015 神戸の日本語ポータルです
 - [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
 
 ## 【便利なリンク】
+*   公式サイト： [http://sa2015.siggraph.org/jp/](http://sa2015.siggraph.org/jp/)
+*   日本語半公式Facebook（白井管理）： [https://www.facebook.com/SA2015Kobe](https://www.facebook.com/SA2015Kobe)
+*   SIGGRAPH ASIA 2015神戸ローカルコミッティ： [https://www.facebook.com/SA15KobeLocalcom](https://www.facebook.com/SA15KobeLocalcom)
+*   このサイトのURL： [http://aki.shirai.as/sa2015/](http://aki.shirai.as/sa2015/)
+*   初心者向け情報（2015/7/28）： [http://aki.shirai.as/2015/07/sa2015-guide/](http://aki.shirai.as/2015/07/sa2015-guide/)
+*   （公式）日本語みどころまとめ（[プログラム概要](http://sa2015.siggraph.org/jp/attendees/siggraph-asia-2015-program-overview-japanese.html)）
+*   （公式）[一目でわかるスケジュール](http://sa2015.siggraph.org/jp/attendees/schedule-glance.html)（PDF: [day1](http://sa2015.siggraph.org/images/downloads/schedule/Day-1-Monday-02-November-28-10-15.pdf), [day2](http://sa2015.siggraph.org/images/downloads/schedule/Day-2-Tuesday-03-November-28-10-15.pdf), [day3](http://sa2015.siggraph.org/images/downloads/schedule/Day-3-Wednesday-04-November-28-10-15.pdf), [day4](http://sa2015.siggraph.org/images/downloads/schedule/Day-4-Thursday-05-November-15-10-15.pdf)）
+*   （公式）コンピュータ・アニメーション・フェスティバル(CAF)[上映プログラム](http://sa2015.siggraph.org/images/downloads/schedule/program/Computer_Animation_Festival.pdf)
+*   （公式）パーティ情報（[ネットワーキング・イベント](http://sa2015.siggraph.org/jp/attendees/networking-events.html)）
+*   [【初心者向け】SIGGRAPH ASIA 2015 Kobe登録関係まとめ](http://aki.shirai.as/2015/10/lets-register-siggraph-asia-2015-kobe-by-free/)
+*   [オンライン登録が28日(水)まで延長となりました！（日本語みどころ情報）](http://aki.shirai.as/2015/10/siggraph-asia-2015-extend/)
+*   SIGGRAPHA ASIA 教育シンポジウム 11/3の面々が素晴らしい件（2015/10/11）： [http://aki.shirai.as/2015/10/sa15-edu-sympo-1103/](http://aki.shirai.as/2015/10/sa15-edu-sympo-1103/)
 
-- 公式サイト： http://sa2015.siggraph.org/jp/
-- 日本語半公式Facebook（白井管理）： https://www.facebook.com/SA2015Kobe
-- SIGGRAPH ASIA 2015神戸ローカルコミッティ： https://www.facebook.com/SA15KobeLocalcom
-- このサイトのURL： http://aki.shirai.as/sa2015/
-- 初心者向け情報（2015/7/28）： http://aki.shirai.as/2015/07/sa2015-guide/
-- （公式）日本語みどころまとめ（プログラム概要）
-- （公式）一目でわかるスケジュール（PDF: day1, day2, day3, day4）
-- （公式）コンピュータ・アニメーション・フェスティバル(CAF)上映プログラム
-- （公式）パーティ情報（ネットワーキング・イベント）
-- 【初心者向け】SIGGRAPH ASIA 2015 Kobe登録関係まとめ
-- オンライン登録が28日(水)まで延長となりました！（日本語みどころ情報）
-- SIGGRAPHA ASIA 教育シンポジウム 11/3の面々が素晴らしい件（2015/10/11）： http://aki.shirai.as/2015/10/sa15-edu-sympo-1103/
-- 日本語Twitter #SIGGRAPH15Kobe
+* 日本語Twitter [#SIGGRAPH15Kobe](https://twitter.com/search?f=tweets&q=%23SIGGRAPH15Kobe&src=typd)
 
-#SIGGRAPH15Kobe のツイート
+* [#SIGGRAPH15Kobe のツイート](https://twitter.com/hashtag/SIGGRAPH15Kobe) 
+
 
 ## ■登録関係
 

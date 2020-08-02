@@ -1,6 +1,6 @@
 ---
 author: aki
-title: "\n\t\t\t\tSIGGRAPH ASIA 2015 初日イベントまとめ\t\t"
+title: "SIGGRAPH ASIA 2015 初日イベントまとめ\t\t"
 slug: siggraph-asia-2015-day1
 id: 16049
 date: '2015-11-02 01:49:35'
@@ -14,10 +14,12 @@ tags:
 
 ## 【予習＆まとめ】
 
-*   [1日目みどころ・まとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-day1/)
-*   [2日目みどころ・まとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-day2/)
-*   [3日目みどころ・まとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-day3/)
-*   4日目みどころ・まとめ
+- [オンライン登録延長](2015-10-25-siggraph-asia-2015-extend.md)
+- [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
+- [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
+- [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
+- [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
+- [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
 
 ## 【便利なリンク】
 
