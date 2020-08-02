@@ -139,30 +139,19 @@ SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 -
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/660841615645261825"></a>
 </blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/660847053161914368"></a>
-</blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/660848084067287040"></a>
-</blockquote>
+
+
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/660861295839678464"></a>
 </blockquote>
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/660861531840602112"></a>
 </blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/660864725329276928"></a>
-</blockquote>
+
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/660864813598306305"></a>
 </blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/660872920864944128"></a>
-</blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/660957532534378496"></a>
-</blockquote>
+
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/660964135442644992"></a>
 </blockquote>
@@ -229,9 +218,7 @@ SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 -
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/661033400191483905"></a>
 </blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/661057584724639744"></a>
-</blockquote>
+
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/661065671543951360"></a>
 </blockquote>
@@ -274,7 +261,5 @@ SIGGRAPH名物「酒パーティー」 日時：2015年11月2日（月）19:00 -
 <blockquote class="twitter-tweet">
 <a href="https://twitter.com/o_ob/statuses/661186257054101504"></a>
 </blockquote>
-<blockquote class="twitter-tweet">
-<a href="https://twitter.com/o_ob/statuses/661191028192374784"></a>
-</blockquote>
+
 
