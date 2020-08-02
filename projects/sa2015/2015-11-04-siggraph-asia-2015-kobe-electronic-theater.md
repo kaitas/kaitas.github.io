@@ -1,6 +1,6 @@
 ---
 author: aki
-title: "\n\t\t\t\tSIGGRAPH ASIA 2015 Kobe Electronic Theater\t\t"
+title: "SIGGRAPH ASIA 2015 Kobe Electronic Theater"
 slug: siggraph-asia-2015-kobe-electronic-theater
 id: 16290
 date: '2015-11-04 12:20:39'
@@ -111,3 +111,18 @@ https://www.youtube.com/watch?v=3SEXokSxZBI Directed by Takahiro Miyauchi, SHIRO
 ## Zerogon
 
 <iframe src="https://player.vimeo.com/video/108301797?color=f429ff&amp;title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" allowfullscreen="allowfullscreen"></iframe>[Zerogon (By Joshua Planz & John Mattiuzzi)](https://vimeo.com/108301797) from [John Mattiuzzi](https://vimeo.com/johnmattiuzzi) on [Vimeo](https://vimeo.com). Director/Producer: Joshua Planz and [John Mattiuzzi](http://vimeo.com/johnmattiuzzi), USA [日本語解説](http://gif89a.net/1010-zerogon/)
+
+
+
+## 【予習＆まとめ】
+
+- [オンライン登録延長](2015-10-25-siggraph-asia-2015-extend.md)
+- [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
+- [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
+- [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
+- [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
+- [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
+- [“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。](2015-11-08-siggraph-asia-2015-kobe-fvision.md)
+- [白井研発表まとめ](2015-11-02-siggraph-asia-2015-kobe.md)
+
+

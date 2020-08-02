@@ -1,6 +1,6 @@
 ---
 author: aki
-title: "\n\t\t\t\tSIGGRAPH ASIA 2015 Kobeにて研究成果を発表します\t\t"
+title: "SIGGRAPH ASIA 2015 Kobeにて研究成果を発表します\t\t"
 slug: siggraph-asia-2015-kobe
 id: 16044
 date: '2015-11-02 00:31:12'
@@ -28,4 +28,17 @@ tags:
 
 ## 日本語Facebookもよろしく
 
-なお、白井先生は若手プログラムリエゾンとして、[日本語Facebook](https://www.facebook.com/SA2015Kobe/)やBlogでのSIGGRAPH ASIAプロモーションに活躍されております。 大変役立つ情報も多いのでこちらもご活用ください [http://aki.shirai.as/sa2015](http://aki.shirai.as/sa2015)
+なお、白井先生は若手プログラムリエゾンとして、[日本語Facebook](https://www.facebook.com/SA2015Kobe/)やBlogでのSIGGRAPH ASIAプロモーションに活躍されております。 大変役立つ情報も多いのでこちらもご活用ください [https://akihiko.shirai.as/projects/sa2015](https://akihiko.shirai.as/projects/sa2015)
+
+
+
+## 【予習＆まとめ】
+
+- [オンライン登録延長](2015-10-25-siggraph-asia-2015-extend.md)
+- [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
+- [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
+- [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
+- [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
+- [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
+- [“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。](2015-11-08-siggraph-asia-2015-kobe-fvision.md)
+- [白井研発表まとめ](2015-11-02-siggraph-asia-2015-kobe.md)

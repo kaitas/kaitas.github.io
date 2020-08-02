@@ -10,6 +10,9 @@ SIGGRAPH ASIA 2015 神戸の日本語ポータルです
 - [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
 - [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
 - [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
+- [“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。](2015-11-08-siggraph-asia-2015-kobe-fvision.md)
+- [白井研発表まとめ](2015-11-02-siggraph-asia-2015-kobe.md)
+
 
 ## 【便利なリンク】
 *   公式サイト： [http://sa2015.siggraph.org/jp/](http://sa2015.siggraph.org/jp/)

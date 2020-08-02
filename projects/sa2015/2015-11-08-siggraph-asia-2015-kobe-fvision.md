@@ -1,6 +1,6 @@
 ---
 author: aki
-title: "\n\t\t\t\t“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。 From SIGGRAPH ASIA 2015 Kobe: E-Tech #SIGGRAPH15Kobe\t\t"
+title: "“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。 From SIGGRAPH ASIA 2015 Kobe: E-Tech #SIGGRAPH15Kobe"
 slug: siggraph-asia-2015-kobe-fvision
 id: 16571
 date: '2015-11-08 16:30:15'
@@ -24,3 +24,15 @@ https://www.youtube.com/watch?v=u1E_LgLaiRE 実物は大変撮影しづらいこ
 ## ってなんじゃこりゃあ！！
 
 ![IMG_8385-0](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8385-0.jpg) ![IMG_8383-0](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8383-0.jpg) なんだか、未来都市みたいです。 円周状に並んでる部分が1個1個のプロジェクターモジュールだそうで、全周実装時は最大300個を超えるそうです。このプロジェクターモジュールから中央の塔の様な、すり鉢上のスクリーンにテーブル上の物体表面の光線を再現する映像を投影しています。 ![IMG_8384-0](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8384-0.jpg) 露出を変えて撮影した様子です。すり鉢は特注の樹脂ですが、初期型は釣り糸を巻いて作ったそうです。すごい職人技と根性が必要な作業と想像します。 [caption id="" align="alignnone" width="600"]![](http://aki.shirai.as//HLIC/633e460a0e9b0df99f59282071d00e24.png) fVisiOnにおけるテーブル上の物体の光線の再現原理(NICTより)[/caption] 人が「物が立体的にそこにある」と理解する要因の一つは、この表面から様々な方向に光線が出ているという現象です。fVisiOnは、テーブルの下に円状に並べた大量のプロジェクターと円錐型の光学素子（背面投影式の特殊なスクリーン）を使い、この机の上に物がある光の状態を、テーブルの円周方向に再現する原理となっています（上図参照）。例えば、Pの位置のプロジェクターは、E<sub>a</sub>やE<sub>b</sub>といった複数の異なる視点位置に届く光線を同時に再生しています。一般的なCGでは、視点側（例えばE<sub>a</sub>やE<sub>b</sub>）から見た映像を計算するため、fVisiOnで必要とする計算は、標準的な手法で簡単に作成することはできなかったそうです。 そこで、再生したい3D形状の表面が放つはずの様々な光線を、幾何学的に一つ一つ計算する専用のソフトウェアを開発しましたが、大量の光線計算に長い時間がかかる上に、元データ（コンテンツ）の制作にも専門的な光線幾何学の知識が必要でした（通常はリアルタイム用のレンダリング手法もしくは特殊なshaderを開発します）。 今回のSIGGRAPH Asiaで公開されたこのデモ映像は、事前に計算生成された画像ではありません。2台のPCからUnityをつかってリアルタイム生成された映像なのだそうです。 ちょうど、ゲーム的な応用をデモするためのUnityプロジェクトを開いているところです。fVisiOn向けの特殊なレンダリングをするためのshaderを開発されたとのこと。 ![IMG_8388](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8388.jpg) キャラの向きにあわせてカードを使用するといったインタラクションが実演されておりました。さらに鏡を立てると、キャラクターの側面もちゃんと鏡にうつります。 ![IMG_8394](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8394.jpg)   [![IMG_8393](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8393.jpg)](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8393.jpg) [![IMG_8392](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8392.jpg)](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8392.jpg) 鏡に反射した反対側のキャラクターもそれぞれ破綻なく見えることが興味深いです。カードゲームのデッキを隠すついたてなどにも応用できるのかもしれないですね。 ![IMG_8380-0](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8380-0.jpg) カードリーダー部にに初音ミクカードを置くと、ミクさんが歌って踊りだします。 他のデモで展示されていたゲームはこのような円卓を取り囲んで遊ぶものでした。ちゃんとキャラクターデザインもされていて、これはこれで気になる！   [![IMG_8390-0](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8390-0.jpg)](http://aki.shirai.as/wp-content/uploads/2015/11/IMG_8390-0.jpg) 多くの記者さんがテーブルの内側を撮影されておりました。 床の160cm, 170cmと書かれたサークルは、立って視聴するときの最適位置指標で、座ってみるとちょうど良いように設計されているそうです。     2011年の最初の発表から少しづつ進化を遂げているfVisiOnですが、現在の想定価格は数百万～1千万ぐらいになってしまうそうです。しかし、プロジェクターモジュール自体はどんどん価格が下がっており、さらにテーブル型ディスプレイデバイスとしてMicrosoft Surface（タブレットではなくテーブル）が2011年ごろ数百万で販売されていたことを考えると、お洒落なカフェや企業のショールームといった場所にfVisiOnのようなデバイスが画像生成のPC込みで実装されることは、あながち非現実ではないかもしれません。 https://www.youtube.com/watch?v=CL9MbEM2N4o コンテンツも現在のOculus等のHMDで使用されるUnityで作れるようですから、応用の幅は大きいと思います。 なお、このディスプレイの研究開発を中心的に進められている情報通信研究機構(NICT)ユニバーサルコミュニケーション研究所 超臨場感映像研究室 吉田俊介氏によりますと「原理的には2011年に完成していたものの、気になる画質は今回のSIGGRAPH Asiaで公開されたバージョンで『1号機に比べ16倍の解像度』として刷新されました。最新の動画も公開しましたので、ぜひ[研究所のサイト](http://www.nict.go.jp/info/topics/2015/11/151102-1.html)にも来てください」とのことでした。 ![fVision2015](http://aki.shirai.as/wp-content/uploads/2015/11/fVision2015.png) 2015年11月2日付で公開されており、[日本語の解説動画](https://www.youtube.com/watch?v=COdSqTk2IiA)と[カードバトル風デモ](https://www.youtube.com/watch?v=COdSqTk2IiA)が公開されています。実物の迫力はすばらしく、さすがベストデモ受賞です。 以上、「メガネなし・PCなし・装着物なしVR」の最新のカタチをSIGGRAPH Asia 2015の会場から紹介させていただきました。 皆さんならこのテーブルでどんなVRを実現しますか？
+
+
+## 【SIGGRAPH ASIA 2015 Kobe まとめ】
+
+- [オンライン登録延長](2015-10-25-siggraph-asia-2015-extend.md)
+- [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
+- [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
+- [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
+- [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
+- [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
+- [“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。](2015-11-08-siggraph-asia-2015-kobe-fvision.md)
+- [白井研発表まとめ](2015-11-02-siggraph-asia-2015-kobe.md)

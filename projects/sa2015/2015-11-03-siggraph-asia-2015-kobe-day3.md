@@ -1,6 +1,6 @@
 ---
 author: aki
-title: "\n\t\t\t\tSIGGRAPH ASIA 2015 Kobe 3日目見どころまとめ\t\t"
+title: "SIGGRAPH ASIA 2015 Kobe 3日目見どころまとめ"
 slug: siggraph-asia-2015-kobe-day3
 id: 16169
 date: '2015-11-03 18:39:20'
@@ -12,15 +12,21 @@ tags:
   - SIGGRAPH ASIA 2015 Kobe
 ---
 
-SIGGRAPH ASIA 2015 Kobe 3日目見どころまとめ。 まだCAFの[シアター](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-electronic-theater/)を見ていないので、そのあたりも気になりますが、 3日目にもなると基本はEmerging TechnologiesやExhibitionなどの展示・体験ものを見ておきたいところですが、セッションもとっても気になるので予習です。 https://www.youtube.com/watch?v=yDT55_2_BsA 公式のサーバーがめっさ遅くなることが多いので[公式PDFのコピー](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-3%e6%97%a5%e7%9b%ae%e8%a6%8b%e3%81%a9%e3%81%93%e3%82%8d%e3%81%be%e3%81%a8%e3%82%81-siggraph15kobe/day-3-wednesday-04-november-28-10-15/)をおかせていただきます。
+SIGGRAPH ASIA 2015 Kobe 3日目見どころまとめ。
+3日目にもなると基本はEmerging TechnologiesやExhibitionなどの展示・体験ものを見ておきたいところですが、セッションもとっても気になるので予習です。 https://www.youtube.com/watch?v=yDT55_2_BsA 公式のサーバーがめっさ遅くなることが多いので[公式PDFのコピー](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-3%e6%97%a5%e7%9b%ae%e8%a6%8b%e3%81%a9%e3%81%93%e3%82%8d%e3%81%be%e3%81%a8%e3%82%81-siggraph15kobe/day-3-wednesday-04-november-28-10-15/)をおかせていただきます。
+
 
 ## 【予習＆まとめ】
 
-*   [1日目みどころ・まとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-day1/)
-*   [2日目みどころ・まとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-day2/)
-*   [3日目みどころ・まとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-day3/)
-*   [CAF Electronic Theaterまとめ](http://aki.shirai.as/2015/11/siggraph-asia-2015-kobe-electronic-theater/)
-*   4日目みどころ・まとめ
+- [オンライン登録延長](2015-10-25-siggraph-asia-2015-extend.md)
+- [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
+- [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
+- [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
+- [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
+- [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
+- [“fVisiOn”：机の上にミクさん光臨。しかも中身は未来都市だった。](2015-11-08-siggraph-asia-2015-kobe-fvision.md)
+- [白井研発表まとめ](2015-11-02-siggraph-asia-2015-kobe.md)
+
 
 ## 【便利なリンク】
 
