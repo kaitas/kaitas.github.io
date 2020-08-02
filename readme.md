@@ -7,15 +7,9 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
-## Projects
+## Works
 
-- [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
-- [BookWii](https://akihiko.shirai.as/project/BookWii/index.html)
-- [SIGGRAPH ASIA 2015 Kobe](https://akihiko.shirai.as/project/sa2015/)
-- [projects.shirai.as](https://projects.shirai.as/)
-
-
-## GREE VR Studio Laboratory
+### GREE VR Studio Laboratory
 
 - [Laboratory](https://vr.gree.net/lab/)
  - [YouTube Channel](http://j.mp/VRSYT)
@@ -23,10 +17,18 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [Products](https://vr.gree.net/en/)
 
-## KAIT Shirai Lab
+### KAIT Shirai Lab
 
 - [Publications](http://blog.shirai.la/publications/)
 - [Manga Generator Consortium](https://manga.style/)
+
+### Projects
+
+- [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
+- [BookWii](https://akihiko.shirai.as/project/BookWii/index.html)
+- [SIGGRAPH ASIA 2015 Kobe](https://akihiko.shirai.as/project/sa2015/)
+- [projects.shirai.as](https://projects.shirai.as/)
+
 
 # Lecture
 
