@@ -4,10 +4,11 @@ SIGGRAPH ASIA 2015 神戸の日本語ポータルです
 
 ## 【予習＆まとめ】
 
-- 1日目みどころ・まとめ
-- 2日目みどころ・まとめ
-- 3日目みどころ・まとめ
-- 4日目みどころ・まとめ
+- [1日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-day1.md)
+- [2日目みどころ・まとめ](2015-11-02-siggraph-asia-2015-kobe-day2.md)
+- [3日目みどころ・まとめ](2015-11-03-siggraph-asia-2015-kobe-day3.md)
+- [4日目みどころ・まとめ](2015-11-05-siggraph-asia-2015-kobe-day4.md)
+- [Electronic Theater](2015-11-04-siggraph-asia-2015-kobe-electronic-theater.md)
 
 ## 【便利なリンク】
 
