@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>Bluetooth製品を選ぶ</title>
+<author>白井暁彦</author>
+<date>2009年3月7日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+ここでは前節で紹介した内容をより具体的に、WiiRemoteをWindowsPCで利用する手順について解説します。Bluetooth接続に関わる問題は、PC上でWiiRemoteでいろいろなアプリケーションを開発する上で、常に頭を悩ませるブラックボックスとなることが多いので『自分の環境では問題なく使えているよ！』という人もこのステップで、知識として知っておくことをお勧めします。
+
+ WiiRemoteを使ったPC上の開発で、最も良いスタートを得る方法は、実績のあるBluetooth製品を選ぶことです。コンシューマーゲーム機周辺機器とはいえ、ここから先は何の保証もない世界です。先人の知恵を共有し、不要な労力を避けるためにも、まずは安定して動作する環境を準備しましょう。本節では、多く実績が報告されている順にBluetooth製品を紹介していきます。
+
+  <subsubsection title="IVT BlueSoleil">
+  世界中のハッカーによるレポートを読んでいると、「IVT BlueSoleil(ブルーソレイユ)」Bluetoothスタック＆ドライバが最もよく使われているようです。IVT社のホームページによると、1999年からBluetoothソフトウェア製品の開発をリードし続けており、BlueSoleilは2008年4月現在で2500万ライセンスが販売されているそうです。実際、BlueSoleilはBluetoothホストアダプタを製品にしている周辺機器メーカーにOEMとして採用されていて、多くの製品において、購入したUSB Bluetoothアダプタにドライバとして同梱されています(一部機能制限版の場合もあるようです)。もちろんBlueSoleilのホームページにおいてオンライン購入することができます。
+  
+
+<figure id="BlueSoleilHP" src="png/BlueSoleilHP.png" title="BlueSoleilのホームページ">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+
+☆2008年6月時点での最新のバージョンは「BlueSoleil 6.0 Mobile」で価格は19.95ユーロです。WiiRemoteとの接続以外にも、携帯電話との接続やワイヤレスヘッドセットなどにも利用できますので、手持ちのBluetooth製品が不満で、かつ運良くBlueSoleilがサポートしていれば、買っても損はないでしょう(特にWindowsXPからVistaに乗り換えた場合など)。BlueSoleilのホームページから「Download」を選ぶと製品版と同じソフトウェアをダウンロードできますので、動作が確認できたらライセンスを購入すると良いでしょう。
+
+  </subsubsection>
+
+  <subsubsection title="東芝製スタック">
+<figure id="BT-Stack" src="png/BT-Stack.png" title="東芝製Bluetoothスタック">
+<attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+
+DELLやLenovoなどのノートPCに装備されている内蔵Bluetoothスタックとしてよく使われているものは、OEMで供給されているTOSHIBA製のスタックです。Bluesoleilとは若干異なった挙動をするため注意が必要ですが、WiiRemoteとの接続は可能なものが多いようです。
+筆者が発見した東芝製スタックの問題は「4つ以上のWiiRemoteと同時接続できない」という点です(ソフト的な問題なので将来的には解決するかもしれませんね)。
+  </subsubsection>
+
+  <subsubsection title="Microsoft製スタック">
+
+<figure id="WINXP_BTICON.png" src="png/WINXP_BTICON.png" title="コントロールパネルの「Bluetoothデバイス」アイコン">
+<attribute locale="latex2e" name="style">width:2cm</attribute>
+</figure>
+
+Windows XP Service Pack 2以降やWindwos Vistaには、コントロールパネルに「Bluetoothデバイス」というアイコンがあります。こちらはMicrosoft製のBluetoothスタックで、対応しているBluetooth製品と対応ドライバがインストールされていると動作します(存在しない場合はコラム「Bluetoothコントロールパネルがないときは」を参照)。過去にこのMicrosoft製スタックはWiiRemoteとは相性が悪いと言われていました。Windows Vista環境においてはペアリングに失敗する、接続できても値の取得に失敗する、といった多くの不具合が報告されていましたが、最近になって製品付属のドライバやWindowsUpdateなどを経由して多くの問題が解決されてきているようです。
+特にペアリングにコツがあり「接続が完全に終了するまで「1ボタン」と「2ボタンを「押しっぱなしにすること」でうまく接続できます。この現象は、MicrosoftのBluetoothスタックが、サービスを列挙しPIN(≒パスワード)を求めている間に、WiiRemoteの同期モードが終了してしまうということが原因かもしれません。WiiRemoteの「1,2ボタンを押し続ける」ことで同期モードを継続することができます。
+
+  </subsubsection>
+
+<subsubsection title="Broadcom製スタック">
+Broadcom社はBluetooth業界では大手で、周辺機器として販売されているBluetoothアダプタや、最近のThinkPadなどさまざまな製品にOEMとして採用されています。Microsoft製のスタックと統合されたドライバして組み込まれていることが多く、気がつかないこともあるかもしれません。
+
+実はかつて、BroadcomのスタックはMicrosoft社製のものと同様、Bluesoleilとは接続手順が異なり、WiiRemoteとは相性が良くないといわれていたのですが、最近では接続できるものも登場してきたので紹介します。
+
+以下は筆者が利用しているWindowsXP搭載ThinkPadにおけるコントロールパネルの例です。「コントロールパネル」には「Bluetooth設定」というアイコンがあり、「診断」タブを見ると「Broadcom Corporation」、「ファームウェアリビジョン Version 2.1.211.299」とありました。
+
+<figure id="BT-ThinkPad" src="png/BT-ThinkPad.png" title="ThinkPadに搭載されているBroadcom社製Bluetoothスタック">
+<attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+最近のこのMicrosoft統合型のBluetooth管理ソフトウェアの特徴は、タスクトレイなどに常駐したBluetoothアイコンから接続する他社製スタック異なり、「マイコンピュータ」の「マイ Bluetooth」から接続するという点が特徴です。
+
+<figure id="MyBluetooth" src="png/MyBluetooth.png" title="「マイ Bluetooth」からWiiRemoteを検出">
+<attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+<figure id="MyBluetoothAbout" src="png/MyBluetoothAbout.png" title="「ヘルプ」でバージョン情報を表示させたところ">
+<attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+</subsubsection>
+
+<subsubsection title="その他の環境について">
+その他、上記で紹介のないスタックについては、製品寿命が終了しており購入できない、試してみたが現在のところ成功していない、WiiRemoteとのペアリングが成功しない、など様々で本書では取り扱いませんでした。もし手持ちのBluetooth製品で成功しているものがあれば、WiiLi.orgなどで共有した方が良いでしょう。
+
+<fyi title="WiiLi.orgのBluetooth接続情報">
+http://www.wiili.org/index.php/Compatible_Bluetooth_Devices
+</fyi>
+
+また本書では扱いませんが、Windows以外の環境ではMacOSとLinuxで比較的簡単にWiiRemoteが利用できる状況になってきました。
+特に、MacOSではBluetoothはOSの標準機能で利用でき、接続ツール、アプリケーションなど様々なソフトウェアが登場してきています。「OSX Wiimote Enabler」という、近くにあるWiiRemoteを見つけてペアリングしてくれるソフトウェアなどは便利そうです。
+
+MacOSXと同じく、Linux環境ではBluetoothとの接続に特別なソフトウェアは必要ありません。特に最近急速にユーザ数が増えているディストリビューション「Ubuntu」ではUbuntu7.10(Gutsy)以降、標準的なソフトウェアで利用できるようになってきています。
+</subsubsection>
+
+<fyi title="コラム：Bluetoothコントロールパネルがないときは">
+WindowsXP Service Pack2以降もしくはWindows Vistaをお使いの方で、コントロールパネルに「Bluetooth」のアイコンがない場合について、Microsoftのナレッジベースにいくつかの対処方法が公開されています。
+<ul>
+<li>http://support.microsoft.com/kb/883258/</li>
+<li>http://support.microsoft.com/kb/894035/ja</li>
+</ul>
+
+可能性としては「Bluetoothサポートサービス」が開始されていないか、そのサービスがローカル管理者アカウントを使用するように、構成されていないということです。
+<figure id="BT-Services" src="png/ServicesMMC.png" title="「Bluetoothサポートサービス」の設定を変更">
+<attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+Windowsキー＋Rを押して「ファイル名を指定して実行」ダイアログを使い、「services.msc」と入力し管理コンソール(MMC)スナップインを開きます。
+[ Bluetooth サポート サービスが停止している場合、ダブルクリックしサービスを開始させます。Bluetoothを常に使うのであれば「スタートアップの種類」を「自動」にすると良いでしょう。さらに「ログオン」タブをクリックし「ローカル システム アカウント」が選択されていることを確認してください。最後に、コンピュータを再起動して動作を確認してみてください。
+
+<figure id="BT-ServicesLogon" src="png/ServicesLogon.png" title="サービスの「ログオン」タブを確認する">
+<attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+</fyi>
+
+</body>
+</doc>

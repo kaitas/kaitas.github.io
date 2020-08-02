@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiimoteLibの使い方</title>
+<author>小坂崇之</author>
+<date>2009年3月6日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+
+ <subsection title="プロジェクトの作成">
+　VisualC# 2008 Express Editionを起動させます。
+ <figure id="02-01" src="kosaka/png/02-01.png" title="Visual C#を起動したところ"/>
+ ※環境によっては画面と異なる場合があります。
+　[ファイル(F)]→[新しいプロジェクト(P)]→[Windowsフォームアプリケーション]を選択します。
+ <figure id="02-02" src="kosaka/png/02-02.png" title="新しいプロジェクトを作成">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+ 「プロジェクト名」に「WiimoteLib01」という名前を付けて[OK]ボタンをクリックします。
+ <figure id="02-03" src="kosaka/png/02-03.png">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+ 新しいプロジェクトが作成されました。
+ <figure id="02-04" src="kosaka/png/02-04.png">
+  <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+ </subsection>
+ <subsection title="WiimoteLibの追加">
+　先ほど作成したプロジェクトにWiimoteLibを組み込んでいきましょう。
+　右側のソリューションエクスプローラの[参照設定]を右クリック、[参照の追加(R)...]を選択します。
+　<figure id="02-05" src="kosaka/png/02-05.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+　参照の追加から[参照]を選択し、WiimoteLib.dllを選択します。
+　マイドキュメントの「Visual Studio 2008\Projects」においた「WiimoteLib_1.6\WiimoteLib.dll」を選択し[OK]ボタンをクリックします。
+  <figure id="02-06" src="kosaka/png/02-06.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+  これでソリューションエクスプローラの参照設定にWiimoteLibが追加されたはずです。
+  <figure id="02-07" src="kosaka/png/02-07.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+  それでは最小限のプログラムの実行結果を表示するためのフォームを作成しましょう。
+　「Form1.cs」をクリックし「using WiimoteLib;」を追加します。
+<program>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;						//ここを1行追加します
+
+namespace WindowsFormsApplication1 {
+	public partial class Form1 : Form {
+
+		public Form1() {
+			InitializeComponent();
+		}
+
+	}
+}
+</program>
+
+ 
+ 以上がC#でWiimoteLibを用いるための必要最低限のプログラムです。
+</subsection>
+
+
+<subsection title="プログラムの実行">
+　[F5]キー、または、[デバック(D)]→[デバック開始(F5)]を押してプログラムを実行させてみましょう。
+<figure id="02-08" src="kosaka/png/02-08.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+
+プログラムにエラーがなければ下図のように表示されるはずです。
+<figure id="02-09" src="kosaka/png/02-09.png"> <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+このプログラムは単にウィンドウを生成するプログラムです。
+以後、このプログラムをベースにWiimoteを制御するプログラムを追加していきます。
+</subsection>
+
+</body>
+</doc>

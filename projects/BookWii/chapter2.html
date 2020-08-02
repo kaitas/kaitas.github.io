@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年4月6日最終更新" lang="ja">
+<title>PC上で利用するWiiRemote事始め</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">PC上で利用するWiiRemote事始め</h1>
+
+<div class="date">2009年4月6日最終更新</div>
+<div class="author">白井暁彦</div>
+<div class="email"><a href="mailto:shirai at mail.com" onmouseover="hilightHyperlink(this)" onmouseout="normal(this)">shirai at mail.com</a></div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id19" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteをPCで利用する</a>
+<ul>
+<li> <a href="#doc2_id53" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ハードウェア構成</a>
+<li> <a href="#doc2_id87" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ソフトウェア構成</a>
+</ul>
+<li> <a href="#doc1_id23" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Bluetooth製品を選ぶ</a>
+<ul>
+<li> <a href="#doc4_id174" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">IVT BlueSoleil</a>
+<li> <a href="#doc4_id181" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">東芝製スタック</a>
+<li> <a href="#doc4_id190" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Microsoft製スタック</a>
+<li> <a href="#doc4_id223" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Broadcom製スタック</a>
+<li> <a href="#doc4_id238" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">その他の環境について</a>
+</ul>
+</ul>
+</div>
+
+<h2 id="doc1_id19">WiiRemoteをPCで利用する</h2>
+
+<p class="first_ja">ここでは、WiiRemoteをPCで利用するための仕組みを説明します。ハードウェアやソフトウェア、その中間にあるミドルウェアなどの知識がある方は、読み飛ばしていただいてもかまいません。</p>
+
+<h3 id="doc2_id53">ハードウェア構成</h3>
+
+<p class="first_ja">まずは主に使用するハードウェアを解説します。</p>
+
+<div class="figure">
+<img class="figure" src="png/Wii-PC.png" alt="ハードウェア構成">
+</div>
+
+
+<dl>
+<dt>【WiiRemote】
+<dd>本書の主役、WiiRemoteです。この革新的なコントローラを使ってボタンや加速度センサー、赤外線座標といったデータを、PCにBluetoothによる高速通信経由で送ることができます。複数のWiiRemoteを同時使用できます。また図にはありませんが、拡張端子を使ってヌンチャクなどや様々な拡張コントローラーも利用できます。
+<dt>【センサーバー】
+<dd>&quot;センサー&quot;と名前が付いていますが、実はセンサーではなく、2点の赤外線LEDが内蔵されています(複数のLEDが1つの点を構成)。センサーはWiiRemote先端の黒い部分にあり、この2つ点の座標が取得できます。なお赤外線は人間の目には見えません。
+<dt>【パソコン】
+<dd>本書のもうひとりの主役、パソコンです(以下PCと標記します)。プログラムを書いて実行したり、ツールを使うことで、WiiRemoteからのデータを受信したり、バイブレーターを動かしたりすることができます。本書はWindowsPCを中心に解説しますが、LinuxやMacOSでもWiiRemoteが利用できることがわかっています。
+<dt>【Bluetoothホストアダプタ】
+<dd>国際的な無線規格の標準であるBluetoothをPCで利用するためのアダプタで、PCのUSB端子などに取り付けたり、ノートPC本体に内蔵されていたりします。Bluetooth規格に準拠したマイクロプロセッサとアンテナで構成されています。</dl>
+
+<p>もしお使いのPCが標準でBluetoothを装備しており、かつ後に紹介するWiiRemoteとの接続実験に成功するのであれば、新たに何かを購入する必要はありません。PCにBluetoothホストアダプタが装備されていない場合には、PCパーツ店、電器店、通販等で購入してみてください。だいたい2,000円代ぐらいからUSBタイプのアダプタが入手可能です。WiiRemoteと通信を行うだけの目的であれば、最新・高級品である必要はありません。ただし、各種Bluetoothスタックによって接続に癖があるので注意が必要です(次節を参考にしてください)。</p>
+<p>もしWiiRemoteを複数使用するのであれば、ゲームショップなどで追加購入可能です。必要であればセンサーバーも任天堂ホームページで購入できますし、サードパーティから様々なセンサーバー互換品が発売されています。</p>
+
+<h3 id="doc2_id87">ソフトウェア構成</h3>
+
+<p class="first_ja">さて、次はソフトウェア構成です。「WiiRemoteをPCで利用する」といっても、C++やC#などを使ってディープに開発したり、既にコンパイルされているツールを使ったり、Flashなどの外部のアプリケーションと連動させたりと、いろいろな方法があります。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/Layers.png" alt="ソフトウェア階層" width="8cm">
+</div>
+
+<p>下の層から「WindowsPC」、「Bluetoothスタック」、「API」と「Win32」、そして「アプリケーション／ツール」となっています。下に行くほどよりハードウェアに近く、上に行くほどよりアプリケーションに近いソフトウェアになります。ソフトウェア用語で、OSより上層、アプリケーションより下層のソフトウェアを「ミドルウェア」と呼ぶことがあります。WiiRemoteをPCで使うプログラムでは、このミドルウェアが非常に大きな役割を受け持ちます。</p>
+
+<dl>
+<dt>【WindowsPC】
+<dd>ここではPCハードウェアからOSの基本的な部分までを指します、「プラットフォーム」とも呼ばれます。他のプラットフォーム、例えばLinuxなどの場合は、OSが用意しているドライバを経由して、デバイスファイルへの読み書き関数だけでアクセスできる、といった環境もあるようです。
+<dt>【Bluetoothスタック】
+<dd>これはハードウェアである「Bluetoothホストアダプタ」と通信するソフトウェアです。接続するBluetooth機器それぞれのクラス(モデム、ヒューマンインタフェース、ジョイスティック、ヘッドホンなど)に対するサービスを提供します。単に「ドライバ」と呼ぶこともできますが、Bluetoothの場合は各種Bluetooth機器に&quot;積み重なる(スタック)&quot;接続とサービスを管理する役割を持つので、通常「スタック」と呼びます。
+<dt>【HIDクラス】
+<dd>Bluetoothスタックは、接続するハードウェアにあわせて様々なクラスを提供します。WiiRemoteとの接続の場合、HID(ヒューマンインタフェースデバイス)というクラスを利用します。クラスはプロファイル、つまり各々のハードウェアの種類に関係しています。このHIDクラスは「HIDプロファイル」つまり、マウスやキーボードと同じヒューマンインターフェイスのプロファイルとして、ハードウェアと通信します。なおUSB接続とBluetoothは無線と有線で異なりますが「有線無線にかかわらず、HIDクラスに対して読み書きする」と覚えておくと余計なことを考えずにすみます(ディープにプログラミングをしたい方は、後に紹介するDDKのHIDクラスのサンプルやドキュメントを読んでみると良いでしょう)。
+<dt>【API／Win32】
+<dd>HIDクラス経由して、WiiRemoteとの通信をする部分です。「API(Application Programming Interface)」と表現していますが、アプリケーション開発のための便利なプログラミングインタフェース、クラス構築のためのコードです。世界のハッカーたちが「Wiimoteドライバ」、「API」、「ミドルウェア」など様々な呼称で呼び、数多くのオープンソースプロジェクトが開発されている部分です(本書では「API」で統一)。加速度センサーへのアクセスなど基本的な機能に的を絞ったものや、サウンド再生までサポートするような高機能なものなど様々存在します。
+<dt>【アプリケーション／ツール】
+<dd>この「アプリケーション／ツール層」が本書を手に取った皆さんが最も興味のある部分なのではないでしょうか？WiiRemoteをつかったゲームなど、人間が実際にさわるプログラムの部分です。他にも、ツールとしては後に紹介する「WiiFlash」や「GlovePIE」など、他のプログラムと連携・通信をするツールも存在します。</dl>
+
+<p>WindowsPCプラットフォームにおいて、ミドルウェア部分は、突き詰めればWin32の関数、主にDDK(Driver Development Kit)やWDK(Windows Driver Kit、DDKにテストツールが統合された)を利用してコーディングされています。</p>
+<p>本書では、上記の各種APIを利用した様々なアプリケーションの書き方を紹介します。大きく分けると、C#.NETやC++を使った様々なアプリケーション、WiiFlashというBluetooth-ネットワーク間のプロクシを行うソフトウェアを使ったFlash上での利用、そしてWiiFlashの通信をProcessingで利用する例の4種類です。</p>
+<p>もちろん他にもJavaやVisual Basic、Pythonを使ってアプリケーション／ツールを開発することも可能ですが、本書では主として扱いません。しかしWiiRemoteを使う上での基本は他の言語・環境でも変わりません。ゲームやアート作品など、アイディアを実現する上で「Windowsじゃなきゃダメ」、「C#/C++でなければダメ」ということはないのです！皆さんが得意としているOpenGLやSDL、DirectX、Win32やMFC、コマンドラインプログラムやC++/CLI、VB、C#、Java、Processing、各種スクリプト言語、そしてFlashやMaxMSPといった様々なツールやコンテンツクリエイション環境で利用することができることが報告されています。</p>
+<p>以上のように「WiiRemoteをPCで利用する」とひとことで言っても、幅広く、全てを網羅するにはハードウェアの知識が必要になります。</p>
+<p>特にグラフィックス中心としてきたゲームプログラマーにとっては、APIより下層のことを考えなければならない状況は少々苦しいかも知れません(ちょうど上の図もDirectXより下のGPU(グラフィックプロセッサ)を直接コールするようなイメージがあるでしょうか)。しかし、WiiRemote登場当初に比べて、より安定して高機能なAPIが数多く登場していますし、なにより任天堂がコンシューマープラットフォームとして開発製造しているWiiRemoteは、非常に安定したハードウェアです。</p>
+<p>そういう意味でもWiiRemoteはデバイス・ハードウェア寄りのプログラミングを学ぶにはうってつけの環境とも言えるでしょう。玄人のグラフィックスプログラマーさんにとっても、学ぶこと、活用できることは沢山あるはずです。</p>
+<div class="fyi">
+<div class="title">WiiRemoteをPCで使うのは違法？</div>
+
+<p class="first_ja">「WiiRemoteをPCで利用するのは違法では？」ときく人がいます。いきなり「違法」なんて決めつけられるとドキっとしてしまうのですが、端的に筆者の個人的見解を述べると「No」です。将来的には違法となる可能性もあるかもしれませんが、日本を含めた国によっては違法性を問うのは難しいと考えます。まずWiiRemoteの使用にあたり、使用者は何の契約もしていません。インストール時などにEULA（エンドユーザーライセンス承諾書）を読み、合意しているわけでもありません。</p>
+<p>基本的には「ユーザーのリスクにおいて、サポート外の行為」であるといえます。それを行うことで発生する不具合や故障の修理代や損害賠償をユーザーが請求しなければ、自由です(本書も同様、何の保証もありません！)。もし仮に、発売側にそれ以上の権利が存在するのであれば、パッケージを開けることで成立する「シュリンクラップ契約」などで購入前に明示されるべきでしょう。</p>
+<p>しかし業務的に「Wiiプラットフォームにおいてゲームを開発している開発者」は別です。このような開発者は、それぞれの所属する企業と任天堂やゲームソフトを実際に販売するパブリッシャ間において、守秘義務契約が結ばれています。ボランティアや自分の技術的興味で活動している世界中のハッカーとは本質的に立場が異なります。</p>
+<p>本書の読者の多くに該当するであろう、ホビープログラマにおいて、気をつけるべき事は「実質的な加害者にならないこと」ではないでしょうか。「WiiRemoteを車の運転に使ってみた」なんてウケ狙いで実験するのは自己責任ですが、もしその車が事故を起こして、人の命を奪ったとしたら……？そんなことにならないように、気をつけてくださいね！</p>
+</div>
+
+
+<h2 id="doc1_id23">Bluetooth製品を選ぶ</h2>
+
+<p class="first_ja">WiiRemoteを使ったPC上のプロジェクトの開発や実験をする上で、最も良いスタートを得る方法は『実績のあるBluetooth製品を選ぶこと』です。コンシューマーゲーム機周辺機器とはいえ、ここから先は何の保証もない世界です。先人の知恵を共有し、不要な労力を避けるためにも、まずは安定して動作する環境を準備しましょう。</p>
+<p>ここでは前節で紹介した内容をより具体的に、WiiRemoteをWindowsPCで利用するためのBluetooth接続について解説します。Bluetooth接続に関わる問題は、PC上でWiiRemoteでいろいろなアプリケーションを開発する上で、常に頭を悩ませるブラックボックスとなることが多いので『自分の環境では問題なく使えているよ！』という人もこのステップで、知識として知っておくことをお勧めします。</p>
+
+<h3 id="doc4_id174">IVT BlueSoleil</h3>
+
+<p class="first_ja">世界中のハッカーによるレポートを読んでいると、「IVT BlueSoleil(ブルーソレイユ)」Bluetoothスタック＆ドライバが最もよく使われているようです。IVT社のホームページによると、1999年からBluetoothソフトウェア製品の開発をリードし続けており、BlueSoleilは2008年4月の情報では2500万ライセンスが販売されているそうです。実際、BlueSoleilはBluetoothホストアダプタを製品にしている周辺機器メーカーにOEMとして採用されていて、多くの製品において、購入したUSB Bluetoothアダプタにドライバとして同梱されています(一部機能限定版の場合もある)。もちろんBlueSoleilのホームページにおいてオンライン購入することができます。</p>
+
+<div class="figure">
+<img class="figure" src="png/BlueSoleilHP.png" alt="BlueSoleilのホームページ(http://www.bluesoleil.com/)">
+</div>
+
+<p>2009年に公開されているメジャーバージョンは「BlueSoleil 6」シリーズで、価格は19.95ユーロです。WiiRemoteとの接続以外にも、携帯電話との接続やワイヤレスヘッドセットなどにも利用できますので、手持ちのBluetooth製品が不満で、かつ運良くBlueSoleilがサポートしていれば、買っても損はないでしょう(特にWindowsXPからVistaに乗り換えた場合など)。BlueSoleilのホームページから「Download」を選ぶと製品版と同じソフトウェアをダウンロードできますので、動作が確認できたらライセンスを購入すると良いでしょう。最近ではLinux版やCE版も発売されているようです。</p>
+
+<h3 id="doc4_id181">東芝製スタック</h3>
+
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/BT-Stack.png" alt="東芝製Bluetoothスタック" width="8cm">
+</div>
+
+<p class="first_ja">DELLやLenovoなどのノートPCに装備されている内蔵Bluetoothスタックとして、よく使われているものは、OEM供給されている「TOSHIBA製スタック」です。Bluesoleilとは若干異なった挙動をするため注意が必要ですが、操作もシンプルで扱いやすく、WiiRemoteとの接続は可能なものが多いようです。筆者が発見した東芝製スタックの問題は「4つ以上のWiiRemoteと同時接続できない」という点です(ソフト的な問題なので将来的には解決するかもしれませんね)。</p>
+
+<h3 id="doc4_id190">Microsoft製スタック</h3>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="png/WINXP_BTICON.png" alt="コントロールパネルの「Bluetoothデバイス」アイコン" width="2cm">
+</div>
+
+<p class="first_ja">Windows XP Service Pack 2以降やWindwos Vistaには、コントロールパネルに「Bluetoothデバイス」というアイコンがあります。こちらはMicrosoft製のBluetoothスタックで、対応しているBluetooth製品と対応ドライバがインストールされていると動作します(存在しない場合はコラム「Bluetoothコントロールパネルがないときは」を参照)。過去にこのMicrosoft製スタックはWiiRemoteとは相性が悪いと言われていました。Windows Vista環境においてはペアリングに失敗する、接続できても値の取得に失敗する、といった多くの不具合が報告されていましたが、最近になって製品付属のドライバやWindowsUpdateなどを経由して多くの問題が解決されてきているようです。特にペアリングにコツがあり『接続が完全に終了するまで』1ボタンと2ボタンを『押しっぱなしにすること』でうまく接続できます。この現象は、MicrosoftのBluetoothスタックが、サービスを列挙しPIN(≒パスワード)を求めている間に、WiiRemoteの同期モードが終了してしまうということが原因のようです。この間の悪い時間切れ現象に対して、WiiRemoteの「1,2ボタンを押し続ける」ことで同期モードを継続し、上手に接続することができます。</p>
+<div class="fyi">
+<div class="title">コラム：Bluetoothコントロールパネルがないときは</div>
+
+<p class="first_ja">WindowsXP Service Pack2以降もしくはWindows Vistaをお使いの方で、コントロールパネルに「Bluetooth」のアイコンがない場合について、Microsoftのナレッジベースにいくつかの対処方法が公開されています。</p>
+
+<ul>
+<li> http://support.microsoft.com/kb/883258/
+<li> http://support.microsoft.com/kb/894035/ja</ul>
+
+<p>可能性としては「Bluetoothサポートサービス」が開始されていないか、そのサービスがローカル管理者アカウントを使用するように、構成されていないということです。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/ServicesMMC.png" alt="「Bluetoothサポートサービス」の設定を変更" width="8cm">
+</div>
+
+<p>Windowsキー＋Rを押して「ファイル名を指定して実行」ダイアログを使い、「services.msc」と入力し管理コンソール(MMC)スナップインを開きます。[Bluetoothサポートサービス]が停止している場合、ダブルクリックしサービスを開始させます。Bluetoothを常に使うのであれば「スタートアップの種類」を「自動」にすると良いでしょう。さらに「ログオン」タブをクリックし「ローカルシステムアカウント」が選択されていることを確認してください。最後に、コンピュータを再起動して動作を確認してみてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/ServicesLogon.png" alt="サービスの「ログオン」タブを確認する" width="8cm">
+</div>
+
+</div>
+
+
+<h3 id="doc4_id223">Broadcom製スタック</h3>
+
+<p class="first_ja">Broadcom社はBluetooth業界では大手です。WiiRemote本体の中に使われているBluetoothコントローラーチップはもとより、周辺機器として販売されているBluetoothアダプタや、最近のThinkPadの内蔵品などさまざまな製品にOEMとして採用されています。Microsoft製のスタックと統合されたドライバして組み込まれていることが多く、ユーザーは気がつかないこともあるかもしれません。</p>
+<p>実はかつて、Broadcomのスタックは「Widcomm」という製品名で展開されており、WiiRemoteとは相性が良くないといわれていましたが、最近では問題なく接続できる製品が多く登場しています。</p>
+<p>以下は筆者が利用しているWindowsXP搭載ThinkPadにおけるコントロールパネルの例です。「コントロールパネル」には「Bluetooth設定」というアイコンがあり、「診断」タブを見ると「Broadcom Corporation」、「ファームウェアリビジョンVersion 2.1.211.299」と表示されています。</p>
+
+<div class="figure">
+<img class="figure" src="png/BT-ThinkPad.png" alt="ThinkPadに搭載されているBroadcom社製Bluetoothスタック">
+</div>
+
+<p>このコントロールパネル統合型のBluetooth管理ソフトウェアは、タスクトレイなどに常駐したBluetoothアイコンから接続するタイプの他社製スタックとは異なり、「マイコンピュータ」の「マイBluetooth」から接続する、エクスプローラー統合型になっているという特徴があります。</p>
+
+<div class="figure">
+<img class="figure" src="png/MyBluetooth.png" alt="「マイ Bluetooth」からWiiRemoteを検出">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="png/MyBluetoothAbout.png" alt="「ヘルプ」でバージョン情報を表示させたところ">
+</div>
+
+
+<h3 id="doc4_id238">その他の環境について</h3>
+
+<p class="first_ja">その他、上記で紹介のないスタックについては、試してみたが現在のところ成功していない、WiiRemoteとのペアリングが成功しない、製品寿命が終了している、日本で使用できないなど、様々で本書では取り扱いませんでした。もし手持ちのBluetooth製品で成功しているものがあれば、WiiLi.orgなどで共有した方が良いでしょう。なお輸入した無線デバイスを日本国内で使用することは電波法に違反する可能性があります。技術基準適合証明ラベルが必要です。</p>
+<p>また本書ではメインで扱いませんが、Windows以外の環境ではMacOSとLinuxでも比較的簡単にWiiRemoteが利用できます。</p>
+<p>MacOSではBluetoothはOSの標準機能で利用でき、接続ツール、アプリケーションなど様々なソフトウェアが登場してきています。「OSX Wiimote Enabler」という、近くにあるWiiRemoteを見つけてペアリングしてくれるソフトウェアなどは便利そうです。</p>
+<p>Linux環境ではBluetoothとの接続に特別なソフトウェアは必要ありません。特に最近急速にユーザ数が増えているディストリビューション「Ubuntu」ではUbuntu7.10(Gutsy)以降、標準的なソフトウェアで利用できるようになってきています。</p>
+<div class="fyi">
+<div class="title">WiiLi.orgのBluetooth接続情報</div>
+
+<p class="first_ja">もともとはWiiでLinuxを動かそう！というプロジェクトのポータルですが、かなり初期に立ち上がったこともあり、WiiRemoteに関する情報もたくさん扱われています。こちらのページには動作確認が取れたBluetoothデバイスのリストがあります。http://www.wiili.org/index.php/Compatible_Bluetooth_Devicesなお過去に作動しなかったBluetoothデバイスでも、ソフトウェアアップデートにより、動作する可能性があるとされています。</p>
+</div>
+
+<div class="fyi">
+<div class="title">任天堂公式のWiiRemoteAPI？</div>
+
+<p class="first_ja">実は任天堂も公式にWiiRemoteを一般のユーザーが利用するための仕様を公開しています。Wii本体のWebブラウザ機能である「インターネットチャンネル」におけるWiiRemoteです。これに関しての技術仕様は任天堂のホームページ「インターネットチャンネルの拡張機能について知りたい」(http://www.nintendo.co.jp/wii/q_and_a/093.html)に掲載されています。</p>
+<p>技術仕様にはJavaScriptによるボタン情報やセンサーバーをつかったカーソルの位置や傾きの取得方法が記載されています。また「利用上の注意」として「当社は、この拡張機能に関して、一定の商品性を有していること、特定の目的への適合性を有していること、第三者の知的財産権（特許権、著作権、商標等）を侵害していないこと等を含め、一切の法律上の保証を行いません。この拡張機能を使用したことによって被るいかなる損害に対しても、当社は責任を負いません。当社は、この拡張機能を使用する方に対して、いかなる権利をも付与するものではありません。当社は、この拡張機能に関するサポートは一切行っておりません」と記載されています。</p>
+<p>法的な見解上のグレーはグレーのまま、としておくほうが良いこともあります。「公式に保証しません、責任を負いません」と言い切った方が、現代のネット社会の文化に合っていて潔いという見方もあるでしょう。</p>
+<p>いずれにせよ現在のこの設計のおかげでWiiRemoteは開かれたプラットフォームとして利用することができるわけですし、WiiRemoteを旧来のゲームコントローラー以外の使い方をすることで、結果としてWiiRemote単体の売り上げには協力できているのかもしれません。</p>
+<p>今後もWiiRemoteファンと任天堂、開発者の間に、間接的ではあるけれどWin-Win-Winの関係が保てるといいですね。</p>
+</div>
+
+<div class="fyi">
+<div class="title">コラム：お勧めのBluetoothアダプタは？</div>
+
+<p class="first_ja">WiiRemoteをつかったプログラミングの根幹にある&quot;PCとの接続&quot;は、Bluetoothスタックを経由したHIDクラスの利用であるため、ブラックボックス的要素が多くなってしまいます。初期のWiiRemoteプログラミング環境は不可解な動作やトラブルといったことに悩まされる状況が非常に多くありました。公開されているフリーウェアなどもアプリケーション作者が自分の環境で利用しているハードしか試しておらず、特定の環境でしか動かない…といったこともありました。最近ではWindows XP SP2以降のサポート向上により、かなり状況は改善されていますが、それでも「確実に接続実験をしたい」という相談をよく受けます。</p>
+<p>筆者が個人的に愛用しているのはプリンストンテクノロジー社の「PTM-UBT3S」です。とても小さなUSBコネクタサイズのBluetoothホストアダプタで、電車の中でプログラムを書く事が多い筆者は(左右の乗客にUSBがぶつからず)とても重宝しています。同梱されているスタックは東芝製で、Windows Vistaでの動作確認もとれています。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/PTM-UBT3S.png" alt="プリンストンテクノロジー社「PTM-UBT3S」" width="4cm">
+</div>
+
+<p>現在はPTM-UBT3Sは販売終了とのことで、現在ではその後継として、さらに100メートルの最大通信距離、Bluetooth Ver2.1+EDR対応の「PTM-UBT5」が発売されています(http://www.princeton.co.jp/product/network/ptmubt5.html）。★動作確認予定。</p>
+<p>本当はBluetooth製品それぞれに動作確認情報を出せれば良いのですが、調べてみると製品のパッケージには同梱されているスタックの種類までは記載されていません。調査しても、製品のバージョンやリビジョン、インストールされる側のOSによって全く異なる、というケースもあります。おそらく同梱するソフトウェアのライセンス料が製品価格の大きな部分を占めるからでしょう。</p>
+<p>幸いなことにBluetooth製品は日々、低価格化が進んでいます。購入に失敗したら買い直してもそれほど痛い価格ではなくなってきました。</p>
+<p>ソフトウェアのアップデートで使えることもありますから、まずは「案ずるより、買ってみるが易し」でしょうか。</p>
+</div>
+
+</body>
+</html>

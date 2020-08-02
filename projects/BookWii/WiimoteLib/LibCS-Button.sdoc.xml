@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>ボタン入力</title>
+<author>小坂崇之</author>
+<date>2009年3月6日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+
+次にWiiRemoteのボタン入力について学びます。
+ここでは、WiiリモコンのボタンのON/OFFを取得して表示するシンプルなプログラムを作成します。
+
+<subsection title="ラベルの作成">
+いままでのプログラムと同様に新しいプロジェクトを作成し、「Form1」にラベルを4つ貼り付けてください。 
+ <figure id="05-01" src="png/05-01.png"> <attribute locale="latex2e" name="style">width:8cm</attribute></figure>
+
+WiiRemoteのボタンを押したときに発生するイベントを利用して、このラベルを表示する値を変更することで、現在のボタン入力の状態を表示するという設計でプログラムを作っていきます。
+</subsection>
+
+<subsection title="WiimoteLibの宣言と制御プログラム">
+Form1.csに以下の部分を追加します。 
+<program title="Form1.cs、ボタン入力に対応させる">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;    //WimoteLib
+
+namespace WiimoteLib_Sample {
+    public partial class SampleForm : Form {
+
+
+        Wiimote wm = new Wiimote();                  //Wiimoteの宣言
+        
+
+        public SampleForm() {
+            InitializeComponent();
+
+            wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+            wm.Connect();                          //Wiimoteの接続
+        }
+
+
+
+        //Wiiリモコンの値が変化したときに呼ばれる関数
+        void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args){
+            WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+
+            if (this.IsHandleCreated) {
+                this.Invoke( (MethodInvoker)delegate() {
+                    this.DrawForms( ws );            //フォーム描写関数へ
+                });
+
+            }
+        }
+
+        //フォーム描写関数
+        public void DrawForms(WiimoteState ws) {
+            this.label1.Text = "Button A:" + (ws.ButtonState.A);  //ボタンA
+            this.label2.Text = "Button B:" + (ws.ButtonState.B);  //ボタンB
+            this.label3.Text = "Button 1:" + (ws.ButtonState.One);//ボタン1
+            this.label4.Text = "Button 2:" + (ws.ButtonState.Two);//ボタン2
+        }
+
+    }
+}
+</program>
+</subsection>
+
+<subsection title="実行してみよう">
+1.WiiRemoteを接続します
+
+
+2.Visual C#上でF5キーを押して実行
+　実行すると下図のようなアプリケーションが起動します。 
+　　※もしエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+
+ <figure id="05-02" src="png/05-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+
+3.WiiリモコンのAボタンをクリックし続けてください。
+
+ <figure id="05-03" src="png/05-03.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+フォーム上の「Label1」の箇所に「Button A:True」と表示されれば成功です。
+
+
+4.Wiiリモコンのすべてのボタンから手を離します（押さない状態）
+
+
+ <figure id="05-04" src="png/05-04.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+フォーム上のボタンのステータスを表す表示が全て「False」になれば成功です。
+
+
+
+5.WiiリモコンのAボタンとBボタンを同時に押しこみます
+
+
+ <figure id="05-05" src="png/05-05.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+6.Wiiリモコンの1ボタンと2ボタンを同時に押しこみます
+
+ <figure id="05-06" src="png/05-06.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+
+一通りの実験が終わったら「×」をクリックしてプログラムを終了します。
+</subsection>
+
+<subsection title="解説">
+WiiリモコンのボタンのON/OFFによってFormのラベルを変化させています。
+FalseがOFF(手を離した状態), TrueがON(押下)に対応しています。
+以下、利用したAPI関数を解説します。
+
+<program>
+wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+</program>
+Wiiリモコンのボタンが押されたなど、値に変化があったときに呼ばれる関数を登録しています。
+プログラミング用語で「コールバック関数」といい、関数名を登録することで、そのイベントが発生したときに自動的にその関数が実行されるように指定します。
+ここでは、Wiiリモコンの値に変化があった場合、WiimoteChangedという関数が呼ばれるように設定しています。 
+
+<program>
+WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+</program>
+ここでWiiリモコンのステータス(状態)をwsという名前の"イレモノ"にとりこんでいます。
+正式にはここで使っているWiimoteStateはクラスですが、その名前から想像できるように、イベントで発生したボタンなどの値が取り込まれます。
+以下、使い方を見てみましょう。
+
+<program>
+this.label1.Text = "Button A:" + (ws.ButtonState.A);  //ボタンA
+</program>
+WiiリモコンのAボタンの値をlabel1に表示しています。
+ボタンが押されていたら、True を表示します。
+ボタンが離されていたら、Falseを表示します。 
+実際には「ws.ButtonState.A」が意味する値はTrueかFalseという真偽の値ですが、左側が「label1.Text」なので自動的に文字列に変換されています。
+
+<program>
+this.label2.Text = "Button B:" + (ws.ButtonState.B);  //ボタンB
+this.label3.Text = "Button 1:" + (ws.ButtonState.One);//ボタン1
+this.label4.Text = "Button 2:" + (ws.ButtonState.Two);//ボタン2
+</program>
+同様にWiiリモコンのBボタン、1ボタン、2ボタンの値をlabel2、label3、label4に表示しています。
+
+どうでしょう？とっても簡単ですね！
+このイベントのコールバック関数でステートを取得する方法は他のいろいろな入力に応用できます。
+</subsection>
+<subsection title="WiimoteStateのメンバー">
+ここでWiimoteStateで参照できるメンバーを紹介しておきます。
+WiimoteLibには実に様々な拡張コントローラーが実装され、状態を取得できることがわかります。
+
+<table title="WiimoteStateのメンバ(WiimoteLib ver.1.7)">
+ <thead>名称,解説</thead>
+ <tbody>
+ AccelCalibrationInfo,現在の加速度センサーのキャリブレーション情報
+ AccelState,現在の加速度センサーの状態
+ BalanceBoardState,現在のWiiFitバランスボードの状態
+ Battery,算出された現在のバッテリーレベル
+ BatteryRaw,現在のバッテリーレベルの計算前の値(生値)
+ ButtonState,現在のボタンの状態
+ ClassicControllerState,現在の拡張クラシックコントローラーの状態
+ DrumsState,現在の拡張ドラムコントローラーの状態
+ Extension,拡張コントローラーが挿入されているか？
+ ExtensionType,拡張コントローラーが挿入されている場合その種類
+ GuitarState,現在の"GuitarHero"拡張ギターコントローラーの状態
+ IRState,現在の赤外線センサーの状態
+ LEDState,現在のLEDの状態
+ NunchukState,現在の拡張ヌンチャクコントローラーの状態
+ Rumble,現在のバイブレーターの状態</tbody>
+</table>
+
+
+
+</subsection>
+
+</body>
+</doc>

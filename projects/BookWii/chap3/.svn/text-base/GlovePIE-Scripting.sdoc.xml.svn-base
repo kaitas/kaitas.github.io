@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>GlovePIEでつくる「高機能赤外線マウス」</title>
+<author>白井暁彦</author>
+<date>2009年5月10日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai at mail.com</email>
+
+</head>
+<body>
+
+ このセクションでは、GlovePIEを使って、高機能な赤外線マウスを作成していきます。実践的な開発を通して、WiiRemote開発のコツやGlovePIEの強力なスクリプティング機能とGUIによる支援機能をステップバイステップで学ぶことができます。
+
+
+<subsection title="高機能赤外線マウスを設計する">
+ まずはこれから作成する赤外線マウスについて、簡単に仕様を決めておきましょう。
+ 基本動作としては、WiiRemoteをセンサバーや赤外線光源に向けて、マウスのようにして使うタイプのものにします。せっかく作るのですからファイル操作やPowerPointのプレゼンテーションに実際に使える高機能なものを想定します。
+
+<table>
+<thead><tr>
+<th>WiiRemote側操作</th><th>割り当てる操作</th>
+</tr></thead>
+<tbody>
+<tr><td>赤外線</td><td>マウスポインタの移動</td></tr>
+<tr><td>十字キー</td><td>カーソルキー</td></tr>
+<tr><td>Aボタン</td><td>マウス左ボタン</td></tr>
+<tr><td>Aボタン・ダブルクリック</td><td>Enterキー</td></tr>
+<tr><td>Bボタン</td><td>マウス右ボタン</td></tr>
+<tr><td>Bボタン・ダブルクリック</td><td>Deleteキー</td></tr>
+<tr><td>A+Bボタン同時押し</td><td>デスクトップを表示</td></tr>
+<tr><td>＋ボタン</td><td>アプリケーション切り替え[Alt+Tab]</td></tr>
+<tr><td>－ボタン</td><td>アプリケーション終了[Alt+F4]</td></tr>
+<tr><td>Homeボタン</td><td>スクリプト終了</td></tr>
+<tr><td>1ボタン</td><td>GlovePIE最小化／最大化</td></tr>
+<tr><td>2ボタン長押し</td><td>PowerPointを起動</td></tr>
+<tr><td>2ボタン・シングルクリック</td><td>Escキー(プレゼンテーション終了)</td></tr>
+<tr><td>2ボタン・ダブルクリック</td><td>プレゼンテーション開始[F5]</td></tr>
+</tbody>
+</table>
+<!--
+<native format="latex2e">
+\begin{verbatim}
+＜※なぜかLaTeX環境で表がコンパイルされないので...＞
+ WiiRemote側操作 | 割り当てる操作 
+―――――――――――――――――――――
+赤外線,マウスポインタの移動
+十字キー,カーソルキー
+Aボタン,マウス左ボタン
+Aボタン・ダブルクリック,Enterキー
+Bボタン,マウス右ボタン
+Bボタン・ダブルクリック,Deleteキー
+A+Bボタン同時押し,デスクトップを表示
+＋ボタン,アプリケーション切り替え[Alt+Tab]
+－ボタン,アプリケーション終了[Alt+F4]
+Homeボタン,スクリプト終了
+1ボタン,GlovePIE最小化／最大化
+2ボタン長押し,PowerPointを起動
+2ボタン・シングルクリック,Escキー(プレゼンテーション終了)
+2ボタン・ダブルクリック,プレゼンテーション開始[F5]
+\end{verbatim}
+</native>
+-->
+WiiRemoteならではの、沢山あるデジタルボタンを活用して、長押し、ダブルクリック、A+Bボタン同時押しなどのコンビネーションを使った使いやすい操作を盛り込んでいます。もちろんこのセクションの体験を通して、ご自身のアイディアで新しい機能を盛り込んでいくことが可能です。
+
+</subsection>
+
+<subsection title="ボタンアクションの実装">
+まずは手始めに「Homeボタンで終了」を実装してみましょう。
+新しいスクリプトとして以下を記述して実行してみてください。GlovePIEスクリプトは大文字・小文字は無視されます。
+
+<program>
+if Wiimote.Home then
+ ExitScript
+end if
+</program>
+
+記述したらWiiRemoteを接続後にRunして、Homeボタンで終了できるかどうか試してみてください。
+「ExitScript」とは実行中のGlovePIEスクリプトを終了させるコマンドです。
+詳しくは、GlovePIEとおなじディレクトリにあるマニュアル(Documentation.rtf)に記載されています。
+基本的なコマンドはこのセクションで解説していきますので、いまは「そういう便利な物があるんだ」という理解でよいでしょう(本セクションの最後にまとめて紹介します)。
+
+さて、次は十字キーにカーソルキーを割り当てましょう。先ほどのようにif文をつかうと明確に条件やその後の処理を記述できますが、今回はボタンイベントに対するキーアクションを大量に設定しなければなりませんので、もっと簡単な記述方式で書き直してみます。
+
+<program>
+//WiiRemote IR mouse
+
+//Key Binds
+ExitScript = Wiimote.Home
+Key.Up     = Wiimote.Up
+Key.Down   = Wiimote.Down
+Key.Left   = Wiimote.Left
+Key.Right  = Wiimote.Right
+</program>
+
+このように「=」でつなぐことで、キー入力に割り当てるアクションが1行で表現できます。
+また「//」で始まる行はコメント行です(日本語は表示上化けてしまいます)。
+
+次は「＋ボタン」でアプリケーションを切り換え、「－ボタンでアプリケーション終了」できるようにします。「Alt+Tab」のように複数のキーを使う場合は以下のような表記をします。
+<program>
+Key.Alt+Tab = Wiimote.Plus
+Key.Alt+F4  = Wiimote.Minus
+</program>
+簡単ですね！もちろん「Key.Alt+Key.Tab」と表記してもかまいません。
+
+そして、これは「WiiRemoteのAボタンとBボタンを同時に押したときに、デスクトップを表示する」というアクションです。
+<program>
+Key.Windows+D = Wiimote.A and Wiimote.B
+</program>
+
+次は、WiiRemoteのA,Bボタンのダブルクリックを使ってEnterやDeleteを入力できるようにします。
+
+<program>
+Key.Enter  = DoubleClicked(Wiimote.A)
+Key.Delete = DoubleClicked(Wiimote.B)
+</program>
+「DoubleClicked()」という関数を使うことで、ダブルクリックを判定できます。ここで実際に動作を試すために、メモ帳などを実行してからスクリプトをRunしてみて、＋ボタンでアプリケーションを切り換え、十字ボタンやダブルクリックを試してみるとよいでしょう。最後にHomeボタンでスクリプトを停止します。
+
+次は、「2ボタン」にいろいろな機能を割り当ててみます。長押し、シングルクリック、ダブルクリックで、それぞれPowerPointの起動、Escキー、F5キーに割り当てます。
+
+<program title="2ボタンでPowerPointを起動">
+Execute("C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE")
+ = HeldDown(Wiimote.Two, 1s)
+Key.Escape = SingleClicked(Wiimote.Two)
+Key.F5     = DoubleClicked(Wiimote.Two)
+</program>
+HeldDown(対象,秒数)とすることで、長押しを検出できます。単位は秒です。「0.5」などでもよいでしょう。
+Execute("実行ファイル名")で任意のアプリケーションを起動できます。
+シングルクリック、ダブルクリックも同様に関数を使って検出することができますので今までと同じように割り当てます。
+
+さて、実際に「2ボタン」を長押しし、PowerPointが立ち上がったら、今度はダブルクリックでプレゼンテーションを起動、さらにシングルクリックでプレゼンテーション終了、「－ボタン」でPowerPoint終了、と試してみてください。Escキーは他のアプリケーションなどでもよく使いますのでここに割り当てておくのは便利そうです。
+
+PowerPointがインストールされていない場合は他のアプリケーションで試してみましょう。例えば「Execute("mspaint.exe")」とすることで「ペイント」が起動します。PrintScreenキーと張り付け(Ctrl+V)でも面白いでしょう。
+<program title="ペイントで試す場合のスクリプト">
+Execute("mspaint") = HeldDown(Wiimote.Two, 1s)
+Key.PrintScreen = SingleClicked(Wiimote.Two)
+Key.Ctrl+V      = DoubleClicked(Wiimote.Two)
+</program>
+「－ボタン」を押して終了すると「保存しますか？」ときかれますが、十字キーの右、そして「Aボタン」のダブルクリックで「いいえ」を選択することができます。もう簡単な操作ならなんでもWiiRemoteでできそうですね！
+
+最後に、左右のマウスボタンをそれぞれA,Bボタンに、そして「1ボタン」にはGlovePIEの表示切り替え機能を割り当てます。
+<program>
+UnMinimizePie = HeldDown(wiimote.One, 1s)
+MinimizePie   = wiimote.One
+
+Mouse.LeftButton  = Wiimote.A
+Mouse.RightButton = Wiimote.B
+</program>
+
+ここまでの作業でスクリプトは以下のようになっているはずです。
+
+<program title="WiiRemoteボタンアクション(完成版)">
+//WiiRemote IR mouse (part for buttons)
+
+//Key Binds
+ExitScript = Wiimote.Home
+Key.Up     = Wiimote.Up
+Key.Down   = Wiimote.Down
+Key.Left   = Wiimote.Left
+Key.Right  = Wiimote.Right
+
+//combination
+Key.Alt+Tab = Wiimote.Plus
+Key.Alt+F4  = Wiimote.Minus
+Key.Windows+D = Wiimote.A and Wiimote.B
+
+//Double Clicks
+Key.Enter  = DoubleClicked(Wiimote.A)
+Key.Delete = DoubleClicked(Wiimote.B)
+
+//Multifunctions on Two-Button
+Execute("C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE") = HeldDown(Wiimote.Two, 1s)
+Key.Escape = SingleClicked(Wiimote.Two)
+Key.F5     = DoubleClicked(Wiimote.Two)
+
+//Hide and Show by One-Button
+UnMinimizePie = HeldDown(wiimote.One, 1s)
+MinimizePie   = wiimote.One
+
+//Mouse Buttons are linking to A and B
+Mouse.LeftButton  = Wiimote.A
+Mouse.RightButton = Wiimote.B
+</program>
+
+いかがでしょうか？GlovePIEスクリプトの短い記述だけで、かなり高機能なツールがつくれることが実感できたでしょうか？
+
+ </subsection>
+
+ <subsection title="デバッグ機能・関数・フィルタの活用">
+さて、ボタンアクションを一通り使いこなせるようになって、だんだん楽しくなってきたところでしょう！しかしまだこの状態では、マウスポインタは相変わらず動きません。センサーバーの赤外線にWiiRemoteを向けて、自在にマウスポインタが操作できたらどんなに楽しいでしょうか。
+
+はやる気持ちを抑えて、まずは「デバッグ機能」を学びましょう。
+
+先ほどのスクリプトの一番下に以下の記述を足してみましょう。
+<program>
+Debug = mouse.x
+</program>
+実行すると、GlovePIEの「Runボタン」の右側に、なにやら数字が表示されるようになったはずです。これは現在のマウスのX(横方向)の値です。ここでマウスを動かしてみましょう。値は左から右に行くにつれ、ゼロから1への小数をとるはずです(これを値域[0,1]と表現します)。
+「Debug=」とすることで、デバッグ用に内部の値を表示する機能です。
+
+続いて、以下のDebugPrint()関数も試してみましょう。
+<program>
+Debug = mouse.x
+DebugPrint("X="+mouse.x+" Y="+mouse.y)
+</program>
+これは別のウィンドウが開き、時系列でより多くのデータを読むことができます。用途に合わせて使い分けるとよいでしょう。
+
+さて、それではついにセンサーバーを使って、このデバッグウィンドウに赤外線センサーの値を表示してみましょう。
+先ほどのテストコードを以下のように書き換えます。
+<program>
+Debug = "mx="+mouse.x+" my="+mouse.y
+if Wiimote.dot1vis then
+ DebugPrint("X="+Wiimote.dot1x+" Y="+Wiimote.dot1y)
+end if
+</program>
+
+「dot1vis」が「最初の1点目が見えるかどうか」、「dot1x」と「dot1y」はその座標を表しています。
+
+早速実験してみましょう。最低でも1点の赤外線光源が見えればよいので、近くにセンサーバーがない場合は、太陽光や電球光源などを探してから実行しましょう。光源として使えるかどうか不安なときは、あらかじめWiinRemoteを使って確認すると便利です。
+
+<figure id="GlovePIE-DebugPrintIR.png" src="png/GlovePIE-DebugPrintIR.png" title="別ウィンドウ表示に赤外線センサーの値が表示される">
+<!--<attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+赤外線光源に向けたとき、デバッグウィンドウに値が書き足されていく様子が見えれば成功です！値が書き足されない場合は、WiinRemoteをつかって赤外線が正しく認識できているか試してみましょう。ウィンドウが見つからないときは、GlovePIEのウィンドウの裏側に隠れていることがあるので調節してみましょう。
+
+さて、原理的にはこのdot1x,dot1yをマウスのx,yに割り当てれば完成、ということなのですが実際にはそう単純ではありません。
+
+<program title="このままではマウスポインタは常に右下に行ってしまう">
+Mouse.x = Wiimote.dot1x
+Mouse.y = Wiimote.dot1y
+</program>
+
+実はこのままでは画面上のマウスポインタとWiiRemoteの赤外線センサーが取得する値とのスケールがあっていません。さらに動作方向の極性(正負)があっていません。操作のイメージとしては、WiiRemoteを上に向けたらマウスポインタが上に、左に向けたらマウスポインタが左に行って欲しい感じがします(多くのWii用ゲームがそうであるように)。そのため、スケーリングをして、さらにある軸の正負を反転させる必要があります。
+
+WiinRemoteや、デバッグ出力で観察できるように、WiiRemoteの赤外線センサーは水平方向Xは[0,1023]の値域、垂直方向Yは[0,767]の値域をとります。WiiRemoteをセンサーバーに向かって上から下に向けるとき、WiinRemoteからみえる赤外線の点像は上部から下部、生値Xはゼロからはじまって767に向かって増加していきます。また左から右に向けたとき、WiinRemoteからみえる赤外線の点像は右側から左側へ、生値Xは1023から始まってゼロに向かって減少していきます。
+
+対して左辺側のマウスポインタの座標は左上を(0,0)、右下を(1,1)とする[0,1]の値域となっています。これら異なる値域をスマートにつなぐ関数が「MapRange(x, a,b , c,d )」です。xという値域[a,b]をとるもとの入力値を、値域[c,d]に変換することができます。
+よって、以下のように関数を記述することで、正しい操作感が得られるように変換されます。
+
+<program title="正しく変換される式">
+Mouse.x = MapRange(Wiimote.dot1x, 1023,   0 , 0,1)
+Mouse.y = MapRange(Wiimote.dot1y,    0, 767 , 0,1)
+</program>
+さて、これで完成！と思いきや、実行してみると…どうでしょう？何か違和感はありませんか？人によっては感じないかもしれませんが、実際にこの赤外線マウスを使って、フォルダを開き、ファイルを移動して…といった操作を試してみるとよいでしょう。するとポインタが、高速にブルブルふるえて非常に操作しづらいはずです。この「ふるえ」にはいろんな原因があります。一つは赤外線センサーのノイズ(特に“ドリフトノイズ”と呼ばれることもありますが、センサーの内部がわかるわけではないので単に“ノイズ”としておきましょう）、それから人間の手そのものが持っている微少な震えです。マウスの場合は机の上の摩擦で気にならないのですが、WiiRemoteの場合は空中で、しかもかなり高速高精度の計測を行うので、このような人間の手の震えの存在も理解しながら実装していく必要があります。信号処理の知識はこのようなケースで非常に役に立つでしょう。この場合は急速な動きである高周波成分を除去する「ローパスフィルタ」が効果的ではないでしょうか。
+
+難しい話はさておき、ローパスフィルタは平均をとることで実現できます。GlovePIEスクリプトにはこういった便利な関数が数多く実装されています。
+<dl>
+ <dt>Smooth(x, [ExtraFrames, [DeadbandDistance]])</dt>
+ <dd>Smooths関数は値xを過去の[ExtraFrames]の件数分だけつかって平均を算出します。もし[DeadbandDistance]以上の変更がなければ、全てにおいて変更がなかったものとして判断します(省略時のデフォルト[DeadbandDistance]は0)。</dd>
+</dl>
+
+先ほどのMouseへの代入の式において、Smooth関数を取り入れてみましょう。ExtraFramesは3にしておきます。これで過去3フレームの値を使って平均をとります。デバッグ出力も、以下のようにすっきり整理します。
+
+<program title="ローパスフィルタを実装">
+if Wiimote.dot1vis then
+ Mouse.x = MapRange(Smooth(Wiimote.dot1x, 3), 1023,    0, 0,1)
+ Mouse.y = MapRange(Smooth(Wiimote.dot1y, 3),    0, 767 , 0,1)
+ Debug  = "mx="+Mouse.x+" my="+Mouse.y+"  IRX="+Wiimote.dot1x+" IRY="+Wiimote.dot1y
+end if
+</program>
+
+どうでしょうか？ぐっと安定感のあるマウスポインタになったのではないでしょうか？
+信号処理の理論では、適切なExtraFramesを算出する方法もありますが、今回の場合は経験的に入れても全く問題ないでしょう。3～10程度で試してみるとよいでしょう(値が大きくなるとスムースにはなりますが、その分処理が重たくなります)。
+
+さて、これで高機能赤外線マウスは一旦完成です。
+ここまでの全てのスクリプトを掲載します。
+<program title="高機能赤外線マウス(完成版)">
+//WiiRemote IR mouse (basic)
+
+//Key Binds
+ExitScript = Wiimote.Home
+Key.Up     = Wiimote.Up
+Key.Down   = Wiimote.Down
+Key.Left   = Wiimote.Left
+Key.Right  = Wiimote.Right
+
+//combination
+Key.Alt+Tab = Wiimote.Plus
+Key.Alt+F4  = Wiimote.Minus
+Key.Windows+D = Wiimote.A and Wiimote.B
+
+//Double Clicks
+Key.Enter  = DoubleClicked(Wiimote.A)
+Key.Delete = DoubleClicked(Wiimote.B)
+
+//Multifunctions on Two-Button
+Execute("C:\Program Files\Microsoft Office\OFFICE11\POWERPNT.EXE") = HeldDown(Wiimote.Two, 1s)
+Key.Escape = SingleClicked(Wiimote.Two)
+Key.F5     = DoubleClicked(Wiimote.Two)
+
+//Hide and Show by One-Button
+UnMinimizePie = HeldDown(wiimote.One, 1s)
+MinimizePie   = wiimote.One
+
+//Mouse Buttons are linking to A and B
+Mouse.LeftButton  = Wiimote.A
+Mouse.RightButton = Wiimote.B
+
+//Assign Infrared as mouse input
+if Wiimote.dot1vis then
+ Mouse.x = MapRange(Smooth(Wiimote.dot1x, 3), 1023,    0, 0,1)
+ Mouse.y = MapRange(Smooth(Wiimote.dot1y, 3),    0, 767 , 0,1)
+ Debug  = "mx="+Mouse.x+" my="+Mouse.y+"  IRX="+Wiimote.dot1x+" IRY="+Wiimote.dot1y
+end if
+
+</program>
+さて、実際に使い込んでボタンアサインや細かなパラメーターなどを変更してみるとよいでしょう。なおこのスクリプトは赤外線が見えないときはマウス制御を奪いませんので、マウスと協調作業することもできます。実行したままタスクバーにしまっておけば(最小化ボタンの左にタスクバー格納ボタンがあります)、何かと便利でカッコイイです。
+
+A+Bボタン同時押しでデスクトップを表示し、＋ボタンでアプリケーションを切り換え、Bボタンで右クリック、十字キーで細かな作業をし、Aボタンのダブルクリックで決定、2ボタンでEsc…といった感じで慣れると快感になってきます。スクリプトはHomeボタンを押せばいつでも終了できます。
+
+</subsection>
+
+<subsection title="GUIをつかったスクリプト記述支援">
+さて、さきほど最後に赤外線の座標系をマウスの座標系に合わせるために、新しいMapRangeという関数を使いました。GlovePIEは非常に高機能なスクリプト環境を装備しているので、そもそも「mouse」といったキーワードや便利な関数、コマンドなどを、付属のマニュアルだけで探してくるのは(しかも「未完成」と明記されています...)、なかなか骨の折れる作業です。
+
+GlovePIEの新機能として「GlovePIE GUI」が実装されています。グラフィカルな環境で、入出力の関係を結びつけると自動的にスクリプトが作成され、接続関係なども管理してくれるようです。マニュアルをよく読んでいくと「WiiRemote関係の機能はGUIを使わない方が良い」と書かれているのですが、筆者が試した感覚では、WiiRemote→キーボード・マウス等に使うのであれば十分使えますし、最終的にテキストで表現されるスクリプトが全てなので、GlovePIEの機能を素早く調べる上ではかなり役立つ環境ですので紹介しておきます。
+
+練習のために、先ほど最後に作成したWiiRemote→マウスの変換式をGUIで作成してみましょう。
+まずは先ほど作成した「高機能赤外線マウス」を保存して、一旦GlovePIEを起動し直してください。
+新しいGlovePIEが起動したら、メニューの「Edit」の下あたりにある「GUI」というタブをクリックしてください。
+ボタンが2つありますが「Detect Output Emulate」を押すと、使用可能な出力デバイスがリストされますので、「Output Device」から「Mouse」を選んでください。下にたくさんの操作可能なプロパティが現れますのでここから「x」を選び「Edit Manualy」ボタンを押します。
+
+<figure id="GlovePIE-GUI.png" src="png/GlovePIE-GUI.png" title="GlovePIE GUI">
+<!--<attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+「Input Device」というプルダウンがありますので、ここから「Wiimote」を選びます。
+「Number」は複数のWiiRemoteを接続した場合ですので空白のままで、その隣の「Part of device, or a numeric value, or expression:」に「dot1x」と書いてみてください(入力支援機能がすでに働いているはずです)。プルダウンから選択するのもよいでしょう。
+
+さらに「More」というボタンを押して、詳細を表示します。「Function:」というプルダウンで「Smooth」を選ぶと「Frames」が現れますので「3」を設定し、最後に「Convert from source range」から[min]と[max]をそれぞれ、デフォルトで入っている[0,1023]から[1023,0]に書き換えて、最後に「Apply」という大きなボタンを押して数秒待ちます。
+
+GUIタブから「Untitled」と表示されている通常のスクリプトタブに戻ります。すると、
+<program>
+Mouse.x = MapRange(Smooth(Wiimote.dot1x, 3), 0,1023, 0,1)
+</program>
+というように、先ほどと全く同じスクリプトが自動生成されていることが確認できます。もちろん実行もできますが、同じ手順を再度「GUI」タブに戻って「mouse」→「y」→「Edit Manualy」→「Wiimote」…というように選んで完成させてみてください。
+GUIで作成したスクリプトは必ず文末に現れるようです(GlovePIE自体が手続き型言語ではないので、順番が問題になることはあまりない)。
+
+今回は新規スクリプトで実験しましたが、既存のスクリプトでも十分に利用できます。新機能を追加するとき、新しくキーボードに割り当てたいが名称がわからないとき、適切な値域を扱いたいが基本的な値を調べるのが面倒なとき...などに非常に役に立ちます。
+WiiRemoteへの出力(例えばLEDやバイブレーター、スピーカーなど)もまだサポートされていませんが、MIDIなどはかなり整備されているようなので、今後、アップデートされるようであれば機能強化が期待されるところです。
+
+</subsection>
+
+<subsection title="装飾しよう：LED、スピーカーでバイブレーター">
+ここから先は、余力のある人だけでかまいません。GlovePIEのもつ様々な機能を利用して、より多くの機能を実装してみましょう。
+<subsubsection title="サンプルスクリプトを読もう">
+さて、高機能赤外線マウスを自力で完成させられたあなたは、もう他のPIEスクリプトを読むのが難しくなくなっているはずです。
+「WiimoteScripts」フォルダの中にあるさまざまな例を読んでみることをお勧めします。多くはPCゲームのキーボード・マウスのエミュレーションが多いのですが、より簡単に操作できるよう様々なスクリプティングテクニックが読み取れます。他にもこのディレクトリには、WiiRemoteの基本機能に対する解説的なスクリプト、例えばバッテリー残量を表示する「WiiBattery.PIE」や、Midiと組み合わせた簡易ドラムセット「WiiDrums2.PIE」、ヌンチャクまで使った本格ギター「Wiitar」、加速度から距離を求めようとする「TestVelocityPos.PIE」など参考になるものがあります(ならないものも沢山あります！)。
+</subsubsection>
+
+<subsubsection title="ウィンドウの境界を振動で通知">
+バイブレーターは最初に試したとおり「Wiimote.Rumble」で制御できますので、マウスポインタが現在のウィンドウの境界にぶつかったら、振動するようなスクリプトを追加してみます。
+
+<program title="ウィンドウの境界でバイブレーターを鳴らす"><![CDATA[
+ var.hit = false;
+ var.hit = mouse.CursorPosX<Window.Left or mouse.CursorPosX>Window.Left+Window.Width
+ var.hit = var.hit or mouse.CursorPosY<Window.Top  or mouse.CursorPosY>Window.Top+Window.Height
+ Wiimote.Rumble =var.hit;
+]]></program>
+
+変数var.hitは現在のマウスポインタの位置と、現在のウィンドウ境界を比べて、ポインタが外にいる場合trueになります。これをWiimote.Rubmleにwつなげています。
+
+これを応用すれば弱視の方や何らかの理由でマウスが使えないかた(例えば産まれたばかりの赤ん坊を抱っこしていて...)でもエクスプローラーのようなGUIが触りやすくなるかもしれません。
+
+</subsubsection>
+
+<subsubsection title="LEDでタイマーを作る">
+学会などでプレゼンテーションをしているときに、ついつい時間オーバーしてしまったりしませんか？ですが本番になると逆に時間が気になりすぎて、堂々と話ができなかったり…。このスクリプトは、手元に持っているであろうWiiRemoteのLEDを使って、残り時間を表現します。
+
+<program title="LEDによるタイマー表示">
+Wiimote.Led1 = HeldDown(true, 5s);
+Wiimote.Led2 = HeldDown(true, 10s);
+Wiimote.Led3 = HeldDown(true, 20s);
+Wiimote.Led4 = HeldDown(true, 1 minutes);
+</program>
+この例ではWiiRemoteの青色LEDが左から順に、5秒、10秒、20秒、1分…というように点灯して最後は4つ全点灯します。Windowsのプログレスバーのようなイメージですね。あらかじめプレゼンテーションの構成と共に、適切なラップタイムを設定しておくというのもよいでしょう。
+
+</subsubsection>
+
+<subsubsection title="スピーカーを鳴らす">
+最後にスピーカーを使ってみます。GlovePIEで使えるWiiRemoteのスピーカー機能は非常に低レベルな機能しか提供されていません。周波数とボリュームを設定し、それが適切な長さだけ再生されるように自分で管理する必要があります。WAVファイルを再生できるような機能もそのうち出てくるのかもしれませんが…。このスクリプトはその構造を理解するためだけの目的で書かれています。1ボタンを押すたび様々な音(ノイズ？)が鳴ります。
+
+<program><![CDATA[
+if Wiimote.One then
+ Wiimote.Volume = 1.00
+ Wiimote.SampleRate = 3640 Hz
+ while ( true )
+  if var.f<=0 then
+   var.f=360
+  end if
+// wait 10ms
+  debugprint("f="+var.f + "Cos:"+cos(var.f)+" Freq:"+abs(500*cos(var.f)+1000));
+  Wiimote.Frequency =abs(500*cos(var.f)+1000)
+// Wiimote.Frequency = 261.62
+  var.f=var.f-10;
+ end while
+else
+ wait 1000ms
+ Wiimote.Frequency = 0Hz
+end if]]>
+</program>
+
+コメントアウトされていますが、いくつかの周波数(たとえば261.62Hz)などでキレイに聞こえる音が存在します。インターネットを探すと音階と周波数の関係についてのデータがありますので、その周波数を使えば音階を表現することも可能でしょう(やはり音質はそこそこですが...)。
+</subsubsection>
+
+<subsubsection title="コマンドラインによる起動自動化">
+PIEスクリプトを作り込んでいくと、今度はGlovePIEから読み込んで実行…という流れが面倒になってくるはずです。アート作品の展示などに使う場合はぜひとも自動起動させたいところです。GlovePIEはコマンドラインからの起動もサポートしています。
+
+起動時のオプションで、以下のように解説されています。
+
+GlovePIE.exeに続いて以下の3種類の方法でファイル名を指定します。空白などが入る場合はクォーテーション「"」で囲むのを忘れずに。拡張子「.PIE」は含んでも含まなくてもよいようです。
+<dl>
+  <dt>filename.PIE</dt>
+  <dd>起動時に開いておくPIEスクリプトを指定。「Run」メニューから「Run!」を選ばない限り実行されない。</dd>
+  <dt>-filename.PIE</dt>
+  <dd>上記と同様、起動後は自動でスクリプトが開始する</dd> 
+  <dt>/r:filename.EXE</dt>
+  <dd>PIEが起動したときに、自動開始する他の「.EXE」形式の実行ファイルを指定。例えばゲームとPIEスクリプトを同時起動など。</dd>
+</dl>
+
+例えば以下のようなバッチファイルを書いておけば、すぐに作成した赤外線マウスが使えます。
+<program title="startIRmouse.bat">
+"C:\GlovePIE029\GlovePIE.exe" -"C:\GlovePIE029\IRmouse"
+</program>
+もちろんIRmouse.PIEは指定した場所に保存しておいてください。
+</subsubsection>
+
+GlovePIEの可能性はGlovePIEスクリプトの使いこなしにあるといっても過言ではありません。
+本書はWiiRemoteによるプログラミングのための本ですが、このセクションで学んだとおり、GlovePIEによるスクリプティングだけでもかなりのことができます。また、GlovePIEはMIDIだけでなくジョイスティックやデータグローブ、OSCやSpeechAPIといった他のインタラクション技術でも使われているような基本的なユーザーインタフェース周辺機器のエミュレーターやコンバーターとしてのポテンシャルもとても高いソフトウェアです。
+また、かなり様々な言語の仕様を取り込んでいるので、プログラミング言語マニアとしても勉強になります。
+
+<!--最後に付録として、GlovePIEのドキュメントの部分訳を掲載します。-->
+
+これでこの章はおしまいです。Bluetooth接続やWiinRemoteやGlovePIEなど、基本となるツールの使い方はしっかりと理解できたでしょうか？この先のプログラミング編に入る前に「わかったつもり」を脱しておいてください。またここでの知識は、実際に新しいハードウェアを購入したり、新しい作品を作ったり、展示を行う上での改造を行ったりといったときにこの章で学んだ内容は必ず役に立つものです。
+</subsection>
+</body>
+</doc>

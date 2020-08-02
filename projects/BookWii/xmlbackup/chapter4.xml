@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='shift_jis'?>
+<doc xml:lang='ja'>
+	<head>
+		<title>WiiRemoteプログラミング入門</title>
+		<author>白井暁彦</author>
+		<date>2008年11月25日最終更新</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+	</head>
+	<body>
+		<section title="最小のWiiRemoteプログラム">
+			<program src="src/Wiimedia2/HelloWiimedia/HelloWiimedia.cpp" title="HelloWiimedia.cpp" />
+			<program src="src/Wiimedia2/Wiimedia2/wm_base.cpp" title="wm_base.cpp" />
+		</section>
+		<section title="バイブレータとLED"></section>
+		<section title="キーボード・マウス入力"></section>
+		<section title="ポーリング受信と動作周波数の測定"></section>
+		<section title="姿勢検出・重力加速度"></section>
+		<section title="振りぬく力・パンチ力測定"></section>
+		<section title="モーション解析"></section>
+	</body>
+</doc>

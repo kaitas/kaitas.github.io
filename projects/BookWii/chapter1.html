@@ -1,0 +1,514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2008年12月29日最終更新" lang="ja">
+<title>WiiRemoteのススメ</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">WiiRemoteのススメ</h1>
+
+<div class="date">2008年12月29日最終更新</div>
+<div class="author">白井暁彦</div>
+<div class="email"><a href="mailto:shirai at mail.com" onmouseover="hilightHyperlink(this)" onmouseout="normal(this)">shirai at mail.com</a></div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id19" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">はじめに</a>
+<ul>
+<li> <a href="#doc2_id46" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ハッキング本ではありません</a>
+<li> <a href="#doc2_id49" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">対象読者</a>
+<li> <a href="#doc2_id67" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">筆者について</a>
+<li> <a href="#doc2_id70" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">本書のねらい</a>
+<li> <a href="#doc2_id73" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">注意事項</a>
+<li> <a href="#doc2_id76" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">謝辞</a>
+</ul>
+<li> <a href="#doc1_id21" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">本書の構成</a>
+<li> <a href="#doc1_id23" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteの基礎知識</a>
+<ul>
+<li> <a href="#doc4_id133" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">“革命”の主人公「Wiiリモコン」</a>
+<li> <a href="#doc4_id144" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteのしくみ</a>
+<ul>
+<li> <a href="#doc4_id146" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">開発の歴史と公式スペック</a>
+<li> <a href="#doc4_id155" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">スペック詳細</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id25" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteで何が創れる？</a>
+<ul>
+<li> <a href="#doc5_id244" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">巨大なイカロボット「IKABO」を操作する</a>
+<li> <a href="#doc5_id261" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">自由に氷柱を生やす「Gla&ccedil;on」(奈良先端大)</a>
+<li> <a href="#doc5_id276" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ニオイの吹き矢「La fl&egrave;che de l'odeur」(金沢高専)</a>
+<li> <a href="#doc5_id298" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFitを使った文学作品『人間椅子』</a>
+<li> <a href="#doc5_id308" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線をつかったモーションキャプチャ「SoundQuest」(フランス・ラヴァル)</a>
+</ul>
+</ul>
+</div>
+
+<h2 id="doc1_id19">はじめに</h2>
+
+
+<h3 id="doc2_id46">ハッキング本ではありません</h3>
+
+<p class="first_ja">本書を手に取った賢い読者の貴方、まず貴方に質問をしたいとおもいます。</p>
+<p>貴方はこの本にどんな期待をしていますか？</p>
+<p>『WiiRemoteプログラミング入門』</p>
+<p>貴方が手に入れたい知識はWiiRemoteの使い方？プログラミング？人に聞けない数学や物理？インタラクション技術の開発テクニック？はたまた欲張りにも「そのすべて」でしょうか？まず最初にキッパリと宣言させていただきますが、この本は任天堂Wiiコンソールに関する『ハッキング本』ではありません。興味本位や不正に利益を得る目的で、ゲームを改造したり不正なコピーをする行為は、ゲームそのものの面白さを奪うだけでなく、そのゲームタイトルを世に生み出すために魂を削って制作した人々にも、深い悲しみと経済的ダメージを与えます。貴方がゲームを愛するなら、そんな行為に時間を費やしてはいけません。</p>
+<p>ハッキングにもいろんな意味がありますが、仮に不正を働くための「ハッキング本」があるとすれば、この本が目指すところは、その正反対の、WiiRemoteをつかった楽しい「クッキング本」、かもしれません。</p>
+
+<h3 id="doc2_id49">対象読者</h3>
+
+<p class="first_ja">この本はWiiRemote(Wiiリモコン、Wiimote様々な呼称がありますが本書ではWiiRemoteに統一)を使って、プログラミングを学びます。ついでに数学や物理の使い方も演習を通して学びます。</p>
+<p>目標としては、貴方が大好きであろう、コンピュータを使ったゲーム、その想像力や可能性を最大限に加速するための「最初の武器」を身につけるための「きっかけ」を与えることを目指しています。</p>
+<p>読者としては、以下のような方々を対象として想定しております。</p>
+
+<ul>
+<li> プログラミングを覚え始めた中学生・高校生
+<li> WiiRemoteを使いたい専門学校生や大学の1～2年生ぐらい
+<li> 講義やゼミのテキスト(文系／理系、工学／芸術系は問わず)</ul>
+
+<p>そんな読者の皆さんに、WiiRemoteをはじめとする新しいヒューマンインターフェイスを使った、エンタテイメントシステムの世界の「開拓の面白さ」、学校で学ぶ物理や数学の「使いこなし方」、そしてほんのすこし「世界の広さ」を理解してもらえればいいかな、と考えています。インタラクション技術の「広さ」と「深さ」を知ることが、明日の新しいエンタテイメントシステムを作るのです。</p>
+<p>すでにコンシューマゲーム機やPC、Flashなどでプロ級のゲームプログラミングを行っているシニアエンジニア以上の読者の貴方は、きっとここまで読んで『なぁんだ、この本？役に立つのかな？』と思ったかもしれません。前述の通り、この本には任天堂の守秘義務にふれるような事は一切書かれていません。Wiiに関する内部仕様に関しては、任天堂から提供されている公式の技術文書をご利用ください。</p>
+<p>しかし、任天堂から提供される公式の情報はあくまでゲームを作るための基本情報のはずです。よりよいゲームを開発するための、想像以上のWiiRemoteの使い道や、ちょっとした気づきになるような情報が、本書に少しでも存在すれば幸いです。</p>
+
+<h3 id="doc2_id67">筆者について</h3>
+
+<p class="first_ja">筆者(私、白井暁彦)は、1994年ごろから、ヒューマンインターフェイス、リアルタイムコンピュータグラフィックス、物理シミュレーション、触覚インタフェースといったバーチャルリアリティ技術を中心とした基礎技術をエンタテイメント産業の実用の世界に使えるようにするための技術の研究開発を行ってきました。ゲーム用CGの根幹や、大学の研究室、次世代放送用技術の研究開発に身を置いた時期もありますし、テーマパークアトラクションの設計を行ったり、日本やフランスの大学で芸術学部や工学系の学部から大学院生まで幅広くの学生の指導・教育をしてきたりもしました。</p>
+<p>中でも、16年以上続いている「国際学生対抗バーチャルリアリティコンテスト(http://ivrc.org/)」のプロデュースや、Laval Virtual ReVolutionというフランスで開催されている国際VR作品公募展のチェアマンの経験を通して、世界中から集まった多くの新規な（新奇な？）デバイスを使ったインタラクティブ作品の裏側とその開発を行った作者に出会う機会を得てきました。</p>
+<p>現在は科学コミュニケーターという職業で、最先端の情報科学を世界中にわかりやすく伝える仕事をしています。日本の研究者は特にこの「インタラクティブ技術」のセンスや実装能力が非常に高く、世界から高い評価を受けています。仕事柄、世界のステージに立つその作者やプロジェクトを支援することが多いのですが、驚くことに日本や海外に限らずそのクリエイターは「若い学生」が多いのです。また、新しい表現、すばらしい技術革新を生み出すクリエイターが「必ずしも十分な基本技術を体系的に身につけているわけではない」という状況にもよく遭遇しました。</p>
+<p>私が過去にゲーム業界で働いていたときには、仕事柄、数多くのゲームデザインを担当する企画系の方とお話しする機会が多かったのですが、『面白い体験をつくるノウハウ』は、たいてい誰かの「頭の中」に蓄積されており、書籍化は難しいという話を聞くことが多くありました。また最近非常に人気のある、メディアアート・デジタルアート系の大学の先生方も、それぞれアートや映像技術などの専門家なのですが「体系的なインタラクション技術の基礎」は以外と教科書的にまとまっていない、と耳にします。常識にとらわれていては新しいゲームやアートは創れませんが、インタラクティブ技術にかかわるハードとソフトの中間領域に、基礎技術を体系的に伝える教科書の1冊ぐらいは欲しいな、と何度も感じてきました。</p>
+<p>筆者はこの本の執筆を通して、現在は「ただの学生さん」かもしれない貴方が、将来ゲーム開発の現場で働く若手のエンジニアや、未来のインタラクティブ技術に革新を与えるアーティストになるかもしれない、と考えながら執筆しています。皆さんが、何に気づき、何を武器にして、新しい世界のフィールドに立っていくのか、そのノウハウを書籍というカタチで共有することを試みています。皆さんも、チャンスがあれば映像やホームページ、論文などの文章にして、共有に挑戦してみてください。</p>
+
+<h3 id="doc2_id70">本書のねらい</h3>
+
+<p class="first_ja">この本に書かれている情報の多くは、上記のような『まだ誰もやったことがない、コンピュータを使ってあたらしい表現をしよう！』としている若者に対して『攻撃力を加える“インタラクション技術”という武器を与えよう！』という視点によって書かれています。こういう「考え方のヒント」はなかなかまとまった書籍にはしづらいものです。インタラクティブシステムの工学的な開発・デザインに関するまとまった書籍や、体系づけられた学問は、（日本では）この10年以上形になっていない状況です。それだけ成長途上であり、経験や経験則に依存する世界でもあるからです。</p>
+<p>しかし現実はその状況に甘んじていられません。読者のみなさんがもし、研究室やゲーム開発、インタラクティブ作品開発チームの先輩エンジニアなら、ひとりでできることは限られています。誰も見たことがないプロジェクトをすすめるために、時には「未知数の後輩」に対して、ある時は事細かにソースコードを紐解き、ある時は高校の『数学I』の教科書を持ち出して、熱っぽく語らなければならないときもあるでしょう(しかも開発の真っ最中に！)。本書は、その『すばらしい講義で解説済みの(貴方なら)1秒で理解できるような数式や実装方法』を目の前に、何日もウンウンと唸っている後輩がいるときに、『しょうがないなァ、この本でも読んでやってみろよ』と、机上に付箋付きでおいてあげられるような、そんな書籍になればと思い、書き始めました。</p>
+<p>実際に、執筆をすすめてみると、扱わなければならない基礎的な話があまりに多く、なかなかつっこんだ事例やすぐに使えるレシピばかりを紹介するのは大変な作業であることがわかりました。それでも、多くの人に、新しく学べる分野を示すことはできていると思います。もし、本書を読んで『この章のこれを突っ込んでいきたい！』と思う人がいれば、それは本書のねらい通りです。ぜひ、実験や研究をして、論文を書き、本書を参考文献に加えてください。</p>
+<p>また本書の一部は、金沢高等専門学校の小坂崇之先生のご協力により、WiiRemoteを使った、初心者向けのステップバイステップのC++／C#のプログラミング演習本としても機能します。『本書を学校の演習に使っています！』といったお話もありましたら、今後のためにフィードバックをいただけると、非常に嬉しく思います。</p>
+
+<h3 id="doc2_id73">注意事項</h3>
+
+<p class="first_ja">WiiRemote関係の技術は日進月歩、秒進分歩です。世界中の技術者の努力により、使えなかったものが使えるようになったり、想像もしないすばらしい結果を生み出すこともありますが、公開されているものが都合によって非公開になったり、有料になったりといったこともあります。本書は発行時において可能な限り最新の情報を記載できるよう努力しておりますが、将来にわたり保証されるものではありません。また本書で掲載されているソースコードやプログラム、内容等も将来にわたり正確さが保証されるものではありません。</p>
+<p>文中の「Ｗｉｉ」は以後、特に「TM」などを標記しませんが、任天堂株式会社の登録商標です。本書は任天堂株式会社とは一切関係がありません。本書に記載された内容を実行した事による不利益等は全て製品保証の対象外になる可能性があり、すべてはユーザーの責任であることをご理解ください。</p>
+
+<h3 id="doc2_id76">謝辞</h3>
+
+<p class="first_ja">この本を書き上げるにあたり、数多く方々にお世話になりました。まず、ゲーム産業に歴史的革命を与えた任天堂の開発者のみなさんに言葉にできない感謝の気持ちを伝えたいと思います。そして編集を担当した大内さん。そして特に執筆やコード提供で協力をいただいた木村秀敬さん、高橋誠史さん、南澤孝太さん、金沢工業専門高等学校の小坂崇之先生、奈良先端科学技術大学院大学の井村誠孝先生、くるくる研究室のみなさん、一年半にわたる遅筆な筆者に最後まであきらめずおつきあいいただき、ありがとうございました。ステキな表紙イラストを描いていただいたタナカユカリさん。そして、世界中のWiiRemote開発者のみなさん、本文中にてお世話になった技術と共に、可能な限りお名前つきでご紹介していきたいと思います。最後に、激烈な昼間の仕事の合間の数少ない休暇、貴重な家族との時間の削減に文句を言いながらも執筆やコーディングを応援してくれた妻・久美子、息子の成彦と隆佳に、愛と感謝を伝えたいと思います。</p>
+<p>さあ、読者の皆さん、次は貴方がレヴォリューション(革命)を起こす番です！</p>
+
+<h2 id="doc1_id21">本書の構成</h2>
+
+<p class="first_ja">本書は大まかに、3つのパートで構成されています。</p>
+<p><b>【パート1】基礎知識・導入編(第1章～3章)</b>このパートでは、WiiRemoteをつかったプログラミングをはじめるにあたり、知っておくべき知識や先人の開発したプロジェクト、ツール類、そして開発に必要なソフトウェアのセットアップが紹介されています。今までにWiiRemoteで開発を行ったことがある人は読み飛ばしてもかまいません。</p>
+<p><b>【パート2】プログラミング基礎編(第4章)</b>このパートでは、オープンソースで開発されているオープンソースのAPIプロジェクト「WiimoteLib」と無料で利用できるMicrosoft Visual Studio Expressを利用してC++やC#のプログラムを書くことで、WiiRemoteとPCがどのように通信を行い、どのようにしてセンサー類の値が取得できるのかなど、基盤となる技術をステップバイステップで詳細に解説します。</p>
+<p><b>【パート3】応用編(第5章～9章)</b>このパートでは、4章で扱わなかったDirectXによる3DCG、FlashやProcessingを用いた、より具体的なアプリケーション開発の例を紹介します。DirectXやActionScript3など専門の知識が必要になりますので、ご自身の利用したいケースに近いサンプルを中心に読みほどくことをお勧めします。</p>
+<p>関連した雑談は「コラム」にまとめてあります。</p>
+<p>※本書の中で扱ったサンプルプログラム等は、正誤表と共に<a href="http://www.ohmsha.co.jp/data/link/bs01.htm" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">オーム社のHP「書籍連動／ダウンロードサービス」</a>にて入手できる予定です。訪問してみてください。</p>
+
+<h2 id="doc1_id23">WiiRemoteの基礎知識</h2>
+
+<p class="first_ja">ここでは、WiiRemoteを使ったプログラミングを学ぶ前に、まずWiiRemoteの基礎知識をまとめておきます。</p>
+
+<h3 id="doc4_id133">“革命”の主人公「Wiiリモコン」</h3>
+
+<p class="first_ja">「Wii」(ウイイ)は2006年末に発売された、任天堂の家庭用ゲーム機です。英語の「We(わたしたち)」と特徴的なコントローラー「Wiiリモコン」を表す「ii」をかけて「Wii」と名付けられたそうです。</p>
+<p>このWiiが発売される以前の開発コードは「Revolution(レヴォリューション：革命)」と呼ばれていました。2005年の米国「E3」(Electronic Entertainment Expo；エレクトロニック・エンターテインメント・エキスポ、日本での東京ゲームショーにあたるゲーム産業における世界的な見本市)でこのコードネームと<a href="http://www.nintendo.co.jp/n10/e3_2005/revo/img/revo_1a.jpg" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">ロゴ</a>が発表されました。</p>
+<p>「革命」という名にふさわしく、Revolutionはいままでの家庭用ゲーム機とは大きく異なるコンセプトで設計されました。詳しくは<a href="http://www.nintendo.co.jp/wii/topics/interview/vol1/index.html" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">「社長が訊く Wiiプロジェクト(任天堂公式HP)」</a>に、開発チームと社長の対談という形式で詳しく公開されていますが、簡単にストーリーをまとめると、任天堂・岩田社長は2002年頃「このままゲームが複雑になっていったら、ゲーム業界は縮小する」と考え、その結論として新しいハードウェア設計のほとんど全てにおいて見直しを行った点が大きな「革命」になりました。対象とするユーザ層を従来の青少年層から比べて幅広く設定し、ゲームの遊び方、それを取り囲む環境、性能の設定や消費電力など、事細かに今までの家庭用ゲーム機の進化の流れを見直す方向に設計されています。</p>
+<p>Wii本体には省電力・無線常時接続ネットワーク機能や縦置きデザイン、性能などさまざまな特徴がありますが、特にその中でも最も大きな役割を持っている「“革命”の主人公」とも言うべき存在が「Wiiリモコン」(本書では以後&quot;WiiRemote&quot;と標記)でしょう。無線化された片手で持つ、モーションセンサを主軸においたコントローラー。このように「指先ではなく、全身の動作」に注目したヒューマンインターフェース(機械と人間をつなぐ装置)を使った遊び体験は、ダンスゲームを除けばヴァーチャルリアリティ技術やアミューズメントテーマパークなど、ごく一部の大型エンタテイメントシステムに利用されているだけで、まだまだ高価で家庭用ゲーム機になじむとは思われてはいませんでした。レーシングゲームや釣りゲームのような一部のゲームジャンルにおいて、別売のコントローラーを必要とする例もありましたが、やはり「プラットフォームが提供する標準搭載コントローラー」という存在はインパクトがありました。かつてこの種のゲーム用特殊デバイスは多くの研究者・開発者が取り組んできましたが、汎用的な利用方法とその価格に問題があり、なかなか実現しませんでした。しかし発売日に1000万台以上が見込める新ハードに採用されるとなると、一台のコントローラー価格は5000円以下で販売されます(＝一般的にハードの製造コストは売価の半分程度、かつコントローラーはゲームソフトよりも同価格かそれ以下に設定されるべき)。「夢のインタラクションプラットフォームが一気に家庭にやってくる！」、「でもどうやって？」世界中のヒューマンインタフェースやエンタテイメント技術の研究者・開発者はこのニュースに色めき立ちました。</p>
+<p>その後、Wiiが発売されてから2年以上が経過していますが、WiiRemoteの存在感は全く失われていません。当初はストラップやジャケットを着用せずにプレイで興奮する人が多く、酷い例ではテレビを破壊したり、テニスのやり過ぎでヒジを痛める「急性Wii痛」などネガティブな話題でも賑わせましたが、バーチャルコンソールなどのクラシックコントローラーを利用する場合を除いて、WiiRemoteに対する否定的なユーザーの意見はほとんどありません。またWiiRemote単体の販売価格も徐々に下がり、入手しやすくなっています。ゲームの歴史における革命児はいまや市民権を得ている状態といえるでしょう。</p>
+
+<h3 id="doc4_id144">WiiRemoteのしくみ</h3>
+
+<p class="first_ja">さて、この節ではWiiRemoteのハードウェア的な仕組みを解説します。ブラックボックス化しがちな製品技術を理解するコツとして、まず皆さんが「発売前を想定して、自分でデバイスを開発するつもり」になってみるとよいでしょう。</p>
+
+<h4 id="doc4_id146">開発の歴史と公式スペック</h4>
+
+<p class="first_ja">前述の通り、WiiRemoteは革命的な操作体験を提供しつつも「5000円を切る販売価格で」という要求仕様があったようです。しかしWiiRemoteはゲームのためのコントローラーですから、従来のボタンアクションやその操作の反応速度も維持しつつ、無線化を実現する必要があります。またバイブレーターもあったほうがいいですし、電池もできれば長持ちして欲しいでしょう。これらは非常に難しい要求です。</p>
+<p>コードネーム「Revolution」時代、「コントローラーにはモーションセンサが載るらしい」という噂はありました。ゲームボーイ「コロコロカービィ」以来、任天堂のゲームタイトルに採用されていた、テキサスインスツルメンツ(TI)社製の加速度センサのようなものが利用されることは想像されていましたし、すでにNECトーキン社からも、加速度センサ、角速度センサ、地磁気センサを組み合わせたエンタテイメント用途向けセンサー部品が発売されていましたが、10万円近くする高価な物で「技術的には不可能ではないだろう」と予想はされていましたが「どのような仕様で」、「どうやったら想定される価格内に収まる製品になるのか？」は全くの謎でした。またこれらのセンサーだけでは位置決めに使うには精度が十分ではありませんし、どんなゲーム・インタラクションになるのかも想像つきませんでした。任天堂内部の開発者もいろいろな苦労と検討を重ねたようです。最終的にWiiRemoteには、赤外線光源をTVの上に置く「センサーバー」が付け加えられ、赤外線CMOSセンサーという構成になりました。また当初の設計では公表されていなかったスピーカーなども加えられ、最終的に、WiiRemoteは以下のようなスペックになりました。</p>
+
+<div class="table">
+<table id="doc4_id148" class="data" rules="groups">
+<colgroup span="2">
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr class="even">
+<td>サイズ</td>
+<td>縦148mm、横 36.2mm、厚さ30.8mm（突起部分除く）</td>
+</tr>
+<tr class="odd">
+<td>通信機能</td>
+<td>Bluetoothによる無線接続、最大接続台数：４台</td>
+</tr>
+<tr class="even">
+<td>プレイ可能距離</td>
+<td>テレビから５ｍ</td>
+</tr>
+<tr class="odd">
+<td>ポインター</td>
+<td>画面を指し示すポインティング機能</td>
+</tr>
+<tr class="even">
+<td>モーションセンサー</td>
+<td>傾きや動きの変化を検出（3軸）</td>
+</tr>
+<tr class="odd">
+<td>ボタン</td>
+<td>デジタル11入力(1，2，A，B，-，+，Home，十字)</td>
+</tr>
+<tr class="even">
+<td>振動機能</td>
+<td>バイブレーター1個</td>
+</tr>
+<tr class="odd">
+<td>スピーカー</td>
+<td>モノラルスピーカー1個</td>
+</tr>
+<tr class="even">
+<td>プレイヤーインジケータ</td>
+<td>青色LED 4個</td>
+</tr>
+<tr class="odd">
+<td>拡張ユニット接続可能</td>
+<td>ヌンチャク、クラシックコントローラーなど</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<h4 id="doc4_id155">スペック詳細</h4>
+
+<p class="first_ja">以下は独自に調査した、より詳細なスペックと解説です(将来の仕様変更により変更される可能性があるかもしれません)。</p>
+
+<dl>
+<dt>モーションセンサー
+<dd>まず「モーションセンサー」ですが、3軸方向に各8ビットの精度の加速度センサーが実装されています。MEMS(Micro-Electro-Mechanical Systems)、つまりマイクロマシン技術によって前後、左右、上下の各軸の加速度を検出することができますが、構造上、これだけでは位置入力、たとえば左右の振り角などはこのセンサーでは検出できません。そのため後述する「ポインター」が付け加えられています。
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/Wiimote_axes.png" alt="加速度センサーの検出軸(Wiili.orgより図借用☆)" width="4cm">
+</div>
+<dt>ポインター
+<dd>「ポインター」は、赤外線を利用した独自開発の2次元センサーによって実現されています。CMOSと呼ばれる種類のセンサーですが、ビデオカメラのようなカラー画像を取得するものではありませんし、ビデオのように30～60枚/秒程度の撮影スピードではとてもゲームには使えません。このセンサーはピクセルのような固定解像度における画素値ではなく、センサーバーから発せられる赤外光を、距離や角度によらず、視界に入った光の強度の重心位置を複数点取得します。これは2次元PSD(Position Sensing Device)と呼ばれるタイプの半導体センサー方式ですが、一般的には同時に複数の座標を取得(MOT:Multi Object Tracking)することはできません。秒速200フレーム以上で取得できる高速なデバイスで、台湾の製造会社PixArt社と任天堂が努力の末に生み出したCMOSセンサーです(スクウェアエニックスから2003年に発売された「剣神ドラゴンクエスト」に採用された赤外線センサーにも同様のセンサーが使われていましたね)。なお、仕様からには2箇所しか検出できないように見えるこのセンサーですが、プログラミングの初期化方法によっては、最大で4箇所まで同時検出できることがわかっています。
+<dt>ボタン
+<dd>「ボタン」はOn/Offだけが検出できるデジタルスイッチが11個ついています。アナログジョイスティックで一般化していたスロットルや感圧などのアナログ入力が加速度センサー以外、一切存在しないのもWiiRemoteの特徴といえます。
+<dt>振動機能
+<dd>「振動機能」は携帯電話などで使われる偏芯錘がついたモーターを用いたバイブレーターが1つ実装されています。On/Offしか制御できませんし1つしかないので、複雑な表現を行うにはテクニックが必要です。
+<dt>スピーカー
+<dd>「スピーカー」は専用のサウンドプロセッサが搭載されています。4-bitのADPCM（Adaptive Differential Pulse Code Modulation;適応的差分パルス符号変調)方式であるといわれています。Wiiでの通常使用はともかく、PCから利用する場合、ピー...という音など矩形波を出すのはそれほど難しくはないのですが、WAVファイルなどを再生するには仕様が公開されているわけではないので、自由な音を出すのは最近まで難しい状況にありました。
+<dt>プレイヤーインジケータ
+<dd>「プレイヤーインジケータ」は4つの青色LEDです。Wiiで利用する場合はプレイヤー１～４のコントローラーを表示するために利用されますが、PCから使う場合は比較的簡単に、自由に点灯状態を変えることができます。
+<dt>拡張コネクタ
+<dd>WiiRemote下部にヌンチャクやクラシックコントローラを接続するための「拡張コネクタ」があり、周辺機器を接続することができます。I2C（Inter-Integrated Circuit）という信号形式を使っており、電源が入った状態で抜き差し自由(活線挿抜)で、高速なシリアル通信が可能です。
+<dt>Bluetoothコントローラ
+<dd>Wii本体との通信を行っているBluetoothコントローラは「Broadcom 2042」であることが報告されています。Bloadcom社のホームページで公開されている情報によると、BCM2042は、適応型周波数ホッピングと高速接続をそなえたBluetooth 2.0完全互換仕様で、PC用マウスやキーボード応用に適した設計になっているチップであると解説されています。実際の通信においては、Bluetooth1.2のHIDプロファイルで利用されており、ボタンや加速度の入力が行われたときのみ、信号を送ります。無駄な通信を流し続けない設計もゲームコントローラーならでは、ですね。
+<dt>その他
+<dd>他にもMiiデータなどを格納するためのフラッシュメモリーがありますが、特にハッキング本ではありませんので、本書では触れません。</dl>
+
+<p>どうでしょう？高速な無線通信が行えるBluetoothコントローラだけでも魅力的なのに、これだけの能力を持ったモジュールを含む製品が5000円以下で、しかも耐久性の高い量産品として販売されていること自体が驚きです。</p>
+<p>こんなすばらしいデバイスを開発・販売している任天堂に敬意を払い、応援するためにも(＝この本で解説しているPCでの利用を流行させるためにも)、WiiRemote単体での購入をぜひぜひお勧めいたします。もちろんWii本体も。余談ですが筆者のフランス時代の研究室では、Wii発売当初は本体が手に入らず、研究開発のためにWiiRemoteだけ1ダースほど購入した時期もありました。</p>
+
+<h2 id="doc1_id25">WiiRemoteで何が創れる？</h2>
+
+<p class="first_ja">現在、世界中の有志により、WiiRemoteをPCで利用できるようにする取り組みがされています。そして、それらのツールやオープンソースのAPIを利用して、世界中の学生を中心にさまざまなWiiRemoteを使った革新的なプロジェクトが開発されています。</p>
+<p>ここではまずWiiRemoteを使ったプログラミングで、どんな楽しいことが実現できるか、最新の学生プロジェクトを中心に紹介していきたいと思います。</p>
+
+<h3 id="doc5_id244">巨大なイカロボット「IKABO」を操作する</h3>
+
+<p class="first_ja">まずは北海道から、巨大なロボットをWiiRemoteで操作するプロジェクト「未来大IKABO Project」を紹介します。</p>
+<p>制作者のひとり、はこだて未来大の味岡真広さんによると『設計図や仕様書のようなものは、学生がゴリゴリ作ったものなのでありません』と、きっぱり。もともとは｢ロボットフェス･インはこだて｣市民の会という組織が中心となって作った「観光用の巨大イカロボット」で、はこだて未来大学の3年生が中心となって、ソフトウェアの部分を開発したそうです。ロボットの詳細はIKABO公式サイト(http://ikarobo.com/)に記載されていますが、身長220cm、重量約200kg、エアシリンダーによるアクチュエーターで、足1本につき3つの関節、さらに1つの関節に3つのエアシリンダーを搭載しており、足1本につき512通りの動作の実現しています。足は2対ありますので、合わせて約25万通りの動作、さらに目や頭も動きますので、WiiRemoteを使うことで、イカロボット独特の多様なポーズの設定ができるようになっています。</p>
+<p>このような複雑なロボットの操作であっても「どんな人でも簡単に操作できるように」と、過去にタッチパネルを用いた操作ツールも開発したようです。その後、WiiRemoteをつかった独特の操作として、両手にWiiRemoteを持ち、操作者が腕を動かす動きに対応して、IKABOの足が動作させる方法をに辿り着きました。これにより操作者の動きに合わせた自由な動作、複雑な動きやユニークな動きを実現することができるようになったそうです。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/IKABO1.png" alt="イカ型ロボット「IKABO」" width="6cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/IKABO2.png" alt="WiiRemoteをつかってIKABOを操作する" width="6cm">
+</div>
+
+<p>開発プラットフォームはVisual C++ MFCアプリケーションで、APIは「WiiYourself! - native C++ Wiimote library v0.96b」を使用しています。WiiRemoteから3軸加速度+ボタンの情報を取得し、3軸加速度から3軸の傾き情報にプログラム上で変換し、イカロボットの腕の動作を決めています。その情報を有線シリアル通信(USB)もしくはネットワーク(DirectPlay)でイカロボット実機へ動作指示を通信し、イカロボット内にあるマイコンボートに送信しています。</p>
+<p>実際の操作は、イカロボットが目の前にいるなら目で、遠いところにいるなら、操作ソフトに組み込んだリアルタイム動画配信によってイカロボットが動いているのを見て行うそうです。WiiRemoteで実物のロボットを動かすことで、ユーザの動きをイカロボットが真似てくれる、という点が楽しいそうです。</p>
+<p>実際に地元のお祭りでも盛り上がっているようで、YouTube上で大観衆の中、クネクネ動くIKABOのアツい動画を見ることができます（http://jp.youtube.com/watch?v=4P_alu527SY）。</p>
+
+<h3 id="doc5_id261">自由に氷柱を生やす「Gla&ccedil;on」(奈良先端大)</h3>
+
+<p class="first_ja">続いて、奈良先端科学技術大学院大学(NAIST)情報科学研究科の学生チーム『サムい人たち』(千原研・横矢研・加藤研)が、第16回国際学生対抗VRコンテスト（IVRC2008、http://ivrc.net/）で製作した「Gla&ccedil;on」(グラソン)を紹介します。「Gla&ccedil;on」はフランス語で「氷・ツララ」を意味しますが、WiiRemoteを使って『自由に天井から生える氷柱をのばすことができる』という作品です。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/glacon1.png" alt="「Gla&ccedil;on」体験の様子" width="8cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/glacon2.png" alt="WiiRemoteを内蔵したライトを向けると神秘的な氷柱が伸びる" width="4cm">
+</div>
+
+<p>チーム代表の吉竹大輔さんによると「温暖化により失われゆく地球の神秘さや魅力を、メディアアート的なアプローチにより表現することを目指しました。ブースの天井をWiiRemoteを使ったライト型デバイスで照らすことで、天井からツララが伸び、水滴が床へ滴るなどのインタラクションが生まれます。複数人が協調してツララと関わり合う過程において、自然現象や環境問題を、そして自分たちが自然と関わり合う中で何ができるのかを考えるきっかけとなることを願い、この作品は制作しました」とのことです。</p>
+<p>開発プラットフォームは、ViualStudio 2005(C++)、Bluesoleil 1.6.1で、オープンソースなどのAPIは使用せず、Windows Driver Kit(WDK)をつかって研究室のスタッフとともに開発したそうです。</p>
+<p>インタラクション技術としては、ユーザーが天井を指すことにより、指した天井の位置を計算する点でなかなか難しいことを実現しています。仕組みとしては、床と垂直な平面(壁)のセンサ面に赤外線LEDを4点、正方形の角となるように配置し、その4点の座標をWiiRemoteで取得、それらの位置関係(正方形の変形の度合い)からセンサ面に対するWiiRemoteの入射角を画像処理ライブラリ「OpenCV」を使って求めているそうです。この角度と4点の座標から天井のどの位置をWiiリモコンが指しているかを推定し、天井のつららを制御するモータを回転させたり、床の光の波紋を発生させたりしています。</p>
+<p>残念ながらコンテストでは東京予選で敗退してしまいましたが、作品開発の様子はYouTubeで見ることができます(http://jp.youtube.com/watch?v=waVNvmwKWaM)。</p>
+
+<h3 id="doc5_id276">ニオイの吹き矢「La fl&egrave;che de l'odeur」(金沢高専)</h3>
+
+<p class="first_ja">こちらもIVRC2008で発表された作品、ニオイの吹き矢で遊ぶゲーム「La fl&egrave;che de l'odeur（ラ・フレッシュ・デ・ロドー）」。タイトルを日本語訳すると『ニオイの矢』。フランス語で『ニオイ・ダーツ』とも訳せます。金沢工業高等専門学校・小坂研究室による『飲食物を飲食しながら口臭を変化させ、口臭を用いてモンスターを倒す』ゲーム作品で、高専学生が匂いセンサーとWiiRemoteを組み合わせて開発したものです。</p>
+<p>チームリーダーの金沢工業専門学校、国際コミュニケーション情報工学科岩本拓也さんにインタビューしたところ「人に不快感や嫌悪感をえる口臭に着目し、口臭を入力としたデバイス“吹き矢型デバイス”及びそれを応用したコンテンツ『La fl&egrave;che de l'odeur』を提案しました。吹き矢型デバイスはプレイヤーがの吹き込む息を計測することによって息の速さ、そして臭いセンサを用いて口臭の要素を計測し、WiiRemoteが吹き矢型デバイスの向きを検出しています。ゲームの中では、スクリーンに現れるモンスターを、吹き矢型デバイスを吹いて撃退していきます。モンスターには弱点となるニオイがあって、プレイヤーはプレイ中に実際にポテトチップやチーズなどの食べ物を飲食しながら口臭を変化させて遊びます。二人同時にプレイして、モンスターの弱点となる種類の口臭の吹き矢を上手に選べば、モンスターを上手に撃退することができます」といったコメントをいただきました。</p>
+<p>ゲームとしての完成度は非常に高く、美麗なグラフィックスの最後に現れるラスボスは「（水を口でゆすいで）&quot;清い息&quot;で倒す」とインタラクションデザインも秀逸です。グラフィックスはDirectXで開発し、観客をリアルタイムで動画合成したり、扇風機を制御したりと、WiiRemoteの活用だけでなく演出面の技術的も高度なことを実現しています。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/LaFlecheSystem.png" alt="「La fl&egrave;che de l'odeur」のシステム構成図・小坂研究室提供" width="8cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/LaFlechePlaying.png" alt="ニオイの出る食べ物を食べて、吹き矢を吹いてプレイ！" width="6cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/LaFlecheScreen.png" alt="DirectXで開発されたグラフィックスの作り込みもすばらしい" width="6cm">
+</div>
+
+<p>開発環境は、Windows Vistaに、Microsoft .Net Framework 2.0、Visual C#、Microsoft XNA、Microsoft DirectX August 2007という組み合わせで、WiiRemoteとの接続APIは「WiimoteLib」を使用しています。</p>
+<p>コンテストでは見事最終選考に残り、総合3位にあたる「各務原市長賞」を受賞しました。なおこのWiiRemoteと臭いセンサーを使った吹き矢型のデバイスは特許申請中で、メディアアート作品の登竜門であるNHK-BS「デジタルスタジアム」で紹介されるなど高く評価されています。学生VRコンテストのスポンサーである岐阜県各務原市の名産「各務原キムチ」のニオイに注目して脚光を浴びせるなど、新たな展開も期待できそうです。作品の開発や体験の様子も動画で公開されています(http://jp.youtube.com/user/KosakaChannel)。なお、この作品の制作を監修した金沢工業高等専門学校の小坂崇之先生には、プログラミング入門編で協力を頂いております。</p>
+
+<h3 id="doc5_id298">WiiFitを使った文学作品『人間椅子』</h3>
+
+<p class="first_ja">こちらも学生VRコンテストIVRC2008より、東京大学大学院の学生によるWiiFit「バランスWiiボード」を使った“文学作品”『人間椅子』を紹介します。この作品は情報理工学系研究科の家室証さんらによる、江戸川乱歩の小説『人間椅子』に着想を得たシステムです。『人間椅子』という短編小説のプロット『ある椅子職人が自分の作製した椅子の中に隠れ、上に座ってきた様々な人の感触を全身で楽しんだ』という物語、つまり、椅子の中に人間が隠れ、上に座ってきた人の感触を楽しむという体験を提供する恐ろしくも甘美な発想による作品です。システムは潜伏椅子と安座椅子の2つの椅子で構成されており、潜伏椅子に座った体験者は、まるで安座椅子に座っているもう1人の体験者が自分の太ももの上に座っているかのような感覚を得ることができるという設計です。</p>
+<p>この怪しさ満点の作品のどこにバランスWiiボードが使われているかというと、安座椅子における座面への荷重の取得のために、2台のバランスWiiボードが用いられています。これによって得られる荷重情報を基にして、潜伏椅子に実装されたモータとベルトを用いた機構に、重さが提示されます。また同時に、太もも上におかれたパッド内のヒータで熱を太ももを温めることで、まるで本当に人が乗っているような温かさと重さが再現されます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/NingenIsu.png" alt="『人間椅子』右側の椅子に2台のバランスWiiボードが内蔵されている" width="6cm">
+</div>
+
+<p>作品の最大の特徴は、小説『人間椅子』の体験を再現しようとしたことにあると言えるでしょう。このような「人に上に座られる」という体験から要素を抽出し、さらにバランスWiiボードという、安定して座っている人間の状態を取得できるデバイスを使い、2台の椅子によってシステムを構築することによって、この作品は他では味わえない「空間的・時間的に離れた人に座られる」という特異な体験を提供しています。</p>
+<p>バランスWiiボードを用いた事により、荷重の取得を高速かつ安定に行うことが可能になっており、潜伏椅子に座った体験者は、安座椅子に座った体験者の動きをリアルタイムに感じることができる。バランスWiiボード自体は4本の脚に加わる荷重を独立に取得可能なため、体験者の両足の尻側、膝側という計4つの荷重を取得するには最低限1台のボードがあればよいのですが、様々な体験者の体型や座り方に対して安定に値を取得するため、このシステムでは2台のボードを用いて、1台につき片足の尻側と足側の2つの荷重値の取得を行っています。</p>
+<p>このようにして得られた計4つの荷重値を基に、潜伏椅子に配置された4つのモータへの出力電流が決定され、モータを用いてベルトを巻き取り、太もも上に置かれたパッドを太ももに押しつけるというシンプルな構造によって、体験者の太ももに対して重さの提示が行われています。</p>
+<p>バランスWiiボードを用いた荷重取得には、同じ東京大学の先輩、南澤さんが公開している「WiiBoard to PC ver.2.0」が使用されています。このサンプルプログラムによって、BluetoothでPCと接続されたバランスボードから、荷重値を取得することができます（http://minamizawa.jp/wii/）。</p>
+<p>さて作品『人間椅子』はコンテストでは最終選考まで勝ち残ることができました。作品の様子はIVRCの公式サイトで見ることができます(http://ivrc.net/2008/）。</p>
+
+<h3 id="doc5_id308">赤外線をつかったモーションキャプチャ「SoundQuest」(フランス・ラヴァル)</h3>
+
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/SoundQuest2.png" alt="「Sound Quest」天井にも赤外線検出用のWiiリモコンが設置されている" width="6cm">
+</div>
+
+<p class="first_ja">日本の学生の活動だけではありません。世界中の学生がWiiRemoteを使って新しいインタラクティブ技術を生み出しています。フランス西部のラヴァル(Laval)にあるENSAM(国立工芸大)Presence＆Innovation研究所の学生さん、アレクシィ・ゼルーグ(Alexis Zerroug)は、『SoundQuest』というWiiRemoteの赤外線センサーを安価なモーションキャプチャとして使うことで『映像を全く使わないゲーム』を開発しました。『視覚を使わない』というコンセプトのテーマパークのアトラクション開発のためのプロトタイプで、フランスで毎年開催されているヨーロッパ最大のヴァーチャルリアリティのイベント「Laval Virtual ReVolution 2008」で発表されました。Wiiリモコンを天井に吊り、ユーザーは別のWiiRemoteが内蔵された無線ヘッドフォンを装着します。ヘッドフォンの上には赤外線マーカーが付いており、天井のWiiRemoteでユーザーの頭を検出できるモーションキャプチャとして利用しています。3次元音響空間の中にいるヴァーチャルキャラクターを探し出したり、手元のヌンチャクコントローラーを使ってインタラクションするというもの。</p>
+<p>モーションキャプチャシステムは人間の動きを高速にとらえることができますが、高額な装置で、準備や装着に時間がかかるので、一般的には映像制作会社などプロ用途でしか使われていません。このプロジェクトが秀逸なのは、数百万円するモーションキャプチャを安価なWiiRemote複数台で作っている点です。天井から吊したWiiRemoteによって、頭につけた三角に配置した赤外線LEDのマーカーによって、ユーザーの頭の向きを検出しています。つまり、頭にヘッドホンを装着するだけで位置や方向が検出できるので、いろいろな応用ができそうです。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="png/SoundQuest1.png" alt="無線ヘッドホンとWiiRemoteを内蔵した赤外線マーカー" width="5cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="png/SoundQuestFig.png" alt="SoundQuestのシステム概要図" width="10cm">
+</div>
+
+<p>開発はVirtoolsという産業用ヴァーチャルリアリティプロトタイプ開発ツールで行っています。VirtoolsはちょうどFlashのようなコンテンツオーサリング環境なのですが、付属のSDKとC++をつかって独自のプラグインを開発し、機能を拡張できます。WiiRemoteと通信するプラグインを開発して、赤外線LED3点から向きを算出するプラグインを開発しています。</p>
+<p>ちなみにこのシステムを開発したアレクシス・ゼルーグ氏は筆者のフランス時代の教え子でもありますが、現在、東大に留学中です。開発の様子はYouTubeで公開されています(http://jp.youtube.com/watch?v=TMK7ULUG7S4)。</p>
+<p>さて、ここまで世界中で取り組まれているWiiRemoteをつかった学生プロジェクトを紹介してきました。どのプロジェクトも、非常にエキサイティングです。また紹介しきれなかった面白い物もたくさんあります。初心者の読者にとっては、専門用語など難しい点もあったかもしれませんが、上で紹介した方々には後に続くパートで解説やサンプル作成に協力していただいておりますので、本書を読み進めていくことで、いずれ自分自身のアイディアを実現することもできるかもしれません。</p>
+<p>さあ次は、皆さんの番です！</p>
+</body>
+</html>

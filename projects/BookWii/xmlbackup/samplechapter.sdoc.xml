@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+<doc xml:lang='ja'>
+<head>
+<title>（チャプターサンプル：ここには章のタイトルをお願いします）</title>
+<author>（あなたの名前）</author>
+<date>2008年10月20日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>(メールアドレス：使われません)</email>
+
+</head>
+<body>
+
+ここには章の最初に表示されるアブストラクトを書いてください。
+
+
+これはテーブルのサンプルです。
+<dl>
+  <dt>Visual C++のセットアップ</dt>
+  <dd>コンパイラ、IDE(統合開発環境)であるMicrosoftのVisual C++ 2008(以下、VC2008)をインストールします（無料で利用できます）。Visual Studioをお使いの場合や、VC2003以降をお使いの方は、特に新規にインストールし直す必要はありません。</dd>
+  <dt>WindowsDDKのセットアップ</dt>
+  <dd>Windows Driver Development Kit(以下、DDK)のセットアップを行います（無料で利用できます）。こちらのDDKには、HIDデバイスとPCの通信を円滑に行うためのライブラリが含まれています。なお、DDKは最新のマイクロソフト用語ではWindows Driver Kit(WDK)と呼ばれるようになりました（WDKにはDDKに開発したドライバのテストツールなどが付属しています）。</dd>
+  <dt>APIのセットアップ</dt>
+  <dd>上記(1),(2)だけでもWiiRemoteを使ったプログラミングはできるのですが、WiiRemoteの機能を使いこなすためには世界中の開発者が開発したAPI(ドライバ、SDKなど呼び方は様々ですが本書ではApplication Programming Interface;APIに統一)を利用するのが近道です。オープンソースで開発され、公開されているものが多く、たいていは無料で利用できます（ライセンスによる）。本書では主に「WiiYourself!v1.0」を利用して解説します。</dd>
+  <dt>サンプルプログラムのリコンパイル</dt>
+  <dd>最後に簡単なプログラムのリコンパイルと動作確認を行います。</dd>
+</dl>
+
+<section title="節のサンプル">
+これが節です。
+
+ <subsection title="小節のサンプル">
+ 
+まずマイクロソフトのホームページからMicrosoft Visual C++ 2008 Express Editionをダウンロードします。
+
+<fyi title="Visual C++ 2008 Express Edition">
+http://www.microsoft.com/japan/msdn/vstudio/express/
+</fyi>
+
+これは図のサンプルです。画像はPNGもしくはEPSを基本としています。
+<figure id="fig:vstudio-hps" src="png/vstudio-hps.png" title="Microsoft Visual Studio Express製品のホームページ">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+場所はどこでもかまいませんが、移動や管理しやすい場所にします。
+
+
+上の例ではアトリビュートがありますが、特に問題なければこれぐらいでどうぞ。
+<figure id="fig:VC2008Inst1" src="png/VC2008Inst1.png" style="width=:5cm" title="VC2008インストール ウィザード(step1)"/>
+
+ タグを閉じるのを忘れずに。
+ </subsection>
+
+<subsection title="ソースコードの引用">
+
+ベタ書きテキストで各場合、以下のような書き方をします。CDATAというのは「＜」を使うためのおまじないです。
+<program title="wii_test1.cpp-part2">
+<![CDATA[
+#include <windows.h> 
+#include <process.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> 
+#include <math.h>
+#include "SDL/SDL.h"
+#include "SDL/SDL_opengl.h"
+
+#define ACC_GAIN 26
+
+#define FUNC __declspec(dllimport) __stdcall
+extern "C" HANDLE FUNC OpenHidHandle(unsigned short vendor_id, unsigned short product_id);
+extern "C" void FUNC ReadReport(HANDLE handle,unsigned char *InputReport,int *len);
+extern "C" void FUNC WriteReport(HANDLE handle,unsigned char *OutputReport, int *len);
+extern "C" void FUNC CloseHidHandle(HANDLE handle);
+
+]]>
+</program>
+
+非常に強力な機能で、関数名を解釈して引用できます(本来はJava用、正規表現)。
+<program title="testsrc.cpp-_tmain()" srcKeyword="_tmain()" src="test/testsrc.cpp" />
+
+その他、外部ソースの読み込みは＜section src="C-WiiFit-Who.sdoc.xml"/＞こんな感じです。
+拡張子は何でもいいんですが、EmEditorの設定が楽なので、sdoc.xmlとしています。
+
+
+</subsection>
+
+
+</section>
+
+<section title="SmartDocを処理するバッチ">
+私はこんな風に処理しています。実際にはコマンドを書くのではなく、2つのバッチファイルを用意しています。
+
+<program title="SmartDocのコンパイル">
+sdoc -verbose -toc -index -format:latex2e -packager:file LearnMathPhysicsWithWiiRemote.sdoc.xml
+</program>
+これで生成したTeXをPDFに変換してます。「TeXインストーラ３」などをインストールしておけば使えるはずです。
+
+<program title="TeXからPDFに変換">
+platex LearnMathPhysicsWithWiiRemote.sdoc.tex
+C:\tex\bin\dvipdfm.exe LearnMathPhysicsWithWiiRemote.sdoc.dvi
+</program>
+
+</section>
+
+
+</body>
+</doc>

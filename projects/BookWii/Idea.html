@@ -1,0 +1,1728 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="21:40 2009/06/15-" lang="ja">
+<title>アイディアストック・演習問題集</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">アイディアストック・演習問題集</h1>
+
+<div class="date">21:40 2009/06/15-</div>
+<div class="author">白井暁彦</div>
+<div class="email"><a href="mailto:shirai at mail.com" onmouseover="hilightHyperlink(this)" onmouseout="normal(this)">shirai at mail.com</a></div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id19" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プログラミング編(1)：XNAを使ったリアルタイム3DCGでの利用</a>
+<ul>
+<li> <a href="#doc2_id354" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">XNAのインストール</a>
+<li> <a href="#doc2_id370" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ゲームプロジェクトの作成</a>
+<li> <a href="#doc2_id383" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの組み込み</a>
+<li> <a href="#doc2_id395" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">3Dモデルファイルの準備</a>
+<li> <a href="#doc2_id423" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">.xファイルの読み込みと表示</a>
+<li> <a href="#doc2_id433" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">完成版「WiiRemoteXNA」</a>
+<li> <a href="#doc2_id439" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】XNAの利用</a>
+</ul>
+<li> <a href="#doc1_id24" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ゲーム応用編(1)：レースゲームへの応用</a>
+<ul>
+<li> <a href="#doc3_id479" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">反重力レーシングゲーム「AceSpeeder2」</a>
+<li> <a href="#doc3_id487" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">レースゲーム用モーション認識</a>
+<li> <a href="#doc3_id499" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】レースゲームへの応用</a>
+</ul>
+<li> <a href="#doc1_id29" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ゲーム応用編(2)：「振る」の認識・剣術アクションへの応用</a>
+<ul>
+<li> <a href="#doc4_id545" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">フェンシングゲーム「JaWii's Virtual Fencing」</a>
+<li> <a href="#doc4_id563" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">古式フェンシング指南ゲームの開発</a>
+<li> <a href="#doc4_id584" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">モーション検出のための評価関数を作る</a>
+<li> <a href="#doc4_id618" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】振りの検出</a>
+</ul>
+<li> <a href="#doc1_id36" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">作品編(1)：WiiBoardを用いた「オーラ診断」</a>
+<ul>
+<li> <a href="#doc6_id679" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プログラミング初心者4人が作った「オーラ診断」</a>
+<ul>
+<li> <a href="#doc6_id690" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「オーラ診断」の概要</a>
+<li> <a href="#doc6_id697" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">この作品のキモ</a>
+<li> <a href="#doc6_id700" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">バランスWiiボード</a>
+<li> <a href="#doc6_id703" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">BBOSC</a>
+<li> <a href="#doc6_id713" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Processing</a>
+</ul>
+<li> <a href="#doc6_id717" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">補足：「BBOSC」とは？</a>
+<li> <a href="#doc6_id734" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">その他の「オーラを作る技術」</a>
+<li> <a href="#doc6_id740" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】MacとWiiBoardの利用</a>
+</ul>
+<li> <a href="#doc1_id41" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">作品編(2)：SecondLifeで使う</a>
+<ul>
+<li> <a href="#doc7_id793" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">SecondLife用PIEスクリプト</a>
+<li> <a href="#doc7_id803" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】SecondLife＋GlovePIEを極めよう</a>
+</ul>
+<li> <a href="#doc1_id46" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">モノ編(1)：センサーバーを自作する</a>
+<ul>
+<li> <a href="#doc8_id840" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">センサーバーのしくみ</a>
+<li> <a href="#doc8_id843" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">目には見えない「近赤外線」</a>
+<ul>
+<li> <a href="#doc8_id849" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「近赤外線」とは</a>
+<li> <a href="#doc8_id855" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">見えない赤外線を見えるようにするには？</a>
+</ul>
+<li> <a href="#doc8_id869" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">電子部品をそろえる・工作する</a>
+<li> <a href="#doc8_id890" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】赤外線センサーバーの自作</a>
+</ul>
+<li> <a href="#doc1_id51" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">モノ編(2)：ロボット兵器「WiiRemoteTank」</a>
+<ul>
+<li> <a href="#doc9_id944" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ロボット兵器「WiiRemoteTank」</a>
+<li> <a href="#doc9_id953" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「WiiRemoteTank」の開発</a>
+<li> <a href="#doc9_id977" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】WiiRemoteによるロボット開発</a>
+</ul>
+<li> <a href="#doc1_id56" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">サービス編：体が不自由な方のためのインターフェース</a>
+<ul>
+<li> <a href="#doc1_id58" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】体が不自由な方のためのインターフェース</a>
+</ul>
+<li> <a href="#doc1_id96" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">研究編(1)赤外線を極める</a>
+<ul>
+<li> <a href="#doc1_id99" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線奥行き測定の基本理論</a>
+<li> <a href="#doc1_id112" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実験：赤外線特性の測定</a>
+<li> <a href="#doc1_id200" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】赤外線を極める</a>
+</ul>
+<li> <a href="#doc1_id234" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">研究編(2)Johnny Chung Lee氏から学ぼう</a>
+<ul>
+<li> <a href="#doc1_id270" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】研究しよう</a>
+</ul>
+<li> <a href="#doc1_id295" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プログラミング編(2)：自分でAPIをつくる</a>
+<ul>
+<li> <a href="#doc1_id304" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">【演習問題】</a>
+</ul>
+</ul>
+</div>
+<p>この章は「アイディアストック・演習問題集」として、いままで学んだ技術を応用することで、WiiRemoteをつかって実現できる様々なプロジェクトの実例を紹介します。</p>
+<p>アイディアをためておく&quot;棚&quot;のようなものをイメージして「アイディア・ストック」と名付けました。イメージしやすいようにプログラミング編、モノ編、ゲーム応用編、サービス編、作品編、研究編に分けていますが、このアイディアの活用は読者のみなさん次第で様々な方向に混ざったり、生み出されたりしていくことでしょう。</p>
+<p>本書をここまで読み進めてきた読書であれば、「不可能なほど難しい」という内容ではないはずです。本章では細かいステップバイステップの解説をあえて割愛し、少ない紙面で幅広くWiiRemoteの可能性を伝えることに力点を置きます。</p>
+<p>各セクションの終わりに「演習問題」として、そのテーマの研究や作品作りに役立つ問題集を用意しておきました。難易度が5段階の☆で表現されていますので、難易度に合わせて授業や課題の制作、論文のリファレンスなどにご活用ください。</p>
+
+<h2 id="doc1_id19">プログラミング編(1)：XNAを使ったリアルタイム3DCGでの利用</h2>
+
+<p class="first_ja">8章までの知識を一歩進めて、WiiRemoteを3Dグラフィックスプログラミングの世界で利用できるようになりましょう。マイクロソフトの本格的なゲーム用3DCGプログラム開発環境「XNA」と「WiimoteLib」を使います。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/XNA/XNAWii0.png" alt="「WiiRemoteXNA」完成版">
+</div>
+
+<p>ここでは「XNA Game Studio 3.1」とWiimoteLibを使って、C#.NETによるゲーム開発環境をベースにしたリアルタイム3DCGによるプログラミングを解説します。</p>
+<p>XNAとは、マイクロソフトが推進している「DirectX」の流れをくむ最新の.NETによるゲーム開発統合環境です。XNAのコーディングスタイルは、旧来のリアルタイム3DCG開発環境の本流であったDirectXやManaged DirectXとは異なり、XNA FrameworkにおけるC#言語による開発になります。DirectX時代よりもさらにゲーム開発に便利なツールやAPIが統合されており、簡単に効率よくゲームプログラムを作成できるようになっています。</p>
+<p>プロのゲーム開発者に限らず、学生などにも親しみやすい環境でもあります。WindowsPC用のゲーム開発に加え、最新のコンシューマー(家庭用)ゲーム機である「Xbox 360」の両方のプラットフォームで、非常に効率的かつ先進的な開発ができるため、プロのゲームスタジオだけでなく、今後ホビープログラマを中心に大きな流れを作り出す可能性があるでしょう。</p>
+<p>このセクションでは、WiiRemoteの加速度センサーの傾きによって、3Dで描画されたWiiRemoteがリアルタイムで変化するプログラム「WiiRemoteXNA」を作成します。なかなか派手な感じがするデモですが、XNA Game Studio 3.1を使って、驚くほど短いコードで作成することができます。</p>
+
+<h3 id="doc2_id354">XNAのインストール</h3>
+
+<p class="first_ja">まずは、開発環境のセットアップを行いましょう。最新のMicrosoft XNA Game Studioをダウンロードしてインストールします。</p>
+<div class="fyi">
+<div class="title">Microsoft XNA Game Studio 3.1</div>
+
+<p class="first_ja">　Microsoft XNA Game Studio 3.1も無償で入手可能です。</p>
+<p>　http://www.microsoft.com/downloads/details.aspx?　　familyid=80782277-D584-42D2-8024-893FCD9D3E82</p>
+</div>
+
+<p>XNAは無料で開発環境を手に入れることができます。PCをターゲットプラットフォームとして利用する上ではライセンスに従い無料で利用することができますが、Xboxプラットフォームで開発するためには年間ライセンス料(9,800円※)を払う必要があります。本書ではXboxプラットフォームについては扱いませんが、Xbox 360のような、高価なゲーム用PCに比べて「安定して安価で入手できるコンシューマゲーム機」の開発環境が、それほど高価ではないライセンス料で入手できるのは大変な魅力です。開発したゲームプログラムを世界中に1200万人以上いるXbox 360のユーザーに遊んでもらえることも、モチベーションになるでしょう(Xbox360でWiiRemoteが公式に使える、という話は聞きませんが...)。</p>
+<div class="fyi">
+<div class="title">Xbox 360用ゲームの開発</div>
+
+<p class="first_ja">　本書とは直接関係ありませんが、Xbox 360用ゲームを実行するためには年額9,800円の「XNAクリエイターズクラブ」に入会する必要があります。XNAクリエイターズクラブはXbox 360用ネットワーク・サービス「Xbox Live」から加入できます。</p>
+<p>[URL]　http://www.xbox.com/ja-JP/live/</p>
+<p>[URL]　http://creators.xna.com/en-US/tour_detail</p>
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Idea/XNA/XNAGS31.png" alt="XNA Game Studio 3.1のインストール" width="6cm">
+</div>
+
+<p>Microsoft XNA Game Studio 3.1のインストールは、ダウンロードしたインストーラーのウィザードに従うだけで問題なく行えるでしょう。ウィザードの最後に「Xbox 360用のサービスを起動するか？」という質問がありますが、これはXbox 360用のプログラムを開発したときに、ローカルネットワーク経由でXbox 360に送信するためで、特に利用する予定がなければチェックは入れなくても問題ありません。</p>
+
+<h3 id="doc2_id370">ゲームプロジェクトの作成</h3>
+
+
+<div class="figure">
+<img class="figure" src="Idea/XNA/NewProject.png" alt="新規プロジェクトの作成にGame Studio 3.1のテンプレートが現れる">
+</div>
+
+<p class="first_ja">さて次はゲームプロジェクトの作成です。Microsoft Visual C# 2008を起動してください(無料の「Express Edition」でも問題なく利用できます)。「新しいプロジェクト」を選ぶと、いつも見慣れた新規プロジェクト作成のダイアログに「XNA Game Studio 3.1」という項目が現れているはずです(ない場合はGame Studioのインストールを再度確認してください)。「テンプレート」から「Windows Game (3.1)」をクリックして、プロジェクト名に「WiiRemoteXNA」という名前をつけて、場所を「C:\WiiRemote」として「OK」をクリックします。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="Idea/XNA/XNA-VS0.png" alt="Visual Studioに作成された新しいゲームプロジェクト" width="8cm">
+</div>
+
+<p>数秒間待つと、新しいプロジェクトが作成されます。[F5]キーを押して、試しにプロジェクトを実行してみましょう。水色の背景に、何かウィンドウが表示されれば成功です。</p>
+
+<h3 id="doc2_id383">WiimoteLibの組み込み</h3>
+
+<p class="first_ja">次はWiimoteLibを組み込みます。XNA環境でも4章や8章での.NET環境におけるWiimoteLibの組み込み作業の流れと同じです。</p>
+<p>ソリューションエクスプローラの「参照設定」を右クリックし、「参照の追加」を選択します。参照の追加から「参照」もしくは「最近使用したファイル」から「WiimoteLib.dll」を選択します。</p>
+<p>いままでのプロジェクトと同様、プログラム冒頭のusingにWiimoteLibを追加し、クラスの初期化時にWiimoteオブジェクトの新規作成「Wiimote wm = new Wiimote();」を挿入します。</p>
+
+<div id="doc2_id385" class="caption">[C#]Wiimoteオブジェクトの作成(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+using WiimoteLib;
+＜略＞
+public class Game1 : Microsoft.Xna.Framework.Game {
+  GraphicsDeviceManager graphics;
+  SpriteBatch spriteBatch;
+  Wiimote wm = new Wiimote();  //Wiimoteオブジェクトの作成
+＜略＞
+</pre>
+
+<p>初期化時にWiiRemoteに接続しましょう。XNAフレームワークでは「Initialize()」という関数がすでに用意されていますので、そこにいつものWiiRemote接続処理を追加します。</p>
+
+<div id="doc2_id388" class="caption">[C#]WiiRemoteの初期化と接続(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+ protected override void Initialize() {
+  base.Initialize();
+  wm.Connect();  //WiiRemote接続
+  wm.SetReportType(InputReport.ButtonsAccel, false);//ボタンと加速度
+  wm.SetLEDs(15); //LED全点灯
+ }
+</pre>
+
+<p>「SetReportType()」の第2引数に「false」を設定して非連続データ取得モードにしています(ここでいつものようにtrueにして、コールバック関数を設定してもよいのですが、今回のサンプルでは簡単に加速度の値を取れればよいので、値のばたつきが少ない、よりシンプルな方法をとります)。</p>
+<p>この状態でもビルド処理を試すことはできますが、ButtonStateが「あいまいな参照」というエラーを出し停止するはずです(XNAとWiimoteLibに同じ名前のプロパティがあるため)。エラーの出る行をコメントアウトすれば良いのですが、オリジナルのソースでは、ここで「ゲームパッドのボタンが押されたら終了」となっているようですので、ここを「WiiRemoteの[Home]ボタンが押されたら終了」と変更してみましょう。</p>
+
+<div id="doc2_id391" class="caption">[C#]Homeボタンで終了(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+ protected override void Update(GameTime gameTime) {
+ // Allows the game to exit ↓もともとのコードをコメントアウト
+ // if (GamePad.GetState(PlayerIndex.One).Buttons.Back
+                                 == ButtonState.Pressed)
+  if(wm.WiimoteState.ButtonState.Home) {
+    this.Exit();
+  }
+  base.Update(gameTime);
+ }
+</pre>
+
+<p>この段階でWiiRemoteをBluetooth接続し、[F6]で実行してみてください。先ほどと同様、水色の画面が表示されますが、WiiRemoteのLEDが4つとも点灯し、[Home]ボタンを押すことでプログラムを終了できるはずです。</p>
+
+<h3 id="doc2_id395">3Dモデルファイルの準備</h3>
+
+<p class="first_ja">次に読み込む3Dモデルファイルを準備しましょう。3Dモデルデータをゼロから作ると時間がかかってしまいますので、ここでは小坂研究室のホームページからWiiRemoteによく似た「.x形式」のモデルファイル「wiimodoki.x」と、その表面を飾るテクスチャファイル「texture_wii.jpg」をダウンロードで入手します。</p>
+<div class="fyi">
+<div class="title">3Dモデルファイル「wiimodoki.x」の入手</div>
+
+<p class="first_ja">■小坂研究室「XNAとWiimoteLibで3Dオブジェクトを操作」</p>
+<p>[URL] http://www.kosaka-lab.com/tips/2009/06/xnawiimotelib3d.php</p>
+<p>■特製テクスチャファイル(texture_wii.jpg)</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="Idea/XNA/texture_wii2.png" alt="テクスチャファイル「texture_wii.jpg」" width="4cm">
+</div>
+
+</div>
+
+<p>ファイルをダウンロードしたら、XNAのプロジェクトのコンテンツフォルダ「C:\WiiRemote\WiiRemoteXNA\WiiRemoteXNA\Content」に置きます。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/XNA/XNA-Folder.png" alt="WiiRemoteXNAの「Content」に.xファイルを配置する">
+</div>
+
+<p>ファイルを置いた後に、Visual Studio内に取り込みます。ソリューションエクスプローラーの「Content」を右クリックして「追加」→「既存の項目」として、先ほど置いた「wiimodoki.x」と「texture_wii.jpg」を読み込んでください。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="Idea/XNA/Content.png" alt="ソリューションエクスプローラーの「Content」に追加する" width="4cm">
+</div>
+
+<p>なお、モデルデータである「wiimodoki.x」と「texture_wii.jpg」は3DCGコンテンツ制作ソフトウェア「Maya2008」を使って作成したのち「cvXporter」を使ってコンバートしています。</p>
+<div class="fyi">
+<div class="title">Mayaからの.xファイルエクスポーター「cvXporter」</div>
+
+<p class="first_ja">[URL]　http://www.chadvernon.com/blog/downloads/cvxporter/</p>
+</div>
+
+<p>Maya2008のような比較的高価な3DCGソフトウェアが無ければ、日本人が開発している歴史ある3Dポリゴンモデラー「Metasequoia(メタセコイヤ)」でも可能でしょう。無料版と有料版(シェアウェア)があり、価格は1ライセンスにつき5,000円です。「Metasequoia LE R2.4」では.xファイルを直接書き出せますので、XNAやDirectX環境で簡単に利用することができます。作者のO.Mizno氏に感謝です。</p>
+<div class="fyi">
+<div class="title">3Dポリゴンモデラー「Metasequoia(メタセコイヤ)」</div>
+
+<p class="first_ja">[URL]　http://www.metaseq.net/</p>
+</div>
+
+
+<h3 id="doc2_id423">.xファイルの読み込みと表示</h3>
+
+<p class="first_ja">さて、コーディングに戻りましょう。モデルファイルの読み込みと表示について、「LoadContent()」と「Draw()」に加筆をします。</p>
+
+<div id="doc2_id425" class="caption">[C#]モデルファイルの読み込みと表示(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+＜略＞
+  Wiimote wm = new Wiimote();  //Wiimoteオブジェクトの作成    
+  private Model xfile;         //Xファイル読み込み用
+＜略＞
+ protected override void LoadContent() {
+  spriteBatch = new SpriteBatch(GraphicsDevice);
+  this.xfile = this.Content.Load&lt;Model&gt;(&quot;wii&quot;);  //.xファイルの読み込み
+  foreach (ModelMesh mesh in this.xfile.Meshes) {
+   foreach (BasicEffect effect in mesh.Effects)  {
+   //ビュー行列 カメラの視点を設定(0.0f,0.0f,10.0f)の位置から原点を見る
+    effect.View =
+     Matrix.CreateLookAt(new Vector3(0.0f, 0.0f, 10.0f),
+     Vector3.Zero, Vector3.Up);
+    //プロジェクション行列　視野角などの設定
+    effect.Projection = Matrix.CreatePerspectiveFieldOfView(
+     MathHelper.ToRadians(45.0f),
+      (float)this.GraphicsDevice.Viewport.Width /
+      (float)this.GraphicsDevice.Viewport.Height,
+      1.0f, 50.0f );
+   }
+  }
+ }
+＜略＞
+ protected override void Draw(GameTime gameTime) {
+  GraphicsDevice.Clear(Color.CornflowerBlue);
+  //画面に描画する
+  foreach (ModelMesh mesh in this.xfile.Meshes) {
+   foreach (BasicEffect effect in mesh.Effects) {
+    //WiiRemoteの加速度に合わせて回転角度を設定
+     effect.World = Matrix.CreateFromYawPitchRoll(0,
+      -wm.WiimoteState.AccelState.Values.Y,
+      -wm.WiimoteState.AccelState.Values.X);
+   }
+   mesh.Draw();//meshを描画
+  }
+ base.Draw(gameTime);
+ }
+＜略＞
+</pre>
+
+<p>ここでは個々のAPIについて解説はしませんが、いずれも3DCGにおけるお作法的な手続きと「見え方」を設定しているものです。興味がある人は、MSDNなどのマニュアルをしらべたり、パラメーターを変更してみたりして、探求してみてください。</p>
+<p>実行すると、WiiRemoteの動きに合わせて回転する「WiiRemoteもどき」が表示されます。[Home]で終了します。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/XNA/WiiRemoteMove.png" alt="WiiRemoteの動きに合わせて動く「WiiRemoteもどき」">
+</div>
+
+<p>ファイルの読み込みなどでエラーが起きるときは、ソリューションエクスプローラーで正しくContentにファイルが取り込まれているか確認してください。なお、テクスチャファイルは「wiimodoki.x」の中で記述されていますので、実はVisual Studioに取り込まなくても自動で読み込まれます。また「wiimodoki.x」ファイルはテキストで記述されていますので、テキストエディタで編集することで、マテリアル(表面材質の特性)やテクスチャファイル名を書き換えたりすることもできます。</p>
+
+<h3 id="doc2_id433">完成版「WiiRemoteXNA」</h3>
+
+<p class="first_ja">以上で「WiiRemoteXNA」は完成です。usingの整理など行った完成版のコードを紹介します。</p>
+
+<div id="doc2_id436" class="caption">[C#]完成版「WiiRemoteXNA」(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using WiimoteLib;
+namespace WiiRemoteXNA {
+ public class Game1 : Microsoft.Xna.Framework.Game  {
+  GraphicsDeviceManager graphics;
+  SpriteBatch spriteBatch;
+  Wiimote wm = new Wiimote();  //Wiimoteオブジェクトの作成    
+  private Model xfile;         //Xファイル読み込み用
+  public Game1()    {
+   graphics = new GraphicsDeviceManager(this);
+   Content.RootDirectory = &quot;Content&quot;;
+  }
+  protected override void Initialize() {
+   base.Initialize();
+   wm.Connect();  //WiiRemote接続
+   wm.SetReportType(InputReport.ButtonsAccel, false);
+   wm.SetLEDs(15);
+  }
+  protected override void LoadContent() {
+   spriteBatch = new SpriteBatch(GraphicsDevice);
+   xfile = Content.Load&lt;Model&gt;(&quot;wii&quot;);
+   foreach (ModelMesh mesh in this.xfile.Meshes) {
+    foreach (BasicEffect effect in mesh.Effects)  {
+     effect.View =
+      Matrix.CreateLookAt(new Vector3(0.0f, 0.0f, 10.0f),
+      Vector3.Zero, Vector3.Up);
+     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
+      MathHelper.ToRadians(45.0f),
+       (float)this.GraphicsDevice.Viewport.Width
+        / (float)this.GraphicsDevice.Viewport.Height,
+        1.0f, 50.0f );
+    }
+   }
+  }
+  protected override void UnloadContent()  { ; }
+  protected override void Update(GameTime gameTime) {
+   if(wm.WiimoteState.ButtonState.Home) {  this.Exit();  }
+   base.Update(gameTime);
+  }
+  protected override void Draw(GameTime gameTime) {
+   GraphicsDevice.Clear(Color.CornflowerBlue);
+   foreach (ModelMesh mesh in this.xfile.Meshes) {
+    foreach (BasicEffect effect in mesh.Effects) {
+     //WiiRemoteの加速度に合わせて回転角度を設定
+     effect.World = Matrix.CreateFromYawPitchRoll(0,
+      -wm.WiimoteState.AccelState.Values.Y,
+      -wm.WiimoteState.AccelState.Values.X);
+    }
+    mesh.Draw();//meshを描画
+   }
+  base.Draw(gameTime);
+  }
+ }
+}
+</pre>
+
+<p>リアルタイム3DCGという見た目の派手さに対して、とてもコードが短いことに驚かれたのではないでしょうか(XNAのおかげです)。</p>
+<p>なお今回はコールバックを使わずに、描画ループで直接WiiRemoteの加速度センサーの値をそのまま回転の角度に利用するという、ちょっと荒っぽい方法をとっています。実際のゲームに使う場合には、このような使い方をすることは稀で、コールバックと動作認識関数などを作るべきでしょう。</p>
+
+<h3 id="doc2_id439">【演習問題】XNAの利用</h3>
+
+
+<dl>
+<dt>【演習】☆
+<dd>上記のプログラムをコールバックを使う方法に書き換えてみましょう。余裕があれば、「リスト」をつかって最近50回の加速度センサーのデータの平均を取得し、よりなめらかに回転するWiiRemoteXNAを作成してみましょう（解答例は小坂研究室のホームページで紹介されています）。
+<dt>【演習】☆☆
+<dd>Metasequoiaをつかって、自分で好きな.xファイルをテクスチャとともに作成し、読み込めるようにしてみましょう。余裕があれば「＋/－」ボタンでモデルデータを切り替えたり、十字ボタンでカメラのズームをしたりといった「3Dモデルビューアー」としての機能を加えてみましょう。</dl>
+
+<p></p>
+
+<h2 id="doc1_id24">ゲーム応用編(1)：レースゲームへの応用</h2>
+
+<p class="first_ja">ここから先は内容によって、今までのようなステップバイステップの解説手法をとりません。アイディアのみをかいつまんで、自分のプロジェクトに利用していきましょう。</p>
+<p>このセクションでは筆者が開発に協力した反重力レーシングゲーム製品「AceSpeeder2」をWiiRemoteでプレイできるように実験した例を紹介します。</p>
+<p>WiiRemoteは任天堂自身「マリオカート」などを発売していることもあり、レースゲームへの利用は想定されているようで、親和性高く利用できます。</p>
+
+<h3 id="doc3_id479">反重力レーシングゲーム「AceSpeeder2」</h3>
+
+<p class="first_ja">「AceSpeeder2」は2007年に発表された「RAINGRAPHスタジオ」ナカタニタカヒロ氏によるゲーム作品で、シェアウェアとして非常に人気が高かった初代「AceSpeeder」(2000年)の続編となる超高速SFレーシングゲームです。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/AceSpeeder2ss.png" alt="反重力レーシングゲーム「AceSpeeder2」">
+</div>
+
+<div class="fyi">
+<div class="title">RAINGRAPHスタジオ「AceSpeeder2」</div>
+
+<p class="first_ja">[URL] http://www.raingraph.com/</p>
+</div>
+
+<p>ゲームシステムはDirectX8ベースで開発されており、DirectXのジョイスティック機能であるDirectInputをベースに自機の制御を行っていました。</p>
+<p>筆者はナカタニタカヒロ氏の協力により、既にGPUを使った高速な全身画像認識「GPUVision」や、「OpenCV」を使った顔画像入力による、マルチモーダルなレーシングゲームコントロールの研究をAceSpeeder2のソースコードを用いて行っていました。その流れで、WiiRemoteによる新しい操作方法を実験してみました。</p>
+
+<h3 id="doc3_id487">レースゲーム用モーション認識</h3>
+
+<p class="first_ja">ゲームのソースコードに関わる部分ですので、プログラミングの詳細を解説しませんが、プレイヤーインタラクションとしては「左右は傾き、前後はアクセル/ブレーキ、2回振るとブースト発動」という操作体系にしてあります。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/AS2Control.png" alt="WiiRemoteによるコントロール">
+</div>
+
+<p>すべて加速度センサーによる重力検出だけで実現しており、ボタンはメニュー選択を含め、全く使用しません。またLEDを「自機シールドの残量」として表示したり、バイブレーターを演出に使ったりと、WiiRemoteを最大限に活用しています。</p>
+<p>AceSpeeder2では「ブースト」という機能があり、エネルギーをためて大きな加速力を得ることができます。またコースアウト時にもブーストで復旧できる技があるので、いつでもプレイヤーの意思で『ブースト発動！』できることが爽快感につながります。このブーストを「2回振る」というアクション、つまり加速度センサーのマグニチュードを取ることで実現しています。</p>
+<div class="fyi">
+<div class="title">AceSpeeder2 WiiMedia Edition(Youtube動画)</div>
+
+<p class="first_ja">[URL] http://www.youtube.com/watch?v=KowXAXdfO8E</p>
+</div>
+
+<p>WiiRemoteのおかげで、ボタンを全く使わない操作体系になり、小さな子供でも体験することができました。</p>
+<p>実際の展示を通したユーザーテストでの観察によると面白いことがわかりました。「ブースト」は開発者の意図通り、振って発動する場合のほかに、コースの切れ目を避けるために無意識に「ジャンプ」したときに発動したり、コースアウトして「うわっ！落ちる!!」とのけぞった瞬間、無意識で振ったきっかけで発動したりと、より全身で直感的に楽しめるゲームになりました。</p>
+<p>残念ながら当時のWiiRemoteのBluetooth接続はそれほど安定した環境ではありませんでしたし、本書のような解説書を出版するということも考えていませんでしたので、このバージョンは製品としては公開されていませんが、それほど難しいことをしたわけではありません。これからは、もっと多くのPCレーシングゲームでWiiRemoteを活用してほしいと思います。</p>
+<div class="fyi">
+<div class="title">余談「SIGGRAPHビデオゲームシンポジウム：Sandbox」での受賞</div>
+
+<p class="first_ja">　筆者は2007年に、この実験とWiiRemoteの赤外線センサーの特性実験などを「WiiMedia: motion analysis methods and applications using a consumer video game controller」という論文にまとめています。この論文は反響が高く、アメリカで毎年開催されるCGとインタラクティブ技術の世界最高の国際会議「SIGGRAPH」におけるビデオゲームシンポジウム「Sandbox」において、最優秀論文賞をいただきました。　ソースコードは公開し、研究は発表しておくものだなと、つくづく思います。</p>
+<p>[URL] http://sandbox.siggraph.org/about.html</p>
+</div>
+
+
+<h3 id="doc3_id499">【演習問題】レースゲームへの応用</h3>
+
+<p class="first_ja">加速度センサーによる傾きの検出はAtan2()を使えば簡単に求めることができます。マグニチュードの算出なども既に7章、8章などで扱っていますので参照してください。さっそく課題の設定に入りましょう。</p>
+
+<dl>
+<dt>【演習】☆☆
+<dd>GlovePIEをつかって傾きをアナログ入力に利用せよ。
+<dt>【演習】☆☆☆☆
+<dd>自分のゲームプロジェクトにWiiRemoteによる操作を組み込み活用せよ。</dl>
+
+<p>誰もが「AceSpeeder2」のようなすばらしいゲーム作品のソースコードにアクセスできるわけではありません。しかしフリーでソースコードを公開されているゲームプロジェクトはSDL関係では意外に多く、有名なところでは「Tux Racer」というLinuxペンギンのレースゲームなどもソースが公開されているプロジェクトです。</p>
+<p>ソースコードがどうしても手に入らない、ということきは逆転の発想で3章で学んだ「GlovePIE」を使いましょう。プログラミングが不要ということはソースコードの入手も不要なのです。うまくジョイパッドをエミュレーションするコードを書きましょう。アナログ→デジタル入力でも、うまく作ると自然な体験を作ることもできます。</p>
+<p>以下、既存のレースゲームプロジェクトをWiiRemote対応させる上で、難しかった点をメモしておきます。</p>
+<p>多くのゲームの場合はDirectXのジョイスティックAPIであるDirectInputに従った仕様になっているはずです(便利なので)。WiiRemote専用のゲームならいいのですが、PCゲーム開発としては、ゲームバランスや他のコントローラーでの操作感を壊さずに、他のゲームコントローラーと同様の感覚で、うまくなじませることが必要になります。</p>
+<p>「AceSpeeder2」の場合も、元のゲームが細かい操作のためにデジタルジョイパッドを想定して設計されていたので、WiiRemoteの傾きをアナログジョイスティックとして当てはめると、大きく動きすぎたり、細かい動きができなかったりとより難易度が上がってしまいました。</p>
+<p>難易度が上がるだけなら調整すれば良いのですが、「傾ける」というプレイヤーの物理的な行動には制約がありませんので、ゲーム内に働く物理(速度や舵など)といかに親和性を保ちながら、インタラクションを向上させるかといった点も大きな課題となりました。</p>
+<p>ちょっとしたアイディアとしては、「ゲーム内の物理」と「実際のユーザーの姿勢」をインターフェースさせるための「理想の姿勢」というものを考えて、係数や式といった数値で扱う方法があります。ここをチューニングしていくことで、元のゲームプログラムを壊さずに、より操作感の向上に注力できるはずです。</p>
+<div class="fyi">
+<div class="title">Wii Sports Resort「ウェイクボード」</div>
+
+<p class="first_ja">　任天堂からリリースされた最新のレースゲームでの例としては「Wii Sports Resort」の「ウェイクボード」が良くできています。物理シミュレーションを使った美しいCGもさることながら、SFレーシングとは異なり『上に振ってジャンプ』という動作に加えて、『着地のときはWiiRemoteを水平に保つ』というルールを加えることで、WiiRemoteを使った操作とゲーム性を爽快感とともに見事に昇華しています。</p>
+<p>■Wii Sports Resort「ウェイクボード」(動画あり)</p>
+<p>[URL] http://www.nintendo.co.jp/wii/rztj/resort/02_sports/index.html</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id29">ゲーム応用編(2)：「振る」の認識・剣術アクションへの応用</h2>
+
+<p class="first_ja">ゲームでのWiiRemote応用(...といっても、もともとゲーム用コントローラーですが！)を考える上で、レースゲームのようなダイレクトな方向入力として使う以外、もっとも期待される使用方法が「認識」ではないでしょうか。</p>
+<p>このセクションでは筆者が実際に開発した剣術アクションゲーム「JaWii's Virtual Fencing」(ジャウィのバーチャルフェンシング)の開発をベースにWiiRemoteをつかったモーション認識の基本テクニックと、剣術、特にフェンシングゲームへの応用を簡単に紹介します。</p>
+<div class="fyi">
+<div class="title">秘宝館「剣神ドラゴンクエスト 甦りし伝説の剣」</div>
+
+<p class="first_ja">　赤外線センサーと全身を使ったゲーム製品は、任天堂Wiiが世界初、というわけではありません。「剣神ドラゴンクエスト甦りし伝説の剣」(スクウェア・エニックス・2003年)で利用されていたのが国内メジャー作品では最初といえるかもしれません。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/KenjinDQ.png" alt="「剣神ドラゴンクエスト」">
+</div>
+
+<p>　フォトダイオードと赤外線LED光源が受光部(ロトの証)に組み込まれ、「ロトの剣」には再帰性反射剤(反射板や銀スプレー)が処理されています。この「電池の要らない剣」を振り回して、8種類の切る方向に加え、正面に構えて魔法を使うモーションを入力することができました。</p>
+<p>　この製品は滋賀県草津市にあるインタラクティブ技術の研究開発企業「新世代株式会社」のに技術よって実現しています。この会社のホームページ(http://www.xavix.jp/)にいくと、技術の高さと様々な産業へのインタラクティブ技術のインパクトがうかがい知れます。</p>
+</div>
+
+
+<h3 id="doc4_id545">フェンシングゲーム「JaWii's Virtual Fencing」</h3>
+
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Idea/png/JaWiiA1.png" alt="「ジャウィのバーチャルフェンシング」研究室でのユーザーテスト" width="6cm">
+</div>
+
+<p class="first_ja">この作品「ジャウィのバーチャルフェンシング」は筆者がフランスの西部ラヴァル市(Laval)にて、テーマパーク開発のためのエンタテイメントシステムの開発に従事してたころに、市の観光振興企画として開発したものです。</p>
+<p>ラヴァル市は人口10万人程度、世界遺産モンサンミッシェルから車で2時間程度の場所にある、中世の雰囲気を残す美しい中規模都市です。バーチャルリアリティ応用で有名な学術・産業研究都市でもあります。年に一度ヨーロッパでもっとも大規模なバーチャルリアリティのイベント「Laval Virtual」(ラヴァル・バーチャル)が開催されます。</p>
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">Laval Mayenne (Wikipedia英語) [URL] http://en.wikipedia.org/wiki/Laval,_Mayenne</p>
+<p>Laval Virtual (日本語ページあり) [URL] http://laval-virtual.org/</p>
+</div>
+
+<p>フェンシングゲーム「JaWii's Virtual Fencing」はそのLaval Virtualでラヴァル市のブースで展示されるゲーム企画でした。ちょうどラヴァル市は2007年に、同市出身の画家アンリ・ルソー(Henri Rousseau, 1844～1910)と同じ時代を生きた、ラヴァル市出身の劇作家アルフレッド・ジャリィ(Alfred JARRY, 1873～1907)の没後100年祭を祝っていました。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Idea/png/Jarry1896.png" alt="アルフレッド・ジャリィと古式フェンシング" width="6cm">
+</div>
+
+<p>ジャリィは作家としては「ウビュ王(Ubu Roi)」シリーズが有名ですが、古式フェンシングの名手でもありました。そこで当時発売されたばかりで話題だったWiiRemoteを使って「ジャリィに古式フェンシングの指南を受ける」というゲームアイディアが、市民にジャリィの人物を伝える良い企画として持ち上がったのです。</p>
+
+<h3 id="doc4_id563">古式フェンシング指南ゲームの開発</h3>
+
+<p class="first_ja">まずは解説に入る前に、完成版の動画をYouTubeにアップロードしてありますので、ご参照下さい。</p>
+<div class="fyi">
+<div class="title">「ジャウィのバーチャルフェンシング」(Youtube動画)</div>
+
+
+<div class="figure">
+<img class="figure" src="Idea/png/JaWiiVideo.png" alt="Youtube動画より">
+</div>
+
+<p class="first_ja">WiiMedia:Sword Fighting &quot;JaWii's Virtual Fencing&quot;</p>
+<p>[URL] http://www.youtube.com/watch?v=Kl_-KoVLtx4</p>
+</div>
+
+<p>フェンシングの基本として、「突き」「正面切りつけ」「右切りつけ」「左切りつけ」といった攻撃、それから各攻撃に対応した防御法があります。古式のフェンシングはより複雑ですが、現代のように電気を使った接触検出はありませんし、防具もつけません。</p>
+<p>このような複雑で形式ばった古式フェンシングのモーションを、子供も交えた一般のお客さんに伝えるのは企画の趣旨ではありませんが、ジャリィがたしなんだという古式フェンシングはちゃんと表現したいところですので、フランスフェンシング協会に依頼して、Gypsy社製の機械式モーションキャプチャーで古式演舞を収録しました。</p>
+<p>3D Studio MaxとVirtoolsを使って、ジャリィを模した3Dキャラクター「JaWii」にこのモーションを元したアニメーション割り当てます。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="Idea/png/BenoitPincemaille.png" alt="プロフェンシング選手Benoit Pincemaille氏によるモーションキャプチャ収録" width="4cm">
+</div>
+
+<p>ゲームは背景投影の大スクリーンに表示され、プレイヤー自己視点で遊びます。プレイヤーの3Dモデルは必要ありませんが、フェンシングのサーベルを振るアニメーションだけは事前に複数通り作成しておきます。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="Idea/png/JaWiiA2.png" alt="リアルタイムアニメーションはVirtoolsで開発" width="4cm">
+</div>
+
+
+<h3 id="doc4_id584">モーション検出のための評価関数を作る</h3>
+
+<p class="first_ja">さてここからがWiiRemoteプログラミングの課題です。</p>
+<p>プロジェクター背面投影という設営の構成上、赤外線マーカーは利用できそうにありません。加速度センサーだけでさまざまなプレイヤーの複数の動作を認識する必要があります。</p>
+<p>「振る」を認識するだけであれば、加速度センサー各軸の強度を算出するマグニチュードで十分でしょう。しかし、大人や子供など人によってマグニチュードの強さは異なりますし、「突き」だけならともかく、フェンシングらしく切りつける方向もある程度は検出したいと思います。</p>
+<p>ここで複数のプレイヤーの「切りつける」という動作について、加速度センサーの値をテキストファイルに保存し、作図して観察してみると、いろいろな問題や解決方法が見えてきます。以下、ポイントをいくつかまとめてみます。</p>
+
+<dl>
+<dt>処理ウィンドウ
+<dd>いつからいつまでの時間を「入力」とするのか。信号処理の用語で、処理の区間を「ウィンドウ」と呼びますが、これを決める方法をつくらないと話が前に進みません。
+<dt>正規化
+<dd>複数のプレイヤーに対する最大マグニチュードは異なります。正規化処理、つまり最大値を1.0にするような割り算を行うことで、ある程度特徴だけに注目できるようになります。
+<dt>WiiRemoteがねじれる
+<dd>「まっすぐ振り下ろす」といっても、人間の手首は加速度センサーの軸とは関係なく時間的にねじれることがあります。テニスなどでも同じことが起きます。
+<dt>検出してからでは遅い
+<dd>例えば「突き」のモーションを検出するのは簡単(最も加速度が高くベクトルが直線的)ですが、「突き」を表現するアニメーションにも再生時間(duration)があります。最大の加速度を取得してから「突き」のアニメーションを開始したのでは『なんだか遅いな』という操作感になります。</dl>
+
+<p>特にさまざまな問題の根底に感じられる原因は、WiiRemoteの検出分解能と回転速度が得られない点でしょう。図9-14は加速度センサーの加速度データひとつひとつを3次元ベクトルにして積分し、得た速度をもとに、さらにその積分を取って3次元的な位置に配置した図です。「同じ場所で数回、自然に振る」というアクションで、長い矢印ほど大きいマグニチュードを表していますが、なぜか右から左に移動しているように見えます。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/LostInfo3D.png" alt="加速度センサーの値を積分して得られる3次元位置">
+</div>
+
+<p>加速度センサーの分解能により、3次元座標が再構築できないことは7章でWiiRemoteを「そーっとうごかすと検出されない」という実験行ったので理解できるでしょう。そして、図中の○の部分に注目するとより面白いことが見えてきます。この部分は「振り」モーションの最後で、伸ばした腕を引いて、後ろに振りかぶった瞬間です。明らかに振りの最高速に比べて直線的な動きではなく、小さい力で回転しているように見えます。</p>
+<p>実際にはこの瞬間、WiiRemoteは頭の後ろで手首をつかって回転しています。つまり回転のエネルギーをWiiRemoteが取得できていないため、このような図になるようです。しかし逆転の発想で、この瞬間のマグニチュードは、振りの最大速のマグニチュードとは異なる性質をもっているので、弱いマグニチュードが入力されたときに「処理ウィンドウの最初」として評価を開始することができます。</p>
+<p>以後、このような「評価関数」を作りこんでいくことで目的のモーションを発見する関数を作っていきます。あとは個々のモーションに対応する評価関数それぞれを作っていきます。</p>
+<p>しかし、加速度センサーだけの値だけでは観察できるデータが少なすぎます。そこで別の測定方法を使って振る舞いを観察します。図9-15は光学式のモーションキャプチャーを装着した状態で、WiiRemoteを持って｛正面、右から、左から｝の攻撃モーションを繰り返した様子です。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/MocapColored.png" alt="モーションキャプチャーによる「振りの」様子(左：正面図、右：上面図)">
+</div>
+
+<p>モーションキャプチャは高価な機材なので気軽に使うことはできませんが、このような実験と可視化を一度行っておくことで目的のモーションを検出するために、どのようなベクトルに注目すべきか、またどれぐらいのサンプル時間(図の矢印の個数)が必要かを見極めることができます。理想とされる方向との近いものを1.0とすればよいのです(ベクトルの内積を使いましょう)。</p>
+<p>また評価関数化することで複雑なモーションも簡単に設計できるようになります。評価関数の足し算や掛け算をつかって、複数の評価関数が同時に成立する条件を判断させたり、マイナスの評価を使って、誤検出されやすい条件から逆の条件を浮き立たせます。</p>
+<p>例えば図9-15では「突き」と評価されるベクトル(つまりY軸十字ボタン方向への加速)に対して着色していますが、このベクトルから遠いものが「右切りつけ」や「左切りつけ」に該当します(「振り」モーション中は重力の影響はほとんど無いことも読み取れます)。「突き」の最高速モーションは5サンプル程度で認識できていますので、他の評価関数では、より多くのサンプルを使って「突きではないモーション」に注目させればよいのです。</p>
+<p>この方法を使って「ジャウィのバーチャルフェンシング」では、さまざまな年齢層のプレイヤーでも3方向の攻撃モーションと防御モーションを認識させ、適切なアニメーション再生に割り当て、ゲーム作品を完成させることができました。</p>
+
+<h3 id="doc4_id618">【演習問題】振りの検出</h3>
+
+
+<dl>
+<dt>【演習】☆☆
+<dd>第7.5章の「WiiRemote測定器」を参考にして、テニスや「スイング」と「寸止め」「バックハンド」「(左右への)打ち分け」を分類する評価関数を作成せよ。
+<dt>【演習】☆☆☆
+<dd>上記の評価関数に対し、WiiMotionPlusと最新のWiiYourself!を用いて、回転を積極的に利用した評価関数を作成し「フェイントが検出できる剣道ゲーム」を作成せよ。</dl>
+
+<p class="first_ja">WiiMotionPlusは本書執筆の最終段階で発売されましたので、上記のようなグラフを描くことはできませんでした(発刊が遅れてしまいます！)。演習ではWiiYourself!によるC++を意識していますが、グラフを描画やファイル入出力もきっちり実装するならば、C#.NETによるフォームアプリケーションのほうが便利かもしれませんね(小坂研究室にCSVファイルを保存するサンプルがあります)。</p>
+<p>このような「モーション評価関数デザイン」は今、ゲーム開発の世界ではとても需要がある技術です。HMMやSVMなどの機械学習を用いた方法も研究としては面白味がありますが、最後はこの評価関数のデザインセンスが、ゲームの面白さを決定付けることもあります。IF文のカタマリで開発し、ゲームプログラマーの誰かに特化されたインタラクションではなく、エレガントでエキサイティングな評価関数を設計できるよう、探求してみてください。</p>
+<div class="fyi">
+<div class="title">3DVIA Virtools+WiiRemote</div>
+
+<p class="first_ja">　「JaWii's Virtual Fencing」の開発で使ったVirtoolsは高価な産業向け製品であることもあり、日本ではそれほど有名ではありませんが、欧米では最も利用されている可視化プラットフォームです。モデルや画像などのリソースに対して部品化されたGUIプログラミングを施すだけでほとんどのインタラクティブデザイン関係が作れてしまう画期的なツールです。</p>
+<p>　カスタマイズ性も高く、レンダラーやプラグインなどほとんどのソースは公開されています。ゲームの流れや面白さの根幹に関わる部分の設計をプランナーがGUIで作成し、最終工程である最適化やプラットフォームの独自部分などをプログラミングで行う、といったゲーム開発手法です。</p>
+<p>　ソニーPSP用や任天堂Wii用のVirtoolsも存在します。任天堂Wiiの開発ライセンスを持っているゲーム開発企業であれば、WiiRemote関係のプラグインを入手することもできるそうです。またVirtoolsのフリーな開発者コミュニティは活発で、スワップミート(http://www.theswapmeet-forum.com/)で様々な情報やソース、プラグインが共有されており、PC上で利用できるオープンソースのWiiRemoteのプラグインも多数あります。将来ゲーム制作を目指す学生さんや、フリーのゲーム企画者にとって、これは協力なソリューションです。Virtoolsを使ってPC上でゲームのプロトタイプを制作すれば、すばやくアイディアを形にできますし、資金や技術的なリスクを回避できるからです。</p>
+<p>　日本ではクレッセントと三徳商事という会社が中心に代理店を行っています。コンテンツの制作サポートや技術サポート、教育支援、学校向けライセンス販売などリセラー各社の得意分野がありますから、興味があったらまず問い合わせてみてください。お試しライセンスを発行してくれるかもしれません。</p>
+<p>■株式会社クレッセント　http://www.crescentvideo.co.jp/virtools/</p>
+<p>■三徳商事　　http://virtools.jp/</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id36">作品編(1)：WiiBoardを用いた「オーラ診断」</h2>
+
+<p class="first_ja">次のテーマは「バランスWiiボード」を扱います(本書では「WiiBoard」と標記しています)。</p>
+<p>第1.4章で紹介した学生作品『人間椅子』でもWiiBoardを2つ使い、Windows上の独自APIにより開発を行っていました。</p>
+<p>このセクションではMac上のProcessingを使った学生の卒業制作作品『オーラ診断』の開発プロセスを、実際に本作品を開発した東京工科大学コムメディアデザイン研究室・電王隊(小笠原明日美、平塚宏、平野実花、渕上伸吾)の皆さんのご協力により学生視点で開発資料を紹介することで、WiiBoardによる作品作りに親しんでみたいと思います。</p>
+
+<h3 id="doc6_id679">プログラミング初心者4人が作った「オーラ診断」</h3>
+
+<p class="first_ja">「オーラ診断」は東京工科大学メディア学部の卒業制作展「メディアコンテンツ展2009」の「ライフエンタテインメント」として発表された作品です。</p>
+
+<div class="figure">
+<img class="figure" style="width:7cm" src="../chap9/aura-images/IMG_4757.jpg" alt="MacとProcessingとWiiBoardで作った「オーラ診断」" width="7cm">
+</div>
+
+<p>まずは「オーラ診断」の動画とブログから紹介します(以下、渕上伸吾氏のBlogより文体も含めできる限りそのまま引用しています)。</p>
+<div class="fyi">
+<div class="title">「オーラ診断」</div>
+
+<p class="first_ja">YouTube動画「オーラ診断」</p>
+<p>[URL] http://www.youtube.com/watch?v=3pL3ObUwoA8</p>
+<p>プログラミング初心者4人が作った「オーラ診断」という作品</p>
+<p>[URL] http://gryng.blog87.fc2.com/blog-entry-15.html</p>
+</div>
+
+
+<h4 id="doc6_id690">「オーラ診断」の概要</h4>
+
+<p class="first_ja">「オーラ診断」は体験者のオーラを診断する作品です。自分のオーラの色や形を見て、脳内メーカーのように楽しんでもらうことが狙いです。</p>
+<p>こんなかんじです。</p>
+
+<div class="figure">
+<img class="figure" src="../chap9/aura-images/ss13496.png" alt="怪しい「オーラ」診断中">
+</div>
+
+
+<h4 id="doc6_id697">この作品のキモ</h4>
+
+<p class="first_ja">いわゆる脳内メーカー系サービスは、名前や誕生日を入力させる事で結果を算出しています。そうしないと、分析する手がかりがないので当然です。</p>
+<p>しかし、オーラを診断するにあたって、体験者に“入力”をさせたくありませんでした。厳密には、入力した事を気がつかせない。ここがこの作品のキモになっています。</p>
+<p>そのために使ったデバイスが、バランスWiiボードです。</p>
+
+<h4 id="doc6_id700">バランスWiiボード</h4>
+
+<p class="first_ja">NINTENDO Wii用の周辺機器であり、Wii FitでおなじみのバランスWiiボード。Wii Fitではバランスゲームや筋トレ、ヨガなどを楽しめます。</p>
+<p>このバランスWiiボードは、乗った人の重心を求めることができます。具体的には、左右の足の前後、合計４カ所にかかる重さを得ており、それぞれを比べる事で重心を調べています。</p>
+<p>このバランスWiiボードなら、体験者に意識させずに情報を入力させることができる！と思ったわけです。なぜなら、そこに立たせるだけで重心の情報を得る事ができちゃうんですから。</p>
+
+<h4 id="doc6_id703">BBOSC</h4>
+
+<p class="first_ja">バランスWiiボードとMacを接続するために「BBOSC」というソフトを利用させていただきました。</p>
+<div class="fyi">
+<div class="title">4nchor5 la6 [BBOSC]ダウンロード</div>
+
+<p class="first_ja">[URL] http://456.im/wp/download/</p>
+</div>
+
+<p>立ち上げて、Wiiボードの電池ボックスの中にある[Sync]ボタンを押すだけ。びっくりするほど簡単に接続できました。</p>
+<p>そうしてMacに送られてくる４カ所の体重の情報を、Processingに渡すわけです。このあたりは、Web Designing 3月号(2008年)の記事[Beyond the Browser]を参考にさせていただきました。</p>
+<p>大雑把に言えば、BBOSCが体重の情報をOSCという規格で送信し続けてくれるので、Proecssing側では「oscP5」というライブラリを使ってキャッチする、という感じです。</p>
+
+<div class="figure">
+<img class="figure" src="../chap9/aura-images/aura-blk.png">
+</div>
+
+
+<h4 id="doc6_id713">Processing</h4>
+
+<p class="first_ja">Processingはビジュアル表現が容易なオブジェクト指向のプログラミング言語、らしい。はっきり言って名前すら知りませんでした。</p>
+<p>Processingでは体重の情報を元にオーラを描画していきます。</p>
+<p>人の重心は絶えず動いているもの。それだとちょっと扱いにくいので、その人の平均的な重心位置を求めるために、数秒の判定時間を設けました。その間、体験者には画面に集中しておいてもらいます。そうして見つかった重心の位置を使って、その人の基準となる1色を設定します。</p>
+<p>基準の1色だけだと画面が寂しいので、重心の移動に合わせてある程度、色が変化するようにしました。この変化の幅も重心の位置から設定しています。より“その人だけのオーラ”が診断できるようになりました。</p>
+<p>書いてないこともまだまだたくさんあるんですが、作品のおおまかな仕組みを紹介してみました。</p>
+
+<h3 id="doc6_id717">補足：「BBOSC」とは？</h3>
+
+<p class="first_ja">以上の渕上伸吾氏のブログエントリーだけですと、情報が足りませんので以下補足します。</p>
+<p>「BBOSC」は石橋素(いしばしもとい)氏が雑誌「ウェブデザインニング」連載記事のために開発したもので、WiiRemoteでMacを操作できる「DarwiinRemote」などを開発したHiroaki Kimura氏による、MacOSにおけるWiiRemoteプログラミングAPI「WiiRemote Framework」を参考して開発されたそうです。</p>
+<div class="fyi">
+<div class="title">参考：Hiroaki Kimura氏のブログ「Hirolog」</div>
+
+<p class="first_ja">「DarwiinRemote」WiiRemoteでMacを操作できる</p>
+<p>[URL]　http://blog.hiroaki.jp/2006/12/000433.html</p>
+<p>「WiiRemote Framework」</p>
+<p>[URL]　http://blog.hiroaki.jp/2007/05/000456.html</p>
+</div>
+
+<p>OSCとはOpen Sound Controlの略で、電子楽器やコンピュータの音楽演奏データをネットワーク経由でリアルタイムに共有するための通信プロトコル、つまりMIDIの代替となることを意図してつくられたネットワークプロトコルです。カリフォルニア大学バークレー校にあるCNMAT（The Center for New Music and Audio Technologies）を中心にオープンソースで開発されています(http://opensoundcontrol.org/)。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="../chap9/aura-images/BBOSC.png" alt="「BBOSC」" width="5cm">
+</div>
+
+<p>「BBOSC」実行時に、ターゲットとなるホストのIPアドレスとポートを指定します。4カ所にかかる体重を0-10000にスケールしてOSCで送信します。右上、右下、左上、左下と、WiiBoardに内蔵された4つのひずみセンサーの値が得られますが、そのままでは使いにくいので、「オーラ診断」では{ X, Y}の値に変換し、平均を利用しています。</p>
+
+<div class="figure">
+<img class="figure" src="../chap9/aura-images/aura-bb.png" alt="WiiBoardから得られるセンサー値の利用">
+</div>
+
+
+<h3 id="doc6_id734">その他の「オーラを作る技術」</h3>
+
+<p class="first_ja">「オーラ診断」を実現するために、BBOSCのほかに、カメラの利用と処理に「JMyron」、人と背景を分けるために背景差分法を用い、人の輪郭をとるために「blobDetection」というProcessingのライブラリを使っています。</p>
+<div class="fyi">
+<div class="title">その他：画像処理のためのライブラリ</div>
+
+<p class="first_ja">「JMyron」</p>
+<p>[URL] http://webcamxtra.sourceforge.net/download.shtml</p>
+<p>　ちなみに「Myron」とはアメリカのコンピュータアーティストミロン・クルーガー(Myron Krueger, 1942)。に由来する名前と思われます。1980年代にインタラクティブ・アートやバーチャルリアリティーを使った作品を作った人です。</p>
+<p>「Myron Krueger」(YouTube動画)</p>
+<p>[URL] http://www.youtube.com/watch?v=A6ZYsX_dxzs</p>
+<p>「blobDetection」[URL] http://www.v3ga.net/processing/BlobDetection/</p>
+<p>　Processingの画像処理ライブラリです。「Blob」とは「もやもやしたカタマリ」のことで、人物などの検出をするには向いています。なおこのホームページには画像処理を利用したさまざまなアートプロジェクトへのリンクがあります。</p>
+</div>
+
+
+<h3 id="doc6_id740">【演習問題】MacとWiiBoardの利用</h3>
+
+<p class="first_ja">なおこの作品が発表された東京工科大学「メディアコンテンツ展2009」のホームページには「オーラ診断」の他にも面白い作品が数多く発表されています。</p>
+<div class="fyi">
+<div class="title">東京工科大学「メディアコンテンツ展2009」</div>
+
+<p class="first_ja">「ライフエンタテインメント」</p>
+<p>[URL] http://www.teu.ac.jp/mce/2009/work/lifeenter.html</p>
+</div>
+
+<p>このセクションにご協力いただいた渕上伸吾氏も「Earth Surfer」というWiiBoardを使った別の「バックトゥザフューチャー感覚で写真を見るプロジェクト」を発表しています。</p>
+<div class="fyi">
+<div class="title">「WiiBoard」C#.NETでの開発</div>
+
+<p class="first_ja">　Windows環境では「WiimoteLib」でWiiBoardを利用することができます。特にC#.NETでWiiBoardを利用したい方は、小坂研修室でサンプルが公開されていますので活用すると良いでしょう。</p>
+<p>[URL] http://www.kosaka-lab.com/tips/2009/02/wiiwii-fit.html</p>
+</div>
+
+
+<dl>
+<dt>【演習】☆☆
+<dd>Mac環境で動く「BBOSC」や「WiiFlash」などWiiRemote利用ツールを探し、Processingを使った「誰も見たことがない」メディアアート作品制作に挑戦せよ。
+<dt>【演習】☆☆☆
+<dd>WiiBoardを使って、人間の「足踏み」を検出してVR世界を散歩せよ。なお「足踏み動作解析」については、東京農工大の藤田欣也先生他、論文が多数ありますので検索して参考するとよいでしょう。</dl>
+
+<p>このセクションではWiiBoardとMacOSでの学生プロジェクトを扱いました。本書ではMacOSでのWiiRemoteプログラミングをProcsssingとActionScript以外は扱ってきませんでしたが、Bluetooth接続の安定感もあり「WiiRemote Framework」など、WindowsXP環境よりも先に日本人開発者によってプログラミング環境が開拓されてきた時期もありました。</p>
+<p>またこのセクションで扱ったようなOSCのような「ネットワーク経由の楽器として扱う」という方法は、VJやアーティスト系に親しまれているインタラクティブなサウンドプログラム環境「Max/MSP」などでよく使われる方法です。実際にMax/MSPとWiiRemoteをつかったVJ活動などもよくききます。Windows環境だけにとらわれる必要は無いのです。</p>
+<p>「オーラ診断」で使ったような、カメラ画像処理、画像エフェクトを組み合わせ、今後さらに幅広い層でバーチャルリアリティアート、ビデオアート、インタラクションアート作品が生まれることを期待します。</p>
+<p></p>
+
+<h2 id="doc1_id41">作品編(2)：SecondLifeで使う</h2>
+
+<p class="first_ja">世界的に有名なバーチャルワールドサービス「SecondLife」でWiiRemoteを使えるようにしてみましょう。SecondLifeは無料で利用できるバーチャルリアリティ空間共有サービスです。リンデンラボという会社が運営しており、リンデンドルという実社会に似た通貨を買ったり、土地の売買や建築、キャラクターの装飾やプログラミングといったユーザーによるコンテンツ作成が行えるのが特徴です。よくわからない人は「ゲームが目的ではない3Dネットゲームのようなもの」を想像すると良いでしょう。</p>
+<p>SecondLifeのクライアントソフトのソースコードが公開されているわけではありませんが、第3章で学んだ「GlovePIE」を使えば、プログラミングや改造することなくSecondLifeをWiiRemoteで操作することができるようになります。SecondLifeを使ったバーチャルリアリティ空間の建築作品作りで有名な首都大学東京の渡邉英徳先生が、インタラクティブ技術のイベントのための写真アーカイブ作品「Laval VRchive」の展示用スクリプトを作成していますので紹介します。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/LavalVRchive.png" alt="Second Life作品「Laval VRchive 2009」">
+</div>
+
+
+<h3 id="doc7_id793">SecondLife用PIEスクリプト</h3>
+
+<p class="first_ja">まず、Google Earth用のPIEスクリプトをベースに、複数回のユーザビリティ検討を行った結果、まずSecondLifeにもとからある前進/後進機能をオフにすることにしました。「バーチャルリアリティ空間内で等身大のサイズで過去の体験型イベントの写真を共有する」というコンテンツの設計上、前後に移動することがそれほど重要ではないと判断したのです。このような機能の刈り込みは、ユーザーインターフェースデザインを向上させる上で重要な機能制限といえますし、GlovePIEで入力させなければ良いので、比較的簡単に検討することができました。</p>
+<p>しかし再検討を重ねていく上で、最終的には「十字キーで前後移動＋左右転回，『[B]ボタンを押しながら↑↓』もしくは『＋－ボタン』で上昇下降」という仕様に落ち着きました。赤外線センサーの値はマウスポインタに割り当ててあります。USB給電できるセンサーバーをプロジェクタースクリーンの下に設置し、SecondLife内の「指さし」と同じ感覚で、作品中のオブジェクトにWiiRemoteを向けて、[A]ボタンを押すことで操作することができます。</p>
+<p>SecondLifeではちょっとしたことでカメラアングルがずれてしまうので、[Home]ボタンでリセットできるようになっています。またSecond Lifeのコンテンツを展示する場合、メニューバーが邪魔になるため、ディベロッパーモード[Ctrl+Shift+D]に切り替え、「インターフェイスをoff」[Ctrl+Shift+1]というモードにしています。この場合、画面上部のメニューバーは不可視にはなっていますが、メニューバーそのものは存在しているため、画面の上下端で[A]をクリックすると誤動作する恐れがあります。今回のスクリプトでは実装していませんが、画面の上下端にマウス移動のリミッターを付けることが望ましいかもしれません。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/LavalVRchiveC.png" alt="WiiRemoteを使って片手で操作できる">
+</div>
+
+
+<div id="doc7_id799" class="caption">[GlovePIE]SecondLife「Laval VRchive 2009」展示用PIEスクリプト(抜粋)</div>
+<pre class="program" style="margin-top:0">
+Mouse.LeftButton = Wiimote.A
+Keyboard.ESC = Wiimote.Home
+Keyboard.Up = Wiimote.Up
+Keyboard.Down = Wiimote.Down
+Keyboard.Left = Wiimote.Left
+Keyboard.Right = Wiimote.Right
+Keyboard.E = Wiimote.Plus
+Keyboard.C = Wiimote.Minus
+if Wiimote.B &amp; Wiimote.Up Then
+ KeyBoard.Up = False
+ Keyboard.E = True
+ Wait 600ms
+ Keyboard.E = False
+endif
+if Wiimote.B &amp; Wiimote.Down Then
+ KeyBoard.Down = False
+ Keyboard.C = True
+ Wait 600ms
+ Keyboard.C = False
+endif
+＜以下、赤外線センサーの利用や安定感向上のためのスクリプト＞
+</pre>
+
+
+<h3 id="doc7_id803">【演習問題】SecondLife＋GlovePIEを極めよう</h3>
+
+
+<dl>
+<dt>【演習】☆☆☆
+<dd>上記PIEスクリプトと、本書3章を参考にして、「GlovePIE」と「SecondLife」を使って、自由にバーチャルリアリティ空間を散歩できるPIEスクリプトを作成せよ。その際ヌンチャクなども利用して、展示向け、デスクトップ向けなどのカスタムバージョンも検討せよ。</dl>
+
+<div class="fyi">
+<div class="title">WiiRemoteから自動切断されないようにしたい</div>
+
+<p class="first_ja">　WiiRemoteの更新が長時間なにもないと、いつの間にか切断されてしまいます。赤外線を見せるなどして、切断されないリポートモードを使うと確かに切断はされないのですが、今度は電池が切れてしまいます。実験するには長い時間がかかりますが、時々LED出力などの信号を送ってあげるとよいのかもしれません。なおWii本体では、同様にWiiRemoteが長時間操作しないとスリープモードに入るのですが、何かWiiRemoteのボタンを押すと、本体側から再度Bluetoothのペアリングを要求するらしく、接続が復旧するようになっています。</p>
+<p>　Windows環境においてはまだBluetooth自動接続に成功したソフトウェアはありませんが、試している人がいないわけではありません。原理的にはDDKがあるので不可能ではないはずです(専用のHIDドライバを作った方が早いのかもしれませんが...)。そのうちこういった高度なWiiRemote管理もオープンソースのAPIで可能になるかもしれませんね。</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id46">モノ編(1)：センサーバーを自作する</h2>
+
+<p class="first_ja">WiiRemoteの赤外線センサーは非常に多機能で高速で高機能ですが、このままの状態では、センサーバーをWii本体に接続していなければ使えません。せっかくPCでWiiRemoteが使えるので、Wii本体がなくてもよいように、センサーバーの仕組みを知り、自作に挑戦してみましょう。</p>
+<p>WiiRemoteの加速度センサーだけ使う予定の読者の方や、センサーバーをWii本体に接続して利用する方は、このセクションは読み飛ばしていただいてもかまいません。</p>
+
+<h3 id="doc8_id840">センサーバーのしくみ</h3>
+
+<p class="first_ja">センサーバーは、名前だけ聞くと『中にセンサーが入っている』ように聞こえますが、実際には赤外線センサーはWiiRemote内に実装されており、センサーバー内部にセンサーは存在しません。</p>
+<p>センサーバー内部には、左右にそれぞれ5つの赤外線LEDが実装されています。Wii本体と接続しているケーブルは、ただの電源ケーブルで、赤外線LEDはプラグを差している間、常に点灯しているようです。つまりLEDは信号を送って同期したり、変調(周波数を変えて明度や速度を調整すること)したり、といった凝ったことはせず、単純に直流電流を使って、同じ明るさで点灯しています。ちなみに「テレビの友チャンネルGガイドfor Wii」でリモコンとして使うときだけは、リモコン信号の規格に合わせて高速に点滅しています。</p>
+<p>同期や変調といった複雑な電子回路の場合は、自分で作るのは少々大変ですが、LED点灯回路ぐらいであればそれほど難しくはありません(中学生レベルの電子回路です)。このLED点灯回路を赤外線LEDを用いて自作すれば、オリジナルの赤外線マーカーのできあがりです。センサーバーは必要なくなります。PCでWiiRemoteを利用するのに、いちいちWii本体を起動してセンサーバーを点灯させる必要はありませんし、赤外線センサーを使った自作の作品を利用する上での自由度も広がるでしょう。</p>
+
+<h3 id="doc8_id843">目には見えない「近赤外線」</h3>
+
+<p class="first_ja">さて、ここでは赤外線について学んでおきましょう。まず、世の中の光にはすべて「波長」があります。波長が変わると色が変わって見えます。虹やプリズムを通して太陽の光を分解してみると「赤橙黄緑青藍紫」という順番に並んで見えます。赤色に近くなればなるほど長い波長、紫色に近くなればなるほど短い波長です。人間が肉眼で見ることができる波長「可視光」には限りがあり、実際にはもっと多くの波長が存在します。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/waves.png" alt="目には見えない近赤外線">
+</div>
+
+
+<h4 id="doc8_id849">「近赤外線」とは</h4>
+
+<p class="first_ja">『赤外線』と一言で言っても、本書で扱う赤外線は波長700nm～2500nm近辺の「近赤外線」と呼ばれる赤外線です。他にも2500nm～4000nmの「中赤外線」や、波長4μm～1000μmの「遠赤外線」(熱線)があります。いずれも人の目では見えない光で、「電波」よりも波長の短い「電磁波」のことです。遠赤外線以上に波長が長くなると「マイクロ波」「メートル波」といった「電波」と呼ばれます。</p>
+<p>人間が見える「可視光」は、せいぜい赤の750nmから紫の380nm程度で、それよりも短い波長になると「紫外線」となり、さらに波長が短くなると「X線」や「ガンマ線」と呼ばれ、性質が異なってきます。人体に吸収されたり、山や建物を通り抜けたり、お湯が沸いたり、無線通信できたり……と波長ごとにいろんな利用上の特性がありますが、特にWiiRemoteを使う上では波長1000～800nmの「近赤外線」の光を使います。この近赤外光は、人間の目に見えづらいという以外は、普段我々が目にする光とほとんど変わらない性質を持っています。</p>
+<p>近赤外線は目に見ることができませんが、可視光に近いため、目に見える光に似た拡散や反射が観察できます。目に見えないという理由から、自動ドアの接触センサー(フォトインタラプタ)や、テレビのリモコン、携帯電話同士の赤外線通信「IrDA」などに使われています。こうしてみると、街の中は赤外線センサーだらけなのです！なおインフルエンザで発熱している人を見分けるときなどにも使われる「熱画像カメラ」や「赤外線サーモグラフィー」とよばれる温度に応じて色をわりあてるカメラがありますが、これは黒体放射による7.5～13μmの波長、つまり遠赤外線です。</p>
+<div class="fyi">
+<div class="title">光の不思議についてもっと知りたかったら…</div>
+
+<p class="first_ja">　文部科学省が2008年の科学技術週間で配布した「一家に1枚光マップ」が非常に良くできています。波長毎、ありとあらゆる光について、実際に使われている例が写真入りで紹介されているポスターです。PDF版が理化学研究所のホームページからダウンロードできます。</p>
+<p>■「一家に1枚光マップ」</p>
+<p>　製作著作：文部科学省／監修：河田聡（独立行政法人理化学研究所）</p>
+<p>　http://www.riken.go.jp/r-world/topics/080404_2/lightmap.pdf</p>
+</div>
+
+
+<h4 id="doc8_id855">見えない赤外線を見えるようにするには？</h4>
+
+<p class="first_ja">白熱電球なども目に見える光(可視光線)とともに、熱線と近赤外線を発光しています。「センシング用途」つまりWiiRemoteのようなセンサーとして光を使う場合には、可視光や熱は必要でなく、効率が良くないので、マーカー用光源として赤外線LEDの発光を使う場合が多いようです。</p>
+<p>センシング用途では、赤外線LED光源にあわせて、フォトダイオード(PD)やフォトトランジスタといった特定の波長の光に対して反応する半導体とセットで利用されます。TVのリモコンや携帯電話やPCの近距離通信に使うIrDA(Infrared Data Association)規格、自動ドアもこの赤外線LEDと半導体素子のセットで構成されています。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="Idea/png/SensorBar2.png" alt="センサーバーの赤外線をデジカメで撮影した様子" width="8cm">
+</div>
+
+<p>目には見えない赤外線ですが、デジカメや携帯、Webカメラなどの画像センサーを使うことで、赤外線を画像として見ることができます。デジカメに利用されている画像センサーである「CCD」や「CMOS」は、本来、限定された幅の波長の光しか電子に変換できないのですが、赤・緑・青といった、人間が画像として利用するための受光特性以外にほんの少しだけ、可視光の外側の波長に感度があるデバイスもあります。この受光特性を利用して「見えない赤外線を見る」ことができます。この知識は非常に有効で、センサーバーを自作したときや動作確認をする上で、赤外線が見えるカメラを手元においておくと、赤外線LEDの点灯状態が見えて非常に便利です。</p>
+<p>なお「ノクトビジョン」や「ナイトスコープ」と呼ばれるカメラは、この仕組みを使って目に見えない赤外線という明かりをつかって、夜中や暗闇でも撮影できるカメラを実現しています。</p>
+<div class="fyi">
+<div class="title">WiiRemoteの受光特性は？</div>
+
+<p class="first_ja">　WiiRemoteの赤外線センサーはいったいどのような仕組みでどんな波長の光を感じることができるのでしょう？</p>
+<p>　実際には型番が公開されているわけではないのでよくわかりません。実験してみるしかないのですが、WiiRemoteに内蔵されているセンサーは、任天堂が台湾のPixArt Imaging社(http://www.pixart.com.tw/)に特注して開発した、特別な赤外線画像センサーといわれています。推測の範囲を出ませんが、低解像度のCMOSで、デジカメのような「画素値」ではなく赤外線の明かりの「重心の位置」を高速に出力するタイプのデバイスのようです。</p>
+<p>　一般的なWebカメラなどの画像処理速度が毎秒30-60フレーム程度なのに対して、このPSDは2次元の重心位置を出力するだけなので、高速です。値段と大きさにもよりますが、毎秒400フレームぐらい出せるデバイスもあります。</p>
+<p>　なお筆者が大学4年の時に書いた論文「光学的３次元位置検出法を用いたリアルタイム人間動作入力デバイス」では、浜松ホトニクス社製のPSD(Position Sensing Device)カメラを使いました。このカメラもWiiRemoteのCMOSに似た半導体デバイスですが、当時100万円以上で研究室が購入したことを記憶しています...！</p>
+</div>
+
+
+<h3 id="doc8_id869">電子部品をそろえる・工作する</h3>
+
+<div class="fyi">
+<div class="title">【注意】</div>
+
+<p class="first_ja">[!]ここから先は電子回路等の知識がある方、半田ごての扱いなどが可能な方のみ実践に臨んでください。本書を原因とするPCの破損や火傷その他の不利益について、著者や出版社は責任を持ちません。</p>
+</div>
+
+<p class="first_ja">こちらが自作USBセンサーバーの回路図の例です。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/Circuit.png" alt="自作USBセンサーバーの回路例">
+</div>
+
+<p>材料としては、赤外線LEDと抵抗、基盤、半田ごて一式、あとは不要なUSBのケーブルを1本、切断して作ります。平型のUSBプラグなら、金属端子面を下にして左から順に1,2,3,4と4つの端子がついています。この1番が電源となるVCC(+5V)で、4番がGND(－)です。台形のUSBの端子の場合は台形の長編を下側にして右上が1番、右下が4番になります。USBのケーブルを適当な長さで切断して、テスターなどで確認しながら、図中のUSB1番を回路の+5Vに、USB4番を回路のGNDにそれぞれ半田をつかってつなぎます。</p>
+<p>赤外線LEDは普通のLEDと同じく、秋葉原や通販で入手できる電子部品のお店で買うことができます。</p>
+<div class="fyi">
+<div class="title">「秋月電子通商」の赤外線LED売り場の例</div>
+
+<p class="first_ja">型番：OSIR5113A</p>
+<p>VF=1.25V(＠20mA)、ピーク波長940nm、半減角15度、推奨電流20mA</p>
+<p>　http://akizukidenshi.com/catalog/g/gI-00656/</p>
+</div>
+
+<p>値段は100個入りで700円と、電子部品としては気軽に買える部類に入ります。購入前に、仕様書をよく見てください。重要なのは「ピーク波長」、「VF(DC Forward Current)」、「推奨電流」、それに「半減角(50% Power Angle)」と呼ばれる値です。ピーク波長は保障はできませんが、WiiRemoteには900～1000nmの間ぐらいがよいようです。半減角は、正面を100％としたときに明るさが半分になる角度です(LEDには広角のものと、正面に指向性の高いものがあります)。なおここで紹介した「OSIR5113A」は小坂研究室でも利用実績があるそうです。</p>
+<p>またVF(mA)によって制限抵抗の値が決まりますので、それに合わせた抵抗もいっしょに買ってください。制限抵抗を間に入れないと、無制限に電流が流れてしまい、非常に危険な光源になってしまいます。最悪PC本体を壊すかもしれません。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/USB-Serge.png" alt="USB電力のサージ警告">
+</div>
+
+<p>この警告メッセージはUSBポートの電流がUSBの規格で定められた許容量である500mAを超えたときなどに表示されます。配線が甘くてVbusとGNDがショートしているときなども同様に表示されますのでこのメッセージが表示されたときは、すばやくUSBポートからプラグを抜き、テスターなどでショートがないか確認してください。</p>
+<p>またLEDはダイオードという電流を一方向にしか流さない性質を持ちます。アノード(足の長いほう)からカソードへ流れますが、逆には流れません。赤外線が見えるデジカメを傍らにおいて、仮組みしたりテストで駆動してみたりしながらやらないと、足を切った後では極性がわからなくなりますので注意しましょう。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="Idea/png/miniIR.png" alt="自作の極小USBセンサーバーの制作例" width="8cm">
+</div>
+
+<p>このように非常に小さなUSBセンサーバーも作ることができます。いろいろと応用の幅が出てきます。</p>
+
+<h3 id="doc8_id890">【演習問題】赤外線センサーバーの自作</h3>
+
+
+<dl>
+<dt>【演習】☆☆
+<dd>上記の回路図を応用して、LEDに対して適切な制限抵抗値を算出し、USBで給電する赤外線センサーバーを2セット自作せよ。
+<dt>【演習】☆☆
+<dd>上記2セットのセンサーバー(各LED2点)、合計4点の赤外線マーカーを取得できるプログラムをWiiYourself!かWiimoteLibを使って作成せよ。
+<dt>【演習】☆☆☆
+<dd>第1章「SoundQuest」にあるような、二等辺三角形の頂点に赤外線を配置し『三角形の向き』を取得できるプログラムを作成せよ。ヒントは筆者のホームページ「Aki4IRDemo」、解答例はYoutube動画「Sound Quest V1」(http://www.youtube.com/watch?v=TMK7ULUG7S4)がある。</dl>
+
+<p class="first_ja">半田ごてが自信を持って握れる方のみお勧めします。半田ごてで火傷したりしても、本書は責任を持ちません。</p>
+<p>赤外線は目に見えないので、回路図の赤外線LEDに加えて、通電しているかの確認のために可視波長(赤や緑)のLEDを使ってパイロットランプを作るとよいでしょう。</p>
+<p>他の課題は自作センサーバーを作らなくても挑戦できます。三角形の認識でちょっと数学パズルがありますが、楽しんで解いてみてください。WiiRemoteは4点まで検出できますので、三角形の向きが拾えたり、面が推定できたりと、いろいろな応用があります。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="Idea/png/4IRLEDs.png" alt="赤外線LED4点で二等辺三角形を検出させる例" width="5cm">
+</div>
+
+<p></p>
+
+<h2 id="doc1_id51">モノ編(2)：ロボット兵器「WiiRemoteTank」</h2>
+
+<p class="first_ja">WiiRemoteを使ってラジコンカーを操作しようというアイディアを実現した人は(世界には)意外にいるようです。</p>
+<div class="fyi">
+<div class="title">WiiRemoteをつかってラジコンカーを操作</div>
+
+<p class="first_ja">http://gigazine.net/index.php?/news/comments/20061222_wii_rc/</p>
+<p>http://www.inside-games.jp/news/329/32904.html</p>
+</div>
+
+<p>この2006年12月のニュース(Gigazine)で紹介されている例は、WiiRemoteからの信号をBluetooth経由でPCに受信して、それをラジコンカーのコントローラー(プロポ)などに送信する方法です。</p>
+<p>「WiiRemote→PC→ラジコンプロポ→ラジコン」</p>
+<p>もうひとつの動画も同様で、WiiRemoteに飽きたらず、ヌンチャクやWiiBoard、さらにiPhoneを使ってラジコンカーを操作する動画を公開しています。</p>
+
+<h3 id="doc9_id944">ロボット兵器「WiiRemoteTank」</h3>
+
+<p class="first_ja">人がやったことをただ真似ても面白くありません。ここでは、上のような構成ではなく、</p>
+<p>「Wiiremote→PC→WiiRemote→ラジコン」</p>
+<p>というプロポすら使わない方法で、ラジコンを操作してみたいと思います。</p>
+<p>正確には「WiiRemoteでラジコンを操作」ではなく、WiiRemoteをラジコンと合体、つまり「WiiRemoteをラジコン化」した『WiiRemoteTank』を開発します。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="Idea/kosaka/WiiTank1.png" alt="ロボット兵器「WiiRemoteTank」" width="5cm">
+</div>
+
+<p>ほとんどロボット兵器です。武器はありません。</p>
+<p>原理は簡単です。WiiRemoteあるプレイヤーインジゲーター(4つの青色LED)は、WiimoteLibのSetLEDs関数で信号を送るだけで、ON/OFFの出力ができます。このLEDの電力をモータードライバーに接続することでモーターを制御することができます。</p>
+<p>モータードライバーとは、その名の通りモーターを制御する電子部品です。2つの信号の組み合わせによって、モーターの回転、反転、停止を行うことができます。たとえば「[01]で前進」「[10]で反転」「[00]でストップ」といった2bitのデジタル信号で制御できますので、LEDの点灯制御を出力させてやるだけで、モーターの動作をコントロールできるわけです。</p>
+
+<h3 id="doc9_id953">「WiiRemoteTank」の開発</h3>
+
+<p class="first_ja">ここではロボットの開発を演習している、大阪大学応用理工学科機械系3年生の演習「機械創成工学演習」の教科書を参考にしています。</p>
+<div class="fyi">
+<div class="title">大阪大学 細田耕先生による「機械創成工学演習III」テキスト</div>
+
+<p class="first_ja">[URL] http://www.robot.ams.eng.osaka-u.ac.jp/hosoda/enshu/start.html</p>
+<p>■Toshibaのモータードライバー「TA7291P」データーシート</p>
+<p>[URL] http://www.robot.ams.eng.osaka-u.ac.jp/hosoda/enshu/doc/TA7291F_TA7291SG_ja_datasheet_070613.pdf</p>
+</div>
+
+<p>ここで紹介されているモータードライバー「TA7291P」を使います。WiiRemoteのLEDは4つあるので、このドライバーを使って2個のモーターを制御することが可能です。モーター2個で操作できる戦車といえば、「タミヤタンク工作基本セット」でしょう。オンラインで1,500円で購入できます。</p>
+<div class="fyi">
+<div class="title">[URL]タミヤ タンク工作基本セット</div>
+
+<p class="first_ja">http://tamiyashop.jp/shop/product_info.php?cPath=17_149＆products_id=70108</p>
+</div>
+
+<p>続いてコントローラー用のWiiRemoteと制御用のWiiRemoteの2台を用意します。まず制御用のWiiRemoteを分解し、LEDの信号を取り出します。</p>
+<div class="fyi">
+<div class="title">WiiRemoteを「分解」...？</div>
+
+<p class="first_ja">　小坂先生は「WiiRemoteを分解」とあっさり書かれていますが、WiiRemoteのネジは特殊なドライバーでなければ回すことすらできません。もちろん全く保証外の行為ですが、そのようなドライバーなど無くても開けようと思えば開けることはできます。</p>
+<p>【参考】[URL] http://ameblo.jp/akihiko/entry-10056910390.html</p>
+<p>　特殊ネジをはずしたら、普通のネジを入れておきましょう。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/Bunkai.png" alt="精密ドライバーとペンチを使う">
+</div>
+
+</div>
+
+<p>さて、この先一番難しいのは、「WiiRemoteを分解しLEDに配線し、元通りに収めること」かと思います。かなりの集中力が要求されます。小坂研究室のTipsにWiiRemoteのLEDを換装する記事があるので参考にしてください。</p>
+<div class="fyi">
+<div class="title">小坂研究室Tips「Wiiリモコンの青色LEDを赤色LEDに変更」</div>
+
+<p class="first_ja">[URL] http://www.kosaka-lab.com/tips/2009/05/wiiledled.php</p>
+</div>
+
+<p>テスターを使って確認しながら進めてください。LEDのための信号を拾って、モータードライバーに接続します。</p>
+<p>コントローラー用のWiiRemoteの傾きをPCが読み取り、その傾きに合わせて、制御用WiiRemoteに信号を送るプログラムを別途作成しておきます。</p>
+<p>モーターが2つありますので、加速度センサーの傾きに合わせて2つのLEDに対して[00]～[11]を出力するようなプログラムで十分でしょう。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/kosaka/WiiTank2.png" alt="LED信号をモータードライバーに接続">
+</div>
+
+<p>完成版の動画は小坂研究室にて見ることができます。</p>
+<div class="fyi">
+<div class="title">小坂研究室Tips「Wiiでラジコン」</div>
+
+<p class="first_ja">[URL] http://www.kosaka-lab.com/tips/2009/05/wii-2.php</p>
+</div>
+
+<p>コントローラー用WiiRemoteを傾けると、WiiRemoteTankが進みます。今回はWiiRemoteをプロポにして操作していますがWiiBoardなどで操作しても面白そうです。</p>
+<p>LEDの出力はまだ2チャンネル分残っていますから、他にも武器やデコレーションを装備したり、WiiRemoteの赤外線カメラを利用して、赤外線を自動に追尾して動くロボットや、ライントレーサー(黒い線に従って動くロボット)としても展開することができるでしょう。</p>
+
+<h3 id="doc9_id977">【演習問題】WiiRemoteによるロボット開発</h3>
+
+
+<dl>
+<dt>【演習】☆☆☆
+<dd>WiiRemoteTankを応用して、周囲の赤外線を探して近づいてくる「ロボットペット」を開発せよ。</dl>
+
+<p class="first_ja">今回はWiiRemoteをロボットへ内装する例として、LEDから信号をとる方法を紹介しました。LED以外にスピーカーのアナログ出力や、拡張端子のI2Cインターフェースを使方法も可能性がありそうです。ここでの例ではロボット戦車ですが、かわいらしいモンスターのぬいぐるみを着せたり、ゲームと連動させたりすると、ビッグなビジネスチャンスがありそうです(笑)。</p>
+<p></p>
+
+<h2 id="doc1_id56">サービス編：体が不自由な方のためのインターフェース</h2>
+
+<p class="first_ja">このセクションでは、第8章で学んだ技術を応用して、ハンディキャップのある方にWiiRemoteを使って、自由にコンピューターを触れるように、何ができるか？を中心に考えてみたいと思います。</p>
+
+<h3 id="doc1_id58">【演習問題】体が不自由な方のためのインターフェース</h3>
+
+
+<dl>
+<dt>【演習】☆☆
+<dd>WiiBoardを使って、手が使えなくてもマウス操作できるソフトウェアを作成せよ。
+<dt>【演習】☆☆☆
+<dd>WiiRemoteだけで文字入力ができる「WiiRemoteキーボード」を開発せよ。
+<dt>【演習】☆☆☆☆
+<dd>WiiRemoteに「ぬいぐるみ」の皮をかぶせて、幼児に持たせる「安心ぬいぐるみロボット」を開発せよ。</dl>
+
+<p class="first_ja">「体が不自由」と一言でいっても、先天的に不自由な方だけでなく、事故や病気で不自由になった人や、一時的に不自由なひとなどそれぞれです。</p>
+<p>そんな方々にWiiRemoteだけでブラウザーを操作したりメールを書いたりすることができるインターフェースを開発できれば、半身不随の方などの人生を大きく変えるかもしれません。</p>
+<p>演習問題とはいえ、せっかく作ったソフトウェアですから、いいものができたら公開しましょう。なんと言ってもWiiRemoteとソフトウェアだけですから、一般的な医療福祉機器に比べて非常に気軽に利用できます。</p>
+<p>ちなみに「ハンディなんて自分には関係ない」と思っていると、損をします。かくいう筆者も、生まれたばかりの自分の赤ん坊に2時間おきに授乳しなければならないときがありました。夜は論文を書いたりしていることが多いので、妻に代わって私が担当なのですが、ミルクをあげている時は両手がふさがっているので何もできません(とても眠くなる)。この時間を使ってメールに返信したり、ブラウザーを触ったりといった簡単な作業ができれば、子育て初期の授乳ストレスはどんなに有意義な時間になったでしょうか！</p>
+<p>つまり両手があいている元気なうちに「こういうソフトウェアを作っておけばよかった！！」と何度も後悔した、ということです(笑)。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="Idea/png/Poupee.png" alt="幼児向けラクガキシステム「Papier Poupee Painter」で使った「安心ぬいぐるみ」" width="4cm">
+</div>
+
+<p>「幼児に持たせるロボット」は加速度センサーの値をうまく使って、眠ったり歩いたり、スピーカーを使ったり…とアイディアが広がります。フランス語では安心塗りぐるみのことを「Poupee」といいますが、筆者は過去にこのアイディアで幼児向けのラクガキシステム「Papier Poupee Painter」を開発したことがあります。振るだけで塗り絵っぽいことができる作品でした。</p>
+<p>幼児もインタラクティブ技術の視点では「ハンディを持つユーザー」とあまり変わりありません。いわゆるペイントブラシのような色を選ぶような機能は限定して、ラクガキの面白さだけを際立たせる、という仕掛けにWiiRemoteの無線機能と安定性能は大変役に立ちました。</p>
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">WiiMedia:Painting &quot;Papier Poupee Painter&quot; ver.Alpha (YouTube動画)</p>
+<p>[URL] http://www.youtube.com/watch?v=S8kYQbfN_9I</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id96">研究編(1)赤外線を極める</h2>
+
+<p class="first_ja">WiiRemoteの赤外線センサーは非常に高速で、使い道がたくさんあります。ここでは2点の赤外線LEDの情報だけで、どこまで正確な「奥行きを含めた3次元座標」が取得できるか理論的に突き詰めてみます。</p>
+
+<h3 id="doc1_id99">赤外線奥行き測定の基本理論</h3>
+
+<p class="first_ja">ここでは、幾何的な方法をつかって2点のLED座標からWiiRemoteの3次元奥行きつきの座標を取得する方法を考えます。考え方のトレーニングだと思って読んでみてください。</p>
+<p>いま、P(x,y,z)という位置にあるWiiRemoteが、原点O(0,0,0)という場所にあるセンサーバーに向かって赤外線センサーを向けたとき、WiiRemoteで取得できる2つのLED群の位置を(IrX1,IrY1), (IrX2, IrY2)とします。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/LED-Figure.png" alt="ここでの座標系、LEDとWiiRemoteの位置関係(側面図)">
+</div>
+
+<p>この2つのLEDのX座標、IrX1、IrX2について、その差の絶対値IrZについて仮説を立ててみます。</p>
+<blockquote>
+<p>IrZ = | IrX1 - IrX2 | ...(9-1)</p>
+</blockquote>
+<p>いまこのWiiRemoteを原点から遠ざかる方向に移動させた場合、このIrZの値は遠近法に従って、遠くに行けば遠くにいくほど2つのLEDの差は小さくなります。WiiRemoteとセンサーバーの距離(以後PosZと標記、単位はmm)は比例関係にあるかもしれません。</p>
+<p>式で表せば、</p>
+<blockquote>
+<p>PosZ = K * IrZ ...(9-2)</p>
+</blockquote>
+<p>という関係がつくれる可能性があります。もしこのKが簡単に求まるなら、WiiRemoteの赤外線LEDの値(IrX1, IrX2)から、奥行きPosZが算出できそうです。</p>
+<p>なお、この式(9-2)でのKは比例関係を表しているだけで、定数かどうか、つまり1次関数なのかどうかは今のところわかりません。より複雑な2次関数以上かもしれません。実際に測定してみることにいたしましょう。</p>
+
+<h3 id="doc1_id112">実験：赤外線特性の測定</h3>
+
+<p class="first_ja">まず、赤外線の測定値が取得できるプログラムを用意しましょう。新たに開発するのが面倒であれば「WiinRemote」などを使って測定してもかまいません。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="Idea/png/WiiIRcalib1R.png" alt="WiiRemote赤外線特性測定の配置(上面図)" width="8cm">
+</div>
+
+<p>いま、原点O(0,0,0)に自作のLEDセンサーバーの中心があり、センサーバー内にある2つのLED光源グループ間が、X軸方向に200mm離れているとして、これをLED2点間距離dと呼びます。2つのLEDの中点がこれから実験する座標系の原点O、{x,y,z}={0,0,0}にあり、測定に使用するWiiRemoteは座標P(x,y,z)にあるとします。WiiRemoteをセンサーバーからまっすぐ遠ざけていく方向を、求めたい「奥行きZ」、左右方向をX、上下方向をYと呼びます。Pの座標ではなく距離を表現するときは「PosZ」(単位はmm)と呼ぶことにします。</p>
+<p>測定を始めましょう。測定しやすい床などの安定した場所にセンサーバーを置きます。このとき床面に赤外線が反射していると実験が失敗してしまいますので、WiiRemoteやデジカメを使って、赤外線光の強い反射がないか確認しましょう。床がどうしても反射する場合は紙を使って反射を拡散させると良いでしょう。センサーバーを三脚に乗せるなどしてもよいですが、できればWiiRemoteを同一平面に置いてください。</p>
+<p>まずWiiRemoteを原点Oに近い場所に置き(ぶつかってしまいますので)、ゆっくりとセンサーバーから遠ざけていきます。最初、WiiRemoteとLEDの距離があまりに近すぎると測定できません。赤外線の発光強度が強すぎたり、1つのLEDしかセンサーの視界に入らなかったりすることに起因します。徐々に奥行きを広げていくと、PosZ = 300mm程度の距離になると、個々の赤外線測定値IRX1, IRX2を読むことができるので、測定値を測定シート(EXCEL等に直接入力しても良い)にメモしていきます。</p>
+<p>今回の実験では奥行き方向の距離をそれぞれPosZ = {330, 660, 990, 1320, 1650, 1980, 2310, 2640, 2970, 3300}(mm)の10種類としました。また左右方向の特性も確認するために、X方向にもそれぞれPosX = {0, 330, 660}(mm)の3種類で測定しています。全ての組み合わせで30通りありますので根気よく、流れをつかんで、ふたりひと組など実験すると良いでしょう。</p>
+<p>以下の表のように実測値をまとめます。</p>
+
+<div class="table">
+<table id="doc1_id120" class="data" rules="groups">
+<caption>【測定シート】赤外線センサーの特性測定実験[d=200mm]</caption>
+<colgroup span="7">
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">[Pos]</th>
+<th align="center">X = 0</th>
+<th align="center">X = 0</th>
+<th align="center">X = -330</th>
+<th align="center">X = -330</th>
+<th align="center">X = -660</th>
+<th align="center">X = -660</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>PosZ</td>
+<td>IRX1</td>
+<td>IRX2</td>
+<td>IRX1</td>
+<td>IRX2</td>
+<td>IRX1</td>
+<td>IRX2</td>
+</tr>
+<tr class="odd">
+<td>330</td>
+<td>925</td>
+<td>140</td>
+<td>―</td>
+<td>―</td>
+<td>―</td>
+<td>―</td>
+</tr>
+<tr class="even">
+<td>660</td>
+<td>737</td>
+<td>348</td>
+<td>―</td>
+<td>―</td>
+<td>―</td>
+<td>―</td>
+</tr>
+<tr class="odd">
+<td>990</td>
+<td>628</td>
+<td>368</td>
+<td>1003</td>
+<td>755</td>
+<td>―</td>
+<td>―</td>
+</tr>
+<tr class="even">
+<td>1320</td>
+<td>645</td>
+<td>450</td>
+<td>941</td>
+<td>746</td>
+<td>―</td>
+<td>―</td>
+</tr>
+<tr class="odd">
+<td>1650</td>
+<td>598</td>
+<td>442</td>
+<td>874</td>
+<td>717</td>
+<td>―</td>
+<td>―</td>
+</tr>
+<tr class="even">
+<td>1980</td>
+<td>572</td>
+<td>442</td>
+<td>821</td>
+<td>690</td>
+<td>―</td>
+<td>―</td>
+</tr>
+<tr class="odd">
+<td>2310</td>
+<td>583</td>
+<td>471</td>
+<td>768</td>
+<td>656</td>
+<td>957</td>
+<td>845</td>
+</tr>
+<tr class="even">
+<td>2640</td>
+<td>569</td>
+<td>471</td>
+<td>734</td>
+<td>637</td>
+<td>923</td>
+<td>824</td>
+</tr>
+<tr class="odd">
+<td>2970</td>
+<td>597</td>
+<td>512</td>
+<td>709</td>
+<td>622</td>
+<td>854</td>
+<td>768</td>
+</tr>
+<tr class="even">
+<td>3300</td>
+<td>576</td>
+<td>499</td>
+<td>710</td>
+<td>632</td>
+<td>855</td>
+<td>777</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>「―」となっている箇所は赤外線LEDは常の値が読めなかった場所、つまり赤外線センサーの画角の外側です。実際に測定可能なポイントは22点になりました。このデータをPosZを横軸、赤外線の測定値Ixを縦軸としてプロットすると以下のようになります。</p>
+
+<div class="figure">
+<img class="figure" src="Idea/png/WiiIRcalib1Q.png" alt="WiiRemote赤外線特性測定の結果">
+</div>
+
+<p>グラフを見たところ、IrX1とIrX2は奥行きPosZに対して、単純な比例関係を持ってはいないようです。しかし左右に対してはほぼ対象といえるでしょう。そしてPosXが中心から外れることで(PosX = -330mm, -660mm)、左右の対象性は崩れていくようです。</p>
+
+<div class="figure">
+<img class="figure" src="" alt="実際の奥行き(PosZ) - 赤外線の差(IrZ)[左]，PosXそれぞれに対する K の様子[右]">
+</div>
+
+
+<div class="table">
+<table id="doc1_id176" class="data" rules="groups">
+<caption>各位置(PosX,PosZ)でのIrZ(2つのLEDの差の絶対値)</caption>
+<colgroup span="4">
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+</thead>
+<tbody>
+<tr class="even">
+<td>PosZ</td>
+<td>X=0</td>
+<td>X=330</td>
+<td>X=660</td>
+</tr>
+<tr class="odd">
+<td>330</td>
+<td>785</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>660</td>
+<td>389</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>990</td>
+<td>260</td>
+<td>248</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1320</td>
+<td>195</td>
+<td>195</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>1650</td>
+<td>156</td>
+<td>157</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1980</td>
+<td>130</td>
+<td>131</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>2310</td>
+<td>112</td>
+<td>112</td>
+<td>112</td>
+</tr>
+<tr class="even">
+<td>2640</td>
+<td>98</td>
+<td>97</td>
+<td>99</td>
+</tr>
+<tr class="odd">
+<td>2970</td>
+<td>85</td>
+<td>87</td>
+<td>86</td>
+</tr>
+<tr class="even">
+<td>3300</td>
+<td>77</td>
+<td>78</td>
+<td>78</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>次に各位置での2つのLEDの差の絶対値IrZについて算出します。PosZを横軸、IrZと縦軸にとったグラフにプロットすると、PosZに対する反比例に見えます。今度はX ={0, 330,660}に対してそれぞれ、PosZを横軸、そして本来定数であるはずのK、すなわち「d / IrZ」を縦軸として図9-32(右)のようにプロットしてみます。</p>
+<p>XがそれぞれX = {0, 330,660}と異なるにもかかわらず、見事に1本の直線に乗っています。この直線の傾きをPosZの最大-最小から求めると</p>
+<blockquote>
+<p>K = 1284.64 * PosZ - 0.02 ...(9-3)</p>
+</blockquote>
+<p>という、KとPosZの直線の1次方程式で表現することができます。</p>
+<p>このKを用いて実測のPosZと、最大最小など2点程度のIrZを計測すれば、その間の奥行きZを簡単に求めることができます。</p>
+<p>図9-33は、この理論を用いて算出した奥行きと、実測の奥行きがほぼ一致することを示しています。</p>
+
+<div class="figure">
+<img class="figure" src="" alt="実測Z(横軸) ― 算出Z(縦軸)">
+</div>
+
+
+<h3 id="doc1_id200">【演習問題】赤外線を極める</h3>
+
+
+<dl>
+<dt>【演習】☆
+<dd>赤外線センサーの視野角(画角)は何度か。水平方向、垂直方向について最大値を測定し、角度として算出せよ。
+<dt>【演習】☆☆☆
+<dd>本セクションで解説した理論を参考にして、赤外線の計測値と実際の奥行きをキャリブレーションするプログラムを作成せよ。
+<dt>【演習】☆☆☆☆
+<dd>加速度センサーやアフィン変換を組み合わせて、より広範囲を検出できる仕組みを考えよ。</dl>
+
+<p>水平方向の画角についてはこのセクションで紹介したデータをもとに、算出することができます(意外と狭いです)。</p>
+<p>広範囲化についてはさまざまな方法がありえますが、以下の図をヒントに考えてみると良いのではないでしょうか。</p>
+
+<div class="figure">
+<img class="figure" src="" alt="加速度センサーを使った広範囲化">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="Idea/png/VirtualSprayA1.png" alt="スプレー缶のような持ち方" width="5cm">
+</div>
+
+<p>加速度センサーと連携する方法以外にもアイディアはあります。WiiRemoteの赤外線センサーはデジカメのCCDなどの画像センサーと異なり、歪んでもボケても得られる値は同じですので、「斜めから見る」という方法で実質の測定範囲を広くする方法はあるでしょう。</p>
+<p>次のセクションで紹介する、ジョニー・リーのサンプルも、赤外線ポインタを「斜めに見る」ことで、広い範囲が測定可能になるコードを含んでいるようです。</p>
+
+<h2 id="doc1_id234">研究編(2)Johnny Chung Lee氏から学ぼう</h2>
+
+<p class="first_ja">アメリカ人のジョニー・リー氏(Johnny Chung Lee, http://johnnylee.net/)は、カーネギーメロン大の学生当時、WiiRemoteを使ったプロジェクト「Head Tracking for Desktop VR Displays using the Wii Remote(WiiRemoteを使ったデスクトップVRディスプレイのための頭部追従)」を2007年12月21日にYouTubeで公開し、今日まで721万回以上再生され世界的に有名になりました。</p>
+
+<div class="figure">
+<img class="figure" style="width:7cm" src="png/JohnnyChungLee.png" alt="(★トリミング希望)Mr. Johnny Chung Leeと彼のぼろぼろのタブレットPC(Laval Virtual 2008にて)" width="7cm">
+</div>
+
+<div class="fyi">
+<div class="title">Johnny Chung Lee氏のWiiRemote関係のプロジェクト一覧</div>
+
+<p class="first_ja">http://johnnylee.net/projects/wii/</p>
+</div>
+
+<p>他の2つのWiiRemoteプロジェクトも、それぞれ200万回以上再生されています。</p>
+<p>過去のWiiRemote関係は氏のWebサイトにまとめられています。すべてソースコードと実行ファイルが入手できます。まずは動画とともに以下の日本語解説を読んでみてください。</p>
+
+<dl>
+<dt>「WiiRemoteで貴方の指をトラッキング」(2007年11月08日公開)
+<dd>赤外線LEDの行列をWiiRemoteと統合し、再帰性反射材テープ(自転車の防犯反射テープのようなもの)をつかって、映画「マイノリティリポート」調の空中多点操作を実現しています。WiimoteLib1.1とC#、DirectXを使っています。
+<dt>「WiiRemoteを使ったローコスト、複数点インタラクティブホワイトボード」(2007年12月07日公開)
+<dd>赤外線LEDを仕込んだペンを使って、インタラクティブなホワイトボードソフトウェアを実現しています。WiiRemoteをスタンドに乗せてからプロジェクターに向かってペンを持つ校正になっています。特に位置あわせのソフトウェアが秀逸です。WiimoteLib1.2.1とC#で書かれています。オープンソース化され、Mac/Linux版も公開されています。
+<dt>「WiiRemoteを使ったデスクトップVRディスプレイのための頭部追従」(2007年12月21日公開)
+<dd>逆転の発想です。テレビの前にWiiRemoteをおいて、センサーバー代わりの赤外線LEDをメガネの両脇につけます。「WiiDesktopVR」というデモプロジェクトが公開されており、頭を動かすと3DCGで描いた3次元的に配置されたマトが視点にあわせて動きます。大きな風景写真なども視点にあわせて動きます。ちょうど窓枠を通してみるような感じです。WiimoteLibとC#、DirectXよるプログラムです。</dl>
+
+<p>「アイディア一発勝負！」の非常にシンプルなデモですが、動画公開の日付を見てもわかるように、開発のスピードがとても速いことも話題になりました。</p>
+<p>またジョニーは研究者としてもしっかりしていて、WiiRemote以外にもローコストな特殊カメラや、プロジェクターを使って好きな場所(例えば、手に持った扇)に好きな映像を投影する研究を行っています(だからこそWiiRemoteの活用も早かったのですね)。他にも写真作品や、巨大なペイントボールパチンコの制作など、いろいろ楽しいプロジェクトを実現されております。</p>
+<p>現在、彼はマイクロソフトの研究所で実用科学(Applied Sciences)グループで働いているため、表立ったWiiRemote関係の活動はありませんが、長い空白の後、なんと2009年6月1日のブログエントリーで「Project Natal」に関係していることを告白しました。</p>
+<div class="fyi">
+<div class="title">ジョニー・リー氏のブログ「procrastineering」</div>
+
+<p class="first_ja">[URL]　http://procrastineering.blogspot.com/</p>
+<p>■Microsoft Project Natal(YouTube動画)</p>
+<p>[URL]　http://www.youtube.com/profile?user=xboxprojectnatal</p>
+</div>
+
+<p>「Project Natal」とは、動画を見ていただければわかりますが、任天堂Wiiに対抗するマイクロソフトの全身型ゲームインターフェースです(詳細は次の章で紹介します)。</p>
+
+<h3 id="doc1_id270">【演習問題】研究しよう</h3>
+
+
+<dl>
+<dt>【演習】☆☆
+<dd>ジョニー・リーのサンプルを実行し、動作を確認せよ。赤外線LEDグッズの作成は第9.6章を参考にし、可能であれば日本語で返信YouTube動画をアップロードせよ。
+<dt>【演習】☆☆☆☆
+<dd>サンプルをリビルドし自分のプロジェクトに再利用せよ。特にアフィン変換やデモ映像部分などは便利でしょう。</dl>
+
+<p class="first_ja">彼の研究者としての論文も非常に面白いです。関連する面白い論文があればどんどん読んでみましょう。なお海外の論文をすばやく調べるときには、「Google Scholar」、公開されているプログラムコードを検索するときは「Google Code」が役に立ちます。日本語の論文が気になるときは「CiNii」という国立情報学研究所が運営している論文検索エンジンを使うと良いでしょう。</p>
+<div class="fyi">
+<div class="title">論文等検索サービス</div>
+
+<p class="first_ja">論文検索「Google Scholar」</p>
+<p>[URL]　http://scholar.google.com/intl/ja/</p>
+<p>国立情報学研究所「CiNII」(キーワード&quot;Wii&quot;で検索)</p>
+<p>[URL]　http://ci.nii.ac.jp/search?q=Wii</p>
+<p>ソース検索「Google Code」[URL]　http://code.google.com/</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id295">プログラミング編(2)：自分でAPIをつくる</h2>
+
+<p class="first_ja">本章の最後は、WiiRemoteにアクセスするAPIを自分で作る課題です。DDKを使った、C++のプログラミングです。特に用事がない方は読み飛ばしていただいてかまいませんが、他の言語などにWiiRemoteのAPIを移植するときなど、役に立つかもしれません。</p>
+<div class="fyi">
+<div class="title">APIを使わない接続についての情報</div>
+
+<p class="first_ja">「WiiMedia2」</p>
+<p>[URL] http://code.google.com/p/wiimedia/source/browse/#svn/trunk/Wiimedia2/</p>
+<p>上記、Google Codeで公開されている、DDKとC++をつかった機能最小限の自作APIです。</p>
+<p>筑駒パ研「電脳2007：Wiiリモコンをもう一回見直してみます」by Iketaki</p>
+<p>[URL] http://paken.s1.hayasoft.com/files/down/denno2007_wii.pdf</p>
+<p>筑波大学附属駒場中・高等学校パーソナルコンピュータ研究部の文化祭で発行された部誌のPDF版です。非常に丁寧に解説されております。</p>
+</div>
+
+<p>「WiiMedia2」から重要なOpenWiiRemoteHID()近辺を引用しておきます。</p>
+
+<div id="doc1_id301" class="caption">wm_base.cpp wm_base::OpenWiiRemoteHID()</div>
+<pre class="program" style="margin-top:0">
+HANDLE wm_base::OpenWiiRemoteHID(void) {
+//LONG iHIDs;
+  DWORD indexHID = 0;  
+  BOOL bEndofDeviceList = FALSE;
+  BOOL bDeviceDetected = FALSE; 
+  PSP_DEVICE_INTERFACE_DETAIL_DATA DeviceDetail = NULL;
+  DWORD size = 0;
+  DWORD RequiredSize;
+  HIDD_ATTRIBUTES Attributes;
+  HidD_GetHidGuid( &amp;guidHID );
+  hDeviceInfo = SetupDiGetClassDevs(
+    (LPGUID)&amp;guidHID, NULL, 
+    (HWND)NULL, 
+    DIGCF_INTERFACEDEVICE | DIGCF_PRESENT 
+  );
+  if ( 0 == hDeviceInfo ) { return INVALID_HANDLE_VALUE; } //失敗
+  do {
+    bDeviceDetected=FALSE;
+    //HIDインタフェースを列挙
+    deviceInfoData.cbSize = sizeof(SP_DEVICE_INTERFACE_DATA);
+    if ( SetupDiEnumDeviceInterfaces 
+      (hDeviceInfo, NULL, &amp;guidHID, indexHID, &amp;deviceInfoData)!=0 ) {
+        printf(&quot;[%d] HID found.\n&quot;,indexHID);
+      //列挙したHIDの詳細を取得
+      SetupDiGetDeviceInterfaceDetail(hDeviceInfo, 
+        &amp;deviceInfoData, NULL, 0, &amp;size,   NULL) ;
+        DeviceDetail = (PSP_DEVICE_INTERFACE_DETAIL_DATA)malloc(size);
+      DeviceDetail -&gt; cbSize = sizeof(SP_DEVICE_INTERFACE_DETAIL_DATA);
+      printf(&quot;HID detail size =%d.\n&quot;,DeviceDetail-&gt;cbSize);
+      SetupDiGetDeviceInterfaceDetail (hDeviceInfo, 
+        &amp;deviceInfoData, DeviceDetail, size, &amp;RequiredSize, NULL);
+      hWiiRemoteHID = CreateFile( DeviceDetail-&gt;DevicePath, 
+        GENERIC_READ|GENERIC_WRITE, FILE_SHARE_READ|FILE_SHARE_WRITE, 
+        (LPSECURITY_ATTRIBUTES)NULL, OPEN_EXISTING, 0, NULL);
+      bDeviceDetected = FALSE;
+      Attributes.Size = sizeof(Attributes);
+      if ( HidD_GetAttributes( hWiiRemoteHID, &amp;Attributes ) ) {
+if ( Attributes.VendorID == 0x057e &amp;&amp; Attributes.ProductID == 0x0306 ) {
+if ( HIDP_STATUS_SUCCESS == GetDeviceCapabilities( hWiiRemoteHID ) ) {
+         printf(&quot; WiiRemote found.[V=0x%04d,P=0x%04d]\n&quot;,
+          Attributes.VendorID,Attributes.ProductID);
+         bDeviceDetected = TRUE;
+        } else {
+          printf(&quot; GetDeviceCapabilities() failed.\n &quot;);
+        }  
+       } else {
+         printf(&quot; It didn't match with WiiRemote.[V=0x%04d,P=0x%04d]\n&quot;,
+          Attributes.VendorID,Attributes.ProductID);
+         CloseHandle( hWiiRemoteHID );
+       }
+      } else {
+        printf(&quot; HidD_GetAttributes() failed.\n&quot;);
+        CloseHandle( hWiiRemoteHID );
+      } 
+      free(DeviceDetail);
+    } else {
+      bEndofDeviceList = TRUE;
+    }
+    
+    indexHID++;
+  } while ( (bEndofDeviceList == FALSE) &amp;&amp; (bDeviceDetected == FALSE) );
+
+  if ( bDeviceDetected == FALSE ) {
+        printf(&quot;Finally, I couldn't find any WiiRemote.\n&quot;);
+    hWiiRemoteHID = INVALID_HANDLE_VALUE;
+  } else {
+        printf(&quot;Yes, I found a WiiRemote.\n&quot;);
+  }
+  SetupDiDestroyDeviceInfoList(hDeviceInfo);
+  return hWiiRemoteHID;
+}
+</pre>
+
+<p>最初から手探りで作るのは大変ですから、もし自分自身でAPIを作成に挑戦する場合、上のコードのほかに、WiimoteLibやWiiYourself!を参考にすると良いでしょう。</p>
+<p>「GetDeviceCapabilities()」近辺が重要で、これが個々のPC環境やBluetoothスタックによって異なります。それに対して高度に完成しているAPIは、WriteFile()などを工夫して、確実に通信が行えるようにしています。その他、レポートタイプの設定などは「Wiili.org」や「WiiBrew」などのWikiサイトで情報をあつめて構築していきます。</p>
+
+<h3 id="doc1_id304">【演習問題】</h3>
+
+<p class="first_ja">このセクションでの演習問題は難易度を特に高く設定しています。特に腕に自信がある方のみ挑戦してみてください。</p>
+
+<dl>
+<dt>【演習】☆☆☆
+<dd>DDKとC++を使って自分でAPIを開発せよ。様々なスタックで動作するよう、WiiYourself!やWiimoteLibを追加を参考にするとよい。
+<dt>【演習】☆☆☆☆
+<dd>Windows Mobileなど他のプラットフォーム用にAPIを移植せよ。
+<dt>【演習】☆☆☆☆☆
+<dd>スタックやDDKを活用し、Bluetooth接続を自動化できるドライバーを開発せよ。</dl>
+
+<p>これで本章は終わりです。いままで通りステップバイステップの解説を行ったところもありますが、ほとんどがアイディアの要点だけ、あとは演習問題という構成で解説よりも、課題設定に力点を置かせていただきました。</p>
+<p>読者のスキルを幅広くとった本書において、英語で書いた論文をそのまま落とし込むのは難儀しました。残念ながら割愛したネタも数多くありますが、筆者の経験したWiiRemoteプロジェクトのいくつかを、初めて日本語で解説する機会に恵まれました。</p>
+<p>本書でWiiRemoteプログラミングを学んだ皆さんが、本書での「ネタ」をきっかけに、YouTubeなどを通して、より多く世界中の人々と交流されることを祈っております。その際「元ネタはWiiRemote本より」と、本書を引用元に書いていただけるとより励みになります。</p>
+<p>またWiiMotionPlusの登場などで、本書の内容も古くなったり「もっといい方法があるよ！」といったご意見もあると思います。上記で紹介した「WiiMedia」プロジェクトや、Google Groupsにてコミュニティを立ち上げておりますので、ご活用いただければ幸いです。</p>
+<div class="fyi">
+<div class="title">オンラインコミュニティ</div>
+
+<p class="first_ja">[URL] http://akihiko.shirai.as/projects/WiiRemote本書のポータルとしてここに情報をまとめています。</p>
+<p>Google Code「WiiMedia」</p>
+<p>[URL]　http://code.google.com/p/wiimedia/</p>
+<p>本書で紹介したサンプルなど関連のコードをここで共有しています。</p>
+<p>Google Groups「WiiRemote」</p>
+<p>[URL] http://groups.google.com/group/wiiremote</p>
+<p>ご質問や「こんなことできたよ！」という情報をお寄せ下さい。</p>
+</div>
+
+</body>
+</html>

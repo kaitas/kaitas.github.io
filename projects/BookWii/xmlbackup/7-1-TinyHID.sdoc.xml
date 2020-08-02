@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>★tiny_hid_dll</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+「tiny\_hid\_dll」は加古氏(http://kako.com/)による、Bluetooth経由のHIDへのアクセスを容易にするAPIです。2006年末、世界でもかなり早い段階で公開されたAPIは非常にシンプルで、OpenHidHandle，ReadReport，WriteReport，CloseHidHandleという4つのローレベル関数のみで構成されていますが、加古氏のホームページにおいて、いくつかの基本機能(ボタン、加速度センサ、赤外線センサ等)がソースコードとともに公開されており、WiiRemoteを学習する上で非常に勉強になります。
+
+またtiny\_hid\_dllは比較的多くのBluetoothスタックをサポートしています。筆者の環境ではBlueSoleilをはじめ、ToshibaのBluetoothスタックなど、様々な環境で安定した動作が確認できました。
+
+さて、本格的なWiiRemoteを使った開発をはじめるにあたり、加古氏に敬意を込めつつ、ホームページで公開されているいくつかのプログラムについて解説していきたいと思います。
+
+<fyi title="加古氏のHP「小ネタ 2006-019」">
+http://www.kako.com/neta/2006-019/2006-019.html}
+</fyi>
+
+この加古氏のページで紹介されているプログラムは、特徴としてWin32コマンドラインやSDL(Simple DirectMedia Layer)を使った一見地味なものが多いのですが、コードが短く整理されており理解しやすく、さらにVisual StudioのIDEを使用していません。具体的にはVCの含まれているコマンドラインコンパイラを使用したバッチファイルを使ってコンパイル、リンクを行います。
+
+
+<subsection title="Wii Remote Test1の実行">
+まず最初のプログラムである「Wii Remote Test1」について解説していきたいと思います。上記のホームページから「wii_test1.zip」とソースコード「wii_test1_src.zip」をダウンロードして好きなディレクトリに展開ください。
+
+BluetoothスタックからWiiRemoteを1個接続して、WiiRemoteを机など水平な場所に置いてから、実行ファイル「wii_test1.exe」を起動してみましょう。
+
+<figure id="fig:wii_test1" src="png/wii_test1.png" style="width=:5cm" title="Wii Remote Test1のスクリーンショット"/>
+
+うまく起動できた場合、WiiRemoteのバイブレータがブルッと振るえ、すべてのLEDが消灯した後、ウィンドウに3DでWiiRemote調の白い直方体が表示されます。WiiRemoteを傾けたりすると、現在のWiiRemoteの姿勢に近い傾きで高速な3Dでレンダリングします。Aボタンを押すと傾斜がリセットされます。キーボードのESCかWiiRemoteのHOMEボタンを押すことで終了します。
+
+</subsection>
+
+
+<subsubsection title="トラブルシューティング">
+このプログラム「wii_test1」はシンプルですが、WiiRemoteプログラミングに求められる多くの基本が集約されています。もしうまく起動できなかった場合は、この先のプログラミングにおいても問題が起きる可能性がありますので、ここでしっかりと確認しておきましょう。
+
+<dl>
+  <dt>「Wii-remote cannot open」というエラーが発生する</dt>
+  <dd>これは最もありえるケースです。原因としてはBluetoothスタックにおいてWiiRemoteが1個もつながれていない状態が考えられます。接続を確認しましょう。BlueSoleilが評価版の場合5MBの転送量を超えている、WiiRemoteとしばらく通信がなかったためにWiiRemoteがスリープしている、などの場合も可能性としてあり得ます。</dd>
+
+  <dt>WiiRemoteが接続されているのに「Wii-remote cannot open」エラーが発生する</dt>
+  <dd>残念ながらお使いのBluetoothスタックはtiny_hid_dllでの接続方法では接続できない可能性があります。WiiYourself!やWiinRemoteなど他のツールやAPIを試してみてください。それでも上手く接続できない場合は別のBluetoothアダプタの購入を検討することをおすすめいたします。</dd>
+  
+  <dt>直方体は表示されるが動かない</dt>
+  <dd>Bluetoothスタックを確認してみてください。もし過去にWiiRemoteを複数接続したことがあれば、その接続プロファイル(多くの場合アイコンがあります)を全部削除して、もういちどWiiRemoteのペアリングからやり直してみてください。</dd>
+  
+  <dt>その他の不具合</dt>
+  <dd>次節のソース解説を読むと解ることがあるかもしれません！</dd>
+</dl>
+
+</subsubsection>
+
+ <subsection title="wii_test1.cppのリビルド">
+ Wii Remote Test1のソースコードのパッケージを観察してみると、VC.NET2003をコマンドラインで利用する環境で開発されているようです。build.batをダブルクリックするとリビルドすることができます。たしかにこのようなシンプルなコマンドラインが中心のプログラムなら、大がかりなVisual StudioのIDEを使う必要はないかもしれません（UNIXのmakeのような感覚で使えるので筆者は気に入っています）。本書ではここまでVC2008（出版時点では最新の開発環境）をセットアップしてきておりますので、使用しているPCにVC2008がデフォルトのままインストールされているという前提で、build.batを以下のように修正して、新しいバッチファイル「build_VC9.bat」を作成します。
+
+<console title="build_VC9.bat">
+@echo "--------- 環境変数の設定 ----------"
+rem set environment for VC2008 (VC9)
+call "C:\Program Files\Microsoft Visual Studio 9.0\VC\bin\vcvars32.bat"
+
+@echo "--------- C++ソースをコンパイルします ----------"
+cl wii_test1.cpp /D HAVE_OPENGL /MD /link user32.lib sdl\sdl.lib sdl\sdlmain.lib
+ opengl32.lib tiny_hid_dll.lib /SUBSYSTEM:WINDOWS 
+pause
+</console>
+
+<figure id="fig:build_vc9.bat" src="png/build_vc9.bat.png" style="width=:5cm" title="build_vc9.batによるコマンドラインリビルド"/>
+
+編集したバッチファイルを保存してダブルクリックするとコマンドプロンプト画面が表示され、コンパイルとリンクが実行されます。特にソースコード「wii_test1.cpp」を改変していなければ、無事に「wii_test1.obj」「wii_test1.exe」「wii_test1.exe.manifest」が生成されているはずです。このディレクトリには必要なDLLがそろっていないので、このままでは実行できません。既にダウンロードしてきたビルド済みの「wii_test1」フォルダにある「SDL.dll(ver.1.2.11.0)」と「tiny_hid_dll.dll」をコピーしてきてから「wii_test1.exe」をダブルクリックしてみましょう。無事に実行されましたか？
+
+
+
+ </subsection>
+ <subsection title="wii_test1.cppの流れ">
+
+この節ではwii_test1.cppの流れを上から順に解説していきます。
+まずヘッダ部分ではSDL関係の#includeに続いて、加速度センサのゲインの固有値「26」の#define、そしてtiny_hid_dllからの関数インポートがあります。
+<program title="wii_test1.cpp-part2">
+<![CDATA[
+#include <windows.h> 
+#include <process.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h> 
+#include <math.h>
+#include "SDL/SDL.h"
+#include "SDL/SDL_opengl.h"
+
+#define ACC_GAIN 26
+
+#define FUNC __declspec(dllimport) __stdcall
+extern "C" HANDLE FUNC OpenHidHandle(unsigned short vendor_id, unsigned short product_id);
+extern "C" void FUNC ReadReport(HANDLE handle,unsigned char *InputReport,int *len);
+extern "C" void FUNC WriteReport(HANDLE handle,unsigned char *OutputReport, int *len);
+extern "C" void FUNC CloseHidHandle(HANDLE handle);
+
+]]>
+</program>
+ 
+続いてハンドルの宣言、WiiRemoteを検索するためのベンダーID(VID=0x057e)とプロダクトID(PID=0x0306)の宣言が続き、「リポート」関係の変数の準備をします。リポート(report)とは、HID標準に対する特有の用語です。入出力それぞれの機能に対して、あらかじめ決められたリポートIDとサイズが設定されています。このあたりの仕様はもちろん公開されている訳ではありませんが、世界中のハッカーがWiiLi.orgなどにまとめています(★リポートの表を引用掲載予定)。
+
+http://www.wiili.org/index.php/Wiimote
+http://homepage.mac.com/ianrickard/wiimote/wiili\_wimote.html
+
+<program title="wii_test1.cpp-part2">
+<![CDATA[
+HANDLE hRsDevHandle;
+const USHORT VID = 0x057e;
+const USHORT PID = 0x0306;
+#define MAXREPORTSIZE 256
+int		InputLength,OutputLength;
+unsigned char	InputReport[MAXREPORTSIZE];
+unsigned char	OutputReport[MAXREPORTSIZE];
+
+]]>
+</program>
+
+続いてWiiRemoteのボタンと加速度を取得のための変数の宣言です。
+<program>
+unsigned char	button1,button2;  // AとHOMEボタン
+unsigned char	Ax,Ay,Az;         // 加速度センサ
+unsigned char	wii_remote_loop_flag;
+unsigned char	wii_remote_in_use;
+</program>
+
+続いてWiiRemoteと通信するための処理がまとまったの関数のプロトタイプ宣言です。
+<program>
+void Wii_Remote_Input(void);
+void Wii_Remote_mode_0x31(void);
+int Wii_Remote_check(void);
+</program>
+
+★図解予定！
+
+（WriteReport→ReadReportしてデータを取得する流れ）
+
+以下、長くなりますので各関数の名称と機能を中心に解説していきます。
+
+<dl>
+  <dt>int HandleEvent(SDL\_Event *event)</dt>
+  <dd>SDLのイベントハンドリング関数です。ESCキーが押されたか、終了イベントが発生したかどうかを判断しています。</dd>
+  <dt>int Do_sdl_event()</dt>
+  <dd>グラフィックス描画の後に処理される関数で、SDLのイベントを取得してHandleEventに渡します。</dd>
+  <dt>int RunGLTest()</dt>
+  <dd>描画の初期化とメインのレンダリングループを担当している関数です。描画用のウィンドウサイズ(640x480)、描画する直方体(cube[8][3])の頂点設定、SDLが初期化されていない場合は初期化し、while文でWii\_Remote\_Input()を呼び、WiiRemoteの角度に合わせた描画を行います。「加速度センサの値から直方体の角度に変換する計算式」は真面目に解こうとすると奥深いのですが、ここのソースでは非常にシンプルに解決していますので別途コラムで解説します。</dd>
+  <dt>void Sleep2(int msec)</dt>
+　<dd>指定したミリ秒の間、処理を待ちます。こちらも興味深いので別途コラムで解説します。</dd>
+</dl>
+
+<program title="void Report_0x11(unsigned char data)">
+<![CDATA[
+void Report_0x11(unsigned char data)
+{
+	OutputReport[0]=0x11; // Report ID
+	OutputReport[1]=data;
+	WriteReport( hRsDevHandle , OutputReport , &OutputLength);
+}
+]]>
+</program>
+　リポートID[0x11]の機能、LEDとバイブレータの情報を書き込みます。
+
+<program title="void Report_0x12(unsigned char data1,unsigned char data2)">
+<![CDATA[
+void Report_0x12(unsigned char data1,unsigned char data2)
+{
+	OutputReport[0]=0x12; // Report ID
+	OutputReport[1]=data1;
+	OutputReport[2]=data2;
+	WriteReport( hRsDevHandle , OutputReport , &OutputLength);
+}
+]]>
+</program>
+　リポートID[0x12]の機能、★
+
+<program title="void Report_0x13(unsigned char data)">
+<![CDATA[
+void Report_0x13(unsigned char data)
+{
+	OutputReport[0]=0x13; // Report ID
+	OutputReport[1]=data;
+	WriteReport( hRsDevHandle , OutputReport , &OutputLength);
+}
+]]>
+</program>
+　★解説調査＆書き途中。
+
+<program title="void Wii_Remote_mode_0x31(void)">
+void Wii_Remote_mode_0x31(void)
+{
+	// Set Report Type
+	Report_0x12(0x00,0x31);  // Acc Sensor + button  Report Mode
+}
+</program>
+　★解説調査＆書き途中
+
+<program title="void Wii_Remote_Input(void)">
+<![CDATA[
+void Wii_Remote_Input(void)
+{
+	ReadReport( hRsDevHandle , InputReport, &InputLength);
+	if ( InputReport[0]==0x30 ) {
+		button1=InputReport[1]; button2=InputReport[2];
+	}
+	if ( InputReport[0]==0x31 ) {
+		button1=InputReport[1]; button2=InputReport[2];
+		Ax = InputReport[3];
+		Ay = InputReport[4];
+		Az = InputReport[5];
+	}
+}
+]]></program>
+　ReadReport()することで、各種リポートIDに発行した問い合わせの結果を取得します。
+問い合わせる種類によって大きさも、変換処理も異なります。この例ではInputReport[0]が「0x30」の場合はボタン情報が集約されたもの、「0x31」の場合は加速度センサの3軸の値それぞれ返ってきますので、それぞれ異なった変数に格納しています。
+
+
+<program title="void Wii_Remote_Input_Main(void *)">
+　WiiRemoteからの値を取得するWii\_Remote\_Input()関数を100ミリ秒毎に駆動するループ部分です。実際にはこの関数はマルチスレッド処理として利用されます。
+</program>
+
+<program title="int Wii_Remote_check(void)">
+uintptr_t wii_th;
+int Wii_Remote_check(void)
+{
+	Ax=0;
+	wii_remote_loop_flag=1;
+	wii_th = _beginthread( Wii_Remote_Input_Main , 0 , NULL );
+	Sleep2(100);
+	wii_remote_loop_flag=0;
+	return (Ax!=0);
+}
+</program>
+　メインの処理であるRunGLTest()を実行する前の動作確認用の関数です。Wii_Remote_Input_Main()によるWiiRemoteのデータを取得するマルチスレッドを100ミリ秒だけ起動して動作確認をします。加速度センサのX軸の値を正しく(＝それらしく)取得できるかどうかで判断しています。
+
+
+<program title="void Stop_Wii_remote_th(void)">
+void Stop_Wii_remote_th(void)
+{
+	if (wii_remote_in_use==1) {
+		TerminateThread( (HANDLE)wii_th , -1); 
+	}
+}
+</program>
+　WiiRemoteが使用中でなければ、スレッドを安全に終了させます。
+
+
+以下はメイン関数です。コメントはオリジナルのソースに加筆しています。
+<program>
+int main( int argc, char *argv[])
+{ 
+	int i;
+	/* tiny_hid_dllを利用してHIDのハンドルを取得 */
+	hRsDevHandle = OpenHidHandle(VID,PID);
+	if ( hRsDevHandle == INVALID_HANDLE_VALUE) {
+		MessageBox(0,"Wii-Remote not found.",0,0);
+		return 1;
+	}
+	
+	 // 加速度センサとボタンに変化があったらリポートさせる
+	Wii_Remote_mode_0x31();
+	//動作確認
+	if ( Wii_Remote_check() ) {
+        //動作確認が成功したら、振動とLEDを試す	
+		Report_0x13(0x01);  //Rumble ON
+		Sleep2(200); // wait
+		// LED command stops rumble(?)
+		Report_0x11(0xF0); // LEDs on
+		Report_0x13(0x00); //Rumble OFF
+		Sleep2(200); // wait		
+		Report_0x11(0x00); // LEDs off
+		//グラフィックスのテストとループの起動
+		RunGLTest(); // Start Graphic Display		
+	} else {
+	    //WiiRemoteの動作が確認できなかったので取得スレッド停止
+		MessageBox(0,"Wii-Remote cannot open.",0,0);
+		Stop_Wii_remote_th();
+	}
+	//開いたHIDハンドルを閉じて終了
+	CloseHidHandle( hRsDevHandle );
+	return 0;
+} 
+</program>
+★★
+
+
+
+
+
+  <subsubsection title="▽加速度センサの値から直方体の角度に変換する">
+  <program title="wii_test1.cpp-RunGLTest()" srcKeyword="int RunGLTest()" src="test/wii_test1.cpp" />
+<program>
+<![CDATA[
+＜略＞
+		ta1 = (double)(Ax - offset1) / ACC_GAIN;
+		ta2 = (double)(Ay - offset2) / ACC_GAIN;
+		
+		tl1 = (tl1*2 + ta1 ) /3;
+		tl2 = (tl2*2 + ta2 ) /3;
+		
+		if (tl1>1.0) { tl1=1.0; }
+		if (tl2>1.0) { tl2=1.0; }
+		if (tl1<-1.0) { tl1=-1.0; }
+		if (tl2<-1.0) { tl2=-1.0; }
+		jx = asin(tl1)*180/3.14159265;
+		jy = asin(tl2)*180/3.14159265;
+＜略＞
+]]>
+</program>
+
+  </subsubsection>
+  <subsubsection title="▽マイクロ秒以上の精度を持ったSleep2()関数"></subsubsection>
+　一般的にWindowsで使われているSleep()関数は指定したミリ秒の間、プロセスを待たせる事ができますが、実際には誤差があると言われています。加古氏はQueryPerformanceCounter()関数を利用して、システム起動からの経過時間を取得し、その周波数（QueryPerformanceFrequency()で取得）からマイクロ秒(μ秒＝100万分の1秒)以上の精度の精度をもったSleep2()関数を作成しています。
+<program>
+<![CDATA[
+void Sleep2(int msec)
+{
+	LARGE_INTEGER f;
+	LARGE_INTEGER t1,t2;
+	double t;
+	QueryPerformanceFrequency(&f);
+	QueryPerformanceCounter(&t1);
+	while (1) {
+		QueryPerformanceCounter(&t2);
+		t = (double)t2.QuadPart - (double)t1.QuadPart;
+		t /= (double)f.QuadPart;
+		t *= 1000;
+		if (t>(double)msec) { return; }
+	}
+}
+]]>
+</program>
+
+このようにして作成したタイマーは、Windows上における標準的なゲーム・マルチメディアプログラミングで使われるマルチメディアタイマー(例：timeGetTime()；ミリ秒精度)に比べ非常に高精度です。ロボットやヒューマンインタフェースの開発、物理や計測を行う上では非常に重要なテクニックなので覚えておくと良いでしょう。
+
+ </subsection>
+  <subsection title="▽Wii Mice Test1">
+★加古さんからの返事が来るまで保留中。
+http://www.kako.com/neta/2006-019/2006-019.html
+  </subsection>
+  <subsection title="▽Wiimote fall detect Test1">
+リモコンが手から離れて落ちるときに、自由落下を検出して音を出すテスト用のソフト。★紙面に余裕があったら扱います。
+</subsection>
+
+</body>
+</doc>

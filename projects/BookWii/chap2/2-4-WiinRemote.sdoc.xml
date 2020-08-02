@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>(notitle)</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+WiinRemoteは2006年末、Wii本体が発売された直後にもっとも有名になったWiiRemoteをPCで利用できるユーティリティです。「おなかすいた族」(http://onakasuita.org/wii/)にて公開されています。WiiRemoteを使ってWindowsのカーソルを動かしたり、加速度センサや赤外線センサの状態を観察することができます。
+
+2007年1月に公開された「WiinRemote\_v2007.1.13.zip」が最終版ですが、現在でも多くのユーザに利用されているようです。
+
+★スクリーンショット、
+
+<subsection title="★PowerPointでプレゼンテーション">PowerPointでの利用方法等を紹介</subsection>
+
+<!--
+<figure id="fig:WiiRemote.jpg" src="jpg/WiiRemote.jpg" title="WiiRemote">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+
+
+</body>
+</doc>

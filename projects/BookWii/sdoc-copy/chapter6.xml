@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='shift_jis'?>
+<doc xml:lang='ja'>
+	<head>
+		<title>プログラミング応用編</title>
+		<author>白井暁彦</author>
+		<date>2008年11月25日最終更新</date>
+		<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+		<email>shirai at mail.com</email>
+	</head>
+	<body>
+		<section title="Socket通信"></section>
+		<section title="WiiRemoteテルミン"></section>
+		<section title="赤外線4点検出"></section>
+		<section title="赤外線LEDを使った測量">
+			<subsection title="広範囲を測定する"></subsection>
+			<subsection title="向きを測定する"></subsection>
+		</section>
+	</body>
+</doc>

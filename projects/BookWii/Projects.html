@@ -1,0 +1,829 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年5月8日最終更新" lang="ja">
+<title>WiiFitバランスボードを用いた「オーラ診断」(東京工科大)</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">WiiFitバランスボードを用いた「オーラ診断」(東京工科大)</h1>
+
+<div class="date">2009年5月8日最終更新</div>
+<div class="author">白井暁彦</div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/WiiRemote/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/WiiRemote/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id16" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFitバランスボードを用いた「オーラ診断」(東京工科大)</a>
+<ul>
+<li> <a href="#doc1_id22" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">BBOSC</a>
+</ul>
+<li> <a href="#doc1_id104" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">★SecondLifeをWiiRemoteで操作する</a>
+</ul>
+</div>
+
+<h2 id="doc1_id16">WiiFitバランスボードを用いた「オーラ診断」(東京工科大)</h2>
+
+<p class="first_ja">「オーラ診断」</p>
+<p>電王隊小笠原明日美平塚宏平野実花渕上伸吾</p>
+<p>東京工科大学コムメディアデザイン研究室</p>
+<p>IMAGINE　プログラミング初心者4人が作った「オーラ診断」という作品http://gryng.blog87.fc2.com/blog-entry-15.html</p>
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/aura-blk.png">
+</div>
+
+
+<h3 id="doc1_id22">BBOSC</h3>
+
+<p class="first_ja">http://456.im/wp/download/bbosc/</p>
+<p>４カ所にかかる体重を0-10000にスケールして送信してくれます。</p>
+<p>右上、右下、左上、左下の４カ所の値が得られますが、そのままでは使いにくいのでXとYの２値に変換します。（次のスライド）</p>
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/aura-bb.png">
+</div>
+
+<p>【オーラの描画】</p>
+<p>人の輪郭にそって光を出す重心の情報を元にParticleの色を決めて、人の周りに飛ばすこの二つを組み合わせてオーラの描画としています。</p>
+<p>【オーラの診断】人の重心は常に動いているので、その人の重心の標準を求めます。</p>
+<p>数秒の判定時間を設けて、重心の位置を足して平均を出しました。</p>
+<p>平均の位置が前にあるか後ろにあるか、右にあるか左にあるかといった条件でおおまかに色を決め、XとYの割合などで微妙に色を変えてます。わりと再現性のあるオーラ診断の実現</p>
+<p>バランスWiiボードから得られる情報はわりと繊細なので、平均を出す時間を設けることで再現性を高めました。</p>
+<p>自分のオーラを見ているときに、体重をどちらかにかけつづけると色がじわじわ変化します。光も強くでます。力を込めるとオーラが大きくなってるみたいで楽しい！</p>
+<p>多少へんな挙動があっても、「オーラ」という曖昧な言葉が誤差を吸収してくれます。</p>
+<p>【苦労したところ】一番苦労したところが、カメラで人の輪郭をとる部分だったので、本の趣旨とは外れてしまいます（笑）Wiiボード周りでの苦労は色を決めるためのアルゴリズムです。平均を取るようにすることで簡単にクリアできちゃったのですが…。</p>
+<p>【利用したライブラリ】oscP5 BBOSCとの連携JMyronカメラの利用と処理背景差分法で人と背景を分けるblobDetection人の輪郭をとるために使用</p>
+<p>【youtube】http://www.youtube.com/watch?v=3pL3ObUwoA8</p>
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/BBOSC.png" alt="BBOSC.png">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/IMG_4750.jpg" alt="IMG_4750.JPG">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/IMG_4757.jpg" alt="IMG_4757.JPG">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/list.png" alt="list.png">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/P1040055.jpg" alt="P1040055.JPG">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/P1070530.jpg" alt="P1070530.JPG">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="chap9/aura-images/P1070559.jpg" alt="P1070559.JPG">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss101310167.png" alt="ss101310167.png" width="2cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss1013124318.png" alt="ss1013124318.png" width="2cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss103820.png" alt="ss103820.png" width="2cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss104743.png" alt="ss104743.png" width="2cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss13496.png" alt="ss13496.png" width="2cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss16422.png" alt="ss16422.png" width="2cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:2cm" src="chap9/aura-images/ss9_3.png" alt="ss9_3.png" width="2cm">
+</div>
+
+
+<div id="doc1_id98" class="caption">connect</div>
+<pre class="program" style="margin-top:0">
+import oscP5.*;
+
+
+/* オブジェクトの読み込み
+------------------------------*/
+OscP5 oscP5;  //OscP5オブジェクトを参照する変数の宣言
+
+
+/* ずっと使っていく変数を設定
+------------------------------*/
+//WiiFit
+/*重心の位置を判別するための時間(フレーム)を入れるためのint型の変数tを宣言*/
+int t = 100;
+/*重心の位置を取得するための閾値を入れるためのint型の変数thresholdを宣言*/
+int threshold = 4000;
+/*閾値を超えた際のカウントを入れるためのint型の配列cを宣言*/
+int [] c;
+int [] balanceData;
+float wbx, wby = 0.0;
+int ac = 100;
+int aspeed = 10;
+
+
+/*--------------------------------------------------*
+  setup (最初に１回だけ実行される)
+ *--------------------------------------------------*/
+void setup(){
+  //教科書通りの基本設定
+  background(0);           //背景は黒
+  frameRate(30);
+  size(320, 240);
+  smooth();
+  
+  //WiiFit
+  oscP5 = new OscP5(this, 9000);　//OSCデータを受け取るポート番号を設定する
+  c = new int[4];
+  balanceData = new int[4];　//WiiFitからのデータを４箇所分格納する
+ }
+
+
+ /*--------------------------------------------------*
+  draw
+ *--------------------------------------------------*/
+void draw(){
+（中略）
+}
+
+
+ /*--------------------------------------------------*
+  WiiFit
+ *--------------------------------------------------*/
+/* oscメッセージを受信する*/
+void oscEvent(OscMessage theOscMessage){
+//Wii balance boardの値を入れるためのint型の配列balanceDataを宣言
+//配列の番号と上下左右のセンサーの対応関係は、
+//0:右上、1:右下、2:左上、3:左下
+  if(theOscMessage.checkAddrPattern(&quot;/data&quot;)==true){
+    if(theOscMessage.checkTypetag(&quot;iiii&quot;)) {
+      for(int i =0;i &lt;4;i++){
+        /*OscのメッセージをbalanceDataに格納する*/
+        balanceData[i] = theOscMessage.get(i).intValue();
+      }
+    }
+  }
+}
+</pre>
+
+
+<div id="doc1_id100" class="caption">aura_check</div>
+<pre class="program" style="margin-top:0">
+/*--------------------------------------------------*
+  draw
+ *--------------------------------------------------*/
+void draw(){
+  
+  commonAction();
+  
+  switch(step){
+    
+    case 0:
+      checkAura();
+      break;
+      
+    case 1:
+      drawAura();
+      break;
+      
+    case 2:
+      standby();
+      break;
+  }
+
+}
+
+（中略）
+
+/*--------------------------------------------------*
+  check aura
+ *--------------------------------------------------*/
+void checkAura(){
+  
+  //待ち受け画面表示
+  image(checkImg, 0, 0);
+  
+  //200フレームの間平均値を出すために体重を足す
+  if( checkCnt &lt; 200 ){
+    checkCnt ++;
+    
+    perSum[0] += balanceData[0];
+    perSum[1] += balanceData[1];
+    perSum[2] += balanceData[2];
+    perSum[3] += balanceData[3];
+    
+  }
+  
+  if( checkCnt == 200 ){
+    
+    perXY();
+    colorSet();
+    step = 1;
+    checkCnt = 0;
+   
+    //パーティクル
+    for(int i=0;i&lt;pNum;i++){
+      p[i].reset(i);
+    }
+    
+  }
+  
+  //待ち受けフラッグ
+if( balanceData[0]&lt;150 &amp;&amp; balanceData[1]&lt;150 &amp;&amp; balanceData[2]&lt;150 &amp;&amp; \
+    balanceData[3]&lt;150 ){
+    checkCnt = 0;
+    step = 2;
+  }
+  
+}
+
+（中略）
+
+void colorSet(){
+  println(perSum);
+  
+  if( perSum[0]+perSum[2] &gt; perSum[1]+perSum[3] ){
+    
+percc[0] = 225 + (30 * (perSum[0]+perSum[2])/2 / \
+    (perSum[0]+perSum[1]+perSum[2]+perSum[3]));
+    
+    if( perSum[0]+perSum[1] &gt; perSum[2]+perSum[3] ){
+      
+      percc[1] = 150 * perSum[3] / (perSum[0]+perSum[1]+perSum[2]);
+      percc[2] = 255 * perSum[1] / (perSum[0]+perSum[3]+perSum[2]);
+      
+    } else {
+      
+      percc[1] = 255 * perSum[3] / (perSum[0]+perSum[1]+perSum[2]);
+      percc[2] = 150 * perSum[1] / (perSum[0]+perSum[3]+perSum[2]);
+      
+    }
+    
+  } else if( perSum[3] &gt; perSum[1] ){
+    
+percc[1] = 225 + (30 * perSum[3] / \
+    (perSum[0]+perSum[1]+perSum[2]+perSum[3]));
+    
+    if( (perSum[0]+perSum[2])/2 &gt; perSum[1] ){
+      
+percc[0] = 255 * (perSum[0]+perSum[2])/2 / \
+    ((perSum[0]+perSum[2])/2+perSum[1]+perSum[3]);
+      percc[2] = 150 * perSum[1] / (perSum[0]+perSum[3]+perSum[2]);
+      
+    } else {
+      
+percc[0] = 150 * (perSum[0]+perSum[2])/2 / \
+    ((perSum[0]+perSum[2])/2+perSum[1]+perSum[3]);
+      percc[2] = 255 * perSum[1] / (perSum[0]+perSum[3]+perSum[2]);
+      
+    }
+    
+  } else {
+    
+percc[2] = 225 + (30 * perSum[1] / \
+    (perSum[0]+perSum[1]+perSum[2]+perSum[3]));
+    
+    if( (perSum[0]+perSum[2])/2 &gt; perSum[3] ){
+      
+percc[0] = 255 * (perSum[0]+perSum[2])/2 / \
+    ((perSum[0]+perSum[2])/2+perSum[1]+perSum[3]);
+      percc[1] = 150 * perSum[3] / (perSum[0]+perSum[1]+perSum[2]);
+      
+    } else {
+      
+percc[0] = 150 * (perSum[0]+perSum[2])/2 / \
+    ((perSum[0]+perSum[2])/2+perSum[1]+perSum[3]);
+      percc[1] = 255 * perSum[3] / (perSum[0]+perSum[1]+perSum[2]);
+      
+    }
+  }
+  
+  cc[0] = percc[0];
+  cc[1] = percc[1];
+  cc[2] = percc[2];
+  
+  println(&quot;color:&quot;);
+  println(cc);
+
+}
+</pre>
+
+
+<h3 id="doc1_id104">★SecondLifeをWiiRemoteで操作する</h3>
+
+<p class="first_ja">VR・メタバースといえば「SecondLife」ですが、GlovePIEを使えば、WiiRemoteで操作することも可能になります。オリジナルは「Google Earth」をベースに、首都大学東京の渡邉英徳先生が作成してくれましたので紹介します。</p>
+
+<pre id="doc1_id106" class="program">
+//Calibrate your Wiimote!
+//Place the Wiimote face up on a flat surface. Change these values until \
+    the
+//debug line next to the run button shows zero for each axis.
+var.xtrim = -7
+var.ytrim = -20
+var.ztrim = -4
+
+//Set your Wiimote LEDs to your liking. Binary value, 1-15
+Wiimote.Leds = 1
+
+//Key Map
+Mouse.LeftButton = Wiimote.A
+Keyboard.ESC = Wiimote.Home
+Keyboard.ESC = Wiimote.One
+Keyboard.Up = Wiimote.Up
+Keyboard.Down = Wiimote.Down
+Keyboard.Left = Wiimote.Left
+Keyboard.Right = Wiimote.Right
+//Keyboard.F = Wiimote.Home
+Keyboard.E = Wiimote.Plus
+Keyboard.C = Wiimote.Minus
+
+//Forward, Back, Up and Down
+
+if Wiimote.B &amp; Wiimote.Up Then
+KeyBoard.Up = False
+Keyboard.E = True
+Wait 600ms
+Keyboard.E = False
+endif
+
+if Wiimote.B &amp; Wiimote.Down Then
+KeyBoard.Down = False
+Keyboard.C = True
+Wait 600ms
+Keyboard.C = False
+endif
+
+var.accx = Wiimote.RawForceX + var.xtrim
+var.accy = Wiimote.RawForceY + var.ytrim
+var.accz = Wiimote.RawForceZ + var.ztrim
+
+                                                     // My best IR
+Mouse Script, with 5DOF Tracking
+// By Carl Kenner
+
+// Change these values:
+var.SensorBarSeparation = 7.5 inches  // distance between middles of
+two sensor bar dots
+var.NoYawAllowed = true  // Calculates X if no yaw is allowed,
+otherwise calculates Yaw but not X
+var.IRMulX = 1.2
+var.IRMulY = 1.2
+var.IROffsetX = 0  // add to mouse.x
+var.IROffsetY = 0  // add to mouse.y
+var.IRLeftButton = Wiimote.A
+var.IRRightButton = Wiimote.B
+
+
+// Compensate for roll
+var.c = cos(Smooth(wiimote.roll, 10))
+var.s = sin(Smooth(wiimote.roll, 10))
+if wiimote.dot1vis then
+  var.dot1x = var.c*(511.5-wiimote.dot1x)/511.5 -
+var.s*(wiimote.dot1y-383.5)/511.5
+  var.dot1y = var.s*(511.5-wiimote.dot1x)/511.5 +
+var.c*(wiimote.dot1y-383.5)/511.5
+end if
+if wiimote.dot2vis then
+  var.dot2x = var.c*(511.5-wiimote.dot2x)/511.5 -
+var.s*(wiimote.dot2y-383.5)/511.5
+  var.dot2y = var.s*(511.5-wiimote.dot2x)/511.5 +
+var.c*(wiimote.dot2y-383.5)/511.5
+end if
+
+// if both dots are visible check which is which and how far apart
+if wiimote.dot1vis and wiimote.dot2vis then
+  if var.dot1x &lt;= var.dot2x then
+    var.leftdot = 1
+    var.dotdeltay = var.dot2y - var.dot1y
+  else
+    var.leftdot = 2
+    var.dotdeltay = var.dot1y - var.dot2y
+  end if
+  var.dotdeltax = abs(var.dot1x-var.dot2x)
+  var.DotSep = hypot(var.dotdeltax, var.dotdeltay) * 511.5
+  var.IRDistance = var.SensorBarSeparation * 1320 / var.DotSep
+end if
+
+// sort out the position of the left and right dots
+if var.leftdot = 1 then
+  if wiimote.dot1vis and wiimote.dot2vis then
+    var.LeftDotX = var.dot1x
+    var.LeftDotY = var.dot1y
+    var.LeftDotVis = true
+    var.RightDotX = var.dot2x
+    var.RightDotY = var.dot2y
+    var.RightDotVis = true
+  else if wiimote.dot1vis then
+    if hypot(var.leftdotx-var.dot1x,var.leftdoty-var.dot1y) &lt;=
+hypot(var.rightdotx-var.dot1x,var.rightdoty-var.dot1y) then
+      // is the real dot 1
+      var.LeftDotX = var.dot1x
+      var.LeftDotY = var.dot1y
+      var.RightDotX = var.dot1x + var.dotdeltax
+      var.RightDotY = var.dot1y + var.dotdeltay
+      var.LeftDotVis = true
+      var.RightDotVis = false
+    else
+      // was originally dot 2, but now called dot 1.
+      var.leftdot = 2 // this dot (1) is actually the right dot
+      var.LeftDotX = var.dot1x - var.dotdeltax
+      var.LeftDotY = var.dot1y - var.dotdeltay
+      var.RightDotX = var.dot1x
+      var.RightDotY = var.dot1y
+      var.RightDotVis = true
+      var.LeftDotVis = false
+    end if
+  else if wiimote.dot2vis then
+    var.LeftDotX = var.dot2x - var.dotdeltax
+    var.LeftDotY = var.dot2y - var.dotdeltay
+    var.RightDotX = var.dot2x
+    var.RightDotY = var.dot2y
+    var.RightDotVis = true
+    var.LeftDotVis = false
+  end if
+else if var.leftdot = 2 then
+  if wiimote.dot1vis and wiimote.dot2vis then
+    var.LeftDotX = var.dot2x
+    var.LeftDotY = var.dot2y
+    var.LeftDotVis = true
+    var.RightDotX = var.dot1x
+    var.RightDotY = var.dot1y
+    var.RightDotVis = true
+  else if wiimote.dot1vis then
+    if hypot(var.leftdotx-var.dot1x,var.leftdoty-var.dot1y) &lt;=
+hypot(var.rightdotx-var.dot1x,var.rightdoty-var.dot1y) then
+      var.leftdot = 1 // dot 1 is now the left dot
+      var.LeftDotX = var.dot1x
+      var.LeftDotY = var.dot1y
+      var.RightDotX = var.dot1x + var.dotdeltax
+      var.RightDotY = var.dot1y + var.dotdeltay
+      var.LeftDotVis = true
+      var.RightDotVis = false
+    else
+      // the real dot 1 (on the right)
+      var.LeftDotX = var.dot1x - var.dotdeltax
+      var.LeftDotY = var.dot1y - var.dotdeltay
+      var.RightDotX = var.dot1x
+      var.RightDotY = var.dot1y
+      var.RightDotVis = true
+      var.LeftDotVis = false
+    end if
+  else if wiimote.dot2vis then
+    var.RightDotX = var.dot2x + var.dotdeltax
+    var.RightDotY = var.dot2y + var.dotdeltay
+    var.LeftDotX = var.dot2x
+    var.LeftDotY = var.dot2y
+    var.LeftDotVis = true
+    var.RightDotVis = false
+  end if
+else
+  var.LeftDotX = var.dot1x
+  var.LeftDotY = var.dot1y
+  var.RightDotX = var.LeftDotX
+  var.RightDotY = var.LeftDotY
+  var.LeftDotVis = true
+  var.RightDotVis = true
+end if
+
+
+// Find the imaginary middle dot
+var.MiddleDotX = (var.leftdotx + var.rightdotx)/2
+var.MiddleDotY = (var.leftdoty + var.rightdoty)/2
+var.MiddleDotVis = wiimote.dot1vis or wiimote.dot2vis
+
+if var.MiddleDotVis then
+  var.TotalPitch = atan2(511.5*var.MiddleDotY,1320) + Wiimote.Pitch
+  var.DotYaw = atan2(-511.5*var.MiddleDotX,1320) // assume yaw is 0
+  var.WiimoteYawNoX = atan2(511.5*var.MiddleDotX,1320)
+  var.WiimoteXNoYaw = -sin(var.dotyaw)*var.IRDistance
+  var.WiimoteY = -sin(var.totalpitch)*var.IRDistance
+  var.WiimoteZ = (-sqrt(sqr(var.IRDistance) -
+sqr(var.WiimoteY)))*var.IRDistance/RemoveUnits(var.IRDistance)
+end if
+
+// scale it to the screen range 0 to 1
+var.IRx = var.IRMulX*var.middledotx/2 + 0.5
+var.IRy = var.IRMulY*var.middledoty*1023/767/2 + 0.5
+var.IRvis = wiimote.dot1vis or wiimote.dot2vis
+var.IROnScreen = 0 &lt;= var.IRx &lt;= 1  and  0 &lt;= var.IRy &lt;= 1
+
+// is it off the screen?
+var.IRTooFarLeft = var.IRx &lt; 0 or (var.IRx &lt; 0.1 and (not var.IRvis))
+var.IRTooFarRight = var.IRx &gt; 1 or (var.IRx &gt; 1-0.1 and (not var.IRvis))
+var.IRTooFarUp = var.IRy &lt; 0 or (var.IRy &lt; 0.1 and (not var.IRvis))
+var.IRTooFarDown = var.IRy &gt; 1 or (var.IRy &gt; 1-0.1 and (not var.IRvis))
+
+// Heavily smooth small movements, but do zero lag for quick movements
+var.MoveAmount = 1024*hypot(delta(var.IRx), delta(var.IRy))
+if smooth(var.MoveAmount) &gt; 12 then
+  var.SmoothX = var.IRx
+  var.SmoothY = var.IRy
+  var.LastSureFrame = PIE.Frame
+else if (PIE.frame-var.LastSureFrame) &gt; 18 then
+  var.SmoothX = Smooth(var.IRx, 18, 4/1024)
+  var.SmoothY = Smooth(var.IRy, 18, 4/1024)
+else if (PIE.frame-var.LastSureFrame) &gt; 14 then
+  var.SmoothX = Smooth(var.IRx, 14, 4/1024)
+  var.SmoothY = Smooth(var.IRy, 14, 4/1024)
+else if (PIE.frame-var.LastSureFrame) &gt; 10 then
+  var.SmoothX = Smooth(var.IRx, 10, 4/1024)
+  var.SmoothY = Smooth(var.IRy, 10, 4/1024)
+else if (PIE.frame-var.LastSureFrame) &gt; 6 then
+  var.SmoothX = Smooth(var.IRx, 6, 4/1024)
+  var.SmoothY = Smooth(var.IRy, 6, 4/1024)
+else if (PIE.frame-var.LastSureFrame) &gt; 2 then
+  var.SmoothX = Smooth(var.IRx, 2, 4/1024)
+  var.SmoothY = Smooth(var.IRy, 2, 4/1024)
+end if
+
+// Freeze the mouse cursor while they start pressing the button
+// otherwise it will make the cursor jump
+var.Freeze = (var.IRLeftButton or var.IRRightButton) and
+KeepDown(pressed(var.IRLeftButton) or pressed(var.IRRightButton),
+600ms)
+
+// Only change the mouse position if pointing at the screen
+// otherwise they can still use a real mouse
+if var.IRvis and (not var.Freeze) then
+  mouse.x = var.SmoothX
+  mouse.y = var.SmoothY
+end if
+
+// delay the buttons slightly so we have time to freeze the cursor (is
+that needed?)
+//mouse.LeftButton = var.IRLeftButton and (not
+KeepDown(pressed(var.IRLeftButton), 40ms))
+//mouse.RightButton = var.IRRightButton and (not
+KeepDown(pressed(var.IRRightButton), 40ms))
+
+// display 6DOF data
+if var.NoYawAllowed then
+  debug = 'X: '+var.WiimoteXNoYaw+',  Y: '+var.WiimoteY+',  Z:
+'+var.WiimoteZ+',    Yaw: 0,  Pitch: '+Wiimote.Pitch+',  Roll:
+'+Wiimote.Roll
+else
+  debug = 'X: 0,  Y: '+var.WiimoteY+',  Z: '+var.WiimoteZ+',    Yaw:
+'+var.WiimoteYawNoX+',  Pitch: '+Wiimote.Pitch+',  Roll:
+'+Wiimote.Roll
+endif
+
+
+//Debug
+if Wiimote.Up
+   var.Button = &quot;Up&quot;
+elseif Wiimote.Down
+   var.Button = &quot;Down&quot;
+elseif wiimote.Left
+   var.Button = &quot;Left&quot;
+else if wiimote.Right
+   var.Button = &quot;Right&quot;
+elseif wiimote.A and not wiimote.B
+   var.Button = &quot;A&quot;
+elseif wiimote.B and not wiimote.A
+   var.button = &quot;B&quot;
+elseif wiimote.A and wiimote.B
+   var.button = &quot;A + B&quot;
+elseif wiimote.Home
+   var.button = &quot;Home&quot;
+elseif wiimote.Plus
+   var.button = &quot;Plus&quot;
+elseif wiimote.Minus
+   var.button = &quot;Minus&quot;
+else
+   var.button = &quot;&quot;
+endif
+
+debug = &quot;x:&quot; + var.accx + &quot;, y:&quot; + var.accy + &quot;, z:&quot; + var.accz + &quot; &quot;
++ var.Button
+</pre>
+
+</body>
+</html>

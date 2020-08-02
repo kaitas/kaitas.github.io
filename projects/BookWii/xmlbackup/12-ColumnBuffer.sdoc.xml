@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>★未整理ネタ倉庫</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+<section title="12.0.5 赤外線反射式インタフェース">
+CMUの研究者による「マイノリティ・リポート」式ユーザインタフェースの作り方。
+</section>
+
+<section title="（大内さん提供のネタ）">
+また、センサーバですが、任天堂から単体でも出ているらしいので、その辺の情
+報も紹介したいです。今は販売していないんでしょうか？
+--
+任天堂、部品販売で「センサーバー」など取り扱い開始
+http://www.inside-games.jp/news/200/20068.html
+
+白井追記
+部品販売コーナーで買えます。普通為替もしくは定額小為替を使い郵便で購入します。
+http://www.nintendo.co.jp/n10/parts/index.html
+
+http://shop.nintendo.co.jp/GoodsList.do?CATEGORY_ID=sensorbar
+1,785円 送料450円
+
+
+それとWebを見ていて、以下のページでやっていることとかおもしろかったです。
+一応、参考までにURLはっておきます。
+--
+MITの研究グループ、Wiiリモコンを利用したリズムゲームを披露
+http://japan.cnet.com/news/ent/story/0,2000056022,20374627,00.htm
+
+Ｗｉｉ のセンサーバーを応用して、おもしろデバイスを自作してみた
+http://myhome.cururu.jp/kacom/blog/article/21001739973
+</section>
+
+
+</body>
+</doc>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>ランチャーを作る</title>
+<author>小坂崇之</author>
+<date>2009年3月6日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+さて、これまでWiimoteLibを使って、基本的な入出力を学んできました。
+このあたりで、実用的なプログラムの例として「ランチャー」を作成してみましょう。
+ボタンを押すたびに、Windowsのアクセサリ「メモ帳」や「電卓」など外部プログラムが起動するプログラムです。
+
+
+
+<subsection title="外部プログラムの起動">
+前節の「ボタン入力」と基本は同じです。WiimoteLibの宣言を行い、コールバック関数内で外部プログラムを起動します。
+新しいプロジェクトを作成し、Form1.csに以下のコードを追加します。前節のプログラムの改造から始めても良いでしょう。
+<program title="Form1.cs：ボタンイベントで外部プログラムを起動する"> 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;    //WimoteLib
+
+namespace WiimoteLib_Sample {
+    public partial class SampleForm : Form {
+
+        Wiimote wm = new Wiimote();                    //Wiimoteの宣言
+
+        public SampleForm() {
+
+            InitializeComponent();
+
+            wm.WiimoteChanged += wm_WiimoteChanged;    //イベント関数の登録
+            wm.Connect();                            //Wiimoteの接続
+        }
+
+
+
+        //Wiiリモコンの値が変化したときに呼ばれる関数
+        void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args){
+            WiimoteState ws = args.WiimoteState;      //WiimoteStateの値を取得
+
+          if (ws.ButtonState.A == true) {
+               //Aボタンがおされたらメモ帳を起動
+                System.Diagnostics.Process.Start("notepad.exe");
+            }
+            if (ws.ButtonState.B == true) {
+               //Bボタンがおされたら電卓を起動
+                System.Diagnostics.Process.Start("calc.exe");
+            }
+
+        }
+
+
+    }
+}
+</program>
+</subsection>
+
+<subsection title="実行してみよう">
+
+1.WiiRemoteを接続してください。
+
+
+2.F5キーを押して実行してください。
+　　※もしエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+
+3.WiiリモコンのAボタンをクリックしてください。　メモ帳が起動します。 
+
+ <figure id="06-01" src="png/06-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+
+
+
+4.WiiリモコンのBボタンを押してください。　電卓が起動します。 
+
+ <figure id="06-02" src="png/06-02.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+
+
+
+5.WiiリモコンのBボタンを数回押してしてください。　電卓が押した回数分起動します。 
+
+ <figure id="06-03" src="png/06-03.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+
+このプログラムの「notepad.exe」や「calc.exe」を好きな外部プログラムに書き換えれば、何でも起動できるというわけですね。なんだかいろいろなことができそうです。楽しくなってきませんか？
+</subsection>
+
+<subsection title="解説">
+Wiiリモコンのボタンが押されることによって設定したアプリケーションが起動するためには、先ほどのプログラムでラベルのテキストを書き換える代わりに、.NETで用意されている仕組みを利用して、外部プログラムを起動します。
+<program>
+if (ws.ButtonState.A == true) {
+     //Aボタンがおされたらメモ帳を起動
+      System.Diagnostics.Process.Start("notepad.exe");
+}
+</program>
+WiiリモコンのAボタンが押されたときに、「ws.ButtonState.A」の値がtrueになりますので「System.Diagnostics.Process.Start("notepad.exe");」が実行され、メモ帳(notepad.exe)が起動します。
+
+同様にif文で「ws.ButtonState.B」がtrueの時 calc.exe(電卓)を起動します。 
+<program>
+if (ws.ButtonState.B == true) {
+     //Bボタンがおされたら電卓を起動
+      System.Diagnostics.Process.Start("calc.exe");
+}
+</program>
+「System.Diagnostics.Process.Start()」についてはいろいろな応用があります。テキストファイルなどを指定することで関連づけられたプログラムを使って開くことなども可能です。詳しくはインターネットで公開されている.NET Framework クラスライブラリのマニュアルや「Process.Start」をキーワードに検索してみると良いでしょう。
+
+</subsection>
+</body>
+</doc>

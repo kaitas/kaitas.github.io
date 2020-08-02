@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WPD54GC');</script>
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-195249-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-195249-1');
+</script>
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="keyword" content="WiiRemoteプログラミング,Wii,WiiRemote,wiimote,Wiiリモコン,プログラミング">
+<meta name="description" content="A portal for a book 'WiiRemote Programming', 書籍WiiRemoteプログラミングについてのポータルです。">
+<title>書籍：WiiRemoteプログラミング＜WiiRemote Programming＞</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<style type="text/css">
+ul.updates {
+width:  24em;
+height: 8em;
+color: #000000;
+font-size: x-small;
+font-family:Century Gothic;
+background-color: #ffffff;
+border: solid thin #c0c0c0;
+overflow: auto;
+list-style-type: none;
+text-align: left;
+padding-left: 0;
+}
+
+ul.updates li:first-child{
+text-align:center;
+}
+
+
+ul.about {
+width:  15em;
+height: 5em;
+color: #000000;
+font-size: x-small;
+font-family:Century Gothic;
+background-color: #ffffff;
+border: solid thin #c0c0c0;
+overflow: auto;
+list-style-type: none;
+text-align: left;
+padding-left: 0;
+}
+
+ul.about li:first-child{
+text-align:center;
+}
+
+ul.index {
+width:  25em;
+height: 10em;
+color: #000000;
+font-size: x-small;
+font-family:Century Gothic;
+background-color: #ffffff;
+border: solid thin #F0c0c0;
+overflow: auto;
+list-style-type: none;
+text-align: left;
+padding-left: 0;
+}
+
+ul.index li:first-child{
+text-align:center;
+}
+
+ul.recommends {
+width:  35em;
+height: 10em;
+color: #000000;
+font-size: x-small;
+font-family:Century Gothic;
+background-color: #ffffff;
+#border: solid thin #c0c0c0;
+border: solid thin #c0c0F0;
+overflow: auto;
+list-style-type: none;
+text-align: left;
+padding-left: 0;
+}
+
+ul.recommends li:first-child{
+text-align:center;
+}
+
+ul.twitter_update_list{
+width:  35em;
+height: 10em;
+color: #000000;
+font-size: x-small;
+font-family:Century Gothic;
+background-color: #ffffff;
+border: solid thin #8080F0;
+overflow: auto;
+list-style-type: none;
+text-align: left;
+padding-left: 0;
+}
+
+ul.twitter_update_list li:first-child{
+text-align:left;
+}
+
+body {
+background-image: url(web1016x546.jpg);
+#background-repeat: repeat-x;
+}
+
+blockquote { 
+    margin: 0 0 50px 0; padding: 0; 
+} 
+blockquote#one { 
+    width: 250px; 
+    background: #e3e3e3; 
+    padding: 25px; 
+    position: relative; 
+} 
+blockquote#one .arrow { 
+    /* 吹き出しの部分 */
+    width: 0; 
+    height: 0; 
+    line-height: 0; 
+    border-top: 40px solid #e3e3e3; 
+    border-left: none; 
+    border-right: 30px solid white; 
+    position: absolute; 
+    bottom: 60%; 
+    right: -30px; 
+} 
+</style>
+</head>
+
+<body>
+<div style="position:absolute; right:5%; top:15%;">
+<ul class="updates">
+<li>=  about  =</li>
+<li>書籍「WiiRemoteプログラミング」</li>
+<li>(著者)白井暁彦・小坂崇之・木村秀敬・くるくる研究室</li>
+<li>(表紙・装丁)タナカユカリ</li>
+<li>B5変判・並製、400ページ</li>
+<li>ISBN 978-4-274-06750-1</li>
+<li>図書分類コード：C3055 コン販研コード：B2-99</li>
+<li>定価2940円（本体2800円）</li>
+<li>2009年7月発行 （7月27日店頭販売開始予定）</li>
+<li>----------</li>
+<li></li>
+<li><A href="http://www.junkudo.co.jp/newevent/talk-ikebukuro.html">8/15にジュンク堂池袋店にてトークセッション</A>開催予定。</li>
+<li></li>
+<li>----------</li>
+<li></li>
+</ul>
+</div>
+
+<div id="twitter_div" class="twitter_div" style="position:absolute; left:1%; top:1%; font-size:x-small;">
+<ul id="twitter_update_list" class="twitter_update_list">loading twitter...</ul>
+<!--<a href="http://twitter.com/WiiRemote" id="twitter-link" style="display:block;text-align:left;">follow me on Twitter</a>-->
+</div>
+<script type="text/javascript" src="https://twitter.com/javascripts/blogger.js"></script>
+<script type="text/javascript" src="https://twitter.com/statuses/user_timeline/WiiRemote.json?callback=twitterCallback2&amp;count=20"></script>
+
+
+
+<div style="position:absolute; left:7%; top:30%;">
+<ul class="index">
+<li>※　もくじ　※</li>
+<li>刊行によせて</li>
+<li>はじめに</li>
+<li></li>
+<li>第1章　WiiRemoteのススメ</li>
+<li>　1.1　WiiRemoteの基礎知識</li>
+<li>　　革命の主人公「Wiiリモコン」</li>
+<li>　　WiiRemoteの仕組み</li>
+<li>　1.2　WiiRemoteで何が作れる？</li>
+<li>　　巨大なイカロボット「IKABO」を操作する（未来大IKABO Project）</li>
+<li>　　自由に氷柱を生やす「Glacon」（奈良先端大）</li>
+<li>　　ニオイの吹き矢「La fleche de l'odeur」（金沢高専）</li>
+<li>　　WiiBoardによる文学作品「人間椅子」（東京大学）</li>
+<li>　　赤外線を使ったモーションキャプチャ「SoundQuest」（フランス・ラヴァル）</li>
+<li></li>
+<li>第2章　PC上で利用するWiiRemote事始め</li>
+<li>　2.1　WiiRemoteをPCで利用する</li>
+<li>　　ハードウェア構成</li>
+<li>　　ソフトウェア構成</li>
+<li>　2.2　Bluetooth製品を選ぶ</li>
+<li>　　IVT BlueSoleil</li>
+<li>　　東芝製スタック</li>
+<li>　　Microsoft製スタック</li>
+<li>　　Broadcom製スタック</li>
+<li>　　その他の環境について</li>
+<li></li>
+<li>第3章　まずは実験してみよう</li>
+<li>　3.1　WiiRemoteとPCをBluetoothで接続する</li>
+<li>　　Bluetoothをインストールする際の注意</li>
+<li>　　PTM-UBT3S（東芝製スタック）でのペアリング</li>
+<li>　　Lenovo ThinkPadでのペアリング</li>
+<li>　　ASUS EeePC S101でのペアリング</li>
+<li>　3.2　WiinRemoteで実験</li>
+<li>　　世界最速公開のツール「WiinRemote」</li>
+<li>　　WiinRemoteの入手とインストール</li>
+<li>　　WiinRemoteを使いこなそう</li>
+<li>　　重力を観察してみよう</li>
+<li>　　PowerPointでプレゼンテーション</li>
+<li>　3.3　GlovePIEで実験</li>
+<li>　　GlovePIEとは</li>
+<li>　　GlovePIEのインストール</li>
+<li>　　GlovePIEの基本操作</li>
+<li>　3.4　GlovePIEで作る「高機能赤外線マウス」</li>
+<li>　　高機能赤外線マウスを設計する</li>
+<li>　　ボタンアクションの実装</li>
+<li>　　デバッグ機能</li>
+<li>　　GUIを使ったスクリプト記述支援</li>
+<li>　　サンプルスクリプトを読もう</li>
+<li>　　コマンドラインによる起動の自動化</li>
+<li></li>
+<li>第4章　C++とC#で学ぶWiiRemoteプログラミング</li>
+<li>　4.1　プログラミング環境のセットアップ</li>
+<li>　　Visual C++ 2008 Express Editionのセットアップ</li>
+<li>　　Visual C# 2008 Express Editionのセットアップ</li>
+<li>　4.2　WiimoteLibの概要</li>
+<li>　　WiimoteLibのライセンス</li>
+<li>　　WiimoteLibのセットアップ</li>
+<li>　4.3　WiimoteLibをプロジェクトに組み込む【C#編】</li>
+<li>　　空のプロジェクトの作成</li>
+<li>　　WiimoteLibの追加</li>
+<li>　4.4　WiimoteLibをプロジェクトに組み込む【C++編】</li>
+<li>　　空のプロジェクトの作成</li>
+<li>　　WiimoteLibの追加</li>
+<li>　4.5　バイブレータのON/OFF</li>
+<li>　　WiimoteLibの宣言と接続</li>
+<li>　　バイブレーターON/OFFボタンの作成</li>
+<li>　　実行してみよう</li>
+<li>　　解説：WiimoteLibの基本API</li>
+<li>　4.6　LEDの点灯と消灯</li>
+<li>　　WiimoteLibの宣言と接続</li>
+<li>　　LEDカウントアップボタンの作成</li>
+<li>　　実行してみよう</li>
+<li>　　解説：LEDの点灯制御</li>
+<li>　4.7　ボタンイベントの取得</li>
+<li>　　ラベルの作成</li>
+<li>　　ボタン入力に対応してラベルの表示を変える</li>
+<li>　　実行してみよう</li>
+<li>　　解説：ボタンイベントの取得</li>
+<li>　4.8　ランチャーを作る</li>
+<li>　　外部プログラムの起動</li>
+<li>　　実行してみよう</li>
+<li>　　解説：ボタンイベントによるアプリ起動</li>
+<li>　4.9　加速度センサーを使う</li>
+<li>　　加速度センサーについて</li>
+<li>　　加速度センサーの値を表示</li>
+<li>　　実行してみよう</li>
+<li>　　解説：レポートタイプと加速度センサー</li>
+<li>　　加速度センサーで作るWiiRemote太鼓</li>
+<li>　4.10　赤外線センサーを使う</li>
+<li>　　赤外線探知機</li>
+<li>　　実験：赤外線を見てみよう</li>
+<li>　　解説：レポートの設定／赤外線4点検出</li>
+<li>　　赤外線を数える</li>
+<li>　　座標を描画</li>
+<li>　　実行してみよう</li>
+<li>　　解説：赤外線座標の取得</li>
+<li></li>
+<li>第5章　WiiFlashを使ってみよう［ActionScript編］</li>
+<li>　5.1　WiiFlashとは</li>
+<li>　　WiiFlashの仕組み</li>
+<li>　　環境設定</li>
+<li>　　WiiFlashのデモファイルでテストする</li>
+<li>　　ボタンアクションの取得を使ったサンプル</li>
+<li>　5.2　作例1：座布団（ザプトン）</li>
+<li>　　Flashで姿勢が悪い人を救いたい</li>
+<li>　　重心移動の変化量を使ったアプリ</li>
+<li>　5.3　作例2：ChunChun</li>
+<li>　　WiiRemoteを使ったゲーム</li>
+<li>　　サンプル制作の流れ</li>
+<li></li>
+<li>第6章　WiiFlashを使いこなそう［Processing編］</li>
+<li>　6.1　ProcessingからWiiRemoteにつなぐ</li>
+<li>　6.2　ProcessingからWiiFlashを使うには</li>
+<li>　　Processingのセットアップ</li>
+<li>　6.3　Processingのサンプルを動かす</li>
+<li>　6.4　WiiFlashを使ったサンプルを動かす</li>
+<li>　　Wiimoteの使い方</li>
+<li>　6.5　サンプルスケッチをWiiRemote対応にする</li>
+<li>　　FireCubeWii</li>
+<li>　　DirectionalWii</li>
+<li>　　WaveSignalWii</li>
+<li>　　WiiFlashがProcessingからも使える理由</li>
+<li></li>
+<li>第7章　WiiYourself!とC++で学ぶインタラクション基盤技術</li>
+<li>　7.1　古き良きC++用API「WiiYourself!」</li>
+<li>　　WiiYourself!の特徴</li>
+<li>　　WiiYourself!の入手</li>
+<li>　　WiiYourself!付属デモのテスト</li>
+<li>　7.2　WiiYourself!のリビルド</li>
+<li>　　DDKのセットアップ</li>
+<li>　　プロジェクトファイルの変換と設定</li>
+<li>　　WiiYourself!の構成とライブラリのビルド</li>
+<li>　　コマンドラインプログラム「Hello, world!」</li>
+<li>　　WiiYourself!をプログラムに組み込む</li>
+<li>　7.3　Win32で作るWiiRemoteテルミン</li>
+<li>　　テルミンを作ろう</li>
+<li>　　ボタン操作テルミン</li>
+<li>　　加速度センサーによるテルミン</li>
+<li>　7.4　計測器としてのWiiRemote</li>
+<li>　　「WiiRemote計測器」重力・姿勢・動作周波数</li>
+<li>　　考察：ゲーム機として、計測器として</li>
+<li>　7.5　WiiYourself!によるスピーカー再生</li>
+<li>　　専用WAVファイルの準備</li>
+<li>　　WAVファイルのロード</li>
+<li></li>
+<li>第8章　インタラクション技術の実践的開発プロセス</li>
+<li>　8.1　仕様と開発の流れの整理</li>
+<li>　8.2　開発プロセス</li>
+<li>　　プロジェクトの新規作成とフォームデザイン</li>
+<li>　　基本コードの作成</li>
+<li>　　コードのブロック化と関数化</li>
+<li>　　フォームのボタン処理</li>
+<li>　　赤外線センサーによるマウスポインタ移動</li>
+<li>　　ボタンイベントの検出</li>
+<li>　　ボタンイベント処理のクラス化</li>
+<li>　　DLLインポートによるWin32APIの利用</li>
+<li>　8.3　ユーザーテストとフィードバック開発</li>
+<li>　　他人に触ってもらい、観察する</li>
+<li>　　その他のボタンアクションの実装アイディア</li>
+<li>　　キーボード入力の発行</li>
+<li>　8.4　装飾要素</li>
+<li>　　数式によるLED出力関数</li>
+<li>　　赤外線受信の安定化</li>
+<li>　　文字列を描画したい</li>
+<li>　　「かたむく指」を描画</li>
+<li></li>
+<li>第9章　アイディアストック・演習問題集</li>
+<li>　9.1　プログラミング編：XNAを使ったリアルタイム3DCGでの利用</li>
+<li>　　XNAのインストール</li>
+<li>　　ゲームプロジェクトの作成</li>
+<li>　　WiimoteLibの組み込み</li>
+<li>　　3Dモデルファイルの準備</li>
+<li>　　.xファイルの読み込みと表示</li>
+<li>　　完成版「WiiRemoteXNA」</li>
+<li>　　演習問題　XNAの利用</li>
+<li>　9.2　ゲーム応用編（1）：レースゲームへの応用</li>
+<li>　　AceSpeeder2</li>
+<li>　　レースゲーム用モーション認識</li>
+<li>　　演習問題　レースゲームへの応用</li>
+<li>　9.3　ゲーム応用編（2）：「振る」の認識・剣術アクションへの応用</li>
+<li>　　フェンシングゲーム「JaWii's Virtual Fencing」</li>
+<li>　　古式フェンシング指南ゲームの開発</li>
+<li>　　モーション検出のための評価関数を作る</li>
+<li>　　演習問題　振りの検出</li>
+<li>　9.4　作品編（1）：WiiBoardを用いた「オーラ診断」</li>
+<li>　　プログラミング初心者4人が作った「オーラ診断」</li>
+<li>　　補足：「BBOSC」とは？</li>
+<li>　　演習問題　MacとWiiBoardの利用</li>
+<li>　9.5　作品編（2）：Second Lifeで使う</li>
+<li>　　演習問題　Second Life ＋ GlovePIEを極めよう</li>
+<li>　9.6　モノ編（1）：センサーバーを自作する</li>
+<li>　　センサーバーの仕組み</li>
+<li>　　目には見えない「近赤外線」</li>
+<li>　　電子部品をそろえる・工作する</li>
+<li>　　演習問題　赤外線センサーバーの自作</li>
+<li>　9.7　モノ編（2）：ロボット兵器「WiiRemoteTank」</li>
+<li>　　ロボット兵器「WiiRemoteTank」</li>
+<li>　　「WiiRemoteTank」の開発</li>
+<li>　　演習問題　WiiRemoteによるロボット開発</li>
+<li>　9.8　サービス編：体が不自由な方のためのインタフェース</li>
+<li>　　演習問題　体が不自由な方のためのインタフェース</li>
+<li>　9.9　研究編（1）：赤外線を極める</li>
+<li>　　赤外線奥行き測定の基本理論</li>
+<li>　　実験：赤外線特性の測定</li>
+<li>　　演習問題　赤外線を極める</li>
+<li>　9.10　研究編（2）：Johnny Chung Lee 氏から学ぼう</li>
+<li>　　演習問題　研究しよう</li>
+<li>　9.11　プログラミング上級編：自分でAPIを作る</li>
+<li>　　演習問題　APIを作ろう</li>
+<li></li>
+<li>第10章　未来につながるWiiRemote</li>
+<li>　10.1　Brian Peek氏とgl.tter氏インタビュー</li>
+<li>　　Brian Peek氏?WiimoteLibの作者</li>
+<li>　　gl.tter氏?WiiYourself!の作者</li>
+<li>　10.2　新しいエンタテイメント、インタラクションを作るには</li>
+<li>　　WiiMotionPlusの衝撃と可能性</li>
+<li>　　Microsoft「Project Natal」の衝撃</li>
+<li>　　実は「老舗」のソニー</li>
+<li>　10.3　予言の書</li>
+<li>　　10年前の出来事</li>
+<li>　　今後10年先に起こること</li>
+<li></li>
+<li>あとがき</li>
+<li>謝辞</li>
+<li>サンプルダウンロードについて</li>
+<li>参考文献</li>
+<li>著者紹介</li>
+<li>索引</li>
+</ul>
+</div>
+	
+<div style="position:absolute; left:5%; top:20%;">
+<ul class="about">
+	<li>   この本は....</li>
+	<li>*ハッキング本ではありません</li>
+	<li>*いちおう「ガチな」プログラミング入門本です、でも</li>
+	<li>*インタラクティブな何か、を作りたい、工学系の学生のための「プログラミング入門本」です。</li>
+	<li>*「かわいい」何か、を作りたい、美大の学生のための「ポーズ集」です。</li>
+	<li>*学生に「Hello World」から教えるのが面倒な、先生のための中級プログラミング教科書です。</li>
+	<li>*ちょっと恥ずかしくて聞きづらい、ゲーム会社新入社員のための資料図書です。</li>
+	<li>*インタラクティブ技術の論文を書いているのに適切な書籍が見つからない、研究者のための参考文献です。</li>
+	<li>*FlashにするかProcessingにするかC#なのかC++じゃなきゃダメなのか、見極めたいWebクリエイターのための本です。</li>
+	<li>*「インタラクティブ技術？ナニソレオイシイの？」な中学生理科部のためのワクワク本です。</li>
+	<li>*「ゲームが大好き、でもどこに進学したらいいの？」というお悩み高校生のための進路指導本です。</li>
+	<li>*上記に当てはまらない、自称「ハッカー」なエラい方々は読者じゃないかもしれません。</li>
+	<li>...でも、いちおう「ガチな」プログラミング入門本です。</li>
+</ul>
+</div>
+
+<!--
+<div id="wrap"> 
+<blockquote id="one"> 
+<p> 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+</p> 
+<span class="arrow" /> 
+</blockquote> 
+</div> 
+-->
+<div style="position:absolute; left:2%; top:55%; font-size:8pt; font-family:arial unicode ms;">
+<ul class="recommends">
+<li>【刊行によせて】</li>
+<li><br/></li>
+<li>先端技術があっと言う間に大衆化する。ゲーム機器がもたらす革命は、家庭での娯楽を一変させるだけでなく、研究者にとっても新しい時代の到来を意味していた。WiiRemote の登場で、加速度センサー、高速赤外線センサー、Bluetooth 接続がお茶の間の技術になったのである。本書には、WiiRemote の安価で頑健で多機能という恩恵をPC でも享受するための試行錯誤が凝縮されている。プログラミングのノウハウはもちろんのこと、エンジニアとしての心構えや対話的システム開発のお作法、来たるべき未来への予言まで、本書のメッセージは多岐にわたる。また、新たな発想による応用例の数々に刺激を受ける読者も多いことだろう。本書に散りばめられたさまざまなヒントを、ぜひ活かしていただきたい。</li>
+<li> ─── 東京大学工学部電子情報工学科准教授・</li>
+<li>　　　　日本VR 学会アート＆エンタテインメント研究委員会委員長　苗村 健</li>
+<li><br/></li>
+<li><br/></li>
+<li>メディアアート道はキビシく、メディア芸術の教科書はあいかわらず足りないけど、これからは魅惑と誘惑に満ちた禁断の書『WiiRemote プログラミング』がある―プログラミングといえば25 年前になぜかFORTRAN でお絵かきを習ったきりですが（笑）。そんな私でも自信をもってお薦めできます！ ユニークでクリエイティブなプログラミングを楽しみつつ、WiiRemote から生まれる、賢く可愛くあやしくクールでおバカでオモロい作品を待っています。</li>
+<li> ─── 東京都現代美術館学芸員・SIGGRAPH Asia2008 Art Gallery/E-tech 議長　森山朋絵</li>
+<li><br/></li>
+<li><br/></li>
+<li>この本が読みやすくわかりやすいのにはちゃんと理由がある。白井君は工学部の学生時代から芸術系の学生に技を教え、コラボレーションし（その成果が第10 章に登場するFantastic Phantom Slipper）、さらにそのような場をより広げるために国際学生対抗VR コンテストを支え、フランスでも語学と格闘しながら研究と制作を指導してきた。技術開発とコンテンツ制作の両方に携わる専門家というだけでなく、技術とアートをつなぐコミュニケーションのプロとして長いキャリアがあり、その底にあるテクノロジーとアートの未来に対する熱い思いは、本書からも伝わってくる。メディアアートを目指す人たちが、この本を使いこなして作品に新しい領域を開くことを期待している。</li>
+<li> ─── 早稲田大学文化構想学部教授・UCLA Art | Sci Center 客員研究員　草原真知子</li>
+<li><br/></li>
+<li><br/></li>
+<li>私の研究分野の1 つであるメディアアートの世界は、WiiRemote などいくつかの新たなテクノロジーの出現によって新たなステージに入ったと私は思っています。その新たなステージとは、やる気とセンスさえあれば世界を振り向かせる力のある作品を作ることができる時代になりつつあるということです。そんな時代に待望の本が出現しました。わかりやすく書かれた本書で学ぶことによって、これまで見たこともない新しく楽しいインタラクティブな作品がたくさん出てくることを私は楽しみにしています！ もちろん「デジスタ」も待っています。ちなみに私も買って学びます！！</li>
+<li> ───「デジタルスタジアム」ナビゲーター　中谷日出</li>
+<li><br/></li>
+<li><br/></li>
+<li>身体を動かすことは楽しい。身体を使ってコンピュータとインタラクションを行うための技術は学術分野では古くから注目されていた。このテクノロジーを誰もが安価に利用できる形で実現したものがWiiRemote といえる。この本を読み、実践することで、身体的インタラクションを使ったあのSF の、あのアニメのシーンを「自らの手」で楽しく実現できるようになるに違いない。工学系ワークショップの教科書としても最適。</li>
+<li>─── 慶應義塾大学大学院メディアデザイン研究科教授・</li>
+<li>　　　コンピュータエンタテインメント協会（CESA）理事　稲見昌彦</li>
+<li><br/></li>
+<li><br/></li>
+<li>本書の冒頭で紹介されている国際学生対抗VR コンテスト（IVRC）は、優れたデバイスの思いがけない活用によって、新進の参加学生作家がアイデアを非常にストレートに実現できる舞台である。本書は、IVRC のような世界の舞台で力強く羽ばたこうとする学生作家をはじめ、多くのプログラマに向けて、基本的なセンスを含めて開発手法を教示しようとする貴重な一書である。大勢のIVRC 卒業生が、今や世界最高クラスのVR クリエイターとして各方面で大活躍し、IVRC は21 世紀的「ものづくり体験」教育システムとして長年歴史を重ねている。このコミュニティが本書のような良書の発刊を支えたことを喜ぶとともに、本書の読者が、新たな挑戦者としてスターダムに登場することを期待する。</li>
+<li> ─── 日本VR 学会評議員・IVRC 実行委員会 副委員長　武田博直</li>
+<li><br/></li>
+<li><br/></li>
+<li>ゲーム機の発達において、誰にでも簡単に遊べるゲームインターフェイス技術の発達は注目され、ゲームインターフェイスの優れたアイデア（十字キーやボタンの配置など）は家電などのヒューマンインターフェイスの設計にも大きな影響を与えたと言われているが、体の動きでゲームを操作することを最大の特徴とする家庭用ゲーム機Wii のゲームインターフェイスを使って何か面白いことをやってみたいと思うのは、ゲーム開発者のみならず、他の分野の技術者や研究者が考えるのは当然の流れであろう。そのような時、本書はWiiRemoteを活用するための指導書として非常に分かり易く、また、ソフトウェア開発の実務経験を通しての貴重なコメントがあちこちに散りばめられており、この分野のソフトウェア技術を学びたい人にとってお薦めの一冊と考えられる。 </li>
+<li>─── 元（株）ナムコ　研究部長 馬場哲治</li>
+<li><br/></li>
+
+</ul>
+</div>
+
+<div style="position:absolute; left:60%; top:10%; font-size:20pt; color:navy;font-family:arial unicode ms;">WiiRemoteプログラミング</div>
+<div style="position:absolute; left:5%; top:80%; font-size:9pt; font-family:arial unicode ms;">
+</br>
+■[WebVersion]本書の<a href="WiiRemoteProgramming_piii-xii.pdf" target="_blank">刊行によせて・もくじ</a>,<a href="chapter1.html">1章</a>,<a href="chapter2.html">2章</a>,<a href="chapter3.html">3章</a>を限定公開中(2009/11/10～)。<br>
+■[Workshop]『Wiiリモコンで、パパと一緒にゲームを作ろう！』＠DCEXPO2009 ConTEX 10月24日（土）15:00～17:00 日本科学未来館 会議室２ 詳細は<a href="http://dcexpo.jp/symposium/workshop.html">こちら</a><BR>
+■[ご参加感謝]刊行記念トークセッション開催！2009年8月15日（土）19：00～ジュンク堂書店池袋本店にて。
+詳細は<a href="http://www.junkudo.co.jp/newevent/evtalk.html#20090815ikebukuro">こちら</a>。<BR>
+→ご参加いただいた皆様ありがとうございました。当日の様子はこちら[<a href="http://www.inside-games.jp/article/2009/08/17/37132.html">inside games</a>][<a href="http://www.nicovideo.jp/watch/1250355232">nicovideo</a>]。<br>
+■[20200802] サイトを引っ越しました。
+[English] <a href="PublishEn20090801.pdf">abstract</A><BR>
+[buy]
+<a href="WiiRemotePublishment.pdf">書誌情報(pub)</A> 
+
+<a href="https://www.amazon.co.jp/gp/product/4274067505?ie=UTF8&tag=amazonas-22&linkCode=as2&camp=247&creative=1211&creativeASIN=4274067505">Amazonで購入</a><img src="http://www.assoc-amazon.jp/e/ir?t=amazonas-22&l=as2&o=9&a=4274067505" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a href="http://www.amazon.co.jp/gp/search?ie=UTF8&keywords=WiiRemote&tag=amazonas-22">Amazon</a><img src="http://www.assoc-amazon.jp/e/ir?t=amazonas-22&l=ur2&o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+<a href="http://www.bk1.jp/product/03073322 ">BK1</a>
+<a href="http://item.rakuten.co.jp/book/6132443/">Rakuten</a>
+<a href="https://store.shopping.yahoo.co.jp/7andy/r0434893.html">7andY</a>
+<a href="http://www.geo-online.co.jp/ds/6192609/">Geo online</a>
+<a href="https://bookweb.kinokuniya.co.jp/htm/4274067505.html">Kinokuniya</a>
+<a href="http://books.yahoo.co.jp/book_detail/AAY41952/">Yahoo Books</a>
+</br>
+[commucation]<a href="https://groups.google.com/group/wiiremote">Google Groups</a>
+<a href="https://twitter.com/WiiRemote">twitter</a>
+<a href="http://mixi.jp/view_bbs.pl?id=43223673&comment_count=1&comm_id=1610444">mixi</a>
+<a href="https://twitter.com/o_ob">Contact</a></br>
+[links]
+<a href="http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06750-1">Publisher</a>
+<a href="https://code.google.com/p/wiimedia/">Google Code</a>
+<a href="http://www.kosaka-lab.com/kosaka_laboratory/">Kosaka-Lab</a>
+<a href="http://onakasuita.org/wii/">WiinRemote</a>
+<a href="./Chap7.zip">Download Chapter 7 files</A>
+<a href="http://ameblo.jp/akihiko/theme-10003239243.html">Blog</a>
+<a href="https://kaitas.github.io/">kaitas.github.io</A>
+</div>
+
+<div style="position:absolute; left:85%; top:95%; font-size:x-small;" >
+Last updated at 2009/11/11, site moved at 2020/08/02</DIV>
+
+</body>
+</html>

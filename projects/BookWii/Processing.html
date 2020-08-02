@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="木村 秀敬" lang="ja">
+<meta name="date" content="2009年3月7日版" lang="ja">
+<title>WiiFlashを使いこなしてみよう(Processing編)</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">WiiFlashを使いこなしてみよう(Processing編)</h1>
+
+<div class="date">2009年3月7日版</div>
+<div class="author">木村 秀敬</div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id16" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ProcessingからWiiRemoteにつなぐ</a>
+<li> <a href="#doc1_id35" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ProcessingからWiiFlashを使うには</a>
+<ul>
+<li> <a href="#doc1_id46" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Processingのセットアップ</a>
+</ul>
+<li> <a href="#doc1_id61" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Processingのサンプルを動かす</a>
+<ul>
+<li> <a href="#doc1_id67" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFlashを使ったサンプルを動かす</a>
+<li> <a href="#doc1_id75" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Wiimoteの使い方</a>
+<ul>
+<li> <a href="#doc1_id77" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">初期化</a>
+<li> <a href="#doc1_id83" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">データの取得</a>
+<li> <a href="#doc1_id89" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">データの利用</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id184" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">サンプルスケッチをWiiRemote対応にする</a>
+<ul>
+<li> <a href="#doc1_id186" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">FireCubeWii</a>
+<li> <a href="#doc1_id194" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DirectionalWii</a>
+<li> <a href="#doc1_id205" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WaveSignalWii</a>
+</ul>
+<li> <a href="#doc1_id211" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiFlashがProcessingからも使える理由</a>
+</ul>
+</div>
+<p>この章では木村秀敬さんのご協力により、WiiFlashをFlashやActionScript環境ではなく、Processingを使って利用する方法を解説してしていきます。</p>
+
+<h2 id="doc1_id16">ProcessingからWiiRemoteにつなぐ</h2>
+
+<p class="first_ja">Processingは、マサチューセッツ工科大学のBen FryとCasey Reasによって開発されたフリーのプログラム開発環境です。映像を作り出す、インタラクティブな作品を作るといった用途に向いており、アーティストやデザイナーでも使いやすいように作られています。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="processing/png/Pr-HP.png" alt="Processingのホームページ" width="6cm">
+</div>
+
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">【Processing】<a href="http://processing.org/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://processing.org/</a></p>
+</div>
+
+<p>ベースはJava言語なので、Linux，Mac OS X，Windowsと多様な環境で動作します。Javaで開発というと、JDKをインストールしたり、コマンドラインを使った操作をしたりといったことが必要ではと思われてしまうかもしれませんが、Processingはそこの敷居を下げるための工夫がなされています。そのため、Javaはもとより、今までプログラミング言語を使ったことが無いという方にも向いています。</p>
+<p>また、プログラムについても「スケッチ」という呼び方を用い，サッと書いてすぐに実行できる点を強調しています。Java言語の入門にありがちなおまじない的なプログラムは不要で、いきなり主目的となる部分から書き始めることができます。このあたりは、JavaというよりもPerlやPythonなどの軽量言語のイメージです。</p>
+<p>このように簡単に使えるProcessingですが、低機能かというとそういう事はありません。カメラからの動画入力や、ネットワークとの通信、OpenGLを使った3Dプログラミングなど、たくさんの機能がライブラリによってサポートされています。WiiRemoteも例外ではありません。ProcessingからWiiRemoteを扱うためのライブラリとして、Wrj4P5というライブラリが用意されています。</p>
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">【Wrj4P5】http://sourceforge.jp/projects/wrj4p5/wiki/FrontPage</p>
+</div>
+
+<p>しかしこのライブラリを使うために必要なBluetoothスタックなどがかなり限定されており、必ずしも全ての環境で動くとは限りません。特にWindows環境では動かないことが多いようです。</p>
+<p>そこでWiiFlashの登場です。前章で紹介されている通り、WiiFlashはもともとFlashからWiiRemoteを扱うためのツール、ライブラリですが、実は他のプログラミング言語からも使うことが出来ます。一度仕組みさえ知ってしまえば、WiiFlashはWiiRemoteに対する汎用的なインタフェースとして機能します。</p>
+<p>Processingも例外ではなく、netライブラリを使うことでWiiFlash経由でWiiRemoteを扱うことができるようになります。筆者の感覚では、WiiFlashのほうがWrj4P5よりも多くの環境で動作しているようなので、WiiFlashを使えばより多くの環境でProcessingからWiiRemoteを扱うことができるのではないかと思います。</p>
+
+<h2 id="doc1_id35">ProcessingからWiiFlashを使うには</h2>
+
+<p class="first_ja">ProcessingからWiiFlashを経由してWiiRemoteにつなぐために必要な環境は以下のとおりです。</p>
+
+<ul>
+<li> WiiFlashが動く環境
+<li> Processing</ul>
+
+<p>ここでは、Processingのセットアップ方法と、WiiRemoteを扱うための方法について説明します。WiiFlashについては前章を参考にセットアップしてください。また、Processingそのものについての詳細な説明についても割愛します。</p>
+
+<h3 id="doc1_id46">Processingのセットアップ</h3>
+
+<p class="first_ja">Processingのセットアップはとても簡単です。Processingのサイトから圧縮ファイルをダウンロードしてきて解凍するだけです。特にインストーラを使ってインストールするなどの作業は必要ありません。ダウンロードは以下のURLから行うことができます。<a href="http://processing.org/download/index.html" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://processing.org/download/index.html</a></p>
+
+<div class="figure">
+<img class="figure" style="WIDTH:466px; HEIGHT:169px" src="processing/png/Pr-Download.png" alt="Processing公式HPにおけるダウンロード選択">
+</div>
+
+<p>ここから、お使いのOSに合ったファイルをダウンロードしてください。Windowsについては注意書きにも書かれているとおり、特に理由が無ければ「Without Java」ではないほうをお勧めします。</p>
+<p>なお、執筆時点での最新バージョンは11月29日公開の1.0.1ですので、以後の説明はこの1.0.1を対象とします。皆さんがこの文章を読まれているときの最新バージョンはすでに1.0.1ではなくなっているかもしれませんがご了承ください。</p>
+<p>ダウンロードした圧縮ファイルを展開すると、以下のようなファイルが現れます。</p>
+
+<div class="figure">
+<img class="figure" src="processing/png/Pr-Files.png" alt="Processing.exeを実行">
+</div>
+
+<p>あとはProcessing.exeを起動するだけです。起動中のスプラッシュウィンドウが表示された後、以下のような画面になれば成功です。</p>
+
+<div class="figure">
+<img class="figure" src="processing/png/Pr-Startup.png" alt="Processing起動直後">
+</div>
+
+
+<h2 id="doc1_id61">Processingのサンプルを動かす</h2>
+
+<p class="first_ja">まずはWiiFlashを使わない、Processingそのもののサンプルを動かしてみましょう。試しにProcessingに付属しているMouse1Dというサンプルを動かすことにします。メニューから[File]の[Examples]を選択すると、とても多くのサンプルスケッチが用意されていることが分かります。この中から[Basics] - [Input] - [Mouse1D]を選択します。すると、50行ちょっとのスケッチが開かれます。</p>
+
+<div class="figure">
+<img class="figure" src="processing/png/Pr-Mouse1d.png" alt="Mouse1D">
+</div>
+
+<p>中身の理解は置いておいて、まずは実行してみましょう。左上のRunボタンを押すと、スケッチが実行されます。小さなウィンドウに2つの正方形が現れたでしょうか。マウスカーソルを左右に動かすと、それに反応して色やサイズが変化します。</p>
+
+<div class="figure">
+<img class="figure" style="WIDTH:206px; HEIGHT:232px" src="processing/png/Pr-Mouse1dPlay.png" alt="Mouse1D実行の様子">
+</div>
+
+<p>一通りこのサンプルがどのような動作をするか理解したら、ウィンドウを閉じてスケッチのほうに目を向けてみます。Java言語やそれに近い言語を使ったことがある方なら、このスケッチがsetupメソッド、drawメソッド、updateメソッドの3つで構成されていることが分かるかと思います。</p>
+<p>setupメソッドでは、ウィンドウサイズの設定などの初期化を行っています。drawメソッドでは、背景を塗りつぶし、マウスの位置に応じて2つの正方形を描く処理を行っています。updateメソッドでは、正方形の色や座標計算に使うパラメータを計算しています。</p>
+<p>updateメソッド内の詳細な計算については特に理解しなくてもいいのですが、この引数にmouseXという変数を指定しているところに注目してください。mouseXとは、名前のとおり現在のマウスカーソルのX座標です。カーソル座標をupdateメソッドに渡すことによって、leftColor、rightColor、gx、gyといった変数に適切な値が設定されます。そしてそれらの値を使って正方形が描かれます。</p>
+<p>さて、このサンプルではマウスカーソルのX座標が使われていますが、これをWiiRemoteを使って操作できないものでしょうか。ここからは、WiiFlashを使ってそれを実現する方法について説明します。</p>
+
+<h3 id="doc1_id67">WiiFlashを使ったサンプルを動かす</h3>
+
+<p class="first_ja">サンプルスケッチのMouse1DWiiを開いてみてください。これを動かすには、まずWiiFlashを起動する必要があります。前章を参考に、BluetoothでWiiRemoteを認識させ、WiiFlashを起動してください。正しくWiiFlashが起動したら、ProcessingのRunボタンを押してください。表示される画面はまったくMouse1Dと変わりませんが、WiiRemoteをひねるように回転させると、マウスカーソルを動かしたときのように画面が変化します。</p>
+<p>それではスケッチについて詳しく見ていきましょう。スケッチには、以下のようにMouse1DWiiとWiimoteの2つのタブがあります。</p>
+
+<div class="figure">
+<img class="figure" style="WIDTH:298px; HEIGHT:120px" src="processing/png/Pr-Tabs.png">
+</div>
+
+<p>Wiimoteのほうについては後で詳しく説明するので、まずはMouse1DWiiのほうに着目してください。</p>
+<p>Mouse1DWiiは、元となっているMouse1Dを少し書き換えたものです。以下のように4行の追加、変更があります。</p>
+
+<pre id="doc1_id71" class="program">
+  // 前略
+  float leftColor = 0.0;
+  float rightColor = 0.0; 
+  Wiimote wiimote; ..... (1) WiiRemoteを使うための変数
+  void setup(){  
+    size(200, 200);
+    colorMode(RGB, 1.0);
+    noStroke();
+    wiimote = new Wiimote(this); ..... (2) 初期化
+  }
+  
+  void draw() {
+    wiimote.update(); ..... (3) WiiRemoteからの入力を取り込む
+    background(0.0);
+    update((int)((wiimote.x + 1) * width / 2)); ..... (4) 加速度センサの値を使う
+  // 後略
+</pre>
+
+<p>まず最初に、WiiFlash経由でWiiRemoteを使うため、Wiimote型のwiimoteという変数を定義しています(1)。setupメソッドでは、この変数を初期化しています(2)。</p>
+<p>drawメソッドではまず、WiiRemoteからの入力を取り込むために、Wiimoteクラスのupdateメソッドを呼び出します(3)。updateメソッドの詳細にはここでは踏み込みませんが、これによって現在のWiiRemoteの加速度などのパラメータが使えるようになります。例えばWiiRemoteを正面に向けたときにひねる方向（X方向）の加速度は、wiimote.xという変数に入っています。</p>
+<p>最後は加速度を描画する正方形のサイズに反映させる部分です(4)。元のMouse1Dでは、updateメソッドにマウスカーソルのX座標（mouseX）を渡していました。Mouse1DWiiでは、これにならう形でWiiRemoteのX方向の加速度を変換し、updateメソッドに渡しています。</p>
+<p>X方向の加速度を表すwiimote.xは、完全に左に傾けたときに-1、逆に完全に右に傾けたときに1という値になります。勢いがついていたりするとこの範囲を超えますが、基本的には-1から1の範囲と考えて問題ありません。スケッチに書いたとおり、1を足して画面幅（width）をかけ、2で割れば、-1から1の範囲を0から画面幅の範囲に変換できます。</p>
+
+<h3 id="doc1_id75">Wiimoteの使い方</h3>
+
+<p class="first_ja">WiiRemoteをProcessingから使うためには、Wiimoteクラスを使います。Wiimoteクラスは、元のWiiFlashの実装を参考に筆者がオリジナルで作成したもので、動作については無保証とします。このWiimoteを使うためのステップは大きく分けて3つです。</p>
+
+<h4 id="doc1_id77">初期化</h4>
+
+<p class="first_ja">newでWiimoteのコンストラクタを呼び出し、Wiimote型のインスタンスを作ります。このとき、内部ではWiiFlashとの接続が行われるので、WiiFlashが起動していないとここでエラーが発生し、以降の処理がうまくいきません。この処理は基本的に1度だけ呼べばいいので、setupメソッドの中で呼び出すのがよいでしょう。</p>
+
+<pre id="doc1_id79" class="program">
+  Wiimote wiimote; // 変数の宣言
+  wiimote = new Wiimote(this); // setupメソッド内などで
+</pre>
+
+
+<h4 id="doc1_id83">データの取得</h4>
+
+<p class="first_ja">Wiimoteのupdateメソッドを呼び出し、WiiRemoteから、WiiFlash経由でデータを取得します。この処理は一般的にはdrawメソッドの中で一度だけ行います。</p>
+
+<pre id="doc1_id85" class="program">
+  // drawメソッド内などで
+  wiimote.update();
+</pre>
+
+<p>一度updateメソッドを呼んでから次にupdateメソッドが呼び出されるまでは、WiiRemoteクラスから得られるWiiRemoteの状態は変わらないままです。</p>
+
+<h4 id="doc1_id89">データの利用</h4>
+
+<p class="first_ja">Wiimoteのxやyなどのフィールドを参照することで、現在のWiiRemoteの状態を知ることができます。主に用いられるのは、各方向の加速度と、ボタンの状態でしょう。</p>
+
+<pre id="doc1_id91" class="program">
+  // (100, 100)の点からWiiRemoteの向きに応じて線を引く
+  line(100, 100, 100 + wiimote.x * 50, 100 + wiimote.y * 50);
+</pre>
+
+<p>Wiimoteクラスを使って得られるデータは表の通りです。</p>
+
+<div class="table">
+<table id="doc1_id95" class="data" rules="groups">
+<caption>Wiimoteクラス</caption>
+<colgroup span="3">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">フィールド名</th>
+<th align="center">型</th>
+<th align="center">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>x，y，z</td>
+<td>float</td>
+<td>各軸加速度。-1～+1の値をとり、1Gの時に値が1となる。</td>
+</tr>
+<tr class="odd">
+<td>one，two，a，b，plus，minus，home，up，down，right，left</td>
+<td>Button</td>
+<td>それぞれのボタンの状態</td>
+</tr>
+<tr class="even">
+<td>batteryLevel</td>
+<td>float</td>
+<td>バッテリーの残量</td>
+</tr>
+<tr class="odd">
+<td>extensionType</td>
+<td>int</td>
+<td>拡張コントローラのタイプ</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>ボタン関連のフィールドは、Buttonクラスを使って表されています。Buttonクラスには、pressedとpushedの2つのboolean変数があります。</p>
+
+<ul>
+<dt>pressed
+<dd>ボタンが押されている間trueになります。押したままで何か動作をさせたいときに使います。
+<dt>pushed
+<dd>ボタンが押された最初の1回だけtrueになり、Wiimoteのupdateメソッドが呼び出されるとfalseになります。ボタンを押したときに一度だけ動作させたいときに使います。</ul>
+
+<p>これら2つの変数タイプをうまく使い分けてください。</p>
+
+<div id="doc1_id178" class="caption">上下ボタンが押されている間パラメータを上下させる</div>
+<pre class="program" style="margin-top:0">
+// 上下ボタンが押されている間パラメータを上下させる
+if (wiimote.up.pressed) {
+   someparam++;
+} else if (wiimote.down.pressed) {
+   someparam--;
+}
+if (wiimote.a.pushed) {
+   background(10); // Aボタンが押されたら画面を消去
+}
+</pre>
+
+
+<h2 id="doc1_id184">サンプルスケッチをWiiRemote対応にする</h2>
+
+<p class="first_ja">WiiRemoteを応用したスケッチをつくるにあたって、1からProcessingのスケッチを組んでそれをWiiRemote対応にすると、Wiimoteを使うという点からフォーカスがずれてしまいます。幸い、Processingには多数のサンプルスケッチが添付されていますので、これらのうちいくつかをWiiRemote対応にすることで解説していきます。</p>
+<p>ここでは、FireCube、Directional、LightsGL、SineWaveSignalの4つのスケッチをWiiRemoteに対応させた例について紹介します。WiiRemoteに対応させたスケッチは、元のサンプルスケッチと区別するために、名前の最後にWiiを付けています。</p>
+
+<h3 id="doc1_id186">FireCubeWii</h3>
+
+<p class="first_ja">FireCubeは、炎が燃え上がるような複雑なエフェクトが100行程度で書かれたものです。このサンプルを、WiiRemoteを振れば振るほど炎が出てくるようにしてみました。サンプルはFireCubeWiiです。</p>
+
+<div class="figure">
+<img class="figure" style="WIDTH:646; HEIGHT:392" src="processing/png/Pr6.png">
+</div>
+
+<p>drawの中では、加速度からpowerという値を計算しています。この値に応じて炎の出る量が変わります。</p>
+
+<pre id="doc1_id190" class="program">
+  float power = sqrt(wiimote.x * wiimote.x +
+   wiimote.y * wiimote.y +
+   wiimote.z * wiimote.z);
+  power = constrain(power - 1, 0.1, 1);
+  
+</pre>
+
+<p>最初に計算しているのはWiiRemoteにかかっている加速度です。WiiRemoteが動かない状態では、この値が大体1になります。この状態では炎を出したくないので、次の行で1を引くとともに、constrainという関数を使って値を0.1から1の間に収めています。</p>
+<p>ここで計算したpowerは、立方体と、下から上がってくる炎の初期値に設定します。詳しくはスケッチ中のpowerという変数を検索してみてください。</p>
+
+<h3 id="doc1_id194">DirectionalWii</h3>
+
+<p class="first_ja">Directionalは、マウスカーソルの位置に応じてピンポン球のようなものがライトアップされるものです。これにWiiFlashから得られるX方向、Y方向の加速度を使うことで、あたかもWiiRemoteが懐中電灯になったかのような感覚が味わえます。</p>
+
+<div class="figure">
+<img class="figure" style="WIDTH:646px; HEIGHT:392px" src="processing/png/Pr7.png">
+</div>
+
+<p>このスケッチでは、懐中電灯のような感覚を出すために、WiiRemoteのAボタンが押されているときだけ球が表示されるようにしています。下記のように、Aボタンが押されていればdrawメソッドから途中で抜け出します。</p>
+
+<pre id="doc1_id198" class="program">
+  if (!wiimote.a.pressed) {
+   return;
+  }
+</pre>
+
+<p>光を当てる方向については、加速度の値をそのまま使っています。</p>
+
+<pre id="doc1_id201" class="program">
+  directionalLight(204, 204, 204, wiimote.x, wiimote.y, -1);
+</pre>
+
+
+<h3 id="doc1_id205">WaveSignalWii</h3>
+
+<p class="first_ja">最後は1つ変わったネタを取り上げます。WaveSignalWiiは今までのスケッチとは異なり、音を使ったスケッチです。元となっているスケッチは[Libaries] - [Minim (Sound)] - [SineWaveSignal]です。このスケッチを起動すると、プーというような音が鳴り出します。これは画面にも表示されている通り、いわゆる正弦波です。マウスカーソルを上下左右に動かすことで、音の高さ（ピッチ）が上下したり、ステレオの左右のバランス（パン）が移動したりするのが分かるでしょうか。</p>
+
+<div class="figure">
+<img class="figure" style="WIDTH:518px; HEIGHT:232px" src="processing/png/Pr8.png">
+</div>
+
+<p>Processingでこのように音が鳴らせるのは、Minimというライブラリのおかげです。正弦波を表す変数を作り、ピッチやパンを指定するだけで、このように音を鳴らすことができます。</p>
+<p>SineWaveSignalはその名の通り正弦波にしか対応していないのですが、これをWiiRemote対応させたWaveSignalWiiは、のこぎり波や矩形波にも対応させました。左右ボタンを押すことでこれらを切り替えることができます。また、上下ボタンで音量を変えることもできます。</p>
+<p>また、向きを変えることでピッチやパンも変化します。上に向けると音が高く、下に向けると音が低くなります。左右方向に向けると、そちらの方から音が聞こえてくるようになります。</p>
+
+<h2 id="doc1_id211">WiiFlashがProcessingからも使える理由</h2>
+
+<p class="first_ja">さて、ここまで特にこの話の詳細には踏み込んできませんでしたが、なぜProcessingからWiiFlashを使うことができるのでしょうか。答えはWiiFlashに添付されているソースコードの中にあります。</p>
+<p>メインとなるソースコードは、Core/api/source-classes/org/wiiflashディレクトリの中にります。ここにあるのはWiiFlashそのもののソースコードではなく、FlashからWiiFlashにつなぐためのActionScript3のソースコードですが、これだけでWiiFlashの挙動を推測することができます。Wiimote.asとWiiSocket.asを見れば、基本的な挙動をつかむことができます。</p>
+<p>WiiSocket.asでは、connectメソッドでlocalhostの19028番に接続しています。このことから、WiiFlashが19028番のポートを使ってサーバを立てていることが分かります。そしてソケットからデータを受信したときの処理はonSocketDataメソッドに書かれています。ここを見ると、データが80バイト単位で受信されていることが分かります。最初の1バイトはコントローラのIDとなっており、それ以降のデータはWiimoteクラスのupdateメソッドで読み込まれています。WiiFlashから送られてくる基本的なデータをまとめると、表のようになります。</p>
+<p>基本データレイアウト</p>
+
+<div class="table">
+<table id="doc1_id213" class="data" rules="groups">
+<colgroup span="4">
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr class="even">
+<td>名前</td>
+<td>位置</td>
+<td>型</td>
+<td>意味</td>
+</tr>
+<tr class="odd">
+<td>index</td>
+<td>0</td>
+<td>byte</td>
+<td>コントローラのID</td>
+</tr>
+<tr class="even">
+<td>batteryLevel</td>
+<td>1</td>
+<td>byte</td>
+<td>バッテリー残量</td>
+</tr>
+<tr class="odd">
+<td>buttonState</td>
+<td>2</td>
+<td>ushort</td>
+<td>ボタンの状態</td>
+</tr>
+<tr class="even">
+<td>x</td>
+<td>4</td>
+<td>float</td>
+<td>X方向の加速度</td>
+</tr>
+<tr class="odd">
+<td>y</td>
+<td>8</td>
+<td>float</td>
+<td>Y方向の加速度</td>
+</tr>
+<tr class="even">
+<td>z</td>
+<td>12</td>
+<td>float</td>
+<td>Z方向の加速度</td>
+</tr>
+<tr class="odd">
+<td>extensionType</td>
+<td>16</td>
+<td>byte</td>
+<td>拡張タイプ</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>拡張タイプには、ヌンチャク、クラシックコントローラ、バランスボードがあります。このタイプによって、17バイト目以降のデータの解釈方法が変わります。これらについてはNunchuk.as、ClassicController.as、BalanceBoard.asを見るとデータの内容が分かりますが、本書ではそれらについての説明は割愛します。</p>
+<p>ProcessingからWiiFlashにつなぐためには、netライブラリのClientクラスを使います。Clientクラスを使うことで、ソケットを使ってWiiFlashと通信することができます。つないだ後は、readメソッドなどを使うことでWiiFlashからバイト列を読み込むことができます。</p>
+<p>Wiimoteクラスの詳細な実装については本章では述べませんが、ソースコードは見られる状態となっているので、気になる方はそちらを参照してください。</p>
+</body>
+</html>

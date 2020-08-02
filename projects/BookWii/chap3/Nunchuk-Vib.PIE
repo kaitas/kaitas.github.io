@@ -1,0 +1,60 @@
+
+ExitScript = Wiimote.Home
+If Wiimote.B then
+ Mouse.x = EnsureMapRange(Smooth(Wiimote.Nunchuk.JoyX, 3), -1,1, -0.5,1.5)
+ Mouse.y = EnsureMapRange(Smooth(Wiimote.Nunchuk.JoyY, 3), -1,1, -0.5,1.5)
+
+ var.hit = false;
+ debug = "H:"+var.hit+" X=" + Mouse.X + " Y="+ Mouse.y +"Cx"+mouse.CursorPosX+"Sc.Cur"+Screen.Cursor+"Win.LefT"+Window.Left
+// if mouse.CursorPosX<Window.Left then
+//  var.hit = true
+// End if
+ var.hit = mouse.CursorPosX<Window.Left or mouse.CursorPosX>Window.Left+Window.Width
+ var.hit = var.hit or mouse.CursorPosY<Window.Top  or mouse.CursorPosY>Window.Top+Window.Height
+
+End if
+
+//Wiimote.Rumble = KeepDown(var.hit, 0.1s);
+Wiimote.Rumble = var.hit;
+
+/*
+while ( true )
+ if var.t<=0 then
+  t=15
+ end if
+ wait 1s
+ debugprint("t="+var.t);
+ Wiimote.Leds = var.t;
+ var.t--;
+end while
+*/
+
+Wiimote.Led1 = HeldDown(true, 5s);
+Wiimote.Led2 = HeldDown(true, 10s);
+Wiimote.Led3 = HeldDown(true, 20s);
+Wiimote.Led4 = HeldDown(true, 1 minutes);
+
+
+
+if Wiimote.One then
+ Wiimote.Volume = 1.00
+ Wiimote.SampleRate = 3640 Hz
+ while ( true )
+  if var.f<=0 then
+   var.f=360
+  end if
+// wait 10ms
+  debugprint("f="+var.f + "Cos:"+cos(var.f)+" Freq:"+abs(500*cos(var.f)+1000));
+//  Wiimote.Frequency =abs(500*cos(var.f)+1000)
+// Wiimote.Frequency = 913.18
+ Wiimote.Frequency = 261.6255653005986
+
+  var.f=var.f-10;
+ end while
+else
+ wait 1000ms
+ Wiimote.Frequency = 0Hz
+end if
+
+
+

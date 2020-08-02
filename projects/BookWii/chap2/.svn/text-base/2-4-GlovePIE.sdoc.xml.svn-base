@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>GlovePIEを使ってみる</title>
+<author>白井暁彦</author>
+<date>2008年12月29日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+GlovePIEは最も使用されているコントローラエミュレーターです。Carl Kennerによって開発されています。もともとヴァーチャルリアリティのためのデータグローブ「5DT」で、さまざまなゲームをプレイするためにジョイスティックやマウスをエミュレーションするために開発されていたようですが、その成長の過程でWiiRemoteをサポートし、有名になりました。特徴として、すべてのエミュレーションを専用のスクリプトで記述します。例えば「Aボタンをショット、Bボタンをボムに」といったゲームそれぞれの割り当てを、自分で書くことができるのです。
+
+http://carl.kenner.googlepages.com/glovepie_download
+
+
+★スクリーンショット、使い方の流れなど。
+
+
+<subsection title="GlovePIEスクリプト">GlovePIEスクリプトについてサンプル</subsection>
+
+このサンプルコードで、センサバーを使ってWiiRemoteをマウスのように使うことができます。
+<program src="IRMouse.PIE" title="IRMouse.PIE">
+</program>
+
+<!--
+<figure id="fig:WiiRemote.jpg" src="jpg/WiiRemote.jpg" title="WiiRemote">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+
+<program title="WiimoteScriptsにあるスクリプト群">
+BF2.PIE
+BF2142.PIE
+Battlefield2142Test.PIE
+CallOfDutyPC.PIE
+CounterStrike.PIE
+CounterStrikeHL2.PIE
+Cylon.PIE
+DTXMania.PIE
+DrummerKit.PIE
+EranmaneWiimote.PIE
+FpsControls.PIE
+FpsGames.PIE
+FpsGamesFred31.PIE
+Generic Joystick Driver.PIE
+GlobalWinampFlashy.PIE
+GoogleEarth.PIE
+HL2.PIE
+HideThePr0nz.PIE
+Joystick-Mouse (4 Wiimotes).PIE
+Joystick-Mouse.PIE
+LED Zelda NES 0.2.PIE
+LedExtension.PIE
+LedLighter.PIE
+MarioKart64.PIE
+MarioTennis64.PIE
+MarioTennis64Nunchuk.PIE
+MetroidFusionPrime3.PIE
+MidiConductor.PIE
+MouseWebSurfingFriendly.PIE
+N64 Goldeneye Advanced.PIE
+N64 Goldeneye Basic.PIE
+N64 OoT.PIE
+NES.PIE
+NESController.PIE
+NESController2.PIE
+NeedForSpeed.PIE
+Ocarina.PIE
+OcarinaNunchuk.PIE
+OldMouseMovement.PIE
+OneDotMouse.PIE
+PPJoyEmulatorConfig.PIE
+RacingControls.PIE
+RumbleFight.PIE
+SecretOfMana.PIE
+SecretOfManaNoNunchuk.PIE
+Speaker.PIE
+SpeakerAngle.PIE
+SpeakerOld.PIE
+SteeringWheel.PIE
+SuperMario1or3Galaxy.PIE
+SuperMario2Galaxy.PIE
+SuperMario64Galaxy.PIE
+SuperMarioWorldGalaxy.PIE
+SuperMetroidPrime3.PIE
+SuperMetroidPrime3Joystick.PIE
+SuperSmashBros04.PIE
+SuperSmashBrosNunchuk.PIE
+TekkenNunchuk.PIE
+TestVelocityPos.PIE
+TombRaiderLegend.PIE
+TrackmaniaNations.PIE
+Trampoline.pie
+Two WiiMice.PIE
+Ultimate4PlayerPPJoy.PIE
+VirtuaTennis.PIE
+VirtuaTennis02.PIE
+VisualBoyAdvance.PIE
+WII Firefox.PIE
+WOW.PIE
+WarioWareTwisted.PIE
+Wii Lights 0.1.PIE
+WiiBattery.PIE
+WiiDrums2.PIE
+WiiGoogleEarthIR.PIE
+WiiMouse 0.1.PIE
+WiiMouse Accel.PIE
+WiiMouse IR Relative.PIE
+WiiMouse IR.PIE
+WiiSound2.PIE
+WiiWars.PIE
+Wiibrator.PIE
+Wiibrator2.PIE
+Wiilo.PIE
+WiimoteIdentifier.PIE
+WiimoteMouselook.PIE
+WiinAmp1.0.PIE
+Wiitar.PIE
+WinampController2.PIE
+WinampMkII.PIE
+WinampUltraIITurbo.PIE
+WindowsMediaPlayer.PIE
+Zelda.PIE
+ZeldaLinkPastTwilight.PIE
+ZeldaMinishCapTwighlight.PIE
+ZeldaOcarinaBMH.PIE
+ZeldaOcarinaTwilight.PIE
+dreidel.PIE
+goggles.PIE
+iTunes.PIE
+list.txt
+test.PIE
+</program>
+
+</body>
+</doc>

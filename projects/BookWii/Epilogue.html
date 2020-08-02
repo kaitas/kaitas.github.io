@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009/06/30-" lang="ja">
+<title>未来につながるWiiRemote</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">未来につながるWiiRemote</h1>
+
+<div class="date">2009/06/30-</div>
+<div class="author">白井暁彦</div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id16" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">人物紹介：貢献者インタビュー</a>
+<ul>
+<li> <a href="#doc1_id18" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「WiimoteLib」の作者：Brian Peek氏</a>
+<li> <a href="#doc1_id27" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「WiiYourself!」の作者：gl.tter氏</a>
+</ul>
+<li> <a href="#doc1_id39" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiMotionPlusの衝撃と可能性</a>
+<ul>
+<li> <a href="#doc1_id44" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">5倍すごいジャイロ</a>
+<li> <a href="#doc1_id53" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiMotionPlus、海外の反応</a>
+<li> <a href="#doc1_id60" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">マイクロソフト「Project Natal」の衝撃</a>
+<li> <a href="#doc1_id69" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実は「老舗」のソニー</a>
+</ul>
+<li> <a href="#doc1_id77" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">予言の書</a>
+<ul>
+<li> <a href="#doc1_id79" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">10年前の出来事</a>
+<li> <a href="#doc1_id88" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">今後10年先の研究トピック</a>
+<ul>
+<li> <a href="#doc1_id90" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">『ゲームを作り』から『体験作り』へ</a>
+<li> <a href="#doc1_id132" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">アートは自由なもの</a>
+<li> <a href="#doc1_id168" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">学生だから、できること</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id200" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">さいごに：感謝の言葉</a>
+</ul>
+</div>
+<p>この章は本書の最終章です。今まで筆者とともに長い長い旅にお付き合いいただき、ありがとうございました。</p>
+<p>ここではWiiRemoteでのプログラミングから少し離れて、インタラクティブ技術の未来を読者のみなさんといっしょに考えてみたいと思います。</p>
+
+<h2 id="doc1_id16">人物紹介：貢献者インタビュー</h2>
+
+<p class="first_ja">まずは本書で扱ったWiiRemoteプログラミングに関わっている、世界の貢献者から未来を読み解いてみたいと思います。</p>
+<p>WiiRemoteプログラミングにおけるPCでの貢献者といえば、API開発を行ったBrian Peek氏とgl.tter氏です。ふたりの偉大なハッカーに、メールでのインタビューに応じていただきました。</p>
+
+<h3 id="doc1_id18">「WiimoteLib」の作者：Brian Peek氏</h3>
+
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="png/brian2.png" alt="Brian Peek氏" width="4cm">
+</div>
+
+<p class="first_ja">Q:どちらにお住まいですか？</p>
+<p>A:アメリカ、ニューヨークのGlenvilleにすんでいます。ニューヨーク市から120マイルほど北にいったところです。</p>
+<p>Q:昼間のお仕事は？</p>
+<p>A:ソフトウェアコンサルタント、著者、そしてオールアラウンドな.NET屋ですね。</p>
+<p>Q:WiimoteLibを開発しようと思ったモチベーションは？</p>
+<p>A:私は「Coding4Fun」というウェブサイトの著者の一人なので、プロジェクトにトピックが必要でした(笑)。実際には、そこでは「できるかどうか見た」というだけでした。その後、完全なものを書いた後に、私はWiiRemoteをPCで使うことの巨大なポテンシャルを具現化できた、という感じです。</p>
+<p>Q:何か面白いエピソードはありませんか？</p>
+<p>A:もっとも面白いことといえば「NEWSWEEK」誌によって取材され、記事として世界中に配信されたことだと思います。エキサイティングだった...。</p>
+<p>Q:将来の夢や読者へのメッセージをどうぞ</p>
+<p>A:ただもう巨大な「Thank you」をこのライブラリを使って楽しんでくれた皆さんにお伝えしたいですね。これは大変な仕事でしたが、すばらしい(amazing)プロジェクトが、このライブラリを使って登場してくるのを拝見するのは楽しかったです。(小坂研究室の「La Fleche l'odeur」などを見て)私の仕事が、こんなにも多くの異なる使い道に使われていることを知って、非常に満足しています。　　―――ブライアン</p>
+
+<h3 id="doc1_id27">「WiiYourself!」の作者：gl.tter氏</h3>
+
+<p class="first_ja">Q:どちらにお住まいですか？</p>
+<p>A:「イギリスのgl.tter」とだけ名乗らせてくれ。</p>
+<p>Q:「WiiYourself!」を開発しようと思ったモチベーションは？</p>
+<p>A:もとはといえば、驚くべき(amazing)WiiRemoteに絶好な、C++のゲームプロトタイプに取り組んでいたんだ。僕は当初Brian Peek氏の.NETのコードからライブラリを改造してた。広範に書き直し、自分の好きな方法で動くように最適化し、もちろん複数のWiiRemoteのサポート、よりよいスタックのサポート、自動検出、スピーカー機能など、新しい機能を追加した。取り組みはじめてベータを公開したのが、2007年の6月。バージョン1.0は2008年2月13日公開だね。僕のゲームアイデアは、1対1のモーション割り当てが必要だったんだ。それはWiiRemoteだけでは成しえなかった。カルマン(Kalman)フィルターとか、自分より数学が得意な、それを動くようにしてくれる「誰か」が方法を見つけてくれるに違いない、それがこのライブラリを公開したひとつの理由なんだ。</p>
+<p>Q:「どうしてWiiYourself!なんて名前なの？」</p>
+<p>A:名前は自己説明の一部「Get your self Wii'ed up」･･･WiiRemoteがキミのアプリを可能にするよ！って意味。イギリスのほかの人が書いた別のC++ライブラリに対する穏やかなジョークなんだ。彼はそのライブラリを公開したらNintendoが首に噛み付くんじゃないかと恐れたので、僕は「WiiYourself!」を書いたんだ。</p>
+<p>Q:どうして「!」が入っているの？</p>
+<p>A:単なる強調。「やれ！いますぐ！」ってこと(笑)。</p>
+<p>Q:Wii本体を持ってる？</p>
+<p>A:残念ながら無い。見て楽しむ以外は遊んだこと無いんだよ。WiiYourself!のWebサイトに動画がある、僕のプロジェクトのプロジェクトのひとつである光線銃ゲーム「Q2Gunfrenzy」っていうコンピューター関係じゃない人がプレイできるようなのがいいと思ってる。銃を使うのは自然な行為だからね。</p>
+<p>Q:…えーと、最近の興味は？</p>
+<p>A:マイクロソフトの「Project Natal」は見た？全身スキャンと音声認識･･･。MLに紹介したら、みんな恍惚ものだったよ。</p>
+<p>Q:将来の夢や読者へのメッセージをどうぞ</p>
+<p>A:僕らは、1対1のモーションの実現には、WiiMotionPlusのジャイロスコープがないと不可能だって知っている、だからWiiYourself!でサポートしたいと思っている。　　――――&quot;gl.tter in UK&quot;</p>
+<p>　　　　　　　　　　　　　　　　　■</p>
+<p>gl.tter氏は典型的なイギリスのハッカーという感じの人物ですが、実直な人物だと感じます。MLでの返答はこまめですし、なにより情熱があります。なおWiiYourself!はv1.13から、発売されたばかりの「WiiMotionPlus」をサポートするようです！</p>
+<p></p>
+
+<h2 id="doc1_id39">WiiMotionPlusの衝撃と可能性</h2>
+
+<p class="first_ja">2009年6月、任天堂はWiiRemoteの追加オプション「Wiiモーションプラス」(本書では「WiiMotionPlus」と表記)を発売しました。</p>
+<p>WiiMotionPlusとともに発表されたゲームタイトル「Wii Sports Resort」は、その名の通り、リゾート感たっぷりのゲームです。</p>
+<div class="fyi">
+<div class="title">「E3」と「GDC」、「TGS」と「CEDEC」</div>
+
+<p class="first_ja">　アメリカで毎年6月頃開催される「E3(http://www.e3expo.com/)」はElectronic Entertainment Expoの略で、ちょうど日本で言えば東京ゲームショウ(TGS)のようなイベントです。</p>
+<p>　E3に並ぶ、アメリカで開催される、重要なゲーム技術のカンファレンスが「GDC(http://www.gdconf.com/japan/japan.html)」です。Game Developers Conferenceの略で、毎年3月に開催されます。日本には同様の業界カンファレンスとして「CEDEC」というイベントがあります。E3がセールス向け、GDCが技術向け、というすみ分けでしょうか。</p>
+</div>
+
+
+<h3 id="doc1_id44">5倍すごいジャイロ</h3>
+
+<p class="first_ja">実のところ、筆者はこのWiiMotionPlusが、2008年の「E3」で発表されてから、実際に発売直前になるまであまり興味はありませんでした。本書で紹介してきたように、現状のWiiRemoteでもかなりのことができますので、任天堂自身が「WiiRemoteのセンサーが不十分だ」ということを言って回っているようだなあ、と逆に冷めていたぐらいです。しかし発売直前になって、任天堂公式ホームページ『社長が訊く』シリーズで公開された、WiiMotionPlus開発秘話を読んで、衝撃を受けました。</p>
+<blockquote>
+<p>『社長が訊く』「Wiiモーションプラス」＋「Wii Sports Resort」■「2種類のセンサーの組み合わせで」</p>
+<p>http://wii.com/jp/articles/wii-motion-plus/crv/vol/page2.html</p>
+<p>　『社長が訊く』シリーズは任天堂岩田社長が直接、新しいプロジェクトに関係した社員をインタビューする形式で構成されています。</p>
+<p>　このページの電子回路担当の伊藤氏による『そこで1秒間に1600度までセンシングできるようにしました』というやりとりを読んで、私は飲んでいるコーヒーを吹きそうになりました(笑)。</p>
+</blockquote>
+<p>「ヒューマンインターフェースにジャイロスコープを使う」というアイディアはWiiMotionPlusがパイオニア(先駆者)ではありません。アメリカのジャイレーション社(Gyration, http://www.gyration.com/)が既に、動きを検知してPCを操作できる空中ジャイロマウスなどを開発しており、マイクロソフトの「Windows XP Media Center Edition」のリモコン「メディアセンター・リモート」に採用されていました。</p>
+<p>メディアセンター･リモートは、左右方向のリモコンの振りだけでポインターを動かすことができます(赤外線センサーは不要です)。しかし実際に試してみるとなんだか「もったりとした動き」で、さらにあまり動作量が大きくないので、目的の位置、たとえば画面の端までポインターを動かすために何度もリモコンを振りなおす必要がありました。</p>
+<p>このジャイロスコープ(コリオリの力を利用した回転速度センサーであることが多い)を、Wii用に従来の検出幅を「5倍」に高めるとは…日本のゲーム機器産業、恐るべし、です。</p>
+<p>さらにこの『社長が訊く』を読み進めると、もっと面白い情報が書かれています。本書で紹介してきたような、新しいインタラクションを作るためのさまざまな実験を組織的に行っていることも読み取れます。本書をここまで読み解いた読者の皆さんであれば、任天堂側の開発者でもさまざまな苦労をしていることが理解できるのではないでしょうか。</p>
+<p>特にSDKを担当した太田氏の活躍は、読んでいてワクワクできるはずです。話の中で紹介されている「人形デモ」の方位角での回転(WiiRemoteを立てたときのY軸回転)のモーションは、一般のゲームファンには「？」かもしれませんが、本書の読者は一見に値します。</p>
+<p>その他にも、本書で扱った話題に近い話も出てきます。</p>
+<blockquote>
+<p>『社長が訊く』「Wii Sports Resort」■「Wiiモーションプラスで寸止めも」</p>
+<p>[URL] http://wii.com/jp/articles/wii-sports-resort/crv/vol/index.html</p>
+<p>このページにある「人形デモ」の動画は必見です！</p>
+<p>■「魔法の技術で70人とチャンバラ」</p>
+<p>[URL] http://wii.com/jp/articles/wii-sports-resort/crv/vol/page3.html</p>
+</blockquote>
+<p>　宮本氏が「魔法の仕組み」と説明する「振れば振るほど正しくなる」というあたり、本書の読者ならどうやって実現しているのか、想像して、試作してみたくなってくるのではないでしょうか。</p>
+<p>「寸止め」は第7章や第9章で扱っているとおり、「振り抜く力」と「止める力」の違いで、従来の加速度センサーでも検出できるのですが、その処理には理論上、数ミリ秒ですが、ディレイがうまれてしまいます。4000円以下で入手できるWiiRemoteとソフトウェア技術だけでは解決できない限界がそこにはあります。</p>
+<p>この『社長が訊く』で読み取れるメッセージは、単に「従来の加速度センサーにジャイロスコープがつきました」という話ではないのではないでしょうか。複数のセンサーを組み合わせ、そして、本書で解説したようなインタラクションを実現するためのソフトウェア技術があり、さらに綿密なテストの繰り返しによるフィードバック開発によってはじめて、「より自然で直感的で楽しい操作感」を極め、高度なインタラクションがより高度にゲーム体験において実現できるようになっていくのです。その企業姿勢を任天堂が自ら、世界のゲームファンとゲーム産業に向けて発信しているのだと感じます。</p>
+
+<h3 id="doc1_id53">WiiMotionPlus、海外の反応</h3>
+
+<p class="first_ja">さて、日本人の魂がこもった「WiiMotionPlus」の開発ですが、上記『社長が訊く』のページは(多少の遅れを持ってはいますが)英語や各国語に素早く翻訳され「wii.com」で全世界に向けて公開されています。</p>
+<p>私の肌で感じた感覚ですが、日本側の反応よりも、英語圏のほうが、WiiMotionPlusに対する開発者の盛り上がりは大きいように感じます。開発者コミュニティでは、6月の日本発売よりも前に、WiiRemote研究者が集まるポータル「WiiBrew」において、WiiMotionPlusに接続するための情報が報告されています。</p>
+<div class="fyi">
+<div class="title">WiiBrewでのWiiMotionPlus情報</div>
+
+<p class="first_ja">[URL] http://wiibrew.org/wiki/Wiimote/Extension_Controllers</p>
+</div>
+
+<p>NOA(任天堂アメリカ)の戦略もあるのでしょう、北米市場では日本の「Wii Sports Resort」の発売日2009年6月25日よりも先に、「EA SPORTS Grand Slam Tennis」とともに2009年6月8日に「Wii Motion Plus」が、市場で入手できるようになりました。アメリカ、ヨーロッパでの「Wii Sports Resort」は7月発売なので、本格的なWiiMotionPlusの衝撃は、このあとのフェーズで広がってくるはずです。</p>
+<p>任天堂公式のミドルウェアである「AiLive」も発売前の早い段階で対応製品を出していました。今後、WiiMotionPlusを使った新しい世代のインタラクション開発は、より本格的にさまざまな陣営を巻き込んで展開するものと予測します。個人レベルの研究者、学生プロジェクトといった活動が、企業の需要と接点を持つチャンスでもあります。</p>
+<p>　　　　　　　　　　　　　　　　　　　　■</p>
+<p>任天堂が「ReVolution」で起こした「革命」はこの後、どこへ向かうのでしょうか？当初はライバルであるマイクロソフトやソニーも、新しいコントローラー(と新しいインタラクションへのアプローチ)に対して明確な動きは出してきませんでしたし、当のゲームユーザーも「住み分け」という方向に向かったように感じます。</p>
+<p>ユーザーの感覚はそうであったとしても、ゲーム産業の研究開発は5年を周期として、先を見越して動いています。プラットフォームの中心になるような技術要素や特許、そして人材の確保については、各社とも大きな動きが明確になってきました。</p>
+<p>本書発刊は「新プラットフォーム発売から2年半」という、この節目の時期でもあります。</p>
+
+<h3 id="doc1_id60">マイクロソフト「Project Natal」の衝撃</h3>
+
+<p class="first_ja">第9章の最後に紹介したジョニー・リー氏のように、大学の研究者からマイクロソフトで働き始めた人物もいます。ジョニーのBlogでも公式に発表があった「Project Natal」とはいったい何なのでしょう？</p>
+<div class="fyi">
+<div class="title">公式サイト「Project Natal」</div>
+
+<p class="first_ja">http://www.xbox.com/en-US/live/projectnatal/</p>
+<p>「Project Natal」は2009年6月1日、マイクロソフトがE3で開催した記者会見で発表されました。</p>
+<p>■YouTubeチャンネル「XboxProjectNatal」なおこの記者会見には映画監督スティーブン・スピルバーグ氏も発表者として参加しており、当時の様子は専用のYouTubeチャンネルで見ることができます。</p>
+<p>http://www.youtube.com/user/xboxprojectnatal</p>
+<p>■Steven Spielberg and Xbox Project Natal</p>
+<p>http://www.youtube.com/watch?v=jh9plZmFIP4</p>
+</div>
+
+<p>「Project Natal」は、画像カメラや深度カメラ、多数配置したマイクロフォンや専用プロセッサを内蔵したゲームインターフェースシステムで、全身の動きを3Dで追跡し、命令や指示は音声を使って、ゲームがプレイできるというものです。</p>
+<p>ボールを蹴る、打つ、キャッチするといった操作をコントローラーを使用せずに実現し、手を動かす、腰をひねる、話すなど、日常生活で行なう動作をするだけでキャラクターを動かすことができるということです。「ゲームからコントローラーを不要にする」という明確なコンセプトが打ち出されています。</p>
+<p>Xbox 360を使ったデモでは、プレイヤーの48カ所の関節を秒間30フレームでリアルタイムに追跡し、各間接の方向や加速度を分析し、人間の身体がどの方向へ動くのかを予測していたそうです。</p>
+<p>なお「深度カメラ」とは「奥行きが撮影できるカメラ」です。夢みたいな話に聞こえるかもしれませんが、実際に赤外線のTOF(Time of Flight、光を投げてから戻ってくるまでの時間)を使って深度カメラは実現できます。実は筆者も2004年頃、研究レベルで取り組んでいたことがありますが、このマイクロソフトはこの「Project Natal」のために、奥行きカメラなど関連技術の会社を複数買収した、とセンシングデバイス業界では噂になっています。</p>
+<div class="fyi">
+<div class="title">3DV Systems「Zcam」</div>
+
+<p class="first_ja">そのうちの1社、イスラエルの「3DV Systems」社は6月2日付けのプレスリリースで「サードパーティ向けの出荷を停止しました」と告知を出しました。</p>
+<p>http://www.3dvsystems.com/news/news.html</p>
+<p>TGS2007でもSIGGRAPH2008でも発表していたので、多くのゲームメーカーは目をつけていたはずですが…。</p>
+<p>■You Are the Interface! ZCam?, 3DV's Depth-Sensing Camera (SIGGRAPH 2008)</p>
+<p>http://www.siggraph.org/s2008/attendees/newtech/3.php</p>
+</div>
+
+<p>ちなみに「natal」とは日本語では「出生」という意味です。新しいエンタテイメントの「出生」になるかどうか、期待が集まります。</p>
+
+<h3 id="doc1_id69">実は「老舗」のソニー</h3>
+
+<p class="first_ja">もうひとつの国産両雄ゲームプラットフォームと言えばソニーです。同じく2009年のE3において、ソニーはNatalのような大きなシステムではなく、現在のプラットフォームであるPlayStation3向けに2010年春を予定にモーションセンシングコントローラーを投入してくるようです。</p>
+<div class="fyi">
+<div class="title">PS3用「PlayStation Motion Controller」</div>
+
+<p class="first_ja">■Sony PS3 Motion Sensing Controller E3 2009 (YouTube動画)</p>
+<p>http://www.youtube.com/watch?v=gaQsXdKbUw8</p>
+<p>■Engadgetでの紹介</p>
+<p>http://www.engadget.com/2009/06/02/sony-announces-new-ps3-motion-controller/</p>
+</div>
+
+<p>Play Station Eyeと連携するこのプロトタイプは、カラーボールの付いた「魔法の杖」といった見た目ですが、ミリメートル以下の精度を持っているとのことです。</p>
+<p>「ボタンは完全には廃せない」というコンセプトのようで、「モーションコントローラーで剣を使い、従来のコントローラーであるDualShock3で楯を使う」といった使い道を想定しているそうです。</p>
+<p>実はソニーは画像を使った新しいゲームインタフェースとしては老舗でもあります。PlayStation2「Eye Toy Play」も研究開発レベルでは2001年にはプロトタイプが出ていましたし、最近では「THE EYE OF JUDGMENT」などのカードを使った例もあります。</p>
+<p>　　　　　　　　　　　　　　　　　　　　■</p>
+<p>まるでゲーム雑誌のように、本書発刊直前の最新のゲームの動きについてレポートしてしまいましたが、プラットフォームが行うべき、次世代エンタテイメント技術の研究開発の方向性は、はっきりしてきたのではないでしょうか。</p>
+<p>新しいエンタテイメント、インタラクションを作るためには？各社ともこの部分の研究開発に必死です。ソフトウェアからハードウェア、インタラクションデザインまであらゆるレベルで見直しが進んでいます。</p>
+<p>研究レベルのものも、どんどんと積極的に取り込まれていきます。日本はインタラクション技術の研究開発が世界でも特に進んでいる国ですが、見た目は「チンドン屋にしか見えない」と思われていたこの分野の研究が、これからは世界的に「熱い研究分野」になっていくと考えます。</p>
+<p>研究だけではなく実際の面白いゲームにたどり着かなければなりません。ゲーム開発者も、そしてゲーム雑誌などのメディアも、そしてプレイヤーも、旧来の「ゲームってのは、こう...」というステレオタイプに固執せず、新しいエンタテイメント産業とインタラクティブ技術の未来を応援していきたいところです。</p>
+
+<h2 id="doc1_id77">予言の書</h2>
+
+<p class="first_ja">ここで「予言の書」と題して、エンタテイメント技術の10年先を占ってみたいと思います。</p>
+
+<h3 id="doc1_id79">10年前の出来事</h3>
+
+<p class="first_ja">10年先を占うには、まず10年前を見ることです。</p>
+<p>昔話になってしまいますが、エンタテイメント技術の研究開発といえば、我らが国産ソニーは「ソニーコンピューターサイエンス研究所(Sony CSL)」という研究所を持っています。前節で紹介した「THE EYE OF JUDGMENT」の技術はCSLの「インタラクションラボラトリー」という研究所で開発されています。このSonyCSLはゲーム技術に限らず、10年以上前から様々なインタラクションシステムを開発していました。</p>
+<div class="fyi">
+<div class="title">SonyCSL</div>
+
+<p class="first_ja">[URL] http://www.sonycsl.co.jp/</p>
+<p>テレビでよく見る科学者茂木健一郎氏が所属している研究所でもあります。</p>
+</div>
+
+<p>1998年のSIGGRAPHにおいて、筆者は、SonyCSLの暦本純一氏(現・東大)「HoloWall」の隣で、スリッパ型インターフェース「Foot Interface: Fantastic Phantom Slipper!」を発表していました。コナミが「Dance Dance Revolution」を発表するより昔の話です。</p>
+<div class="fyi">
+<div class="title">1998年のSIGGRAPHでの出来事</div>
+
+<p class="first_ja">■SIGGRAPH'98 Enhanced Realities Fact Sheet http://www.siggraph.org/s98/media/realities.html</p>
+<p>■HoloWall(SonyCSL)</p>
+<p>http://www.sonycsl.co.jp/person/rekimoto/holowall/</p>
+<p>その後、暦本氏は、SonyCSLで長年インタラクションラボラトリーの室長を勤められておられました。</p>
+</div>
+
+<p>ハリウッドなどのCG産業の影響が強く世界的CGのフェスティバルと化している「SIGGRAPH」ですが、本来は「コンピューターグラフィックスとインタラクティブ技術」の学会です。1998年は「Enhanced Realities」という、現在では「Emerging Technologies」として続いている、先進的なインタラクティブ技術を展示するデモセッションがありました。</p>
+<p>上記のファクトシートを見ると、暦本氏の「HoloWall: Interactive Digital Surfaces」と筆者の「Foot Interface: Fantastic Phantom Slipper」が隣に並んでいます。実際にはその隣にMITの学生がレーザースキャナーを使ってインタラクティブなホワイトボードを作って展示していたり、小さいロボットを使ってゲーム画面とインタラクションするようなシステムが展示されていました。他にもキヤノンのMR(Mixed Reality、複合現実感)研究所や、タンジブルインターフェースで有名なMIT石井裕先生の「PingPongPlus」や、稲見昌彦先生(慶應大)が世界的に有名になった「光学迷彩」がはじめて発表した場所でもありました。</p>
+<p>こうやって10年前を振り返ってみると、なんだか現在のインタラクション技術の基盤になっているコンセプト、技術を数多く発見することができます。そして研究者たちが10年前にデモを伴って提案した技術が、まだ現実の産業になっていないものもあります。</p>
+<p>萌芽的な研究が花開くのには、10年ぐらいの時間がかかる、しかも世界の産業を大きく動かすような萌芽的な研究である可能性が高い、この種のインタラクション技術の基盤研究が、実は「いまはチンドン屋にしか見えない」ということが感じられましたでしょうか？</p>
+
+<h3 id="doc1_id88">今後10年先の研究トピック</h3>
+
+<p class="first_ja">「SIGGRPAH'98」から現代までの10年間の例を振り返ると、いま研究者たちが熱くなっている「ネタ」が10年先の産業の中心になるということが、仮説づけられるのではないでしょうか。</p>
+<p>この「研究→産業→お茶の間」という時間進行感覚は、実のところ他のハイテク応用研究分野とあまり変わりありません(基礎科学研究には20年から50年、それ以上という分野もありますが...！)。</p>
+<p>以下、キーワードだけでも列挙してみます。</p>
+
+<h4 id="doc1_id90">『ゲームを作り』から『体験作り』へ</h4>
+
+
+<dl>
+<dt>『全身』の次は『触覚』
+<dd>物理、全身、とくると、次は絶対に『さわりたくる』はずです。しかし触覚はロボット技術とも関連があり、品質高く、安定して動作する、となると研究開発と生産技術に投資が必要な分野です。しかし5年後では遅いようにも思います。
+<dt>『おもしろさ』を物理的に測る
+<dd>アンケートなどの主観ではない方法で「身体をどれぐらい使ったか」といった物理的な方法を測る技術が重要になるでしょう。遊んだ時間や、動いた距離、消費したエネルギーなど、この種の物理測定は「面白さ」を定量的に測る鍵になります。ただし従来の「ユーザビリティ評価」とは全く異なる「どれだけ遊んだか」という評価関数が必要です。
+<dt>テレビ以外の場所で使う
+<dd>ゲーム機が「テレビゲーム」と呼ばれるのは、もうすぐ終わりが来るかもしれません。携帯ゲーム機や携帯電話がビデオゲームの主流になり、いわゆる家庭用エンタテイメントシステムに求められる機能について、ビジュアル性能が主軸ではなくなり、広い意味でのコミュニケーション機能が中心になる可能性が出てくるでしょう。そうでなければ携帯電話の進化に負けてしまいます。
+<dt>『心が伝わるデバイス』を開発する
+<dd>上記の「コミュニケーション機能」に関連しますが、携帯電話ではなしえない、広い意味での、コンピューターメディアを通したコミュニケーション技術に注目することがが大事です。簡単に言えば『心が伝わるデバイス』をちゃんと開発することでしょう。
+<dt>夢中になるゲームから愛されるゲームへ
+<dd>夢中になって、何かを忘れるためにプレイする、という「ゲームの目的」はもっと幅広く、深みを持っていくことになると思います。
+<dt>『ゲームを作り』から『体験づくり』へ
+<dd>いままでも、これからも、ゲームクリエイターは「ゲームを売る」のではなく「体験をつくりだす」のではないでしょうか。そこへの情熱と、作り込みが大事です。</dl>
+
+
+<h4 id="doc1_id132">アートは自由なもの</h4>
+
+
+<dl>
+<dt>アートは人に感動を与えるもの
+<dd>人に感動を与えないアートがあったら、教えてください。今日のゲームも、その一部だと思います。
+<dt>ミュージアムへ行こう！
+<dd>日本には「メディアアート」や「デバイスアート」と呼ばれる技術と芸術と巧みの技が融合した探求分野があります。これは世界に誇れる日本の技術であり文化です。ぜひミュージアムに出かけて、自分の手で触って、体験して、共有してみてください。
+<dt>「カワイイこと」が性能になる時代
+<dd>「ロボットフォン」、「シリフリン」など、デバイスアートに限ったことではないのですが、いま携帯電話で「デザインが性能」と言っても誰もが否定はしないでしょう。同様に「カワイイこと」が性能になる時代も来るのではないでしょうか。「かわいい！」と思えることをラジカルに考え、広い意味での技術を醸成する時代が来ています。
+<dt>今日の「メディアアート」は明日の「産業」？
+<dd>「今日」と「明日」の間がどれぐらい離れているのか、近いのか…は意外に皆さんの意識だけだったりします。
+<dt>アートは自由なもの
+<dd>そうなんです、本質的に自由なものなのです。だからもっと自由に考えなければなりませんし、今日のアートが明日の産業になってしまった後は、アーティストは、もっともっと、アヴァンギャルドに、自由に考えなければならないでしょう。技術的な事なんて、結構どうでもいいことだらけです。時間を超えて意味を生み出す「過去のアート」も、たくさん作り出してください。</dl>
+
+
+<h4 id="doc1_id168">学生だから、できること</h4>
+
+
+<dl>
+<dt>国際学生VRコンテスト(IVRC)
+<dd>もし本書を手に取ったあなたが学生で、世界のステージで活躍したいのであれば、IVRCに参加するべきです。
+<dt>卒業制作・卒業研究
+<dd>たかが卒研、されど卒制、です。私も自分の卒業研究が人生を変えるとは思っていませんでしたし、15年後に自書で引用することになるとは思いませんでした。
+<dt>まだまだ研究が足りない
+<dd>真面目に研究しましょう。ストイックに研究しましょう。先生に言われたことを開発しただけで満足しているうちは、研究したことにはなりません。「よけいなこと」をしましょう、世界をあっと言わせるような。
+<dt>学生だから、できること
+<dd>学生の利点といえば「爆発力」です。MIT石井裕先生も「出すぎる杭は打たれない」と言っていますが、本当にその通りです。もしいやらしい大人がやってきて、わかったようなことを言って、あなたのモチベーションを下げたとしても、そんな雑言に負けたら、あなたの負けです。激しい爆発力を伴って、海外から「Amazing!」と言われましょう。ちなみにAmazingの訳は「奇妙」ではありません、「すげえ！」と訳すべきです。</dl>
+
+<p>　　　　　　　　　　　　　　　　　　　　■</p>
+
+<h2 id="doc1_id200">さいごに：感謝の言葉</h2>
+
+<p class="first_ja">最後の最後に、感謝の言葉で終わりたいとおもいます。</p>
+<p>まず、国際学生VRコンテスト「IVRC」に関わった皆さんに感謝です。小坂先生との出会いもIVRCでしたし、卒業生も数多くゲーム業界に就職しています。ネットや紙面では紹介できないような温かなFace2Faceのコミュニティを長年IVRCを支えていただいている実行委員長の舘?教授(東大、現慶應大)をはじめボランティア学生の皆さん、作家の皆さんに感謝です。</p>
+<p>そして、「任天堂へのみなさん」に感謝です。本書はハッキングを目的とした書籍ではありません。ゲーム業界の明日を底から支える為の書籍になるよう、頑張って書いたつもりです。歴史に残る革命、「真の価値ある開発」を行ったのは紛れもなく任天堂の皆さんです。本書はその技術を歴史の一部を語る立場で解説させていただいただけです。しかしこの技術が「アンダーグラウンドなハッキング」ではなく日本のゲーム文化を技術面から支える基盤研究力になって行くことを私は望んでいます。本書の読者が任天堂やサードパーティの就職面接に来たときは、彼等を温かく見守っていただければ幸いです。</p>
+<p>そして最後に「読者の未来に感謝」したいとおもいます。</p>
+<p>フランスから3年間、日本をナナメから見ていた筆者は、ゲーム産業やインタラクション技術の最先端を行く日本がうらやましくて仕方がなかったです。これは欧米の学生さんに共通の感覚なのです。</p>
+<p>私は現在、日本で世界の皆さんに向けて、科学を伝える仕事をしています。</p>
+<p>この本を手にとって、最後まで読破されたあなたはもう、ゲームに使われているインタラクティブ技術を「ただの遊び」とは思わなくなっているでしょう。</p>
+<p>そして、その先の未来には、自分の足もとからまっすぐつながった「道」が見えるはずです。その道を一歩一歩自分で進むための、プログラミングと考え方という「最初の武器」を、本書は授けたはずです。</p>
+<p>がんばってください、またお逢いしましょう！</p>
+<p>2009年7月1日、ホームタウンのマクドナルドのいつもの席で　　　――しらいあきひこ</p>
+<div class="fyi">
+<div class="title">本書のホームページでお会いしましょう</div>
+
+<p class="first_ja">http://akihiko.shirai.as/projects/WiiRemote/</p>
+<p>Google Groupsで質問を受け付けています。</p>
+</div>
+
+</body>
+</html>

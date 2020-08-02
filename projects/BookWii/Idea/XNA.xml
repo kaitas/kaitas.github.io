@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+<doc xml:lang='ja'>
+<head>
+<title>XNAを使ったリアルタイム3DCGでの利用</title>
+<author>白井暁彦＆小坂崇之</author>
+<date>2009/06/01-2009/06/15</date>
+<hp>http://akihiko.shirai.as/projects/WiiRemote/</hp>
+</head>
+<body>
+8章までの知識を一歩進めて、WiiRemoteを3Dグラフィックスプログラミングの世界で利用できるようになりましょう。マイクロソフトの本格的なゲーム用3DCGプログラム開発環境「XNA」と「WiimoteLib」を使います。
+
+<figure id="XNAWii0" src="Idea/XNA/XNAWii0.png" title="「WiiRemoteXNA」完成版">
+</figure>
+
+ここでは「XNA Game Studio 3.1」とWiimoteLibを使って、C#.NETによるゲーム開発環境をベースにしたリアルタイム3DCGによるプログラミングを解説します。
+
+XNAとは、マイクロソフトが推進している「DirectX」の流れをくむ最新の.NETによるゲーム開発統合環境です。
+XNAのコーディングスタイルは、旧来のリアルタイム3DCG開発環境の本流であったDirectXやManaged DirectXとは異なり、XNA FrameworkにおけるC#言語による開発になります<!--(本書でも紹介しているようにC++でも書くことはできます)-->。
+DirectX時代よりもさらにゲーム開発に便利なツールやAPIが統合されており、簡単に効率よくゲームプログラムを作成できるようになっています。
+<!--本書で扱うC#によるリアルタイム3DCGプログラミングはまだまだゲーム開発の本流というには先進的すぎて「プロのゲーム開発者なら誰でも使っている」という話ではありません。しかしC/C++言語とC#言語にはコーディングスタイルにおいてそれほど大きな差がありませんし、
+-->
+
+プロのゲーム開発者に限らず、学生などにも親しみやすい環境でもあります。WindowsPC用のゲーム開発に加え、最新のコンシューマー(家庭用)ゲーム機である「Xbox 360」の両方のプラットフォームで、非常に効率的かつ先進的な開発ができるため、プロのゲームスタジオだけでなく、今後ホビープログラマを中心に大きな流れを作り出す可能性があるでしょう。
+
+このセクションでは、WiiRemoteの加速度センサーの傾きによって、3Dで描画されたWiiRemoteがリアルタイムで変化するプログラム「WiiRemoteXNA」を作成します。
+なかなか派手な感じがするデモですが、XNA Game Studio 3.1を使って、驚くほど短いコードで作成することができます。
+
+<subsection title="XNAのインストール">
+
+まずは、開発環境のセットアップを行いましょう。最新のMicrosoft XNA Game Studioをダウンロードしてインストールします。
+
+<fyi title="Microsoft XNA Game Studio 3.1">
+
+　Microsoft XNA Game Studio 3.1も無償で入手可能です。
+
+
+　http://www.microsoft.com/downloads/details.aspx?
+　　familyid=80782277-D584-42D2-8024-893FCD9D3E82
+<!--3.0 http://www.microsoft.com/downloads/details.aspx?familyid=7D70D6ED-1EDD-4852-9883-9A33C0AD8FEE-->
+</fyi>
+
+XNAは無料で開発環境を手に入れることができます。PCをターゲットプラットフォームとして利用する上ではライセンスに従い無料で利用することができますが、Xboxプラットフォームで開発するためには年間ライセンス料(9,800円※)を払う必要があります。本書ではXboxプラットフォームについては扱いませんが、Xbox 360のような、高価なゲーム用PCに比べて「安定して安価で入手できるコンシューマゲーム機」の開発環境が、それほど高価ではないライセンス料で入手できるのは大変な魅力です。開発したゲームプログラムを世界中に1200万人以上いるXbox 360のユーザーに遊んでもらえることも、モチベーションになるでしょう(Xbox360でWiiRemoteが公式に使える、という話は聞きませんが...)。
+
+<fyi title="Xbox 360用ゲームの開発">
+　本書とは直接関係ありませんが、Xbox 360用ゲームを実行するためには年額9,800円の「XNAクリエイターズクラブ」に入会する必要があります。XNAクリエイターズクラブはXbox 360用ネットワーク・サービス「Xbox Live」から加入できます。
+
+[URL]　http://www.xbox.com/ja-JP/live/
+
+[URL]　http://creators.xna.com/en-US/tour_detail
+
+</fyi>
+
+<figure id="XNAGS31.png" src="Idea/XNA/XNAGS31.png" title="XNA Game Studio 3.1のインストール">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+Microsoft XNA Game Studio 3.1のインストールは、ダウンロードしたインストーラーのウィザードに従うだけで問題なく行えるでしょう。ウィザードの最後に「Xbox 360用のサービスを起動するか？」という質問がありますが、これはXbox 360用のプログラムを開発したときに、ローカルネットワーク経由でXbox 360に送信するためで、特に利用する予定がなければチェックは入れなくても問題ありません。
+
+</subsection>
+
+<subsection title="ゲームプロジェクトの作成">
+
+<figure id="WiiXNA-Wiz" src="Idea/XNA/NewProject.png" title="新規プロジェクトの作成にGame Studio 3.1のテンプレートが現れる" width="4cm">
+</figure>
+
+さて次はゲームプロジェクトの作成です。Microsoft Visual C# 2008を起動してください(無料の「Express Edition」でも問題なく利用できます)。「新しいプロジェクト」を選ぶと、いつも見慣れた新規プロジェクト作成のダイアログに「XNA Game Studio 3.1」という項目が現れているはずです(ない場合はGame Studioのインストールを再度確認してください)。「テンプレート」から「Windows Game (3.1)」をクリックして、プロジェクト名に「WiiRemoteXNA」という名前をつけて、場所を「C:\WiiRemote」として「OK」をクリックします。
+
+<figure id="XNA-VS0" src="Idea/XNA/XNA-VS0.png" title="Visual Studioに作成された新しいゲームプロジェクト">
+ <attribute locale="latex2e" name="style" width="4cm">width:8cm</attribute>
+</figure>
+
+<!--
+<figure id="NewProject" src="Idea/XNA/XNAss0.png" title="新規作成直後の実行画面">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+
+数秒間待つと、新しいプロジェクトが作成されます。[F5]キーを押して、試しにプロジェクトを実行してみましょう。水色の背景に、何かウィンドウが表示されれば成功です。
+</subsection>
+
+<subsection title="WiimoteLibの組み込み">
+次はWiimoteLibを組み込みます。XNA環境でも4章や8章での.NET環境におけるWiimoteLibの組み込み作業の流れと同じです。
+
+ソリューションエクスプローラの「参照設定」を右クリックし、「参照の追加」を選択します。参照の追加から「参照」もしくは「最近使用したファイル」から「WiimoteLib.dll」を選択します。
+
+いままでのプロジェクトと同様、プログラム冒頭のusingにWiimoteLibを追加し、クラスの初期化時にWiimoteオブジェクトの新規作成「Wiimote wm = new Wiimote();」を挿入します。
+<program title="[C#]Wiimoteオブジェクトの作成(Game1.cs)"><![CDATA[
+using WiimoteLib;
+＜略＞
+public class Game1 : Microsoft.Xna.Framework.Game {
+  GraphicsDeviceManager graphics;
+  SpriteBatch spriteBatch;
+  Wiimote wm = new Wiimote();  //Wiimoteオブジェクトの作成
+＜略＞
+]]></program>
+
+初期化時にWiiRemoteに接続しましょう。XNAフレームワークでは「Initialize()」という関数がすでに用意されていますので、そこにいつものWiiRemote接続処理を追加します。
+<program title="[C#]WiiRemoteの初期化と接続(Game1.cs)"><![CDATA[
+ protected override void Initialize() {
+  base.Initialize();
+  wm.Connect();  //WiiRemote接続
+  wm.SetReportType(InputReport.ButtonsAccel, false);//ボタンと加速度
+  wm.SetLEDs(15); //LED全点灯
+ }
+]]></program>
+「SetReportType()」の第2引数に「false」を設定して非連続データ取得モードにしています(ここでいつものようにtrueにして、コールバック関数を設定してもよいのですが、今回のサンプルでは簡単に加速度の値を取れればよいので、値のばたつきが少ない、よりシンプルな方法をとります)。
+
+
+この状態でもビルド処理を試すことはできますが、ButtonStateが「あいまいな参照」というエラーを出し停止するはずです(XNAとWiimoteLibに同じ名前のプロパティがあるため)。エラーの出る行をコメントアウトすれば良いのですが、オリジナルのソースでは、ここで「ゲームパッドのボタンが押されたら終了」となっているようですので、ここを「WiiRemoteの[Home]ボタンが押されたら終了」と変更してみましょう。
+<program title="[C#]Homeボタンで終了(Game1.cs)"><![CDATA[
+ protected override void Update(GameTime gameTime) {
+ // Allows the game to exit ↓もともとのコードをコメントアウト
+ // if (GamePad.GetState(PlayerIndex.One).Buttons.Back
+                                 == ButtonState.Pressed)
+  if(wm.WiimoteState.ButtonState.Home) {
+    this.Exit();
+  }
+  base.Update(gameTime);
+ }
+]]></program>
+
+この段階でWiiRemoteをBluetooth接続し、[F6]で実行してみてください。先ほどと同様、水色の画面が表示されますが、WiiRemoteのLEDが4つとも点灯し、[Home]ボタンを押すことでプログラムを終了できるはずです。
+
+</subsection>
+
+<subsection title="3Dモデルファイルの準備">
+次に読み込む3Dモデルファイルを準備しましょう。3Dモデルデータをゼロから作ると時間がかかってしまいますので、ここでは小坂研究室のホームページからWiiRemoteによく似た「.x形式」のモデルファイル「wiimodoki.x」と、その表面を飾るテクスチャファイル「texture_wii.jpg」をダウンロードで入手します。
+
+
+<fyi title="3Dモデルファイル「wiimodoki.x」の入手">
+■小坂研究室「XNAとWiimoteLibで3Dオブジェクトを操作」
+
+[URL] http://www.kosaka-lab.com/tips/2009/06/xnawiimotelib3d.php
+
+
+■特製テクスチャファイル(texture_wii.jpg)
+<figure id="texture_wii" src="Idea/XNA/texture_wii2.png" title="テクスチャファイル「texture_wii.jpg」">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+
+</fyi>
+
+ファイルをダウンロードしたら、XNAのプロジェクトのコンテンツフォルダ「C:\WiiRemote\WiiRemoteXNA\WiiRemoteXNA\Content」に置きます。
+
+<figure id="XNA-Folder" src="Idea/XNA/XNA-Folder.png" title="WiiRemoteXNAの「Content」に.xファイルを配置する">
+</figure>
+
+ファイルを置いた後に、Visual Studio内に取り込みます。ソリューションエクスプローラーの「Content」を右クリックして「追加」→「既存の項目」として、先ほど置いた「wiimodoki.x」と「texture_wii.jpg」を読み込んでください。
+
+<figure id="Content.png" src="Idea/XNA/Content.png" title="ソリューションエクスプローラーの「Content」に追加する">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+<!--
+<figure id="ContentD.png" src="Idea/XNA/ContentD.png" title="「wiimodoki.x」と「texture_wii.jpg」を追加">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+</figure>
+-->
+なお、モデルデータである「wiimodoki.x」と「texture_wii.jpg」は3DCGコンテンツ制作ソフトウェア「Maya2008」を使って作成したのち「cvXporter」を使ってコンバートしています。
+<fyi title="Mayaからの.xファイルエクスポーター「cvXporter」">
+[URL]　http://www.chadvernon.com/blog/downloads/cvxporter/
+</fyi>
+
+
+Maya2008のような比較的高価な3DCGソフトウェアが無ければ、日本人が開発している歴史ある3Dポリゴンモデラー「Metasequoia(メタセコイヤ)」でも可能でしょう。無料版と有料版(シェアウェア)があり、価格は1ライセンスにつき5,000円です。「Metasequoia LE R2.4」では.xファイルを直接書き出せますので、XNAやDirectX環境で簡単に利用することができます。作者のO.Mizno氏に感謝です。
+
+<fyi title="3Dポリゴンモデラー「Metasequoia(メタセコイヤ)」">
+[URL]　http://www.metaseq.net/
+</fyi>
+
+</subsection>
+
+<subsection title=".xファイルの読み込みと表示">
+
+さて、コーディングに戻りましょう。モデルファイルの読み込みと表示について、「LoadContent()」と「Draw()」に加筆をします。
+<program title="[C#]モデルファイルの読み込みと表示(Game1.cs)"><![CDATA[
+＜略＞
+  Wiimote wm = new Wiimote();  //Wiimoteオブジェクトの作成    
+  private Model xfile;         //Xファイル読み込み用
+＜略＞
+ protected override void LoadContent() {
+  spriteBatch = new SpriteBatch(GraphicsDevice);
+  this.xfile = this.Content.Load<Model>("wii");  //.xファイルの読み込み
+  foreach (ModelMesh mesh in this.xfile.Meshes) {
+   foreach (BasicEffect effect in mesh.Effects)  {
+   //ビュー行列 カメラの視点を設定(0.0f,0.0f,10.0f)の位置から原点を見る
+    effect.View =
+     Matrix.CreateLookAt(new Vector3(0.0f, 0.0f, 10.0f),
+     Vector3.Zero, Vector3.Up);
+    //プロジェクション行列　視野角などの設定
+    effect.Projection = Matrix.CreatePerspectiveFieldOfView(
+     MathHelper.ToRadians(45.0f),
+      (float)this.GraphicsDevice.Viewport.Width /
+      (float)this.GraphicsDevice.Viewport.Height,
+      1.0f, 50.0f );
+   }
+  }
+ }
+＜略＞
+ protected override void Draw(GameTime gameTime) {
+  GraphicsDevice.Clear(Color.CornflowerBlue);
+  //画面に描画する
+  foreach (ModelMesh mesh in this.xfile.Meshes) {
+   foreach (BasicEffect effect in mesh.Effects) {
+    //WiiRemoteの加速度に合わせて回転角度を設定
+     effect.World = Matrix.CreateFromYawPitchRoll(0,
+      -wm.WiimoteState.AccelState.Values.Y,
+      -wm.WiimoteState.AccelState.Values.X);
+   }
+   mesh.Draw();//meshを描画
+  }
+ base.Draw(gameTime);
+ }
+＜略＞
+]]></program>
+ここでは個々のAPIについて解説はしませんが、いずれも3DCGにおけるお作法的な手続きと「見え方」を設定しているものです。興味がある人は、MSDNなどのマニュアルをしらべたり、パラメーターを変更してみたりして、探求してみてください。
+
+実行すると、WiiRemoteの動きに合わせて回転する「WiiRemoteもどき」が表示されます。[Home]で終了します。
+
+<figure id="WiiRemoteMove.png" src="Idea/XNA/WiiRemoteMove.png" title="WiiRemoteの動きに合わせて動く「WiiRemoteもどき」">
+<!-- <attribute locale="latex2e" name="style">width:4cm</attribute>-->
+</figure>
+
+ファイルの読み込みなどでエラーが起きるときは、ソリューションエクスプローラーで正しくContentにファイルが取り込まれているか確認してください。なお、テクスチャファイルは「wiimodoki.x」の中で記述されていますので、実はVisual Studioに取り込まなくても自動で読み込まれます。また「wiimodoki.x」ファイルはテキストで記述されていますので、テキストエディタで編集することで、マテリアル(表面材質の特性)やテクスチャファイル名を書き換えたりすることもできます。
+
+</subsection>
+
+<subsection title="完成版「WiiRemoteXNA」">
+
+以上で「WiiRemoteXNA」は完成です。usingの整理など行った完成版のコードを紹介します。
+
+<!--<program title="[C#]ウィザードで作成された初期コード(Game1.cs)" src="src/Chap9/Game1.cs"/>-->
+<program title="[C#]完成版「WiiRemoteXNA」(Game1.cs)" src="../src/Chap9/Game1.final.cs"/>
+
+リアルタイム3DCGという見た目の派手さに対して、とてもコードが短いことに驚かれたのではないでしょうか(XNAのおかげです)。
+
+なお今回はコールバックを使わずに、描画ループで直接WiiRemoteの加速度センサーの値をそのまま回転の角度に利用するという、ちょっと荒っぽい方法をとっています。実際のゲームに使う場合には、このような使い方をすることは稀で、コールバックと動作認識関数などを作るべきでしょう。
+</subsection>
+
+<subsection title="【演習問題】XNAの利用">
+
+<dl>
+  <dt>【演習】☆</dt>
+  <dd>上記のプログラムをコールバックを使う方法に書き換えてみましょう。余裕があれば、「リスト」をつかって最近50回の加速度センサーのデータの平均を取得し、よりなめらかに回転するWiiRemoteXNAを作成してみましょう（解答例は小坂研究室のホームページで紹介されています）。</dd>
+  <dt>【演習】☆☆</dt>
+  <dd>Metasequoiaをつかって、自分で好きな.xファイルをテクスチャとともに作成し、読み込めるようにしてみましょう。余裕があれば「＋/－」ボタンでモデルデータを切り替えたり、十字ボタンでカメラのズームをしたりといった「3Dモデルビューアー」としての機能を加えてみましょう。</dd>
+</dl>
+
+</subsection>
+
+</body>
+</doc>

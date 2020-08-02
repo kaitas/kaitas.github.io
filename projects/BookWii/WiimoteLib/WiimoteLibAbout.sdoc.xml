@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiimoteLibの概要</title>
+<author>白井暁彦</author>
+<date>2009年3月31日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+WiimoteLibはBrian Peek(http://www.brianpeek.com/)による.NET環境で利用できるAPIオープンソースプロジェクトです。Microsoftが支援するオープンソースプロジェクト支援サイト「CodePlex」(http://www.codeplex.com/)で公開されています。WiimoteLibを用いることで、.NET環境で簡単にWiiRemoteを利用するアプリケーションを開発することができます。Version1.6.0.0からはWiiRemoteだけでなくWii Fitバランスボードにも対応しています。
+
+WiimoteLibは.NETで開発されたAPIであり、言語に依存しませんが、C#とVisual Basicがメインのターゲットのようです。C++でのサンプルは配布されておらず、またネット上の情報もあまり存在しないのですが、本章を読み進めていくことで、多言語間で問題なく利用できることがわかるでしょう。
+
+C++言語にはさまざまな言語仕様が存在しますが、本章では特に.NETプログラミングとして扱いやすい「C++/CLI」を扱います。CLIとは「Common Language Infrastructure(共通言語基盤)」の略で、C++に慣れ親しんだプログラマーにも、違和感の少ない形で先進的な.NETプログラミング環境を提供しています。本章ではその特徴を利用し、同じ基本的なプログラミングをC++とC#という2つの言語で解説するというわけです。
+
+
+<!--
+本章ではC#.NETでWiimoteLibを用いて簡単にWiiRemoteを利用する方法について解説します。
+開発環境は「Visual C#2008 Express」を利用します。こちらもC++と同様Express版は無料で入手することができます。
+* http://www.microsoft.com/japan/msdn/vstudio/express/default.aspx
+-->
+
+</body>
+</doc>

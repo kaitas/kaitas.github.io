@@ -12,6 +12,12 @@ date: '2020-06-01 23:59:00'
 #tags:
 #  - twitter-daily
 ---
+
+## SPACEX - ISS Docking
+
+宇宙開発民営化時代の一ページである。興奮気味に見守る。
+[シミュレーター](https://iss-sim.spacex.com/)もかっこいい。
+
 気圧を調整して均一にしている https://t.co/ZMoXkLQWCB 
 がっちりくっついてますね https://t.co/wvlsVQpRvt 
 RT @Astro_Naoko: ISSのハッチ・オープンまで、まだ1時間程度時間があるので、その間にGoogle Mapで、ISSの中を探検されてはいかがでしょうか。→https://t.co/zBUTX1hHRJ オープンが待たれるNode2のハッチですが、そこにはスペ…
@@ -31,11 +37,24 @@ I saw Bob Behnken have sweat from his eyes.Doug Hurley always smiles with teeth 
 一番喜んでるのNASAの人だな… 
 終わった…達成感ある(視聴しながら作業してた)
 
-RT @ingressbu: 相模原市立博物館のウェブサーバ引っ越しにともない、#相模Ingress部 のサイトをGithub Pagesに引っ越しました。いままでご支援いただいた相模原市立博物館と相模原市共同事業の関係者のみなさま、そして #Ingress で繋がったみなさ…
+<HR>
 
-ステートレス＆サーバレスWebに向かう
+
+# ステートレス＆サーバレスWebに向かう
 
 2005年ごろのBlogから1日1ファイルでも5000ファイルぐらいあって、もうそろそろWordpressのMySQLが扱えなくなってきた…何かいい方法ないだろうか？と研究し続けている
+
+> @ingressbu: 相模原市立博物館のウェブサーバ引っ越しにともない、#相模Ingress部 のサイトをGithub Pagesに引っ越しました。いままでご支援いただいた相模原市立博物館と相模原市共同事業の関係者のみなさま、そして #Ingress で繋がったみなさまありがとうございました。
+
+
+
+
+# 家族が疲れすぎてヤバい
+
+- 今朝まで山のような課題をこなしていた
+- 2人の子供が同時に登校日
+- 公共交通機関を避けて車で送り迎え＋仕方なく電車
+- 体力落ちすぎ・雨＋低気圧風呂にも入らず寝込んでいるんだけど明日から大丈夫かな…？ 
 
 大地はこうやって警告しているのにそれでも6/1に一斉移動する日本おはようございます
 
@@ -44,19 +63,20 @@ RT @ingressbu: 相模原市立博物館のウェブサーバ引っ越しにと�
 今日は国際こどもの日なんだウチだけでも子供優先で動こう https://t.co/zHKTCOOrx1 
 きょう鼻毛をどれぐらいに切っていくかで自粛と再開のお気持ちがわかれるところです鼻毛には自粛していただきたいしかし防衛前線としては自粛していただきたくない https://t.co/2uWPt2pz38
 
-報道されない写真 https://t.co/qyZ8f5V0hD
 
 しかたなく息子ら2人とも学事にて出撃中電車は着席100%に対して+20%ぐらい油断大敵というところだなそのあとオフィスなんだけどどんなになってるんだろう物理は重たい
 
 南北線、目黒から白金高輪ぐらいまでがヤバめだったけど永田町超えたら着席率40％ぐらい。路線と時間帯を攻略せねばなあ…
 
-一方で西海岸でいちばん優雅なエリアで「ああ、神様！ クソ地獄！ 私たちのアパートは破壊され、下のワインバーが略奪され、通りが燃えています！ 煙手榴弾がやってくる！」を見てしまうと深刻にならざるをえない…。keep cal… https://t.co/xL0MkmrJng 
+→ その後、南北線から三田線に通学ルートを変更することになった。本数多いほうが正義。
+
 
 # 人間を信じるのは人間だ
 
-https://t.co/Poo5HI1k8Q 
+[報道されない写真](https://t.co/qyZ8f5V0hD)
 
 # time was rewinded.
+
 #roppongihills#tokyo2021🇯🇵 https://t.co/rM95WDa0Wq https://t.co/yrJSMh1uCP
 
 ![Instagram](https://pbs.twimg.com/media/EZZdiNgXgAE_PDu?format=jpg&name=small)
@@ -66,20 +86,9 @@ https://t.co/Poo5HI1k8Q
 
 ![Instagram](https://pbs.twimg.com/media/EZZdihvWkAMCzmn?format=jpg&name=small)
 
-https://t.co/ufvatEXr23
+なお六本木ヒルズのサイネージには ``#physicaldistancing`` と書かれている。
 
-https://t.co/hgU04MQCQu
-
-
-#physicaldistancing#roppongihills https://t.co/RbV1t9gIHf https://t.co/7ajwAup8ny
-
-The Lively Center of the Lagoon Nebula via NASA https://t.co/c5hj3cJn65 https://t.co/AnOfJhtwjq 
-
-家族が疲れすぎてヤバい
-・今朝まで山のような課題をこなしていた
-・2人の子供が同時に登校日
-・公共交通機関を避けて車で送り迎え＋仕方なく電車
-・体力落ちすぎ・雨＋低気圧風呂にも入らず寝込んでいるんだけど明日から大丈夫かな…？ 
+たしかにソーシャルディスタンスって、商業施設で書くものではないような。
 
 <hr>
 

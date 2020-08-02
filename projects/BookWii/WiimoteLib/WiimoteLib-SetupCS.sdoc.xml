@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiimoteLibをプロジェクトに組み込む【C#編】</title>
+<author>白井暁彦＋小坂崇之</author>
+<date>2009年5月16日版</date>
+<!--
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+-->
+</head>
+<body>
+この節では、Visual C# 2008 Express(以後「C#」と標記)を使って、WiimoteLibでのプログラミングを体験していきます。
+
+<subsubsection title="空のプロジェクトの作成">
+Visual C# 2008 Express Editionを起動します。
+ <figure id="02-01" src="WiimoteLib/png/02-01.png" title="Visual C#を起動したところ"/>
+[ファイル(F)]→[新しいプロジェクト(P)]→[Windowsフォームアプリケーション]を選択します。
+ <figure id="02-02" src="WiimoteLib/png/02-02.png" title="新しいプロジェクトを作成">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+ </figure>
+
+「プロジェクト名」に「WiimoteLib01」という名前を付けて[OK]ボタンをクリックします。
+ <figure id="02-03" src="WiimoteLib/png/02-03.png" title="「プロジェクト名」に「WiimoteLib01」という名前を付けて[OK]">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+ </figure>
+数秒待つと新しいプロジェクトが作成されます。興味があればここで[F5]キーを押して、実行してみると良いでしょう。
+ <figure id="02-04" src="WiimoteLib/png/02-04.png" title="新しいプロジェクトが作成されたところ">
+  <attribute locale="latex2e" name="style">width:8cm</attribute>
+ </figure>
+</subsubsection>
+
+<subsubsection title="WiimoteLibの追加(C#編)">
+先ほど作成した空のプロジェクトにWiimoteLibを組み込んでいきましょう。
+右側に表示されている、ソリューションエクスプローラの[参照設定]を右クリック、[参照の追加(R)...]を選択します。
+<figure id="02-05" src="WiimoteLib/png/02-05.png" title="[参照設定]を右クリック">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+ </figure>
+
+参照の追加から[参照]を選択し、WiimoteLib.dllを選択します。
+マイドキュメントの「Visual Studio 2008\Projects」においた「WiimoteLib_1.7\WiimoteLib.dll」を選択し[OK]ボタンをクリックします。
+  <figure id="02-06" src="WiimoteLib/png/02-06.png" title="WiimoteLib.dllのファイルを指定する">
+ <attribute locale="latex2e" name="style">width:10cm</attribute>
+ </figure>
+
+これでソリューションエクスプローラの参照設定にWiimoteLibが追加されたはずです。
+<figure id="02-07" src="WiimoteLib/png/02-07.png" title="ソリューションエクスプローラーに現れたWiimoteLib">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+ </figure>
+
+それでは最小限のプログラムの実行結果を表示するためのフォームを作成しましょう。
+ソリューションエクスプローラの「Form.cs」を右クリックして「コードの表示」で表示されるC#のコードに、最も重要な最初の1行「using WiimoteLib;」を追加します。
+<program>
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Data;
+  using System.Drawing;
+  using System.Linq;
+  using System.Text;
+  using System.Windows.Forms;
+
+| using WiimoteLib;    //ここを1行追加します
+
+  namespace WiimoteLib01  {  //←指定したプロジェクト名
+    public partial class Form1 : Form {
+
+    public Form1() {
+      InitializeComponent();
+    }
+
+  }
+}
+</program>
+
+以上がC#環境でWiimoteLibを用いるための最初の一歩の操作です。
+まだWiiRemoteらしいことは何もできませんが、これでWiimoteLibのクラスが利用できるようになりました。次のステップで、実際に動作を確認してみましょう。
+</subsubsection>
+
+<subsubsection title="プログラムの実行">
+[F5]キー、または、[デバック(D)]→[デバック開始(F5)]を押してプログラムを実行させてみましょう。
+<figure id="02-08" src="WiimoteLib/png/02-08.png" title="[デバッグ(D)]→[デバッグ開始(S)]">
+ <attribute locale="latex2e" name="style">width:5cm</attribute>
+ </figure>
+
+
+プログラムにエラーがなければ下図のように表示されるはずです。
+<figure id="02-09" src="WiimoteLib/png/02-09.png" title="何もないフォームが表示された">
+ <attribute locale="latex2e" name="style">width:4cm</attribute>
+ </figure>
+
+このプログラムは単にフォームを生成するプログラムです。
+「×」ボタンを押してフォームを閉じてプログラムを終了させましょう。
+以後、このプログラムをベースにWiiRemoteを制御するプログラムを追加していきます。
+</subsubsection>
+
+</body>
+</doc>

@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>プログラミング環境のセットアップ</title>
+<author>白井暁彦</author>
+<date>2008年9月30日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+ここでは、これ以降の開発の基本となる、Windows環境でWiiRemoteを使ったプログラミングを行うための環境構築について解説します。
+
+本書ではWiiRemoteのためのプログラミングに必要なコーディング言語として、もっとも一般的なC/C++を解説します。現在、世界中のボランティアにより、Javaをはじめ様々な言語に移植されてきていますが、環境の違いなどによる混乱を防ぎ、シンプルに理解できるよう、C/C++言語を採用しました。WiiRemoteのようなデバイスとの通信プログラムにおいては、実際にはオブジェクト指向プログラミングに特化した実装は少ないため「(C++ではなく)C言語しか知らない」という読者にも理解は難しくないはずです。
+
+以後の解説は「プログラミングの経験はあるが普段使わないので忘れてしまった」、「(大学の研究や自主制作などで)WiiRemoteを使いたいがプログラミングは苦手...」、「普段はゲームプログラミングなどでグラフィックスプログラミングなどをしているが、デバイス制御などはほとんど経験がない」といった幅広い読者を考慮して解説します（そのため、若干冗長な解説になる場合もあることをお許しください）。
+
+セットアップの流れとしては以下のようになります。
+
+<dl>
+  <dt>Visual C++のセットアップ</dt>
+  <dd>コンパイラ、IDE(統合開発環境)であるMicrosoftのVisual C++ 2008(以下、VC2008)をインストールします（無料で利用できます）。Visual Studioをお使いの場合や、VC2003以降をお使いの方は、特に新規にインストールし直す必要はありません。</dd>
+  <dt>WindowsDDKのセットアップ</dt>
+  <dd>Windows Driver Development Kit(以下、DDK)のセットアップを行います（無料で利用できます）。こちらのDDKには、HIDデバイスとPCの通信を円滑に行うためのライブラリが含まれています。なお、DDKは最新のマイクロソフト用語ではWindows Driver Kit(WDK)と呼ばれるようになりました（WDKにはDDKに開発したドライバのテストツールなどが付属しています）。</dd>
+  <dt>APIのセットアップ</dt>
+  <dd>上記(1),(2)だけでもWiiRemoteを使ったプログラミングはできるのですが、WiiRemoteの機能を使いこなすためには世界中の開発者が開発したAPI(ドライバ、SDKなど呼び方は様々ですが本書ではApplication Programming Interface;APIに統一)を利用するのが近道です。オープンソースで開発され、公開されているものが多く、たいていは無料で利用できます（ライセンスによる）。本書では主に「WiiYourself!v1.0」を利用して解説します。</dd>
+  <dt>サンプルプログラムのリコンパイル</dt>
+  <dd>最後に簡単なプログラムのリコンパイルと動作確認を行います。</dd>
+</dl>
+
+<section title="Visual C++ 2008 Express Editionのセットアップ">
+ここではMicrosoft Visual C++ 2008 Express Editionのセットアップ、サンプル開発について解説します。既にVisual C++や.NETといった開発環境をお使いの方は、読み飛ばしていただいても問題ありません。
+
+ <subsection title="VC2008のインストール">
+ 
+まずマイクロソフトのホームページからMicrosoft Visual C++ 2008 Express Editionをダウンロードします。
+
+<fyi title="Visual C++ 2008 Express Edition">
+http://www.microsoft.com/japan/msdn/vstudio/express/
+</fyi>
+
+<figure id="fig:vstudio-hps" src="png/vstudio-hps.png" title="Microsoft Visual Studio Express製品のホームページ">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+
+「Web インストール (ダウンロード)」をクリックすると、Web インストール版セットアップファイル「vcsetup.exe」をダウンロードすることができます。このホームページにはVisual Studio製品を使う上での役に立つ情報がたくさんあります。とりあえずVC2008を使ってみたい方は「はじめての方のためのインストール方法」を読んでみるとすると良いでしょう。
+
+
+必要なハードディスク容量の確認、起動中のアプリケーションの終了などを行ってからインストール ウィザード「vcsetup.exe」を起動します。
+
+<figure id="fig:VC2008Inst1" src="png/VC2008Inst1.png" style="width=:5cm" title="VC2008インストール ウィザード(step1)"/>
+
+
+「セットアップの品質向上プログラム」はチェックしてもしなくても、どちらでもかまいません。「次へ」をクリックして進みます。
+
+
+<figure id="fig:VC2008Inst2" src="png/VC2008Inst2.png" style="width=:5cm" title="VC2008インストール ウィザード(step2)"/>
+
+ライセンス条項をよく読んで「同意する」を選んでください。また「Visual StudioでオンラインのRSSコンテンツを受信して表示できるようにする」も特に問題がなければチェックしましょう。イベントやサービスパックなどの更新情報がVC2008起動直後に表示されるスタートページに自動的に表示されるようになります（ここでのRSS受信の設定は後でもオプション→環境→スタートアップで変更できます）。「次へ」をクリックして進みます。
+
+<figure id="fig:VC2008Inst3" src="png/VC2008Inst3.png" style="width=:5cm" title="VC2008インストール ウィザード(step3)"/>
+「インストール オプション」を選択します。ここで表示されている3つのオプションは、どれもインストールしなくても問題ありません。「MSDN Express ライブラリ」はF1キーで呼び出せるドキュメントで、オンライン版の方が充実しているのですが、筆者は電車の中でコーディングをすることが多いのでインストールしています（オンライン版と統合して利用できます）。「SQL Server 2005」、「Silverlight」は使う予定がなければインストールしなくて良いでしょう。「次へ」をクリックして進みます。
+
+
+<figure id="fig:VC2008Inst4" src="png/VC2008Inst4.png" style="width=:5cm" title="VC2008インストール ウィザード(step4)"/>
+
+「コピー先フォルダ」とダウンロードパッケージのリストです。「インストールするフォルダ」は本書ではデフォルトのままとして解説します。ダウンロードリストの中に「Windows SDK」が入っているのが助かります(以前のExpress Editionでは別途インストールする必要がありました)。「インストール」をクリックするとダウンロードとインストールが実行されます。
+
+
+<figure id="fig:VC2008Inst5" src="png/VC2008Inst5.png" style="width=:5cm" title="VC2008インストール ウィザード(step5)"/>
+
+以上はWindowsXPシリーズにおけるVC2008セットアップの流れです（Windows Vistaの場合は「管理者権限で実行」をする必要がある点などいくつか細かい点が異なりますがほぼ同じ流れです）。興味がある方はVC2008のウィザードやオンラインチュートリアルなどを使って簡単なプログラミングを試してみると良いでしょう。
+
+ </subsection>
+</section>
+
+
+<section title="WindowsDDKのセットアップ">
+VC2008のセットアップが終わったら、次はDDK(WDK)のセットアップを行います。DDKはその名が示すとおり、ドライバ開発のためのキットであり、WindowsのOS内部とユーザのアプリケーションプログラムの中間に位置するドライバプログラムを開発しやすくするためのヘッダやライブラリが含まれています。WiiRemoteを使ったプログラミングでは主にBluetooth経由の通信のためにこのヘッダやライブラリを必要とします(すべてのファイルが必要になるわけではありません、詳細は後述)。
+
+まずこちらのマイクロソフトのDDKのホームページを訪問し、「Windows Server 2003 SP1 DDK」のISOファイルを入手してください。
+
+<fyi title="Windows Server 2003 SP1 DDK">
+http://www.microsoft.com/japan/whdc/DevTools/ddk/default.mspx
+</fyi>
+「Windows Server 2003 SP1 DDK」とありますが、WindowsXP等でも利用できます。「Windows XP SP1 DDK」以前のDDK(NT,98,2000など)は既にサポートが終了していますので持っていても使用しない方が良いでしょう。現状の主力OSである、Windows Vista、Windows Server 2003、Windows XP、そしてWindows 2000上で動作するドライバをビルドするには、このWindows Server 2003 SP1 DDKに含まれる「Windows 2000向けビルド環境」を使用する必要があります（このWDK内のWindows 2000用ビルド環境には、更新されたヘッダーとライブラリが含まれています）。
+
+まず、ダウンロードしたISOファイルを使ってCD-ROMを作成します。ISOファイルをドライブとしてマウントできる仮想CDのようなソフトウェアがあればそちらでもかまいません。
+
+作成したCD-ROMを挿入し「setup.exe」を実行します。
+
+<figure id="fig:DDK1" src="png/DDK1.png" style="width=:5cm" title="Windows Driver Development Kitのインストール"/>
+
+エンドユーザライセンス承諾書(EULA)を確認します。
+
+<figure id="fig:DDK2" src="png/DDK2.png" style="width=:5cm" title="EULAの確認"/>
+
+インストール先は本書ではデフォルトの「C:\WINDDK\3790.1830」とします。
+
+<figure id="fig:DDK3" src="png/DDK3.png" style="width=:5cm" title="DDKインストール先の指定"/>
+
+ここでインストールするファイルを選択します。デフォルトのまま、もしくはすべてを選択しても良いのですが、ヘッダファイルのような小さなテキストファイルが700MB以上ありますのでインストールに軽く1時間ぐらいかかってしまいます。
+
+<figure id="fig:DDK32" src="png/DDK32.png" style="width=:5cm" title="DDKインストールするファイルの選択"/>
+
+大量のファイルをインストールすることに特に抵抗がない方はすべてにチェックを入れても良いでしょう。余計なファイルは必要ない、という方は最低限「Build Environment」の該当するプラットフォームにチェックが入っていればよいでしょう(Windows XP Headers, X86 Libraries)。具体的には「C:\WINDDK\3790.1830\inc\wxp」にある「hidpi.h, hidsdi.h, hidusage.h, setupapi.h」というヘッダファイルと、「C:\WINDDK\3790.1830\lib\wxp\i386\」にある「hid.lib, setupapi.lib」というライブラリファイルが必要です。その他のファイル、ツール類はインストールして試してみても良いですが、本書では扱いません。
+
+<figure id="fig:DDK4" src="png/DDK4.png" style="width=:5cm" title="DDKインストール、1時間強必要。"/>
+
+DDKのインストールが終わったら、さっそく次の章でリビルドを試してみます。
+
+<subsection src="chap3/C-VirtualCD.sdoc.xml"/>
+<subsection src="chap3/C-VersionSelector.sdoc.xml"/>
+
+
+</section>
+
+
+
+</body>
+</doc>

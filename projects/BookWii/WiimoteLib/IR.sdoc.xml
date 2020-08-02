@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>赤外線センサーを使う</title>
+<author>白井暁彦+小坂崇之</author>
+<date>2009年5月16日版</date>
+<hp>http://www.kosaka-lab.com/tips/2009/02/wii-ir.html</hp>
+
+</head>
+<body>
+
+さて、加速度センサーをひと通り使いこなしたあとは、赤外線センサーに挑戦してみましょう。
+赤外線は人間の目で見ることができません。しかし最初に作成するプログラム「赤外線探知機」は、赤外線がWiiRemoteの視界にはいると、バイブレーターを鳴らすことができます。次に最大4点の赤外線光源をカウントし、その結果をLEDに表示するプログラムを作ります。さらにそれを応用し、グラフィックスに組み込む基礎を学び、最後に赤外線センサーを使ったマウス操作プログラムをステップを追って開発していきます。
+目に見えない赤外線が、とても面白い情報を伝えるメディアになることを体感していきましょう！
+
+<subsection title="赤外線探知機">
+
+早速プログラミングを始めましょう。今回も前回に作成した加速度センサーのプログラムを改編してもよいのですが、新規で作るほうが勉強になってよいでしょう。
+ソリューションを新しく作成する必要はなく、ソリューションを右クリックして「追加」→「新しいプロジェクト」で新しいプロジェクト名(ここでは「IR1」)を与えて、プロジェクトができあがったら、プロジェクトを右クリックして「スタートアッププロジェクトに設定」し、参照設定にWiimoteLibを追加します。他のプロジェクトのコードやフォームを間違えて編集しないよう、一旦開いているソースコードのウィンドウをすべて閉じます。これで準備はできあがりです。動作確認のために[F5]キーを押して実行してみてもよいでしょう。
+
+このプロジェクトではまず、WiiRemoteへの「接続」「切断」ボタンを作成します。フォームにボタン2つ張り付けてください。
+
+<figure id="ir1-01.png" src="png/ir1-01.png" title="フォームにボタンを2つ配置する">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+
+貼り付けたら、「button1」のプロパティのTextを「接続」に、「button2」のプロパティのTextを「切断」に設定します。 
+
+<figure id="ir1-04.png" src="png/ir1-04.png" title="「button1」のtextプロパティを「接続」に">
+ <attribute locale="latex2e" name="style">width:5cm</attribute>
+</figure>
+<figure id="ir1-05.png" src="png/ir1-05.png" title="「button2」のtextプロパティを「切断」に">
+ <attribute locale="latex2e" name="style">width:5cm</attribute>
+</figure>
+
+<figure id="ir1-02.png" src="png/ir1-02.png" title="ボタンの完成">
+<attribute locale="latex2e" name="style">width:5cm</attribute>
+</figure>
+
+フォーム「Form1」を右クリックして「コードの表示」をして宣言と、接続時の処理、赤外線が見えたときのバイブレーターの処理を書き足しましょう。
+
+<program title="赤外線探知機(Form1.cs)[C#]"><![CDATA[
+//不要なusing宣言は削除してかまいません
+  using System;
+  using System.Windows.Forms;
+| using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace IR1
+{
+  public partial class Form1 : Form
+  {
+|   Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1()
+    {
+      InitializeComponent();
+|     //他スレッドからのコントロール呼び出し許可
+|     Control.CheckForIllegalCrossThreadCalls = false;
+    }
+|   //接続ボタンが押されたら
+    private void button1_Click(object sender, EventArgs e) {
+|     wm.Connect();                            //Wiimoteの接続
+|     wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|     wm.SetReportType(InputReport.IRExtensionAccel, true);//レポートタイプの設定
+    }
+|   //切断ボタンが押されたら
+    private void button2_Click(object sender, EventArgs e) {
+|     wm.WiimoteChanged -= wm_WiimoteChanged; //イベント関数の登録解除
+|     wm.Disconnect();  //Wiimote切断
+|     wm.Dispose();     //オブジェクトの破棄
+    }
+|   //Wiiリモコンの値が変化する度に呼ばれる
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)  {
+|     WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|     //もし赤外線を１つ発見したら
+|     if (ws.IRState.IRSensors[0].Found)  {
+|       wm.SetRumble(true);     //バイブレータON
+|     } else {
+|       wm.SetRumble(false);    //バイブレータOFF
+|     }
+|   }
+  }
+}
+]]></program>
+<program title="赤外線探知機(Form1.h)[C++]"><![CDATA[
+#pragma once
+namespace IR1 {
+  using namespace System;
+  using namespace System::Windows::Forms;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+  public:
+    Form1(void)
+    {
+|     wm = gcnew Wiimote();  //Wiimoteクラスを作成
+      InitializeComponent();
+|     //他スレッドからのコントロール呼び出し許可
+|     Control::CheckForIllegalCrossThreadCalls = false; 
+    }
+  protected:
+    ~Form1()
+＜省略＞
+#pragma endregion
+| //接続ボタンが押されたら
+  private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+|   wm->Connect(); //WiiRemoteと接続
+|   wm->WiimoteChanged +=
+|     gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|       this, &Form1::wm_WiimoteChanged);
+|   wm->SetReportType(InputReport::IRExtensionAccel, true); //レポートタイプの設定
+  }
+|   //切断ボタンが押されたら
+  private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+|   wm->WiimoteChanged -=
+|     gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|        this, &Form1::wm_WiimoteChanged); //イベント関数の登録解除
+|     wm->Disconnect();  //Wiimote切断
+|     wm->Dispose();     //オブジェクトの破棄
+  }
+
+| //WiiRemoteの値が変化する度に呼ばれる
+| public:
+|   void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){		
+|     WiimoteState^ ws = args->WiimoteState;         //WiimoteStateの値を取得
+|     //もし赤外線を１つ発見したら
+|     if (ws->IRState.IRSensors[0].Found) {
+|       wm->SetRumble(true);     //バイブレータON
+|     } else  {
+|       wm->SetRumble(false);    //バイブレータOFF
+|     }
+|   }
+  };
+}
+]]></program>
+
+<subsubsection title="実験：赤外線を見てみよう">
+さて、実行してみます。まず周囲に赤外線光源を用意してください。Wii本体付属のセンサーバーがあれば手っ取り早いのですが、ない場合は周りにある照明、太陽光などにあたりをつけてみましょう。BluetoothスタックからWiiRemoteを接続して、Visual Studioの[F5]キーを押して実行してください。
+フォームが表示されたら、[接続]ボタンを押してください。WiiRemoteをセンサーバーなど赤外線光源に向けてください。センサーバーがない場合は、太陽、ハロゲンランプなどの熱源照明、ライターの火、テレビのリモコン、携帯電話の赤外線通信などに向けてみてください。 
+上手く検出できると、バイブレーターが鳴ります。バイブレーターが鳴っていない状態で[切断]ボタンを押してから終了しましょう。
+
+ライターやロウソクなどを用いて赤外線光源にする場合は、火事や火傷などに十分気をつけて実験を行ってください。また、テレビリモコンを用いる場合は、ボタンが押されたときにしか赤外線を送信しませんので、何度か連打して確認をおこなうとよいでしょう。
+
+いろいろな方向に向けてみましよう。普段は見えない赤外線ですが、身の回りにある様々な物に利用されていることに気がつくことでしょう。
+
+</subsubsection>
+
+<fyi title="ボタンを押しても何も起きない時は？">
+上記のコードをそのままコピーしていませんか？
+ボタンを押したときの処理は、Form1の上にあるボタンをダブルクリックして、Windowsフォームデザイナが自動で生成したコードを使って書いていくのが確実です。
+もし単に、上記のコードをコピーすると、接続ボタンを押しても、適切な処理にプログラムが流れていきません。
+この仕組みに『どうして!?』と思った人は、プロジェクトの中にある「Form1.Designer.cs」を覗いてみましょう。
+ここに「#region Windows フォーム デザイナで生成されたコード」というデフォルトで非表示になっているパートがあります。
+<program title="Form1.Designer.csで自動生成されているコード[C#]">
+#region Windows フォーム デザイナで生成されたコード
+…
+this.button1.Click += new System.EventHandler(this.button1_Click_1);
+…
+this.button2.Click += new System.EventHandler(this.button2_Click);
+
+</program>
+ここには、GUIで作成したフォームについての位置や大きさなどのプロパティが記載されています。
+大事なのは、ボタンを押したときのイベントの発生です。
+<program>
+this.button1.Click+=new System.EventHandler(this.button1_Click_1);
+</program>
+まさにWiiRemoteのイベントの追加と同じように、クリック時のイベントを追加しています。ただし、上の例では「button1_Click_1」という関数になっています。「_1」の部分は、他の既存の関数と名前が衝突しないよう、自動で生成されます。つまり勝手に「button1_Click」という関数を書いていたとしても、ボタンを押したときのイベントとしてコールされることはありません。
+
+『なんだ、わざわざGUIでダブルクリックしないといけないのか！』と思われるかもしれませんが、管理が面倒なイベント渡しなども自動で生成・管理してくれる、.NETスタイルの開発を「裏側まで理解して」使いこなす、というのがカッコイイのではないでしょうか。
+</fyi>
+
+<subsubsection title="解説:レポートの設定／赤外線4点検出">
+このプログラムの仕組みは単純です。コールバック関数を設定して、WiiRemoteの赤外線センサーがひとつでも見つかったら、バイブレーターをONにします。
+
+<program title="レポートタイプの設定">
+[C#]  wm.SetReportType ( InputReport.IRExtensionAccel, true); 
+[C++] wm->SetReportType(InputReport::IRExtensionAccel, true);
+</program>
+
+レポートタイプを「IRExtensionAccel」(赤外線＋拡張＋加速度)取得モードに設定します。
+このコールはかならずwm.Connect(); の後に記述してください。wm.Connect();より前に記述すると赤外線センサーが正しく動作しません。 
+
+<program title="赤外線の検出">
+[C#]    ws.IRState.IRSensors[0].Found
+[C++]  ws->IRState.IRSensors[0].Found
+</program>
+
+このプロパティはTrue/Falseを返しますので、if文を使って赤外線を検出することができます。
+またWiimoteLibは、同時に4点まで赤外線光源を検出することができます。
+個々の光源を特定することはできませんが「IRSensors[3].Found」これがTrueなら4つの赤外線光源が見えている、ということです。
+</subsubsection>
+</subsection>
+   <native format="latex">\clearpage</native>
+
+<subsection title="赤外線を数える">
+<!--http://www.kosaka-lab.com/tips/2009/02/wii-ir2.html-->
+続いて、作成した基本的なプログラムを応用して、赤外線の個数を数えるプログラムに拡張します。WiimoteLibには同時に4点までの赤外線を計測することができます。ここまでのプログラムでは1点でも赤外線光源がセンサーの視界に入ると、バイブレーターが振動するようになっていましたが、青色LED(プレイヤーインジゲーター)をつかって、何点検出しているかを表示するプログラムを追加します。
+
+<program title="赤外線探知LED表示(Form1.cs, 抜粋)[C#]"><![CDATA[
+void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)
+{
+  WiimoteState ws = args.WiimoteState;  //WiimoteStateの値を取得
+  //もし赤外線を１つ発見したら
+  if (ws.IRState.IRSensors[0].Found)  {
+     wm.SetRumble(true);     //バイブレータON
+  }  else  {
+     wm.SetRumble(false);    //バイブレータOFF
+  }
+| //検出された赤外線個数をWiiリモコンのLEDに表示する
+| wm.SetLEDs(ws.IRState.IRSensors[0].Found, ws.IRState.IRSensors[1].Found,
+|            ws.IRState.IRSensors[2].Found, ws.IRState.IRSensors[3].Found);
+}
+]]></program>
+
+<program title="赤外線探知LED表示(Form1.h, 抜粋)[C++]"><![CDATA[
+public:
+ void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){		
+ WiimoteState^ ws = args->WiimoteState;  //WiimoteStateの値を取得
+
+  //もし赤外線を１つ発見したら
+  if (ws->IRState.IRSensors[0].Found) {
+    wm->SetRumble(true);     //バイブレータON
+  } else {
+    wm->SetRumble(false);    //バイブレータOFF
+  }
+| //検出された赤外線個数をWiiリモコンのLEDに表示する
+|   wm->SetLEDs(ws->IRState.IRSensors[0].Found, ws->IRState.IRSensors[1].Found,
+|               ws->IRState.IRSensors[2].Found, ws->IRState.IRSensors[3].Found );
+}
+]]></program>
+
+ここでは先ほどLEDの点灯制御で使った「SetLEDｓ()」関数のうち、4引数のものを使っています。WiiRemoteの赤外線センサーに複数の赤外線が発見されると、バイブレーターの振動と共にLEDインジゲーターを使って赤外線検出個数を表示します。
+
+</subsection>
+
+<subsection title="座標を描画">
+<!--http://www.kosaka-lab.com/tips/2009/02/wii-ir3.html-->
+さて、赤外線光源の有無や、そのカウントができるようになったので、次は赤外線センサーによる光源座標の取得を行い、フォーム内にグラフィックス機能を使って描画します。先ほどのプロジェクトをそのまま改良して開発することにしましょう。
+
+
+<figure id="PictureBox200.png" src="png/PictureBox200.png" title="PictureBoxのSizeプロパティ">
+<attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+まず、フォームのデザインを変更します。はじめて使う新しいコントロールを配置します。「ツールボックス」の「コモンコントロール」から「PictureBox」をForm1に張り付けます。プロパティの「Size」を「200, 200」にします。他のボタンやフォームのバランスをとって配置します。
+
+
+<figure id="PictureBoxForm.png" src="png/PictureBoxForm.png" title="Form1に配置したPictureBoxとボタン">
+<attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+プログラムのほうはまず、冒頭のusing宣言で「System.Drawing」が宣言されていることを確認してください。初期化やボタンイベントはそのままで、WiiRemoteの状態が変化したときに呼ばれる関数「wm_WiimoteChanged()」とフォーム描画関数「DrawForms(ws)」に、描画のためのコードを加筆します。
+
+<program title="赤外線ポインタ描画(Form1.cs)[C#]"><![CDATA[
+  using System;
+  using System.Windows.Forms;
+| using System.Drawing; //描画のために必要
+| using WiimoteLib;     //WimoteLibの使用を宣言
+
+  namespace IR4 {       //作成したプロジェクト名称
+    public partial class Form1 Form {
+|     Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1) {
+     InitializeComponent();
+|    //他スレッドからのコントロール呼び出し許可
+|    Control.CheckForIllegalCrossThreadCalls = false;
+    }
+
+|   //WiiRemoteの状態が変化したときに呼ばれる関数
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+|     WiimoteState ws = args.WiimoteState;  //WiimoteStateの値を取得 
+|     DrawForms(ws);                        //フォーム描写関数へ
+|   }
+＜略：ボタンイベント関係＞
+|   //フォーム描写関数
+|   public void DrawForms(WiimoteState ws) {
+|     Graphics g =this.pictureBox1.CreateGraphics(); //グラフィックス取得
+|     g.Clear(Color.Black);                          //画面を黒色にクリア
+|     //もし赤外線を１つ発見したら
+|     if (ws.IRState.IRSensors[0].Found) {
+|       //赤色でマーカを描写
+|       g.FillEllipse(Brushes.Red,
+|       ws.IRState.IRSensors[0].Position.X * 200,
+|       ws.IRState.IRSensors[0].Position.Y * 200, 10, 10);
+|     }
+|     //もし赤外線を２つ発見したら
+|     if (ws.IRState.IRSensors[1].Found) {
+|       //青色でマーカを描写
+|       g.FillEllipse(Brushes.Blue,
+|       ws.IRState.IRSensors[1].Position.X * 200,
+|       ws.IRState.IRSensors[1].Position.Y * 200, 10, 10);
+|     }
+|     //もし赤外線を３つ発見したら
+|     if (ws.IRState.IRSensors[2].Found) {
+|       //黄色でマーカを描写
+|       g.FillEllipse(Brushes.Yellow,
+|       ws.IRState.IRSensors[2].Position.X * 200,
+|       ws.IRState.IRSensors[2].Position.Y * 200, 10, 10);
+|     }
+|     //もし赤外線を４つ発見したら
+|     if (ws.IRState.IRSensors[3].Found) {
+|       //緑色でマーカを描写
+|       g.FillEllipse(Brushes.Green,
+|       ws.IRState.IRSensors[3].Position.X * 200,
+|       ws.IRState.IRSensors[3].Position.Y * 200, 10, 10);
+|     }
+|     g.Dispose();//グラフィックスの解放
+| }
+ }
+}
+]]></program>
+
+<program title="赤外線ポインタ描画(Form1.h)[C++]"><![CDATA[
+ #pragma once
+ namespace IR4 {  //作成したプロジェクト名称
+  using namespace System::Windows::Forms;
+| using namespace System::Drawing;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|   public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+    public:
+     Form1(void) {
+|      wm = gcnew Wiimote();  //Wiimoteクラスを作成
+       InitializeComponent();
+|      //他スレッドからのコントロール呼び出し許可
+|      Control::CheckForIllegalCrossThreadCalls = false; 
+     }
+    protected:
+    /// <summary>
+＜略＞
+#pragma endregion
+|   //接続ボタンが押されたら
+    private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+|     wm->Connect(); //WiiRemoteと接続
+|     wm->WiimoteChanged +=
+|       gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|         this, &Form1::wm_WiimoteChanged);
+|       //レポートタイプの設定
+|       wm->SetReportType(InputReport::IRExtensionAccel, true);
+    }
+|   //切断ボタンが押されたら
+    private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+|     wm->WiimoteChanged -=
+|       gcnew System::EventHandler<WiimoteChangedEventArgs^>(
+|         this, &Form1::wm_WiimoteChanged); //イベント関数の登録解除
+|       wm->Disconnect();  //Wiimote切断
+    }
+|   //WiiRemoteの値が変化する度に呼ばれる
+|   public:
+|     void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ args){		
+|       WiimoteState^ ws = args->WiimoteState;  //WiimoteStateを取得
+|       DrawForms(ws);
+|   }
+|  public: 
+|     void DrawForms(WiimoteState^ ws) {
+|       //グラフィックスを取得
+|       Graphics^ g = this->pictureBox1->CreateGraphics();
+|       g->Clear(Color::Black);//画面を黒色にクリア
+
+|       if (ws->IRState.IRSensors[0].Found) {  //赤外線を1つ発見したら
+|         //赤色でマーカを描写
+|         g->FillEllipse( Brushes::Red ,
+|           (float)ws->IRState.IRSensors[0].Position.X * 200.0f ,
+|           (float)ws->IRState.IRSensors[0].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|       if (ws->IRState.IRSensors[1].Found) {  //赤外線を2つ発見したら
+|         //青色でマーカを描写
+|         g->FillEllipse( Brushes::Blue ,
+|           (float)ws->IRState.IRSensors[1].Position.X * 200.0f ,
+|           (float)ws->IRState.IRSensors[1].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|       if (ws->IRState.IRSensors[2].Found) {  //赤外線を3つ発見したら
+|         //黄色でマーカを描写
+|         g->FillEllipse( Brushes::Yellow ,
+|           (float)ws->IRState.IRSensors[2].Position.X * 200.0f ,
+|           (float)ws->IRState.IRSensors[2].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|       if (ws->IRState.IRSensors[3].Found) {  //赤外線を4つ発見したら
+|         //緑色でマーカを描写
+|         g->FillEllipse( Brushes::Green ,
+|           (float)ws->IRState.IRSensors[3].Position.X * 200.0f ,
+|           (float)ws->IRState.IRSensors[3].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|     }
+  };
+}
+]]></program>
+
+<subsubsection title="実験しよう">
+まず赤外線光源を用意して、BluetoothスタックからWiiRemoteを接続してください。
+Visual Studioから[F5]キーを押してプログラムを実行します。表示されたフォームの[接続]ボタンをクリックして、WiiRemoteをセンサーバーや電球などの赤外線光源に向けてください。
+
+<figure id="IR-pointer4" src="png/IR-pointer4.png" title="赤外線に向けると4色のマーカーが動く">
+ <attribute locale="latex2e" name="style">width:6cm</attribute>
+</figure>
+
+赤外線が検出されると図のようにマーカ点が表示さます。
+マーカの動きが激しすぎる場合は、WiiRemoteとセンサーバーとの距離を2m～3mまで離してください。距離が長いほど安定した動きを行うことができます。
+<!--
+赤外線の光源が1つ発見されると下図のように赤いマーカーが表示されます。
+<figure id="IR-pointer1.png" src="png/IR-pointer1.png" title="1つ目は赤いマーカー">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+
+赤外線の光源が2つ発見されると下図のように赤マーカーに加えて、青いマーカーが表示される。
+<figure id="IR-pointer2.png" src="png/IR-pointer2.png" title="2つ目は青いマーカー">
+ <attribute locale="latex2e" name="style">width:8cm</attribute>
+</figure>
+-->
+なおWii本体付属の標準のセンサーバーには赤外線LEDが左右2グループしかありません（そもそも4点検出できるという機能が存在するところが驚きです！）。複数の赤外線が見つからない場合は、日中（太陽に向けるなど）に窓の外に向けると複数の赤外線を検出できると思います。太陽の光を乱反射している様子などでも複数点を取得できることがありますが、赤外線光源同士が近すぎるとひとつのグループとして誤認識されノイズの原因になりますので、ある程度安定して取得できる条件や距離を調べてみるのもよいでしょう。上の図では、とある店舗の天井に吊られている4個のハロゲンランプの様子です。
+終了する場合は、切断ボタンを押してから終了させてください。
+</subsubsection>
+
+<subsubsection title="解説：赤外線座標の取得">
+WiiRemoteの赤外線カメラの値を取得して、赤外線を発見したら画面に描画しています。
+
+<program title="赤外線座標の取得">
+[C#]   ws.IRState.IRSensors[0].Position.X 
+[C++] ws->IRState.IRSensors[0].Position.X
+</program>
+
+赤外線の座標(x,y)の位置(Position)は、{0.0～1.0}の値域をとります。
+グラフィックスとの組み合わせも意外と簡単だったのではないでしょうか。
+本プログラムでは、その値にpictureBoxの横幅として設定した200x200に合うように、200を掛けて出力していますが、フォームのSizeを変更したりして、お好みの画面デザインにしてみるとよいでしょう。
+
+なお、WiiRemoteの赤外線センサーは非常に高性能です。ここでは4点の検出を行っていますが、実際に赤外線光源座標が送られてくるスピードは非常に速いことに注目です。通常のビデオカメラ等が1秒に15-30回程度の撮影を行っているのに対し、WiiRemoteは200回程度の座標取得処理を行っているようです。さすがゲーム用入力デバイスです、速度が大切です！
+
+</subsubsection>
+</subsection>
+
+
+</body>
+</doc>

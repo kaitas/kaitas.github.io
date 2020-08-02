@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>加速度センサーを使う</title>
+<author>小坂崇之</author>
+<date>2009年3月18日版</date>
+<hp>http://www.kosaka-lab.com/tips/</hp>
+<email>kosaka@neptune.kanazawa-it.ac.jp</email>
+
+</head>
+<body>
+
+ <section title="加速度センサーを使う(1)：値の取得">
+<!--http://www.kosaka-lab.com/tips/2009/02/wii-values.html
+22:48 2009/03/17-->
+
+
+さて次は、WiiRemoteの加速度センサーを使ったプログラミングを実験していきます。2章で解説したとおり、WiiRemoteにはX軸、Y軸、Z軸に対応した3軸の加速度センサーが内蔵されています。
+
+ <figure id="07-01" src="kosaka/png/07-01.png"> <attribute locale="latex2e" name="style">width:4cm</attribute></figure>
+
+ここでは、まず手始めにとして、WiiRemoteの加速度を取得するプログラムを作成します。
+
+<subsection title="C#.NETによるプログラミング">
+1.ラベル・フォームの作成
+    先ほどまでと同様、新しいプロジェクトを作成し、フォームにラベルを3つ貼り付けてください。
+
+2.WiimoteLibの宣言と加速度センサー取得プログラム
+
+Form1.csに以下の部分を追加する。
+<program title="Form1.cs">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;    //WimoteLib
+
+namespace WiimoteLib_Sample {
+   public partial class SampleForm : Form {
+
+      Wiimote wm = new Wiimote();                               //Wiimoteの宣言
+
+      public SampleForm() {
+
+         InitializeComponent();
+
+         wm.WiimoteChanged += wm_WiimoteChanged;                //イベント関数の登録
+         wm.SetReportType(InputReport.IRExtensionAccel, true); //レポートタイプの設定
+         wm.Connect();                                         //Wiimoteの接続
+      }
+
+
+      //Wiiリモコンの値が変化したときに呼ばれる関数
+      void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args){
+         WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+
+         try {
+            if (this.IsHandleCreated) {
+               this.Invoke((MethodInvoker)delegate() {
+                  this.DrawForms(ws);            //フォーム描写関数へ
+               });
+            }
+         } catch { }
+      }
+
+
+      //フォーム描写関数
+      public void DrawForms(WiimoteState ws) {
+          this.label1.Text = "X軸:" + (ws.AccelState.Values.X); //加速度 X
+          this.label2.Text = "Y軸:" + (ws.AccelState.Values.Y); //加速度 Y
+          this.label3.Text = "Z軸:" + (ws.AccelState.Values.Z); //加速度 Z
+      }
+
+    }
+}
+</program>
+</subsection>
+
+<subsection title="実行してみよう">
+1.WiiRemoteを接続してください。
+
+2.F5キーを押して実行してください。
+※もしエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。
+
+3.Wiiリモコンを振りまわしてください。
+※飛んでいくと危険なので必ずストラップをしてください。 
+
+ <figure id="07-02" src="kosaka/png/07-02.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+ <figure id="07-03" src="kosaka/png/07-03.png"> <attribute locale="latex2e" name="style">width:3cm</attribute></figure>
+
+フォームに張り付けた、加速度のX,Y,Zの値が素早く動いていることがわかります。
+</subsection>
+
+<subsection title="解説">
+
+Wiiリモコンの三軸の加速度センサーの値を表示します。
+<program>
+         wm.SetReportType(InputReport.IRExtensionAccel, true); //レポートタイプの設定
+</program>
+
+Wiiリモコンのレポートタイプを設定します。 
+
+<program>
+       ws.AccelState.Values.X
+       ws.AccelState.Values.Y
+       ws.AccelState.Values.Z
+</program>
+
+Wiiリモコンの各軸の値を取得します。
+実際にどれだけの値が出力されるか実測してみると、±5程度の値が計測されます。 
+
+</subsection>
+ </section>
+
+</body>
+</doc>

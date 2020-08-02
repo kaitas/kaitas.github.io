@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='Shift_JIS' ?>
+
+<doc xml:lang='ja'>
+<head>
+<title>WiiRemoteをPCで利用するための仕組み</title>
+<author>白井暁彦</author>
+<date>2008年11月21日版</date>
+<hp>http://akihiko.shirai.as/projects/BookWii/</hp>
+<email>shirai@mail.com</email>
+
+</head>
+<body>
+
+ここでは、WiiRemoteをPCで利用するための仕組み、概念を説明します。「PCで利用する」といっても、C++などを使ってディープに開発したり、既にコンパイルされているツールを使ったり、Flashなどの外部のアプリケーションと連動させたりと、いろいろな方法がありますが、基本的な構成を図\ref{fig:Layer1.png}のような階層構造で表現してみました。
+
+<figure id="fig:Layer1" src="fig/Layer1.png" title="階層構造で表すPCからのWiiRemote利用">
+<!-- <attribute locale="latex2e" name="style">width:8cm</attribute>-->
+</figure>
+
+下の層から「WindowsPC」、「Bluetoothホストアダプタ」、「Bluetoothスタック」、「API」と「Win32」、そして「アプリケーション／ツール」となっています。
+
+<subsection title="WindowsPC">
+ハードウェアやOSといったプラットフォームになる部分です。WindowsPCに限らず、MacやLinuxといったハードウェア・OSでもWiiRemoteが利用できることが報告されていますが、本書は主にWindows XPを中心に解説しています。
+</subsection>
+
+<subsection title="Bluetoothホストアダプタとスタック">
+「Bluetoothホストアダプタ」は各種Bluetooth機器と無線通信するハードウェアです。Bluetooth規格に準拠したマイクロプロセッサとアンテナで構成されています。
+
+もしお使いのPCが標準でBluetoothを装備しており、かつ後に紹介する接続実験に成功するのであれば、新たに準備する必要はありません。PCにBluetoothホストアダプタが装備されていない場合にはPCパーツ、電器店、通販等で購入してみてください。だいたい2,000円代ぐらいからUSBタイプのアダプタが入手可能です(最新・高級品である必要はありません！)。
+
+
+そして、ホストアダプタと併せて、WiiRemoteをPCで利用するための準備で最も重要なのが「Bluetoothスタック」と呼ばれるソフトウェアです。Bluetoothホストアダプタのドライバにあたるソフトウェアで、各種Bluetooth機器との無線接続を管理します。
+もしこのBluetoothスタックがWiiRemoteとの接続をサポートしていない場合、お使いのPCでWiiRemoteを利用することは困難になります。新しく購入することを検討する場合、各種Bluetoothスタックによって接続に癖があるので注意が必要です(次章を参考にしてください)。
+
+</subsection>
+
+<subsection title="HIDクラス">
+Bluetoothスタックは、接続するハードウェアにあわせて様々なクラスを提供します。WiiRemoteとの接続の場合、HID(ヒューマンインタフェースデバイス)というクラスを利用します。実はこのHIDクラスはUSB接続のマウスなどと同じ種類のものです。ここでは「Bluetooth接続であっても、基本的にはHIDクラスの接続」と覚えておくと良いでしょう。ディープにプログラミングをする方は、後に紹介するDDKのHIDクラスのサンプルやドキュメントを読んでみると勉強になります。
+
+</subsection>
+
+<subsection title="API">
+HIDクラスを開いて、WiiRemoteとの通信をする部分です。「API(Application Programming Interface)」と表現していますが、アプリケーション開発のための便利なプログラミングインタフェース、クラス構築のためのコードです。世界のハッカーたちが「Wiimoteドライバ」など様々な呼称で呼び、数多くのオープンソースプロジェクトが開発されています。加速度センサへのアクセスなど基本的な機能に的を絞ったもの、サウンド再生までサポートするような高機能なものなど様々存在します(後に解説)。
+
+WindowsPCプラットフォームにおいて、APIは、突き詰めればWin32の関数、主にDDK(Driver Development Kit)を利用してコーディングされています。
+
+本書では、オープンソースで入手できるライブラリ類と、独自にAPIを開発するためのサンプルを解説します。
+
+他のプラットフォーム、例えばLinuxなどの場合は、OSが用意しているドライバを経由して、デバイスファイルへの読み書き関数だけでアクセスできる、といった環境もあるようです。
+</subsection>
+
+<subsection title="アプリケーション／ツール">
+この「アプリケーション／ツール層」が本書を手に取った皆さんが最も興味のある部分なのではないでしょうか？WiiRemoteをつかったゲームや、後に紹介するFlashFlashなどが他のプログラムと通信をする部分です。
+
+本書では、上記の各種APIを利用した様々なアプリケーションの書き方を紹介します。大きく分けると、C++のコマンドラインアプリケーション、C++でDirectXを利用する場合、WiiFlashというBluetooth-ネットワーク間のプロクシを行うソフトウェアを使ったFlash上での利用、そしてWiiFlashの通信をProcessingで利用する例の4種類です。
+
+もちろん他にもVisual BasicやC#を使ってアプリケーション／ツールを開発する方もいらっしゃいますが、本書では触れません。
+
+</subsection>
+
+
+このように「WiiRemoteをPCで利用する」とひとことで言っても、幅広く、深い部分の知識が必要になります。逆を言えば、WiiRemoteを使ったゲームやアート作品など、アイディアを実現する上では、上位の階層でのプログラミング言語に制約はありません。「C++でなければダメ」ということはないのです！皆さんが得意としているOpenGLやSDL、DirectX、Win32やMFC、コマンドラインプログラムやC++/CLI、VB、C#、Java、Processing、各種スクリプト言語、そしてFlashやMaxMSPといった様々なツールやコンテンツクリエイション環境で利用することができる、というわけです。
+
+</body>
+</doc>

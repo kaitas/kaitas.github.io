@@ -1,8 +1,4 @@
-## Akihiko SHIRAI, Ph.D
-
-Github pages Since 19th Dec 2013 
-
-# Biography
+## Akihiko SHIRAI, Ph.D - Biography
 
 AKIHIKO SHIRAI, Ph.D (Engineering) worked for Canon and Criterion as a game development consultant to distribute RenderWare, a multi-platform graphics middle-ware for the game industry until 2001. He had backed to academia and received his Ph.D from the Tokyo Institute of Technology in Japan in 2004 with research concerning the “Tangible Playroom”, an entertainment system for young children using haptics, a floor screen and real-time physics engine. He was a R&D researcher at NHK-ES in Japan, focusing on the next generation’s TV production environment before moving to ENSAM Presence & Innovation Laboratory in France in 2004 to 2007 for R&D of a Virtual Reality theme park development project with some significant research projects. Rapid computer vision on GPU "GPUVision", robotic game player "RoboGamer"and WiiMedia projects have been accepted by ACM SIGGRAPH and IEEE VR. He worked for National Museum of Emerging Science and Innovation (Miraikan), Tokyo Japan, as a science communicator and exhibition planner for 2008 to 2010. From 2010, he is working in Information Media, Kanagawa Institute of Technology (KAIT) as an associate professor. The motto is "Creating people who creates". Simultaneous multiplex imagery system "Scritter", "ExPixel" and "ExField", Manga immersive system "Manga Generator", nursery VR entertainment "Real Baby - Real Family" have been awarded by ministry, academia, and game industry.
 From June 2018, He is backed to game industry again as a labo director to launch GREE VR Studio Lab, which promote a new industrial research for vTuber (Virtual YouTuber, virtual persona, virtual artist) enhancement and exploring VR live entertainment. 
@@ -11,12 +7,9 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
-## Projects
+## Works
 
-- [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
-
-
-## GREE VR Studio Laboratory
+### GREE VR Studio Laboratory
 
 - [Laboratory](https://vr.gree.net/lab/)
  - [YouTube Channel](http://j.mp/VRSYT)
@@ -24,10 +17,18 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 - [Products](https://vr.gree.net/en/)
 
-## KAIT Shirai Lab
+### KAIT Shirai Lab
 
 - [Publications](http://blog.shirai.la/publications/)
 - [Manga Generator Consortium](https://manga.style/)
+
+### Projects
+
+- [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
+- [BookWii](https://akihiko.shirai.as/projects/BookWii/index.html)
+- [SIGGRAPH ASIA 2015 Kobe](https://akihiko.shirai.as/projects/sa2015/)
+- [projects.shirai.as](https://projects.shirai.as/)
+
 
 # Lecture
 
@@ -77,5 +78,6 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [aki's right brain](http://aki.shirai.as/)
 - [王様の耳はロバの耳](https://ameblo.jp/akihiko)
 - [Future Entertainment Laboratory](http://akihiko.shirai.as/)
+- Github pages Since 19th Dec 2013 
 
 <hr>

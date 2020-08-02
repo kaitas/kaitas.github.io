@@ -1,0 +1,2097 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009/06/02-" lang="ja">
+<title>WiiRemoteプログラミング実践編</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">WiiRemoteプログラミング実践編</h1>
+
+<div class="date">2009/06/02-</div>
+<div class="author">白井暁彦</div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id17" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「WiiRemoteMouse」の開発</a>
+<ul>
+<li> <a href="#doc2_id45" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">仕様と開発の流れの整理</a>
+<li> <a href="#doc2_id126" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プロジェクトの新規作成とフォームデザイン</a>
+<li> <a href="#doc2_id144" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">基本コード</a>
+<li> <a href="#doc2_id149" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">コードのブロック化と関数化</a>
+<ul>
+<li> <a href="#doc2_id151" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">#regionによる処理のブロック化</a>
+<li> <a href="#doc2_id167" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">処理の関数化</a>
+</ul>
+<li> <a href="#doc2_id174" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">フォームのボタン処理</a>
+<li> <a href="#doc2_id186" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線センサーによるマウスポインタ移動</a>
+<li> <a href="#doc2_id199" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ボタンイベントの検出</a>
+<ul>
+<li> <a href="#doc2_id201" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">メッセージボックスを使ったテスト</a>
+</ul>
+<li> <a href="#doc2_id217" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ボタンイベント処理のクラス化</a>
+<ul>
+<li> <a href="#doc2_id219" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">新しいクラスの追加</a>
+</ul>
+<li> <a href="#doc2_id235" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DLLインポートによるWin32APIの利用</a>
+<li> <a href="#doc2_id260" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">その他ボタンアクションの実装アイディア</a>
+<li> <a href="#doc2_id284" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">キーボード入力の発行</a>
+<li> <a href="#doc2_id293" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">LED出力や装飾要素</a>
+<ul>
+<li> <a href="#doc2_id295" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">数式によるLED出力関数</a>
+</ul>
+<li> <a href="#doc2_id305" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">★未解説メモ</a>
+<li> <a href="#doc2_id315" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemoteの状態をフォームに描画</a>
+<li> <a href="#doc2_id325" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">★未実装メモ</a>
+<li> <a href="#doc2_id328" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">まめちしきな</a>
+<ul>
+<li> <a href="#doc2_id330" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">C++ビルド</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id22" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">XNAを使ったリアルタイム3DCGでの利用</a>
+<ul>
+<li> <a href="#doc3_id365" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">XNAのインストール</a>
+<li> <a href="#doc3_id383" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ゲームプロジェクトの作成</a>
+<li> <a href="#doc3_id395" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの組み込み</a>
+<li> <a href="#doc3_id397" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">.xファイルの読み込み</a>
+<li> <a href="#doc3_id399" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">インタラクションの作成</a>
+</ul>
+</ul>
+</div>
+<p>この章ではいままで学習した4章で学習したWiimoteLibを活用し、基礎的なプログラミングから一歩進めて、実践的なプロジェクトを扱っていきます。</p>
+<p>WiiRemoteを使ったマウスエミュレーター「WiiRemoteMouse」と、最新のゲーム開発環境XNAによるリアルタイム3DCG「WiiRemoteXNA」を開発していきます。</p>
+
+<h2 id="doc1_id17">「WiiRemoteMouse」の開発</h2>
+
+<p class="first_ja">このセクションでは第4章で学んだWiimoteLibによる赤外線センサー機能をさらにすすめて、.NETによるマウス制御プログラム「WiiRemoteMouse」を開発するプロセスを通して、実践的なWiiRemote利用プログラムの開発を体験します。</p>
+<p>ところでマウスといえば、既に第3章で「GlovePIE」を使って高機能なマウスをスクリプティングで実現しました。ここではこれをプロトタイプとして、.NET環境における高度なアプリケーション開発をステップを追って解説していきます。単にGlovePIEでできることを.NETに移植しても面白くないですから、特に、ここでは第4章では扱わなかった.NETの開発手法や独自クラスの作成、外部DLLの取り込みを解説します。</p>
+
+<h3 id="doc2_id45">仕様と開発の流れの整理</h3>
+
+<p class="first_ja">今回開発するマウス操作プログラム「WiiRemoteMouse」は、基本技術の多くは、いままでの復習の組み合わせです。しかし、比較的大きなプログラムになったり、皆さんで新しい機能を追加したくなることでしょう。第4章では、小さな機能の確認のために入り交じったコードを書いていましたが、このコーディングスタイルのまま大きなプログラムになっていくと、可読性が悪い、デバッグのしづらいプログラムになっていくことが予想されます。このようなプログラムは俗称「スパゲティ・コード」と呼ばれ、個人での開発はともかく、チームでの開発においては、可読性やデバッグのしづらさから、プロジェクトの進行を困難にする原因にもなります。</p>
+<p>今回取り組む例のように「一気に書き上げることができない中規模～大規模のプログラム」を開発するときは、まずは一旦、プログラミングから離れ、やりたいことや、実現したいインタラクション、課題など、「仕様」を簡単に書き出して、そこから実装する単位や順番を表などにして、それから処理の単位で関数やクラスにまとめていくと比較的うまくいきます。行き詰まってから仕様を再考しても良いのですが、今回は既に開発した第3章4節「GlovePIEでつくる『高機能マウス』」や第4章9節「赤外線センサーを使う」で開発したコードをベースに、今回の「WiiRemoteMouse」に実装するであろう機能と流れ、プライオリティ(優先順位)をまずはまとめてみましょう。</p>
+
+<div class="table">
+<table id="doc2_id47" class="data" rules="groups">
+<caption>WiiRemote赤外線センサーによるマウス「WiiRemoteMouse」</caption>
+<colgroup span="3">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">プライオリティ</th>
+<th align="center">WiiRemote側入力</th>
+<th align="center">機能</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>1</td>
+<td>赤外線とボタンの状態</td>
+<td>フォームに描画</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>赤外線ポインタの移動</td>
+<td>マウスポインタの移動</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>[A]ボタン</td>
+<td>マウス左ボタン</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>[A]ボタン長押し</td>
+<td>マウス右ボタン</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>バッテリー残量</td>
+<td>LEDに電池残量レベル表示</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>もっともっと、盛り込みたい機能もあるとおもいます。例えばランチャーや、キー入力の代わりなど、既に4章で実現した機能を他のボタンに割り当ててみても良いでしょう。この段階を一般的には「概要設計」といいます。どういうことがしたい、という「概要」を今のうちに設計しておきます。</p>
+<p>実際に実装する機能とその順番が決まりましたので、次は処理の単位ごとに開発の流れを考えます。これを一般的には「計画」と言います。もちろん始めて体験する人にとって、先のことは見通しがつきませんから「いま想定している流れ」でかまいません。書き出してみます。</p>
+
+<ol>
+<li> プロジェクトの新規作成とフォームデザイン
+<li> 初期コードの作成
+<li> フォームのイベント処理
+<li> 赤外線でマウスカーソル移動
+<li> 押されたボタンに対する処理
+<li> フォームやLEDによる装飾</ol>
+
+<p>「概要設計」や「計画」をほんの少し意識する習慣をつけるだけで、プロジェクトの進行は大きく変わります。ここでは「概要設計」と簡単な計画を作成しました。実際のプロジェクトでは、ここに「期日」、「見通しのついていない技術」などを盛り込んでいくと、よりプロジェクトらしくなっていきます。「概要設計」をより詳細な画面イメージや機能、実装する上でのパラメーター、たとえば「長押し」が何秒押すことなのか、などを盛り込んでいくと「詳細設計」になります。</p>
+<p>しかし本書はWiiRemoteにおけるプログラミング解説とその独習が目的なのでここまでのレベルにとどめておきます。興味のある人は「プロジェクトマネジメント」について書店の実用書コーナーを探してみると良いでしょう。プログラミングから業務のプロジェクトまでさまざまな実用書があるはずです(検定試験もあります)。実はIT用語のプロジェクトマネジメントと、ビジネス用語のプロジェクトマネジメントは意味するところと扱う範疇がずいぶんと異なりますが、いずれにせよ「立ち読みしてみて役に立つ実用書」なら、買って読んでみても損はないでしょう。</p>
+
+<h3 id="doc2_id126">プロジェクトの新規作成とフォームデザイン</h3>
+
+<p class="first_ja">まずは復習もかねて、新しいプロジェクトを作成します。赤外線センサーの入力を受信してフォームに描画するプログラムを作りましょう。第4章9節3で紹介した赤外線4点検出による「座標の描画」プログラムをベースにして、改変しても良いのですが、復習もかねてポイントを流れで解説しますので実際に手を動かしてみてください。</p>
+<p>まずC#.NET2008で新規プロジェクトを作成します。「Visual C#」→「Windowsフォームアプリケーション」でプロジェクト名を「WiiRemoteMouse」とします。ソリューションエクスプローラーにある「参照設定」を右クリックし、参照の追加で「最近使用したファイル」から「WiimoteLib.dll」(バージョン1.7.0.0)を選択します。「表示」→「ツールボックス」を選び、「Form1」に対して2つのボタンを配置しTextプロパティを「接続」、「切断」とします。配置したボタン2つをそれぞれダブルクリックして、ボタンを押したときのイベントを自動生成します。また「Form1」にPictureBoxを配置しサイズを「256, 128」に設定します。デバッグ用の文字列を表示する場所として「Label1」を配置します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="Advanced/Mouse/Mouse-Form1.png" alt="Form1のデザイン" width="6cm">
+</div>
+
+<p>まずはスタート地点となる「最小の状態」になるまでコードを整理しましょう。コードの上で右クリックし「usingの整理」→「未使用のusing」の削除とすることで、using宣言にある必要ないクラスは削除することができます。必要なクラス「WiimoteLib」を書き足します。これを最初の一歩とします。</p>
+
+<div id="doc2_id134" class="caption">最小コード(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using WiimoteLib;
+
+namespace WiiRemoteMouse {
+ public partial class Form1 : Form {
+  public Form1() {
+    InitializeComponent();
+  }
+  private void button1_Click(object sender, EventArgs e) {
+  
+  }
+  private void button2_Click(object sender, EventArgs e) {
+  }
+ }
+}
+</pre>
+
+<p>ここまでのステップで間違いは起きないはずですが、確認のため一度[F6]キーで実行しておく癖をつけておくと良いでしょう。正しくフォームが表示されたら終了し、プロジェクト全体を保存します。「ファイル」→「全ての保存」として「C:\WiiRemote」にソリューション名「WiiRemoteMouse」で保存しましょう。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/Mouse/Mouse-SaveProject.png" alt="プロジェクトの保存を忘れずに">
+</div>
+
+<div class="fyi">
+<div class="title">インタラクティブ技術&times;プロジェクト管理</div>
+
+<p class="first_ja">　ゲーム開発などにも代表される「インタラクティブ技術」の開発は、一般的にはスクラッチ(≒ゼロ)から開発することが多く「プロジェクト管理」なんて言葉と馴染みが薄いように感じるかもしれません。多くのインタラクションプログラムはスパゲティ・コードになりがちです。書いた本人に聞くと、主な理由は「(これに関して)教科書とかないし…」という回答なのですが、操作感や体験の印象に直結する場所ですから、できれば丁寧に書いて欲しい、と思い本書では五月蠅いぐらいにそこに関して丁寧に説明しています(中級プログラマにとっては回りくどく感じることでしょう！)。　しかし、実際にはインタラクティブ技術とは「人間」が間に入る技術です。そのため、「これだ」と決め打ちで仕様を作り、その通りに作っても、実際にでき上がったものを人間が触って、そこからもう一度、理想的なインタラクションになるよう、レビューと設計、フィードバックを繰り返す必要もあります。　そのため、ここで扱うブロック化やクラス化は分割すればいいというものでもありません。本書で扱っているコーディングスタイルも完璧！というものではありませんが、少なくともプロジェクトの見通しを良くするために「スパゲティを茹で続ける」よりも、実現したい機能を空っぽのまま配置して、順に解決していく方法が役に立ちます。ちょうどコース料理の「皿の構成」を先に考えて、そこから『どういう順番で料理するべきか？』を考えるようなものでしょう。そういう意味では『いま作るべき料理は、スパゲティかコース料理か？デザートはあるのか？』などを、まず作り手が理解している必要があります。</p>
+</div>
+
+
+<h3 id="doc2_id144">基本コード</h3>
+
+<p class="first_ja">それでは、第4章9節「赤外線センサーを使う」で開発したコードを参考にして、以下のような基本コードを作成しましょう。</p>
+
+<div id="doc2_id146" class="caption">基本コード(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using WiimoteLib;  //WimoteLibの使用を宣言
+namespace WiiRemoteMouse {
+ public partial class Form1 : Form {
+  Wiimote wm = new Wiimote();      //Wiimoteクラスを作成
+  Boolean isConnected = false;     //WiiRemoteが接続されたか
+  public Form1()  {
+    InitializeComponent();
+   //他スレッドからのコントロール呼び出し許可
+   Control.CheckForIllegalCrossThreadCalls = false; 
+  }
+  //WiiRemoteの状態が変化したときに呼ばれる関数
+  void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+    WiimoteState ws = args.WiimoteState;  //WiimoteStateの値を取得 
+    DrawForms(ws); //フォーム描写関数へ
+  }
+  //フォーム描写関数
+  public void DrawForms(WiimoteState ws) {
+    //グラフィックスを取得
+    Graphics g = this.pictureBox1.CreateGraphics();
+    g.Clear(Color.Black);//画面を黒色にクリア
+    g.Dispose();//グラフィックスの解放
+  }
+  //接続ボタンが押されたら
+  private void button1_Click(object sender, EventArgs e) {
+    wm.Connect();                            //WiiReoteの接続
+    wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+    //レポートタイプの設定
+    wm.SetReportType(InputReport.IRAccel, true);
+  }
+  //切断ボタンが押されたら
+  private void button2_Click(object sender, EventArgs e) {
+    wm.WiimoteChanged -= wm_WiimoteChanged; //イベント関数の登録解除
+    wm.Disconnect();  //WiiRemote切断
+    wm.Dispose();     //オブジェクトの破棄
+  }
+ } 
+}
+</pre>
+
+<p>コンパイルして動作確認をします。Form1の冒頭でWiiRemoteの接続状態を管理する変数「Boolean isConnected」を宣言しています。今回レポートタイプは「IRAccel」、つまり『赤外線＋加速度センサー』とします。「IRExtensionAccel」でも良いのかもしれませんが、ここでは拡張端子を使う予定はありませんので、最適なモードを選択しておきましょう。</p>
+
+<h3 id="doc2_id149">コードのブロック化と関数化</h3>
+
+<p class="first_ja">ここで、今後大規模になっていくであろうこのプログラムの全体の構造を整理しておきたいとおもいます。この段階でのコーディングは初期化など基本的なところだけにとどめ、個々の機能の実装に入る前に、一拍おきましょう。まずはディープなコーディングを始める前に、簡単なコメントを書いておくくことが大事です。さらに事前に「こういう機能を実装したい、する予定」というブロックや関数にまとめておくことで、全体の見通しを良くします。</p>
+
+<h4 id="doc2_id151">#regionによる処理のブロック化</h4>
+
+<p class="first_ja">まず処理のブロック化を学びましょう。Visual Studioでは、プログラムコード中に「#region～#endregion」と書くことで、コードをブロック(=ひとつのカタマリ)ごとにわけることができます。このブロックごとにVisual Studioコードエディタのアウトライン機能を使用して、展開や折りたたみができるようになります。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/Mouse/InsertRegion.png" alt="「ブロックの挿入」から#region">
+</div>
+
+<p>使い方も簡単で、ブロックを挿入したいプログラムの行で右クリックして「ブロックの挿入」で「#region」を選択するだけです。ここでは上記の基本コードにおける、フォームの接続ボタンと切断ボタンのブロックに対して「フォームのボタン処理(接続・切断)」という名前をつけましょう「#region」を選んで、名前をつけます。</p>
+<p>「ブロックの挿入」を選び、何も設定しないと下のようなコードが挿入されます。</p>
+
+<pre id="doc2_id157" class="program">
+  #region MyRegion
+  
+  #endregion
+</pre>
+
+<p>名前をつけ間違えても、場所を間違えても問題ではありません。「#region」はあくまでC#のプログラムに書かれた「補足的な情報」であり、ビルド時、最終的には無視されますから、気軽に使って良いのです。では「フォームのボタン処理(接続・切断)」をまとめるために正しい場所に書いてみましょう。</p>
+
+<div id="doc2_id160" class="caption">「フォームのボタン処理(接続・切断)」のブロック化(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+  #region フォームのボタン処理(接続・切断)
+  //接続ボタンが押されたら
+  private void button1_Click(object sender, EventArgs e) {
+    wm.Connect();                            //WiiRemoteの接続
+    wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+    //レポートタイプの設定
+    wm.SetReportType(InputReport.IRAccel, true);
+  }
+
+  //切断ボタンが押されたら
+  private void button2_Click(object sender, EventArgs e) {
+    wm.WiimoteChanged -= wm_WiimoteChanged; //イベント関数の登録解除
+    wm.Disconnect();  //WiiRemote切断
+    wm.Dispose();     //オブジェクトの破棄
+  }
+  #endregion
+
+ } 
+}
+</pre>
+
+<p>表示を折りたたむには、コードの左側(行頭)にある小さな「－」をクリックすると、コードブロックを隠すことができます。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/Mouse/HideRegion.png" alt="コードブロックを折りたたんだところ">
+</div>
+
+<p>なお「#endregion」を挿入する場所に注意してください。近所にある「}」(関数の終わり)の位置を間違えてもプログラムは動きますし、コードブロックを折りたたむときも全くエラーは起きませんが、自分があとでコードを読むときに大変なので、習慣として気を遣いましょう。</p>
+
+<h4 id="doc2_id167">処理の関数化</h4>
+
+<p class="first_ja">ブロック化の基本を学んだら、次はWiiRemoteの状態が更新されたときに呼ばれるコールバック関数「wm_WiimoteChanged()」をこれから実装する処理の単位でブロックに分解していきます。それぞれの機能単位で関数を作り、ブロックと空(カラ)の関数を用意しておきます。以下の通りにコードをブロック化してみてください。</p>
+
+<div id="doc2_id169" class="caption">プログラムの関数化とブロック化(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+＜前略＞
+#region WiiRemoteの状態が変化したときに呼ばれる関数
+  void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+    if (isConnected == true) {
+      WiimoteState ws = args.WiimoteState;  //WiimoteStateの値を取得 
+      DrawForms(ws);  // フォーム描画関数へ
+      IR_Cursor(ws);  // 赤外線でマウスカーソル移動
+      Events(ws);     //ボタンイベント処理(ダミー関数)
+      EffectsOut(ws); // LED・装飾
+      } else {
+      //切断
+       this.wm.SetLEDs(0);       // LED消灯
+       this.wm.SetRumble(false); // バイブレーター停止
+       this.wm.Disconnect();     // WiiRemoteと切断
+       this.wm.Dispose();        // オブジェクトの廃棄
+    }
+  }
+#endregion
+
+#region ボタンイベント開発用
+public void Events(WiimoteState ws) {
+}
+#endregion
+
+#region フォーム描画関数
+  public void DrawForms(WiimoteState ws) {
+    //グラフィックスを取得
+    Graphics g = this.pictureBox1.CreateGraphics();
+    g.Clear(Color.Black);//画面を黒色にクリア
+    g.Dispose();//グラフィックスの解放
+  }
+#endregion
+
+#region 赤外線でマウスカーソル移動
+  public void IR_Cursor(WiimoteState ws)
+  {
+  }
+#endregion
+
+#region LED・装飾
+  public void EffectsOut(WiimoteState ws) {
+  }
+#endregion
+  
+#region フォームのボタン処理(接続・切断)
+＜以下略＞
+</pre>
+
+<p>空っぽの関数を書くのは不安があるかもしれませんが、これでも問題なくビルドは通ります。確認しておきましょう。</p>
+<p>途中「Events(ws);」について「ダミー関数」とコメントしておきました。これはWiiRemoteがもつそれぞれのボタンイベントを処理する関数を想定しています。後々大規模になることが予想されるのと、クラスとしてあとで再利用できそうなので、Form1.csではなく、別に新しいクラスオブジェクトを作成して実装する予定です。今の段階では『別クラスにしたらいいか、見通しつかないよ！』という状態なので「Events()」という仮の関数で実装し、あとで別のクラスに移植していきます。</p>
+<p>「#region」を使うことで、コメントと統合できて、見やすくなりました。Visual Studioでは関数単位もアウトラインの「－」で隠す事ができますが、本書の以下の解説ではブロック単位で解説しますので、#region～#endregionの位置はしっかり設定しておいてください。</p>
+
+<h3 id="doc2_id174">フォームのボタン処理</h3>
+
+<p class="first_ja">ブロック化することでコードが見やすくなりました。しかしこの状態でプログラムを実行すると様々な不具合が残っています。ひとつづつ片付けていきましょう。</p>
+<p>まずはプログラムが起動したあとのフォームのイベント処理を整理しながら実装していきましょう。現在の状態では接続と切断が野放図すぎますので、「isConnected」というbool型の変数を用意して、接続状態を管理していきます(WiimoteLibにもこれにあたるプロパティがあってもよさそうなものなのですが、現状のWiimoteLibの設計では個々のアプリケーション側で実装する方がよさそうです)。</p>
+
+<div id="doc2_id176" class="caption">フォームのボタン処理(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+#region フォームのボタン処理(接続・切断)
+  //接続ボタンが押されたら
+  private void button1_Click(object sender, EventArgs e) {
+   if (this.isConnected == false) {
+    this.wm = new Wiimote(); //WiiRemoteの初期化
+    this.wm.Connect();       //WiiRemote接続
+    this.wm.SetReportType(InputReport.IRAccel, true); //リポートタイプの設定
+    this.wm.SetLEDs(0); //LED を消す
+    this.wm.SetRumble(false); //バイブレータストップ
+    this.button1.Enabled = false;  //接続ボタンを無効
+    this.button2.Enabled = true;   //切断ボタンを有効
+    this.wm.WiimoteChanged += wm_WiimoteChanged; //コールバックを登録
+    this.isConnected = true; //接続状態をtrue
+   }
+  }
+
+  //切断ボタンが押されたら
+  private void button2_Click(object sender, EventArgs e) {
+   if (this.isConnected == true) {
+    this.wm.WiimoteChanged -= wm_WiimoteChanged;  //コールバックを削除
+    this.button1.Enabled = true;  //接続ボタンを有効
+    this.button2.Enabled = false;  //切断ボタンを無効
+    this.isConnected = false; //接続状態をfalse
+   }
+  }
+#endregion
+</pre>
+
+<p>フォームのボタンが押されたとき、「isConnected」を確認し、もしまだ接続されていないなら、接続処理、リポートタイプの設定、そしてコールバック関数を登録して、変数「isConnected」をtrueにします。</p>
+<p>同様に「切断」ボタンが押されたときは既に接続されているWiiRemoteオブジェクト(wm)に登録されたコールバック関数を削除しています。</p>
+<p>フォーム上の「接続」や「切断」ボタンは「Enabled=false」とすることで無効化、つまり「押せない状態」にすることができます。このようにどちらかを押すと、どちらかの値が排他的に変わる、部屋の照明のようなボタンを「トグル(toggle)」といいますが、それをソフトウェアで実装していることになります。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/Mouse/FormToggle.png" alt="フォームボタンのトグル化">
+</div>
+
+<div class="fyi">
+<div class="title">「はじまり」と「おわり」をワンセットに</div>
+
+<p class="first_ja">　本書では原理や動作を中心に解説していますので、ユーザーの不意の終了やエラー処理などは(極力要所要所で説明してはいますが)完全には扱い切れていません。皆さんがフリーウェアなど、自分のプログラムを『幅広い、誰か』に使ってもらうには特に気を遣った方が良いでしょう。</p>
+<p>　習慣として「初期化-終了」、「オブジェクトの追加-削除」はワンセットでコーディングしていくと思わぬミスの軽減に役立ちます。特にC#の場合は、ユーザーフレンドリーに設計された言語環境なので、削除を自動で実施してくれる仕組みがあります。意識して使うことができればエレガントなのですが、逆に「作りっぱなし、削除は…何だっけ」というプログラミングスタイルが板につくと、オブジェクトのスコープ(生存期限)が見えづらくなり、プログラムの動作自体は完成しているのに、残存するオブジェクトのおかげで不明のエラーを実行時に起こしたり、長時間起動しておくとメモリリーク(メモリ漏れ)を起こし、挙動が突然遅くなったり、クラッシュしたりする『あとあと手のかかるプログラム』を生み出します。</p>
+<p>　特にオブジェクトの終了や破棄は忘れがちです。WiimoteLibのように誰かが作ったライブラリの場合は単に「終了」というAPIがあっても、内部で何をやっているかわからない場合もあります。コーディングの流れ上「いまここで終了して良いかわからない」といったときもあるでしょう。そんなときは「//ここで破棄？」など『未来の自分宛』にコメントを入れておくことで、後々のコード整理の時に見事に役に立ったりします。</p>
+</div>
+
+
+<h3 id="doc2_id186">赤外線センサーによるマウスポインタ移動</h3>
+
+<p class="first_ja">次は赤外線センサーを利用して、マウスポインタを動かす部分の実装をします。いきなりマウスを動かす部分を実装してもいいのですが、赤外線の状況が見えないと開発が難航しますので、まずはフォーム描画関数「DrawForms()」に手を加えて赤外線がWiiRemoteの視界に入ったら、グラフィックスと文字で測定値を表示するようにします。</p>
+
+<div id="doc2_id188" class="caption">フォーム描画関数DrawForms(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+#region フォーム描画関数
+  public void DrawForms(WiimoteState ws)
+  {
+    //グラフィックスを取得
+    Graphics g = this.pictureBox1.CreateGraphics();
+    g.Clear(Color.Black);//画面を黒色にクリア
+    //もし赤外線を１つでも発見したら
+    if (ws.IRState.IRSensors[0].Found)
+    {
+      //赤色でマーカ0を描画
+      g.FillEllipse(Brushes.Red,
+        ws.IRState.IRSensors[0].Position.X * 256 ,
+        ws.IRState.IRSensors[0].Position.Y * 128 , 5, 5);
+      //青色でマーカ1を描画
+      g.FillEllipse(Brushes.Blue,
+        ws.IRState.IRSensors[1].Position.X * 256,
+        ws.IRState.IRSensors[1].Position.Y * 128,  5, 5);
+    }
+    g.Dispose();//グラフィックスの解放
+    label1.Text = &quot;IR[0] &quot; + ws.IRState.IRSensors[0].RawPosition.ToString()
++ &quot;\nIR[1] &quot; + ws.IRState.IRSensors[1].RawPosition.ToString();
+  }
+#endregion
+</pre>
+
+<p>赤と青、2つのポインタを小さめに表示しています。フォームのlabel1に表示されるテキストや、座標の方向など「見え方」について、お好みで改良していただいてかまいませんが、最後に「装飾」として大幅拡張する予定です。このステップではあまり気にせず、先に進みましょう。</p>
+<p>次はマウスポインターを赤外線で動かせるようにします。まず、初期化コードの中に、変数「ScreenSize」を追加しましょう。</p>
+
+<div id="doc2_id191" class="caption">初期化コードにScreenSizeを追加(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+  Wiimote wm = new Wiimote();      //Wiimoteクラスを作成
+  System.Drawing.Point ScreenSize; //|画面サイズを格納
+  Boolean isConnected = false;     //WiiRemoteが接続されたか
+</pre>
+
+<p>次に、関数「IR_Cursor」を実装します。これは赤外線の位置にあわせて、マウスポインタを移動させるコードです。</p>
+
+<div id="doc2_id194" class="caption">赤外線でマウスカーソルを移動(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+#region 赤外線でマウスカーソル移動
+  public void IR_Cursor(WiimoteState ws)
+  {
+    ScreenSize.X = Screen.PrimaryScreen.Bounds.Width;  //画面サイズ横幅
+    ScreenSize.Y = Screen.PrimaryScreen.Bounds.Height; //画面サイズ縦幅
+   //もし赤外線を1つ発見したら
+   if (ws.IRState.IRSensors[0].Found) {
+    //赤外線座標(0.0～1.0)を画面サイズと掛け合わせる
+    int px = (int)(ws.IRState.IRSensors[0].Position.X * ScreenSize.X);
+    int py = (int)(ws.IRState.IRSensors[0].Position.Y * ScreenSize.Y);
+    //X座標を反転させる
+    px = ScreenSize.X - px;
+    //マウスカーソルを指定位置へ移動
+System.Windows.Forms.Cursor.Position = new System.Drawing.Point(px, py);
+   }
+  }
+#endregion
+</pre>
+
+<p>取得した赤外線マーカーの1個目のX,Y座標をマウスカーソルの位置に設定しています。System.Drawingに用意されている2次元の点を扱う型Point(px,py)をつかって、マウスカーソル位置を変更するためSystem.Windows.Cursor.Poitionに代入しています。</p>
+<p>早速実験してみましょう。WiiRemoteをBluetooth接続し、センサーバーなどの赤外線光源を準備してから[F5]キーを押してデバッグ開始します。表示されたフォームの「接続」ボタンを押し、問題なく接続されたら、WiiRemoteを赤外線光源に向けてください。</p>
+<p>少なくとも1点でも赤外線が検出されるとフォーム内に赤いマーカーが表示され、Windowsのマウスカーソルが手の動きにそって移動します。赤外線を検出している間は、PCに接続されているマウスを触っても思い通りに動かすことはできません。</p>
+<p>なお、実行時にマウスカーソルがバタバタする場合は、赤外線センサーの強度に原因する不安定な検出によるものです。WiiRemoteとセンサーバーとの距離を2m程度まで離してみてください。</p>
+<p>終了する場合は、赤外線を検出しないようにする(センサー部分を下にして立てるとお洒落です)と、マウスの制御が戻りますので。「切断」ボタンを押してから終了させてください。マウスカーソルに頼らず、[TAB]キーを数回押し、[Enter]キーで「切断」を入力する事でも、簡単に終了することができます。</p>
+
+<h3 id="doc2_id199">ボタンイベントの検出</h3>
+
+<p class="first_ja">次はボタンイベントです。先ほどは空っぽにしていたボタンイベントを処理するダミー関数「Events()」を実装していきましょう。</p>
+<p>ボタンイベントと簡単に言っても、WiiRemoteのボタンはたくさんあります。また一般的なデジタル信号によるボタンには以下の「3つの状態」があるといえます。</p>
+<p>【DOWN】…マウスのボタンを押した状態。</p>
+<p>【HOLD】…マウスのボタンを押しっぱなしにしている状態。</p>
+<p>【UP】…マウスのボタンを離した状態。</p>
+<p>これらを内部できっちり処理しないと、ダブルクリックなどを検出するのは難しくなります。</p>
+<p>まずは練習として、Aボタンに対して、以下の動作を割り当ててみましょう。</p>
+<p>・Aボタンが押されると(DOWN)、マウスの左クリックを発行します。</p>
+<p>・Aボタンが長押しされると(HOLD)、マウスの右クリックを発行します。</p>
+<p>・Aボタンが離されると(UP)、マウスボタンを押していない状態にします。</p>
+<p>「長押し(HOLD)」は1秒間押しっぱなしにすること、としておきましょう。</p>
+
+<h4 id="doc2_id201">メッセージボックスを使ったテスト</h4>
+
+<p class="first_ja">まずは確実に長押しイベントが拾えるように、メッセージボックスを使って確認します。</p>
+
+<div id="doc2_id203" class="caption">Aボタンイベントの検出とメッセージボックスの表示(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+＜初期化部分に追加＞
+//ボタンイベント開発用
+  bool isDown;
+  int StartTime, PressTime = 1000;
+  string State = &quot;&quot;;
+＜中略＞
+#region ボタンイベント開発用
+public void Events(WiimoteState ws) {
+ if(ws.ButtonState.A) {
+  if (isDown == false) {
+   //もしも初めてボタンが押されたとき
+   StartTime = System.Environment.TickCount; //押された時間を記録
+   State  = &quot;DOWN&quot;; isDown = true;
+  } else {
+   //押されている時間がPressTimeより長ければHOLD
+   if ((System.Environment.TickCount - StartTime) &gt;= PressTime) {
+    State = &quot;HOLD&quot;;  //押され続けている
+    //メッセージボックスを表示
+    MessageBox.Show(State);
+   }
+  }
+ } else {
+  if (isDown == true) {    //ボタンが離された
+    State = &quot;UP&quot;;  isDown = false;
+  }
+ }
+}
+#endregion
+</pre>
+
+<p>この段階でテストをしてみましょう。プログラムを起動して接続し、[A]ボタンを押しっぱなしにして1秒まつと、「HOLD」書かれたメッセージボックスが表示されます。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="Advanced/Mouse/Hold.png" alt="[A]ボタンを長押しするとメッセージボックスが表示される" width="4cm">
+</div>
+
+<p>MessageBox.Show()で利用できるメッセージボックスはこの種のデバッグや開発に非常に役に立ちます。ここではもう確認が終わりましたので、この行はコメントアウトもしくは削除してしまって問題ありません。</p>
+<div class="fyi">
+<div class="title">デバッグテクニック</div>
+
+<p class="first_ja">　プログラムの動作を確かめるために、デバッグが必要になることがあります。Visual Studioの標準機能では[F9]を押すことでブレークポイントを挿入することができます。しかしプログラムを止めるまでもなく、ちょっとした値を見たいときなどもあります。</p>
+<p>　System.Windows.Forms.MessageBox.Show()以外のテキスト表示の方法として、C#では「Console.WriteLine」を使ってメッセージを出力することができます。この出力結果はVisual Studio上の標準出力「表示(V)→出力(O)」で見ることができます。(なお同様の関数がC++にもありますが、なぜかVisual C++上で出力ウィンドウを見ても出力されないようです…)。</p>
+<p>　このようなちょっとしたテクニックは知っていると便利です。ただし実行時はパフォーマンス低下を産む場合もあるので、最終的なバージョンでは忘れずにコメントアウトしておくか、「#if DEBUG～#endif」ディレクティブを使うことでデバッグ版だけコードを活かすこともできます。</p>
+<p>　このようなデバッグテクニックは、インタラクションを向上させる為のこまめなチューニングに非常に役に立ちます。</p>
+</div>
+
+
+<h3 id="doc2_id217">ボタンイベント処理のクラス化</h3>
+
+<p class="first_ja">続いて、WiiRemoteのボタンダウンにあわせて、マウスボタンのイベントを発行します。プログラムが長くなってしまいますので、これからボタンイベントの検出を別の.csファイルの別クラスに移植します。</p>
+
+<h4 id="doc2_id219">新しいクラスの追加</h4>
+
+<p class="first_ja">まずVisual Studioの「プロジェクト」から「新しい項目の追加」(Ctrl+Shift+A)を行います。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/Mouse/AddClass.png" alt="新規クラス「ButtonEvents.cs」の追加">
+</div>
+
+<p>「テンプレート」で「クラス」を選びファイル名を「ButtonEvents.cs」として「追加」を押します。プロジェクトエクスプローラーに「ButtonEvents.cs」が追加され、以下のような初期コードが表示されるはずです。</p>
+
+<div id="doc2_id224" class="caption">初期コード(ButtonEvents.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace WiiRemoteMouse
+{
+  class ButtonEvents
+  {
+  }
+}
+</pre>
+
+<p>このままでは何もおきませんので、いままでコーディングの中心になっていた「Form1.cs」からEvents()関数のコードと変数を移植します。「#region」も忘れずに記述しておきましょう。</p>
+
+<div id="doc2_id227" class="caption">Form1.csから移植したコード(ButtonEvents.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+using WiimoteLib;
+
+namespace WiiRemoteMouse
+{
+ class ButtonEvents {
+  bool isDown;
+  int StartTime, PressTime = 1000;
+  string State = &quot;&quot;;
+#region ボタンイベント処理
+  public void Events(WiimoteState ws) {
+   if (ws.ButtonState.A) {
+    if (isDown == false) {
+     //もしも初めてボタンが押されたとき
+     StartTime = System.Environment.TickCount; //押された時間を記録
+     State = &quot;DOWN&quot;; isDown = true;
+    } else {
+    //押されている時間がPressTimeより長ければHOLD
+     if ((System.Environment.TickCount - StartTime) &gt;= PressTime) {
+      State = &quot;HOLD&quot;;  //押され続けている
+      //メッセージボックスを表示(確認用)
+      System.Windows.Forms.MessageBox.Show(State);
+     }
+    }
+   } else {
+    if (isDown == true) {    //ボタンが離された
+     State = &quot;UP&quot;; isDown = false;
+    }
+   }
+  }
+#endregion
+ }
+}
+</pre>
+
+<p>移植したコードはForm1.csから削除、もしくはコメントアウトします。</p>
+
+<div id="doc2_id230" class="caption">Form1.csの変更部分[C#]</div>
+<pre class="program" style="margin-top:0">
+＜前略＞
+namespace WiiRemoteMouse {
+ public partial class Form1 : Form {
+  Wiimote wm = new Wiimote();      //Wiimoteクラスを作成
+  ButtonEvents wbe = new ButtonEvents(); //ボタンイベントクラスを作成
+＜以下の初期化は削除してかまいません＞
+/*
+//ボタンイベント開発用
+  bool isDown;
+  int StartTime, PressTime = 1000;
+  string State = &quot;&quot;;
+*/
+＜ここで関数名の前にクラス名「wbe.」を追加します＞
+      wbe.Events(ws); //ボタンイベント処理
+＜以下略＞
+</pre>
+
+<p>この段階でかならず動作試験を行ってください。ボタンを長押しすると、メッセージボックスが表示されるはずです。問題なく複数のクラスをまたがるプログラムになっていれば成功です。</p>
+<p>「ButtonEvents wbe = new ButtonEvents();」によってwbeというクラスを新規作成し、「wbe.Events(ws);」をボタンイベントの処理として呼んでいます。</p>
+<p>これで、ボタンイベント部分を別のクラスが記述されたソースコード「ButtonEvents.cs」に分けることに成功しました。いままでは全てForm1.csのForm1クラスに記述していたのですが、プログラムが巨大になったときや、複数のプログラマによるチームで開発するときには、適切なタイミングでクラスやファイルをわけることが重要です。</p>
+
+<h3 id="doc2_id235">DLLインポートによるWin32APIの利用</h3>
+
+<p class="first_ja">次はWiIRemoteのボタンを押されたときに、マウスボタンのクリックイベントが発行されるべきパートのコードを書いていきます。この「マウスボタンイベントの発行」は単にマウスカーソルを動かすときと異なり少々複雑になります。まず.NET Framework3.5ではマウスカーソルの位置は変更できても、クリックするイベントを発行できるAPIが用意されていないようです。そこで旧来から存在するWin32プラットフォームSDKのWindowsユーザーインターフェースサービス「user32.dll」というDLLに含まれる「SendInput()」というAPIとSendInput()のための構造体を取り込むことで、この機能を実現します。</p>
+<p>DLLインポートと構造体は、ある程度形式に沿った記述が必要です。ここでは「SendInput()」というAPIを取り込み、その関数の引数となる構造体「INPUT」とINPUTが利用するマウスイベントの詳細を記述する構造体「MOUSEINPUT」を取り込みます。</p>
+
+<div id="doc2_id237" class="caption">ButtonEvents.csへのDLLインポート[C#]</div>
+<pre class="program" style="margin-top:0">
+using WiimoteLib;
+//DllImportに必要なusingを追加
+using System;
+using System.Runtime.InteropServices;
+
+namespace WiiRemoteMouse
+{
+ class ButtonEvents {
+  bool isDown;
+  int StartTime, PressTime = 1000;
+  string State = &quot;&quot;;
+
+#region DLLインポート
+  [DllImport(&quot;user32.dll&quot;)]  //DLL読み込み
+  extern static uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
+
+  [StructLayout(LayoutKind.Sequential)]
+  struct INPUT  {
+    public int type;
+    public MOUSEINPUT mi;
+  }
+
+  [StructLayout(LayoutKind.Sequential)]
+  struct MOUSEINPUT  {
+    public int dx;
+    public int dy;
+    public int mouseData;
+    public int dwFlags;
+    public int time;
+    public IntPtr dwExtraInfo;
+  }
+#endregion
+＜以下略＞
+</pre>
+
+<p>この構造体はWin32(C++)のヘッダファイルである「WinUser.h」に記述されているものです。多少面倒ですが、この構造体の定義をおろそかにすると、SendInputが正しく動いてくれません。C#でマウスに希望のイベントを発行するときは、以下のようにしてイベントを送信します。</p>
+
+<pre id="doc2_id240" class="program">
+   input[0].mi.dwFlags = 0x0002;                   //左マウスダウン
+   SendInput(1, input, Marshal.SizeOf(input[0]));  //マウスイベントを送信
+</pre>
+
+<p>「Marshal」はアンマネージコードのメモリ割り当てのためなどに用意されたクラスです。DLLと構造体のインポートは記述さえ間違えなければ特に気負う必要はありません、そのまま下に続く、ボタンイベントの実装を行いましょう。</p>
+
+<div id="doc2_id243" class="caption">ボタンイベントへの実装(ButtonEvents.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+＜コメントの頭に「|」がついている箇所が新規追加部分です＞
+#region ボタンイベント処理
+  public void Events(WiimoteState ws) {
+   INPUT[] input = new INPUT[1];  //|マウスイベントを格納
+   if (ws.ButtonState.A) {
+    if (isDown == false) {
+     //もしも初めてボタンが押されたとき
+     StartTime = System.Environment.TickCount; //押された時間を記録
+     State = &quot;DOWN&quot;; isDown = true;
+     input[0].mi.dwFlags = 0x0002;                  //|左マウスダウン
+     SendInput(1, input, Marshal.SizeOf(input[0])); //|マウスイベントを送信
+    } else {
+    //押されている時間がPressTimeより長ければHOLD→右クリック
+     if ((System.Environment.TickCount - StartTime) &gt;= PressTime) {
+      State = &quot;HOLD&quot;;  //押され続けている
+      input[0].mi.dwFlags = 0x0008;                  //|右マウスダウン
+      SendInput(1, input, Marshal.SizeOf(input[0])); //|マウスイベントを送信
+     }
+    }
+   } else {
+    if (isDown == true) {    //ボタンが離された
+     State = &quot;UP&quot;; isDown = false;
+     input[0].mi.dwFlags = 0x0004;                   //|左マウスアップ
+     SendInput(1, input, Marshal.SizeOf(input[0]));  //|マウスイベントを送信
+     input[0].mi.dwFlags = 0x0010;                   //|右マウスアップ
+     SendInput(1, input, Marshal.SizeOf(input[0]));  //|マウスイベントを送信
+    }
+   }
+  }
+#endregion
+ }
+}
+</pre>
+
+<p>各イベントに対して「input[0].mi.dwFlags = 0x0004」とすることでボタンの押されている状態を発行することができます。この「0x0002」や「0x0004」という16進数表現のフラグ(dwFlags)はプラットフォームSDKで定められている定数で、「WinUser.h」で確認することができます。他にも右クリックやホイールなどのデータも送ることができます。</p>
+
+<div class="table">
+<table id="doc2_id247" class="data" rules="groups">
+<caption>WinUser.hに記述されているマウスイベント定数(抜粋)</caption>
+<colgroup span="3">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">動作</th>
+<th align="center">意味</th>
+<th align="center">値</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>MOUSEEVENTF_MOVE</td>
+<td>マウスが移動</td>
+<td>0x0001</td>
+</tr>
+<tr class="odd">
+<td>MOUSEEVENTF_LEFTDOWN</td>
+<td>左ボタンが押された</td>
+<td>0x0002</td>
+</tr>
+<tr class="even">
+<td>MOUSEEVENTF_LEFTUP</td>
+<td>左ボタンが離された</td>
+<td>0x0004</td>
+</tr>
+<tr class="odd">
+<td>MOUSEEVENTF_RIGHTDOWN</td>
+<td>右ボタンが押された</td>
+<td>0x0008</td>
+</tr>
+<tr class="even">
+<td>MOUSEEVENTF_RIGHTUP</td>
+<td>右ボタンが離された</td>
+<td>0x0010</td>
+</tr>
+<tr class="odd">
+<td>MOUSEEVENTF_MIDDLEDOWN</td>
+<td>中央ボタンが押された</td>
+<td>0x0020</td>
+</tr>
+<tr class="even">
+<td>MOUSEEVENTF_MIDDLEUP</td>
+<td>中央ボタンが離された</td>
+<td>0x0040</td>
+</tr>
+<tr class="odd">
+<td>MOUSEEVENTF_WHEEL</td>
+<td>ホイールが回転</td>
+<td>0x0800</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>これらのAPIや構造体のフォーマットは、マイクロソフトのドキュメントやSDKに含まれるヘッダファイルで与えられています。また過去脈々と歴史を持つ、C++によるWin32プラットフォームを解説する個人のホームページに掲載されたサンプルなどもかなり役に立ちます。C#のコーディングをしているからといって「ああこれはC++のサンプルだ、私には関係ない…」と思う必要はないのです！</p>
+<p>.NET世代のC#プログラマにとってアンマネージコードの取り込みは未知の恐怖があるかもしれませんが、慣れてしまえば便利なものです。今回のようなSendInputはアンマネージドな実装を頼らなくても、将来的に.NET Frameworkに取り込まれ、気軽に使えるようになることを望みますが…。</p>
+<div class="fyi">
+<div class="title">マイクロソフトのドキュメントより</div>
+
+<p class="first_ja">■SendInput関数</p>
+<p>　http://msdn.microsoft.com/ja-jp/library/cc411004.aspx</p>
+<p>■mouse_event関数</p>
+<p>　http://msdn.microsoft.com/ja-jp/library/cc410921.aspx</p>
+</div>
+
+<p>これで基本機能はほぼ完成です。さっそく実行してみましょう。プログラムを起動してWiiRemoteをBluetooth接続し「接続」とすると、視界に入った赤外線によってマウスカーソルを動かせるようになります。</p>
+<p>[A]ボタンを押すとマウスの左クリック、1秒間長押しすると右クリックになります。ボタンから手を離すと、左右両方のマウスボタンを離した状態(Up)になります。</p>
+<p>以上で、当初想定していた全ての機能の実装が終わりました。</p>
+
+<h3 id="doc2_id260">その他ボタンアクションの実装アイディア</h3>
+
+<p class="first_ja">この先、GlovePIEで実装したように、全てのボタンに沢山のアクションを割り当てていきたいところですが、ここから先はどんどんWiiRemoteとは直接関係ない話になってしまいますので適度に解説したいと思います。</p>
+<p>ボタンアクションの開発については、例えば、マウス右ボタンは長押しだけでなく、[B]にも割り当てたりしたいところです。その場合、</p>
+
+<pre id="doc2_id262" class="program">
+   if (ws.ButtonState.B) {
+     input[0].mi.dwFlags = 0x0008;                  //|右マウスダウン
+     SendInput(1, input, Marshal.SizeOf(input[0])); //|マウスイベントを送信
+   } else {
+     input[0].mi.dwFlags = 0x0010;                   //|右マウスアップ
+     SendInput(1, input, Marshal.SizeOf(input[0]));  //|マウスイベントを送信
+   }
+</pre>
+
+<p>これを書き加えれば良いわけです。しかしこのように個々のボタンイベントについてif文で実装していっても良いのですが、[A+B]などのボタンコンビネーションアクションなども加わると、さらに複雑になっていきます(バグも増えます)。せっかくこの部分をクラス化したので、うまく再利用できる方法を考えたいところです。</p>
+<p>本書の著者のひとりである小坂先生は、先ほど実装したStateのような文字列を拡張して「押されているキーを文字列として扱う」というアイディアで、以下のような方法で新しいクラスを設計してみました。これが正解かどうかは場合によりけりですが、参考にはなるでしょう(完成品は小坂研究室のHPからダウンロードできます★)。</p>
+<p>まず現在のイベントクラスに「ButtonEvent」というクラスを追加します。</p>
+
+<pre id="doc2_id265" class="program">
+public ButtonEvent(String buttonName) {
+ this.isDown = false; //初期値はfalse
+ this.State = &quot;&quot;; //初期値は&quot;&quot;
+ this.onButtonTime = 1000; //長押し時間
+ this.Flg = false; //初期値はfalse
+ this.ButtonName = buttonName; //ボタンの名前を取得
+}
+</pre>
+
+<p>まず、個々のボタンは、下のようにキーとなる文字列を設定されているとします。</p>
+
+<pre id="doc2_id268" class="program">
+Aボタン 　→ A      Homeボタン→ Home
+Bボタン 　→ B      ↑ボタン　→ Up
+1ボタン 　→ One    ↓ボタン　→ Down
+2ボタン 　→ Two    ←ボタン　→ Left
+-ボタン 　→ Minus  →ボタン　→ Right
++ボタン 　→ Plus
+</pre>
+
+<p>例えば[A]ボタンの場合、「A」という文字列を使ってButtonEventクラスをnewして、ButtonAというクラスオブジェクトを作成することができます。この方法で、各々のボタンについてイベントを管理するクラス群ができあがります。</p>
+
+<pre id="doc2_id271" class="program">
+ public ButtonEvent ButtonA    = new ButtonEvent(&quot;A&quot;);
+ public ButtonEvent ButtonB    = new ButtonEvent(&quot;B&quot;);
+ public ButtonEvent ButtonUP   = new ButtonEvent(&quot;Up&quot;);
+ public ButtonEvent ButtonDOWN = new ButtonEvent(&quot;Down&quot;)
+＜...以下すべてのボタンについてnewします＞
+</pre>
+
+<p>さらにButtonEventクラスに「GetOnButton(WiimoteState ws)」というStringを返すメソッドを用意し、押されたボタンのテキストを返します。以下のようにコーディングすることができます。</p>
+
+<pre id="doc2_id274" class="program">
+public String GetOnButton(WiimoteState ws) {
+//Aが押された       →　&quot; A&quot;
+//Bが押された       →　&quot; B&quot;
+//A,Bが押された     →　&quot; A B&quot;
+//A,B,1,2が押された →　&quot; A B One Two&quot;
+  String onButtons = &quot;&quot;;
+  if (ws.ButtonState.A) { onButtons += &quot; A&quot;; }
+  if (ws.ButtonState.B) { onButtons += &quot; B&quot;; }
+  if (ws.ButtonState.One) { onButtons += &quot; One&quot;; }
+＜以下全てのボタン＞
+ return onButtons; //押されたボタンonButtonsを返す
+}
+</pre>
+
+<p>この関数を</p>
+
+<pre id="doc2_id277" class="program">
+if (this.ButtonName.Equals(this.GetOnButton(ws).Trim()))
+</pre>
+
+<p>と使うことで、押されているボタンが注目したいボタンであるButtonNameと同じかどうか調べる事ができます。なお前後のスペースを除去してくれるメソッドTrim()やEquals()は、String型を継承しているので、追加実装なしで利用できます。</p>
+<p>そして、Events関数の中で</p>
+
+<pre id="doc2_id280" class="program">
+switch (ButtonA.onButton(ws))
+</pre>
+
+<p>とし、switch文を用いてAボタンの処理それぞれの&quot;Down&quot;、&quot;Up&quot;、&quot;Hold&quot;動作に対応する命令を書いています。</p>
+
+<h3 id="doc2_id284">キーボード入力の発行</h3>
+
+<p class="first_ja">マウスが完成すると、今度はキーボードも実装したくなると思います。.NETには便利なAPI「SendKeys.SendWait()」という関数があり、これは発行したいキーボード入力を文字列で表現することで実現できます。例えば「Alt+F4」のような複数のキーが混ざったキーバインドも発行できます。</p>
+
+<div id="doc2_id286" class="caption">[Alt+F4]を発行する例</div>
+<pre class="program" style="margin-top:0">
+ SendKeys.SendWait(&quot;%{F4}&quot;);
+</pre>
+
+<p>カーソルキーやCtrlキーなどほとんどのボタンコンビネーションはこの方法で作り出すことができます。詳細はSendKeysを調べてみてください。</p>
+<p>また「このツールの表示を隠したい」という要求もあると思います。そんなときは、以下のコールでこのプログラムをプログラム自身から最小化することができます。</p>
+
+<pre id="doc2_id289" class="program">
+ this.WindowState = FormWindowState.Minimized;
+</pre>
+
+<p>このように.NETの機能をフル活用し、WiiRemoteのイベントに対してマウスとキーボードの入力を割り当てたり、既に「ランチャー」で学んだアプリケーションの実行などを組み合わせたり、時には外部のAPIも活用しながら自分で好きな機能を盛り込んで、「自分のためのWiiRemoteMouse」を作ってみてください。</p>
+
+<h3 id="doc2_id293">LED出力や装飾要素</h3>
+
+<p class="first_ja">最後にLED出力や★18:57 2009/06/12★</p>
+
+<h4 id="doc2_id295">数式によるLED出力関数</h4>
+
+<p class="first_ja">LEDの表示部分を実装します。イメージとしてはLEDにはバッテリーの残量を｛25%以下、50%、75%、75%以上｝といった4段階で表示したいのでSetLEDs()関数を利用して、</p>
+
+<div id="doc2_id297" class="caption">LEDを4段階で表示させる例</div>
+<pre class="program" style="margin-top:0">
+    wm.SetLEDs(1);  //□■■■
+    wm.SetLEDs(3);  //□□■■
+    wm.SetLEDs(7);  //□□□■
+    wm.SetLEDs(15); //□□□□
+</pre>
+
+<p>このように表現していくこともできるでしょう。</p>
+<p>しかし「switch～case」文を使ってこれを表現するよりも、数式で1行にまとめる方法もありますので、今回は1行で書ける数式で実現してみます。</p>
+
+<div id="doc2_id300" class="caption">バッテリー残量をLEDに出力(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+#region LED・装飾
+  public void EffectsOut(WiimoteState ws) {
+    //25%ずつLEDを表示させる
+    wm.SetLEDs((int)Math.Pow(2.0f, (int)(ws.Battery / 25) +1 ) - 1);
+  }
+#endregion
+</pre>
+
+<p>たった1行の式ですが、以下のような意味を持っています。</p>
+<p>バッテリーの値は[0＜Battery＜100]のfloat型で手に入りますので、それを25で割って、整数化(小数点以下を切り落とし)します。するとバッテリーの残量に応じて「0,1,2,3」という整数になります。nを自然数(1,2,3,...)とするとき、2のべき乗[2^n]は「2,4,8,16,...」という値をとりますので、そこを-1してあげることで、必要な「1,3,7,15」という4つのLED出力用の整数を得ることができます。</p>
+<p>このように法則性があるものは可能な限り数式、つまり関数で表現できるようにするクセをつけると、コーディングも驚くほど短くなりますので、デバッグするときも見落としが減ります。何より学校で学んだ数学が非常に役に立ちます。「数学」というよりも「算数パズル」のようなものなので、無理して関数化するのではなく『楽しんで解いてみよう！』というところでしょうか。</p>
+
+<h3 id="doc2_id305">★未解説メモ</h3>
+
+
+<div id="doc2_id307" class="caption">★小坂完成版</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using WiimoteLib;
+
+namespace WiiRemoteMouse {
+ public partial class Form1 : Form {
+   Wiimote wm = new Wiimote();         //Wiimoteの宣言と初期化
+WiiButtonEvents wbe = new WiiButtonEvents(); //WiiRemoteのボタンイベントの宣言と初期化
+   System.Drawing.Point ScreenSize;     　   //画面サイズを格納
+   int size = 20;
+   Boolean isConnect = false;    //Wiiが接続されたか
+   public Form1() {
+     InitializeComponent();
+Control.CheckForIllegalCrossThreadCalls = false; //他スレッドからのコントロール呼び出し許可
+this.ScreenSize.X = Screen.PrimaryScreen.Bounds.Width; //画面ザイズの横幅を取得
+this.ScreenSize.Y = Screen.PrimaryScreen.Bounds.Height; //画面ザイズの立幅を取得
+     this.button2.Enabled = false;    //切断ボタンを無効に
+   }
+
+   #region 接続/切断
+   //接続ボタンがクリックされた
+   private void button1_Click(object sender, EventArgs e) {
+     if (this.isConnect == false) {
+       this.wm = new Wiimote();      //Wiimoteの初期化
+       this.wm.Connect();          //Wiimoteの接続
+this.wm.SetReportType(InputReport.IRExtensionAccel, true); //レポートタイプの設定
+       this.wm.SetLEDs(0);          //LEDを消す
+       this.wm.SetRumble(false);      //バイブレータストップ
+       this.isConnect = true;        //接続状態をtrue
+       this.button1.Enabled = false;    //接続ボタンを無効
+       this.button2.Enabled = true;　    //切断ボタンを有効
+       this.wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+     }
+   }
+   //切断ボタンがクリックされた
+   private void button2_Click(object sender, EventArgs e) {
+     if (this.isConnect == true) {
+       this.button1.Enabled = true;  //接続1を有効
+       this.button2.Enabled = false;  //切断2を無効
+       this.isConnect = false;      //接続状態をfalse
+     }
+   }
+
+#endregion
+   //WiiRemoteの状態が変化したときに呼ばれる関数
+public void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) \
+    {
+     if (isConnect == true) {
+       WiimoteState ws = args.WiimoteState;//WiimoteState の値を取得
+       IR_Cursor(ws);      //赤外線でマウスカーソル移動
+       wbe.Events(ws);      //WiiButtonEvents(ws)で押されたボタンに対する処理を行う
+       DrawForms(ws);      //フォーム更新
+       EffectsOut(ws);      //LED,バイブレーター出力
+     } else {
+       this.wm.SetLEDs(0);    //LEDを消す
+       this.wm.SetRumble(false);      //バイブレータストップ
+       this.wm.Disconnect();  //Wii切断
+       this.wm.Dispose();
+     }
+   }
+
+#region IR_Cursor
+  //赤外線でマウスカーソル移動
+  public void IR_Cursor(WiimoteState ws) {
+    //もし赤外線を１つ発見したら
+    if (ws.IRState.IRSensors[0].Found) {
+      //赤外線座標(0.0?1.0)を画面サイズと掛け合わせる
+int px = (int)(ws.IRState.IRSensors[0].Position.X * this.ScreenSize.X);
+int py = (int)(ws.IRState.IRSensors[0].Position.Y * this.ScreenSize.Y);
+      //X座標を反転させる
+      px = this.ScreenSize.X - px;
+      //マウスカーソルを指定位置へ移動
+System.Windows.Forms.Cursor.Position = new System.Drawing.Point(px, py);
+      //赤外線が画面の端にきたとき
+if ((px &lt;= size) || px &gt;= (this.ScreenSize.X - size) || (py &lt;= size) || py \
+    &gt;= (this.ScreenSize.Y - size)) {
+        if (this.checkBox1.Checked) {
+          wm.SetRumble(true);//バイブレーションON
+        } else {
+          wm.SetRumble(false);//バイブレーションOFF
+        }
+      } else {
+        wm.SetRumble(false);//バイブレーションOFF
+      }
+    } else {
+      if (this.checkBox1.Checked) {
+        wm.SetRumble(true);//バイブレーションON
+      } else {
+        wm.SetRumble(false);//バイブレーションOFF
+      }
+    }
+  }
+#endregion
+
+#region EffectsOut
+  //LED,バイブレーター出力
+  public void EffectsOut(WiimoteState ws) {
+    //Aボタンが押されている間だけ表示する。
+    //25%ずつLEDを表示させる
+    switch ((int)(this.wbe.Battery / 25)) {
+      case 0:  //0-25
+        this.wm.SetLEDs(0);
+        break;
+      case 1:  //25-50
+        this.wm.SetLEDs(1);
+        break;
+      case 2:  //50-75
+        this.wm.SetLEDs(3);
+        break;
+      case 3:  //75-100
+        this.wm.SetLEDs(7);
+        break;
+      case 4:  //100
+        this.wm.SetLEDs(15);
+        break;
+    }
+  }
+#endregion
+
+#region DrawForms
+  //フォーム描画更新
+  public void DrawForms(WiimoteState ws) {
+    //グラフィックスを取得
+    Graphics g = this.pictureBox1.CreateGraphics();
+    g.Clear(Color.Black);//画面を黒色にクリア
+    //もし赤外線を１つ発見したら
+    if (ws.IRState.IRSensors[0].Found) {
+      //赤色でマーカを描写
+      g.FillEllipse(Brushes.Red,
+        ws.IRState.IRSensors[0].Position.X * 256,
+        ws.IRState.IRSensors[0].Position.Y * 256, 10, 10);
+    }
+    g.Dispose();//グラフィックスの解放
+  }
+#endregion
+
+  private void Form1_FormClosed(object sender, FormClosedEventArgs e) {
+    //WindowsのXボタンを押してFormが閉じたとき
+    //Wiiリモコンの切断処理
+    if (this.isConnect == true) {
+      this.isConnect = false;      //接続状態をfalse
+    }
+  }
+ }
+}
+</pre>
+
+
+<div id="doc2_id309" class="caption">★小坂ボタンイベント完成版</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using WiimoteLib;
+using System.Runtime.InteropServices;  //DllImportを使うための宣言
+using Shell32;  //デスクトップの表示・隠すを用いるのに必要
+
+namespace WiiRemoteMouse {
+ class ButtonEvent {
+  public Boolean isDown;      //ボタンが押された
+  public String State;      //ボタンの状態,種類を格納　
+                    //DOWN    ボタンが押された
+                    //UP    ボタンが離された
+                    //DOWNING  ボタンが押されている　onButtonTime時間を超えると
+    public int onButtonTime;    //長押し時間
+
+    private int StartTime;      //ボタンが押されたた時間を格納
+    public Boolean Flg;        //ディスクトップのデスクトップの表示・隠す状態を記録するフラフ
+
+    public String ButtonName;    //ボタンの名前
+    
+    public ButtonEvent(String buttonName) {
+      this.isDown = false;      //初期値はfalse
+      this.State = &quot;&quot;;        //初期値は&quot;&quot;
+      this.onButtonTime = 1000;    //長押し時間
+      this.Flg = false;        //初期値はfalse
+      this.ButtonName = buttonName;  //ボタンの名前を取得
+    }
+
+
+    #region GetOnButton
+    public String GetOnButton(WiimoteState ws) {
+      //押されたボタンのテキストを返す。
+      //Aが押された    →　&quot; A&quot;
+      //Bが押された    →　&quot; B&quot;
+      //A,Bが押された    →　&quot; A B&quot;
+      //A,B,1,2が押された  →　&quot; A B One Two&quot;
+
+      String onButtons = &quot;&quot;;
+
+      if (ws.ButtonState.A) {    onButtons += &quot; A&quot;; }
+      if (ws.ButtonState.B) {    onButtons += &quot; B&quot;; }
+      if (ws.ButtonState.One) {  onButtons += &quot; One&quot;; }
+      if (ws.ButtonState.Two) {  onButtons += &quot; Two&quot;; }
+      if (ws.ButtonState.Minus) { onButtons += &quot; Minus&quot;; }
+      if (ws.ButtonState.Plus) {  onButtons += &quot; Plus&quot;; }
+      if (ws.ButtonState.Home) {  onButtons += &quot; Home&quot;; }
+      if (ws.ButtonState.Down) {  onButtons += &quot; Down&quot;; }
+      if (ws.ButtonState.Up) {  onButtons += &quot; Up&quot;; }
+      if (ws.ButtonState.Left) {  onButtons += &quot; Left&quot;; }
+      if (ws.ButtonState.Right) { onButtons += &quot; Right&quot;; }
+
+      return onButtons;  //押されたボタンを返す
+    }
+    #endregion
+
+
+    #region ボタン処理
+    public String onButton(WiimoteState ws) {
+      //ws      WiimoteState
+
+      if (this.ButtonName.Equals(this.GetOnButton(ws).Trim())) {
+        //押されているボタンが,ButtonNameを同じかどうか調べる
+        //最初のスペースを取ってから調べる
+
+        if (this.isDown == false) {
+          //もしも初めてボタンが押されたとき
+          this.StartTime = System.Environment.TickCount; //押された時間を記録
+          this.State = &quot;DOWN&quot;;    //ダウン
+          this.isDown = true;      //Downされた
+        } else {
+          if ((System.Environment.TickCount - StartTime) &gt;= onButtonTime) {
+            //押されている時間がonButtonTimeよろ長ければ
+            this.State = &quot;DOWNING&quot;;  //押され続けている
+          }
+        }
+      } else {
+        if (this.isDown == true) {
+          //ボタンがアップされた
+          this.State = &quot;UP&quot;;    //アップ
+          this.isDown = false;  //Upされた
+        }
+
+      }
+      return this.State;
+    }
+    #endregion
+
+
+
+    #region Clerar
+    //処理が済んだ
+    public void Clear() {
+      //処理が終わった処理 Stateを&quot;&quot;に戻す
+      this.State = &quot;&quot;;
+    }
+    #endregion
+    
+  }
+
+  class WiiButtonEvents {
+
+    #region DLL関係
+
+    //DLL読み込み用
+    [DllImport(&quot;user32.dll&quot;)]
+extern static uint SendInput(uint nInputs, INPUT[] pInputs, int cbSize);
+
+    //DLL読み込み用
+    [StructLayout(LayoutKind.Sequential)]
+    struct INPUT {
+      public int type;
+      public MOUSEINPUT mi;
+    }
+
+    //DLL読み込み用
+    [StructLayout(LayoutKind.Sequential)]
+    struct MOUSEINPUT {
+      public int dx;
+      public int dy;
+      public int mouseData;
+      public int dwFlags;
+      public int time;
+      public IntPtr dwExtraInfo;
+    }
+    #endregion
+
+    public float Battery;  //バッテリー値
+
+    public ButtonEvent ButtonAB = new ButtonEvent(&quot;A B&quot;);
+
+    public ButtonEvent ButtonA = new ButtonEvent(&quot;A&quot;);
+    public ButtonEvent ButtonB = new ButtonEvent(&quot;B&quot;);
+    public ButtonEvent ButtonUP = new ButtonEvent(&quot;Up&quot;);
+    public ButtonEvent ButtonDOWN = new ButtonEvent(&quot;Down&quot;);
+    public ButtonEvent ButtonLEFT = new ButtonEvent(&quot;Left&quot;);
+    public ButtonEvent ButtonRIGHT = new ButtonEvent(&quot;Right&quot;);
+    public ButtonEvent ButtonMINUS = new ButtonEvent(&quot;Minus&quot;);
+    public ButtonEvent ButtonHOME  = new ButtonEvent(&quot;Home&quot;);
+
+    public ButtonEvent ButtonONE = new ButtonEvent(&quot;One&quot;);
+    public ButtonEvent ButtonTWO = new ButtonEvent(&quot;Two&quot;);
+
+
+    /*
+
+    実装順WiiRemote 側入力アプリ側の処理
+    ok 1 赤外線とボタン状態フォームに描画
+    ok 2 赤外線(X,Y) マウスポインタの移動
+    ok 3 A ボタンマウス左ボタン
+    ok 3 B ボタンマウス右ボタン
+    ok 4 十字キーカーソルキー
+    ok 4 ?ボタンアプリケーション終了[Alt+F4]
+    ok 4 Home ボタン切断してプログラム終了
+    NG 4 1 ボタンGlovePIE 最小化／最大化
+    ok 4 2 ボタン・シングルクリックEsc キー(プレゼンテーション終了)
+    ok 5 A+B ボタン同時押しデスクトップを表示
+    NG 5 ＋ボタンアプリケーション切り替え[Alt+Tab]
+    OK 5 2 ボタン長押しPowerPoint を起動
+    NG 5 2 ボタン・ダブルクリックプレゼンテーション開始[F5]
+    NG 5 A ボタン・ダブルクリックEnter キー
+    NG 5 B ボタン・ダブルクリックDelete キー
+    OK 6 マウスカーソルが画面端バイブレーター
+    OK 6 (上記ボタン「長押し」) LED に残り時間表示
+    74
+    */
+
+    //ここでイベントを制御させる。
+    public void Events(WiimoteState ws) {
+      this.Battery = 0;                        //バッテリー値を0へ                
+      INPUT[] input = new INPUT[1];                  //マウスイベントを格納
+
+
+
+      /*　ボタン処理の使い方
+       * 各ボタンの動作によって動きを割り当てることができます。
+       * たとえば「マウスのクリックする」という動作に関して、詳細に見てみると、
+       * 　●マウスボタンを押した
+       * 　●マウスボタンを押している
+       * 　●マウスボタンを離した
+       * という３つの動作ととらえることができます。
+       * 
+       * 今回はその３つの動作、
+       * 　●マウスを押した      → DOWN
+       * 　●マウスを押している  　  →DOWNING
+       * 　●マウスを離した      → UP
+       * 
+       * に対して、やってほしい動作を割り当てます。
+       * 
+       * Aボタンに対して、今回は以下の動作を割り当てます。
+       * ●Aボタンマウス左ボタン
+       * ●Aボタン長押し LED に残り時間表示
+       *
+       * つまり、以下の動作をします。
+       *　 Aボタンが押されると、マウスの左クリック(Down)を発行します。
+       * 　Aボタンが離されると、マウスの左クリック(UP)を発行します。
+       * 　Aボタンが長押しされると、バッテリーの値をLEDに表示します。 
+       * 
+       * まず、
+       * public ButtonEvent ButtonA = new ButtonEvent(&quot;A&quot;);
+
+       * で、ButtonAというボタンイベントクラスを作り、イベントを発生するキー文字を設定ます。
+       * 
+       * 今回は、下図のようにキー文字を設定しています。
+       * Aボタン 　→ A
+       * Bボタン 　→ B
+       * 1ボタン 　→ One
+       * 2ボタン 　→ Two
+       * -ボタン　 → Minus
+       * +ボタン　 → Plus
+       * Homeボタン→ Home
+       * ↑ボタン　→ Up
+       * ↓ボタン　→ Down
+       * ←ボタン　→ Left
+       * →ボタン　→ Right
+       * 
+       * そして、Events関数の中で
+* switch (this.ButtonA.onButton(ws)) { //Aボタンの処理　第２引数に、調べたいボタンをString型で入れる
+       *　とし、switch文を用いて&quot;Down&quot; &quot;Up&quot; &quot;DOWING&quot; 動作に対応する命令を書いています。
+       *　
+       */
+
+
+
+      #region Aボタン処理
+switch (this.ButtonA.onButton(ws)) { //Aボタンの処理　第２引数に、調べたいボタンをString型で入れる
+          case &quot;DOWN&quot;:                      //AボタンがDownしたときの処理
+            input[0].mi.dwFlags = 0x0002;                       //左マウスダウン
+SendInput(1, input, Marshal.SizeOf(input[0])); //マウスイベントを送信
+            this.ButtonA.Clear();                //処理が済んだ
+            break;
+
+          case &quot;UP&quot;:                        //AボタンがUPしたときの処理
+            input[0].mi.dwFlags = 0x0004;                       //左マウスダウン
+SendInput(1, input, Marshal.SizeOf(input[0])); //マウスイベントを送信
+            this.ButtonA.Clear();                //処理が済んだ
+            break;
+
+          case &quot;DOWNING&quot;:                      //Aボタンが長押しされたときの処理
+this.Battery = ws.Battery; //バッテリーの値を取得 長押しされている間だけ
+            break;
+        }
+      #endregion
+  
+
+      #region Bボタン処理
+      switch (this.ButtonB.onButton(ws)) {
+          case &quot;DOWN&quot;:                      //BボタンがDownしたときの処理
+            input[0].mi.dwFlags = 0x0008;                       //右マウスダウン
+SendInput(1, input, Marshal.SizeOf(input[0])); //マウスイベントを送信
+            this.ButtonB.Clear();                //処理が済んだ
+            break;
+
+          case &quot;UP&quot;:                        //BボタンがUPしたときの処理
+            input[0].mi.dwFlags = 0x00010;                      //右マウスダウン
+            SendInput(1, input, Marshal.SizeOf(input[0]));    //マウスイベントを送信
+            this.ButtonB.Clear();  //処理が済んだ
+            break;
+        }
+      #endregion
+
+      #region A,Bボタン処理
+      switch (this.ButtonAB.onButton(ws)) {
+          case &quot;DOWN&quot;:                      //ABボタンがDownしたときの処理
+            Shell32.ShellClass shell = new Shell32.ShellClass();
+            if (this.ButtonAB.Flg) {              //Flagがtrueの時
+              shell.UndoMinimizeALL();            //デスクトップの表示を戻す
+              this.ButtonAB.Flg = false;
+            } else {
+                                      //Flagがfalseの時
+              shell.MinimizeAll();              //デスクトップの表示
+              this.ButtonAB.Flg = true;
+            }
+            this.ButtonAB.Clear();  //処理が済んだ
+            break;
+
+        }
+      #endregion
+
+      #region カーソル Up処理
+switch (this.ButtonUP.onButton(ws)) { \
+    //カーソルボタンの処理　第２引数に、調べたいボタンをString型で入れる
+          case &quot;DOWN&quot;:            //ボタンがDownしたときの処理
+            SendKeys.SendWait(&quot;{UP}&quot;);    //UPキーを発行
+            this.ButtonUP.Clear();      //処理が済んだ
+            break;
+        }
+      #endregion
+
+      #region カーソル Down処理
+switch (this.ButtonDOWN.onButton(ws)) { \
+    //カーソルボタンの処理　第２引数に、調べたいボタンをString型で入れる
+        case &quot;DOWN&quot;:                //ボタンがDownしたときの処理
+          SendKeys.SendWait(&quot;{Down}&quot;);      //Downキーを発行
+          this.ButtonDOWN.Clear();        //処理が済んだ
+          break;
+      }
+      #endregion
+
+      #region カーソル Left処理
+switch (this.ButtonLEFT.onButton(ws)) { \
+    //カーソルボタンの処理　第２引数に、調べたいボタンをString型で入れる
+        case &quot;DOWN&quot;:                //ボタンがDOWNしたときの処理
+          SendKeys.SendWait(&quot;{Left}&quot;);      //Leftキーを発行
+          this.ButtonLEFT.Clear();        //処理が済んだ
+          break;
+      }
+      #endregion
+
+      #region カーソル Right処理
+switch (this.ButtonRIGHT.onButton(ws)) { \
+    //カーソルボタンの処理　第２引数に、調べたいボタンをString型で入れる
+        case &quot;DOWN&quot;:                  //ボタンがDOWNしたときの処理
+          SendKeys.SendWait(&quot;{Right}&quot;);        //上キーを発行
+          this.ButtonRIGHT.Clear();          //処理が済んだ
+          break;
+      }
+      #endregion
+
+
+      #region ボタン Minus処理
+switch (this.ButtonMINUS.onButton(ws)){ //ボタンの処理　第２引数に、調べたいボタンをString型で入れる
+        case &quot;DOWN&quot;:                  //ボタンがDOWNしたときの処理
+            SendKeys.SendWait(&quot;%{F4}&quot;);        //ALT + F4キーを発行
+            this.ButtonMINUS.Clear();        //処理が済んだ
+            break;
+
+      }
+      #endregion
+
+
+      #region ボタン HOME処理
+switch (this.ButtonHOME.onButton(ws)) { //ボタンの処理　第２引数に、調べたいボタンをString型で入れる
+        case &quot;DOWN&quot;:                //ボタンがDOWNしたときの処理
+            Environment.Exit(0);        //アプリケーションの終了
+            this.ButtonHOME.Clear();      //処理が済んだ
+            break;
+
+      }
+      #endregion
+
+
+
+
+      #region ボタン TWO処理
+      switch (this.ButtonTWO.onButton(ws)) {  //ボタンがDOWNしたときの処理
+        case &quot;DOWN&quot;:                //ボタンがDOWNしたときの処理
+            SendKeys.SendWait(&quot;{ESC}&quot;);      //ESCキーを発行
+            this.ButtonTWO.Clear();        //処理が済んだ
+            break;
+
+        case &quot;DOWNING&quot;:              //ボタンが長押しされた
+            //PowerPointを起動する
+            //インストールされている環境によって、このパスは異なってくる
+System.Diagnostics.Process.Start(&quot;C:\\ProgramData\\Microsoft\\Windows\\Start \
+    Menu\\Programs\\Microsoft Office\\Microsoft Office PowerPoint \
+    2007&quot;);　//パワーポイントの起動
+            break;
+      }
+      #endregion
+
+    }
+
+  }
+
+
+
+}
+</pre>
+
+<div class="fyi">
+<div class="title">コーディング文化の今昔</div>
+
+<p class="first_ja">　インタラクティブ技術をプログラム化するとき、例えばゲーム開発や研究開発において「とりあえず完成した状態」から、そのチューニングをしていく上で関数化、言い換えれば「経験的なロジックを数学で扱う習慣」をつけることは非常に重要です。</p>
+<p>　本書に掲載しているプログラムは紙面ですので、できるだけ掲載するコードの行数に無駄が無く、かつよりよい理解のために流れを追いやすく掲載するようにしています。これは筆者が小～中学生の頃流行していた「マイコンBASICマガジン」(電波新聞社)の考え方を採用しています。当時、良質なプログラムの主な流通方法はWebや電子メールではなく「紙面」でしたので『いかに短くて美しいコードを書くか』という、今から考えると恐ろしくストイックなコーディングスタイルが流行していたわけです。加えて、BASICマガジンは月刊誌でしたので、適度な締切や、編集部の妙なノリが、品質な高い「みんなで作っていく文化」を作り出していました。</p>
+<p>　このような「集合知」や文化…もっと高尚な言い方をすれば「集合知による創発的コーディング」、最近の流行で表現すれば「『ニコニコ動画・技術部』で作ってみた」がかなり近い感覚でしょうか。『ニコ動』でのインタラクティブ技術に関する注目は非常に高いものがあります(こんな事も知らないのか…と驚くことも多いのですが！)。</p>
+<p>　そして本書の読者が『ニコ動文化』に貢献できることも大きいとおもいます。皆さんもぜひ、いろんな作品や活動を映像化して、衆目にさらしてみるとよいでしょう。「すげwww！」と賞賛されたあとに、勢い余って公開したプログラムが「何このスパゲティ・コード!!」とガッカリされないように、再利用しやすく、他人の勉強になるコーディングスタイルを極めてみてみるのもカッコイイとおもいます。</p>
+</div>
+
+
+<h3 id="doc2_id315">WiiRemoteの状態をフォームに描画</h3>
+
+<p class="first_ja">次は赤外線センサーの状態をフォームのPictureBoxに描画できるようにします。座標を色のついた楕円で表示するだけなら、4章でも既に挑戦しましたので、このパートでは少し進めて「傾きを表示」できるようにします。あのWii本体で「指ポインタ」で表示されているように、回転を扱えるようになるわけです。</p>
+
+<div id="doc2_id317" class="caption">凝ったグラフィックス★整理していない(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+#region フォーム描画関数
+  public void DrawForms(WiimoteState ws)
+  {
+    //グラフィックスを取得
+    Graphics g = this.pictureBox1.CreateGraphics();
+    System.Drawing.Point pos = new System.Drawing.Point(0,0);
+    System.Drawing.Rectangle rect = new Rectangle(0,0,10,10);
+    Font drawFont = new Font(&quot;Arial&quot;, 9);
+    SolidBrush drawBrush = new SolidBrush(Color.White);
+    double radians, angle = 0.0f;
+    
+    String drawString = &quot;Text&quot;;
+/*
+String url=&quot;http://akihiko.shirai.as/projects/WiiRemote/web1016x546.jpg&quot;;
+    Image img;
+    using (System.Net.WebClient wc = new System.Net.WebClient())
+    using (System.IO.Stream st = wc.OpenRead(url))
+    {
+      img = Image.FromStream(st);
+    }
+//   img.Dispose();
+*/
+    Bitmap targetBMP;
+    targetBMP = new Bitmap(&quot;c:\\WiiRemote\\yubi.png&quot;);
+    targetBMP.MakeTransparent(targetBMP.GetPixel(0, 0));
+
+System.Drawing.PointF drawPoint = new System.Drawing.PointF(150.0F, \
+    150.0F);
+
+    g.Clear(Color.Black);//画面を黒色にクリア
+    //もし赤外線を１つでも発見したら
+    if (ws.IRState.IRSensors[0].Found)
+    {
+      //赤色でマーカ0を描画
+      g.FillEllipse(Brushes.Red,
+        ws.IRState.IRSensors[0].Position.X * 256 ,
+        ws.IRState.IRSensors[0].Position.Y * 128 ,
+        ws.IRState.IRSensors[0].Size + 5,
+        ws.IRState.IRSensors[0].Size + 5);
+      //青色でマーカ1を描画
+      g.FillEllipse(Brushes.Blue,
+        ws.IRState.IRSensors[1].Position.X * 256,
+        ws.IRState.IRSensors[1].Position.Y * 128, 
+        ws.IRState.IRSensors[1].Size + 5,
+        ws.IRState.IRSensors[1].Size + 5);
+      
+      //赤外線が2つ見えたらその中間をとる
+      if (ws.IRState.IRSensors[1].Found ) {
+        pos.X = (int)(ws.IRState.IRSensors[0].Position.X * 256
+         + ws.IRState.IRSensors[1].Position.X * 256 ) / 2;
+        pos.Y = (int)(ws.IRState.IRSensors[0].Position.Y * 128
+         + ws.IRState.IRSensors[1].Position.Y * 128 ) / 2;
+radians = Math.Atan2(ws.IRState.IRSensors[0].Position.Y - \
+    ws.IRState.IRSensors[1].Position.Y,
+ws.IRState.IRSensors[0].Position.X - ws.IRState.IRSensors[1].Position.X );
+        angle = radians * (180 / Math.PI);
+
+      } else {
+      //赤外線が1つなら、1つめの値を採用する
+        pos.X = (int)(ws.IRState.IRSensors[0].Position.X * 256); 
+        pos.Y = (int)(ws.IRState.IRSensors[0].Position.Y * 128);
+      }
+      rect.Location = pos;
+      rect.Height = 10; rect.Width = 10;
+      drawString = &quot;{&quot; + rect.X + &quot;, &quot;+ rect.Y +&quot;}&quot;;
+      g.DrawString(drawString, drawFont, drawBrush, pos);
+      g.DrawPie(Pens.Azure,rect, (float)-angle, (float)angle);
+
+      //ラジアン単位に変換
+      double d = angle / (180 / Math.PI);
+      //新しい座標位置を計算する
+      float x = pos.X;
+      float y = pos.Y;
+      float x1 = x + targetBMP.Width * (float)Math.Cos(d);
+      float y1 = y + targetBMP.Width * (float)Math.Sin(d);
+      float x2 = x - targetBMP.Height * (float)Math.Sin(d);
+      float y2 = y + targetBMP.Height * (float)Math.Cos(d);
+      //PointF配列を作成
+System.Drawing.PointF[] destinationPoints = {new System.Drawing.PointF(x, \
+    y),
+                    new System.Drawing.PointF(x1, y1),
+                    new System.Drawing.PointF(x2, y2)};
+      //画像を表示
+      g.DrawImage(targetBMP, destinationPoints);
+
+    }
+    g.Dispose();//グラフィックスの解放
+    label1.Text = &quot;IR[0] &quot; + ws.IRState.IRSensors[0].RawPosition.ToString()
+              + &quot;\nIR[1] &quot; + ws.IRState.IRSensors[1].RawPosition.ToString()
+              + &quot;\n size0 &quot;+ ws.IRState.IRSensors[0].Size.ToString()
+              + &quot;\n angle = &quot; + angle;
+  }
+#endregion
+</pre>
+
+
+<div class="figure">
+<img class="figure" src="Advanced/Mouse/DrawRich.png" alt="指や回転を扱うグラフィックス">
+</div>
+
+
+<h3 id="doc2_id325">★未実装メモ</h3>
+
+
+<h3 id="doc2_id328">まめちしきな</h3>
+
+
+<h4 id="doc2_id330">C++ビルド</h4>
+
+<p class="first_ja">C#.NETに対してC++.NET環境はこのような非.NET混在環境に強く、冒頭で「windows.h」を#include宣言するだけで、関連する構造体や、C#のコードにおける「0x0002」にあたる「MOUSEEVENTF_LEFTUP」などはもすべて自動で取り込んでくれます。そのままビルドすると、関数の実体が見つからないというエラーが出るのですが、「プロジェクトのプロパティ」→「構成プロパティ」→「リンカ」→「入力」→「追加の依存ファイル」を表示して「親またはプロジェクト規定値からの継承」にチェックを入れることで、ビルド時に実際の関数をリンクしてくれるようになります。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="Mouse/keisho.png" alt="「親またはプロジェクト規定値からの継承」にチェック" width="5cm">
+</div>
+
+<p></p>
+
+<h2 id="doc1_id22">XNAを使ったリアルタイム3DCGでの利用</h2>
+
+<p class="first_ja">このセクションではXNA Game Studio 3.0とWiimoteLibを使って、C#.NETによるゲーム開発環境をベースにしたリアルタイム3DCGによるインタラクションを解説します。</p>
+<p>XNAとは、マイクロソフトが推進している、DirectXの流れをくむ最新の.NETによるゲーム開発統合環境です。</p>
+<p>XNAによるコーディングスタイル、つまりXNA FrameworkにおけるC#言語は、旧来のリアルタイム3DCG開発環境の本流であったDirectXやManaged DirectXに加え、さらにゲーム開発に便利な関数が多く含まれており、簡単にゲームプログラムを作成できるようになっています。★最新のコンシューマー(家庭用)ゲーム機ではXbox 360、そしてWindowsPC用のゲーム開発の両方において、非常に効率的かつ先進的な開発ができるため、今後大きな流れを作り出す可能性があるでしょう。</p>
+<p>これから、WiiRemoteの加速度センサーの傾きによって、3Dで描画されたWiiRemoteがリアルタイムで変化するプログラム「WiiRemoteXNA」を作成します。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/WiiXNA/XNAWii0.png" alt="「WiiRemoteXNA」完成版のスクリーンショット(★タイトル変更予定)">
+</div>
+
+<p>なかなか派手な感じがするかもしれませんが、XNA Game Studio 3.0を使って、非常に短いコードで作成することができます。</p>
+
+<h3 id="doc3_id365">XNAのインストール</h3>
+
+<p class="first_ja">まずは、開発環境のセットアップを行いましょう。Microsoft XNA Game Studioをダウンロードしてインストールします。</p>
+<div class="fyi">
+<div class="title"></div>
+
+<p class="first_ja">Microsoft XNA Game Studio 3.0</p>
+<p>http://www.microsoft.com/downloads/details.aspx?familyid=7D70D6ED-1EDD-4852-9883-9A33C0AD8FEE</p>
+</div>
+
+<p>XNAは無料で開発環境を手に入れることができます。PCで利用する上ではライセンスに従い無料で利用することができますが、XBoxプラットフォームで開発するためには年間ライセンス料(1万円程度★)を払う必要があります。本書ではXBoxプラットフォームについては扱いませんが、動作環境として安定して安価で入手できるコンシューマゲーム機がそれほど高価ではないライセンス料で開発できるのは大きな魅力です。</p>
+
+<div class="figure">
+<img class="figure" src="Advanced/WiiXNA/XNA-Folder.png" alt="XNA-Folder.png">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="Advanced/WiiXNA/XNA-VS0.png" alt="XNA-VS0.png">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="Advanced/WiiXNA/XNAss0.png" alt="XNAss0.png">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="Advanced/WiiXNA/NewProject.png" alt="NewProject.png">
+</div>
+
+
+<h3 id="doc3_id383">ゲームプロジェクトの作成</h3>
+
+
+<div class="figure">
+<img class="figure" src="Advanced/WiiXNA/WiiXNA-Wiz.png">
+</div>
+
+
+<div id="doc3_id388" class="caption">ウィザードで作成された初期コード(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
+
+namespace WiiRemoteXNA
+{
+  /// &lt;summary&gt;
+  /// This is the main type for your game
+  /// &lt;/summary&gt;
+  public class Game1 : Microsoft.Xna.Framework.Game
+  {
+    GraphicsDeviceManager graphics;
+    SpriteBatch spriteBatch;
+
+    public Game1()
+    {
+      graphics = new GraphicsDeviceManager(this);
+      Content.RootDirectory = &quot;Content&quot;;
+    }
+
+    /// &lt;summary&gt;
+/// Allows the game to perform any initialization it needs to before \
+    starting to run.
+/// This is where it can query for any required services and load any \
+    non-graphic
+/// related content. Calling base.Initialize will enumerate through any \
+    components
+    /// and initialize them as well.
+    /// &lt;/summary&gt;
+    protected override void Initialize()
+    {
+      // TODO: Add your initialization logic here
+
+      base.Initialize();
+    }
+
+    /// &lt;summary&gt;
+    /// LoadContent will be called once per game and is the place to load
+    /// all of your content.
+    /// &lt;/summary&gt;
+    protected override void LoadContent()
+    {
+      // Create a new SpriteBatch, which can be used to draw textures.
+      spriteBatch = new SpriteBatch(GraphicsDevice);
+
+      // TODO: use this.Content to load your game content here
+    }
+
+    /// &lt;summary&gt;
+/// UnloadContent will be called once per game and is the place to unload
+    /// all content.
+    /// &lt;/summary&gt;
+    protected override void UnloadContent()
+    {
+      // TODO: Unload any non ContentManager content here
+    }
+
+    /// &lt;summary&gt;
+    /// Allows the game to run logic such as updating the world,
+    /// checking for collisions, gathering input, and playing audio.
+    /// &lt;/summary&gt;
+/// &lt;param name=&quot;gameTime&quot;&gt;Provides a snapshot of timing values.&lt;/param&gt;
+    protected override void Update(GameTime gameTime)
+    {
+      // Allows the game to exit
+if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+        this.Exit();
+
+      // TODO: Add your update logic here
+
+      base.Update(gameTime);
+    }
+
+    /// &lt;summary&gt;
+    /// This is called when the game should draw itself.
+    /// &lt;/summary&gt;
+/// &lt;param name=&quot;gameTime&quot;&gt;Provides a snapshot of timing values.&lt;/param&gt;
+    protected override void Draw(GameTime gameTime)
+    {
+      GraphicsDevice.Clear(Color.CornflowerBlue);
+
+      // TODO: Add your drawing code here
+
+      base.Draw(gameTime);
+    }
+  }
+}
+</pre>
+
+
+<div id="doc3_id391" class="caption">★小坂先生提供完成コード(Game1.cs)</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
+using WiimoteLib;          //WiimoteLibの読み込み
+using System.Collections;  //Collectionの読み込み
+
+namespace XNAWii {
+ public class Game1 : Microsoft.Xna.Framework.Game {
+  GraphicsDeviceManager graphics;
+  SpriteBatch spriteBatch;
+  private Model xfile;      //Xファイル
+  Wiimote wm = new Wiimote();         //Wiimoteの宣言
+  ArrayList[] Accel = new ArrayList[2];    //傾きセンサの値格納
+
+  #region Game
+  public Game1() {
+   graphics = new GraphicsDeviceManager(this);
+   Content.RootDirectory = &quot;Content&quot;;
+  }
+  #endregion
+  #region Initialize 初期化
+  protected override void Initialize() {
+   base.Initialize();
+   //生のデータを扱うと、センサ値のブレが酷いので指定した回数の平均を取るためのリスト
+   this.Accel[0] = new ArrayList();       //リスト定義
+   this.Accel[1] = new ArrayList();       //リスト定義
+   this.wm.Connect();           //接続
+   this.wm.SetReportType(InputReport.IRExtensionAccel, true); //レポートタイプの設定
+   this.wm.WiimoteChanged += wm_WiimoteChanged;    //イベント関数の登録
+   this.wm.SetLEDs(0);           //LEDを点灯させない
+  }
+  #endregion
+  #region LoadContent グラフィック関係の読み込み
+  protected override void LoadContent() {
+   spriteBatch = new SpriteBatch(GraphicsDevice);
+
+   this.xfile = this.Content.Load&lt;Model&gt;(&quot;wii&quot;); //Xファイルの読み込み
+   foreach (ModelMesh mesh in this.xfile.Meshes)//メッシュごと
+      {
+    foreach (BasicEffect effect in mesh.Effects) {
+     //ビュー行列
+effect.View = Matrix.CreateLookAt(new Vector3(0.0f, 0.0f, 10.0f), \
+    Vector3.Zero, Vector3.Up);
+     //プロジェクション行列
+     effect.Projection = Matrix.CreatePerspectiveFieldOfView(
+      MathHelper.ToRadians(45.0f),
+(float)this.GraphicsDevice.Viewport.Width / \
+    (float)this.GraphicsDevice.Viewport.Height,
+      1.0f,
+      50.0f
+     );
+    }
+   }
+  }
+  #endregion
+  #region UnloadContent グラフィック関係の破棄
+  protected override void UnloadContent() {
+  }
+  #endregion
+  #region Update グラフィック以外の定期更新
+  protected override void Update(GameTime gameTime) {
+   //そのまま実行すると以下のようなエラーが発生します。
+//「エラー 1 'ButtonState' は、'Microsoft.Xna.Framework.Input.ButtonState' と \
+    'WiimoteLib.ButtonState'' 間のあいまいな参照です。 C:\Users\kosaka\Documents\Visual \
+    Studio 2008\Projects\XNAWii\XNAWii\Game1.cs 101 58 XNAWii」
+//'Microsoft.Xna.Framework.Input.ButtonState' と \
+    'WiimoteLib.ButtonState'のButtonState、どっちを使うのかよくわからないと怒られます。
+   //ここでは'Microsoft.Xna.Framework.Input.ButtonState'を使いますので、以下のように追加します。
+// 修正前: if (GamePad.GetState(PlayerIndex.One).Buttons.Back == \
+    ButtonState.Pressed)
+// 修正後: if (GamePad.GetState(PlayerIndex.One).Buttons.Back == \
+    Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+if (GamePad.GetState(PlayerIndex.One).Buttons.Back == \
+    Microsoft.Xna.Framework.Input.ButtonState.Pressed)
+    this.Exit();
+   base.Update(gameTime);
+  }
+  #endregion
+  #region グラフィック関係の定期更新
+  protected override void Draw(GameTime gameTime) {
+   GraphicsDevice.Clear(Color.CornflowerBlue);
+   float x, y;   //回転角度を格納
+   float tmp;   //計算用変数
+   //Xの平均を求める
+   tmp = 0; //tmpの値を0にする
+   //合計を求める
+   for (int i = 0; i &lt; this.Accel[0].Count; i++) {
+    tmp = tmp + (float)this.Accel[0][i];
+   }
+   //平均を求める　合計を個数で割る
+   x = tmp / this.Accel[0].Count;
+
+   //Yの平均を求める
+   tmp = 0; //tmpの値を0にする
+   //合計を求める
+   for (int i = 0; i &lt; this.Accel[1].Count; i++) {
+    tmp = tmp + (float)this.Accel[1][i];
+   }
+   //平均を求める　合計を個数で割る
+   y = tmp / this.Accel[1].Count;
+   //90に拡張
+   //センサの値を角度に変換
+   x = (-x * 90.0f);
+   y = (-y * 90.0f);
+   //角度をラジアンに変換
+   x = x / 180 * 3.14f;
+   y = y / 180 * 3.14f;
+
+   //画面に描画する
+   foreach (ModelMesh mesh in this.xfile.Meshes) {
+    foreach (BasicEffect effect in mesh.Effects) {
+     //回転角度を設定　Yaw　Pitch　Rollを指定する。 Yawは使わないのでPitchにｙをRollにxを設定
+     effect.World = Matrix.CreateFromYawPitchRoll(0, y, x);
+    }
+    mesh.Draw();//meshを描画
+   }
+
+   base.Draw(gameTime);
+  }
+  #endregion
+
+  #region wm_WiimoteChanged Wiiリモコン値が変更したら
+  void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+   WiimoteState ws = args.WiimoteState;        //WiimoteStateの値を取得
+   //リストに突っ込む
+   this.Accel[0].Add(ws.AccelState.Values.X);
+   this.Accel[1].Add(ws.AccelState.Values.Y);
+   int avg_count = 50; //平均を取る数
+   //avg_count個得たら古い値を１つ削除する
+   //常に最新の状態のavg_count個のデータが格納される。
+   if (this.Accel[0].Count &gt;= avg_count) { this.Accel[0].RemoveAt(0); }
+   if (this.Accel[1].Count &gt;= avg_count) { this.Accel[1].RemoveAt(0); }
+  }
+  #endregion
+ }
+}
+</pre>
+
+
+<h3 id="doc3_id395">WiimoteLibの組み込み</h3>
+
+
+<h3 id="doc3_id397">.xファイルの読み込み</h3>
+
+
+<h3 id="doc3_id399">インタラクションの作成</h3>
+
+<p>まとめ</p>
+<p></p>
+</body>
+</html>

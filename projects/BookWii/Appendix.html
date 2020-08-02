@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年4月14日最終更新" lang="ja">
+<title>付録</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">付録</h1>
+
+<div class="date">2009年4月14日最終更新</div>
+<div class="author">白井暁彦</div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id16" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">付録：GlovePIE関数リファレンス</a>
+<li> <a href="#doc1_id18" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiRemote情報ポータル</a>
+<li> <a href="#doc1_id21" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">関係あるかもしれないWeb/Blog</a>
+<ul>
+<li> <a href="#doc1_id23" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">かつて音楽と呼ばれたもの</a>
+</ul>
+</ul>
+</div>
+
+<h2 id="doc1_id16">付録：GlovePIE関数リファレンス</h2>
+
+<p class="first_ja">これはGlovePIEに同梱されている「Documentation.rtf」を独自に整理しながら翻訳したものです。興味深い内容がありましたら、ぜひ最新のオリジナルの英語版を確認されることをお勧めします。作者の幅広い知識に感動を覚えます。</p>
+
+<dl>
+<dt>コメント行
+<dd>可読性を高めるためのコメント行です。「//」の他に「/*～*/」、「'」、「%」、「REM」で始まる行もコメントとして無視されます。
+<dt>行末
+<dd>何も付加せず改行しても問題ありませんが、C/C++スタイルの「;」を付加して行末を明示的に記述できます。
+<dt>代入
+<dd>「A=B」とするとAの中身がBになります。「A:=B」や「B=&gt;A」とも記述できます。
+<dt>If文(条件分岐)
+<dd>基本は「if (条件) then (処理) [;] end if」ですが「then」は省略可能、end ifも「end」と書けます。「else」も使用できます。
+<dt>while文(繰り返し実行)
+<dd>「while (条件) { (処理) }」です。1行で書くこともできます。「do」も使用できます。
+<dt>For文(繰り返し実行)
+<dd>for ( (初期値) ; (条件) ; (増分) ) { (処理) }」です。明示的に閉じるために「end for」を使うこともできます。
+<dt>wait文
+<dd>処理を指定時間だけ停止できます。「wait 100 ms」,「wait 1 second」,「wait(500 milliseconds)」など単位付きで標記します。
+<dt>加算/減算
+<dd>加算：「var.x++」,「++var.x」,「Inc(var.x)」、減算：「var.x--」,「--var.x」,「Dec(var.x)」をインラインで使用できます。
+<dt>ビットシフト演算
+<dd>「shr var.x, 1」,「shl var.x,1」とすることでビットシフト演算を実行できます。
+<dt>発音
+<dd>「Say“hello world”」もしくは「Say(“hello world”)」と書くことで、音声合成で自由に喋らせることができます。</dl>
+
+<p>続いて関数です。</p>
+
+<dl>
+<dt>三角関数(trigonometric)・逆三角関数(Inverse trigonometric)
+<dd>sin, cos, tan, sec, cosec, cotan, aSin, aCos, aTan, aSec, aCosec, aCotan, atan2
+<dt>双曲線関数(Hyperbolic)・逆双曲線関数(Inverse Hyperbolic trig.)
+<dd>SinH, CosH, TanH, SecH, CosecH, CotH, aSinH, aCosH, aTanH, aSecH, aCosecH, aCotanH
+<dt>丸め関数(Rounding Functions)
+<dd>「ceil()」切り上げ整数化,「floor()」切り捨て整数化,「trunc()/int()」切り落とし整数化,「round()」四捨五入,「frac()」分数部, RoundTo(),SipleRoundTo()
+<dt>符号関数(Sign Functions)
+<dd>「Sign()」正なら1、0なら0、負なら-1を返す。「Abs()」絶対値。符号を取り除いて返す。
+<dt>指数と平方根(Exponential and Square Root)
+<dd>「sqr(x)」xの二乗、「sqrt(x)」√x、「power(x,y)/intPower(x,y)」xのy乗、「exp(x)」eのx乗(e=2.71828... e^xの微分はe^x)、「Ldexp(s,p)」s * (2^p)を計算。
+<dt>多項式(polynomial)
+<dd>「Poly(x, a0, [a1, [a2, [a3, [a4, [a5, [a6]]]]]])」＝a0 + a1*x + a2*(x^2) + a3*(x^3) + a4*(x^4) + ...を計算
+<dt>対数(Logarithms)
+<dd>「Log10(x)」,「Log2(x)」,「LogN(N, x)」,「Ln(x)」,「LnXP1(x)」Ln(x)と同じですが（X+1）の自然対数を返す。
+<dt>比較関数(Comparison)
+<dd>「IsZero(x)」,「IsInfinite(x)」無限ならtrue,「IsNaN(x)」xが数値でなければtrue,「SameValue(a, b [, c])」a,bが同じ(c以降も)ならtrue,「InSet(x,a,b,c,d,e,f,g,...)」xが以後のa～gに一致すればtrue。
+<dt>最大/最小関数
+<dd>「max(a,b)/min(a,b)」2つの値の最大/最小を返す、単位は保存。
+<dt>値域関数
+<dd>「EnsureRange(x, a, b)」xを値域[a,b]に収める。「InRange(x, a, b)」xが値域[a,b]内であればtrue。
+<dt>マップ関数
+<dd>「MapRange(x, a, b, c, d)」値域[a,b]におけるxを値域[c,d]に割り当てた値を返す。マップ後が値域の外であっても適当な値になる。「EnsureMapRange(x, a, b, c, d)」MapRangeと同じだが値域の外の値を値域の端とする。
+<dt>乱数(Random)
+<dd>「Random」0～1のランダムな小数値。「Random(n)」0～n-1までのランダムな数。「RandomRange(a,b)」a～bまでのランダムな数。「RandG(mean, StandDev)」平均のまわりにガウス分布から乱数を返す。
+<dt>序数(Ordinal)
+<dd>「odd(n)」奇数ならtrue,「pred(n)/succ(n)」自然数n-1/n+1を返す。
+<dt>日付時刻関数
+<dd>「Now/Time/Date」現在の日時,「Tomorrow/Yesterday」明日/昨日の日付,「CurrentYear」グレゴリオ暦の今年,「DateOf(x)/TimeOf(x)」xの日付/時間,「Dayofthemonth(x), dayoftheweek(x), dayoftheyear(x), dayofweek(x), Daysbetween(x, y), Daysinamonth(x, y), daysinayear(x), daysinmonth(x), daysinyear(x), DaySpan(x, y), HourOfTheDay(x), HourOfTheMonth(x), HourOfTheWeek(x), HourOfTheYear(x), HoursBetween(x, y), HourSpan(x, y), IncDay(x, [y])」その他日付時刻関数</dl>
+
+<p>その他の関数</p>
+
+<dl>
+<dt>Smooth(x, [ExtraFrames, [DeadbandDistance]])
+<dd>Smooths関数は値xを過去の[ExtraFrames]の件数分だけつかって平均を算出します。もし[DeadbandDistance]以上の変更がなければ、全てにおいて変更がなかったものとして判断します(省略時のデフォルト[DeadbandDistance]は0)。
+<dt>Pressed(x), Clicked(x), SingleClicked(x), DoubleClicked(x)
+<dd>それぞれのイベントが発生したときにtrueを返します。
+<dt>HeldDown(x, MinTime)
+<dd>xが押されている間、MinTimeの間だけtrueを返します。
+<dt>KeepDown(x, MinTime)
+<dd>MinTimeが経過するまでtrueである状態が終わってからtrueであり続けます。</dl>
+
+<p>その他、名前から機能が想像できそうなコマンドを名称だけでも紹介しておきます。試してみるとよいでしょう。「ExitScript, ExitPIE, Execute(filename), Chain(filename), Display(text), DebugPrint(text), OutputToFile(text), AddCode(text), ControlPanel, ControlPanelKeyboard, ControlPanelJoystick, ControlPanelMouse, ControlPanelP5, ControlPanelPPJoy, ControlPanelSpeech, ControlPanelMidi, ControlPanelDisplay, PlaySound(filename),Beep([freq, duration]), BeepAsterisk, BeepExclamation, BeepHand, BeepQuestion, BeepDefault, FlashPieWindow, HidePie, ShowPie, MinimizePie, MaximizePie, RestorePie, UnMinimizePie, UnMaximizePie, Press(x), Release(x), Toggle(x), Type(text), TypeUnicode(text), SendOsc(ip, port, address, [p1, p2, p3…]), BroadcastOsc(port, address, [p1, p2, p3…]), WiimotePoke([wiimote number], address, value), WiimoteSend(wiimote number, report number, [p1, p2, p3…])」</p>
+<p>WiiRemoteに直接コマンドを送る「WiimoteSend()」や、データをテキストファイルに書き出す「OutputToFile()」などいろいろあります。</p>
+<p>これらの関数(例えばtrunc)に興味があったら「DebugPrint(trunc(-3.7));」として実行してみてください。デバッグウインドウに結果を表示することができます。また単に「debug = random」とすることで「Run」ボタンの右側に表示することもできます。</p>
+<p>他にもマニュアルには算術記号(オペレーター)についての解説もありますが、多くのプログラミング言語と大きく変わらないのでここでは割愛します。</p>
+<p>以下Wiimoteオブジェクトについて。</p>
+
+<dl>
+<dt>Buttons
+<dd>Up, Down, Left, Right, A, B, Minus, Home, Plus, One, Twoの状態を取得します。PowerとSyncボタンは存在しません。
+<dt>Motion Sensing
+<dd><p>The Wiimote also has three accelerometers which measure forces/accelerations, in each of the three dimensions. Force and Acceleration are basically the same thing, since the mass is constant (F=ma). In GlovePIE they are labelled like this: X is to the right (of the wiimote), Y is up (from the wiimote buttons), and Z is forwards (or wherever the wiimote is pointing). This is the left-handed Direct3D system.</p>
+<p>If you drop a Wiimote and it is in freefall, all the forces will be zero. BUT if you are holding a wiimote up so that it doesn’t fall, then you are pushing it upwards with a force equal to the force of gravity, but in the upwards direction. If you hold the Wiimote flat then the force holding it up will be in the +Y direction, but if you point the Wiimote at the ceiling then the force holding it up will be in the +Z direction. This helps us measure the Wiimotes tilt as well as its acceleration.</p>
+<p>There are three values that you should never use anymore, because they are obsolete and only for backwards compatability: RawForceX, RawForceY, and RawForceZ. If your script is currently using them, then replace them with the calibrated force values below. Remember the calibrated force values don’t need an offset, and they are about 1/30 the size of the RawForce values.</p></dl>
+
+<p>There are three calibrated force values:</p>
+<p>gx, gy, and gz</p>
+<p>They can be zero for no force/acceleration, 1 for the same amount of force/acceleration as gravity, or any value in between or outside that range. There is also the vector version:</p>
+<p>g</p>
+<p>The accelerations above are effectively measured in Gs. You can use them for measuring actual acceleration, or for measuring tilt.</p>
+<p>If you prefer acceleration values in other units, you can use these values:</p>
+<p>RawAccX, RawAccY, and RawAccZ.</p>
+<p>They are measured in Metres Per Second Per Second. But GlovePIE supports units so you can do things like this:</p>
+<p>RawAccX in miles per hour per second</p>
+<p>to get the value in different units.</p>
+<p>The RawAcc values still include gravity.</p>
+<p>If you want to get the real acceleration without gravity then you should use the following values instead:</p>
+<p>RelAccX, RelAccY, and RelAccZ</p>
+<p>They are not very accurate because it is hard for GlovePIE to separate out the force of gravity, but it makes a good attempt.</p>
+<p>All these acceleration values are relative to the Wiimote’s orientation. So Z is wherever the Wiimote is pointing, not necessarily a fixed direction.</p>
+<p>Rotations</p>
+<p>The Wiimote doesn’t contain gyros (BOO!!!), so it has no way of determining the yaw rotation without using an imitation sensor bar. But it can sort-of tell which way is down, based on the force of gravity. This allows it to measure pitch and roll rotations. You can use the following values:</p>
+<p>Pitch, Roll SmoothPitch, SmoothRoll</p>
+<p>The angles are all in degrees.</p>
+<p>Pitch is the vertical angle. It is 90 when the wiimote is pointing at the ceiling, -90 when it is pointing at the ground, 0 when it is flat, and a value in between for angles in between.</p>
+<p>Roll is how much the top is tilted towards the right. It is -180 or +180 when the Wiimote is upside-down, -90 when it is on its left side, +90 when it is on its right side. and 0 when it is flat.</p>
+<p>Pitch and Roll attempt to filter out accelerations. This may make them slightly jagged. You can use SmoothPitch and SmoothRoll if you don’t mind getting the wrong result if the wiimote moves, but you do want it to be smooth.</p>
+<p>There is also a rotation matrix, for those who prefer it. It is a 3x3 Direct3D style rotation matrix: RotMat</p>
+<p>Sensor Bar</p>
+<p>The sensor bar is just a bunch of Infra Red lights which are always on. You can make your own fake sensor bar with candles, Christmas tree lights, or Infra-Red remote controls with a button held down. Or you can order a wireless sensor bar off the internet, or you can build your own.</p>
+<p>You can read the position of the infra-red dots that the Wiimote can see with: wiimote.dot1x, wiimote.dot1y…wiimote.dot4x, wiimote.dot4y</p>
+<p>You can tell whether an infra-red dot can be seen with Wiimote.dot1vis to Wiimote.dot4vis</p>
+<p>You can tell the size of a dot (between 0 and 15) with Wiimote.dot1size to Wiimote.dot4size</p>
+<p>The size will always be reported as 16 if your script uses the Nunchuk or Classic Controller, because the report needs to contain more information. LEDs</p>
+<p>You can set the 4 LEDs on the Wiimote by setting:</p>
+<p>Wiimote.Leds</p>
+<p>to a value between 0 and 15. It is binary.</p>
+<p>Or you can set:</p>
+<p>Wiimote.Led1, Wiimote.Led2, Wiimote.Led3, and Wiimote.Led4</p>
+<p>to either true or false individually.</p>
+<p>Force Feedback</p>
+<p>You can activate force feedback by setting:</p>
+<p>Wiimote.Rumble</p>
+<p>to either true or false</p>
+<p>Speaker</p>
+<p>You can play sounds on the Wiimote simply by setting these values:</p>
+<p>Frequency, Volume</p>
+<p>If you set Frequency to 0 it will switch the speaker off. If you set it to non-zero it will switch the speaker on again. The frequency is measured in Hz. Don’t confuse frequency with pitch, they are different in this context.</p>
+<p>You can set the volume to a value between 0 and 2, (between 0% and 200% in other words). I don’t recommend setting it above 100% though, unless you want to go deaf.</p>
+<p>You can also turn the speaker on and off by setting either of these values:</p>
+<p>Speaker, Mute</p>
+<p>Setting speaker to true switches on the speaker (slowly) and setting it to false switches off the speaker. Setting Mute to true mutes the speaker, and setting it to false un-mutes it. Using”Mute”works faster than using“Speaker”. Note that you don’t need to turn the speaker on if you set the frequency, because setting the frequency to non-zero does it automatically. Turning sound on and off with mute is also faster than doing it by changing the frequency to 0.</p>
+<p>You can also set the sample rate with this variable:</p>
+<p>SampleRate</p>
+<p>Currently GlovePIE only supports sample rates around 3640 Hz. Sample rates must be multiples of 280 added or subtracted from that value. The default is 3640 Hz. The sample rate is also measured in Hz. The sample rate will automatically increase if you set the frequency higher than 1820 Hz. There isn’t much point in changing the sample rate.</p>
+<p>Nunchuck and Classic Controllers</p>
+<p>To tell whether a Nunchuk or classic controller is plugged in, use these values:</p>
+<p>Wiimote.HasNunChuck Wiimote.HasClassic Wiimote.Expansion</p>
+<p>The first two are true or false. The third one is a number: 0 means none, 1 don’t know what kind yet, 2 means Nunchuk, 3 means Classic Controller.</p>
+<p>Nunchuk</p>
+<p>The Nunchuk has accelerometers too! Most of the same acceleration values and rotation values are the same as the Wiimote, so see the description in the sections above. The difference is the Nunchuk accelerometers have higher precision and lower range.</p>
+<p>The Nunchuk also has two buttons. NOTE: Unlike a playstation controller, pushing in the joystick is not a button, don’t try it. The two buttons are:</p>
+<p>CButton ZButton</p>
+<p>Unlike the other controllers, you need the word“Button”on the end, because Z is the name of an axis and I’m reserving it for future axis use.</p>
+<p>The Nunchuk also has a joystick. It uses the following values:</p>
+<p>JoyX, JoyY</p>
+<p>JoyX is -1 to the left, 0 in the middle, and +1 to the right. JoyY is -1 up, 0 in the middle, and +1 down.</p>
+<p>These are the same values used by PPJoy.</p>
+<p>The Nunchuk does NOT have vibration, or a speaker.</p>
+<p>Classic Controller</p>
+<p>The classic controller does NOT have accelerometers or rumble, or a speaker!</p>
+<p>The classic controller does have an unexplained lock button in the top centre, which physically opens and closes two slots in the back. The two slots can’t connect to anything and seem totally pointless. The lock button can’t be read.</p>
+<p>You can read the following buttons:</p>
+<p>a, b, x, y Minus, Home, Plus Up, Down, Left, Right ZL, ZR LFull, and RFull</p>
+<p>They are either True or False.</p>
+<p>The L button and the R button (LFull, and RFull above) also have analog versions:</p>
+<p>L, and R</p>
+<p>They will be between 0 and 1. Although mine won’t go below 0.03 when fully released, and yours may not reach 1 when fully pressed.</p>
+<p>There are also two joysticks. I’m calling the one on the left Joy1, and the one on the right Joy2.</p>
+<p>Joy1X, Joy1Y, Joy2X, Joy2Y</p>
+<p>They are between -1 and 1, the same as the Nunchuk joystick described above. Low level stuff</p>
+<p>You can read the data reports from the Wiimote with:</p>
+<p>debug = Wiimote.InByteString</p>
+<p>Or you can read them individually with:</p>
+<p>var.a = Wiimote.InReport var.b = Wiimote.InByte1</p>
+<p>You can send data reports to the Wiimote with this function (it has no dot):</p>
+<p>WiimoteSend(1, 0x12, 1, 0x33)</p>
+<p>The first parameter of WiimoteSend is the Wiimote number you want to send it to, normally 1. The second parameter is the report number. The remaining parameters are the report payload. In this case, the report tells the Wiimote to start vibrating, and to send data via report 0x33.</p>
+<p>The one-byte reports can also be sent another way by setting one of these values (it will only send the report when the value changes):</p>
+<p>Wiimote.Report11, Wiimote.Report13, Wiimote.Report14, Wiimote.Report15, Wiimote.Report19, Wiimote.Report1A</p>
+<p>You can set bytes in the Wiimote’s onboard memory (where Miis are stored) with the WiimotePoke command, and read bytes from its memory with the WiimotePeek command.</p>
+<p>WiimotePoke(1, 0x04B00033, 0x33) var.value = WiimotePeek(1, 0x04B00033)</p>
+<p>The first parameter is optional, and it is the Wiimote number. The second parameter is the address. The third parameter is the value you want to set it to (between 0 and 255).</p>
+<p>Note that the Nunchuk and Classic Controller have their own memory space which is mapped to the Wiimote’s when they are plugged in.</p>
+<p>Don’t use these low level functions unless you know what you are doing and have read the www.wiili.org/Wiimote page. One person has bricked their nunchuk by experimenting with writing to all its addresses (although that is how we discovered how the nunchuk works).</p>
+<p>Multiple Wiimotes</p>
+<p>You can tell how many Wiimotes there are with Wiimote.Count</p>
+<p>You can access a particular wiimote by putting a number after the word“wiimote”and before the dot. For example:</p>
+<p>Enter = wiimote2.A</p>
+<p>You can tell whether a particular Wiimote exists with Wiimote.Exists</p>
+<p>You can’t read the Serial number (as text) anymore with Wiimote.Serial, because I disabled it. It rebooted computers with BlueSoleil when you tried to read the serial.</p>
+<p>Don’t forget to sync both Wiimotes with the PC before you try to use them.</p>
+
+<h2 id="doc1_id18">WiiRemote情報ポータル</h2>
+
+<p class="first_ja">http://www.wiimoteproject.com/</p>
+
+<h3 id="doc1_id21">関係あるかもしれないWeb/Blog</h3>
+
+
+<h4 id="doc1_id23">かつて音楽と呼ばれたもの</h4>
+
+<p class="first_ja">http://www.sonasphere.com/blog/徳井直生(株)Qosmo代表取締役／東京藝術大学非常勤講師／DJ)工学博士&quot;ユメみるiPhone―クリエイターのためのiPhone SDKプログラミング&quot; (徳井直生) &quot;iPhone&times;Music - iPhoneが予言する「いつか音楽と呼ばれるもの」&quot; (徳井直生,永野哲久,金子智太郎)</p>
+</body>
+</html>

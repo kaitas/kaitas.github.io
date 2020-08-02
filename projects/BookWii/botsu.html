@@ -1,0 +1,1204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦" lang="ja">
+<meta name="date" content="2009年6月13日-" lang="ja">
+<title>没原稿墓場・どこからもリンクしていないはず</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">没原稿墓場・どこからもリンクしていないはず</h1>
+
+<div class="date">2009年6月13日-</div>
+<div class="author">白井暁彦</div>
+<div class="email"><a href="mailto:shirai at mail.com" onmouseover="hilightHyperlink(this)" onmouseout="normal(this)">shirai at mail.com</a></div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id19" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">▽残念ながら没稿予定(上から順に利用価値有り)</a>
+<ul>
+<li> <a href="#doc1_id21" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">API比較</a>
+<ul>
+<li> <a href="#doc1_id32" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Wiiuse</a>
+<li> <a href="#doc1_id35" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">cWiid</a>
+<li> <a href="#doc1_id38" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">[執筆中・動作確認中]Wiim</a>
+<ul>
+<li> <a href="#doc2_id95" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">シンプルなゲーム向き「Wiim」</a>
+<li> <a href="#doc2_id107" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">懐かしゲーム「Wiim Landar」</a>
+<li> <a href="#doc2_id110" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">★Wiim Landarの改良</a>
+</ul>
+<li> <a href="#doc1_id40" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">GiiMote</a>
+<li> <a href="#doc1_id43" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">MaxMSPを使ったプロジェクト</a>
+</ul>
+<li> <a href="#doc1_id46" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">傾きによるWiiRemoteマウス</a>
+<li> <a href="#doc1_id49" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiiYourself!のDemo.cpp解説(訳したが、長すぎる。付録？)</a>
+<li> <a href="#doc1_id51" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Wiiyourself!とDirectXで作る3DCGでの利用</a>
+<ul>
+<li> <a href="#doc4_id164" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">はじめに</a>
+<li> <a href="#doc4_id167" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Bullet Physics Library</a>
+<ul>
+<li> <a href="#doc4_id169" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Bulletとは</a>
+<li> <a href="#doc4_id176" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Bulletの準備</a>
+</ul>
+<li> <a href="#doc4_id200" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DirectX SDKのセットアップ</a>
+<ul>
+<li> <a href="#doc4_id202" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DirectX SDKの入手</a>
+<li> <a href="#doc4_id205" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">インストール</a>
+</ul>
+<li> <a href="#doc4_id209" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DXUTフレームワークを使ったDirect3Dのプログラム</a>
+<ul>
+<li> <a href="#doc4_id219" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">DXUTを使ったプログラムの構造</a>
+<li> <a href="#doc4_id225" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Xファイルの描画クラス</a>
+</ul>
+<li> <a href="#doc4_id233" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">シンプルなDirectXとBulletのプログラム</a>
+</ul>
+<li> <a href="#doc1_id56" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Products</a>
+<ul>
+<li> <a href="#doc1_id58" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Bespoke Software</a>
+<li> <a href="#doc1_id61" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">wiimoteproject.com</a>
+<li> <a href="#doc1_id64" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">★コラム：WiiFitを作った男たち</a>
+</ul>
+<li> <a href="#doc1_id67" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">[再構成中]インタラクション技術：解体新書</a>
+<ul>
+<li> <a href="#doc1_id69" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">「SoundQuest」制作秘話</a>
+<ul>
+<li> <a href="#doc1_id71" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線マーカーを使ったモーションキャプチャ</a>
+</ul>
+</ul>
+</ul>
+</ul>
+</div>
+
+<h1 class="chapter" id="doc1_id19">▽残念ながら没稿予定(上から順に利用価値有り)</h1>
+
+
+<h2 id="doc1_id21">API比較</h2>
+
+<p class="first_ja">本書ではプログラミングAPIとしてはWiimoteLibとWiiYourself!を紹介しましたが、この2つ以外にもかなり多くのAPIプロジェクトが存在します。</p>
+
+<div class="table">
+<table id="doc1_id23" class="data" rules="groups">
+<caption>★(作成中)API比較</caption>
+<colgroup span="6">
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">API名</th>
+<th align="center">スタック対応</th>
+<th align="center">言語</th>
+<th align="center">機能</th>
+<th align="center">ライセンス</th>
+<th align="center">メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>WiimoteLib</td>
+<td>B/W/T</td>
+<td>C#/VB/C++(他.NET)</td>
+<td>B/A/I/R/L/M</td>
+<td>MS-PL☆</td>
+<td>本書4章にて解説</td>
+</tr>
+<tr class="odd">
+<td>Wiim</td>
+<td>&times;{W}</td>
+<td>C++</td>
+<td>B/A/R/L/M</td>
+<td>GNU LGPL</td>
+<td>SDLと加速度を使ったゲーム開発向き</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>B:ボタン、A:加速度センサー、I:赤外線、R:バイブレーター出力、L:LED出力、M:複数接続、S:スピーカー</p>
+
+<h3 id="doc1_id32">Wiiuse</h3>
+
+<p class="first_ja">マルチプラットフォームを特徴とするAPI http://wiiuse.net/ http://www.wiili.org/index.php/Wiiuse http://arbitrary2.blog22.fc2.com/blog-entry-284.html http://sourceforge.net/project/showfiles.php?group_id=187194</p>
+
+<h3 id="doc1_id35">cWiid</h3>
+
+<p class="first_ja">cWiidはLinux環境で利用されているWiiRemote用ライブラリです。</p>
+
+<h3 id="doc1_id38">[執筆中・動作確認中]Wiim</h3>
+
+
+<h3 id="doc2_id95">シンプルなゲーム向き「Wiim」</h3>
+
+<p class="first_ja">Wiim(&quot;whim&quot;もしくは&quot;wheem&quot;と発音するそうです)は、米国ミネソタ州在住のeric_hcr80氏によって開発されたC++用APIで、GNU Lesser General Public Licenseで公開され、2007年に開発が終了しています。</p>
+<div class="fyi">
+<div class="title">Wiimのホームページ</div>
+
+<p class="first_ja">http://digitalretrograde.com/projects/wiim/</p>
+</div>
+
+<p>機能的には加速度センサ、ボタン状態検出、LED・バイブレータ出力などの基本機能に加え、マルチWiiRemoteへのアクセスなどが実装されています。Vectorクラスを利用し、丁寧に書かれており、コーディングはしやすいのですが、赤外線関係、ヌンチャク、拡張端子の機能は未実装のままプロジェクトは終了しているようです(メールにて本人に問い合わせたところ、他のプロジェクトの急速な成長により、とのことです)。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="Wiim/WiimHP.png" alt="Wiimのホームページ" width="8cm">
+</div>
+
+
+<h3 id="doc2_id107">懐かしゲーム「Wiim Landar」</h3>
+
+<p class="first_ja">Wiimは上記の通り、既に開発が終わってしまったプロジェクトですが、数あるオープンソースWiiRemote用APIの中でも、唯一ゲームらしいゲーム「Wiim Landar」のソースコードが付属しています。</p>
+
+<h3 id="doc2_id110">★Wiim Landarの改良</h3>
+
+<p class="first_ja">まずはWiimのホームページからデモの実行ファイル「wiim\_lander\_demo.zip」を入手しましょう。こちらのアーカイブにはビルド済みの実行ファイルが含まれています。解凍したフォルダにはSDL.dll、SDL\_gfx.dll、そして実行ファイルWiimDemo.exeの3つのファイルがあるはずです。まずは「WiimDemo.exe」をダブルクリックしてみましょう。</p>
+<p>★ここで運がよければ「Wiim Landar」のゲーム画面が表示されます。</p>
+
+<h3 id="doc1_id40">GiiMote</h3>
+
+<p class="first_ja">GiiMoteはジョージア工科大の学生Sam Whited(http://samwhited.com/)によって開発され、Google Code(http://code.google.com/p/giimote/)にて公開されているプロジェクトで、「Game Maker」というゲーム製作用スクリプト言語GML(Game Maker Language)と研究でよく使われる数学ツール「MATLAB」用のWiiRemote機能拡張を提供しています。ライセンスはGNU Lesser General Public Licenseです。</p>
+
+<h3 id="doc1_id43">MaxMSPを使ったプロジェクト</h3>
+
+
+<h2 id="doc1_id46">傾きによるWiiRemoteマウス</h2>
+
+<p class="first_ja">http://www.kosaka-lab.com/tips/2009/02/wii-raw.html</p>
+
+<h2 id="doc1_id49">WiiYourself!のDemo.cpp解説(訳したが、長すぎる。付録？)</h2>
+
+<p class="first_ja">このセクションでは、WiiYourself!付属デモのソースコード「Demo.cpp」を読み、WiiYourself!が何をやっているのか理解していきましょう。実はこのDemoこそが、作者のgl.tter氏自らが認める「WiiYourself!唯一のドキュメント」なのです(本書を除き)。</p>
+<p>ここでは「WiiYourself! v.1.11 BETA」に付属のDemo.cppをコメントの翻訳を交えて解説します。コードの全文はぜひ最新WiiYourself!に同梱されているDemo.cppを参照してください。</p>
+<p>s</p>
+
+<div id="doc3_id138" class="caption">Demo.cpp</div>
+<pre class="program" style="margin-top:0">
+// \
+    _______________________________________________________________________________ \
+//
+//   - WiiYourself! - native C++ Wiimote library  v1.11 BETA
+//    (c) gl.tter 2007-8 - http://gl.tter.org
+//
+// see License.txt for conditions of use. see History.txt for change log.
+// \
+    _______________________________________________________________________________ \
+//
+//  demo.cpp  (tab = 4 spaces)
+#include &quot;Demo.h&quot;
+#include &quot;..\wiimote.h&quot;
+#include &lt;mmsystem.h&gt;  // for timeGetTime
+
+// configs:
+#define USE_BEEPS_AND_DELAYS // undefine to test library works without them
+#define LOOK_FOR_ADDITIONAL_WIIMOTES // tries to connect any extra wiimotes
+
+// \
+    ------------------------------------------------------------------------------------ \
+//  simple callback example (we use polling for everything else):
+// \
+    ------------------------------------------------------------------------------------ \
+void on_state_change (wiimote &amp;remote, state_change_flags changed)
+  {
+  // extension was just connected:
+  // 拡張端子がいま接続されたら…
+  if(changed &amp; EXTENSION_CONNECTED)
+    {
+#ifdef USE_BEEPS_AND_DELAYS
+    Beep(1000, 200);
+#endif
+    // switch to a report mode that includes the extension data (we will
+    //  loose the IR dot sizes)
+    //リポートモードを拡張端子データを含むモードに切り換え
+    //(これをやると赤外線ドットサイズが見えなくなります)
+    remote.SetReportType(wiimote::IN_BUTTONS_ACCEL_IR_EXT);
+    }
+  // extension was just disconnected:
+  // 拡張端子が切断されたら、
+  else if(changed &amp; EXTENSION_DISCONNECTED)
+    {
+#ifdef USE_BEEPS_AND_DELAYS
+    Beep(200, 300);
+#endif
+// use a non-extension report mode (this gives us back the IR dot sizes)
+    // 非拡張端子レポートモードを使います(赤外線ドットサイズが復活)
+    remote.SetReportType(wiimote::IN_BUTTONS_ACCEL_IR);
+    }
+  }
+// \
+    ------------------------------------------------------------------------------------ \
+int _tmain ()
+  {
+  
+  //コンソールへの表示を準備
+  SetConsoleTitle(_T(&quot;- WiiYourself! - Demo: &quot;));
+  HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
+
+  // write the title
+  BRIGHT_WHITE;
+  _tprintf(_T(&quot;\n&quot;)); 
+  _tprintf(_T(&quot;   -WiiYourself!- &quot;));
+  WHITE; _tprintf(       _T(&quot;library Demo:   &quot;));
+  CYAN;  _tprintf(               _T(&quot;| (c) &quot;));
+  BRIGHT_CYAN;  _tprintf(               _T(&quot;gl&quot;));
+  BRIGHT_PURPLE;_tprintf(                            _T(&quot;.&quot;));
+  BRIGHT_CYAN;  _tprintf(                _T(&quot;tter&quot;));
+  CYAN; _tprintf(                        _T(&quot; 2007-08\n&quot;)
+       _T(&quot;                        v&quot;) WIIYOURSELF_VERSION_STR
+                     _T(&quot; | http://gl.tter.org\n&quot;));
+CYAN;_tprintf(_T(&quot; \
+    ______________________________________________________________________\n\n\n&quot;)); \
+
+  // let's load a couple of samples:
+  wiimote_sample sine_sample, daisy_sample;
+
+  // one .raw (just to demonstrate it)
+  //スピーカ用サンプリングファイルのロード
+  if(!wiimote::Load16BitMonoSampleRAW(_T(&quot;1kSine16 (3130).raw&quot;),
+                    true, FREQ_3130HZ, sine_sample)) {
+_tprintf(_T(&quot;\r ** can't find 'Sine16 (3130).raw' - (sample won't work!) \
+    **&quot;));
+    Beep(100, 1000);
+    Sleep(3000);
+    _tprintf(_T(&quot;\r&quot;) BLANK_LINE);
+    }
+  // and one (more convenient) .wav 
+if(!wiimote::Load16bitMonoSampleWAV(_T(&quot;Daisy16 (3130).wav&quot;), \
+    daisy_sample)) {
+_tprintf(_T(&quot;\r ** can't find 'Daisy16 (3130).wav' - (sample won't work!) \
+    **&quot;));
+    Beep(100, 1000);
+    Sleep(3000);
+    _tprintf(_T(&quot;\r&quot;) BLANK_LINE);
+    }
+
+
+  // create a wiimote object
+  //WiiYourself!のオブジェクト(Wiimote)を作成
+  wiimote remote;
+  
+  // simple callback example (we use polling for almost everything here):
+  //  notify us when something related to the extension changes
+  //(ここでは、ほとんど全ての処理をポーリングを使っていますので)
+  //単純なコールバックの例として、
+  //拡張端子に何か起きたときによばれるコールバックを作成します
+  remote.ChangedCallback     = on_state_change;
+// avoid unwanted callback overhead by requesting only extension-related \
+    data
+  //拡張関係データだけを呼ぶ事で不要なコールバックのオーバーヘッドを防いでいます
+  remote.CallbackTriggerFlags = EXTENSION_CHANGED;
+
+  //再接続
+reconnect:
+  COORD pos = { 0, 6 };
+  SetConsoleCursorPosition(console, pos);
+
+  // try to connect the first available wiimote in the system
+  //  (available means 'installed, and currently Bluetooth-connected'):
+  //「the first available」なWiiRemoteを探して、接続を試みます
+  //availableとは「インストールされていて現在Bluetooth接続されている」という意味
+  
+  WHITE; _tprintf(_T(&quot;  Looking for a Wiimote     &quot;));
+     
+  static const TCHAR* wait_str[] = { _T(&quot;.  &quot;), _T(&quot;.. &quot;), _T(&quot;...&quot;) };
+  unsigned count = 0;
+  while(!remote.Connect(wiimote::FIRST_AVAILABLE)) {
+    _tprintf(_T(&quot;\b\b\b\b%s &quot;), wait_str[count%3]);
+    count++;
+#ifdef USE_BEEPS_AND_DELAYS
+    Beep(500, 30); Sleep(1000);  //ピッピッピ...1秒ごとに音を鳴らしています
+#endif
+    }
+
+  // connected - light all LEDs
+  // つながったので全てのLEDを点灯
+  remote.SetLEDs(0x0f);
+  BRIGHT_CYAN; _tprintf(_T(&quot;\b\b\b\b... connected!&quot;));
+#ifdef USE_BEEPS_AND_DELAYS
+  Beep(1000, 300); Sleep(2000);
+#endif
+
+  COORD cursor_pos = { 0, 6 };
+
+#ifdef LOOK_FOR_ADDITIONAL_WIIMOTES
+  // try to connect any additional wiimotes (just to show the code)
+  //追加のWiiRemoteがあれば接続を試す(どうプログラミングするかを見せているだけ)
+  _tprintf(_T(&quot;\n\n&quot;));
+  
+  //7台はいける設計
+  wiimote  *extra_motes [7] = { NULL }; // 7 should cover it
+  unsigned detected      = 0;
+  while(detected &lt; 7)
+    {
+    //もうひとつwiimoteオブジェクトを作成してFIRST_AVAILABLEで接続を試す
+    wiimote *next = new wiimote;
+    if(!next-&gt;Connect(wiimote::FIRST_AVAILABLE))
+      break;
+    extra_motes[detected++] = next;
+    
+    WHITE    ; _tprintf(_T(&quot;   also found wiimote &quot;));
+    BRIGHT_GREEN; _tprintf(_T(&quot;%u\n\n&quot;), detected+1);
+# ifdef USE_BEEPS_AND_DELAYS
+    Beep(1000 + (detected*100), 100);
+    Sleep(500);
+# endif
+    }
+  WHITE; _tprintf( ((detected == 7)? _T(&quot;     (can't detect any more).&quot;) :
+                     _T(&quot;    (no more found).&quot;)) );
+# ifdef USE_BEEPS_AND_DELAYS
+  Sleep(2000);
+# endif
+  // clean up
+  //不要なWiiRemoteを整理
+  for(unsigned index=0; index&lt;detected; index++)
+    delete extra_motes[index];
+  
+  SetConsoleCursorPosition(console, cursor_pos);
+#endif // LOOK_FOR_ADDITIONAL_WIIMOTES
+
+// ask the wiimote to report everything (using the 'non-continous updates'
+// default mode - updates will be frequent anyway due to the \
+    acceleration/IR
+  //  values changing):
+  //「non-continous updates」を使うことで、WiiRemoteに全てをリポートさせるよう問い合わせ
+  //デフォルトモード:更新は周期的になる。いずれにせよ加速度とか赤外線の値が変わるとき
+
+  // *note*: the report mode that includes the extension data unfortunately
+// only reports the 'BASIC' IR info (ie. no dot sizes) - so let's choose
+// the best mode based on the extension status (we also toggle modes
+  //      as needed in the callback above):
+  //[注記]：拡張端子データを含むリポートモードは残念ながら「BASIC」赤外線情報しか使えない
+  //(たとえばドットの大きさとか)、なので拡張端子の状態によって最適なモードを選んでください
+  //(上のコールバックの中でも必要なモードしか利用していません)
+
+  //拡張端子の状態によってリポートタイプを設定
+  //拡張端子を使うときは赤外線のドットサイズは見えません
+  if(remote.bExtension)
+    remote.SetReportType(wiimote::IN_BUTTONS_ACCEL_IR_EXT); // no IR dots
+  else
+    remote.SetReportType(wiimote::IN_BUTTONS_ACCEL_IR);    //    IR dots
+
+  // print the button event instructions:
+  // ボタンの使い方を表示
+  BRIGHT_WHITE;
+_tprintf(_T(&quot;\r -- TRY: B = rumble, A = square, 1 = sine, 2 = daisy, Home = \
+    Exit --\n&quot;));
+
+  // (stuff for animations)
+  //timeGetTime()をつかって振動時のアニメーションを作成
+  DWORD   last_rumble_time = timeGetTime(); // for rumble text animation
+  DWORD    last_led_time    = timeGetTime(); // for led         animation
+  bool   rumble_text    = true;
+  unsigned lit_led          = 0;  
+  
+  // display the wiimote state data until 'Home' is pressed:
+  // WiiRemoteのステート(状態)を「Home」ボタンが押されるまで表示する
+  while(!remote.Button.Home())
+    {
+    // the wiimote state needs to be refreshed for each pass
+    // WiiRemoteステートは毎回&quot;リフレッシュ&quot;される必要があります
+    while(remote.RefreshState() == NO_CHANGE)
+    //何も変化がなかったときにCPUをhog★しないように
+      Sleep(1); // // don't hog the CPU if nothing changed
+
+    cursor_pos.Y = 8;
+    SetConsoleCursorPosition(console, cursor_pos);
+
+    // did we loose the connection?
+    //もし接続をロストしたら...
+    if(remote.ConnectionLost())
+      {
+      BRIGHT_RED; _tprintf(
+_T(&quot; *** connection lost! *** \n&quot;)
+        BLANK_LINE BLANK_LINE BLANK_LINE BLANK_LINE BLANK_LINE BLANK_LINE
+        BLANK_LINE BLANK_LINE BLANK_LINE BLANK_LINE BLANK_LINE BLANK_LINE
+        BLANK_LINE BLANK_LINE BLANK_LINE);
+      Beep(100, 1000);
+      Sleep(2000);
+      COORD pos = { 0, 6 };
+      SetConsoleCursorPosition(console, pos);
+      _tprintf(BLANK_LINE BLANK_LINE BLANK_LINE);
+      goto reconnect;
+      }
+
+    // rumble if 'B' (trigger) is pressed
+    // 「B」ボタンを押すとバイブレーターを振動させる
+    remote.SetRumble(remote.Button.B());
+
+    // actions for buttons just pressed/released:
+    // ボタンを押される/離されるといったactionsを格納する変数
+    static bool last_A = false, last_One = false, last_Two = false;
+    //ボタンのactionsを扱うマクロ
+    #define ON_PRESS_RELEASE(button, pressed_action, released_action)  \
+      { bool pressed = remote.Button.button();            \
+        if(pressed)                          \
+         {           /* just pressed? */            \
+        if(!last_##button) pressed_action;              \
+        }                              \
+      else if(last_##button) /* just released */            \
+        released_action;                      \
+      /* remember the current button state for next time */      \
+      last_##button = pressed; }
+    //現在のボタンステートを次回のために保持して
+    //いま押されたのか、離されたのか、押しっぱなしなのでこのあと離されるのか
+    //たくさんのif文で書くのがいやなので「last_##button」として、
+    //ON_PRESS_RELEASEマクロでまとめています。
+    
+    //  play audio whilst certain buttons are held
+    //  それぞれのボタンがホールドされたときの音声ファイル再生★whilst
+    // 矩形波を再生
+    ON_PRESS_RELEASE(  A, remote.PlaySquareWave(FREQ_3130HZ, 0x20), 
+                remote.EnableSpeaker (false));
+    //サイン波サンプリングを再生
+    ON_PRESS_RELEASE(One, remote.PlaySample     (sine_sample),
+                remote.EnableSpeaker (false));
+    //DAISY★サンプリングを再生
+    ON_PRESS_RELEASE(Two, remote.PlaySample     (daisy_sample),
+                remote.EnableSpeaker (false));
+
+
+    // バッテリーレベル
+    // Battery level:
+    CYAN; _tprintf(_T(&quot;  Battery: &quot;));
+    // (the green/yellow/red colour ranges are rough guesses - my wiimote
+    //  with rechargeable battery pack fails at around 15%)
+    // 緑/黄/赤にカラーレンジを推定
+    // (私のWiiRemoteの充電バッテリーパックでは15%で落ちる)
+    if     (remote.BatteryPercent &gt;= 30) BRIGHT_GREEN;
+    else if(remote.BatteryPercent &gt;= 20) BRIGHT_YELLOW; else BRIGHT_RED;
+    _tprintf(_T(&quot;%3u%%   &quot;), remote.BatteryPercent);
+
+    DWORD current_time = timeGetTime();
+    
+    // LEDアニメーションを1秒ごと再生
+    // LEDs:
+    //  animate them every second
+    if((current_time - last_led_time) &gt;= 1000) { //1秒経過
+      remote.SetLEDs((BYTE)(1&lt;&lt;lit_led));     //ビットシフト演算:[0001]を0-3ビット左に移動
+      lit_led      = (++lit_led) % 4;    //余り
+      last_led_time = timeGetTime();
+      }
+
+    CYAN; _tprintf(_T(&quot;LEDs: &quot;)); WHITE; _tprintf(_T(&quot;[&quot;));
+    for(unsigned led=0; led&lt;4; led++)
+      {
+      if(remote.LED.Lit(led)) {
+        BRIGHT_CYAN; _tprintf(_T(&quot;*&quot;));
+        }
+      else{
+        WHITE      ; _tprintf(_T(&quot;-&quot;));//_T(&quot;%c&quot;), '0'+led);
+        }
+      }
+
+    // バイブレーター
+    // Rumble
+    WHITE; _tprintf(_T(&quot;]    &quot;));
+    if(remote.bRumble) {
+      BRIGHT_WHITE; _tprintf(rumble_text? _T(&quot; RUMBLE&quot;) : _T(&quot;RUMBLE &quot;));
+      // animate the text
+      if((current_time - last_rumble_time) &gt;= 110) {
+        rumble_text     = !rumble_text;
+        last_rumble_time = current_time;
+        }
+      }
+    else
+      _tprintf(_T(&quot;       &quot;));
+
+    // 現在のHIDへの出力モードを表示
+    // Output method:
+      CYAN; _tprintf( _T(&quot;    using %s\n&quot;), (remote.IsUsingHIDwrites()?
+                         _T(&quot;HID writes&quot;) : _T(&quot;WriteFile()&quot;)));
+    //ボタン処理
+    // Buttons:
+    CYAN; _tprintf(_T(&quot;\n  Buttons: &quot;)); WHITE; _tprintf(_T(&quot;[&quot;));
+    for(unsigned bit=0; bit&lt;16; bit++)
+      {
+      WORD mask = (WORD)(1 &lt;&lt; bit);
+      // skip unused bits
+      if((wiimote_state::buttons::ALL &amp; mask) == 0)
+        continue;
+
+      const TCHAR* button_name = wiimote::ButtonNameFromBit[bit];
+      bool     pressed   = ((remote.Button.Bits &amp; mask) != 0);
+      if(bit &gt; 0) {
+        CYAN; _tprintf(_T(&quot;|&quot;)); // seperator
+        }
+      if(pressed) {
+        BRIGHT_WHITE; _tprintf(_T(&quot;%s&quot;)  , button_name);
+        }
+      else{
+        WHITE       ; _tprintf(_T(&quot;%*s&quot;), _tcslen(button_name), _T(&quot;&quot;));
+        }
+      }
+    WHITE; _tprintf(_T(&quot;]\n&quot;));
+
+    // 加速度センサー
+    // Acceleration:
+    CYAN ; _tprintf(_T(&quot;    Accel:&quot;));
+    WHITE; _tprintf(_T(&quot;  X %+2.3f  Y %+2.3f  Z %+2.3f  \n&quot;),
+            remote.Acceleration.X,
+            remote.Acceleration.Y,
+            remote.Acceleration.Z);
+  
+    // 方向推定(最後の適正な値から時間が経っているなら赤で表示)
+    // Orientation estimate (shown red if last valid update is aging):
+    CYAN ; _tprintf(_T(&quot;   Orient:&quot;));
+    WHITE; _tprintf(_T(&quot;  UpdateAge %3u  &quot;),
+            remote.Acceleration.Orientation.UpdateAge);
+    // 最後の方向更新が時間切れと判断される
+    //  show if the last orientation update is considered out-of-date
+    //   (using an arbitrary threshold)
+    if(remote.Acceleration.Orientation.UpdateAge &gt; 10)
+      RED;
+      
+    _tprintf(_T(&quot;Pitch %4ddeg  Roll %4ddeg  \n&quot;)
+_T(&quot; (X %+.3f Y %+.3f Z %+.3f) \n&quot;),
+         (int)remote.Acceleration.Orientation.Pitch,
+         (int)remote.Acceleration.Orientation.Roll ,
+         remote.Acceleration.Orientation.X,
+         remote.Acceleration.Orientation.Y,
+           remote.Acceleration.Orientation.Z);
+        
+    // IR:
+    CYAN ; _tprintf(_T(&quot;       IR:&quot;));
+    WHITE; _tprintf(_T(&quot;  Mode %s  &quot;),
+      ((remote.IR.Mode == wiimote_state::ir::OFF     )? _T(&quot;OFF  &quot;) :
+       (remote.IR.Mode == wiimote_state::ir::BASIC   )? _T(&quot;BASIC&quot;) :
+       (remote.IR.Mode == wiimote_state::ir::EXTENDED)? _T(&quot;EXT. &quot;) :
+                                _T(&quot;FULL &quot;)));
+// IR dot sizes are only reported in EXTENDED IR mode (FULL isn't supported \
+    yet)
+    bool dot_sizes = (remote.IR.Mode == wiimote_state::ir::EXTENDED);
+
+    for(unsigned index=0; index&lt;4; index++)
+      {
+      wiimote_state::ir::dot &amp;dot = remote.IR.Dot[index];
+      
+      WHITE;_tprintf(_T(&quot;%u: &quot;), index);
+
+      if(dot.bVisible) {
+        WHITE; _tprintf(_T(&quot;Seen       &quot;));
+        }
+      else{
+        RED  ; _tprintf(_T(&quot;Not seen   &quot;));
+        }
+
+      _tprintf(_T(&quot;Size&quot;));
+      if(dot_sizes)
+         _tprintf(_T(&quot;%3d &quot;), dot.Size);
+      else{
+        RED; _tprintf(_T(&quot; n/a&quot;));
+        if(dot.bVisible) WHITE;
+        }
+
+      _tprintf(_T(&quot;  X %.3f  Y %.3f\n&quot;), dot.X, dot.Y);
+      
+      if(index &lt; 3)
+        _tprintf(_T(&quot;                        &quot;));
+      }
+
+    // Speaker:
+    CYAN ; _tprintf(_T(&quot;  Speaker:&quot;));
+    WHITE; _tprintf(_T(&quot;  %s | %s    &quot;),
+                  (remote.Speaker.bEnabled? _T(&quot;On &quot;) :
+                                _T(&quot;Off&quot;)),
+                  (remote.Speaker.bMuted  ? _T(&quot;Muted&quot;) :
+                                _T(&quot;     &quot;)));
+    if(!remote.Speaker.bEnabled || remote.Speaker.bMuted)
+      RED;
+    else//if(remote.IsPlayingAudio()) BRIGHT_WHITE; else WHITE;
+      WHITE;
+    _tprintf(_T(&quot;Frequency %4u Hz   Volume 0x%02x\n&quot;),
+         wiimote::FreqLookup[remote.Speaker.Freq],
+         remote.Speaker.Volume);
+    
+    // -- Extensions --:
+    CYAN ; _tprintf(_T(&quot;__________\n  Extnsn.:  &quot;));
+    switch(remote.ExtensionType)
+      {
+      case wiimote_state::NONE:
+        {
+        RED;
+_tprintf(_T(&quot;None \n&quot;));
+        _tprintf(BLANK_LINE BLANK_LINE BLANK_LINE);
+        }
+        break;
+      
+      case wiimote_state::PARTIALLY_INSERTED:
+        {
+        BRIGHT_RED;
+_tprintf(_T(&quot;Partially Inserted \n&quot;));
+        _tprintf(BLANK_LINE BLANK_LINE BLANK_LINE);
+        }
+        break;
+      
+      // -- Nunchuk --
+      case wiimote_state::NUNCHUK:
+        {
+        BRIGHT_WHITE; _tprintf(_T(&quot;Nunchuk   &quot;));
+
+        // Buttons:
+        CYAN    ; _tprintf(_T(&quot;Buttons: &quot;)); WHITE; _tprintf(_T(&quot;[&quot;));
+        BRIGHT_WHITE; _tprintf(remote.Nunchuk.C? _T(&quot;C&quot;) : _T(&quot; &quot;));
+        CYAN    ; _tprintf(_T(&quot;|&quot;));
+        BRIGHT_WHITE; _tprintf(remote.Nunchuk.Z? _T(&quot;Z&quot;) : _T(&quot; &quot;));
+        WHITE    ; _tprintf(_T(&quot;]   &quot;));
+        // Joystick:
+        CYAN    ; _tprintf(_T(&quot;Joystick:  &quot;));
+        WHITE    ; _tprintf(_T(&quot;X %+2.3f  Y %+2.3f\n&quot;),
+                     remote.Nunchuk.Joystick.X,
+                     remote.Nunchuk.Joystick.Y);
+        // Acceleration:
+        CYAN    ; _tprintf(_T(&quot;    Accel:&quot;));
+        WHITE    ; _tprintf(_T(&quot;  X %+2.3f  Y %+2.3f  Z %+2.3f  \n&quot;),
+                     remote.Nunchuk.Acceleration.X,
+                     remote.Nunchuk.Acceleration.Y,
+                     remote.Nunchuk.Acceleration.Z);
+        
+        // Orientation estimate (shown red if last valid update is aging):
+        CYAN    ; _tprintf(_T(&quot;   Orient:&quot;));
+        WHITE    ; _tprintf(_T(&quot;  UpdateAge %3u  &quot;),
+                remote.Nunchuk.Acceleration.Orientation.UpdateAge);
+        //  show if the last orientation update is aging
+        if(remote.Nunchuk.Acceleration.Orientation.UpdateAge &gt; 10)
+          RED;
+        _tprintf(_T(&quot;Pitch %4ddeg  Roll %4ddeg  \n&quot;)
+_T(&quot; (X %+.2f Y %+.2f Z %+.2f) \n&quot;),
+             (int)remote.Nunchuk.Acceleration.Orientation.Pitch,
+             (int)remote.Nunchuk.Acceleration.Orientation.Roll ,
+             remote.Nunchuk.Acceleration.Orientation.X,
+             remote.Nunchuk.Acceleration.Orientation.Y,
+               remote.Nunchuk.Acceleration.Orientation.Z);
+        }
+        break;
+
+      // -- Classic Controller --
+      case wiimote_state::CLASSIC:
+      case wiimote_state::CLASSIC_GUITAR:
+        {
+        BRIGHT_WHITE;
+        // the Guitar Hero controller is just a classic controller with
+        //  another ID
+        if(remote.ExtensionType == wiimote_state::CLASSIC_GUITAR)
+          _tprintf(_T(&quot;Guitar Hero Contrl.  &quot;));
+        else
+          _tprintf(_T(&quot;Classic Controller   &quot;));
+        
+        // L: Joystick/Trigger
+        WHITE; _tprintf(_T(&quot;L:  &quot;));
+        CYAN ; _tprintf(_T(&quot;Joy &quot;));
+        WHITE; _tprintf(_T(&quot;X %+2.3f  Y %+2.3f  &quot;),
+                remote.ClassicController.JoystickL.X,
+                remote.ClassicController.JoystickL.Y);
+        CYAN ; _tprintf(_T(&quot;Trig &quot;));
+        WHITE; _tprintf(_T(&quot;%+2.3f\n&quot;),
+                remote.ClassicController.TriggerL);
+        // R: Joystick/Trigger
+        WHITE; _tprintf(_T(&quot;                                 R:  &quot;));
+        CYAN ; _tprintf(_T(&quot;Joy &quot;));
+        WHITE; _tprintf(_T(&quot;X %+2.3f  Y %+2.3f  &quot;),
+                remote.ClassicController.JoystickR.X,
+                remote.ClassicController.JoystickR.Y);
+        CYAN ; _tprintf(_T(&quot;Trig &quot;));
+        WHITE; _tprintf(_T(&quot;%+2.3f\n&quot;),
+                remote.ClassicController.TriggerR);
+
+        // Buttons:
+        CYAN; _tprintf(_T(&quot;  Buttons: &quot;)); WHITE; _tprintf(_T(&quot;[&quot;));
+        for(unsigned bit=0; bit&lt;16; bit++)
+          {
+          WORD mask = (WORD)(1 &lt;&lt; bit);
+          // skip unused bits
+          if((wiimote_state::classic_controller::buttons::ALL &amp; mask) == 0)
+            continue;
+
+const TCHAR* button_name = wiimote::ClassicButtonNameFromBit[bit];
+          const TCHAR* seperator   = (bit==0)? _T(&quot;&quot;) : _T(&quot;|&quot;);
+bool pressed = ((remote.ClassicController.Button.Bits &amp; mask) != 0);
+          CYAN; _tprintf(seperator);
+          if(pressed) {
+            BRIGHT_WHITE; _tprintf(_T(&quot;%s&quot;)  , button_name);
+            }
+          else{
+            WHITE  ; _tprintf(_T(&quot;%*s&quot;), _tcslen(button_name), _T(&quot;&quot;));
+            }
+          }
+        WHITE; _tprintf(_T(&quot;]&quot;));
+        }
+        break;
+
+      case wiimote_state::BALANCE_BOARD:
+        {
+        BRIGHT_WHITE; _tprintf(_T(&quot;Balance Board&quot;));
+
+        // Buttons:
+        CYAN ; _tprintf(_T(&quot;   Weight: &quot;));
+        WHITE; _tprintf(_T(&quot;TL    &quot;));
+             _tprintf(_T(&quot;%2.2f&quot;), remote.BalanceBoard.Kg.TopL);
+        CYAN ; _tprintf(_T(&quot; kg&quot;)); WHITE; ;_tprintf(_T(&quot;  TR &quot;));
+             _tprintf(_T(&quot;%2.2f&quot;), remote.BalanceBoard.Kg.TopR);
+        CYAN;  _tprintf(_T(&quot; kg\n&quot;)); WHITE;
+             _tprintf(_T(&quot;                                    BL    &quot;));
+             _tprintf(_T(&quot;%2.2f&quot;), remote.BalanceBoard.Kg.BottomL);
+        CYAN;  _tprintf(_T(&quot; kg&quot;)); WHITE; _tprintf(_T(&quot;  BR &quot;));
+             _tprintf(_T(&quot;%2.2f&quot;), remote.BalanceBoard.Kg.BottomR);
+        CYAN;  _tprintf(_T(&quot; kg \n&quot;)); WHITE;
+             _tprintf(_T(&quot;                                    Total &quot;));
+             _tprintf(_T(&quot;%2.2f&quot;), remote.BalanceBoard.Kg.Total);
+        CYAN;  _tprintf(_T(&quot; kg&quot;));
+        }
+        break;
+      }
+      }
+
+
+// disconnect (auto-happens on wiimote destruction anyway, but let's play \
+    nice)
+  remote.Disconnect();
+  Beep(1000, 200);
+
+  BRIGHT_WHITE; // for automatic 'press any key to continue' msg
+  CloseHandle(console);
+
+  return 0;
+  }
+// \
+    ------------------------------------------------------------------------------------ \
+// \
+    ------------------------------------------------------------------------------------ \
+</pre>
+
+
+<h2 id="doc1_id51">Wiiyourself!とDirectXで作る3DCGでの利用</h2>
+
+
+<h3 id="doc4_id164">はじめに</h3>
+
+<p class="first_ja">本章では、C++を使って物理エンジンライブラリとWiiRemoteを組み合わせた3DCG描画プログラムを作ります。</p>
+<p>物理エンジンとは、グラフィックスと連携して、物体の衝突や破壊、重力や摩擦、反発などの力学的な計算をしてくれる便利なライブラリです。最近はコンピューターの速度が高速になってきたこともあり、複雑な物理をリアルタイム(実時間)処理できるようになってきました。商用のものでは、「Havok」や「PhysX」と言ったものがあり、ゲーム製品などに組み込まれています。オープンソースのものでは、「Open Dynamics Engine(ODE)」や「Bullet」といったものが有名ですが、本章では、その中でもオープンソースの「Bullet」というライブラリを紹介します。</p>
+<p>「Bullet」ではOpenGL(GLUT)を使用したデモが同梱されていますが、本章では、「Bullet」と「DirectX」、「WiiYourself!」を使って、物理＋3DCG＋WiiRemoteを組み合わせたインタラクティブなプログラムを開発します(執筆協力：&quot;shader.jp&quot; masafumi氏)。</p>
+
+<h3 id="doc4_id167">Bullet Physics Library</h3>
+
+
+<h4 id="doc4_id169">Bulletとは</h4>
+
+<p class="first_ja">Bullet Physics LibraryはZLibライセンスのオープンソース物理エンジンです。オープンソースのため無償で利用することができ、Windows、Mac、Linux、PlayStation 3、Xbox 360、Wiiなど様々なOSやプラットフォームで使えるようになっています。Bulletでは、剛体同士の衝突処理や、ジョイント、布やロープのようなソフトボディなどのゲーム内での物理の処理を行ってくれます。</p>
+
+<div class="figure">
+<img class="figure" src="3dcg/BulletShot1.png" alt="Bulletのサンプルの画面">
+</div>
+
+
+<h4 id="doc4_id176">Bulletの準備</h4>
+
+<p class="first_ja">BulletのSDKは、公式サイトの方からダウンロードができます。本書の執筆段階では、最新版はバージョン2.74になります。</p>
+<div class="fyi">
+<div class="title">Bullet公式サイト</div>
+
+<p class="first_ja">http://www.bulletphysics.com/</p>
+</div>
+
+
+<div class="figure">
+<img class="figure" src="3dcg/BulletHP.png" alt="Bulletの公式サイト(★最新ではない)">
+</div>
+
+<p>BulletのSDKは、ZIP圧縮されたアーカイブになっています。インストーラ形式ではないので、自分でHDDの任意の場所に展開する必要があります。本書では、下記のようにCドライブの直下に展開したものとして話を進めます。</p>
+<p>C:\bullet-2.74</p>
+<p>Bullet SDKの展開が出来ましたら最初にやることはライブラリのビルドになります。&quot;C:\bullet-2.74\msvc&quot;というフォルダに図3のように配置されています。6～8までのフォルダがありますが、表1のようにVisual Studioのバージョンに対応した名称になっています。6～8の各フォルダには、Visual C++ 6.0のワークスペースからVisual C++ 2005までのソリューションがあります。Visual C++ 2008のソリューションは付属していませんが、Visua C++ 2005のものである8をコンバートすることで利用することができます。</p>
+
+<div class="figure">
+<img class="figure" src="3dcg/BulletFolder271.png" alt="Visual Studio向けのプロジェクト(★最新ではない)">
+</div>
+
+
+<div class="table">
+<table id="doc4_id189" class="data" rules="groups">
+<caption>Visual Studioのバージョンと対応するフォルダ</caption>
+<colgroup span="2">
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">フォルダ名</th>
+<th align="center">対応するVisual Studio / Visual C++</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>6</td>
+<td>Visual Studio 6.0 / Visual C++ 6.0</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Visual Studio .NET / Visual C++ .NET</td>
+</tr>
+<tr class="even">
+<td>71</td>
+<td>Visual Studio .NET 2003 / Visual C++ .NET 2003</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Visual Studio 2005 / Visual C++ 2005</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>msvcフォルダの中には、Bulletで使うライブラリのためのソリューションファイルの他に、サンプルプログラムのソリューションファイルなどもあります。ライブラリをビルドするにはwksbullet.slnを開きます(Visual C++ 6.0以外)。</p>
+<p>最新のVisual Studio 2008を使っている場合には、「8」すなわちVC2005のプロジェクトをコンバートしてから使います。「8」のフォルダをコピーして「9」と名前を変えておきましょう。Visual Studio 2008を起動してコピーした「wksbullet.sln」を開くことで、ウィザードが起動し、コンバートできます。たくさんのプロジェクトがありますが、「app～」と始まるものはサンプルプログラムのプロジェクトで「lib～」で始まるものはライブラリのファイルになります。必要なのはライブラリなので、lib～で始まるプロジェクトに関してすべてDebugとReleaseでビルドしておきます。</p>
+<p>ビルドが終わると&quot;C:\bullet-2.72\out&quot;というフォルダにライブラリがビルドされます。Visual Studio 2005（Visual Studio 2008版に更新した場合も）でのビルドであれば、debug8やrelease8のようなフォルダが作成されており、その下にlibsというフォルダがあり、そこにビルドして出来たライブラリがあります。ライブラリがビルドできていればライブラリの準備は完了です。</p>
+
+<h3 id="doc4_id200">DirectX SDKのセットアップ</h3>
+
+
+<h4 id="doc4_id202">DirectX SDKの入手</h4>
+
+<p class="first_ja">本書では、3Dの描画を行うためにDirectXを利用します。DirectXを使ったプログラムを組むためには、MicrosoftのサイトからSDKをダウンロードしてきます。MicrosoftのDirectXの開発者向けのサイトは日本語のものと英語のものがあります。Microsoftはアメリカの企業のため英語の方が最新の情報が手に入ります。</p>
+<p>DirectXの開発者向けサイト日本語http://www.microsoft.com/japan/msdn/directx/</p>
+<p>英語http://msdn.microsoft.com/en-us/directx/default.aspx</p>
+<p>SDKは開発者向けサイトの方からダウンロードすることが出来ます。DirectX SDKは数ヶ月ごとにバージョンが更新されるため、DirectX SDK August 2008のように、月、年が名前に入ります。本書執筆段階ではAugst 2008が最新のバージョンになります。本書ではこのバージョンを元にサンプルを作成しています。</p>
+
+<h4 id="doc4_id205">インストール</h4>
+
+<p class="first_ja">DirectX SDKはインストーラ形式になっているためセットアップは簡単に行うことが出来ます。Visual Studio 2005以降を利用している場合には、インクルードファイルやライブラリファイルのパスなどの設定もインストーラが自動で行ってくれます。</p>
+
+<h3 id="doc4_id209">DXUTフレームワークを使ったDirect3Dのプログラム</h3>
+
+<p class="first_ja">DirectXのSDKには、DXUTと呼ばれるクラスライブラリが付属しています。このライブラリでは、Windowsの制御やマウス、キーボードを扱う各種コールバック関数や、3DCGのモデルデータを読み込んで表示するクラスや画面上にボタンやテキストボックスなどのGUIを表示するクラスなどが用意されています。今回のサンプルでは、こうした便利なライブラリを使ってDirectXのモデル形式であるXファイルを読み込んで表示してみます。この章のプログラムは、DirectX SDKに付属するSimpleSample(図4)をベースに作っていきます。SimpleSampleは、DirectX SDKに付属するDirectX Sample Browser（図5）を選択してInsrall Projectを選択するとセットアップできます。</p>
+
+<div class="figure">
+<img class="figure" src="3dcg/SimpleSample.png" alt="SimpleSample">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="3dcg/DirectXbrowser.png" alt="DirectX Sample Browser">
+</div>
+
+
+<h4 id="doc4_id219">DXUTを使ったプログラムの構造</h4>
+
+<p class="first_ja">PCで3Dを表示するためのライブラリには今回紹介するDirectXの他にOpenGLがあります。OpenGLでは、クロスプラットフォームの3DライブラリのためDirectXと異なり様々なOSやプラットフォーム上で使うことが出来ます。しかし、実際のアプリケーション開発においては、OpenGL以外の部分のプログラムについてはOSやプラットフォームに依存したコードを書かないと行けないことが多いです。たとえば、WindowsとMac OS Xでそれぞれウィンドウを表示するプログを書く場合には、各OSに沿ったコードを書きます。こうしたOS間の基本的な部分での差異を吸収してくれるライブラリとしてGLUTというライブラリがあります。GLUTでは、ウィンドウの生成やマウス、キーボードなどの処理や描画用の関数を簡単に設定して使うことが出来ます。ちょっと前置きが長くなりましたが、DXUTはOpenGLでいうGLUTの関係に近いライブラリで、DirectXを使ったプログラムにおいて様々な処理を補助してくれるライブラリになっています。本書では、このDXUTを使ってお手軽にDirectXのプログラムを作ります。DXUTはGLUTに近いと書きましたが、GLUTではマウスやキーボード、描画関数などのイベントを事前に関数でセットしておくのですが、DXUTでもこれに近い仕組みになっています。DXUTでは、マウスやキーボード処理や描画関数などは最初にコールバック関数を定義してセットします。実際に、SimpleSampleのコードを見てみます。</p>
+
+<div id="doc4_id221" class="caption">wWinMain</div>
+<pre class="program" style="margin-top:0">
+int WINAPI wWinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR \
+    lpCmdLine, int nCmdShow )
+{
+    // Enable run-time memory check for debug builds.
+#if defined(DEBUG) | defined(_DEBUG)
+    _CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF );
+#endif
+
+    // DXUT will create and use the best device (either D3D9 or D3D10)
+// that is available on the system depending on which D3D callbacks are set \
+    below
+
+    // Set DXUT callbacks
+    DXUTSetCallbackMsgProc( MsgProc );
+    DXUTSetCallbackKeyboard( OnKeyboard );
+    DXUTSetCallbackFrameMove( OnFrameMove );
+    DXUTSetCallbackDeviceChanging( ModifyDeviceSettings );
+
+    DXUTSetCallbackD3D9DeviceAcceptable( IsD3D9DeviceAcceptable );
+    DXUTSetCallbackD3D9DeviceCreated( OnD3D9CreateDevice );
+    DXUTSetCallbackD3D9DeviceReset( OnD3D9ResetDevice );
+    DXUTSetCallbackD3D9DeviceLost( OnD3D9LostDevice );
+    DXUTSetCallbackD3D9DeviceDestroyed( OnD3D9DestroyDevice );
+    DXUTSetCallbackD3D9FrameRender( OnD3D9FrameRender );
+
+    InitApp();
+DXUTInit( true, true, NULL ); // Parse the command line, show msgboxes on \
+    error, no extra command line params
+    DXUTSetCursorSettings( true, true );
+    DXUTCreateWindow( L&quot;SimpleSample&quot; );
+    DXUTCreateDevice( true, 640, 480 );
+    DXUTMainLoop(); // Enter into the DXUT render loop
+
+    return DXUTGetExitCode();
+}
+</pre>
+
+<p>DXUTのライブラリに含まれる関数の名前には、DXUTの接頭語がつきます。DXUTSet～()では、マウスやキーボード、描画、アプリケーションの終了など各種のイベントに対応したコールバック関数のセットを行います。今回使っているものについては以下の表2にまとめておきます。</p>
+<p>表2コールバック関数の種類コールバック関数をセットする関数イベントの内容DXUTSetCallbackMsgProcウィンドウのメッセージを処理するDXUTSetCallbackKeyboardキーボードの入力を処理するDXUTSetCallbackFrameMove毎フレーム呼び出される処理DXUTSetCallbackDeviceChanging Direct3Dデバイスに何らかの変更があったときい処理されるDXUTSetCallbackD3D9DeviceAcceptable Direct3Dデバイスが、指定したモードで起動するかどうかをチェックする際に使う処理DXUTSetCallbackD3D9DeviceCreated Direct3Dデバイスの生成時に呼び出される処理DXUTSetCallbackD3D9DeviceReset Direct3Dデバイスのリセット時に呼び出される処理DXUTSetCallbackD3D9DeviceLost Direct3Dデバイスがロストした時に呼び出される処理DXUTSetCallbackD3D9DeviceDestroyed Direct3Dデバイスが破棄される場合に呼び出される処理DXUTSetCallbackD3D9FrameRender描画処理を行うDXUTSetCallbackMouseマウスの処理を行う関数（上のサンプルでは利用してません）。</p>
+<p>コールバック関数のセット後には、DXUTの各種関数が呼び出されます。関数の役割は表3です。</p>
+<p>関数名処理の内容DXUTInit DXUTの初期化処理DXUTSetCursorSettingsカーソルの表示に関して設定する関数DXUTCreateWindowウィンドウの生成DXUTCreateDevice Direct3Dデバイスの生成DXUTMainLoopメインループの呼び出しDXUTGetExitCode終了処理</p>
+
+<h4 id="doc4_id225">Xファイルの描画クラス</h4>
+
+<p class="first_ja">DirectXには、Xファイル(拡張子.x)という3Dモデルデータの形式があります。このデータは、3Dモデリングソフトを使うことで作成することが出来ます。モデリングソフトは、3ds MaxやMaya、Softimage XSIなどのソフトが代表的ですが、これらのソフトウェアは個人が持つには大変高価です。個人でも手軽に手に入れるソフトウェアでは、メタセコイア（シェアウェアですが、無料版もあります）やBlender（無料）といったものがあります。DXUTのクラスの中には、Xファイルを読み込んで描画するクラスが用意されています。今回は、これが便利なのでこれを使っていきます。DXUTのXファイル描画クラスを利用するためには、プロジェクトに2つのファイルを追加する必要があります。そのファイルはSDKmesh.hとSDKmesh.cppになります。このファイルはDXUTフォルダ無いのOptionalに含まれています。Visual Studio上で、ソリューションエクスプローラのDXUTフォルダを右クリックして【追加(D)】の【既存項目(G)...】を選択して追加します。Xファイルを描画するクラスはこの追加したヘッダーファイルに含まれているCDXUTXFileMeshクラスを使います。</p>
+
+<div class="figure">
+<img class="figure" src="3dcg/SimpleSampleAdd.png" alt="SDKmesh.hとSDKmesh.cppの追加">
+</div>
+
+<p>・Xファイル・Xファイルの読み込みXファイルの読み込みから描画までは、前述のCDXUTXFileMeshクラスを使います。</p>
+<p>4.3完成できあがったプログラムは、図xのようになります。DXUTで容易さrているクラスを使うとと見込みと行列のセットだけで簡単に描画できす。</p>
+
+<h3 id="doc4_id233">シンプルなDirectXとBulletのプログラム</h3>
+
+<p class="first_ja">ここでは前章のDirectXのプログラムに物理エンジンのコードを加えて物体が衝突したり跳ね返ったりするシンプルなプログラムを解説します。</p>
+<p>6.1 Bulletを組み込む前の章で、DXUTを使ったXファイルのモデルを表示するプログラムの解説をしました。この章では、前章のサンプルをベースにBulletのプログラムを組み込んで3DCGに衝突処理などを実装します。</p>
+<p>6.2 Bulletを利用する準備2.2でBullet SDKからライブラリをビルドしました。これをプロジェクトに追加します。新たに追加するライブラリは下記です。</p>
+<p>・Debugビルド版libbulletdynamics_d.lib libbulletcollision_d.lib libbulletmath_d.lib</p>
+<p>・Relaseビルド版libbulletdynamics.lib libbulletcollision.lib libbulletmath.lib</p>
+<p>Debugビルド版には、「_d」が付きます。</p>
+<p>6.3 Bulletの初期化</p>
+<p>6.4剛体の登録</p>
+<p>6.4.1地面の定義</p>
+<p>6.4.2球の剛体の</p>
+<p>6.4.3ボックスの登録</p>
+<p>6.5描画コード</p>
+<p>6.6終了処理</p>
+<p>7.WiiRemoteを使ったサンプルこの章では、前章の物理に加えていよいよWiiRemoteを組み込んだ処理を解説します。</p>
+<p>7.1 WiiYourSelf !の準備WiiRemoteを自作のプログラムに組み込むためのライブラリやソフトウェアについて様々なものが公開されています。今回は、C++から利用できるWiiYourSelf !を利用します。</p>
+<p>7.2 WiiYourSelf !の組み込み</p>
+<p>7.センサバーを使ったPickプログラム</p>
+<p>7.1センサバーの利用7.2 Pick処理の実装</p>
+<p>8.WiiRemoteと物理エンジンを使ったミニゲーム</p>
+<p>8.1ミニゲームを作る</p>
+<div class="fyi">
+<div class="title">☆コラム：Virtools(3DVia)+WiiRemote</div>
+
+<p class="first_ja">CAD(Computer Aided Design)や3DStudioMaxなどの3Dデータから、インタラクティブな3Dグラフィックスアプリケーションを制作できるツールに「Virtools(ヴァーツールス)」があります(http://www.virtools.com/)。世界最大のCADメーカー、フランス「ダッソーシステムズ(Dassault Systemes)」のグループで、最近では「3dvia」というブランドで展開されています。</p>
+<p>Virtoolsは高価な産業向け製品であることもあり、日本ではそれほど有名ではありませんが、欧米では最も利用されている可視化プラットフォームです(筆者もフランスでは日常的に使っていました！)。モデルや画像などのリソースにGUIだけでほとんどのインタラクティブデザイン関係が作れてしまう、という点が画期的で、プログラミング不要です。もちろん深い開発をする場合はプログラミングも必要ですが、レンダラーやプラグインなどほとんどのソースは公開されています。</p>
+<p>産業用のCADデータから、Virtoolsを使ってWeb上で公開されるインタラクティブな商品広告の開発、プロトタイプ製品のユーザ試験などを開発することができますが、もともとVirtoolsはゲーム用プロトタイピングツールでした。ゲーム開発のプロトタイプ、つまりゲームの流れや面白さの根幹に関わる部分の設計をプランナーがGUIで行って、最終工程である最適化やプラットフォームの独自部分などをプログラミングで行う、といったゲーム開発手法です。</p>
+<p>Virtoolsは公式にライセンスを受けたツール開発パートナーですので、ソニーPSP用や任天堂Wii用のVirtoolsが存在します。任天堂Wiiの開発ライセンスを持っているゲーム開発企業であれば、WiiRemote関係のプラグインを入手することもできるそうです。</p>
+<p>Virtoolsの開発者コミュニティは活発で、スワップミート(http://www.theswapmeet-forum.com/)で様々な情報やソース、プラグインが共有されています(PC上で利用できるWiiRemoteのプラグイン関係も多数あります)。将来ゲーム制作を目指す学生さんや、フリーのゲーム企画者にとって、これは協力なソリューションです。Virtoolsを使ってPC上でゲームのプロトタイプを制作すれば、すばやくアイディアを形にできますし、資金や技術的なリスクを回避できるからです。</p>
+<p>筆者もVirtools上でWiiRemoteを利用するゲームを何件か開発しましたが(後述)、プラグインの開発を含め非常に高速に、凝ったものを作ることができました。お勧めです。是非Virtoolsのホームページから各種デモを見てみてください。</p>
+<p>☆Virtools(3DVia)に関する情報■Virtools(英語) http://www.virtools.com/</p>
+<p>日本では三徳商事とクレッセントが代理店を行っています。コンテンツの制作サポートや技術サポート、教育支援、学校向けライセンス販売などリセラー各社の得意分野がありますから、ぜひ問い合わせてみてください。</p>
+<p>■三徳商事(Virtools関係) http://www.san-toku.co.jp/VirtoolsOnlinePage/VirtoolsIndex.htm</p>
+<p>■株式会社クレッセントhttp://www.crescentvideo.co.jp/virtools/</p>
+<p>☆WiiYourself! on Virtools Se'bastion Kuntz (http://cb.nowan.net/blog/)</p>
+</div>
+
+
+<h2 id="doc1_id56">Products</h2>
+
+
+<h3 id="doc1_id58">Bespoke Software</h3>
+
+<p class="first_ja">Bespoke 3DUI XNA Framework Version 4.2 http://www.bespokesoftware.org/wordpress/?page_id=50</p>
+
+<h3 id="doc1_id61">wiimoteproject.com</h3>
+
+<p class="first_ja">http://www.wiimoteproject.com/</p>
+
+<h3 id="doc1_id64">★コラム：WiiFitを作った男たち</h3>
+
+<p class="first_ja">%{Wii Fit開発インタビュー} %http://wii.com/jp/articles/wii-fit/crv/vol2/index.html %「時雨殿」の開発者だというところが面白いですね。</p>
+
+<h2 id="doc1_id67">[再構成中]インタラクション技術：解体新書</h2>
+
+
+<h3 id="doc1_id69">「SoundQuest」制作秘話</h3>
+
+
+<h4 id="doc1_id71">赤外線マーカーを使ったモーションキャプチャ</h4>
+
+</body>
+</html>

@@ -1,0 +1,2472 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/REC-html401/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta name="generator" content="SmartDoc 1.2b">
+<meta name="author" content="白井暁彦＋小坂崇之" lang="ja">
+<title>C++とC#でまなぶWiiRemoteプログラミング</title>
+<link rel="stylesheet" type="text/css" href="article.css">
+<script type="text/javascript">
+<!--
+/*
+ * HTML4JavaScript.js
+ *
+ * @since   Nov. 17, 1998
+ * @version Feb. 18, 2002
+ * @author  ASAMI, Tomoharu (asami@XMLSmartDoc.org)
+ */
+var backupColor=null;
+var backupBGColor=null;
+var backupFontStyle=null;
+var backupIDColor=null;
+var backupIDBGColor=null;
+var backupIDFontStyle=null;
+var backupIDBorderStyle=null;
+
+var backupOnKeyDown=null;
+
+function normal(element) {
+  if (document.all) {
+    if (backupColor != null) {
+      element.style.color=backupColor;
+      backupColor=null;
+    }
+    if (backupBGColor != null) {
+      element.style.background=backupBGColor;
+      backupBGColor=null;
+    }
+    if (backupFontStyle != null) {
+      element.style.fontStyle=backupFontStyle;
+      backupFontStyle=null;
+    }
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      if (backupIDColor != null) {
+        target.style.color=backupIDColor;
+        backupIDColor=null;
+      }
+      if (backupIDBGColor != null) {
+        target.style.background=backupIDBGColor;
+        backupIDBGColor=null;
+      }
+      if (backupIDFontStyle != null) {
+        target.style.fontStyle=backupIDFontStyle;
+        backupIDFontStyle=null;
+      }
+      if (backupIDBorderStyle != null) {
+        target.style.borderStyle=backupIDBorderStyle;
+        backupIDBorderStyle=null;
+      }
+    }
+  }
+}
+
+function hilight(element) {
+  if (document.all) {
+    backupBGColor=element.style.background;
+    element.style.background="gold";
+  }
+}
+
+function hilightString(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightSelflink(element, color) {
+  if (color == null) {
+    color="darkolivegreen";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+    var id = null;
+    if (element.href != null) {
+      id = element.href;
+      id = id.substring(id.indexOf("#") + 1);
+    }
+    if (id != null) {
+      var target = document.all.item(id, 0);
+      backupIDColor=target.style.color;
+//      backupIDBGColor=target.style.background;
+//      backupIDFontStyle=target.style.fontStyle;
+      backupIDBorderStyle=target.style.borderStyle;
+      target.style.color="red";
+      target.style.borderStyle="outset";
+    }
+  }
+}
+
+function hilightHyperlink(element, color) {
+  if (color == null) {
+    color="darkorange";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function hilightExternallink(element, color) {
+  if (color == null) {
+    color="purple";
+  }
+  if (document.all) {
+    backupColor=element.style.color;
+    backupBGColor=element.style.background;
+    backupFontStyle=element.style.fontStyle;
+    element.style.color=color;
+  }
+}
+
+function toggleChildren(node) {
+  if (document.all) {
+    for (i = 0;i < node.children.length;i++) {
+      var child = node.children[i];
+      if (child.className == "dynamic") {
+        if (child.style.display == "") {
+            child.style.display = "none";
+        } else {
+            child.style.display = "";
+        }
+      }
+    }
+  }
+}
+
+function toggleDynamic(node) {
+  if (document.all) {
+    if (node.tagName == "LI") {
+      toggleChildren(node);
+    }
+  }
+}
+
+function isMsie4orGreater() { 
+  var ua = window.navigator.userAgent; var msie = ua.indexOf ("MSIE");
+  if (msie > 0) {
+    return (parseInt (ua.substring (msie+5, ua.indexOf (".", msie))) >= 4)   
+      && (ua.indexOf ("MSIE 4.0b") <0);
+  } else {
+    return false;
+  }
+}
+
+function keyEventHandler() {
+  if (document.all) {
+    if (event.keyCode == 13) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode == 39) {
+      var child = document.all.item("doc_next_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else if (event.keyCode = 37) {
+      var child = document.all.item("doc_prev_page_", 0);
+      if (child != null) {
+        location.href = child.href;
+      }
+    } else {
+      backupOnKeyDown();
+    }
+  }
+}
+
+function setOHPHandler() {
+  backupOnKeyDown=document.onkeydown;
+  document.onkeydown=keyEventHandler;
+}
+// -->
+</script>
+</head>
+<body>
+<div style="text-align:right"><a href="http://www.XMLSmartDoc.org" target="_top"><span style="color:#4F5952;background:#EE8362;font-family:sans-serif;font-size:xx-small;text-decoration:none">Powered by </span><span style="color:#058258;background:#EE8362;font-family:fantasy, sans-serif;font-size:x-small;text-decoration:none">SmartDoc</span></a></div>
+
+<h1 class="title">C++とC#でまなぶWiiRemoteプログラミング</h1>
+
+<div class="author">白井暁彦＋小坂崇之</div>
+<div class="email"><a href="mailto:shirai at mail.com" onmouseover="hilightHyperlink(this)" onmouseout="normal(this)">shirai at mail.com</a></div>
+<div class="hp"><a href="http://akihiko.shirai.as/projects/BookWii/" target="_top" onmouseover="hilightExternallink(this)" onmouseout="normal(this)">http://akihiko.shirai.as/projects/BookWii/</a></div>
+<h2>目次</h2>
+
+<div class="toc">
+<ul>
+<li> <a href="#doc1_id19" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プログラミング環境のセットアップ</a>
+<ul>
+<li> <a href="#doc1_id23" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Visual C# 2008 Express Editionのセットアップ</a>
+<li> <a href="#doc1_id26" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">Visual C++ 2008 Express Editionのセットアップ</a>
+</ul>
+<li> <a href="#doc1_id34" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの概要</a>
+<li> <a href="#doc1_id36" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibのライセンス</a>
+<li> <a href="#doc1_id38" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibのセットアップ</a>
+<ul>
+<li> <a href="#doc6_id203" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibをプロジェクトに組み込む【C#編】</a>
+<ul>
+<li> <a href="#doc7_id221" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">空のプロジェクトの作成</a>
+<li> <a href="#doc7_id244" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの追加(C#編)</a>
+<li> <a href="#doc7_id268" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プログラムの実行</a>
+</ul>
+<li> <a href="#doc6_id205" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibをプロジェクトに組み込む【C++編】</a>
+<ul>
+<li> <a href="#doc8_id297" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">空のプロジェクトの作成</a>
+<li> <a href="#doc8_id304" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの追加[C++]</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id40" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">バイブレータのON/OFF</a>
+<ul>
+<li> <a href="#doc9_id340" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの宣言と接続</a>
+<li> <a href="#doc9_id349" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">バイブレーターON/OFFボタンの作成</a>
+<li> <a href="#doc9_id393" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実行してみよう</a>
+<li> <a href="#doc9_id412" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説：API関数</a>
+</ul>
+<li> <a href="#doc1_id42" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">LEDの点灯と消灯</a>
+<ul>
+<li> <a href="#doc10_id444" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">WiimoteLibの宣言と接続</a>
+<li> <a href="#doc10_id453" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">LEDカウントアップボタンの作成</a>
+<li> <a href="#doc10_id477" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実行してみよう</a>
+<li> <a href="#doc10_id526" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説：LEDの点灯制御</a>
+</ul>
+<li> <a href="#doc1_id44" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ボタンイベントの取得</a>
+<ul>
+<li> <a href="#doc11_id589" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ラベルの作成</a>
+<li> <a href="#doc11_id596" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">プログラム</a>
+<li> <a href="#doc11_id605" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実行してみよう</a>
+<li> <a href="#doc11_id633" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説：ボタンイベントの取得</a>
+<li> <a href="#doc11_id676" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">ランチャーを作る</a>
+<ul>
+<li> <a href="#doc11_id678" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">外部プログラムの起動</a>
+<li> <a href="#doc11_id687" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実行してみよう</a>
+<li> <a href="#doc11_id697" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説：ボタンイベントによるアプリ起動</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id46" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">加速度センサーを使う</a>
+<ul>
+<li> <a href="#doc12_id724" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">加速度センサーについて</a>
+<li> <a href="#doc12_id734" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">加速度センサーの値を表示</a>
+<li> <a href="#doc12_id743" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実行してみよう</a>
+<li> <a href="#doc12_id757" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説：レポートタイプと加速度センサー</a>
+<li> <a href="#doc12_id800" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">加速度センサーで作るWiiRemote太鼓</a>
+<ul>
+<li> <a href="#doc12_id802" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">応用：振るとWAVファイルを再生</a>
+<li> <a href="#doc12_id811" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説</a>
+</ul>
+</ul>
+<li> <a href="#doc1_id48" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線センサーを使う</a>
+<ul>
+<li> <a href="#doc13_id840" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線探知機</a>
+<ul>
+<li> <a href="#doc13_id872" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実験：赤外線を見てみよう</a>
+<li> <a href="#doc13_id884" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説:レポートの設定／赤外線4点検出</a>
+</ul>
+<li> <a href="#doc13_id897" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">赤外線を数える</a>
+<li> <a href="#doc13_id907" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">座標を描画</a>
+<ul>
+<li> <a href="#doc13_id928" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">実験しよう</a>
+<li> <a href="#doc13_id938" onmouseover="hilightSelflink(this)" onmouseout="normal(this)">解説：赤外線座標の取得</a>
+</ul>
+</ul>
+</ul>
+</div>
+<p>この章ではWiimoteLibというAPIを利用して、WiiRemoteのプログラミングの基礎を解説していきます。プログラミング環境として、無料で利用できる「Visual C++ 2008 Express Edition」もしくは「Visual C# 2008 Express Edition」を使います。つまりプログラミング言語として、C++とC#を同時に並列して扱います。</p>
+<p>また、本章のC#.NETによるプログラミングサンプルは金沢工業専門高等学校の小坂崇之先生(http://www.kosaka-lab.com/)の協力によるものです。プログラミング初心者でもわかりやすく理解できるように、できるだけ多くのサンプルを丁寧に順を追って解説することで、WiiRemoteプログラミングを体験することができるようになっています。</p>
+
+<h2 id="doc1_id19">プログラミング環境のセットアップ</h2>
+
+<p class="first_ja">このセクションでは、無料で利用できる「Visual C++ 2008 Express Edition」と「Visual C# 2008 Express Edition」をセットアップします。既にこれらの製品の上位バージョン(Standard Editionなど)をインストールされている方や、C++、C#のいずれかしか必要でない方は、必要なところだけ参照してください。</p>
+
+<h3 id="doc1_id23">Visual C# 2008 Express Editionのセットアップ</h3>
+
+<p class="first_ja">Visual C# 2008 Express Editionのセットアップについては、マイクロソフトの公式サイトに丁寧に解説されております。</p>
+<p>http://www.microsoft.com/japan/msdn/vstudio/express/beginners/2008/vcsharp.aspx</p>
+<p>Express EditionのWebインストールをダウンロードし、時計を表示するアプリケーションを実際に作ってみることができます。C#はしばらく使う予定はないけれども、インストールしてみよう、という方は是非試してみてください。</p>
+
+<h3 id="doc1_id26">Visual C++ 2008 Express Editionのセットアップ</h3>
+
+<p class="first_ja">ここではMicrosoft Visual C++ 2008 Express Editionのセットアップ、サンプル開発について解説します。既にVisual C++や.NETといった開発環境をお使いの方は、読み飛ばしていただいても問題ありません。</p>
+<p>まずマイクロソフトのホームページからMicrosoft Visual C++ 2008 Express Editionをダウンロードします。</p>
+<div class="fyi">
+<div class="title">Visual C++ 2008 Express Edition</div>
+
+<p class="first_ja">http://www.microsoft.com/japan/msdn/vstudio/express/</p>
+</div>
+
+
+<div class="figure">
+<img class="figure" src="png/vstudio-hps.png" alt="Microsoft Visual Studio Express製品のホームページ">
+</div>
+
+<p>「Webインストール(ダウンロード)」をクリックすると、Webインストール版セットアップファイル「vcsetup.exe」をダウンロードすることができます。このホームページにはVisual Studio製品を使う上での役に立つ情報がたくさんあります。とりあえずVC2008を使ってみたい方は「はじめての方のためのインストール方法」を読んでみるとすると良いでしょう。</p>
+<p>必要なハードディスク容量の確認、起動中のアプリケーションの終了などを行ってからインストールウィザード「vcsetup.exe」を起動します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/VC2008Inst1.png" alt="VC2008インストール ウィザード(step1)" width="6cm">
+</div>
+
+<p>「セットアップの品質向上プログラム」はチェックしてもしなくても、どちらでもかまいません。「次へ」をクリックして進みます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/VC2008Inst2.png" alt="VC2008インストール ウィザード(step2)" width="6cm">
+</div>
+
+<p>ライセンス条項をよく読んで「同意する」を選んでください。また「Visual StudioでオンラインのRSSコンテンツを受信して表示できるようにする」も特に問題がなければチェックしましょう。イベントやサービスパックなどの更新情報がVC2008起動直後に表示されるスタートページに自動的に表示されるようになります（ここでのRSS受信の設定は後でもオプション→環境→スタートアップで変更できます）。「次へ」をクリックして進みます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/VC2008Inst3.png" alt="VC2008インストール ウィザード(step3)" width="6cm">
+</div>
+
+<p>「インストールオプション」を選択します。ここで表示されている3つのオプションは、どれもインストールしなくても問題ありません。「MSDN Expressライブラリ」はF1キーで呼び出せるドキュメントで、オンライン版の方が充実しているのですが、筆者は電車の中でコーディングをすることが多いのでインストールしています（オンライン版と統合して利用できます）。「SQL Server 2005」、「Silverlight」は使う予定がなければインストールしなくて良いでしょう。「次へ」をクリックして進みます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/VC2008Inst4.png" alt="VC2008インストール ウィザード(step4)" width="6cm">
+</div>
+
+<p>「コピー先フォルダ」とダウンロードパッケージのリストです。「インストールするフォルダ」は本書ではデフォルトのままとして解説します。ダウンロードリストの中に「Windows SDK」が入っているのが助かります(以前のExpress Editionでは別途インストールする必要がありました)。「インストール」をクリックするとダウンロードとインストールが実行されます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/VC2008Inst5.png" alt="VC2008インストール ウィザード(step5)" width="6cm">
+</div>
+
+<p>以上はWindowsXPシリーズにおけるVC2008セットアップの流れです（Windows Vistaの場合は「管理者権限で実行」をする必要がある点などいくつか細かい点が異なりますがほぼ同じ流れです）。興味がある方はVC2008のウィザードやオンラインチュートリアルなどを使って簡単なプログラミングを試してみると良いでしょう。</p>
+<div class="fyi">
+<div class="title">コラム：VC混在環境を解決するVersion Selector</div>
+
+<p class="first_ja">もし、既にVisual C++やVisual Studioの過去のバージョン(.NET2003/2005など)をお使いで、かつ2008年時点の最新版であるVisual C++ 2008 Express（以下VC2008）を試してみたいの読者は、ここでちょっと回り道をして試してみることをおすすめします。VC2008はVersion Selectorという機能があり、異なるバージョンのVisual Studio製品の混在を可能にします。各バージョンにおいてソリューションファイルは拡張子「.sln」と変わりませんが、自動的にこの拡張子「.sln」に関連づけられたアプリケーションである「Version Selector」がファイル内部のバージョン記述を自動的に読み取り、ファイルがダブルクリックされたときは適切なバージョンのVCを起動します。この機能のおかげで複数のバージョンの開発環境を安全してインストールできるようになります。</p>
+</div>
+
+<p></p>
+
+<h2 id="doc1_id34">WiimoteLibの概要</h2>
+
+<p class="first_ja">WiimoteLibはBrian Peek(http://www.brianpeek.com/)による.NET環境で利用できるAPIオープンソースプロジェクトです。Microsoftが支援するオープンソースプロジェクト支援サイト「CodePlex」(http://www.codeplex.com/)で公開されています。WiimoteLibを用いることで、.NET環境で簡単にWiiRemoteを利用するアプリケーションを開発することができます。Version1.6.0.0からはWiiRemoteだけでなくWii Fitバランスボードにも対応しています。</p>
+<p>WiimoteLibは.NETで開発されたAPIであり、言語に依存しませんが、C#とVisual Basicがメインのターゲットのようです。C++でのサンプルは配布されておらず、またネット上の情報もあまり存在しないのですが、本章を読み進めていくことで、多言語間で問題なく利用できることがわかるでしょう。</p>
+<p>C++言語にはさまざまな言語仕様が存在しますが、本章では特に.NETプログラミングとして扱いやすい「C++/CLI」を扱います。CLIとは「Common Language Infrastructure(共通言語基盤)」の略で、C++に慣れ親しんだプログラマーにも、違和感の少ない形で先進的な.NETプログラミング環境を提供しています。本章ではその特徴を利用し、同じ基本的なプログラミングをC++とC#という2つの言語で解説するというわけです。</p>
+
+<h2 id="doc1_id36">WiimoteLibのライセンス</h2>
+
+<p class="first_ja">WiimoteLibのライセンスは「Microsoft Permissive License (Ms-PL)」です。Ms-PLは、最も制限の緩いマイクロソフトのソースコードライセンスで、ソースコードを商用または非商用の目的で表示、変更、再頒布できます。また希望する場合は、変更したソースコードに対してライセンス料を課金することもできます。以下に条文の日本語参考訳を引用しておきます(http://www.microsoft.com/japan/resources/sharedsource/licensingbasics/permissivelicense.mspx)。</p>
+<blockquote>
+<p>Microsoft Permissive License (Ms-PL)　公開日: 2007年7月9日</p>
+<p>本ライセンスは、付属するソフトウェアの使用に適用されます。本ソフトウェアを使用する場合は、本ライセンスに同意したものとみなします。本ライセンスに同意しない場合、本ソフトウェアを使用することはできません。</p>
+<p>1.定義</p>
+<p>本ライセンスでは、&quot;複製する&quot;、&quot;複製&quot;、&quot;二次的著作物&quot;、および&quot;頒布&quot;という用語は、米国の著作権法の下で使われる場合と同じ意味を有します。&quot;コントリビューション&quot;とは、オリジナルのソフトウェア、またはソフトウェアに対する追加もしくは変更を意味します。&quot;コントリビューター&quot;とは、本ライセンスの下で自らのコントリビューションを頒布する者を意味します。&quot;対象特許&quot;とは、コントリビューションが直接抵触する、コントリビューターの有する特許権の請求範囲を意味します。</p>
+<p>2.権利の付与</p>
+<p>(A)著作権に関する許諾-第3条「条件および制限」を含む本ライセンスの条件に従って、各コントリビューターは使用者に対し、コントリビューションを複製し、コントリビューションの二次的著作物を作成し、コントリビューションまたは作成した二次的著作物を頒布する、非独占的、世界全域、無償の著作権ライセンスを付与します。(B)特許権に関する許諾-第3条「条件および制限」を含む本ライセンスの条件に従って、各コントリビューターは使用者に対し、本ソフトウェアのコントリビューションまたは本ソフトウェアのコントリビューションの二次的著作物を作成し、作成させ、使用し、販売し、販売を提案し、輸入し、および/またはその他の方法で処分する、対象特許に基づく非独占的、世界全域、無償の特許権ライセンスを付与します。</p>
+<p>3.条件および制限</p>
+<p>(A)商標の除外-本ライセンスでは、コントリビューターの名前、ロゴ、または商標を使用する権限は与えられません。</p>
+<p>(B)使用者が、本ソフトウェアによる侵害を主張する特許に関し、コントリビューターに対して特許侵害を主張する場合、当該コントリビューターによる本ソフトウェアについての使用者に対する特許ライセンスは自動的に終了します。</p>
+<p>(C)本ソフトウェアの全部または一部を頒布する場合、本ソフトウェアに付属するすべての著作権、特許権、商標、および出所の表示を保持する必要があります。</p>
+<p>(D)本ソフトウェアの全部または一部をソースコードの形式で頒布する場合は、頒布物に本ライセンスの完全な写しを含めた上で、本ライセンスの条件の下でのみ頒布することができます。本ソフトウェアの全部または一部をコンパイル済みまたはオブジェクトコード形式で頒布する場合は、本ライセンスに抵触しない条件のライセンスの下でのみ頒布することができます。</p>
+<p>(E)本ソフトウェアは現状有姿にてライセンスされます。本ソフトウェアの使用に伴う危険は、すべて使用者が負うものとします。コントリビューターからの明示的な保証または条件は一切ありません。使用地の法律に基づき、本ライセンスでは変更できないその他の消費者の権利が存在する場合があります。使用地の法律に基づいて許可される範囲で、コントリビューターは、商品性、特定目的に対する適合性、非侵害について、黙示的な保証を否定します。</p>
+<p>(本サイトはhttp://www.microsoft.com/resources/sharedsource/licensingbasics/permissivelicense.mspxの参考訳です)</p>
+</blockquote>
+
+<h2 id="doc1_id38">WiimoteLibのセットアップ</h2>
+
+<p class="first_ja">ライセンスを確認したら、WiimoteLibをダウンロードします。原稿出版時点での最新版は2009年1月19日に公開されたWiimoteLib v1.7です。</p>
+<p>http://www.codeplex.com/WiimoteLib</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/WiimoteLib17HP.png" alt="WiimoteLibのホームページ">
+</div>
+
+<p>ホームページ上部にある「Download」のリンクをクリックすると、ダウンロードページを閲覧できます。配布用のパッケージとソースコードが配布されていますが、ソースコードではないほう「WiimoteLib V1.7 (787K)」をダウンロードしてください。</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/WiimoteLibHPDL.png" alt="ダウンロードするファイル">
+</div>
+
+<p>クリックすると、ライセンス条文が英語で表示されますので(確認したら)「I Agree」クリックし、ダウンロードを開始します。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="WiimoteLib/png/WiimoteLibFolders.png" alt="WiimoteLib1.7の同梱ファイル" width="10cm">
+</div>
+
+<p>ダウンロードしたZIPファイルを展開したら、まずは動作確認をします。お使いのBluetoothスタック管理ソフトウェアを起動して、WiiRemoteを1台接続します。接続できたら、展開したフォルダの中にある「WiimoteTest.exe」をダブルクリックして実行してみてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="WiimoteLib/png/WiimoteTest.png" alt="WiimoteLibのデモプログラム「WiimoteTest.exe」" width="10cm">
+</div>
+
+<p>正しく実行できると、数秒間の初期化の後、図のような実行画面が表示されるはずです。WiiRemoteを振ったり、ボタンを押すことで、リアルタイムで値が取得できていることが確認できます。</p>
+<p>フォームの右上「&times;」をクリックすると終了します。もし手元に複数のWiiRemoteやセンサーバー、ヌンチャク、ギターコントローラー、WiiFitバランスボードなどありましたら、ぜひ接続して動作を試してみてください。</p>
+<p>これでWiimoteLibを使えることが確認できました。エラーが発生した場合、特に「Error reading data from Wiimote...is it connected?」と表示された場合は、Bluetoothでの接続に問題があります。Bluetoothスタックが正しくWiiRemoteを接続しているかどうか、確認してみてください。</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/WiimoteTestError.png" alt="「WiimoteTest.exe」の起動に失敗したら接続を確認しよう">
+</div>
+
+<p>さて、展開したファイルのうち「WiimoteLib.dll」が一番重要なファイルです。「WiimoteTest.ext」もこのDLLが同じディレクトリに存在しなければ正しく動作しません。なおWiimoteLibを開発で利用するにあたり、特にインストーラーなどはありませんので、展開したフォルダごと「マイドキュメント\Visual Studio 2008\Projects\WiimotLib_1.7」に移動しておくとこのあとの作業が楽になるでしょう（WiimoteLib.dllだけでもいいのですが、ヘルプや複数のバージョンのDLLが混在すると後々厄介です）。なお「docs」フォルダにある「WiimoteLib.chm」がヘルプファイルです。ドキュメントもしっかりと整備されています。</p>
+<p>これでセットアップは終わりです！次の節からは実際に、まずはVisual C#を用いてWiiRemoteを制御していきます。</p>
+
+<h3 id="doc6_id203">WiimoteLibをプロジェクトに組み込む【C#編】</h3>
+
+<p class="first_ja">この節では、Visual C# 2008 Express(以後「C#」と標記)を使って、WiimoteLibでのプログラミングを体験していきます。</p>
+
+<h4 id="doc7_id221">空のプロジェクトの作成</h4>
+
+<p class="first_ja">Visual C# 2008 Express Editionを起動します。</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/02-01.png" alt="Visual C#を起動したところ">
+</div>
+
+<p>[ファイル(F)]→[新しいプロジェクト(P)]→[Windowsフォームアプリケーション]を選択します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="WiimoteLib/png/02-02.png" alt="新しいプロジェクトを作成" width="6cm">
+</div>
+
+<p>「プロジェクト名」に「WiimoteLib01」という名前を付けて[OK]ボタンをクリックします。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/02-03.png" alt="「プロジェクト名」に「WiimoteLib01」という名前を付けて[OK]" width="8cm">
+</div>
+
+<p>数秒待つと新しいプロジェクトが作成されます。興味があればここで[F5]キーを押して、実行してみると良いでしょう。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/02-04.png" alt="新しいプロジェクトが作成されたところ" width="8cm">
+</div>
+
+
+<h4 id="doc7_id244">WiimoteLibの追加(C#編)</h4>
+
+<p class="first_ja">先ほど作成した空のプロジェクトにWiimoteLibを組み込んでいきましょう。右側に表示されている、ソリューションエクスプローラの[参照設定]を右クリック、[参照の追加(R)...]を選択します。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/02-05.png" alt="[参照設定]を右クリック" width="8cm">
+</div>
+
+<p>参照の追加から[参照]を選択し、WiimoteLib.dllを選択します。マイドキュメントの「Visual Studio 2008\Projects」においた「WiimoteLib_1.7\WiimoteLib.dll」を選択し[OK]ボタンをクリックします。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="WiimoteLib/png/02-06.png" alt="WiimoteLib.dllのファイルを指定する" width="10cm">
+</div>
+
+<p>これでソリューションエクスプローラの参照設定にWiimoteLibが追加されたはずです。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/02-07.png" alt="ソリューションエクスプローラーに現れたWiimoteLib" width="8cm">
+</div>
+
+<p>それでは最小限のプログラムの実行結果を表示するためのフォームを作成しましょう。ソリューションエクスプローラの「Form.cs」を右クリックして「コードの表示」で表示されるC#のコードに、最も重要な最初の1行「using WiimoteLib;」を追加します。</p>
+
+<pre id="doc7_id264" class="program">
+  using System;
+  using System.Collections.Generic;
+  using System.ComponentModel;
+  using System.Data;
+  using System.Drawing;
+  using System.Linq;
+  using System.Text;
+  using System.Windows.Forms;
+
+| using WiimoteLib;    //ここを1行追加します
+
+  namespace WiimoteLib01  {  //←指定したプロジェクト名
+    public partial class Form1 : Form {
+
+    public Form1() {
+      InitializeComponent();
+    }
+
+  }
+}
+</pre>
+
+<p>以上がC#環境でWiimoteLibを用いるための最初の一歩の操作です。まだWiiRemoteらしいことは何もできませんが、これでWiimoteLibのクラスが利用できるようになりました。次のステップで、実際に動作を確認してみましょう。</p>
+
+<h4 id="doc7_id268">プログラムの実行</h4>
+
+<p class="first_ja">[F5]キー、または、[デバック(D)]→[デバック開始(F5)]を押してプログラムを実行させてみましょう。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="WiimoteLib/png/02-08.png" alt="[デバッグ(D)]→[デバッグ開始(S)]" width="5cm">
+</div>
+
+<p>プログラムにエラーがなければ下図のように表示されるはずです。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="WiimoteLib/png/02-09.png" alt="何もないフォームが表示された" width="4cm">
+</div>
+
+<p>このプログラムは単にフォームを生成するプログラムです。「&times;」ボタンを押してフォームを閉じてプログラムを終了させましょう。以後、このプログラムをベースにWiiRemoteを制御するプログラムを追加していきます。</p>
+
+<h3 id="doc6_id205">WiimoteLibをプロジェクトに組み込む【C++編】</h3>
+
+<p class="first_ja">次はVisual C++ 2008 Express(以後「C++」と標記)を使って、WiimoteLibでのプログラミングを体験していきます。一度流れを覚えたら、以後は共通です。言語もC++かC#、どちらでもかまいません。ご自身が使いやすい言語を選んでみてください。</p>
+
+<h4 id="doc8_id297">空のプロジェクトの作成</h4>
+
+<p class="first_ja">Visual C++ 2008 Express Editionを起動します。</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/WiimoteLib01cpp.png" alt="新規プロジェクトの作成[C++]">
+</div>
+
+<p>[ファイル(F)]→[新しいプロジェクト(P)]から、[CLR]の[Windowsフォームアプリケーション]を選択します。</p>
+<p>「プロジェクト名」に「WiimoteLib01cpp」という名前を付けて[OK]ボタンをクリックします。</p>
+<p>新しいプロジェクトが作成されました。興味があればここで[F5]キーを押して、実行してみると良いでしょう。何もないフォームが表示され、「&times;」ボタンを押すと終了します。</p>
+
+<h4 id="doc8_id304">WiimoteLibの追加[C++]</h4>
+
+<p class="first_ja">先ほど作成したプロジェクトにWiimoteLibを組み込んでいきましょう。ソリューションエクスプローラでプロジェクト(ここでは「WiimoteLib01cpp」)を右クリックして[参照]を選択します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="WiimoteLib/png/WiimoteLib01cppAdd.png" alt="プロジェクトを右クリックして[参照]設定" width="6cm">
+</div>
+
+<p>プロジェクトのプロパティページから[新しい参照の追加(N)...]をクリックし、[参照]タブをクリックし、ファイル選択ダイアログで、マイドキュメントの「Visual Studio 2008\Projects」においた「WiimoteLib_1.7\WiimoteLib.dll」を選択し[OK]ボタンをクリックします。</p>
+
+<div class="figure">
+<img class="figure" style="width:9cm" src="WiimoteLib/png/AddLib.png" alt="WiimoteLibを追加" width="9cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:9cm" src="WiimoteLib/png/WiimoteLibAdded.png" alt="WiimoteLibが参照設定に追加された" width="9cm">
+</div>
+
+<p>次に、WiimoteLibの初期化コードを書きます。ソリューションエクスプローラの「Form1.h」を右クリックして「コードの表示」を選ぶと、Form1.hのコードが表示されます。このコードの先頭12行目に以下のように、必要な1行を書き加えてください。</p>
+
+<div id="doc8_id322" class="caption">WiimoteLibクラスを宣言(Form1.h)</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+
+namespace WiimoteLib01cpp { //←指定したプロジェクト名
+
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+
+| using namespace WiimoteLib;  //これを1行追加します
+
+＜以下略＞
+</pre>
+
+<p>以上がC++/CLIでWiimoteLibを用いるための必要最低限のプログラムです。[F5]キーを押してプログラムを実行させてみましょう。</p>
+<p>プログラムにエラーがなければC#と同様、何もないフォームが表示されるはずです。いまのところ、このプログラムは単にフォームを生成するだけのプログラムですが、WiimoteLibのクラスがusing namespace宣言によって問題なく組み込まれていることがわかります。以後、このプログラムをベースにWiiRemoteを制御するプログラムを追加していきます。</p>
+
+<h2 id="doc1_id40">バイブレータのON/OFF</h2>
+
+<p class="first_ja">ここからは、さらにWiimoteLibのAPIを用いてプログラミングを行っていきます。解説はC++とC#を並列して解説していきますが、.NETフレームワークのおかげでGUIの設計などはまったく同じ操作で開発を進めることができます。</p>
+<p>まず、PC画面上に表示されるFormボタンによって、WiiRemoteの振動機能(バイブレーター)の動作をあやつるするプログラムを作ります。</p>
+
+<h3 id="doc9_id340">WiimoteLibの宣言と接続</h3>
+
+<p class="first_ja">前節のとおり、WiimoteLibを組み込んだプロジェクトのメインのコード（Form1.csもしくはForm1.h）に以下の3行を追加します。</p>
+
+<div id="doc9_id342" class="caption">Form1.cs[C#]</div>
+<pre class="program" style="margin-top:0">
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Data;
+    using System.Drawing;
+    using System.Linq;
+    using System.Text;
+    using System.Windows.Forms;
+|   using WiimoteLib;	//WiimoteLibを宣言
+
+    namespace WiimoteLib01 {
+     public partial class Form1 : Form {
+
+|       Wiimote wm = new Wiimote();	//Wiimoteクラスの作成
+
+      public Form1() {
+       InitializeComponent();
+|       wm.Connect();      	//Wiimoteに接続
+      }
+     }
+    }
+＜以下略＞
+</pre>
+
+
+<div id="doc9_id345" class="caption">Form1.h[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace WiimoteLib01cpp {
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+|	using namespace WiimoteLib;	//WiimoteLibを宣言
+＜中略＞
+	public ref class Form1 : public System::Windows::Forms::Form
+	{
+|	public:	Wiimote^ wm;	//Wiimoteクラスの入れ物
+	public:
+		Form1(void)
+		{
+|			wm = gcnew Wiimote(); //Wiimoteクラスの作成;
+			InitializeComponent();
+			//
+			//TODO: ここにコンストラクタ コードを追加します
+			//
+|			wm-&gt;Connect();	//Wiimoteに接続
+			
+		}
+＜以下略＞
+</pre>
+
+<p>C#もC++も多少の記号や予約語は違えど、ほとんど同じであることがお分かりいただけたでしょうか？C++ではwmという入れ物をForm1クラスのPublicメンバーとして用意しています。</p>
+
+<h3 id="doc9_id349">バイブレーターON/OFFボタンの作成</h3>
+
+<p class="first_ja">まず、フォームにボタンを貼り付けてください。C#では、ツールボックスからドラッグしてForm1の好きな位置に配置します。(C++でも同様です)表示されていない場合、[表示]から[デザイナ]としてForm1のデザインを表示し、再度[表示]から[ツールボックス]を選ぶことで右側にツールボックスウィンドウが現れます(C++は左側)。「コモンコントロール」に「Button」がありますので、フォームの上にドラッグしてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="WiimoteLib/png/03-01.png" alt="ツールボックスからボタンをドラッグして配置" width="10cm">
+</div>
+
+<p>次に、貼り付けた「button1」のプロパティシートの「Text」を「button1」から「ON」に変更します。これでフォーム上のボタンに書かれているテキストが「ON」に変わるはずです。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="WiimoteLib/png/03-02.png" alt="Textのプロパティを「button1」から「ON」に書き換える" width="10cm">
+</div>
+
+<p>Form1上に配置したボタン「ON」をダブルクリックすると、ボタンクリック時のイベントを指定するコードが自動的に表示されますので下記のように記述します。</p>
+
+<div id="doc9_id362" class="caption">Form1.cs[C#]</div>
+<pre class="program" style="margin-top:0">
+  private void button1_Click(object sender, EventArgs e) {
+   wm.SetRumble(true);  //バイブーションON
+  }
+</pre>
+
+
+<div id="doc9_id365" class="caption">Form1.h[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma endregion
+private: System::Void button1_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+    wm-&gt;SetRumble(true);  //バイブーションON
+  }
+ };
+}
+</pre>
+
+<p>気がはやる方はここで[F5]キーを押したくなるかもしれませんが、試すのは次のステップまで進んでからにしましょう！このままでは、Bluetooth接続されていませんし、バイブレーターを駆動してもまだ止める方法を実装していませんので、ブルブル鳴りっぱなしの困った状態になってしまいます。</p>
+<p>バイブレーターを停止させる「OFF」ボタンを作成します。先ほどと同様に、ツールボックスからボタンを配置します。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/03-03.png" alt="「OFF」のためのボタンをドラッグで配置" width="8cm">
+</div>
+
+<p>先ほどと同じく、貼り付けた「button2」のプロパティのTextを「button2」から「OFF」に変更します。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/03-04.png" alt="Textのプロパティを「button2」から「OFF」に書き換える" width="8cm">
+</div>
+
+<p>最後に、貼り付けた「button2」をダブルクリックし、下記のようなコードを記述します。</p>
+
+<div id="doc9_id378" class="caption">Form1.cs[C#]</div>
+<pre class="program" style="margin-top:0">
+  private void button2_Click(object sender, EventArgs e) {
+    wm.SetRumble(false);  //バイブーションOFF
+ }
+</pre>
+
+
+<div id="doc9_id381" class="caption">Form1.cs[C#]</div>
+<pre class="program" style="margin-top:0">
+private: System::Void button2_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+    wm-&gt;SetRumble(false);	//バイブレーションOFF
+  }
+</pre>
+
+<p>以上で終了です。これだけのプログラムでWiiRemoteのバイブレーション機能のON/OFF制御が可能になります。</p>
+
+<div id="doc9_id384" class="caption">Form1.csのC#ソース(全体)</div>
+<pre class="program" style="margin-top:0">
+ using System;
+ using System.Collections.Generic;
+ using System.ComponentModel;
+ using System.Data;
+ using System.Drawing;
+ using System.Linq;
+ using System.Text;
+ using System.Windows.Forms;
+| using WiimoteLib;	//WiimoteLibの読み込み
+
+ namespace WiimoteLib01  {
+  public partial class Form1 : Form {
+|   Wiimote wm = new Wiimote();   //Wiimoteの宣言
+   public Form1() {
+    InitializeComponent();
+|    wm.Connect();	//Wiimoteの接続
+   }
+
+   private void button1_Click(object sender, EventArgs e) {
+|    wm.SetRumble(true);    //バイブーションON
+   }
+
+   private void button2_Click(object sender, EventArgs e) {
+|    wm.SetRumble(false);   //バイブーションOFF
+   }
+  }
+ }
+</pre>
+
+
+<div id="doc9_id387" class="caption">Form1.hのC++ソース(変更点のみ抜粋)</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+
+＜略＞
+|	using namespace WiimoteLib; //WiimoteLibを宣言
+＜略＞
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm;        //Wiimoteクラスの入れ物
+  public:
+    Form1(void)
+    {
+|     wm = gcnew Wiimote();   //Wiimoteクラスの作成;
+      InitializeComponent();
+      //
+      //TODO: ここにコンストラクタ コードを追加します
+      //
+|     wm-&gt;Connect();	//Wiimoteに接続
+
+    }
+＜略＞
+#pragma endregion
+private: System::Void button1_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|     wm-&gt;SetRumble(true);   //バイブーションON
+  }
+private: System::Void button2_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|     wm-&gt;SetRumble(false);  //バイブレーションOFF
+  }
+ };
+}
+</pre>
+
+
+<h3 id="doc9_id393">実行してみよう</h3>
+
+<p class="first_ja">まず、お使いのBluetoothスタックからWiiRemoteを接続します。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/03-05.png" alt="Bluetooth接続(図は東芝製スタック)" width="8cm">
+</div>
+
+<p>続いて、Visual C#/C++から「F5」キーを押してプログラムを起動します。エラーがなければ下のようなフォームが起動するはずです。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="WiimoteLib/png/03-06.png" alt="「ON」と「OFF」をもつフォームが表示される" width="8cm">
+</div>
+
+<p>もし下のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。</p>
+
+<div class="figure">
+<img class="figure" style="width:10cm" src="WiimoteLib/png/03-07.png" alt="接続失敗：Bluetooth接続を確認しよう" width="10cm">
+</div>
+
+<p>無事に起動できた場合、「ON」ボタンをクリックすると、バイブレーションがONになりWiiRemoteが振動します。あわてず騒がず「OFF」ボタンをクリックして、WiiRemoteの振動をとめましょう。</p>
+<p>どうでしょうか？非常に簡単にWiiRemoteのバイブレーション制御プログラムが作れました。このようにWiimoteLibとC++/CLIやC#.NETの組み合わせで、簡単にアプリケーションを開発していくことができます。</p>
+<p>WiimoteLibにはバイブレーターの制御以外にもWiiRemoteが制御するための関数がたくさん揃っています。</p>
+<p>簡単にプログラムの流れを解説しますと、まず「Connect()関数」でWiiRemoteとの接続を行います。このときWiiRemoteが正しく接続、認識されていなかった場合、例外(Exception)が発生します。今回は例外処理を行っていませんので、実際のアプリケーションでは必要に応じて例外処理を追加してください。ボタンを押したときに、「SetRumble()関数」でWiiRemoteのバイブレーションを制御します。()の引数に「true」を入れるとバイブレーションが振動し、「false」を入れるとバイブレーションが停止します。PWM制御(パルス幅変調:Pulse With Modulation)を用いることによってバイブレーションに強弱を付けることができます。簡単に説明すると高速にONとOFFを繰り返すことによってバイブレーションに強弱をつける制御方法です。ここではあえて説明しませんが、余力のある人はチャレンジしてみてください。</p>
+
+<h3 id="doc9_id412">解説：API関数</h3>
+
+<p class="first_ja">以下、このプログラムで使ったWiimoteLibのAPI関数です。</p>
+
+<div class="table">
+<table id="doc9_id415" class="data" rules="groups">
+<colgroup span="3">
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">C#</th>
+<th align="center">C++</th>
+<th align="center">解説</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>using WiimoteLib;</td>
+<td>using namespace WiimoteLib;</td>
+<td>ネームスペース宣言</td>
+</tr>
+<tr class="odd">
+<td>public Wiimote wm;</td>
+<td>public:	Wiimote^ wm;</td>
+<td>クラスの宣言</td>
+</tr>
+<tr class="even">
+<td>wm = new Wiimote();</td>
+<td>Wiimote^ wm = gcnew Wiimote();</td>
+<td>クラス新規作成</td>
+</tr>
+<tr class="odd">
+<td>wm.Connect();</td>
+<td>wm-&gt;Connect();</td>
+<td>WiiRemoteに接続</td>
+</tr>
+<tr class="even">
+<td>wm.SetRumble(true);</td>
+<td>wm-&gt;SetRumble(true);</td>
+<td>バイブレーター作動</td>
+</tr>
+<tr class="odd">
+<td>wm.SetRumble(false);</td>
+<td>wm-&gt;SetRumble(false);</td>
+<td>バイブレーター停止</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>いかがでしょう、.NET環境において、C#とC++では何ら代わりのないことがよくわかります。GUIによるフォーム作成も、マウスドラッグとプロパティの設定、ダブルクリックによる該当コードの自動生成がありますので非常に快適にコーディングできます。次のステップでは同じ要領で、LEDの点灯を制御していきます。</p>
+
+<h2 id="doc1_id42">LEDの点灯と消灯</h2>
+
+<p class="first_ja">次にWiiRemoteのLED制御についてプログラミングを行っていきます。ここでは、Formボタンをクリックする毎にWiiRemoteの「プレイヤーインジケーター」と呼ばれる青色LEDをカウントアップさせていきます。</p>
+<p>準備にあたっての基本的なプログラミングの流れは前節のバイブレーターの制御の場合と同じです。新しいプロジェクトを作成し、プロジェクトのクラスの参照設定にWiimoteLibを追加し、以下の初期化コードを書き足してください。</p>
+
+<h3 id="doc10_id444">WiimoteLibの宣言と接続</h3>
+
+
+<div id="doc10_id446" class="caption">Form1.csに以下の部分を追加[C#]</div>
+<pre class="program" style="margin-top:0">
+ 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;  //WiimoteLibの使用を宣言
+
+namespace WindowsFormsApplication1 { //←プロジェクト名によって異なる
+ public partial class Form1 : Form {
+
+|Wiimote wm = new Wiimote();   //Wiimoteの宣言
+|int count=0;                  //カウントの宣言
+
+  public Form1() {
+   InitializeComponent();
+|      wm.Connect();	//WiiRemoteへ接続
+  }
+ }
+}
+</pre>
+
+
+<div id="doc10_id449" class="caption">Form1.hに以下の部分を追加[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace WLCLED { //←プロジェクト名によって異なる
+
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+
+| using namespace WiimoteLib;	 //WiimoteLibの使用を宣言
+＜略＞
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm;  //Wiimoteオブジェクトwmの宣言
+| public: int count;    //LEDカウント用の変数countの宣言
+  public:
+    Form1(void)
+    {
+|     wm = gcnew Wiimote(); //Wiimoteインスタンスの作成
+      InitializeComponent();
+      //
+      //TODO: ここにコンストラクタ コードを追加します
+      //
+|     wm-&gt;Connect();	//WiiRemoteへ接続
+    }
+
+  protected:
+＜略＞
+ 
+</pre>
+
+<p class="first_ja">確認のためにここでWiiRemoteのBluetooth接続を行い、[F5]キーで実行を試してみることをお勧めします。コンパイルエラーやWiimoteLib.dllの追加わすれなど、ただの空白のフォームが表示されるだけの状態ですが、確認は大事です。今後も、この初期化コード作成までの流れ何度も行いますので、カラダで覚えてしまいましょう。</p>
+<p>なおC++では、int型の変数countや、Wiimoteオブジェクトを格納するwmの宣言を、Form1のインスタンスとは別に行う必要があります。そうしなければ他のメソッドから扱うことができません。今後、細かいところでC#と違いが出てきますので注意してください（興味のある人は、わざと間違えてみるのも勉強になっていいかもしれませんが）。</p>
+
+<h3 id="doc10_id453">LEDカウントアップボタンの作成</h3>
+
+<p class="first_ja">次はC#/C++で共通の作業です。先ほどのバイブレーターの例と同様にフォーム「Form1」にボタンを貼り付けてください。ボタンを押すたび表示が変わる仕組みも取り入れますので、ボタンは少し大き目、横長にしておくと良いでしょう。</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/03-01.png" alt="フォームに大きめなボタンを配置[C#]">
+</div>
+
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/03-01vc2.png" alt="フォームに大きめなボタンを配置[C++]">
+</div>
+
+<p>次に貼り付けた「button1」をダブルリックして、以下のコードを追加します。</p>
+
+<div id="doc10_id463" class="caption">ボタンクリック時の処理を追加[C#]</div>
+<pre class="program" style="margin-top:0">
+   private void button1_Click(object sender, EventArgs e) {
+    this.button1.Text =&quot;wm.SetLEDs(&quot;+ count+&quot;) を表示中&quot;;
+   this.wm.SetLEDs(count);
+   count++;
+}
+</pre>
+
+
+<div id="doc10_id466" class="caption">ボタンクリック時の処理を追加[C++]</div>
+<pre class="program" style="margin-top:0">
+private: System::Void button1_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+	button1-&gt;Text = &quot;wm-&gt;SetLEDs(&quot;+ count +&quot;)を表示中&quot;;
+	wm-&gt;SetLEDs(count);
+	count++;
+}
+</pre>
+
+<p>以上でコーディングは終了です。たったこれだけのプログラムでWiiRemoteのLED制御が可能になります。</p>
+
+<div id="doc10_id469" class="caption">完成したForm1.cs[C#]</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;
+
+namespace WL_LED
+{
+    public partial class Form1 : Form
+    {
+|        Wiimote wm = new Wiimote();
+|        int count = 0;
+        public Form1()
+        {
+            InitializeComponent();
+|            wm.Connect();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+|            this.button1.Text = &quot;wm.SetLEDs(&quot; + count + &quot;)を表示中&quot;;
+|            wm.SetLEDs(count);
+|            count++;
+        }
+    }
+}
+</pre>
+
+
+<div id="doc10_id472" class="caption">完成したForm1.h[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace WLCLED { //作成したプロジェクト名、自由。
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+| using namespace WiimoteLib;
+  /// &lt;summary&gt;
+＜略＞
+  /// &lt;/summary&gt;
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|  public: Wiimote^ wm;	//Wiimoteオブジェクトwmの宣言
+|  public: int count;    //LEDカウント用の変数countの宣言
+   public:
+    Form1(void)
+    {
+|    wm = gcnew Wiimote();
+     InitializeComponent();
+      //
+      //TODO: ここにコンストラクタ コードを追加します
+      //
+|     wm-&gt;Connect();	//WiiRemoteへ接続
+    }
+  protected:
+    /// &lt;summary&gt;
+    /// 使用中のリソースをすべてクリーンアップします。
+    /// &lt;/summary&gt;
+   ~Form1()
+   {
+   if (components)
+    {
+     delete components;
+    }
+   }
+    private: System::Windows::Forms::Button^  button1;
+    protected: 
+＜略＞
+#pragma endregion
+private: System::Void button1_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|   button1-&gt;Text = &quot;wm-&gt;SetLEDs(&quot;+ count +&quot;)を表示中&quot;;
+|   wm-&gt;SetLEDs(count);
+|   count++;
+   }
+  };
+}
+</pre>
+
+<p>若干C++のほうがコードが長くなりますが、自動で追加された以外の箇所の意味合いはC#でもC++でも、ほぼ同じであることがわかります。</p>
+
+<h3 id="doc10_id477">実行してみよう</h3>
+
+<p class="first_ja">それでは早速実行してみましょう。</p>
+<p>次に、Visual C#/C++の[F5]キーを押して実行してください。実行すると下図のようなアプリケーションが起動します。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/04-01.png" alt="大きなボタンがひとつだけのフォームが表示される" width="8cm">
+</div>
+
+<p>もし下図のようなエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/03-07.png" alt="Bluetooth接続を忘れるとエラーになる" width="8cm">
+</div>
+
+<p>フォームに表示されるボタンをクリックしていくと、WiiRemote下部のLEDが次々と光っていきます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/04-02.png" alt="フォームに文字が表示される" width="6cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:3cm" src="png/04-w000.png" width="3cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:3cm" src="png/04-w001.png" width="3cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:3cm" src="png/04-w002.png" width="3cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:3cm" src="png/04-w003.png" width="3cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:3cm" src="png/04-w004.png" width="3cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:3cm" src="png/04-w015.png" width="3cm">
+</div>
+
+<p>「&times;」をクリックして終了します。</p>
+
+<h3 id="doc10_id526">解説：LEDの点灯制御</h3>
+
+<p class="first_ja">LEDの点灯と消灯はこのAPIを利用します。</p>
+
+<pre id="doc10_id528" class="program">
+ SetLEDs(int32 leds); 
+</pre>
+
+<p>この関数の引数「leds」にint32形式の数値をを入れることで、対応するLEDが変化します。このプログラムでは変数countの値を入れ「SetLEDs(count);」としています。Formに配置されたボタンをクリックすると、count値が+1されていきます。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/04-09.png" width="8cm">
+</div>
+
+<p>引数は整数(int32形式)で与えますが、これはWiiRemoteを逆さまにした状態の各LEDを4ビットの2進数で表現して、各ビットを0から15まで足していったものです。2進数に馴染みがない方のために、表で表現してみました（●が消灯、○が点灯です）。</p>
+
+<div class="table">
+<table id="doc10_id536" class="data" rules="groups">
+<caption>LEDの点灯でまなぶ、2進数対応表</caption>
+<colgroup span="1">
+<col align="center">
+</colgroup>
+<colgroup span="4">
+<col align="center">
+<col align="center">
+<col align="center">
+<col align="center">
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">10進数(int)</th>
+<th align="center">LED4</th>
+<th align="center">LED3</th>
+<th align="center">LED2</th>
+<th align="center">LED1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td class="key">0</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">1</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">2</td>
+<td>●</td>
+<td>●</td>
+<td>○</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">3</td>
+<td>●</td>
+<td>●</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">4</td>
+<td>●</td>
+<td>○</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">5</td>
+<td>●</td>
+<td>○</td>
+<td>●</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">6</td>
+<td>●</td>
+<td>○</td>
+<td>○</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">7</td>
+<td>●</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">8</td>
+<td>○</td>
+<td>●</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">9</td>
+<td>○</td>
+<td>●</td>
+<td>●</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">10</td>
+<td>○</td>
+<td>●</td>
+<td>○</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">11</td>
+<td>○</td>
+<td>●</td>
+<td>○</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">12</td>
+<td>○</td>
+<td>○</td>
+<td>●</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">13</td>
+<td>○</td>
+<td>○</td>
+<td>●</td>
+<td>○</td>
+</tr>
+<tr class="even">
+<td class="key">14</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>●</td>
+</tr>
+<tr class="odd">
+<td class="key">15</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>フォーム上のボタンを押し続けて、countに10進数の16になると、LED0～LED4の桁はそれぞれ0になりLEDは全て消えますが、それ以上の値(17,18,19,...)が入っても、また下位ビットに値が入りますので、LEDはカウントアップしつづけます。</p>
+<p>プログラムによっては2進数→10進数ではなく、個々のLEDを指定して光らせたいときもあるでしょう。そういったときは、関数フォーマットが異なる以下の形式を利用します：</p>
+
+<pre id="doc10_id554" class="program">
+ SetLEDs(bool led1 ,bool led2 ,bool led3,bool led4); 
+</pre>
+
+<p>同じ関数でも、引数を4つ指定することで、各々のLEDを制御することが可能になります。(プログラミング用語では、このような関数の利用の仕方をオーバーロードといいます）</p>
+<p>以上でLEDの制御は終わります。非常にシンプルですが、アイディア次第でいろいろなことができますので、ぜひ発想を豊かにして何に使えるか考えてみてください。またその表現に合わせた便利な出力用関数も作ってみるとよいでしょう。例えば、筆者は「SetLEDbyValue(int)」という関数を作って、4段階の値を表示できるようにしました。「レースゲームでのシールド残量」や「受けたダメージの表現」、それから処理の段階を表すプログレスバーにもLEDが使えます。</p>
+<div class="fyi">
+<div class="title">ヘルプファイルを活用しよう</div>
+
+<p class="first_ja">上記の「SetLEDs」のようなWiimoteLibに実装されているAPI関数それぞれの機能は、WiimoteLibの「docs」フォルダにあるヘルプファイル「WiimoteLib.chm」を参照することで探すことができます。例えば、このAPI関数の場合は以下のように記載されています。</p>
+<p>＜Wiimote.SetLEDs Method＞Overload List</p>
+
+<div class="table">
+<table id="doc10_id560" class="data" rules="groups">
+<colgroup span="5">
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">Name</th>
+<th align="center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>SetLEDs(Int32)</td>
+<td>Set the LEDs on the Wiimote</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>SetLEDs(Boolean</td>
+<td>Boolean</td>
+<td>Boolean</td>
+<td>Boolean)</td>
+<td>Set the LEDs on the Wiimote</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>See Also Wiimote Class Wiimote Members WiimoteLib Namespace</p>
+<p>つまり関数「SetLEDs()」には、今回のようにInt32の値1つで指定する方式と、Booleanつまり点灯するかどうかの真偽(true/false)の4つで指定する方法の2種類が用意されているということです。どちらも同じ結果ではあるのですが、このようにして、WiimoteLibなどのAPIを作った人は便利にアクセスできるように、たくさんの気の利いた関数を開発しているということですね。下の「See Also」には所属しているクラスやメンバー関数などへのリンクがあります。</p>
+<p>わからないことがあったり「こんな機能ないかな？」と思ったときは、このヘルプファイルを活用しましょう。このヘルプファイルはプログラムコードから自動生成されているようですが、検索機能も備えており、C#とVBのコードも含まれていて、勉強になります。</p>
+</div>
+
+
+<h2 id="doc1_id44">ボタンイベントの取得</h2>
+
+<p class="first_ja">次のステップではWiiRemoteのボタン入力について学びます。ボタンのON/OFFを取得して、フォームに表示するシンプルなプログラムを作成します。</p>
+
+<h3 id="doc11_id589">ラベルの作成</h3>
+
+<p class="first_ja">さきほどまでのプログラムと同様に、新しいプロジェクトを作成し、参照設定にWiimoteLibを追加して準備ができたら、「Form1」にラベル(Labelコントロール)を4つ貼り付けてください。</p>
+
+<div class="figure">
+<img class="figure" src="png/05-01.png" alt="新しいプロジェクトにラベルを4つ配置">
+</div>
+
+<p>このLabelの文字は、後ほどプログラム側から書き換えますので設定は不要です。</p>
+
+<h3 id="doc11_id596">プログラム</h3>
+
+<p class="first_ja">WiiRemoteのボタンを押したときに発生するイベントを利用して、このラベルを表示する値を変更することで、現在のボタン入力の状態を表示するという設計でプログラムを作っていきます。</p>
+<p>Form1.cs(C#)もしくはForm1.h(C++)に以下の部分を追加します。</p>
+
+<div id="doc11_id598" class="caption">ボタン入力に対応させる(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace WiimoteLib_Sample  //←作成したプロジェクト名
+{
+  public partial class Form1 : Form
+  {
+|   Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1()
+    {
+|    Control.CheckForIllegalCrossThreadCalls = false; //おまじない
+     InitializeComponent();
+|    wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|    wm.Connect();                          //WiiRemoteと接続
+    }
+|   //Wiiリモコンの値が変化したときに呼ばれる関数
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)
+|   {
+|    WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|    this.DrawForms(ws);            //フォーム描写関数へ
+|   }
+|   //フォーム描写関数
+|   public void DrawForms(WiimoteState ws)
+|   {
+|    this.label1.Text = &quot;Button A:&quot; + (ws.ButtonState.A);  //ボタンA
+|    this.label2.Text = &quot;Button B:&quot; + (ws.ButtonState.B);  //ボタンB
+|    this.label3.Text = &quot;Button 1:&quot; + (ws.ButtonState.One);//ボタン1
+|    this.label4.Text = &quot;Button 2:&quot; + (ws.ButtonState.Two);//ボタン2
+|   }
+  }
+}
+</pre>
+
+
+<div id="doc11_id601" class="caption">ボタン入力に対応させる(Form1.h)[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace WiimoteLib_Sample {     //←作成したプロジェクト名
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+	/// &lt;summary&gt;
+＜略＞
+	/// &lt;/summary&gt;
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|  public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+   public:
+   Form1(void)
+    {
+|    Control::CheckForIllegalCrossThreadCalls = false; //おまじない
+|    wm = gcnew Wiimote();  //Wiimoteクラスを作成
+     InitializeComponent();
+|    //イベント関数の登録
+|    wm-&gt;WiimoteChanged +=
+|    gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|     this, &amp;Form1::wm_WiimoteChanged);
+|    wm-&gt;SetReportType(InputReport::Buttons, true); //レポートタイプの設定
+|    wm-&gt;Connect(); //WiiRemoteと接続
+|   }
+  public:
+| void wm_WiimoteChanged(Object^ \
+    sender,WiimoteLib::WiimoteChangedEventArgs^ args){
+|    WiimoteState^ ws;
+|    ws = args-&gt;WiimoteState;
+|    this-&gt;DrawForms(ws);
+|   }
+| public: void DrawForms(WiimoteState^ ws) {
+|    this-&gt;label1-&gt;Text = &quot;Button A:&quot; + (ws-&gt;ButtonState.A); 
+|    this-&gt;label2-&gt;Text = &quot;Button B:&quot; + (ws-&gt;ButtonState.B);
+|    this-&gt;label3-&gt;Text = &quot;Button 1:&quot; + (ws-&gt;ButtonState.One);
+|    this-&gt;label4-&gt;Text = &quot;Button 2:&quot; + (ws-&gt;ButtonState.Two);
+| }
+ protected:
+＜略＞
+</pre>
+
+
+<h3 id="doc11_id605">実行してみよう</h3>
+
+<p class="first_ja">さて、実行してみましょう。まずお使いのBluetoothスタックから、WiiRemoteをBluetoothでPCに接続します。接続が確認できたら、Visual C#/C++上で[F5]キーを押して実行します。コンパイルがとおり、正しく実行されると下図のようなアプリケーションが起動します。もしここでエラーが発生する場合、ほとんどがBluetooth接続がうまく接続されていないケースです。WiiRemoteが正しく接続されているか確認してください。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/05-02.png" alt="実行直後、ラベルの表示に注目" width="6cm">
+</div>
+
+<p>WiiRemoteのAボタンを押し続けます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/05-03.png" alt="ラベルの表示が変わる" width="6cm">
+</div>
+
+<p>フォーム上の「Label1」の箇所に「Button A: True」と表示されれば成功です。さらにWiiRemoteのすべてのボタンから手を離して、すべてのボタンを押さない状態にしたとき、フォーム上のボタンのステータスを表す表示が全て「False」になれば成功です。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/05-04.png" alt="ボタンから手を離すと、すべてFalseになる" width="6cm">
+</div>
+
+<p>WiiRemoteのAボタンとBボタンを同時に押しこんでみます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/05-05.png" alt="A,BがTrueになる" width="6cm">
+</div>
+
+<p>最後に、WiiRemoteの1ボタンと2ボタンを同時に押しこんでみます。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/05-06.png" alt="1,2がTrueになる" width="6cm">
+</div>
+
+<p>一通りの実験が終わったら、マウスで「&times;」をクリックするか、キーボードから[Alt+F4]をおして、プログラムを終了させます。</p>
+
+<h3 id="doc11_id633">解説：ボタンイベントの取得</h3>
+
+<p class="first_ja">WiiリモコンのボタンのON/OFFによってFormのラベルを変化させています。FalseがOFF(手を離した状態), TrueがON(押下)に対応しています。以下、利用したAPI関数を解説します。</p>
+
+<div id="doc11_id635" class="caption">イベント関数の登録</div>
+<pre class="program" style="margin-top:0">
+[C#]  wm.WiimoteChanged += wm_WiimoteChanged;
+[C++] wm-&gt;WiimoteChanged +=
+            gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+            this, &amp;Form1::wm_WiimoteChanged);
+</pre>
+
+<p>WiiRemoteのボタンが押された、加速度センサーの値が変わった、など、状態に変化があったときに呼ばれる関数を登録しています。プログラミング用語で「コールバック関数」といい、関数名を登録することで、そのイベントが発生したときに自動的にその関数が実行されるように決められた方法で指定します。ここでは、WiiRemoteのボタン状態に変化があった場合「wm_WiimoteChanged」という関数が呼ばれるように設定しています。カッコや引数などはあらかじめ規定された形式に沿っていますので、関数名を渡すだけでだけでよいのです(C++のコードが少し長いのはそのためです)。</p>
+
+<div id="doc11_id638" class="caption">WiimoteStateの値を取得</div>
+<pre class="program" style="margin-top:0">
+[C#]  WiimoteState ws = args.WiimoteState;
+[C++] WiimoteState^ ws;
+      ws = args-&gt;WiimoteState;
+</pre>
+
+<p>ここでWiiリモコンのステータス(状態)をwsという名前の&quot;イレモノ&quot;にとりこんでいます。正式にはここで使っているWiimoteStateはクラスですが、その名前から想像できるように、イベントで発生したボタンなどの値が取り込まれます。以下、使い方を見てみましょう。</p>
+
+<div id="doc11_id641" class="caption">ボタンの状態を取得</div>
+<pre class="program" style="margin-top:0">
+[C#]  this.label1.Text   = &quot;Button A: &quot; + (ws.ButtonState.A);
+[C++] this-&gt;label1-&gt;Text = &quot;Button A:&quot; + (ws-&gt;ButtonState.A); 
+</pre>
+
+<p>WiiRemoteのAボタンの値をlabel1に表示しています。ボタンが押されていたら、Trueを表示します。ボタンが離されていたら、Falseを表示します。実際には「ws.ButtonState.A」が意味する値はTrueかFalseという真偽の値ですが、左側が「label1.Text」なので自動的に文字列に変換されています(.ToString()する必要はない)。</p>
+<p>同様に「ws.ButtonState.b」などとすることでWiiRemoteのBボタン、その他全てのボタンの状態を取得することができます。</p>
+<p>どうでしょう？とっても簡単ですね！このイベントのコールバック関数でステートを取得する方法は他のいろいろな入力に応用できます。しかし、この完成したコールバックの仕組みを簡単に利用できる背景には、様々な複雑なプログラミングの内側の技術があります。実はフォームのコンストラクタで、1つだけ、おまじないをしていました。</p>
+
+<div id="doc11_id644" class="caption">おまじない</div>
+<pre class="program" style="margin-top:0">
+[C#]  Control.CheckForIllegalCrossThreadCalls  = false;
+[C++] Control::CheckForIllegalCrossThreadCalls = false;
+</pre>
+
+<p>余裕のある人は、この行をコメントアウトして、実行してみてください。なぜか実行時にボタンを押すとエラーが出てしまいます。これは、マルチスレッド(スレッド;Thread≒処理の流れ)に関わる問題です。上のボタンの状態を読み込むWiimoteLibのスレッドと、フォームの書き換えを行うスレッドがそれぞれ異なるので「スレッドセーフでない」つまり、複数のスレッドにおける処理の順序などが保証できないため実行時エラーになってしまいます。WiimoteLibの公式で紹介されている方法で、</p>
+
+<div id="doc11_id647" class="caption">Invoke(),delegate()を使う方法</div>
+<pre class="program" style="margin-top:0">
+//Wiiリモコンの値が変化したときに呼ばれる関数[C#]
+void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args){
+  WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+  if (this.IsHandleCreated) {
+    this.Invoke( (MethodInvoker)delegate() {
+    this.DrawForms( ws );            //フォーム描写関数へ
+  });
+ }
+}
+</pre>
+
+<p>このように、Invoke()というメソッドを使う方法もありますが、ちょっと初心者には不明瞭な書き方です。何が起きていて、どんなリスクがあるか(フォームの書き換えがスレッドセーフでなく上書きされる)ということがわかっているなら</p>
+
+<pre id="doc11_id650" class="program">
+Control.CheckForIllegalCrossThreadCalls=false;
+</pre>
+
+<p>として、不正なスレッド間コールのチェックをしない、と宣言する方法もあるので、本章では「おまじない」として以後この方法を採用することにします。</p>
+<p></p>
+<div class="fyi">
+<div class="title">WiimoteStateのメンバー</div>
+
+<p class="first_ja">ここでWiimoteStateで参照できるメンバーを表で紹介しておきます。</p>
+
+<div class="table">
+<table id="doc11_id659" class="data" rules="groups">
+<caption>WiimoteStateのメンバ(WiimoteLib ver.1.7)</caption>
+<colgroup span="2">
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="even">
+<th align="center">名称</th>
+<th align="center">解説</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>AccelCalibrationInfo</td>
+<td>現在の加速度センサーのキャリブレーション情報</td>
+</tr>
+<tr class="odd">
+<td>AccelState</td>
+<td>現在の加速度センサーの状態</td>
+</tr>
+<tr class="even">
+<td>BalanceBoardState</td>
+<td>現在のWiiFitバランスボードの状態</td>
+</tr>
+<tr class="odd">
+<td>Battery</td>
+<td>算出された現在のバッテリーレベル</td>
+</tr>
+<tr class="even">
+<td>BatteryRaw</td>
+<td>現在のバッテリーレベルの計算前の値(生値)</td>
+</tr>
+<tr class="odd">
+<td>ButtonState</td>
+<td>現在のボタンの状態</td>
+</tr>
+<tr class="even">
+<td>ClassicControllerState</td>
+<td>現在の拡張クラシックコントローラーの状態</td>
+</tr>
+<tr class="odd">
+<td>DrumsState</td>
+<td>現在の拡張ドラムコントローラーの状態</td>
+</tr>
+<tr class="even">
+<td>Extension</td>
+<td>拡張コントローラーが挿入されているか</td>
+</tr>
+<tr class="odd">
+<td>ExtensionType</td>
+<td>拡張コントローラーが挿入されている場合その種類</td>
+</tr>
+<tr class="even">
+<td>GuitarState</td>
+<td>現在のGuitarHero拡張ギターコントローラーの状態</td>
+</tr>
+<tr class="odd">
+<td>IRState</td>
+<td>現在の赤外線センサーの状態</td>
+</tr>
+<tr class="even">
+<td>LEDState</td>
+<td>現在のLEDの状態</td>
+</tr>
+<tr class="odd">
+<td>NunchukState</td>
+<td>現在の拡張ヌンチャクコントローラーの状態</td>
+</tr>
+<tr class="even">
+<td>Rumble</td>
+<td>現在のバイブレーターの状態</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>WiimoteLibには実に様々な拡張コントローラーが実装されており、このメンバーから状態を取得できることがわかります。これらの値やメソッドなどは、Visual StudioのIntellisense機能を使ってどんどん効率化していきましょう。先ほどのボタンの例なども、「ws.ButtonState.」と「.」を押した瞬間には正しい標記の選択肢が現れます。ボタンの名称などはいちいち覚えていられませんので、非常に便利です。なおIntellisenseはCtrl+Spaceでいつでもどこでも呼び出せます。全てのグローバルなオブジェクトが表示されます。辞書代わりに使うとよいでしょう。</p>
+
+<div class="figure">
+<img class="figure" src="png/IntellisenseS.png" alt="Intellisenseによる補完機能を使いこなそう">
+</div>
+
+</div>
+
+<p></p>
+
+<h3 id="doc11_id676">ランチャーを作る</h3>
+
+<p class="first_ja">さて、これまでWiimoteLibを使って、基本的な入出力を学んできました。このあたりで、実用的なプログラムの例として「ランチャー」を作成してみましょう。ボタンを押すたびに、Windowsのアクセサリ「メモ帳」や「電卓」など外部プログラムが起動するプログラムです。</p>
+
+<h4 id="doc11_id678">外部プログラムの起動</h4>
+
+<p class="first_ja">前節の「ボタンイベントの取得」と基本は同じです。WiimoteLibの宣言を行い、コールバック関数内で外部プログラムを起動したり、アプリケーション自身を終了させたりします。</p>
+<p>新しいプロジェクトを作成し、WiimoteLibを参照に追加し、Form1を右クリックして「コードを表示」し、下のコードを記述します。前節のプログラムの改造から始めても良いでしょう。</p>
+
+<div id="doc11_id680" class="caption">ボタンイベントで外部プログラムを起動する(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+|using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace WL_Launcher
+{
+    public partial class Form1 : Form
+    {
+|        Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+        public Form1()
+        {
+|            Control.CheckForIllegalCrossThreadCalls = false; //おまじない
+            InitializeComponent();
+|            wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|            wm.Connect();                          //WiiRemoteと接続
+        }
+|        //Wiiリモコンの値が変化したときに呼ばれる関数
+| void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)
+|        {
+|            WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|            //Aボタンが押されたらメモ帳を起動
+|            if (ws.ButtonState.A == true)
+|            {
+|                System.Diagnostics.Process.Start(&quot;notepad.exe&quot;);
+|            }
+|            //Bボタンが押されたら電卓を起動
+|            if (ws.ButtonState.B == true)
+|            {
+|                System.Diagnostics.Process.Start(&quot;calc.exe&quot;);
+|            }
+|            //HOMEボタンが押されたらこのアプリを終了
+|            if (ws.ButtonState.Home == true)
+|            {
+|                Environment.Exit(0);
+|            }
+|        }
+    }
+}
+</pre>
+
+
+<div id="doc11_id683" class="caption">ボタン入力に対応させる(Form1.h)[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+
+namespace WLCLauncher {
+  using namespace System;
+  using namespace System::ComponentModel;
+  using namespace System::Collections;
+  using namespace System::Windows::Forms;
+  using namespace System::Data;
+  using namespace System::Drawing;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+  public:
+   Form1(void)
+    {
+|    Control::CheckForIllegalCrossThreadCalls = false; //おまじない
+|    wm = gcnew Wiimote();  //Wiimoteクラスを作成
+     InitializeComponent();
+|    //イベント関数の登録
+|    wm-&gt;WiimoteChanged +=
+|      gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|        this, &amp;Form1::wm_WiimoteChanged);
+|    wm-&gt;SetReportType(InputReport::Buttons, true); //レポートタイプの設定
+|    wm-&gt;Connect(); //WiiRemoteと接続
+|   }
+  public:
+void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ \
+    args){
+|     WiimoteState^ ws;
+|     ws = args-&gt;WiimoteState;
+|     //Aボタンが押されたらメモ帳を起動
+|     if (ws-&gt;ButtonState.A) {
+|       System::Diagnostics::Process::Start(&quot;notepad.exe&quot;);
+|     }
+|     //Bボタンが押されたら電卓を起動
+|     if (ws-&gt;ButtonState.B) {
+|       System::Diagnostics::Process::Start(&quot;calc.exe&quot;);
+|     }
+|     //HOMEボタンが押されたらこのアプリを終了
+|     if (ws-&gt;ButtonState.Home) {
+|       Environment::Exit(0);
+|     }
+|   }
+＜以下略＞
+</pre>
+
+
+<h4 id="doc11_id687">実行してみよう</h4>
+
+<p class="first_ja">まずは、いつも通りWiiRemoteを接続してください。そしてVisual Studioの[F5]キーを押して、作成したプログラムを実行します。もしここでエラーが発生する場合はWiiRemoteが正しく接続されているか確認してください。</p>
+<p>WiiRemoteのAボタンを押すと、メモ帳が起動し、Bボタンを押すと、電卓が起動します。</p>
+<p>WiiRemoteのBボタンを数回おすと、押した回数だけ、電卓が起動します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/06-03.png" alt="Bボタンを押した回数だけ電卓が起動する" width="6cm">
+</div>
+
+<p>WiiRemoteのHomeボタンを押すと、ランチャープログラムが終了します。</p>
+<p>このプログラムの「notepad.exe」や「calc.exe」を好きな外部プログラムに書き換えれば、何でも起動できるというわけですね。なんだかいろいろなことができそうです。楽しくなってきませんか？</p>
+
+<h4 id="doc11_id697">解説：ボタンイベントによるアプリ起動</h4>
+
+<p class="first_ja">WiiRemoteのボタンが押されることによって設定したアプリケーションが起動するためには、先ほどのプログラムのDrawForm()で処理したような、ラベルのテキストを書き換える代わりに、.NETで用意されている仕組みを利用して、外部プログラムを起動します。</p>
+
+<pre id="doc11_id699" class="program">
+if (ws.ButtonState.A == true) {
+     //Aボタンがおされたらメモ帳を起動
+      System.Diagnostics.Process.Start(&quot;notepad.exe&quot;);
+}
+</pre>
+
+<p>「System.Diagnostics.Process.Start()」についてはいろいろな応用があります。テキストファイルなどを指定することで関連づけられたプログラムを使って開くことなども可能です。詳しくはインターネットで公開されている.NET Frameworkクラスライブラリのマニュアルや「Process.Start」をキーワードに検索してみると良いでしょう。</p>
+<p>以上は、C#での記述ですが、C++/CLIでも全く違和感なく互換性が保たれています。C++でHomeボタンを押して終了する箇所のコードを見てみましょう。</p>
+
+<pre id="doc11_id702" class="program">
+ //HOMEボタンが押されたらこのアプリを終了
+ if (ws-&gt;ButtonState.Home) {
+   Environment::Exit(0);
+ }
+</pre>
+
+<p>以上のように「Environment::Exit(0);」で、自分自身のアプリケーションを終了できます。</p>
+<p>さて、こんな便利なコールを覚えると、ランチャーで起動したプログラムの終了などもやってみたくなると思います。</p>
+<p>この先の赤外線ポインタを用いてマウスを作成する例を学習してから、さらに高機能に改造してみるとよいでしょう。</p>
+
+<h2 id="doc1_id46">加速度センサーを使う</h2>
+
+
+<h3 id="doc12_id724">加速度センサーについて</h3>
+
+<p class="first_ja">次は、WiiRemoteの加速度センサーを使ったプログラミングを実験していきます。2章で解説したとおり、WiiRemoteにはX軸、Y軸、Z軸に対応した3軸の加速度センサーが内蔵されています。</p>
+
+<div class="figure">
+<img class="figure" style="width:4cm" src="WiimoteLib/png/Pyr.png" alt="加速度センサー(★http://www.wiili.orgより借用)" width="4cm">
+</div>
+
+<p>WiiRemoteに内蔵された3軸マイクロ加速度センサーは、それぞれの軸に対して8bit、つまり0～255の値を持ちます。このセクションでは、まず値がとれるプログラムを作成し、その後、応用アプリケーションの開発を通して、加速度センサーの基本的な利用に挑戦します。</p>
+
+<h3 id="doc12_id734">加速度センサーの値を表示</h3>
+
+<p class="first_ja">ここでは、まず手始めに、WiiRemoteの加速度を取得するプログラムを作成します。先ほどまでと同様、Visual Studio(C#/C++どちらでもかまいません！)で、新しいプロジェクトを作成し、参照に「WiimoteLib」を追加します。自動的に生成されているフォーム「Form1」に、ツールボックスからラベル(Label)を3つ貼り付けてください。ここに加速度センサーX,Y,Zのリアルタイム測定値を表示します。</p>
+<p>続いてコーディングです。Form1を右クリックして「コードを表示」して、以下のプログラムのコメントアウトしている箇所を書き足していきます(自動生成されたコメント行は割愛しています)。また冒頭のusing句によるクラスの宣言ですが、最小限必要な物のみにしています。</p>
+
+<div id="doc12_id736" class="caption">加速度センサーの値を表示する(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+  using System;
+  using System.Windows.Forms; 
+| using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace WL_Accel
+{
+  public partial class Form1 : Form
+  {
+|   Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1()
+    {
+|     Control.CheckForIllegalCrossThreadCalls = false; //おまじない
+      InitializeComponent();
+|     wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|     wm.SetReportType(InputReport.ButtonsAccel, true); //レポートタイプの設定
+|     wm.Connect();                          //WiiRemoteと接続
+    }
+|   //Wiiリモコンの値が変化したときに呼ばれる関数
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+|     WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|     this.DrawForms(ws); //フォーム描画関数へ
+|   }
+|   //フォーム描画関数
+|   public void DrawForms(WiimoteState ws)  {
+|     this.label1.Text = &quot;X軸:&quot; + (ws.AccelState.Values.X);
+|     this.label2.Text = &quot;Y軸:&quot; + (ws.AccelState.Values.Y);
+|     this.label3.Text = &quot;Z軸:&quot; + (ws.AccelState.Values.Z);
+|   }
+  }
+}
+</pre>
+
+
+<div id="doc12_id739" class="caption">加速度センサーの値を表示する(Form1.h)[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace WLCAccel {
+  using namespace System;
+  using namespace System::Windows::Forms;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+  public:
+    Form1(void) {
+|     Control::CheckForIllegalCrossThreadCalls = false; //おまじない
+|     wm = gcnew Wiimote();  //Wiimoteクラスを作成
+      InitializeComponent();
+|     //イベント関数の登録
+|     wm-&gt;WiimoteChanged +=
+|       gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|       this, &amp;Form1::wm_WiimoteChanged);
+|     wm-&gt;SetReportType(InputReport::ButtonsAccel, true); //レポートタイプの設定
+|     wm-&gt;Connect(); //WiiRemoteと接続
+    }
+| public:
+| void wm_WiimoteChanged(Object^ \
+    sender,WiimoteLib::WiimoteChangedEventArgs^ args){
+|     WiimoteState^ ws;
+|     ws = args-&gt;WiimoteState;
+|     this-&gt;DrawForms(ws);
+|   }
+| public:
+|   void DrawForms(WiimoteState^ ws) {
+|     this-&gt;label1-&gt;Text = &quot;X軸:&quot; + (ws-&gt;AccelState.Values.X);
+|     this-&gt;label2-&gt;Text = &quot;Y軸:&quot; + (ws-&gt;AccelState.Values.Y);
+|     this-&gt;label3-&gt;Text = &quot;Z軸:&quot; + (ws-&gt;AccelState.Values.Z);
+|   }
+＜以下略＞
+</pre>
+
+
+<h3 id="doc12_id743">実行してみよう</h3>
+
+<p class="first_ja">それでは実験してみましょう。まずWiiRemoteをお使いのBluetoothスタックで接続してください。</p>
+<p>次にVisual Studio上で[F5]キーを押して実行してください。正しくプログラムが書かれておらず、エラーなどが出る場合はよく確認して、修正してください。</p>
+<p>フォームが表示されたら、WiiRemoteを振りまわしてみてください。このとき、調子に乗って振り回しすぎて飛んでいくと危険なので、大振りするときは必ずストラップをしてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="WiimoteLib/png/07-03.png" width="6cm">
+</div>
+
+<p>フォームに張り付けた、加速度のX,Y,Zの値が素早く動いていることがわかります。</p>
+<p>【注意】起動時に3つの値がゼロのままだった場合、一旦作成したアプリケーションを終了させて、WiimoteLibのサンプル「WiimoteTest.exe」を実行してみてください。一度このサンプルを起動してから、今回作成したアプリケーションを起動すると値がとれることがあります(エラー処理や初期化を丁寧にしていないからかもしれません)、不具合があったときは試してみてください。</p>
+<p>また、終了時に「Dispose」に関するエラーが出るときがありますが、これもいまのところ無視してかまいません。</p>
+
+<div class="figure">
+<img class="figure" src="WiimoteLib/png/DisposeErr.png" alt="Disposeでエラーがあるが今は無視">
+</div>
+
+
+<h3 id="doc12_id757">解説：レポートタイプと加速度センサー</h3>
+
+<p class="first_ja">WiiRemoteの3軸の加速度センサーのリアルタイム値を表示しました。</p>
+
+<div id="doc12_id759" class="caption">レポートタイプの設定</div>
+<pre class="program" style="margin-top:0">
+[C#]   wm.SetReportType(  InputReport.ButtonsAccel, true); 
+[C++]  wm-&gt;SetReportType(InputReport::ButtonsAccel, true);
+</pre>
+
+<p>レポートタイプ、すなわちイベントが起きたときに報告するようにWiiRemoteにお願いする「種類」をここで設定しています。「ButtonsAccel」は加速度センサーとボタンイベントを取得しています。</p>
+
+<div id="doc12_id762" class="caption">加速度センサーの生値取得</div>
+<pre class="program" style="margin-top:0">
+[C#]  ws.AccelState.Values.X
+[C++] ws-&gt;AccelState.Values.X
+</pre>
+
+<p>WiiRemoteに内蔵された加速度センサー各軸の生値をfloatで取得します。</p>
+
+<div id="doc12_id765" class="caption">おまじない</div>
+<pre class="program" style="margin-top:0">
+[C#]  Control.CheckForIllegalCrossThreadCalls = false;
+[C++] Control::CheckForIllegalCrossThreadCalls = false;
+</pre>
+
+<p>前回と同じく、別のスレッドからフォームを書き換えることを許可します。</p>
+<p>レポートタイプに「ButtonsAccel」を指定しているので、この状態でボタンイベントなども取得できます。余力のある人は試してみましょう。そして、実際にどれだけの値が出力されるか実験してみましょう。ブンブン振ってみると、実測でだいたい&plusmn;5程度の値が計測されます。WiiRemoteを直立させると、X,Zなど2つの値はゼロになりますが、もうひとつの軸、たとえばY軸にはかならず&plusmn;0.9程度の値が残ります。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="WiimoteLib/png/AccelXZ0.png" alt="Y軸に検出されているのは...「重力加速度」" width="6cm">
+</div>
+
+<p>これは何でしょう……？そうです、重力加速度です！普段は目に見えない重力加速度を目で見ることができます。</p>
+<div class="fyi">
+<div class="title">コラム：レポートタイプとは？</div>
+
+<p class="first_ja">「レポートタイプ」とはWiiRemoteに問い合わせするときのモードのことで、このレポートタイプによって、WiiRemoteが返す返事が異なります。</p>
+<p>WiimoteLib1.7ではInputReport内で以下のレポートタイプが定義されているようです。</p>
+
+<ul>
+<li> Buttons
+<li> ButtonsAccel
+<li> IRAccel
+<li> ButtonsExtension
+<li> ExtensionAccel
+<li> IRExtensionAccel</ul>
+
+<p>レポートタイプは、データのフォーマットを設定する目的の他にも、限りある通信帯域や処理速度を最適に設定する目的があるようです。上記のWiimoteLibで実装されているレポートタイプ以外にも、わかっているだけでも、ボタンのみの入出力から、加速度センサー3種、ヌンチャク付き6種、赤外線付きかどうか、といったより高速でシンプルな入出力モードから、たくさんの値をやりとりするモードまで、各種揃っています。また赤外線センサーについても、最大4点まで扱えるモードに対して2点高速モードなど、隠しモード的なレポートタイプも存在するようです(WiimoteLibでは4点のみサポートしています)。</p>
+</div>
+
+
+<h3 id="doc12_id800">加速度センサーで作るWiiRemote太鼓</h3>
+
+<p class="first_ja">せっかくWiiRemoteの特徴のひとつである加速度センサーの値が取得できるようになったので「太鼓もどき」を作ってみましょう。太鼓と呼ぶには大げさかもしれませんが、加速度センサーに入力された強さが一定より強くなると...たとえば先ほどの実験で&plusmn;5程度の値が測定できましたので、この値を超えた場合に、WAVファイルを再生することにします。</p>
+
+<h4 id="doc12_id802">応用：振るとWAVファイルを再生</h4>
+
+<p class="first_ja">先ほどの加速度センサーを使うプログラムの続きから始めると良いでしょう。フォーム「Form1」のコードを表示して、以下のように追記します。</p>
+
+<div id="doc12_id804" class="caption">振るとWAVファイルを再生(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+  using System;
+  using System.Windows.Forms;
+| using WiimoteLib;    //WimoteLibの使用を宣言
+| using System.Media;  //System.Mediaの宣言
+
+namespace WL_Taiko
+{
+  public partial class Form1 : Form
+    {
+|     Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+|     string path = null;         //Wavファイル名
+|     SoundPlayer wavePlayer;     //SoundPlayerを宣言
+
+      public Form1() {
+        InitializeComponent();
+|       wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|       wm.SetReportType(InputReport.ButtonsAccel, true); //レポートタイプの設定
+|       wm.Connect();                           //WiiRemoteと接続
+|       path = @&quot;C:\WINDOWS\Media\chord.wav&quot;;   //再生するWAVファイルを指定
+|       wavePlayer = new SoundPlayer(path);     //プレイヤーにWAVファイルを渡す
+      }
+|     //Wiiリモコンの値が変化したときに呼ばれる関数
+|     void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+|       WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|       //WAVファイルが読み込まれているか確認
+|       if (this.path != null) {
+|         float AX = Math.Abs(ws.AccelState.Values.X); //X軸の絶対値
+|         float AY = Math.Abs(ws.AccelState.Values.Y); //Y軸の絶対値
+|         float AZ = Math.Abs(ws.AccelState.Values.Z); //Z軸の絶対値
+|         //X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+|         if ((AX+AY+AZ) &gt;= 5) {
+|           wavePlayer.PlaySync();  //音を鳴らす
+|         }
+|       }
+|     }
+    }
+}
+</pre>
+
+
+<div id="doc12_id807" class="caption">振るとWAVファイルを再生(Form1.h)[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace WLCTaiko {
+  using namespace System;
+  using namespace System::Windows::Forms;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+| using namespace System::Media;  //System.Mediaの宣言
+
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|   public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+|   public: String^ path;         //WAVファイルパス格納用
+|   public: SoundPlayer^ wavePlayer;  //SoundPlayerを宣言
+    public:
+      Form1(void) {
+|       wm = gcnew Wiimote();  //Wiimoteクラスを作成
+        InitializeComponent();
+|       //イベント関数の登録
+|       wm-&gt;WiimoteChanged +=
+|         gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|           this, &amp;Form1::wm_WiimoteChanged);
+|       wm-&gt;SetReportType(InputReport::ButtonsAccel, true); //レポートタイプの設定
+|       wm-&gt;Connect(); //WiiRemoteと接続
+|       path =&quot;C:\\WINDOWS\\Media\\achord.wav&quot;;   //再生するWAVファイルを指定
+|       wavePlayer = gcnew SoundPlayer(path);     //プレイヤーにWAVファイルを渡す
+      }
+  public:
+void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ \
+    args){
+|       WiimoteState^ ws;
+|       float AX, AY, AZ;
+|       ws = args-&gt;WiimoteState;
+|       if (this-&gt;path!=nullptr) {
+|         AX = Math::Abs(ws-&gt;AccelState.Values.X); //X軸の絶対値
+|         AY = Math::Abs(ws-&gt;AccelState.Values.Y); //Y軸の絶対値
+|         AZ = Math::Abs(ws-&gt;AccelState.Values.Z); //Z軸の絶対値
+|         //X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+|         if ((AX+AY+AZ)&gt;=5) {
+|           wavePlayer-&gt;PlaySync();		//音を鳴らす
+|         }
+|       }
+|     }
+＜以下略＞
+</pre>
+
+<p>Visual C#は[F6]、Visual C++は[F7]キーを押してコンパイルエラーがないことなどを確認したら、BluetoothスタックからWiiRemoteを接続してください(切断されていなければそのまま続行してかまいません)。</p>
+<p>Visual Studioの[F5]キーを押して実行してください。無事にエラーなく実行されると、フォームが表示されます。このフォームは今回使用しませんが、WiiRemoteを振ってみると、振りに合わせて、なんだか音が聴いたことのある音が鳴ります。</p>
+
+<h4 id="doc12_id811">解説</h4>
+
+<p class="first_ja">WiiRemoteの3軸の加速度センサの値を取得して、指定した加速度を検出すると指定したWAVファイルを鳴らします。</p>
+
+<div id="doc12_id813" class="caption">再生するWAVファイルを指定</div>
+<pre class="program" style="margin-top:0">
+[C#]   path = @&quot;C:\WINDOWS\Media\achord.wav&quot;; 
+[C++]  path =&quot;C:\\WINDOWS\\Media\\achord.wav&quot;; 
+</pre>
+
+<p>この「@」は「@-quoted string」といって、これが先頭に着いている文字列は「\」をバックスラッシュを特殊な文字としてではなく、ファイルパスとして簡単に処理できます。C++にはそれに該当する標記がないようなので「\\」として「\」を特別な1文字として扱っています。</p>
+<p>さてここで再生するファイルを指定しています。鳴らしたいWAVファイルを指定してください。このプログラムではWindowsに用意されたWAVファイルとして、Windowsのシステムに最初から入っているWAVを指定しましたが、ご自身で用意された音楽や効果音を指定しても良いでしょう。</p>
+
+<div id="doc12_id816" class="caption">絶対値</div>
+<pre class="program" style="margin-top:0">
+[c#]  float AX = Math.Abs(ws.AccelState.Values.X); //X軸の絶対値
+[c++] AY = Math::Abs(ws-&gt;AccelState.Values.Y);     //Y軸の絶対値
+</pre>
+
+<p>WiiRemoteのX,Y,Z軸の値を取得し、その絶対値をとります。</p>
+
+<div id="doc12_id819" class="caption">判定</div>
+<pre class="program" style="margin-top:0">
+//X,Y,Z軸の加速度センサの絶対値の合計が5を超える時に、振ったと判定
+if ((AX+AY+AZ)&gt;= 5) {
+	wavePlayer.PlaySync();
+}
+</pre>
+
+<p>X,Y,Z軸の加速度の絶対値の和が[5]を超えると音を鳴らすとは、いかにも簡単です。この[5]という値を、小さくすれば少ない動作で反応します。反対に増やせば、大きい動作で反応します。自分の好みの数字に置き換えてみて、調整してみてください。なお今回は、音が再生中にWiiRemoteを振っても反応しません(再生中にも音を連続再生したい場合はスレッド処理などを用いる必要があります)。</p>
+
+<h2 id="doc1_id48">赤外線センサーを使う</h2>
+
+<p class="first_ja">さて、加速度センサーをひと通り使いこなしたあとは、赤外線センサーに挑戦してみましょう。赤外線は人間の目で見ることができません。しかし最初に作成するプログラム「赤外線探知機」は、赤外線がWiiRemoteの視界にはいると、バイブレーターを鳴らすことができます。次に最大4点の赤外線光源をカウントし、その結果をLEDに表示するプログラムを作ります。さらにそれを応用し、グラフィックスに組み込む基礎を学び、最後に赤外線センサーを使ったマウス操作プログラムをステップを追って開発していきます。目に見えない赤外線が、とても面白い情報を伝えるメディアになることを体感していきましょう！</p>
+
+<h3 id="doc13_id840">赤外線探知機</h3>
+
+<p class="first_ja">早速プログラミングを始めましょう。今回も前回に作成した加速度センサーのプログラムを改編してもよいのですが、新規で作るほうが勉強になってよいでしょう。ソリューションを新しく作成する必要はなく、ソリューションを右クリックして「追加」→「新しいプロジェクト」で新しいプロジェクト名(ここでは「IR1」)を与えて、プロジェクトができあがったら、プロジェクトを右クリックして「スタートアッププロジェクトに設定」し、参照設定にWiimoteLibを追加します。他のプロジェクトのコードやフォームを間違えて編集しないよう、一旦開いているソースコードのウィンドウをすべて閉じます。これで準備はできあがりです。動作確認のために[F5]キーを押して実行してみてもよいでしょう。</p>
+<p>このプロジェクトではまず、WiiRemoteへの「接続」「切断」ボタンを作成します。フォームにボタン2つ張り付けてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:8cm" src="png/ir1-01.png" alt="フォームにボタンを2つ配置する" width="8cm">
+</div>
+
+<p>貼り付けたら、「button1」のプロパティのTextを「接続」に、「button2」のプロパティのTextを「切断」に設定します。</p>
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="png/ir1-04.png" alt="「button1」のtextプロパティを「接続」に" width="5cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="png/ir1-05.png" alt="「button2」のtextプロパティを「切断」に" width="5cm">
+</div>
+
+
+<div class="figure">
+<img class="figure" style="width:5cm" src="png/ir1-02.png" alt="ボタンの完成" width="5cm">
+</div>
+
+<p>フォーム「Form1」を右クリックして「コードの表示」をして宣言と、接続時の処理、赤外線が見えたときのバイブレーターの処理を書き足しましょう。</p>
+
+<div id="doc13_id866" class="caption">赤外線探知機(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+//不要なusing宣言は削除してかまいません
+  using System;
+  using System.Windows.Forms;
+| using WiimoteLib;    //WimoteLibの使用を宣言
+
+namespace IR1
+{
+  public partial class Form1 : Form
+  {
+|   Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1()
+    {
+      InitializeComponent();
+|     //他スレッドからのコントロール呼び出し許可
+|     Control.CheckForIllegalCrossThreadCalls = false;
+    }
+|   //接続ボタンが押されたら
+    private void button1_Click(object sender, EventArgs e) {
+|     wm.Connect();                            //Wiimoteの接続
+|     wm.WiimoteChanged += wm_WiimoteChanged;  //イベント関数の登録
+|     wm.SetReportType(InputReport.IRExtensionAccel, true);//レポートタイプの設定
+    }
+|   //切断ボタンが押されたら
+    private void button2_Click(object sender, EventArgs e) {
+|     wm.WiimoteChanged -= wm_WiimoteChanged; //イベント関数の登録解除
+|     wm.Disconnect();  //Wiimote切断
+|     wm.Dispose();     //オブジェクトの破棄
+    }
+|   //Wiiリモコンの値が変化する度に呼ばれる
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)  {
+|     WiimoteState ws = args.WiimoteState;    //WiimoteStateの値を取得
+|     //もし赤外線を１つ発見したら
+|     if (ws.IRState.IRSensors[0].Found)  {
+|       wm.SetRumble(true);     //バイブレータON
+|     } else {
+|       wm.SetRumble(false);    //バイブレータOFF
+|     }
+|   }
+  }
+}
+</pre>
+
+
+<div id="doc13_id869" class="caption">赤外線探知機(Form1.h)[C++]</div>
+<pre class="program" style="margin-top:0">
+#pragma once
+namespace IR1 {
+  using namespace System;
+  using namespace System::Windows::Forms;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+| public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+  public:
+    Form1(void)
+    {
+|     wm = gcnew Wiimote();  //Wiimoteクラスを作成
+      InitializeComponent();
+|     //他スレッドからのコントロール呼び出し許可
+|     Control::CheckForIllegalCrossThreadCalls = false; 
+    }
+  protected:
+    ~Form1()
+＜省略＞
+#pragma endregion
+| //接続ボタンが押されたら
+private: System::Void button1_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|   wm-&gt;Connect(); //WiiRemoteと接続
+|   wm-&gt;WiimoteChanged +=
+|     gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|       this, &amp;Form1::wm_WiimoteChanged);
+|   wm-&gt;SetReportType(InputReport::IRExtensionAccel, true); //レポートタイプの設定
+  }
+|   //切断ボタンが押されたら
+private: System::Void button2_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|   wm-&gt;WiimoteChanged -=
+|     gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|        this, &amp;Form1::wm_WiimoteChanged); //イベント関数の登録解除
+|     wm-&gt;Disconnect();  //Wiimote切断
+|     wm-&gt;Dispose();     //オブジェクトの破棄
+  }
+
+| //WiiRemoteの値が変化する度に呼ばれる
+| public:
+| void wm_WiimoteChanged(Object^ \
+    sender,WiimoteLib::WiimoteChangedEventArgs^ args){		
+|     WiimoteState^ ws = args-&gt;WiimoteState;         //WiimoteStateの値を取得
+|     //もし赤外線を１つ発見したら
+|     if (ws-&gt;IRState.IRSensors[0].Found) {
+|       wm-&gt;SetRumble(true);     //バイブレータON
+|     } else  {
+|       wm-&gt;SetRumble(false);    //バイブレータOFF
+|     }
+|   }
+  };
+}
+</pre>
+
+
+<h4 id="doc13_id872">実験：赤外線を見てみよう</h4>
+
+<p class="first_ja">さて、実行してみます。まず周囲に赤外線光源を用意してください。Wii本体付属のセンサーバーがあれば手っ取り早いのですが、ない場合は周りにある照明、太陽光などにあたりをつけてみましょう。BluetoothスタックからWiiRemoteを接続して、Visual Studioの[F5]キーを押して実行してください。フォームが表示されたら、[接続]ボタンを押してください。WiiRemoteをセンサーバーなど赤外線光源に向けてください。センサーバーがない場合は、太陽、ハロゲンランプなどの熱源照明、ライターの火、テレビのリモコン、携帯電話の赤外線通信などに向けてみてください。上手く検出できると、バイブレーターが鳴ります。バイブレーターが鳴っていない状態で[切断]ボタンを押してから終了しましょう。</p>
+<p>ライターやロウソクなどを用いて赤外線光源にする場合は、火事や火傷などに十分気をつけて実験を行ってください。また、テレビリモコンを用いる場合は、ボタンが押されたときにしか赤外線を送信しませんので、何度か連打して確認をおこなうとよいでしょう。</p>
+<p>いろいろな方向に向けてみましよう。普段は見えない赤外線ですが、身の回りにある様々な物に利用されていることに気がつくことでしょう。</p>
+<div class="fyi">
+<div class="title">ボタンを押しても何も起きない時は？</div>
+
+<p class="first_ja">上記のコードをそのままコピーしていませんか？ボタンを押したときの処理は、Form1の上にあるボタンをダブルクリックして、Windowsフォームデザイナが自動で生成したコードを使って書いていくのが確実です。もし単に、上記のコードをコピーすると、接続ボタンを押しても、適切な処理にプログラムが流れていきません。この仕組みに『どうして!?』と思った人は、プロジェクトの中にある「Form1.Designer.cs」を覗いてみましょう。ここに「#region Windowsフォームデザイナで生成されたコード」というデフォルトで非表示になっているパートがあります。</p>
+
+<div id="doc13_id877" class="caption">Form1.Designer.csで自動生成されているコード[C#]</div>
+<pre class="program" style="margin-top:0">
+#region Windows フォーム デザイナで生成されたコード
+…
+this.button1.Click += new System.EventHandler(this.button1_Click_1);
+…
+this.button2.Click += new System.EventHandler(this.button2_Click);
+</pre>
+
+<p>ここには、GUIで作成したフォームについての位置や大きさなどのプロパティが記載されています。大事なのは、ボタンを押したときのイベントの発生です。</p>
+
+<pre id="doc13_id880" class="program">
+this.button1.Click+=new System.EventHandler(this.button1_Click_1);
+</pre>
+
+<p>まさにWiiRemoteのイベントの追加と同じように、クリック時のイベントを追加しています。ただし、上の例では「button1_Click_1」という関数になっています。「_1」の部分は、他の既存の関数と名前が衝突しないよう、自動で生成されます。つまり勝手に「button1_Click」という関数を書いていたとしても、ボタンを押したときのイベントとしてコールされることはありません。</p>
+<p>『なんだ、わざわざGUIでダブルクリックしないといけないのか！』と思われるかもしれませんが、管理が面倒なイベント渡しなども自動で生成・管理してくれる、.NETスタイルの開発を「裏側まで理解して」使いこなす、というのがカッコイイのではないでしょうか。</p>
+</div>
+
+
+<h4 id="doc13_id884">解説:レポートの設定／赤外線4点検出</h4>
+
+<p class="first_ja">このプログラムの仕組みは単純です。コールバック関数を設定して、WiiRemoteの赤外線センサーがひとつでも見つかったら、バイブレーターをONにします。</p>
+
+<div id="doc13_id886" class="caption">レポートタイプの設定</div>
+<pre class="program" style="margin-top:0">
+[C#]  wm.SetReportType ( InputReport.IRExtensionAccel, true); 
+[C++] wm-&gt;SetReportType(InputReport::IRExtensionAccel, true);
+</pre>
+
+<p>レポートタイプを「IRExtensionAccel」(赤外線＋拡張＋加速度)取得モードに設定します。このコールはかならずwm.Connect();の後に記述してください。wm.Connect();より前に記述すると赤外線センサーが正しく動作しません。</p>
+
+<div id="doc13_id889" class="caption">赤外線の検出</div>
+<pre class="program" style="margin-top:0">
+[C#]    ws.IRState.IRSensors[0].Found
+[C++]  ws-&gt;IRState.IRSensors[0].Found
+</pre>
+
+<p>このプロパティはTrue/Falseを返しますので、if文を使って赤外線を検出することができます。またWiimoteLibは、同時に4点まで赤外線光源を検出することができます。個々の光源を特定することはできませんが「IRSensors[3].Found」これがTrueなら4つの赤外線光源が見えている、ということです。</p>
+<p></p>
+
+<h3 id="doc13_id897">赤外線を数える</h3>
+
+<p class="first_ja">続いて、作成した基本的なプログラムを応用して、赤外線の個数を数えるプログラムに拡張します。WiimoteLibには同時に4点までの赤外線を計測することができます。ここまでのプログラムでは1点でも赤外線光源がセンサーの視界に入ると、バイブレーターが振動するようになっていましたが、青色LED(プレイヤーインジゲーター)をつかって、何点検出しているかを表示するプログラムを追加します。</p>
+
+<div id="doc13_id900" class="caption">赤外線探知LED表示(Form1.cs, 抜粋)[C#]</div>
+<pre class="program" style="margin-top:0">
+void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args)
+{
+  WiimoteState ws = args.WiimoteState;  //WiimoteStateの値を取得
+  //もし赤外線を１つ発見したら
+  if (ws.IRState.IRSensors[0].Found)  {
+     wm.SetRumble(true);     //バイブレータON
+  }  else  {
+     wm.SetRumble(false);    //バイブレータOFF
+  }
+| //検出された赤外線個数をWiiリモコンのLEDに表示する
+| wm.SetLEDs(ws.IRState.IRSensors[0].Found, ws.IRState.IRSensors[1].Found,
+|            ws.IRState.IRSensors[2].Found, ws.IRState.IRSensors[3].Found);
+}
+</pre>
+
+
+<div id="doc13_id903" class="caption">赤外線探知LED表示(Form1.h, 抜粋)[C++]</div>
+<pre class="program" style="margin-top:0">
+public:
+void wm_WiimoteChanged(Object^ sender,WiimoteLib::WiimoteChangedEventArgs^ \
+    args){		
+ WiimoteState^ ws = args-&gt;WiimoteState;  //WiimoteStateの値を取得
+
+  //もし赤外線を１つ発見したら
+  if (ws-&gt;IRState.IRSensors[0].Found) {
+    wm-&gt;SetRumble(true);     //バイブレータON
+  } else {
+    wm-&gt;SetRumble(false);    //バイブレータOFF
+  }
+| //検出された赤外線個数をWiiリモコンのLEDに表示する
+| wm-&gt;SetLEDs(ws-&gt;IRState.IRSensors[0].Found, \
+    ws-&gt;IRState.IRSensors[1].Found,
+| ws-&gt;IRState.IRSensors[2].Found, ws-&gt;IRState.IRSensors[3].Found );
+}
+</pre>
+
+<p>ここでは先ほどLEDの点灯制御で使った「SetLEDｓ()」関数のうち、4引数のものを使っています。WiiRemoteの赤外線センサーに複数の赤外線が発見されると、バイブレーターの振動と共にLEDインジゲーターを使って赤外線検出個数を表示します。</p>
+
+<h3 id="doc13_id907">座標を描画</h3>
+
+<p class="first_ja">さて、赤外線光源の有無や、そのカウントができるようになったので、次は赤外線センサーによる光源座標の取得を行い、フォーム内にグラフィックス機能を使って描画します。先ほどのプロジェクトをそのまま改良して開発することにしましょう。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/PictureBox200.png" alt="PictureBoxのSizeプロパティ" width="6cm">
+</div>
+
+<p>まず、フォームのデザインを変更します。はじめて使う新しいコントロールを配置します。「ツールボックス」の「コモンコントロール」から「PictureBox」をForm1に張り付けます。プロパティの「Size」を「200, 200」にします。他のボタンやフォームのバランスをとって配置します。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/PictureBoxForm.png" alt="Form1に配置したPictureBoxとボタン" width="6cm">
+</div>
+
+<p>プログラムのほうはまず、冒頭のusing宣言で「System.Drawing」が宣言されていることを確認してください。初期化やボタンイベントはそのままで、WiiRemoteの状態が変化したときに呼ばれる関数「wm_WiimoteChanged()」とフォーム描画関数「DrawForms(ws)」に、描画のためのコードを加筆します。</p>
+
+<div id="doc13_id922" class="caption">赤外線ポインタ描画(Form1.cs)[C#]</div>
+<pre class="program" style="margin-top:0">
+  using System;
+  using System.Windows.Forms;
+| using System.Drawing; //描画のために必要
+| using WiimoteLib;     //WimoteLibの使用を宣言
+
+  namespace IR4 {       //作成したプロジェクト名称
+    public partial class Form1 Form {
+|     Wiimote wm = new Wiimote(); //Wiimoteクラスを作成
+    public Form1) {
+     InitializeComponent();
+|    //他スレッドからのコントロール呼び出し許可
+|    Control.CheckForIllegalCrossThreadCalls = false;
+    }
+
+|   //WiiRemoteの状態が変化したときに呼ばれる関数
+|   void wm_WiimoteChanged(object sender, WiimoteChangedEventArgs args) {
+|     WiimoteState ws = args.WiimoteState;  //WiimoteStateの値を取得 
+|     DrawForms(ws);                        //フォーム描写関数へ
+|   }
+＜略：ボタンイベント関係＞
+|   //フォーム描写関数
+|   public void DrawForms(WiimoteState ws) {
+|     Graphics g =this.pictureBox1.CreateGraphics(); //グラフィックス取得
+|     g.Clear(Color.Black);                          //画面を黒色にクリア
+|     //もし赤外線を１つ発見したら
+|     if (ws.IRState.IRSensors[0].Found) {
+|       //赤色でマーカを描写
+|       g.FillEllipse(Brushes.Red,
+|       ws.IRState.IRSensors[0].Position.X * 200,
+|       ws.IRState.IRSensors[0].Position.Y * 200, 10, 10);
+|     }
+|     //もし赤外線を２つ発見したら
+|     if (ws.IRState.IRSensors[1].Found) {
+|       //青色でマーカを描写
+|       g.FillEllipse(Brushes.Blue,
+|       ws.IRState.IRSensors[1].Position.X * 200,
+|       ws.IRState.IRSensors[1].Position.Y * 200, 10, 10);
+|     }
+|     //もし赤外線を３つ発見したら
+|     if (ws.IRState.IRSensors[2].Found) {
+|       //黄色でマーカを描写
+|       g.FillEllipse(Brushes.Yellow,
+|       ws.IRState.IRSensors[2].Position.X * 200,
+|       ws.IRState.IRSensors[2].Position.Y * 200, 10, 10);
+|     }
+|     //もし赤外線を４つ発見したら
+|     if (ws.IRState.IRSensors[3].Found) {
+|       //緑色でマーカを描写
+|       g.FillEllipse(Brushes.Green,
+|       ws.IRState.IRSensors[3].Position.X * 200,
+|       ws.IRState.IRSensors[3].Position.Y * 200, 10, 10);
+|     }
+|     g.Dispose();//グラフィックスの解放
+| }
+ }
+}
+</pre>
+
+
+<div id="doc13_id925" class="caption">赤外線ポインタ描画(Form1.h)[C++]</div>
+<pre class="program" style="margin-top:0">
+ #pragma once
+ namespace IR4 {  //作成したプロジェクト名称
+  using namespace System::Windows::Forms;
+| using namespace System::Drawing;
+| using namespace WiimoteLib;  //WimoteLibの使用を宣言
+  public ref class Form1 : public System::Windows::Forms::Form
+  {
+|   public: Wiimote^ wm; //Wiimoteオブジェクトwmを作成
+    public:
+     Form1(void) {
+|      wm = gcnew Wiimote();  //Wiimoteクラスを作成
+       InitializeComponent();
+|      //他スレッドからのコントロール呼び出し許可
+|      Control::CheckForIllegalCrossThreadCalls = false; 
+     }
+    protected:
+    /// &lt;summary&gt;
+＜略＞
+#pragma endregion
+|   //接続ボタンが押されたら
+private: System::Void button1_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|     wm-&gt;Connect(); //WiiRemoteと接続
+|     wm-&gt;WiimoteChanged +=
+|       gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|         this, &amp;Form1::wm_WiimoteChanged);
+|       //レポートタイプの設定
+|       wm-&gt;SetReportType(InputReport::IRExtensionAccel, true);
+    }
+|   //切断ボタンが押されたら
+private: System::Void button2_Click(System::Object^ sender, \
+    System::EventArgs^ e) {
+|     wm-&gt;WiimoteChanged -=
+|       gcnew System::EventHandler&lt;WiimoteChangedEventArgs^&gt;(
+|         this, &amp;Form1::wm_WiimoteChanged); //イベント関数の登録解除
+|       wm-&gt;Disconnect();  //Wiimote切断
+    }
+|   //WiiRemoteの値が変化する度に呼ばれる
+|   public:
+| void wm_WiimoteChanged(Object^ \
+    sender,WiimoteLib::WiimoteChangedEventArgs^ args){		
+|       WiimoteState^ ws = args-&gt;WiimoteState;  //WiimoteStateを取得
+|       DrawForms(ws);
+|   }
+|  public: 
+|     void DrawForms(WiimoteState^ ws) {
+|       //グラフィックスを取得
+|       Graphics^ g = this-&gt;pictureBox1-&gt;CreateGraphics();
+|       g-&gt;Clear(Color::Black);//画面を黒色にクリア
+
+|       if (ws-&gt;IRState.IRSensors[0].Found) {  //赤外線を1つ発見したら
+|         //赤色でマーカを描写
+|         g-&gt;FillEllipse( Brushes::Red ,
+|           (float)ws-&gt;IRState.IRSensors[0].Position.X * 200.0f ,
+| (float)ws-&gt;IRState.IRSensors[0].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|       if (ws-&gt;IRState.IRSensors[1].Found) {  //赤外線を2つ発見したら
+|         //青色でマーカを描写
+|         g-&gt;FillEllipse( Brushes::Blue ,
+|           (float)ws-&gt;IRState.IRSensors[1].Position.X * 200.0f ,
+| (float)ws-&gt;IRState.IRSensors[1].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|       if (ws-&gt;IRState.IRSensors[2].Found) {  //赤外線を3つ発見したら
+|         //黄色でマーカを描写
+|         g-&gt;FillEllipse( Brushes::Yellow ,
+|           (float)ws-&gt;IRState.IRSensors[2].Position.X * 200.0f ,
+| (float)ws-&gt;IRState.IRSensors[2].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|       if (ws-&gt;IRState.IRSensors[3].Found) {  //赤外線を4つ発見したら
+|         //緑色でマーカを描写
+|         g-&gt;FillEllipse( Brushes::Green ,
+|           (float)ws-&gt;IRState.IRSensors[3].Position.X * 200.0f ,
+| (float)ws-&gt;IRState.IRSensors[3].Position.Y * 200.0f , 10.0f , 10.0f );
+|       }
+|     }
+  };
+}
+</pre>
+
+
+<h4 id="doc13_id928">実験しよう</h4>
+
+<p class="first_ja">まず赤外線光源を用意して、BluetoothスタックからWiiRemoteを接続してください。Visual Studioから[F5]キーを押してプログラムを実行します。表示されたフォームの[接続]ボタンをクリックして、WiiRemoteをセンサーバーや電球などの赤外線光源に向けてください。</p>
+
+<div class="figure">
+<img class="figure" style="width:6cm" src="png/IR-pointer4.png" alt="赤外線に向けると4色のマーカーが動く" width="6cm">
+</div>
+
+<p>赤外線が検出されると図のようにマーカ点が表示さます。マーカの動きが激しすぎる場合は、WiiRemoteとセンサーバーとの距離を2m～3mまで離してください。距離が長いほど安定した動きを行うことができます。</p>
+<p>なおWii本体付属の標準のセンサーバーには赤外線LEDが左右2グループしかありません（そもそも4点検出できるという機能が存在するところが驚きです！）。複数の赤外線が見つからない場合は、日中（太陽に向けるなど）に窓の外に向けると複数の赤外線を検出できると思います。太陽の光を乱反射している様子などでも複数点を取得できることがありますが、赤外線光源同士が近すぎるとひとつのグループとして誤認識されノイズの原因になりますので、ある程度安定して取得できる条件や距離を調べてみるのもよいでしょう。上の図では、とある店舗の天井に吊られている4個のハロゲンランプの様子です。終了する場合は、切断ボタンを押してから終了させてください。</p>
+
+<h4 id="doc13_id938">解説：赤外線座標の取得</h4>
+
+<p class="first_ja">WiiRemoteの赤外線カメラの値を取得して、赤外線を発見したら画面に描画しています。</p>
+
+<div id="doc13_id940" class="caption">赤外線座標の取得</div>
+<pre class="program" style="margin-top:0">
+[C#]   ws.IRState.IRSensors[0].Position.X 
+[C++] ws-&gt;IRState.IRSensors[0].Position.X
+</pre>
+
+<p>赤外線の座標(x,y)の位置(Position)は、{0.0～1.0}の値域をとります。グラフィックスとの組み合わせも意外と簡単だったのではないでしょうか。本プログラムでは、その値にpictureBoxの横幅として設定した200x200に合うように、200を掛けて出力していますが、フォームのSizeを変更したりして、お好みの画面デザインにしてみるとよいでしょう。</p>
+<p>なお、WiiRemoteの赤外線センサーは非常に高性能です。ここでは4点の検出を行っていますが、実際に赤外線光源座標が送られてくるスピードは非常に速いことに注目です。通常のビデオカメラ等が1秒に15-30回程度の撮影を行っているのに対し、WiiRemoteは200回程度の座標取得処理を行っているようです。さすがゲーム用入力デバイスです、速度が大切です！</p>
+<p>本章では比較的初心者の読者に向けて、Visual Studioを使い、C#とC++という複数の言語環境を使って.NETで開発されたWiimoteLibを通して、基本的なWiiRemoteプログラミングを学びました。WiimoteLibは現状最も完成度の高いAPIのひとつで、非常に安定して動作します。.NETという環境から「C#専用？」と考えられていますが、本書に向けてC++/CLIにおける解説を充実させました(おそらく世界初！です)。</p>
+<p>WiimoteLibを使ったサンプル、具体的な開発例は8章でも扱っていきます。</p>
+</body>
+</html>
