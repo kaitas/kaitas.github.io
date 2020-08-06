@@ -74,7 +74,7 @@ VTuberに代表される「バーチャルな存在」は、Unity や Unreal Eng
 コロナウイルス感染症によってエンターテインメントパークや、ミュージアムといったメディア関連産業は大きな影響を受けている。直接的な感染症対策だけでなく、エンターテインメントの雰囲気を維持する上で、生死に関わるシリアスな問題や経済の冷え込みなどが視界に入った状態で、夢の世界への没入環境を味わえる人はそこまで多くはない。
 エンターテインメント産業だけではない。学校教育や音楽、美術、パフォーミングアート、イベント、国際交流など、ありとあらゆる物理的な活動が分断されてしまっている。
 
-筆者は運よくグリー株式会社 [GREE VR Studio Laboratory](https://vr.gree.net/) および グリーグループでライブエンタメを推進する[株式会社 Wright Flyer Live Entertainment (WFLE)](https://le.wrightflyer.net/)において、この数年間をVRライブエンタメの未来を開発する研究に没頭することができた。WFLEが提供するライブエンタメプラットフォーム「REALITY」は、VTuberによる楽しい番組と、個人の3Dアバターによる配信交流が行えるサービスがある。
+筆者は運よくグリー株式会社 [GREE VR Studio Laboratory](https://vr.gree.net/) および グリーグループでライブエンターテインメント事業を推進する[株式会社 Wright Flyer Live Entertainment (WFLE)](https://le.wrightflyer.net/)において、この数年間をVRライブエンタメの未来を開発する研究に没頭することができた。WFLEが提供するスマートフォン向けバーチャルライブ配信アプリ「REALITY」は、VTuberによる楽しい番組と、個人の3Dアバターによる配信交流が行えるサービスがある。
 
 実際にはコロナウイルスの爆発的感染の前から、様々なこの先の未来についての予測や仮説検証は行われていた。
 
@@ -191,7 +191,16 @@ SIGGRAPH Asia 2019 での経験をさらに深め、視聴者やライブ参加�
 
 
 ## （脚注案）文中のハイパーリンクで済ませられるのであれば文献等に絞ります
+(1)Youtuber
+　オリジナルの動画や音楽コンテンツを制作して＜ YouTube ＞にアップロードしている人を指す場合にのみ使用　
+＊YouTube「クリエイター向けガイドライン」
+https://www.youtube.com/intl/ja/about/brand-resources/#partners-advertisers
 
+(2)VTuber
+　世間的には、YouTubeを含むREALITY、Showroomその他のプラットフォーム上で配信する人/者を総称して「Vtuber」が用いられている傾向にあり、一般名称として「VTuber」を使用。
+
+ ## その他引用等
+ 
 
 *1 VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究
 https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf
