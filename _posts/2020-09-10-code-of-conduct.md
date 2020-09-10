@@ -57,5 +57,7 @@ author: aki
 
 <blockquote class="twitter-tweet"><a href="https://twitter.com/o_ob/status/1302847042985754624"></a></blockquote>
 
-<blockquote class="twitter-tweet">[https://twitter.com/shinjiyamane/status/1303874508021878787](https://twitter.com/shinjiyamane/status/1303874508021878787)</blockquote>
+
+<blockquote class="twitter-tweet"><a href="https://twitter.com/shinjiyamane/status/1303874508021878787"></a></blockquote>
+
 
