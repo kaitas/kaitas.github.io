@@ -55,7 +55,7 @@ author: aki
 
 関連ツイート
 
-> [https://twitter.com/o_ob/status/1302847042985754624](https://twitter.com/o_ob/status/1302847042985754624)
+<blockquote class="twitter-tweet">[https://twitter.com/o_ob/status/1302847042985754624](https://twitter.com/o_ob/status/1302847042985754624)</blockquote>
 
-> [https://twitter.com/shinjiyamane/status/1303874508021878787](https://twitter.com/shinjiyamane/status/1303874508021878787)
+<blockquote class="twitter-tweet">[https://twitter.com/shinjiyamane/status/1303874508021878787](https://twitter.com/shinjiyamane/status/1303874508021878787)</blockquote>
 
