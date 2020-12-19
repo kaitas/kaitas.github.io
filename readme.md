@@ -66,7 +66,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Academic Papers
 
-Rebuilding my index with [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)...
+Rebuilding my index with [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
 
 
 1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「Mozilla Hubsを用いたオンラインイベントのWebVR化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
