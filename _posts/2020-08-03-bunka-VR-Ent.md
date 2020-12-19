@@ -187,12 +187,14 @@ SIGGRAPH Asia 2019 での経験をさらに深め、視聴者やライブ参加�
 （脚注案）文中のハイパーリンクで済ませられるのであれば文献等に絞ります
 (1)Youtuber
 　オリジナルの動画や音楽コンテンツを制作して＜ YouTube ＞にアップロードしている人を指す場合にのみ使用　
-＊[YouTube「クリエイター向けガイドライン」](https://www.youtube.com/intl/ja/about/brand-resources/#partners-advertisers)
+
+- [YouTube「クリエイター向けガイドライン」](https://www.youtube.com/intl/ja/about/brand-resources/#partners-advertisers)
 
 (2)VTuber
 　世間的には、YouTubeを含むREALITY、Showroomその他のプラットフォーム上で配信する人/者を総称して「Vtuber」が用いられている傾向にあり、一般名称として「VTuber」を使用。
 
- ### その他引用等
+
+## その他引用等
  
 
 - [VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf)
@@ -220,7 +222,7 @@ SIGGRAPH Asia 2019 での経験をさらに深め、視聴者やライブ参加�
 - [Travis Scott and Fortnite Present: Astronomical (Full Event Video)](https://youtu.be/wYeFAlVC8qU)
 81,622,806 回視聴 2020/04/26
 
-## 2020-08-27 レビューアーへの返信
+## レビューアーへの返信(2020-08-27)
 
 ※けっこう激しいレビューアーとのやり取りがありました。
 最終原稿からは読み取れないと思いますので遺しておきます。
@@ -235,18 +237,21 @@ The Ultimate Displayとダモクレスの剣が論文、特許、命名、文献
 としてできるだけ、読者のわかりやすさを重視してどなたかが公開されているYouTubeのURL [https://www.youtube.com/watch?v=NtwZXGprxag] を引用していますが
 「この表記ではよろしいでしょうか？」と問われると、この数字の信憑性を確定させるには論文数本でも足りないと考えます。
 HMDの原型となるステレオ立体視ディスプレイの基本特許はモートン・ハイリグの1957年です。 センソラマの公開は1962年。
-[https://patents.google.com/patent/US2955156A/en]
-[https://www.pronews.jp/special/20170802110013.html]
+
+- [https://patents.google.com/patent/US2955156A/en](https://patents.google.com/patent/US2955156A/en)
+- [https://www.pronews.jp/special/20170802110013.html](https://www.pronews.jp/special/20170802110013.html)
 
 HMD=VRではありませんが、世間的な理解から乖離してセンソラマの話をするコンテキストではありません。
 また2018年のSIGGRAPH記念講演「VR@50」での本人ら関係者の証言
-[https://blog.siggraph.org/2018/08/vr-at-50-celebrating-ivan-sutherland.html/]
+
+- [https://blog.siggraph.org/2018/08/vr-at-50-celebrating-ivan-sutherland.html/](https://blog.siggraph.org/2018/08/vr-at-50-celebrating-ivan-sutherland.html/)
+
 この講演で 「Virtual Reality」という言葉を提案したのはアイヴァン・サザランドでもなく、ジャロン・ラニアーでもなく、実は元々はフランスの脚本家アントナン・アルトーが美術用語として生み出したという説が語られています。
 
 
 <blockquote class="twitter-tweet"><a href="https://twitter.com/o_ob/status/1029072489396072448"></a></blockquote>
 
-[https://twilog.org/o_ob/month-1808/3]
+[https://twilog.org/o_ob/month-1808/3](https://twilog.org/o_ob/month-1808/3)
 
 結局のところ「このあたり」というエポックを区切るうえで「1965年頃」としています。
 
@@ -255,7 +260,7 @@ Q3・既に「Sketchpad」（1963年）（註●）→前に　コンピュー�
 
 「Sketchpad」はデモシステムであり、GUIを説明する上ではソフトウェアですが、ハードウェアだけでも成立しない、パソコン登場以前のコンピュータシステムであり、汎用的なプログラムではありません。この時代はそのようにソフトウェアの研究だけでなく人間とコンピュータの境界を研究するという研究が未知の研究分野として存在し、そのような背景から提案されたサザランドの研究室内でのデモになります。
 
-[https://en.wikipedia.org/wiki/Sketchpad]
+[https://en.wikipedia.org/wiki/Sketchpad](https://en.wikipedia.org/wiki/Sketchpad)
 
 そういう「提案を行っていた」、ということでコンテキストとしては興味がある人がWikipediaを読んでいただければそれでよいのではないでしょうか？逆に、どのような注釈をここで書くことで原稿の信頼性や読みやすさが上がるのでしょうか？
 
@@ -382,8 +387,9 @@ VRエンタメを長年研究してきたけれど、「あえてゲームの話
 ぜひ大人たち、おっさんたちを超えていって欲しいなと思います、これは割とマジで。
 こんな原稿を書くおっさんも、昔は皆さんと変わらない、ただのゲームが好きな学生だったんです。
 
-## 最後に、リアルアーティストとコラボレーションするライブの話のその先
+## リアルアーティストとコラボレーションするライブの話のその先
 
+さいごに、
 ついにゲームの世界とつながった話が公開されました。明日です！
 
 ■湘南乃風 12/20に行われるオンラインライブへの意気込みや見どころ、彼らの「挑戦」をABEMA独占公開！｜12/20 19:45〜  アベマでOA！ 
