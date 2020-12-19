@@ -9,15 +9,14 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 ## Works
 
-### GREE VR Studio Laboratory
+### GREE VR Studio Laboratory (2018-)
 
 - [Laboratory](https://vr.gree.net/lab/)
- - [YouTube Channel](http://j.mp/VRSYT)
- - [「転生こえうらない」Voice Fortune Teller](https://vr.gree.net/lab/vc/)
-
+- [YouTube Channel](http://j.mp/VRSYT)
+- [「転生こえうらない」Voice Fortune Teller](https://vr.gree.net/lab/vc/)
 - [Products](https://vr.gree.net/en/)
 
-### KAIT Shirai Lab
+### KAIT Shirai Lab (2010-2018)
 
 - [Publications](http://blog.shirai.la/publications/)
 - [Manga Generator Consortium](https://manga.style/)
@@ -50,6 +49,8 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Articles
 
+- 「[【研究ノート】 Mozilla Hubsを用いたオンラインイベントのWebVR化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」（[DHU JOURNAL Vol.07 2020 電子版](https://msl.dhw.ac.jp/journal/)）
+- 「[■これまでの5年、これからの5年――「VR元年」の終焉から世界同時参加のXRライブエンタメへ](https://mediag.bunka.go.jp/article/article-16853/)」（文化庁「メディア芸術カレントコンテンツ」, 2020/10/29公開）
 - [【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf) DHU JOURNAL Vol.06 2019
 - [卒論が1ミリも進まない4年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
