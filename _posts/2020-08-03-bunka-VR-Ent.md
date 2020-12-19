@@ -183,47 +183,42 @@ SIGGRAPH Asia 2019 での経験をさらに深め、視聴者やライブ参加�
 最後に、コロナウイルスの渦中において、命を落とされた方、そしてイベントなどの事業中止によって、発表や表現の機会を失った方々に祈りを捧げつつ、筆を置きたいと思う。
 
 
-## （脚注案）文中のハイパーリンクで済ませられるのであれば文献等に絞ります
+## 初校戻し
+（脚注案）文中のハイパーリンクで済ませられるのであれば文献等に絞ります
 (1)Youtuber
 　オリジナルの動画や音楽コンテンツを制作して＜ YouTube ＞にアップロードしている人を指す場合にのみ使用　
-＊YouTube「クリエイター向けガイドライン」
-https://www.youtube.com/intl/ja/about/brand-resources/#partners-advertisers
+＊[YouTube「クリエイター向けガイドライン」](https://www.youtube.com/intl/ja/about/brand-resources/#partners-advertisers)
 
 (2)VTuber
 　世間的には、YouTubeを含むREALITY、Showroomその他のプラットフォーム上で配信する人/者を総称して「Vtuber」が用いられている傾向にあり、一般名称として「VTuber」を使用。
 
- ## その他引用等
+ ### その他引用等
  
 
-*1 VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究
-https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf
+- [VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf)
 
-「REALITY FESTIVAL3 OPENING SPECIAL KMNZ」2019年8月12日放送 #KMNZ
-https://youtu.be/FOk4uQexhOE
+- 「[REALITY FESTIVAL3 OPENING SPECIAL KMNZ](https://youtu.be/FOk4uQexhOE)」2019年8月12日放送 #KMNZ
 
-すーぱーそに子ちゃんねる
-https://www.youtube.com/channel/UCfxUC1e8kStZYNNc7xQuxag
+- [すーぱーそに子ちゃんねる](https://www.youtube.com/channel/UCfxUC1e8kStZYNNc7xQuxag)
 
 
-Vtuber甲子園（YouTubeプレイリスト）
-https://www.youtube.com/watch?v=LLUnJoP0BsY&list=PLJM2g0t5pc2VLmXD4w0qXfHQ-lkYPAKux
+- [Vtuber甲子園（YouTubeプレイリスト）](https://www.youtube.com/watch?v=LLUnJoP0BsY&list=PLJM2g0t5pc2VLmXD4w0qXfHQ-lkYPAKux)
 
-「建築王 -チーム対抗マイクラコンテスト-」2019年8月14日放送 #ホロライブ
-https://www.youtube.com/watch?v=Onm5Mjllp6k
 
-スペチャンREALITY　ダンス イン ザ ギャラクシー！踊ってみた選手権！ 4月1日放送　#銀河アリス #奏天まひろ #音葉なほ #インサイドちゃん Mark2
-https://www.youtube.com/watch?v=Kmk2Xip5fVc
+- [「建築王 -チーム対抗マイクラコンテスト-」2019年8月14日放送 #ホロライブ](https://www.youtube.com/watch?v=Onm5Mjllp6k)
 
-#九条林檎の挑戦状 Ⅱ 6月26日放送 　#九条林檎 #馬犬 #ANON vs #インサイドちゃん Mark2 #もちひよこ #東雲めぐ
-https://www.youtube.com/watch?v=e0vpJYxOyEY
 
-Marshmello Holds First Ever Fortnite Concert Live at Pleasant Park
-53,639,668 回視聴•2019/02/03
-https://www.youtube.com/watch?v=NBsCzN-jfvA
+- [スペチャンREALITY　ダンス イン ザ ギャラクシー！踊ってみた選手権！ 4月1日放送　#銀河アリス #奏天まひろ #音葉なほ #インサイドちゃん Mark2](https://www.youtube.com/watch?v=Kmk2Xip5fVc)
 
-Travis Scott and Fortnite Present: Astronomical (Full Event Video)
-81,622,806 回視聴•2020/04/26
-https://youtu.be/wYeFAlVC8qU
+
+- [#九条林檎の挑戦状 Ⅱ 6月26日放送 　#九条林檎 #馬犬 #ANON vs #インサイドちゃん Mark2 #もちひよこ #東雲めぐ](https://www.youtube.com/watch?v=e0vpJYxOyEY)
+
+
+- [Marshmello Holds First Ever Fortnite Concert Live at Pleasant Park](https://www.youtube.com/watch?v=NBsCzN-jfvA)
+53,639,668回視聴  2019/02/03
+
+- [Travis Scott and Fortnite Present: Astronomical (Full Event Video)](https://youtu.be/wYeFAlVC8qU)
+81,622,806 回視聴 2020/04/26
 
 ## 2020-08-27 レビューアーへの返信
 
