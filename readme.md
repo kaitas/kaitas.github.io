@@ -64,7 +64,31 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - (working)[WiiRemoteプログラミング](https://akihiko2.shirai.as/projects/WiiRemote/)
 - [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
 
+# Academic Papers
 
+## 2019 
+
+1. Yusuke Yamazaki, Shoichi Hasegawa, Hironori Mitake, Akihiko Shirai, "Neck strap haptics: an algorithm for non-visible VR information using haptic perception on the neck", ACM SIGGRAPH 2019 Posters (July 2019)
+1. Yusuke Yamazaki, Hironori Mitake, Akihiko Shirai, Shoichi Hasegawa, "Widespread Hapbeat: Tension Based Necklace Type Haptic Display" (November 2019)
+1. Akihiko Shirai, "REALITY: broadcast your virtual beings from everywhere", ACM SIGGRAPH 2019 Appy Hour (July 2019)
+1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Effectiveness of facial animated avatar and voice transformer in elearning programming course", Conference Paper, ACM SIGGRAPH 2019 Posters (July 2019)
+1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures", Conference Paper, the 19th ACM International Conference, (July 2019)
+
+## 2018
+
+1. Rex Hsieh, Marika Higashida, Yuya Mochizuki, Takaya Asano, Akihiko Shirai, Hisashi Sato, "MasQueRade: Onsite QR Code based VR Experience Evaluation System using Sanitary Mask", Conference Paper, the Virtual Reality International Conference - Laval Virtual (April 2018)
+
+## 2017
+
+1. Akihiko Shirai, Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, “Real Baby - Real Family”- Multi-Sensory Feedback Tangible Baby VR, International Journal of Virtual Reality (November 2017)
+1. Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, Akihiko Shirai, "Real baby - real family": VR entertainment baby interaction system, ACM SIGGRAPH 2017 Emerging Technologies (July 2017)
+1. "Real Baby - Real Family: Holdable tangible baby VR", the Virtual Reality International Conference - Laval Virtual 2017 (March 2017)
+
+## -2016
+1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ (Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
+1. Yuichiro KumeAkihiko ShiraiMotoshisa TsudaToyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
+
+<hr>
 # Contact
 
 - twitter[@o_ob](https://twitter.com/o_ob)
