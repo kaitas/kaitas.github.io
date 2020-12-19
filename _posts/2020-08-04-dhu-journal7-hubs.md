@@ -1,11 +1,19 @@
 ---
 layout: post
-title: "2020-08-04 DHU Journal 7草稿"
+title: "(草稿公開) Mozilla Hubs を用いたオンラインイベントのWebVR化"
 date: '2020-08-04 23:52:00'
 author: aki
 ---
-# Mozilla Hubs を用いたオンラインイベントのWebVR化 (仮)
-WebVR virtualization of online events using Mozilla Hubs (tentative)
+
+この草稿は以下の講演と論文、技術書展部誌の原稿となるものです（同じものではありません）。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sdZjLy9JxOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- 「[【研究ノート】 Mozilla Hubsを用いたオンラインイベントのWebVR化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」（[DHU JOURNAL Vol.07 2020 電子版](https://msl.dhw.ac.jp/journal/)）
+- 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」（[グリー技術書典部誌 2020年秋号](https://techbookfest.org/product/5759878496780288?productVariantID=6214599038730240)）
+
+
+## WebVR virtualization of online events using Mozilla Hubs
 
 
 ## Authors
@@ -13,66 +21,15 @@ WebVR virtualization of online events using Mozilla Hubs (tentative)
 
 ### Authors (full)
 
-白井暁彦: WFLE, Inc. GREE VR Studio Laboratory / 
-デジタルハリウッド大学 大学院 客員教授
-Graduate School of Digital Hollywood University, Visiting Professor
-
-Liudmila Bredikhina: WFLE, Inc. GREE VR Studio Laboratory / University of Geneva
-坂口塔也: WFLE, Inc. GREE VR Studio Laboratory / 静岡大学
-栢之間諒汰: WFLE, Inc. GREE VR Studio Laboratory / 東京工業大学
-堀部貴紀: WFLE, Inc. GREE VR Studio Laboratory / 明治大学
-山崎勇祐: WFLE, Inc. GREE VR Studio Laboratory / 東京工業大学
-中村清人: WFLE, Inc. XR Entertainment 事業部 
-*WFLE, Inc. = 株式会社Wright Flyer Live Entertainment
-
-神田 第三   Kanda Daisan
-デジタルハリウッド大学 教授
-Digital Hollywood University, Professor 
-神田 第二   Kanda Daini
-デジタルハリウッド大学 准教授
-Digital Hollywood University, Associate Professor
-
-Mozilla Hubs を用いたオンラインイベントのWebVR化
-WebVR virtualization of online events using Mozilla Hubs
-
- 
-白井 暁彦   Shirai Akihiko
-デジタルハリウッド大学 大学院 客員教授
-Graduate School of Digital Hollywood University,
-Visiting Professor
-ブレディキーナ リュドミラ   Bredikhina Liudmila
-ジュネーブ大学
-University of Geneva
-坂口 塔也   Sakaguchi Toya
-静岡大学
-Shizuoka University
-栢之間 諒汰   Kayanoma Ryota
-東京工業大学
-Tokyo Institute of Technology 
-堀部 貴紀   Horibe Takanori
-明治大学
-Meiji University
-山崎勇祐   Yamazaki Yusuke
-東京工業大学
-Tokyo Institute of Technology
-中村 清人   Nakamura Kiyoto
-株式会社Wright Flyer Live Entertainment
-WFLE, Inc.
-
-
-
-
- 
-
-
-　With COVID-19時代におけるライブイベントのプラットフォームとして、Mozillaが開発するWebVR「Hubs」を活用した研究開発に注力している。国際会議でのリモート登壇にはじまり、ピッチイベントや、研究成果発表会といった展示会の開発、カスタムクライアントや独自ドメイン運用、既存のエンターテイメント産業における業務案件への応用についてのノウハウ、学会での懇親会やポスター発表向けの音響改善に関する完全オンラインの実験手法や子供向け体験型ワークショップの開発など、短期間で実証してきたケースと共に、方法論としてまとめる。
+With COVID-19時代におけるライブイベントのプラットフォームとして、Mozillaが開発するWebVR「Hubs」を活用した研究開発に注力している。国際会議でのリモート登壇にはじまり、ピッチイベントや、研究成果発表会といった展示会の開発、カスタムクライアントや独自ドメイン運用、既存のエンターテイメント産業における業務案件への応用についてのノウハウ、学会での懇親会やポスター発表向けの音響改善に関する完全オンラインの実験手法や子供向け体験型ワークショップの開発など、短期間で実証してきたケースと共に、方法論としてまとめる。
 
 キーワード：WebVR, オンライン実験、Mozilla, Hubs, ライブエンターテインメント
 
  
  
-1. 	はじめに
-　XRライブエンターテイメントの研究開発を通してVR4.0を探求している GREE VR Studio Laboratory は従来の「アバター駆動VR研究開発」に加え、With Covid時代、つまり新型コロナウイルス感染症対策が必要な環境下におけるライブイベントのプラットフォームとして、Mozillaが開発するWebVR「Hubs」を活用した研究開発や知見の社会への普及に注力している。本稿では、国際会議でのリモート登壇、展示会型発表会、オンラインピッチイベントの開催、子供向け体験型ワークショップ、学会ポスター発表のための音響改善、業務案件への利用といった事例やノウハウについて、実証してきたケースと共に、方法論としてまとめる。
+## 1. 	はじめに
+
+XRライブエンターテイメントの研究開発を通してVR4.0を探求している GREE VR Studio Laboratory は従来の「アバター駆動VR研究開発」に加え、With Covid時代、つまり新型コロナウイルス感染症対策が必要な環境下におけるライブイベントのプラットフォームとして、Mozillaが開発するWebVR「Hubs」を活用した研究開発や知見の社会への普及に注力している。本稿では、国際会議でのリモート登壇、展示会型発表会、オンラインピッチイベントの開催、子供向け体験型ワークショップ、学会ポスター発表のための音響改善、業務案件への利用といった事例やノウハウについて、実証してきたケースと共に、方法論としてまとめる。
 1.1 	Mozilla Hubs 
 Hubsとは、Mozilla Mixed Reality Groupによってオープンソースで開発されているネットワークWebVRプラットフォームである。Mozilla版サーバは「Mozilla Hubs」と呼ばれ、 https://hubs.mozilla.com/ において無償利用できる。インターネットに接続されたPCまたはMacとブラウザがあれば誰でも、URLから簡単にアクセスでき、事前のダウンロード、インストール、支払いが必要ない。Mozilla Realityグループ、Robert Long と Dominick D’Anielloを中心にGithub上では2017年9月24日ごろFirst Commitが確認されている。その後、Microsoftに2017年10月4日に買収された元「AltSpaceVR」のCofounder兼Director of EngineeringのGreg Cofodorが参加、現在は24名で開発されているプロジェクトである。
 1.2 	国際会議でのHubsの台頭
@@ -80,22 +37,24 @@ Hubsとは、Mozilla Mixed Reality Groupによってオープンソースで開�
 当初2020年3月22～26日にアメリカ・アトランタで開催予定であったIEEEVR2020（http://ieeevr.org/2020/）において、Blair MacIntyre（ジョージア工科大），Anthony Steed（英国UCL），Rob Lindeman（UCカンターベリー・HIT Lab NZ）らVirtual Environment（VE）の研究者はもともと「バーチャル会議」をテーマにした「VR in VR」という学術ワークショップをIEEEVR2020の一角で併催予定であった。
 会議のCFP（ https://sites.google.com/view/vrinvr2020/cfp ）によると、「VR研究者によるCO2排出をまずやめるべき」というコンセプトで準備されており、発表はリモートプレゼンが主体でVEを使う事が明記されていた。締め切りからレビューの時期に中国武漢を中心にCOVID-19の感染拡大が認識されていたが、この段階ではまだ米国もWHOも「パンデミック」という認識を示していない状態であったが、3月に入り米国内での爆発的感染、入国禁止などが宣言され、従来型の国際会議は一切開催できない情勢が明らかになっていった。IEEEVR2020のホストでもあったジョージア工科大学 Blair MacIntyre教授らの呼びかけによって急遽、IEEEVR2020のオンライン化が行われた。当初VRinVRのみで展開予定であったHubsは、大会協賛であったAmazon AWSやMozillaの協力もあり、ZoomやTwitchによるWebinarに並列され、専用のHubs会場（https://hubs.ieeevr.online/）が作られ、基調講演や口頭発表の視聴に並列し、デモやポスター発表、200件近い交流型発表がHubs上で行われた。なお同時期のVR関係の国際会議で比較すると、米国IEEEVR2020はWebinarとMozilla Hubs併催で1500人規模、フランスLaval VirtualはゲームエンジンをベースとしたVE「VirBELA」を利用し12,000人規模で開催した。環境問題や新型感染症といった問題が大きくなる昨今、こうした学会や交流型イベントのオンライン化の取り組みが今後より積極的に行われるのは想像に難くない。
 
-2. 	Hubsを利用した国際会議でのリモート登壇
-　Webinar全般にある問題として、座長に時間制御を任せた発表を各登壇者が自己中心的に語る方式になりがちである。聴者の興味に合わせた動的な内容を動的なスピード制御で発表するような講演は不可能ではないが、聴講者からのフィードバックもコメントのみで提供されることが多いため難しい。さらに国際会議の場合は時差があり、さらに座長が事前の動画提出を求める場合、単なる発表時間に合わせた動画再生に収束する作業として準備をせざるを得ない。
+## 2. 	Hubsを利用した国際会議でのリモート登壇
+
+Webinar全般にある問題として、座長に時間制御を任せた発表を各登壇者が自己中心的に語る方式になりがちである。聴者の興味に合わせた動的な内容を動的なスピード制御で発表するような講演は不可能ではないが、聴講者からのフィードバックもコメントのみで提供されることが多いため難しい。さらに国際会議の場合は時差があり、さらに座長が事前の動画提出を求める場合、単なる発表時間に合わせた動画再生に収束する作業として準備をせざるを得ない。
 前述の通り急遽オンラインで開催となったIEEEVR2020“VRinVR”において、「Avatar Driven VR Society Trends in Japan」という日本における複数のアバター配信プラットフォームの紹介とアバター社会が駆動するソーシャルVRの現状についての発表を行った [3]。主著者は Liudmila Bredikhina（ジュネーブ大学）、VRChat内のコミュニティと市場の起こりを研究した新保正悟（早稲田大学）、そして「バーチャル学会」の主催者の一人でもある亀岡嵩幸（電通大）で、この著者グループは GREE VR Studio Lab主催の「VTech Challenge 2019」や、ハイブリッドワークショップ「VRSionUp」でのボランティア活動によって自然発生的に生まれた。物理的には一度も同じ場所に集まったことがなく、立場や所属も超えた、アバター社会を象徴するような研究チームである。IEEEVRでの発表は前述の通り準備段階から不透明な要素が多かったが、従来通りの口頭発表をGoogle Slidesで用意しつつも、Zoomでの発表ではフレームレートが低く、十分な動画の再生品質が維持できないことから、VRinVRで当初から検討されていたHubsを使った発表を試作することとした（図1）。シアター風の空間に、指定時間内の発表動画を正面に配置し、資料となる動画や予稿へのQRコード、Hubsでは難しい高解像度アバターなどを配置してアーカイブとした。ディスカッションも行えるため、発表の場にリアルタイムで聴講できなかった人々へのまとめとして有効に機能している。
 
  
 図 1：Mozilla Hubsでの発表（https://hubs.mozilla.com/fYnpc8m/）
 
-3. 	展示会型発表会
+## 3. 	展示会型発表会
 　次に展示型のイベント開催のためのHubs利用を検討した。GREE VR Studio Laboratoryの研究成果発表会として、2020年6月12日に社内向けで試行し、その後、Mozillaサーバにて一般公開を行った（https://hubs.mozilla.com/DyECcpy）。設計は1年分の研究成果を研究分野ごとのゾーンに分け、各ゾーンを時間帯によってナビゲーターが案内する、それ以外の時間帯を各研究の担当研究員が対話形式で紹介する方式をとった。Mozillaによると1ルームあたり25名程度が推奨となっているが、独自サーバによる処理能力の計測を兼ねてAWS-c5.xlargeにおいて100名近い参加者を同時に収容することができた。ただし本シーンは50近いリソースと大量の動画が配置されており、ユーザー間の音声品質は密集度や動きに加えて、モバイルや接続環境によっては「非常に重いシーン」であり、改善課題となった。
 
  
  
 図 2：GREE VR Studio Lab研究成果発表会と設計
 
-4. 	オンラインピッチイベントの開催
-　展示企画だけでなく、多人数聴講型のピッチイベントを2020年7月15日に開催された自主イベント「VRSionUp!7 Hubs Study」において実験した。前述の通り、Hubsの同時接続は25名程度で、事前に行った実験によると、サーバの処理能力を無視して大量の参加者を入場させると発表者の音声品質が著しく低下する。
+## 4. 	オンラインピッチイベントの開催
+
+展示企画だけでなく、多人数聴講型のピッチイベントを2020年7月15日に開催された自主イベント「VRSionUp!7 Hubs Study」において実験した。前述の通り、Hubsの同時接続は25名程度で、事前に行った実験によると、サーバの処理能力を無視して大量の参加者を入場させると発表者の音声品質が著しく低下する。
 
  
 図 3：Twitchを介した大規模配信化
@@ -103,7 +62,8 @@ Hubsとは、Mozilla Mixed Reality Groupによってオープンソースで開�
 そこで、登壇者がプレゼンテーションを行うHubsルームを「スタジオ」として、スタッフと登壇者のみに制限し、そのスタッフがキャプチャするライブ映像を「ライブビューイング会場」にTwitch経由で配信しインタラクションや登壇後の懇親会会場とした（前述の研究成果発表会会場を見学できるように設計した）。
 COVID-19環境下においても登壇者や聴講者が物理的接触することなく、品質高く配信および交流を行うことができた。本イベント様子についてはYouTubeLiveにて配信・収録されている（https://www.youtube.com/watch?v=kfd9mNhCPsQ）。また懇親会は夜遅くまで語らう人々が多く残り、また登壇者の資料についてはすべてWeb上にアーカイブすることができた。満足度が高くリスクが低い方法を開発できたと考える。
 
-5. 	日本語化による業務案件への利用
+## 5. 	日本語化による業務案件への利用
+
 GREE VR Studio Laboratoryと同一事業体であるWFLE XRE部では、VTuber事業で構築した自社スタジオを活用した、他社向け案件のバーチャルキャラクターによる配信および収録等のプロデュースを行っている。バーチャルキャラクターの企画やプロデュースでのノウハウは、COVID-19以降、急速に需要が拡大したリアルアーティストのバーチャルイベントのプロデュースをはじめ、様々なXR案件を担当している。VR Studio Laboratoryで生まれた研究成果を一次顧客である他社にソリューションとして展開する上で、さまざまな評価やPoC(Proof of Concept)を行っている。
 Hubsを触り始めた担当者の当初の評価としては「確かに機能は豊富で色々できそう、個人や仲間内で使う分には、素晴らしいサービスではあるが、（Mozilla公式が描いているような）企業のイベントに使えるのだろうか、ビジネス利用までの道のりは遠いのでは」という印象であった。そこで業務利用で必要となるユーザー管理や販売システムの実装に並行し、HubsのUI日本語化、日本語化ドキュメントの公開（https://github.com/gree/hubs-docs-jp）およびユースケースに合わせた機能の活用を深めてきた。
  
@@ -116,11 +76,15 @@ Hubsを触り始めた担当者の当初の評価としては「確かに機能�
 図 5：Promote機能と昇格前後（下図左が昇格前・右が昇格後）
 イベントスタッフの作成方法は以下の通りである。まず運営側スタッフのメールが登録されたメーリングリストを作成する。Hubsのユーザー管理はメールによる Magic Linkによって認証されるため、そのメールアドレスを使用してサインインする。そのアカウントに対してルームクリエイターがPromote機能を使用して昇格する。個人メールでもいいが、スタッフとして複数機会、作業に参加する場合はメーリングリストにすることで、属人性を排して、作業に参加させることができる。ルーム内の装飾や片付け、他の利用者に迷惑となる行為に対する治安維持スタッフのためのMuteやキック機能、出演者の演技のためのFlyモードや、撮影スタッフのためのカメラ機能など、スタッフとしての活用の幅を広げることができる。弱点としては、必ずルームクリエイターと同時にログインしている必要があるため、規模が大きいイベントでは難しいが、事前に準備可能なイベントでなければ十分対応でき、使い方次第ではより多くの活用方法があると考える。
 
-6. 	音響環境の改善
+## 6. 	音響環境の改善
+
+
 6.1 	ソーシャルVRにおける音声混合の問題
 ここまでHubsを利用した建築および空間設計についての知見やイベント運営における構成や設定を紹介してきたが、より工学的・心理物理学的視点における研究も行っている。そのひとつが、音声混合である。これはHubs以外にもVRChatなど、いくつかのソーシャルVRプラットフォーム上において共通の問題で、参加者間のボイスチャットにおいて、環境音や参加者間の音声が混ざり、聞きづらいという問題である。簡易的な空間音響モデルが適用されているものの、従来VRの研究分野で検討されてきた音場再現のような特殊なデバイスや、コストの高い演算処理が必要な手法はリアルタイム処理には向いておらず、まだ普及していない。また3次元空間内の音源はすべてヘッドホンなどの音響機器によってステレオ2チャンネルに集約された音として知覚されるため、学会のポスター発表や懇親会など、不特定多数の話者が同一空間において無秩序に会話を行う場合、電話のような2者間通話モデルとは異なり、音声処理におけるPush-to-Talkのような話者以外のミュート処理を施すことも難しい。またHubsのようなシンプルなアバターシステムでは、REALITYのような発話者の表情や頷きなどをiPhoneやAndroidのような高解像度・高性能な表情認識デバイスに処理させることも難しい。またポスターや懇親会のような環境は、Zoomのようなビデオ会議システムによる事前に話者が知られている会議や講演者が定められたWebinarと違い、「会場の賑わい」のような未知の参加者同士の会話が聞こえてくる環境の再現も重要である。
 オープンソースで実装されているHubsでは、空間音響にWeb Audio API の PannerNode インターフェイスが JavaScript ベースで実装されている。この API は W3C Audio Working Group が標準化（https://www.w3.org/TR/webaudio/）し、 Mozilla が API として整備している（https://developer.mozilla.org/en-US/docs/Web/API/PannerNode）。立体音響は空間や距離感を認識する上で重要である一方、ネットワークで接続された同一空間内の不特定多数のユーザーによる動的に移動可能な会話環境を考慮すると、音量減衰モデルによってはお互いに干渉し合うため、適切な会話環境の設計を行うためには各モデルの特性を明らかにしたうえでの設定が必要となる。そこで、PannerNodeを利用した複数人の会話を再現する評価実験を完全オンラインで実施し、特性を明らかにした。  
+
 図 6：Hubs音響でのlinear減衰モデル(上)とinverse減衰モデル
+
 6.2 	比較した2つの減衰モデル
 ネットワーク WebVR における複数話者の会話を快適に再現する現実的な手法として、距離や話者の向きといった減衰モデルを適切に利用し、リアルタイム処理を幅広い再生環境で再現できる必要がある。またWeb Audio APIの実装も、各ブラウザ環境でサポートされている実装はそれぞれ異なる（例えば、OrientationはInternet ExplorerやSafariで実装がない）ため、指向性を制御するcone値と、距離に対する減衰モデルである distanceModel（以下、減衰モデルと呼ぶ）ならびにそれに付随するパラメータが Hubs 内において制御可能である。
 減衰は（linear, inverse, exponential）の3種類のモデルから選択することができる。inverse モデルおよび exponential モデルは逆数もしくは指数関数的曲線で減衰を行う。音源とリスナーの距離遠くなるにつれ 0 に収束するが、どれだけ離れても完全に 0 にはならないため音が聞こえ続ける。一方、linearモデルは直線的な減衰を行う。音の減衰の終了距離は明確に設定でき、またその地点での最小ゲインを設定することが可能である。反対に inverse モデルと exponential モデルは性質が近いため、実験では Hubs デフォルトで利用されている inverse モデルと linear モデルの特性を比較する実験の中心とし、exponential モデルについては割愛した。
@@ -129,7 +93,8 @@ Hubsを触り始めた担当者の当初の評価としては「確かに機能�
 
 　実験は、サイン波、ホワイトノイズ、そして実際の会話環境を模するために、男女3名ずつによる大学生の会話サンプルを3次元空間中に配置し、Google FormとHubsを使い完全オンラインで実施した。実験の詳細はこちらのURLにおいていつでも体験できる（bit.ly/VR20200805）。また結果については「交流型WebVRにおける空間音響のオンライン評価手法」 [4]において報告しているが、端的に結論を紹介すると、inverse モデルを利用した場合、音の減衰の強さが距離によって異なるため、音源との距離感を音声から掴むのが難しくなる。よって音源が多い環境、つまり同時参加者が多いイベント等においては linear モデルが適している。また減衰開始距離を短くすることで視覚情報や音声の指向性がなくても音源の定位が容易になる。ただし、ある音源の定位が容易になることは、他の音源が聞こえにくくなることを意味する。よって、会場PA(Public Audio)のような音響にはinverseを利用したほうが良いケースも多く、またユーザー間の会話も、賑わいを表現したいゾーンや、多くの人物の音声を混在させる必要がある場合にはlinearを使う場合も減衰の強さを効果的に設定させる必要があるといった知見を得た。
 
-7. 	子供向け体験型ワークショップ
+## 7. 	子供向け体験型ワークショップ
+
 最後に、最新の取り組みとして、本稿執筆以降に予定しているHubsを活用した子供向けのワークショップを紹介する。近年、学習体験や展示場としてのVRが世界中で開発されてきたが、COVID-19の影響で、ほとんどの教育機関やコースが急速にデジタル化を余儀なくされ、Zoomのようなソフトウェアを採用するようになった。その一方で、Zoomの授業は教師と生徒との関わり方を変えている可能性があり、人間の感情の欠如やセキュリティの問題などのデメリットも懸念されている [5] [6]。これらの影響は今後どれぐらいの期間をもって科学で語られる必要があるのかまだわからない要素が多い。一方で、情報メディアデザイン的な視点ではZoomのようなトップダウン型のWebinarでは「学習者同士の主体的な学び」を設計することが難しいことは明白である。そしてZoom標準で装備されているブレイクアウトルームは、企業や研究室など、既に見知ったコミュニティでは機能するかもしれないが、初めて接する子どもたち同士のクリエイティビティを発掘するワークショップには難しい要素が多いだろう。
 本ワークショップ企画は、COVID-19のリスクと、物理的な距離を超えて、一般から募集した9歳以上の日本国内・海外からの子供たちを対象に、ライブエンターテインメントコンテンツを制作し、他のクリエイターとコラボレーションする方法を学ぶワークショップである。森ビル主催の「KIDS’ WORKSHOP 2020」において実施する。Hubsのアバター機能や3Dオブジェクトの操作、ここまで紹介してきたイベント設計や空間設計の知見を最大限に活用し、90分程度の時間で同時15名の参加者の子供たちのポテンシャルを最大限に引き出すことに挑戦する。このワークショップでは、YouTubeなどのエンターテイメントコンテンツのクリエイターになりたいという子供たちを対象に、世界の研究者やクリエイターとコラボレーションしながら、バーチャルYouTuber風の動画を作ることができるという設計になっている。参加者は実際にZoomをエントリーポイントとして、Mozilla Hubsのワールドに入り、VRライブエンターテインメント制作の発信体験をしてもらう設計である。
 
@@ -141,22 +106,23 @@ Zoomは、ワークショップの入口での技術サポートや参加者チ�
 ゾーン設計は3つで構成されており、まず第1ゾーンは「アバターとは」、そしてプライバシーの保護と表現力への挑戦として、Hubs内で「自分の表現したい3Dアバター」を自由に作成する。第2ゾーンは「メッセージとシナリオの設計」、最後に第3ゾーンは収録スタジオとなっており、晴天の六本木ヒルズ屋上から遠く離れた家族に向けて、動画メッセージを撮影してYouTubeLiveで配信するという設計になっている（2020年8月12日実施予定）。
 
 
-8. 	まとめ
+## 8. 	まとめ
 　以上の通り、With COVID-19時代におけるライブイベントのプラットフォームとして、Mozillaが開発するWebVR「Hubs」を活用した研究開発について行ってきた事例について紹介した。IEEEVR2020でのリモート登壇から約半年間で、複数のピッチイベントや、展示会の開発、カスタムクライアントや独自ドメイン運用、既存のエンターテイメント産業における業務案件への応用についてのノウハウ、学会での懇親会やポスター発表向けの音響改善に関する完全オンラインの実験手法の開発や論文執筆、さらに並行して子供向け体験型ワークショップの開発など、短期間で非常に効率よくPoCや事例の開発を行うことができた。これに並行して日本語ドキュメントの公開や、他企業からの依頼や相談といったコンサルティング、本論文を含めた執筆などが並行して進行していたが、HubsのようなネットワークVRはまさに「VR4.1」と表現するにふさわしい起爆剤として今後も機能していくだろう。
 　もちろんZoomなどのWebinarの進歩発展や、REMO（https://remo.co/）のような2Dスタイル、6人同時程度のWebAudio利用のソーシャルプラットフォームは多く登場するだろう。しかし、3D空間やアバターによるプレゼンスや、URLのみで導入・記述可能な世界、つまりWebの世界におけるVRがこれほどまでに世の中に求められたタイミングも多くはない。Hubsはすべてにおける最適解であるとは考えていない、例えば高度なグラフィックスやアバター表現、またユーザーのクリエイティビティを活用できるSDKは、VRChatやClusterのほうが数段先を進んでいるし、動画再生の面もDRMの実装がなされなければ、商業用映像コンテンツの上映なども難しいだろう。
 　しかしながらHubsにはオープンソースならではの魅力がある。かつてオープンソースという概念を世界に知らしめたLinuxをはじめ、PHPやJavaScriptのような開発環境、そこから生まれたブログプラットフォームのWordpressのように、今後は数多くのHubs開発者やユーザーが現れて、多くの実験的なソーシャルWebVRの舞台を作っていくことを予感する。ラボとしても「VTech Challenge 2020」としてオープンなオンラインハッカソンを開催し（https://vr.gree.net/lab/vtc/）、そのような挑戦を世界に紹介する価値のある事例を共有する場を作っている。
 デジタルハリウッド大学の学生や教員が研究や実験の場として活用していくことに本稿が貢献できることを願い、ここに筆を置く。
 
-参考文献
-[1] 	白井暁彦 他;, “小特集：学会オンライン化・VR開催の幕開け,” 日本バーチャルリアリティー学会誌, 第 巻25, 第 2, pp. 35-43頁, 2020. 
-[2] 	A. Le Duc, B. MacIntyre and J. Outlaw, "Enhancing the Experience of Virtual Conferences in Social Virtual Environments," in IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, 2020. 
-[3] 	L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "Avatar Driven VR Society Trends in Japan," in IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, 2020. 
-[4] 	坂口塔也, 山崎勇祐, Liudmila Bredikhina , 白井暁彦, “交流型WebVRにおける空間音響のオンライン評価手法,” 日本バーチャルリアリティー学会大会, 2020. 
-[5] 	Leela Ramsook, Marlene Thomas, "Perspectives of prospective teachers on Zoom as a transformative teaching methodology," International Journal for Innovation Education and Research, vol. 7, no. 11, pp. 946-957, 12 2019. 
-[6] Dias, Murillo and de Oliveira Albergarias Lopes, Raphael and Teles, André, "Will Virtual Replace Classroom Teaching? Lessons from Virtual Classes via Zoom in the Times of COVID-19," Journal of Advances in Education and Philosophy, Dubai, United Arab Emirates, 2020.
-[7] SlideShare: "Mozilla Hubsが拓く新世代WebVRのススメ", https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum （公開・参照2020年5月13日）
-[8] SlideShare: "Hubs Cloud研究-公開リポジトリを中心に-", https://www.slideshare.net/vrstudiolab/hubs-cloud-236930572 (公開・参照2020年7月15日)
-[9] GREE VR Studio: "VRSionUp!7 Hubs Study", https://vr.gree.net/lab/live/vrsionup/vrsionup7-20200715 (公開・参照2020年7月15日)
-[10] Connpass: "#VRSionUp!8「WebVRオンラインイベント開発」", https://gree.connpass.com/event/187716/ (公開・参照・2020年9月8日)
-[11] YouTube: "[Live] #VRSionUp!8 WebVRオンラインイベント開発", https://youtu.be/-qyZ7H2e22k (公開・参照・2020年9月8日)
-[12] Mozilla Hubs: "KWS2020", https://hubs.mozilla.com/vyKcJkk/kws2020 (公開・参照・2020年9月8日)
+## 参考文献
+
+- [1] 	白井暁彦 他;, “小特集：学会オンライン化・VR開催の幕開け,” 日本バーチャルリアリティー学会誌, 第 巻25, 第 2, pp. 35-43頁, 2020. 
+- [2] 	A. Le Duc, B. MacIntyre and J. Outlaw, "Enhancing the Experience of Virtual Conferences in Social Virtual Environments," in IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, 2020. 
+- [3] 	L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "Avatar Driven VR Society Trends in Japan," in IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, 2020. 
+- [4] 	坂口塔也, 山崎勇祐, Liudmila Bredikhina , 白井暁彦, “交流型WebVRにおける空間音響のオンライン評価手法,” 日本バーチャルリアリティー学会大会, 2020. 
+- [5] 	Leela Ramsook, Marlene Thomas, "Perspectives of prospective teachers on Zoom as a transformative teaching methodology," International Journal for Innovation Education and Research, vol. 7, no. 11, pp. 946-957, 12 2019. 
+- [6] Dias, Murillo and de Oliveira Albergarias Lopes, Raphael and Teles, André, "Will Virtual Replace Classroom Teaching? Lessons from Virtual Classes via Zoom in the Times of COVID-19," Journal of Advances in Education and Philosophy, Dubai, United Arab Emirates, 2020.
+- [7] SlideShare: "Mozilla Hubsが拓く新世代WebVRのススメ", https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum （公開・参照2020年5月13日）
+- [8] SlideShare: "Hubs Cloud研究-公開リポジトリを中心に-", https://www.slideshare.net/vrstudiolab/hubs-cloud-236930572 (公開・参照2020年7月15日)
+- [9] GREE VR Studio: "VRSionUp!7 Hubs Study", https://vr.gree.net/lab/live/vrsionup/vrsionup7-20200715 (公開・参照2020年7月15日)
+- [10] Connpass: "#VRSionUp!8「WebVRオンラインイベント開発」", https://gree.connpass.com/event/187716/ (公開・参照・2020年9月8日)
+- [11] YouTube: "[Live] #VRSionUp!8 WebVRオンラインイベント開発", https://youtu.be/-qyZ7H2e22k (公開・参照・2020年9月8日)
+- [12] Mozilla Hubs: "KWS2020", https://hubs.mozilla.com/vyKcJkk/kws2020 (公開・参照・2020年9月8日)
