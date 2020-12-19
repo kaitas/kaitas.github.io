@@ -80,7 +80,7 @@ Rebuilding my index with [Research Gate](https://www.researchgate.net/profile/Ak
 1. Akihiko Shirai, Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, “Real Baby - Real Family”- Multi-Sensory Feedback Tangible Baby VR, International Journal of Virtual Reality (November 2017)
 1. Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, Akihiko Shirai, "Real baby - real family": VR entertainment baby interaction system, ACM SIGGRAPH 2017 Emerging Technologies (July 2017)
 1. "Real Baby - Real Family: Holdable tangible baby VR", the Virtual Reality International Conference - Laval Virtual 2017 (March 2017)
-1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ (Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
+1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「[足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja) ([Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper](https://doi.org/10.18974/tvrsj.4.4_691))」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
 1. Yuichiro KumeAkihiko ShiraiMotoshisa TsudaToyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
 
 <hr>
