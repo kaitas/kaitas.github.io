@@ -69,7 +69,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 Rebuilding my index with [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
 
 
-1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「Mozilla Hubsを用いたオンラインイベントのWebVR化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
+1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「[Mozilla Hubsを用いたオンラインイベントのWebVR化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
 1. [【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf) DHU JOURNAL Vol.06 (Nov. 2019)
 1. Yusuke Yamazaki, Shoichi Hasegawa, Hironori Mitake, Akihiko Shirai, "Neck strap haptics: an algorithm for non-visible VR information using haptic perception on the neck", ACM SIGGRAPH 2019 Posters (July 2019)
 1. Yusuke Yamazaki, Hironori Mitake, Akihiko Shirai, Shoichi Hasegawa, "Widespread Hapbeat: Tension Based Necklace Type Haptic Display" (November 2019)
