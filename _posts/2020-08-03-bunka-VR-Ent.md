@@ -313,46 +313,42 @@ Q10・VR4.0世代（註★）
 →VR4.0に関する白井様の論文をこちらの註として掲載させていただければと思います。
 
 「VR4.0」の定義は学術文献や講演において行っています。どのような論文が適切で、どのようなフォーマットで引用されるのかは指定がなければ、Webメディアの読者に対しては違和感が大きい引用になると考えます。関連論文や講演資料を列挙しますが、資料の掲載方法については編集側でご提案ください。
-＜初出～公開順＞「リレーコラム：VR3.0→4.0の間に咲いたVTuberという新人類の研究」
+＜初出～公開順＞「[リレーコラム：VR3.0→4.0の間に咲いたVTuberという新人類の研究](https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=194346&item_no=1)」
 情報処理学会学会誌, 60巻, 第3号, pp. 286 - 286, 2019-02-15
 
-[https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=194346&item_no=1]
 
-近未来教育フォーラム2019公開版 “In Real Time” リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類   20191128   
-[https://www.slideshare.net/vrstudiolab/20191128-2019pptx]
 
-VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究
-[https://msl.dhw.ac.jp/journal/194/]
+[近未来教育フォーラム2019公開版 “In Real Time” リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類](https://www.slideshare.net/vrstudiolab/20191128-2019pptx)  20191128   
+
+[VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/journal/194/)
 
 【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究
 白井 暁彦 ｜ デジタルハリウッド大学大学院 客員教授
 グリー株式会社 GREE VR Studio Lab, Director
 
-L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "Avatar Driven VR Society Trends in Japan," 2020 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, GA, USA, 2020, pp. 497-503, doi: 10.1109/VRW50115.2020.00103.IEEEVR2020 [https://ieeexplore.ieee.org/document/9090603]
+L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "[Avatar Driven VR Society Trends in Japan](https://ieeexplore.ieee.org/document/9090603)," 2020 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, GA, USA, 2020, pp. 497-503, doi: 10.1109/VRW50115.2020.00103.IEEEVR2020
 動画 [https://www.youtube.com/watch?v=ET-_R2Hly88]
 
-“Research and Development for Avatar-Driven Virtual Society in VR4.0 Era”  June 27, 2020
-[https://www.geschkult.fu-berlin.de/en/e/emtech/news/conference-2020-schedule.html]
-[https://www.youtube.com/watch?v=hVR82Rb7eqM]
+“[Research and Development for Avatar-Driven Virtual Society in VR4.0 Era](https://www.geschkult.fu-berlin.de/en/e/emtech/news/conference-2020-schedule.html)”  June 27, 2020
+[https://www.youtube.com/watch?v=hVR82Rb7eqM](https://www.youtube.com/watch?v=hVR82Rb7eqM)
 
 Q11・技術的には、ゲームエンジン、クラウド、WebRTC（註●）、第5世代移動通信システム（5G）で加速する分野といえる。→註釈をお願いします
 
-略語ではありませんし、技術解説文書ではないという理解なので、コンテキストから「WebRTC」は「WebRTC」なので注釈や解説はお断りします。読者がどのような読み手なのか、いったんGoogle等で検索していただいた上で、改めてご検討ください。URLでハイパーリンク記載する場合は Googleによる [https://webrtc.org/] や、Mozillaによる開発者向け情報に日本語解説もありますので、十分かと考えます。
+略語ではありませんし、技術解説文書ではないという理解なので、コンテキストから「WebRTC」は「WebRTC」なので注釈や解説はお断りします。読者がどのような読み手なのか、いったんGoogle等で検索していただいた上で、改めてご検討ください。URLでハイパーリンク記載する場合は Googleによる [https://webrtc.org/](https://webrtc.org/) や、Mozillaによる開発者向け情報に日本語解説もありますので、十分かと考えます。
 
-＜[https://webrtc.org/] より引用＞
+＜[https://webrtc.org/](https://webrtc.org/) より引用＞
 
 Webのリアルタイム通信(Real-time communication for the web)
 WebRTCを使用すると、オープンスタンダード上で動作するリアルタイム通信機能をアプリケーションに追加できます。ピア間で送信されるビデオ、音声、および一般的なデータをサポートしているため、開発者は強力な音声およびビデオ通信ソリューションを構築できます。このテクノロジーは、すべての主要なプラットフォームのネイティブクライアントだけでなく、最新のすべてのブラウザーで利用できます。 WebRTCの背後にあるテクノロジーは、オープンWeb標準として実装されており、すべての主要なブラウザーで通常のJavaScript APIとして使用できます。 AndroidやiOSアプリケーションなどのネイティブクライアントでは、同じ機能を提供するライブラリを利用できます。 WebRTCプロジェクトはオープンソースであり、Apple、Google、Microsoft、Mozillaなどによってサポートされています。このページは、Google WebRTCチームによって管理されています。
 WebRTCでできること
 WebRTCには、カメラやマイクを使用する基本的なWebアプリから、より高度なビデオ通話アプリケーションや画面共有まで、さまざまなユースケースがあります。
 
-[https://developer.mozilla.org/ja/docs/Web/API/WebRTC_API]
+[https://developer.mozilla.org/ja/docs/Web/API/WebRTC_API](https://developer.mozilla.org/ja/docs/Web/API/WebRTC_API)
 
 WebRTC (Web Real-Time Communications、ウェブリアルタイムコミュニケーション) は、ウェブアプリケーションやウェブサイトにて、仲介を必要とせずにブラウザー間で直接、任意のデータの交換や、キャプチャしたオーディオ／ビデオストリームの送受信を可能にする技術です。 WebRTC に関する一連の標準規格は、ユーザーがプラグインやサードパーティ製ソフトウェアをインストールすることなく、ピア・ツー・ピアにて、データ共有や遠隔会議を実現することを可能にします。
 WebRTC は、相互に関連したいくつかの API とプロトコルで構成されており、これらが連携してこれを実現しています。ここで紹介するドキュメントでは、WebRTC の基礎知識、データ接続とメディア接続、両方の設定方法と、使用方法などを理解するのに役立ちます。
-実のところ、このMozillaの日本語原稿は私がボランティアで翻訳したものです。
+実のところ、このMozillaの日本語原稿は[私がボランティアで翻訳したものです](https://wiki.developer.mozilla.org/ja/dashboards/revisions?user=Akihiko)。
 
-[https://wiki.developer.mozilla.org/ja/dashboards/revisions?user=Akihiko]
 
 これを別の解釈を加えて別のエディションを貴メディアで提供することにどのような意味がありますでしょうか。Google中心で公式とされている WebRTC.org を引用するのが正しいでしょうか、それとも私がボランティア著者としてMozillaのドキュメントを引用するのが正しいでしょうか。Webに書かれているドキュメントのほうが正しく、Mozilla（MDN）のように常に新しい情報が上書きされるWebへのリンクのほうが正しいと考えますが、それでも「注釈をお願いします」といたしますか。
 
