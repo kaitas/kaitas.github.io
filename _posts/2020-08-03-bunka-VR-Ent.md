@@ -376,8 +376,8 @@ WebRTC は、相互に関連したいくつかの API とプロトコルで構�
 
 VRエンタメを長年研究してきたけれど、「あえてゲームの話をしなくてよかった！」と思いました。
 
-遠藤先生は今年は[CEDECペラコンの件](http://akihiko.shirai.as/2020/09/10/code-of-conduct.html)で大変だっただろうな、
 
+遠藤先生は今年は[CEDECペラコンの件](http://akihiko.shirai.as/2020/09/10/code-of-conduct.html)で大変だっただろうな...。
 ところで、芸術科学会NICOGRAPH2020で遠藤先生とそこの学生さんを拝見しました。
 手法としての稚拙さとかはあると思うのですが、それは指導者のスキルとか本人の素養であって、
 こんな炎上があっても学生さんたちはとても元気で、後輩の皆さんの力強さを感じました。
@@ -396,7 +396,7 @@ VRエンタメを長年研究してきたけれど、「あえてゲームの話
 
 2020年12月20日(日)20:00からです！見逃し配信も短いのでぜひライブで見てください！！
 何度も書きますが「録画じゃないですからね！！」
-http://www.134r.com/topics/dennokukan2020/
+詳細 → [http://www.134r.com/topics/dennokukan2020/](http://www.134r.com/topics/dennokukan2020/)
 
 - [streaming＋(イープラス)](https://eplus.jp/134r/st/)
 - [U-NEXT](https://t.unext.jp/shonannokaze)
