@@ -1,26 +1,27 @@
 ---
 layout: post
-title: "2020-08-03 草稿"
-date: '2020-08-03 23:52:00'
+title: "（草稿公開）これまでの5年、これからの5年――「VR元年」の終焉から世界同時参加のXRライブエンタメへ"
+date: '2020-12-19 23:00:00'
 author: aki
 ---
-# "VR元年"の終焉から世界同時参加のXRライブエンタメへ(仮)
+# これまでの5年、これからの5年――「VR元年」の終焉から世界同時参加のXRライブエンタメへ
 
-## （リード）
-編集部にて作成します。（ご提供いただいてももちろん大丈夫です）
 
-## （ライティング） 
-白井 暁彦
+文化庁「メディア芸術カレントコンテンツ」のご依頼で寄稿させていただいた原稿が先ほど（2020/10/29）公開されました。
+数か月かかって校正する大変な原稿でしたが、ご協力いただいた、皆様ありがとうございました。
 
-### （プロフィール）
-VRエンタメの研究者。GREE VR Studio Laboratory, Director，デジタルハリウッド大学 大学院 客員教授。
-著書「白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-」ほか。
-twitter @o_ob。 
+■これまでの5年、これからの5年
+――「VR元年」の終焉から世界同時参加のXRライブエンタメへ
 
-## ［トップ画像］ 
-（キャプション）
+[https://mediag.bunka.go.jp/article/article-16853/](https://mediag.bunka.go.jp/article/article-16853/)
 
-# （本文｜4000～6000文字）
+今回の執筆では思うところがあって、
+草稿から最終稿までの工程をmarkdownとGithubをつかって履歴を残すことにしました。
+最後に、2020-12-19時点での振り返りも残しておきますので、この手の執筆の大変さに興味がある方はお楽しみください。
+
+# 2020-08-03 草稿
+
+2020-08-03 23:52:00
 
 ## 「"VR元年" の終焉から VR4.0 へ向かった5年」
 
@@ -264,7 +265,8 @@ Q8・『VRカノジョ』を発表し→前に　VR育成シミュレーショ�
 Q9・[Oculus創始者 パルマー・ラッキーとのグループフォト #AX2017 にて](https://twitter.com/o_ob/status/882248685769244673)
 →Twitterへのリンクではなく、掲載に問題がなければ写真データとしてご提供ください。
 
-撮影者としては本人にTwitter投稿許可を得て投稿しています。TwitterURLの利用は許諾可能ですが、別メディアへの掲載はTwitter利用規約（具体的にはフェアユースに該当するかどうか）、およびパルマ―・ラッキー氏への肖像権および掲載許諾が確認ではないでしょうか？https://help.twitter.com/ja/rules-and-policies/copyright-policy  
+撮影者としては本人にTwitter投稿許可を得て投稿しています。TwitterURLの利用は許諾可能ですが、別メディアへの掲載はTwitter利用規約（具体的にはフェアユースに該当するかどうか）、およびパルマ―・ラッキー氏への肖像権および掲載許諾が確認ではないでしょうか？
+https://help.twitter.com/ja/rules-and-policies/copyright-policy  
 当方は判断する立場ではないので、貴メディアとしてご確認もしくは許諾取得お願いいたします。
 
 
@@ -273,7 +275,9 @@ Q10・VR4.0世代（註★）
 
 「VR4.0」の定義は学術文献や講演において行っています。どのような論文が適切で、どのようなフォーマットで引用されるのかは指定がなければ、Webメディアの読者に対しては違和感が大きい引用になると考えます。関連論文や講演資料を列挙しますが、資料の掲載方法については編集側でご提案ください。
 ＜初出～公開順＞「リレーコラム：VR3.0→4.0の間に咲いたVTuberという新人類の研究」
-情報処理学会学会誌, 60巻, 第3号, pp. 286 - 286, 2019-02-15https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=194346&item_no=1
+情報処理学会学会誌, 60巻, 第3号, pp. 286 - 286, 2019-02-15
+
+https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=194346&item_no=1
 
 近未来教育フォーラム2019公開版 “In Real Time” リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類   20191128   
 https://www.slideshare.net/vrstudiolab/20191128-2019pptx  
@@ -285,18 +289,81 @@ https://msl.dhw.ac.jp/journal/194/  
 グリー株式会社 GREE VR Studio Lab, Director
 
 L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "Avatar Driven VR Society Trends in Japan," 2020 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, GA, USA, 2020, pp. 497-503, doi: 10.1109/VRW50115.2020.00103.IEEEVR2020 https://ieeexplore.ieee.org/document/9090603
-動画 https://www.youtube.com/watch?v=ET-_R2Hly88
+動画 
+https://www.youtube.com/watch?v=ET-_R2Hly88
+
 “Research and Development for Avatar-Driven Virtual Society in VR4.0 Era”  June 27, 2020
 https://www.geschkult.fu-berlin.de/en/e/emtech/news/conference-2020-schedule.html https://www.youtube.com/watch?v=hVR82Rb7eqM 
+
 Q11・技術的には、ゲームエンジン、クラウド、WebRTC（註●）、第5世代移動通信システム（5G）で加速する分野といえる。→註釈をお願いします
 略語ではありませんし、技術解説文書ではないという理解なので、コンテキストから「WebRTC」は「WebRTC」なので注釈や解説はお断りします。読者がどのような読み手なのか、いったんGoogle等で検索していただいた上で、改めてご検討ください。URLでハイパーリンク記載する場合は Googleによる https://webrtc.org/ や、Mozillaによる開発者向け情報に日本語解説もありますので、十分かと考えます。
-＜ https://webrtc.org/ より引用＞Webのリアルタイム通信(Real-time communication for the web)
+
+＜ https://webrtc.org/ より引用＞
+
+Webのリアルタイム通信(Real-time communication for the web)
 WebRTCを使用すると、オープンスタンダード上で動作するリアルタイム通信機能をアプリケーションに追加できます。ピア間で送信されるビデオ、音声、および一般的なデータをサポートしているため、開発者は強力な音声およびビデオ通信ソリューションを構築できます。このテクノロジーは、すべての主要なプラットフォームのネイティブクライアントだけでなく、最新のすべてのブラウザーで利用できます。 WebRTCの背後にあるテクノロジーは、オープンWeb標準として実装されており、すべての主要なブラウザーで通常のJavaScript APIとして使用できます。 AndroidやiOSアプリケーションなどのネイティブクライアントでは、同じ機能を提供するライブラリを利用できます。 WebRTCプロジェクトはオープンソースであり、Apple、Google、Microsoft、Mozillaなどによってサポートされています。このページは、Google WebRTCチームによって管理されています。
 WebRTCでできること
 WebRTCには、カメラやマイクを使用する基本的なWebアプリから、より高度なビデオ通話アプリケーションや画面共有まで、さまざまなユースケースがあります。
 
-＜ https://developer.mozilla.org/ja/docs/Web/API/WebRTC_API より＞WebRTC (Web Real-Time Communications、ウェブリアルタイムコミュニケーション) は、ウェブアプリケーションやウェブサイトにて、仲介を必要とせずにブラウザー間で直接、任意のデータの交換や、キャプチャしたオーディオ／ビデオストリームの送受信を可能にする技術です。 WebRTC に関する一連の標準規格は、ユーザーがプラグインやサードパーティ製ソフトウェアをインストールすることなく、ピア・ツー・ピアにて、データ共有や遠隔会議を実現することを可能にします。
+＜ https://developer.mozilla.org/ja/docs/Web/API/WebRTC_API より＞
+
+WebRTC (Web Real-Time Communications、ウェブリアルタイムコミュニケーション) は、ウェブアプリケーションやウェブサイトにて、仲介を必要とせずにブラウザー間で直接、任意のデータの交換や、キャプチャしたオーディオ／ビデオストリームの送受信を可能にする技術です。 WebRTC に関する一連の標準規格は、ユーザーがプラグインやサードパーティ製ソフトウェアをインストールすることなく、ピア・ツー・ピアにて、データ共有や遠隔会議を実現することを可能にします。
 WebRTC は、相互に関連したいくつかの API とプロトコルで構成されており、これらが連携してこれを実現しています。ここで紹介するドキュメントでは、WebRTC の基礎知識、データ接続とメディア接続、両方の設定方法と、使用方法などを理解するのに役立ちます。
-実のところ、このMozillaの日本語原稿は私がボランティアで翻訳したものです。https://wiki.developer.mozilla.org/ja/dashboards/revisions?user=Akihiko  
+実のところ、このMozillaの日本語原稿は私がボランティアで翻訳したものです。
+
+https://wiki.developer.mozilla.org/ja/dashboards/revisions?user=Akihiko
 
 これを別の解釈を加えて別のエディションを貴メディアで提供することにどのような意味がありますでしょうか。Google中心で公式とされている WebRTC.org を引用するのが正しいでしょうか、それとも私がボランティア著者としてMozillaのドキュメントを引用するのが正しいでしょうか。Webに書かれているドキュメントのほうが正しく、Mozilla（MDN）のように常に新しい情報が上書きされるWebへのリンクのほうが正しいと考えますが、それでも「注釈をお願いします」といたしますか。
+
+
+## 執筆を終えて
+
+ものすごい忙しい時期に強制力の強い感じで複数回の校正、加筆作業に巻き込まれてしまって、本当につらい原稿でしたが、公開後は多くの方々に感動をもって読んでいただけたようなので
+無事に公開にたどり着けて良かったなと思います。
+
+ただ、やっぱりこの手のレビューの仕組みはよくない！
+相手の顔が見えない状態で、相手の状況もわからずに依頼を回すやり方もよくない。
+
+過去の自分の著作が[このメディアに扱われた時](https://mediag.bunka.go.jp/article/post_309-1765/)に、すごく高いところから一方的なことをいわれるのがとてもつらかったので、
+「自分の原稿だけはそうならないように頑張ろう」という思いだけでがんばりました。
+7年で雪辱が晴らせたのであれば、まあいいほうではないでしょうか。
+
+中身に関しては、企画側は「PlayStation5の発売に合わせてVRエンタメについて書いてください！」という依頼で、
+『なんで文化庁がそんなふうにPlayStationのために依頼するんだよ…』という気持ちもないことはないのですが、
+それはさておき、他に依頼されていた著者が以下のようなラインナップで、尊敬する方々でちょっと感動ありますね。
+
+[■ これまでの5年、これからの5年――ゲームデザインを読み解くキーワード （遠藤 雅伸 2020年10月12日 更新）](https://mediag.bunka.go.jp/article/article-16834/)
+
+[■これまでの5年、これからの5年――ゲーム実況が生み出した「他人エンターテインメント」の楽しみ方 （黒川 文雄 2020年12月2日 更新）](https://mediag.bunka.go.jp/article/article-17086/)
+
+
+VRエンタメを長年研究してきたけれど、「あえてゲームの話をしなくてよかった！」と思いました。
+
+遠藤先生は今年は[CEDECペラコンの件](http://akihiko.shirai.as/2020/09/10/code-of-conduct.html)で大変だっただろうな、
+
+ところで、芸術科学会NICOGRAPH2020で遠藤先生とそこの学生さんを拝見しました。
+手法としての稚拙さとかはあると思うのですが、それは指導者のスキルとか本人の素養であって、
+こんな炎上があっても学生さんたちはとても元気で、後輩の皆さんの力強さを感じました。
+ぜひ大人たち、おっさんたちを超えていって欲しいなと思います、これは割とマジで。
+こんな原稿を書くおっさんも、昔は皆さんと変わらない、ただのゲームが好きな学生だったんです。
+
+## 最後に、リアルアーティストとコラボレーションするライブの話のその先
+
+ついにゲームの世界とつながった話が公開されました。明日です！
+
+■湘南乃風 12/20に行われるオンラインライブへの意気込みや見どころ、彼らの「挑戦」をABEMA独占公開！｜12/20 19:45〜  アベマでOA！ 
+[https://youtu.be/4tsSHrQK7o4](https://youtu.be/4tsSHrQK7o4)
+
+[https://www.youtube.com/watch?v=M5kbO19PQ68](https://www.youtube.com/watch?v=M5kbO19PQ68)
+
+
+2020年12月20日(日)20:00からです！見逃し配信も短いのでぜひライブで見てください！！
+何度も書きますが「録画じゃないですからね！！」
+http://www.134r.com/topics/dennokukan2020/
+
+- [streaming＋(イープラス)](https://eplus.jp/134r/st/)
+- [U-NEXT](https://t.unext.jp/shonannokaze)
+- [ABEMA PPV ONLINE LIVE](https://abema.tv/channels/payperview-1/slots/AafZaNuHjhskZd)
+- [LINE LIVE-VIEWING](https://ticket.line.me/sp/shonannokaze_1220_llv)
+- [Fanbeats](https://fanbeats.jp/projects/110)
+
