@@ -285,8 +285,8 @@ Q7・ SIGGRAPH（註●）やヒューマン・コンピュータ・インタラ
 
 Wikipedia等の一般的な外部引用で代替いただきたいです。
 メディアとしてはメディア芸術カレントコンテンツの過去原稿や貴サイト自身の内部リンクから引用いただくのが適切ではないでしょうか。
-[https://mediag.bunka.go.jp/antenna/siggraph-asia-2018/] 
-[https://mediag.bunka.go.jp/project/media1/]
+[https://mediag.bunka.go.jp/antenna/siggraph-asia-2018/](https://mediag.bunka.go.jp/antenna/siggraph-asia-2018/) 
+[https://mediag.bunka.go.jp/project/media1/](https://mediag.bunka.go.jp/project/media1/)
 
 用語集を構築することが目的であれば、著名原稿ではなく別途、調査等でご発注いただきたいと考えます。
 
@@ -297,7 +297,7 @@ Q8・『VRカノジョ』を発表し→前に　VR育成シミュレーショ�
 
 ---なお筆者は、きっかけとしてアメリカ・ロサンゼルスで開催された「Anime Expo 2017」において、集英社ジャンプVRの呼びかけで「日本キャラVR祭」にVRライブエンタメ2作「Manga Generator」と「Real Baby」を展示して、現地アメリカの一般アニメファンと直接接したときに、この時代の変革を肌で感じている。この時のアニメエキスポ出展の面々は、国内最大級のVTuberプロダクション「ホロライブ」を運営するCover株式会社や、「VRカノジョ」を発表し世界中で話題になっていたILLUSION社、東京クロノスを開発するMyDearestであり、常に逆風に立ち向かいながら自分たちの作りたいものに対する信念を突きとおしつつ、資金調達や短い期間でのリリース、ファンとのコミュニケーションを綿密に行ってきた企業のみが生き残っている点も興味深い。---
 
-立場を現在のグリー株式会社ではなく、前職に置いていることで、企業間の衝突を少しでも和らげる立場をとっています。さらに、この集英社さんのWebサイトには「VRカノジョ」は掲載されていません。少年誌である「ジャンプ」というメディアにおいて、本コンテンツは（具体的にどのようなシーンが問題があるかなどは問題も指摘も審査もされずに）Webからは削除されています。しかし、実際には担当者の好意で展示が実現し、実際には現地では大変な人気になり、その後、社会的な理解を得られました。このような注釈として書き残すのも難しい題材を、最低限の表現として海外SteamのマーケットURLに日本語タグを添えてとともに「[VRカノジョ](https://store.steampowered.com/app/751440/VR_Kanojo__VR/?l=japanese)」とさせていただいております。
+立場を現職ではなく、前職に置いていることで、企業間の衝突を少しでも和らげる立場をとっています。さらに、この集英社さんのWebサイトには「VRカノジョ」は掲載されていません。少年誌である「ジャンプ」というメディアにおいて、本コンテンツは（具体的にどのようなシーンが問題があるかなどは問題も指摘も審査もされずに）Webからは削除されています。しかし、実際には担当者の好意で展示が実現し、実際には現地では大変な人気になり、その後、社会的な理解を得られました。このような注釈として書き残すのも難しい題材を、最低限の表現として海外SteamのマーケットURLに日本語タグを添えてとともに「[VRカノジョ](https://store.steampowered.com/app/751440/VR_Kanojo__VR/?l=japanese)」とさせていただいております。
 
 
 Q9・[Oculus創始者 パルマー・ラッキーとのグループフォト #AX2017 にて](https://twitter.com/o_ob/status/882248685769244673)
@@ -307,7 +307,7 @@ Q9・[Oculus創始者 パルマー・ラッキーとのグループフォト #AX
 
 
 撮影者としては本人にTwitter投稿許可を得て投稿しています。TwitterURLの利用は許諾可能ですが、別メディアへの掲載はTwitter利用規約（具体的にはフェアユースに該当するかどうか）、およびパルマ―・ラッキー氏への肖像権および掲載許諾が確認ではないでしょうか？
-https://help.twitter.com/ja/rules-and-policies/copyright-policy  
+[https://help.twitter.com/ja/rules-and-policies/copyright-policy](https://help.twitter.com/ja/rules-and-policies/copyright-policy)
 当方は判断する立場ではないので、貴メディアとしてご確認もしくは許諾取得お願いいたします。
 
 
@@ -315,23 +315,19 @@ Q10・VR4.0世代（註★）
 →VR4.0に関する白井様の論文をこちらの註として掲載させていただければと思います。
 
 「VR4.0」の定義は学術文献や講演において行っています。どのような論文が適切で、どのようなフォーマットで引用されるのかは指定がなければ、Webメディアの読者に対しては違和感が大きい引用になると考えます。関連論文や講演資料を列挙しますが、資料の掲載方法については編集側でご提案ください。
-＜初出～公開順＞「[リレーコラム：VR3.0→4.0の間に咲いたVTuberという新人類の研究](https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=194346&item_no=1)」
-情報処理学会学会誌, 60巻, 第3号, pp. 286 - 286, 2019-02-15
 
+＜初出～公開順＞
 
+- 「[リレーコラム：VR3.0→4.0の間に咲いたVTuberという新人類の研究](https://ipsj.ixsq.nii.ac.jp/ej/index.php?active_action=repository_view_main_item_detail&page_id=13&block_id=8&item_id=194346&item_no=1)」, 情報処理学会学会誌, 60巻, 第3号, pp. 286 - 286, 2019-02-15
 
-[近未来教育フォーラム2019公開版 “In Real Time” リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類](https://www.slideshare.net/vrstudiolab/20191128-2019pptx)  20191128   
+- [近未来教育フォーラム2019公開版 “In Real Time” リアルタイムグラフィックスの世界とVTuberが牽引する新たな人類](https://www.slideshare.net/vrstudiolab/20191128-2019pptx)  20191128   
 
-[VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/journal/194/)
+- [VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究](https://msl.dhw.ac.jp/journal/194/)
 
-【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究
-白井 暁彦 ｜ デジタルハリウッド大学大学院 客員教授
-グリー株式会社 GREE VR Studio Lab, Director
-
-L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "[Avatar Driven VR Society Trends in Japan](https://ieeexplore.ieee.org/document/9090603)," 2020 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, GA, USA, 2020, pp. 497-503, doi: 10.1109/VRW50115.2020.00103.IEEEVR2020
+- L. Bredikhina, T. Kameoka, S. Shimbo and A. Shirai, "[Avatar Driven VR Society Trends in Japan](https://ieeexplore.ieee.org/document/9090603)," 2020 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW), Atlanta, GA, USA, 2020, pp. 497-503, doi: 10.1109/VRW50115.2020.00103.IEEEVR2020
 動画 [https://www.youtube.com/watch?v=ET-_R2Hly88]
 
-“[Research and Development for Avatar-Driven Virtual Society in VR4.0 Era](https://www.geschkult.fu-berlin.de/en/e/emtech/news/conference-2020-schedule.html)”  June 27, 2020
+- “[Research and Development for Avatar-Driven Virtual Society in VR4.0 Era](https://www.geschkult.fu-berlin.de/en/e/emtech/news/conference-2020-schedule.html)”  June 27, 2020
 [https://www.youtube.com/watch?v=hVR82Rb7eqM](https://www.youtube.com/watch?v=hVR82Rb7eqM)
 
 Q11・技術的には、ゲームエンジン、クラウド、WebRTC（註●）、第5世代移動通信システム（5G）で加速する分野といえる。→註釈をお願いします
