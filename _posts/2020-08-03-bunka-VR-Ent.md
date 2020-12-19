@@ -243,7 +243,9 @@ HMD=VRではありませんが、世間的な理解から乖離してセンソ�
 [https://blog.siggraph.org/2018/08/vr-at-50-celebrating-ivan-sutherland.html/]
 この講演で 「Virtual Reality」という言葉を提案したのはアイヴァン・サザランドでもなく、ジャロン・ラニアーでもなく、実は元々はフランスの脚本家アントナン・アルトーが美術用語として生み出したという説が語られています。
 
-[https://twitter.com/o_ob/status/1029072489396072448]
+
+<blockquote class="twitter-tweet"><a href="https://twitter.com/o_ob/status/1029072489396072448"></a></blockquote>
+
 [https://twilog.org/o_ob/month-1808/3]
 
 結局のところ「このあたり」というエポックを区切るうえで「1965年頃」としています。
@@ -262,7 +264,9 @@ Q4・初期の産業用HMDやデータグローブ（註●）といった高価
 「提案されては消えていった産業用HMDやデータグローブ」についての注釈ですが、WWW登場前の倒産した企業の製品について「提案されては消えていった」をどのように表現することをお望みでしょうか？
 倒産前に買収した企業のURLを貼っても当時の資料があるわけではありませんし、個人蔵のチラシや雑誌、壊れた機材類を示したとしても「消えていった」を表現したことになりますでしょうか？
 脚注作文で表現するのは難しいと思いますが、弊ラボ収蔵の動画を紹介することは可能です。
-[https://twitter.com/VRStudioLab/status/1029766203793764352]
+
+<blockquote class="twitter-tweet"><a href="https://twitter.com/VRStudioLab/status/1029766203793764352"></a></blockquote>
+
 [https://www.youtube.com/watch?v=ghxe2jfbbVg]
 
 Q5・ソニー「PlayStation」シリーズや、任天堂NINTENDO64以降、マイクロソフトによる「Xbox」シリーズ、OpenGLやDirectXといったミドルウェアの整備により、標準化されたグラフィックス・アプリケーションプログラミングインタフェース（API）により、 →などゲーム機の進化を促し、　トカ入ル？
@@ -298,6 +302,9 @@ Q8・『VRカノジョ』を発表し→前に　VR育成シミュレーショ�
 
 Q9・[Oculus創始者 パルマー・ラッキーとのグループフォト #AX2017 にて](https://twitter.com/o_ob/status/882248685769244673)
 →Twitterへのリンクではなく、掲載に問題がなければ写真データとしてご提供ください。
+
+<blockquote class="twitter-tweet"><a href="https://twitter.com/o_ob/status/882248685769244673"></a></blockquote>
+
 
 撮影者としては本人にTwitter投稿許可を得て投稿しています。TwitterURLの利用は許諾可能ですが、別メディアへの掲載はTwitter利用規約（具体的にはフェアユースに該当するかどうか）、およびパルマ―・ラッキー氏への肖像権および掲載許諾が確認ではないでしょうか？
 https://help.twitter.com/ja/rules-and-policies/copyright-policy  
@@ -386,7 +393,11 @@ VRエンタメを長年研究してきたけれど、「あえてゲームの話
 ■湘南乃風 12/20に行われるオンラインライブへの意気込みや見どころ、彼らの「挑戦」をABEMA独占公開！｜12/20 19:45〜  アベマでOA！ 
 [https://youtu.be/4tsSHrQK7o4](https://youtu.be/4tsSHrQK7o4)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4tsSHrQK7o4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [https://www.youtube.com/watch?v=M5kbO19PQ68](https://www.youtube.com/watch?v=M5kbO19PQ68)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M5kbO19PQ68" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 2020年12月20日(日)20:00からです！見逃し配信も短いのでぜひライブで見てください！！
