@@ -7,7 +7,7 @@ defaults:
       path: ""
     values:
       image:
-        path: http://akihiko.shirai.as/img/card.png
+        path: /img/card.png
         height: 630
         width: 1200 
 
