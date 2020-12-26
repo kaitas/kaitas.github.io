@@ -32,8 +32,9 @@ collections:
     output: true
 plugins:
   - jekyll-paginate
-
-     
+  - jekyll-seo-tag
+  - jekyll-sitemap
+# https://github.com/jekyll/jekyll-seo-tag
 
 # https://genjiapp.com/blog/2013/11/13/jekyll-config-for-markdown.html
 # 以下のオプションはGithub pagesでは有効ではないと考えます
