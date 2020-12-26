@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns#">
+<html lang="{{ site.lang | default: "en-US" }}" prefix="og: http://ogp.me/ns#">
   <head>
     <meta property="og:url" content="{{ page.url }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ site.title | default: site.github.repository_name }}" />
-    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:site_name" content="{{ site.title | default: site.github.repository_name }}" />
    {% if page.description %}
     <meta property="og:description" content="{{ page.description }}" />
    {% else %}
     <meta property="og:description" content="{{ site.description | default: site.github.project_tagline }}" />
    {% endif %}
-   {% if page.preview %}
-    <meta property="og:image" content="{{ page.preview }}" />
-   {% else %}
-    <meta property="og:image" content="https://akihiko.shirai.as/img/card.png" />
+    <meta property="og:image" content="{{ page.preview | default:https://akihiko.shirai.as/img/card.png}}" />
    {% endif %}
    <meta property="fb:app_id" content="409021277108943" />
    
