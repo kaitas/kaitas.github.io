@@ -4,13 +4,17 @@
     <meta property="og:url" content="{{ site.url }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:description" content="{{ page.description }}" />
     <meta property="og:site_name" content="akihiko.shirai.as" />
-    {% if page.preview %}
+   {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}" />
+   {% else %}
+    <meta property="og:description" content="akihiko.shirai.as" />
+   {% endif %}
+   {% if page.preview %}
     <meta property="og:image" content="{{ page.preview }}" />
-    {% else %}
+   {% else %}
     <meta property="og:image" content="https://akihiko.shirai.as/img/card.png" />
-    {% endif %}
+   {% endif %}
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
