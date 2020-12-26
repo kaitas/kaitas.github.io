@@ -5,6 +5,7 @@ date: '2020-12-26 23:52:00'
 author: aki
 categories: 食レポ
 description: 東京ヴィーガン餃子の食レポです
+preview: https://akihiko.shirai.as/img/2x3d.jpg
 ---
 
 
