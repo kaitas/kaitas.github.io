@@ -3,7 +3,6 @@ layout: post
 title: "食レポ #東京ヴィーガン餃子"
 date: '2020-12-26 23:52:00'
 author: aki
-categories: 食レポ
 description: 東京ヴィーガン餃子の食レポです
 preview: https://pbs.twimg.com/media/EqJgJEwXMAENE3z?format=jpg&name=medium
 ---
@@ -25,7 +24,8 @@ preview: https://pbs.twimg.com/media/EqJgJEwXMAENE3z?format=jpg&name=medium
 油を引いて冷凍のまま中火、きつね色になったら水を引いて4分弱、さらに2分ほど弱火で仕上げて完成です。
 自分はオリーブオイルで作ってみましたが、ガッツリした風味が好きな人は胡麻油とかがいいと思います。
 
-https://twitter.com/o_ob/status/1342758902706786305
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1342758902706786305">December 26, 2020</a></blockquote>
+
 
 肝心のお味の方は…
 「うまーい！」
