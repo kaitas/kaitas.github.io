@@ -21,6 +21,19 @@ collections:
 plugins:
   - jekyll-paginate
 
+# https://github.com/set0gut1/good-looking-repository/
+twitter:
+ username: o_ob
+defaults:
+  - scope: 
+      path: ""
+    values:
+      image:
+        path: /img/card.png
+        height: 630
+        width: 1200 
+     
+
 # https://genjiapp.com/blog/2013/11/13/jekyll-config-for-markdown.html
 # 以下のオプションはGithub pagesでは有効ではないと考えます
 # markdown: redcarpet
