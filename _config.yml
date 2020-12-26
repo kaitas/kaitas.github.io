@@ -1,16 +1,4 @@
 theme: jekyll-theme-cayman
-# https://github.com/set0gut1/good-looking-repository/
-twitter:
- username: o_ob
-defaults:
-  - scope: 
-      path: ""
-    values:
-      image:
-        path: /img/card.png
-        height: 630
-        width: 1200 
-
 title: Akihiko SHIRAI, Ph.D
 # show_downloads: true
 languages: ["en", "ja"]
@@ -32,10 +20,6 @@ collections:
     output: true
 plugins:
   - jekyll-paginate
-  - jekyll-seo-tag
-  - jekyll-sitemap
-# https://github.com/jekyll/jekyll-seo-tag
-
 # https://genjiapp.com/blog/2013/11/13/jekyll-config-for-markdown.html
 # 以下のオプションはGithub pagesでは有効ではないと考えます
 # markdown: redcarpet
@@ -46,3 +30,18 @@ plugins:
 #  - jekyll-gist
 #  - jekyll-twitter-plugin
 
+# https://github.com/jekyll/jekyll-seo-tag
+# 効いてないかもしれない
+#  - jekyll-seo-tag
+#  - jekyll-sitemap
+# https://github.com/set0gut1/good-looking-repository/
+# twitter:
+# username: o_ob
+# defaults:
+#  - scope: 
+#      path: ""
+#    values:
+#      image:
+#        path: /img/card.png
+#        height: 630
+#        width: 1200 
