@@ -216,6 +216,16 @@ Facebookのほうはこちらの「[シェアデバッガー](https://developers
 
 Github Pages での Jekyll は挙動が見えないので、なかなか掴みづらいですが、最近では Environments に状況が表示されるようになりました。うまく使いこなすとサーバコストも全くかからない爆速サイトが出来上がりますので、上手に活用したいと思います。
 
+## 追記：QiitaのOGP画像はどうやって生成しているの？
+
+ついでに調べてみたのですが QiitaのOGP（投稿のタイトルがプレゼン形式でつくやつ）は[imgix](https://qiita-user-contents.imgix.net/)をつかってCDN側で生成しているようです。
+
+月間10ドルぐらいでサーバレス・転送不要になるならこれもありですね。
+
+`og:img` って外部サイト参照でもまあいいのかな、という気持ちになります。
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/191291/c070f089-4472-ab6b-b0b7-2c0cf0306dcc.png)
+
+
 # 関連・参考
 - [https://akihiko.shirai.as/blog/](https://akihiko.shirai.as/blog/) 実際に運用しているサイト
 - [https://github.com/kaitas/kaitas.github.io](https://github.com/kaitas/kaitas.github.io) 上記のリポジトリ
@@ -223,6 +233,7 @@ Github Pages での Jekyll は挙動が見えないので、なかなか掴み�
 - [Github Jekyll Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md) siteのプロパティを探すときに便利
 - [Jekyll:サイト変数](http://jekyllrb-ja.github.io/docs/variables/) 日本語です
 - [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md) 使ってないです
+- [リアルタイム画像処理機能が充実した CDN、「imgix」 を試してみたらとても簡単で便利だった件](https://hyper-text.org/archives/2018/03/imgix_cdn.shtml)
 
 # 次回予告/今後書くかもしれない記事
 - Github Pages にGoogle Analyticsを仕込んでアクセス状況を把握する
