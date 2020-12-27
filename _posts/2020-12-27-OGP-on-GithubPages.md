@@ -100,7 +100,7 @@ Open Graphは `<html prefix="og: http://ogp.me/ns#">` を介して “og” RDFa
 <!DOCTYPE html>
 <html lang="｛｛ site.lang | default: "en-US" }}" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta property="og:url" content="｛｛ page.url }}" />
+    <meta property="og:url" content="｛｛ site.url }}｛｛ page.url }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="｛｛ page.title }}" />
     <meta property="og:site_name" content="｛｛ site.title | default: site.github.repository_name }}" />
@@ -155,15 +155,6 @@ preview: https://akihiko.shirai.as/assets/2020/2020-12-26-TokyoVeganGyoza.jpg
 
 # Twitter対応と確認
 
-Twitterカードとしてはサイト管理者と投稿の作成者のTwitterアカウントを組み込むことができます。
-これは必須項目ではないので必要であれば追記してみてください。
-
-```default.html
-   <meta name="twitter:site" content="@o_ob" />
-   <meta name="twitter:creator" content="@o_ob" />
-
-```
-
 さて、Twitterカード上ではどのように見えるかはTwitter公式の [Card Validator](https://cards-dev.twitter.com/validator/) で確認できます。
 確認したいページのURLを張り付けて ``Preview Card`` で仕上がりを確認できます。
 
@@ -171,18 +162,50 @@ Twitterカードとしてはサイト管理者と投稿の作成者のTwitterア
 
 例示した[このページ](http://akihiko.shirai.as/2020/08/01/dear-my-father.html)では、ページ個々の `description` も `preview` も指定していないので、デフォルトの設定が表示されています。正しい動作。
 
+
+冒頭で紹介した投稿の場合は [こんな感じに表示できます](https://twitter.com/o_ob/status/1342952856710627328)
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/191291/aad09d67-85fa-ebe1-9b27-af23420ba631.png)
+
+Twitterカードとしてはサイト管理者と投稿の作成者のTwitterアカウントを組み込むことができるそうなのですが、指定するとしても特に見た目に影響はないようです。
+
+```default.html
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@o_ob" />
+    <meta name="twitter:creator" content="@o_ob" />
+```
+
+また、1日に何度も Card preview を使っていると表示できないという状況になります。
+記述に問題があるわけではないので慌てず騒がす別のアカウントでAPIにログインしなおすなどしてみましょう（慌てた）。
+
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/191291/a647a3a1-029d-20a7-fd97-911296bc49a9.png)
+
+
+
 # Facebook対応と確認
 
 Facebookのほうはこちらの「[シェアデバッガー](https://developers.facebook.com/tools/debug/)」で確認できます。
-ただし最近のFacebookの仕様には落とし穴があって、`fb:_app_id` が正しく設定されていないと、*個々のページではなく* トップのページの情報を自動的に利用します。
-それだとちょっとカッコ悪い（相当カッコ悪い）ので、デベロッパーサイト [developers.facebook.com/apps/](https://developers.facebook.com/apps/) から「アプリを作成」として、適当なアプリケーション開発のIDを取得して以下のように設定します。
+
+``このURLはまだFacebookでシェアされていません【新しい情報を取得】`` というボタンを押すと OGPタグを取得しに行きます。
+更新するときは ``もう一度スクレイピング`` で再取得できます。
+
+ただし最近のFacebookの仕様には落とし穴があって、`fb:_app_id` が正しく設定されていないと、
+`プロパティがありません 次のプロパティは必須です: fb:app_id` という警告を表示します。
+また正しく設定しないと *個々のページではなく* トップのページの情報を自動的に利用することがあるようです。
+
+これだとちょっとカッコ悪いので、デベロッパーサイト [developers.facebook.com/apps/](https://developers.facebook.com/apps/) から「アプリを作成」として、適当なアプリケーション開発のIDを取得して以下のように設定します（取得するだけ、すべての項目を埋めなくてもOK）。
 
 ```
    <meta property="fb:app_id" content="4090212771xxxxx" />
 ```
 ※``4090212771xxxxx``は私のサイトなので、別の情報を取得して置き換えてください。
 
+![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/191291/e16dac54-ac8d-997e-53c3-3da095bb0973.png)
+
+正しく `fb:app_id` が設定されていると、取得したURLが個々のページになります。
+
 # まとめなど
+
 
 
 - Github Pages でも OGP は簡単に表示できる
