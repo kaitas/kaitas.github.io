@@ -62,12 +62,17 @@ Github Pages の リポジトリの設定
 # テンプレのHTMLを操作する
 まず `/_layouts` にある `default.html` を編集していきます（[オリジナルファイル](https://github.com/pages-themes/cayman/blob/master/_layouts/default.html)）。
 
-Open Graphは<html prefix="og: http://ogp.me/ns#">を介して“og” RDFa Core 1.1 CURIEプレフィックスマッピングを指定することを推奨しています。しかしこれは `html要素` に含めることができるようですので、
+Open Graphは `<html prefix="og: http://ogp.me/ns#">` を介して “og” RDFa Core 1.1 CURIEプレフィックスマッピングを指定することを推奨しています。
+このように宣言は `html要素` に含めることができるようですので、
 
 これを
+
 `<html lang="{{ site.lang | default: "en-US" }}">`
+
 こんな感じに
+
 `<html lang="{{ site.lang | default: "en-US" }}" prefix="og: http://ogp.me/ns#">`
+
 修正すれば、OGPをサポートすることを宣言できます。
 
 続くヘッダ部分を修正していきます。
@@ -93,18 +98,19 @@ Open Graphは<html prefix="og: http://ogp.me/ns#">を介して“og” RDFa Core
 
 ```default.html
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}" prefix="og: http://ogp.me/ns#">
+<html lang="｛｛ site.lang | default: "en-US" }}" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta property="og:url" content="{{ page.url }}" />
+    <meta property="og:url" content="｛｛ page.url }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:site_name" content="{{ site.title | default: site.github.repository_name }}" />
-   {% if page.description %}
-    <meta property="og:description" content="{{ page.description }}" />
-   {% else %}
-    <meta property="og:description" content="{{ site.description | default: site.github.project_tagline }}" />
-   {% endif %}
+    <meta property="og:title" content="｛｛ page.title }}" />
+    <meta property="og:site_name" content="｛｛ site.title | default: site.github.repository_name }}" />
+   ｛% if page.description %}
+    <meta property="og:description" content="｛｛ page.description }}" />
+   ｛% else %}
+    <meta property="og:description" content="｛｛ site.description | default: site.github.project_tagline }}" />
+   ｛% endif %}
 (以下同じ)
+※Jekyllに置き換えられてしまいますので ｛ を倍角で書いています
 ```
 この修正を加えて Github に push して、しばらく待てばOGPは生成されます。
 対象のページを開いてHTMLソースを確認しましょう。
