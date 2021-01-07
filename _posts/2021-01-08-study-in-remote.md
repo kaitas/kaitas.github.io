@@ -3,7 +3,7 @@ layout: post
 title: "リモート時代に丁寧に学ぶ、指導する。"
 date: '2021-01-08 02:00:00'
 author: aki
-description: ある中国の学生から学んだこと、それは「丁寧」。
+description: 今日「丁寧」という日本語が、中国語では「無礼」であると学んだ。
 preview: https://pbs.twimg.com/media/ErDlv9gVQAAIxS6?format=png&name=small
 ---
 # ある中国の学生から学んだこと、それは「丁寧」。
@@ -11,9 +11,11 @@ preview: https://pbs.twimg.com/media/ErDlv9gVQAAIxS6?format=png&name=small
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p>
 <a href="https://twitter.com/o_ob/status/1346829390114484232">Jan 6, 2021</a></blockquote>
 
-今日「丁寧」という日本語が、中国語では「無礼」であると学んだ。
 
 子供には『基本的なことを、正しくやろうね！』と教えているのだけど、大事な概念だったんだなあ…。
+
+
+## それはとある大学院の授業後、中国からの学生さんの課題提出から始まった
 
 具体的には、とある大学院の授業で、中国からの学生さんが「ファイルが開けません」といったメッセージだけで課題を送り付けてきたのですね。
 
@@ -41,7 +43,9 @@ preview: https://pbs.twimg.com/media/ErDlv9gVQAAIxS6?format=png&name=small
 ## 『今頭の中に浮かんでいるのは何色ですか』
 
 と聞いたことがあります。
+
 返答としては「……頭の中は真っ白です！」と返されたように記憶しています。
+
 （そうじゃないかな、と思いました。逆に色がちゃんとついているというぐらいイメージできているなら違う話をしたと思います）
 
 ## なんでPCなの面倒くさい、スマホアプリじゃだめなの、という世代
