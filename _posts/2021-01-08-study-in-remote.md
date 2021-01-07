@@ -82,10 +82,17 @@ OSがあって、アプリケーションがあって、それを使ってファ
 と聞いてみたら「礼儀…ですかね、でもなんかちがいますね」。
 後で辞書で調べてみたら、やっぱり何か違う。
 
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr">
-<a href="https://twitter.com/o_ob/status/1346829390114484232">Jan 6, 2021</a></blockquote>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"><a href="https://twitter.com/o_ob/status/1346829390114484232">Jan 6, 2021</a></p></blockquote>
 
-で「丁寧」という日本語が、中国語では「無礼」であると学んだ次第です。
+本日は、大学院の講義で教鞭をとりながら「丁寧」という日本語が、実は中国語では「無礼」であると学んだ次第です。
+
+> あなたが丁寧な字を書かないとあなたの郵便は相手に届きません
+
+> 如果您不礼貌地写信，您的邮件将不会到达对方。
+
+「礼が無い」ということが、日本語の「乱雑に書く」ということとは少し違う。
+何なんだこの概念の違いは…。
+
 
 自分の子供には「丁寧っていうのは、基本的なことをしっかり、正しくやること」という風に教えています。
 
