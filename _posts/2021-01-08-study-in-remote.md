@@ -3,12 +3,12 @@ layout: post
 title: "リモート時代に丁寧に学ぶ、指導する。"
 date: '2021-01-08 02:00:00'
 author: aki
-description: Dropboxをやめようというお知らせです
-preview: https://akihiko.shirai.as/img/2x3d.jpg
+description: ある中国の学生から学んだこと、それは「丁寧」。
+preview: https://pbs.twimg.com/media/ErDlv9gVQAAIxS6?format=png&name=small
 ---
 # ある中国の学生から学んだこと、それは「丁寧」。
 
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr">
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p>
 <a href="https://twitter.com/o_ob/status/1346829390114484232">Jan 6, 2021</a></blockquote>
 
 今日「丁寧」という日本語が、中国語では「無礼」であると学んだ。
@@ -82,9 +82,6 @@ OSがあって、アプリケーションがあって、それを使ってファ
 と聞いてみたら「礼儀…ですかね、でもなんかちがいますね」。
 後で辞書で調べてみたら、やっぱり何か違う。
 
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p>
-<a href="https://twitter.com/o_ob/status/1346829390114484232">Jan 6, 2021</a>
-</blockquote>
 
 本日は、大学院の講義で教鞭をとりながら「丁寧」という日本語が、実は中国語では「無礼」であると学んだ次第です。
 
