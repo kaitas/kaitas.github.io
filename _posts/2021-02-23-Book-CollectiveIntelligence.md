@@ -5,7 +5,7 @@ date: '2021-02-23 23:52:00'
 author: aki
 description: 集合知とは何か - ネット時代の「知」のゆくえ ／著者：西垣 通の1章について精読してみた感想です。
 preview: https://images-na.ssl-images-amazon.com/images/I/41liUFod52L._SX312_BO1,204,203,200_.jpg
-categories: book
+# categories: book
 ---
 
 ## 本書の出版された時代背景
@@ -117,6 +117,7 @@ p.36-37より（式番号はこちらで附番した）。
 私のほうが何か勘違いしていると思うんだけど、手を動かしてみるとわかることってあるよな…。
 
 ★西垣先生、本当にすみません、私が計算間違っているに違いないです！！
+「読者諸賢は、紙と鉛筆を使って、確認していただきたい」と書いているのでその通りでしたね
 
 
 ### Twitterに投稿してみたら…集合知の何たるかを体感。
@@ -133,7 +134,7 @@ Rは真値なので関係がない
 
 期待値 `E[AR]=0` と理解してよいと思います
 
-★西垣先生は「読者諸賢は、紙と鉛筆を使って、確認していただきたい」と書いているのでその通りでしたね
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1364269960684478465">date</a></blockquote>
 
 これまさに「集合知とは何か」を如実に表したケースですね…。
 
