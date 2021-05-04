@@ -44,34 +44,34 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 ## CEDEC発表経歴
 
-CEDEC2000
+### CEDEC2000
 「RenderWare3」と「RenderVision」による次世代ゲーム開発の高速化
 http://cedec.cesa.or.jp/2000/detail_categori.html
 
-CEDEC2012
+### CEDEC2012
 3Dディスプレイと互換の多重化・隠蔽映像技術「Scritter」が拓く3Dコンテンツの未来
 https://cedec.cesa.or.jp/2012/program/INT/C12_P0205.html
 インタラクティブセッション会場投票賞 1位受賞
 https://cedec.cesa.or.jp/2012/program/INT/result.html
 
-CEDEC2013
+### CEDEC2013
 姿勢評価によるリアルタイム感情推定を特徴とする動的マンガ生成システム「Manga Generator」
 http://cedec.cesa.or.jp/2013/program/GD/7225.html
 https://cedil.cesa.or.jp/cedil_sessions/view/1083
 
-CEDEC2014
+### CEDEC2014
 ゲームの次元を拡張する次世代多重化映像技術「ExPixel」
 https://cedec.cesa.or.jp/2014/session/AC/5423.html
 インタラクティブセッション 3位受賞
 https://cedec.cesa.or.jp/2014/session/INT/result.html
 
-CEDEC2016 
+### CEDEC2016 
 多重化多視点VRアーケードゲームシステム -DUAL DUEL-
 https://cedec.cesa.or.jp/2016/session/AC/8656.html
 「インタラクティブセッション オーディエンス賞 2位受賞
 https://cedec.cesa.or.jp/2016/session/INT/result.html
 
-CEDEC2017
+### CEDEC2017
 家族愛をテーマにした子育てVRエンタテイメント ”Real Baby - Real Family”
 http://cedec.cesa.or.jp/2017/session/AC/s58e0597c6eab2/
 https://cedil.cesa.or.jp/cedil_sessions/view/1758
@@ -80,7 +80,7 @@ https://cedil.cesa.or.jp/cedil_sessions/view/1758
 https://cedil.cesa.or.jp/cedil_sessions/view/1607
 https://www.slideshare.net/aquihiko/cedec2017-vrar
 
-CEDEC2019
+### CEDEC2019
 REALITY「なりたい自分で、生きていく」リアルタイムライブでVTuberが活躍する舞台を作る現場の1年
 https://cedec.cesa.or.jp/2019/session/detail/s5c9df84045dd1
 https://www.wantedly.com/companies/reality/post_articles/184950
