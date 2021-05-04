@@ -41,6 +41,54 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [Virtual Realty for Entertainment - 文化・言語背景を 文化・言語背景を超えた環境における国際的エンタテイメントシステムデザイン](https://www.slideshare.net/aquihiko/virtual-realty-for-entertainment) JAIST, 2006/11
 - <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式Ludology事始－</a> IGDA日本 ゲームテクノロジー研究会 第1回 研究会(2004年1月10日)(<a href="https://www.slideshare.net/aquihiko/igda-1/aquihiko/igda-1">Detail in SlideShare</a>)
 
+
+## CEDEC発表経歴
+
+CEDEC2000
+「RenderWare3」と「RenderVision」による次世代ゲーム開発の高速化
+http://cedec.cesa.or.jp/2000/detail_categori.html
+
+CEDEC2012
+3Dディスプレイと互換の多重化・隠蔽映像技術「Scritter」が拓く3Dコンテンツの未来
+https://cedec.cesa.or.jp/2012/program/INT/C12_P0205.html
+インタラクティブセッション会場投票賞 1位受賞
+https://cedec.cesa.or.jp/2012/program/INT/result.html
+
+CEDEC2013
+姿勢評価によるリアルタイム感情推定を特徴とする動的マンガ生成システム「Manga Generator」
+http://cedec.cesa.or.jp/2013/program/GD/7225.html
+https://cedil.cesa.or.jp/cedil_sessions/view/1083
+
+CEDEC2014
+ゲームの次元を拡張する次世代多重化映像技術「ExPixel」
+https://cedec.cesa.or.jp/2014/session/AC/5423.html
+インタラクティブセッション 3位受賞
+https://cedec.cesa.or.jp/2014/session/INT/result.html
+
+CEDEC2016 
+多重化多視点VRアーケードゲームシステム -DUAL DUEL-
+https://cedec.cesa.or.jp/2016/session/AC/8656.html
+「インタラクティブセッション オーディエンス賞 2位受賞
+https://cedec.cesa.or.jp/2016/session/INT/result.html
+
+CEDEC2017
+家族愛をテーマにした子育てVRエンタテイメント ”Real Baby - Real Family”
+http://cedec.cesa.or.jp/2017/session/AC/s58e0597c6eab2/
+https://cedil.cesa.or.jp/cedil_sessions/view/1758
+
+次世代VR/ARエンタテイメントのための多重化映像生成ミドルウェア
+https://cedil.cesa.or.jp/cedil_sessions/view/1607
+https://www.slideshare.net/aquihiko/cedec2017-vrar
+
+CEDEC2019
+REALITY「なりたい自分で、生きていく」リアルタイムライブでVTuberが活躍する舞台を作る現場の1年
+https://cedec.cesa.or.jp/2019/session/detail/s5c9df84045dd1
+https://www.wantedly.com/companies/reality/post_articles/184950
+
+「宇宙x教育xVR＝ちゃんと学べる体感サイエンスツアー「ありえなLAB」の挑戦
+https://cedec.cesa.or.jp/2019/session/detail/s5c9c660d3c16c.html
+https://www.slideshare.net/harukasakami/xxvr-lab
+
 # Archived Projects in Github pages
 - [KAIT Shirai Lab](https://new.shirai.la/)
 - [相模Ingress部](https://kaitas.github.io/sagami-ingress/)
