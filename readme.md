@@ -14,7 +14,9 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - [Laboratory](https://vr.gree.net/lab/)
 - [YouTube Channel](http://j.mp/VRSYT)
 - [「転生こえうらない」Voice Fortune Teller](https://vr.gree.net/lab/vc/)
-- [Products](https://vr.gree.net/en/)
+- [VibeShare](https://vr.gree.net/lab/demo/vibeshare/)
+- [REALITY](https://reality.app/)
+- [VR Game Products](https://vr.gree.net/en/)
 
 ### KAIT Shirai Lab (2010-2018)
 
