@@ -44,7 +44,7 @@ CHI は ACM の国際会議で、世界中の研究者や実務者が集まる�
 
 - (2021/5/16)現在、粗訳が終わったところです。これから清書していきます。Twitter 上で前半を紹介していますので、興味ある人はこのスレッドを追ってみてください（Twitter の方が文字数制約があるのでより意訳になっていて読みやすいかもしれません）。
 
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true" data-conversation="none"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392067792078213125">date</a></blockquote>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392067792078213125">date</a></blockquote>
 
 - Inserted tweets are by myself (Translator).
 - 原文に対する質問やディスカッションは著者の[Zhicong Lu 先生](https://twitter.com/luzc08/status/1392134253211799552)にお問い合わせください。
@@ -77,7 +77,7 @@ Zhicong Lu, Chenxinran Shen, Jiannan Li, Hong Shen, and Daniel Wigdor. 2021. Mor
 
 Pre-recorded Presentations for the ACM CHI Virtual Conference on Human Factors in Computing Systems, May 8-13, 2021
 
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392030359835975683">date</a></blockquote>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true" data-conversation="none"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392030359835975683">date</a></blockquote>
 
 ## 1 はじめに
 
