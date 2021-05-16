@@ -682,7 +682,10 @@ This work examined how the Otaku community engages with and perceive VTubers. Th
 - 中の人 → ナカノヒト（Nakanohito）
 - Persecution(迫害/虐待)：※適切な翻訳があれば教えてください
 
-### Tools
+### Tools and acknowledgements
 
-- Deepl
+I note my appreciation for these great tools.
+
+- [Deepl](https://www.deepl.com/translator)
 - [https://dream-exp.net/shaper/](https://dream-exp.net/shaper/)
+- [VTuber-IME 辞書](https://twitter.com/VRStudioLab/status/1136889624360472577)
