@@ -10,6 +10,10 @@ categories: Research
 
 国際会議[CHI2021](https://chi2021.acm.org/) にて、興味深い論文「[リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか](https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf)」（原題："More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers"）がありましたので、著者の Zhicong Lu さんに Twitter 上でご許可をいただいて日本語翻訳させていただきました。日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待します。
 
+[YouTube](https://www.youtube.com/watch?v=IuMhbo0MZrU&list=RDCMUCEfEi-IMiB87UsxY3765P6w)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IuMhbo0MZrU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 (2021/5/16)現在、粗訳が終わったところです。これから清書していきます。
 
 ## Acknowledgements
