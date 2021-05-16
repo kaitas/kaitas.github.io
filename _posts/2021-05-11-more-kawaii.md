@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "コミュニティがバーチャルYouTuberとどのように関わり、どのように認識しているかについての海外論文"
+title: "海外論文紹介：More Kawaii than a Real-Person Streamer - コミュニティがVTuberとどう関わり、どう認識しているか"
 date: "2021-05-11 23:52:00"
 author: aki
 description: More Kawaii than a Real-Person Streamer - Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers
