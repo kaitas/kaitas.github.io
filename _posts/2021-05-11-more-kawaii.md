@@ -3,12 +3,12 @@ layout: post
 title: "海外論文紹介：More Kawaii than a Real-Person Streamer - コミュニティがVTuberとどう関わり、どう認識しているか"
 date: "2021-05-11 23:52:00"
 author: aki
-description: More Kawaii than a Real-Person Streamer - Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers
+description: More Kawaii than a Real-Person Streamer - Understanding How the Otaku Community Engages with and Perceives Virtual YouTubersの翻訳を通して、日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待して、参考訳を掲載します。
 preview: http://img.youtube.com/vi/IuMhbo0MZrU/hqdefault.jpg
 categories: Research
 ---
 
-国際会議[CHI2021](https://chi2021.acm.org/) にて、興味深い論文「[リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか](https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf)」（原題："More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers"）がありましたので、著者の Zhicong Lu さんに Twitter 上でご許可をいただいて日本語翻訳させていただきました。日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待します。
+国際会議[CHI2021](https://chi2021.acm.org/) にて、興味深い論文「[リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか](https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf)」（原題："More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers"）がありましたので、著者の Zhicong Lu さんに Twitter 上でご許可をいただいて日本語翻訳させていただきました。日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待して、参考訳を掲載します。
 
 [YouTube](https://www.youtube.com/watch?v=IuMhbo0MZrU&list=RDCMUCEfEi-IMiB87UsxY3765P6w)
 
@@ -40,7 +40,7 @@ I appreciate to the original authors, specially to Prof. Zhicong Lu for his grea
 
 CHI は ACM の国際会議で、世界中の研究者や実務者が集まる最新のインタラクティブ技術について議論する歴史ある会議です。CHI は「カイ」と発音し、一般的に[HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)(Human Computer Interaction)の分野で最も権威のあるものと考えられており、毎年何千人もの国際的な参加者が集まります。今回横浜で開催された、CHI2021 は初めてのオンライン・バーチャル・カンファレンスとして開催されました。CHI2021 のテーマは「Making Waves, Combining Strengths」。HCI における最新の発見や進歩を取り上げ、既存の状況を揺るがすような波を起こすことを著者や参加者に促進し、CHI とは、様々な人が様々な視点から力を結集するプラットフォームであると考えています（[CHI2021](https://chi2021.acm.org/)ウェブサイトより）。
 
-### 訳者より
+### 訳者より: Notes and Disclaimer from translator (Akihiko SHIRAI)
 
 - (2021/5/16)現在、粗訳が終わったところです。これから清書していきます。Twitter 上で前半を紹介していますので、興味ある人はこのスレッドを追ってみてください（Twitter の方が文字数制約があるのでより意訳になっていて読みやすいかもしれません）。
 
@@ -48,6 +48,8 @@ CHI は ACM の国際会議で、世界中の研究者や実務者が集まる�
 
 - 原文に対する質問やディスカッションは著者の[Zhicong Lu 先生](https://twitter.com/luzc08/status/1392134253211799552)にお問い合わせください。
 - 翻訳に関するご指摘ご質問は白井まで。[Github の markdown](https://github.com/kaitas/kaitas.github.io/blob/master/_posts/2021-05-11-more-kawaii.md)なので直接プルリクエスト頂いても良いかと思います。
+- 訳注と、必要なハイパーリンクがあれば加えていきたいと思います。
+- こちらは白井の個人のブログになります。所属とは切り離して読み物として読んでいただければ幸いです。
 
 ## 「リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか」
 
