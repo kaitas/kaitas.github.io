@@ -10,6 +10,8 @@ categories: Research
 
 国際会議[CHI2021](https://chi2021.acm.org/) にて、興味深い論文「[リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか](https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf)」（原題："More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers"）がありましたので、著者の Zhicong Lu さんに Twitter 上でご許可をいただいて日本語翻訳させていただきました。日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待します。
 
+(2021/5/16)現在、粗訳が終わったところです。これから清書していきます。
+
 ## Acknowledgements
 
 This is authorized Japanese translation of "More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers".
@@ -21,7 +23,7 @@ I appreciate to the original authors, specially to Prof. Zhicong Lu for his grea
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/luzc08/status/1392134253211799552">date</a></blockquote>
 
-### Credits
+### Credit and copyright
 
 > More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers
 > Zhicong Lu, Chenxinran Shen, Jiannan Li, Hong Shen, Daniel Wigdor
@@ -83,15 +85,27 @@ Twitch，YouTube，TikTok などのライブストリーミングの登場によ
 
 ## 2 BACKGROUND AND RELATED WORK
 
+まず、VTuber の背景を説明し、アバターベースのバーチャルアイドルやバーチャルワールドでのソーシャルインタラクションに関する研究をレビューし、続いてライブストリーミングの動機と実践についてレビューします。
+
+<!--
 We first describe the background of VTubers, and then review research into avatar-based virtual idols and social interactions in virtual worlds, followed by a review of live streaming motivations and practices.
+-->
 
 ### 2.1 Background
 
+過去 30 年以上にわたり、日本のマンガ、アニメ、ビデオゲームは、東アジア、そしてより一般的には世界中で広く人気を博してきた。これにより、10 億ドル規模の産業と、マンガ、アニメ、および関連するサブカルチャーへの強い熱意を特徴とする独特のオタク・サブカルチャー[27]が生まれました。同時に，日本のアイドルも，作り出されたイメージや個性が大きな要因となって，大規模で熱狂的なファン層を形成してきた[20]．VTuber は、これらのトレンドが絡み合い始めたことで、革新的な文化現象として登場しました。VTuber は日本で生まれ、2016 年に初登場して以来、急速に国際的な人気を獲得しています。2019 年 1 月中旬には、世界中で 10,000 人以上のアクティブな VTuber が存在し[2]、600 人以上の VTuber が 10,000 人以上のフォロワーを持ち、数百万回の再生回数を集めていました[3]。VTuber の影響力は、オタク系サブカルチャーの枠を超えて急速に拡大している。たとえば，初代 VTuber の絆愛は，2018 年に日本政府観光局が実施する国際文化キャンペーンのアンバサダーに選ばれている［68］。
+
+VTuber とは、ライブ動画配信や録画動画でパフォーマンスを配信するアニメーションの仮想アバターのことである。アバターの声は俳優が担当することが多く、日本語では「中の人」と呼ばれている。VTuber は，Live2D [45]などのツールを用いて作成された半身の 2D アバターを用いてストリーミングを行うのが一般的で，俳優の顔の動きをキャプチャしてアバターの表情を動かすことができます（図 1）．アバターの他の体の部分の動きは、デスクトップ・コンピュータから送られるコマンドを使って、このようなプログラムの中で引き起こすことができます。全身のモーションキャプチャーシステムを利用できる VTuber は、3D アバターを使ってパフォーマンスを行うことができます。これにより、アバターの体の可動域を広げることができます。また、VTuber は、視聴者が投稿したコメントを読んで返信することも多く、実在するストリーマーと同様の活動を行っている。VTuber はユニークなペルソナを持っていることが多く、例えばキズナアイは 16 歳のブルネットのアニメ少女のような外見をしているが、彼女は最近開発された高度な人工知能であり、その言動は AI エージェントの行動を真似たナイーブなものであったが、実際には彼女のパフォーマンスは複数のナカノヒトによって動かされていたという。
+
+VTuber には、個人で運営するものと、代理店が運営するものがある。にじさんじ[49]やホロライブ[26]のように、20 台以上の VTuber を並行して契約している営利目的の VTuber 機関もある。これまでのところ、企業が運営する VTuber は、個人が運営する VTuber よりも多くの視聴者を集めている。例えば 2020 年 1 月、YouTube で最もフォローされている VTuber100 人のうち、94 人が企業が運営する VTuber であった[3]。これは、企業が運営する VTuber は、プロがデザイン・設計したアバターを持ち、よりリアルなアバターの動きを生成するために高価なモーションキャプチャー機器を使用し、プロモーションやマーケティングを強化しているため、総合的に支持されているからだと考えられる。個人で運営されている VTuber の中の人(声優)は、VTuber プロジェクトの全ての所有権を持っている。対して、VTuber 事務所は VTuber を所有し、彼らの知的財産であると主張しています。VTuber 事務所の従業員は、今後の番組企画や他の中の人が自分のアバターを引き継ぐかどうかなど、自分のアバターの運営全般に対するコントロールが制限されており、労働争議に発展する可能性がある。中国は、VTuber の最も重要な市場の一つです。多くの VTuber が、若い世代に人気のある動画プラットフォーム「BiliBili」で公式チャンネルを運営しています[4]。BiliBili では，中国や日本の個人や代理店が企画・運営する VTuber が存在する[9]．日本語を話す VTuber は，配信者と視聴者の間の言葉の壁を乗り越えるために，リアルタイムで中国語の字幕を表示したり，簡単な言葉で中国のファンとコミュニケーションをとったりしています．また，熱心な VTuber ファンは，ストリームのハイライトをキュレーションしたり，ソーシャルネットワーキングサイトやフォーラムでオンラインのソーシャルグループを形成して，VTuber 関連のトピックについて議論したりしています（例：National Geographic of Azeroth（NGA）フォーラム）[51]．中国における VTuber の視聴者に関する研究を行うことで，ライブ・ストリーミングがインターネット・ユーザーにとって主要な活動である中国において，視聴者がどのように VTuber に関わり，VTuber がどのように流用されるかの両方を捉えることを目的としています[44]．
+
+<!--
 Over the past 30 years, Japanese manga, anime, and video games have gained widespread popularity in East Asia and more generally, worldwide. This has given rise to a billion dollar industry and a unique Otaku subculture [27] that is characterized by a strong enthusiasm for manga, anime, and related subcultures. Concurrently, Japanese idols have also cultivated large and passionate fan bases, due in large part to their manufactured images and personalities [20]. VTubers have emerged as an innovative cultural phenomenon as these trends have begun to intertwine. VTubers originated in Japan and have rapidly gained international popularity since their first appearance in 2016. By midJanuary 2019, there were more than 10,000 active VTubers around the globe [2], and more than 600 VTubers had over 10,000 followers and had attracted millions of views [3]. The influence of VTubers has quickly grown beyond the Otaku subculture. The first VTuber, Kizuna Ai, for example, was chosen as the ambassador of an international culture campaign by the Japanese National Tourism Organization in 2018 [68].
 
 A VTuber is an animated virtual avatar that delivers performances in live video streams or recorded videos. The avatar is often voiced by an actor, who is referred to as a Nakanohito (中の人) in Japanese. VTubers typically stream with half-body 2D avatars, which are created with tools such as Live2D [45] that capture the actor’s facial movements and drive the avatar’s facial expressions (Figure 1). The motions of other body parts of the avatar can be triggered within such programs using commands sent from desktop computers. VTubers who have access to full-body motion capture systems can perform with 3D avatars. This allows them to have a higher range of motion with the avatar’s body. Vtubers also often read comments that viewers post in-stream and respond to them, similar to the practices of real-person streamers. VTubers often have a unique persona, e.g., Kizuna Ai has the appearance of a 16-year-old brunette animated girl, who was a recently-developed advanced artificial intelligence and her words and actions were naive, imitating the behavior of an AI agent, although her performance was actually driven by several Nakanohitos.
 
 VTubers can be operated by an individual or an agency. Some for-profit VTuber agencies, such as Nijisanji [49] and Hololive [26], have more than 20 VTubers under contract in parallel. So far, corporate-operated VTubers have attracted larger viewership than individual-operated ones. In January 2020, for example, 94 out of the 100 most followed VTubers on YouTube were run by agencies [3]. This is likely because corporate-run VTubers are overall better supported because they have professionally designed and engineered avatars, use more expensive motion capture equipment to generate more realistic avatar movement, and have stronger promotion and marketing. The Nakanohitos (i.e., voice actors) of individual-operated VTubers typically have full ownership over their VTuber projects. In contrast, VTuber agencies own their VTubers and claim that they are their intellectual property. Employees of these agencies have limited control over changes to the overall operation of their avatar, such as future program planning or if another Nakanohito will take over their avatar, which can potentially lead to labor disputes. China is one of the most important VTuber markets. A large number of VTubers operate official channels on BiliBili, a video platform that is highly popular among young generations [4]. On BiliBili, there are VTubers designed and managed by Chinese and Japanese individuals and agencies [9]. To overcome the language barriers between streamers and viewers, Japanese-speaking VTubers stream with real-time Chinese subtitles, or use simpler words to communicate with Chinese fans. Dedicated VTuber fans also curate stream highlights and form online social groups on social networking sites and forums to discuss VTuber-related topics, e.g., the National Geographic of Azeroth (NGA) forum [51]. By contributing a study of viewers of VTubers in China, we aim to capture both how viewers engage with VTubers and how VTubers are appropriated in China, where live streaming is a predominate activity for Internet users [44].
+-->
 
 ### 2.2 Avatar-Based Virtual Idols and Social Interactions in Virtual Worlds
 
