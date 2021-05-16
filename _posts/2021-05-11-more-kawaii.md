@@ -46,6 +46,7 @@ CHI は ACM の国際会議で、世界中の研究者や実務者が集まる�
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true" data-conversation="none"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392067792078213125">date</a></blockquote>
 
+- Inserted tweets are by myself (Translator).
 - 原文に対する質問やディスカッションは著者の[Zhicong Lu 先生](https://twitter.com/luzc08/status/1392134253211799552)にお問い合わせください。
 - 翻訳に関するご指摘ご質問は白井まで。[Github の markdown](https://github.com/kaitas/kaitas.github.io/blob/master/_posts/2021-05-11-more-kawaii.md)なので直接プルリクエスト頂いても良いかと思います。
 - 訳注と、必要なハイパーリンクがあれば加えていきたいと思います。
@@ -210,6 +211,8 @@ The misogyny might be rooted from both the Otaku subculture and the virtual idol
 
 > Table 1: Summary of participants interviewed. Preferred platforms: YouTube (YT), Bilibili (BB), Niconico (NN)
 
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392041621647024129">date</a></blockquote>
+
 ## 4 FINDINGS
 
 ### 4.1 Viewer Motivation
@@ -263,6 +266,8 @@ Co-streaming is also mentioned by several interviewees as an engaging and popula
 
 Many viewers discovered new VTubers to watch because they had previously co-streamed with their favorite VTubers. Although the performances that VTubers co-stream are mostly composed of singing, chatting, and gaming, interviewees highlighted the interactions between streamers as what made VTuber streams engaging. P6 explained that "there is a lot of new content that you do not see in single-streamer sessions, like the exchange of banter". Some interviewees enjoyed displays of friendship or inter-personal relationships between VTubers, as P7 described, “I like seeing a group of streamers in close relationships with each other, like watching an ensemble cast TV show. ”.
 -->
+
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392041634913603584">date</a></blockquote>
 
 #### 4.2.4 Technological Limitations Affecting Experiences.
 
