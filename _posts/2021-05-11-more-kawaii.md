@@ -14,16 +14,12 @@ categories: Research
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IuMhbo0MZrU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-(2021/5/16)現在、粗訳が終わったところです。これから清書していきます。
-
 ## Acknowledgements
 
 This is authorized Japanese translation of "More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers".
 [Original PDF](https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf)
 
 I appreciate to the original authors, specially to Prof. Zhicong Lu for his great contribution and agreement for this translation.
-
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392067792078213125">date</a></blockquote>
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/luzc08/status/1392134253211799552">date</a></blockquote>
 
@@ -43,6 +39,12 @@ I appreciate to the original authors, specially to Prof. Zhicong Lu for his grea
 ### About CHI2021
 
 CHI は ACM の国際会議で、世界中の研究者や実務者が集まる最新のインタラクティブ技術について議論する歴史ある会議です。CHI は「カイ」と発音し、一般的に[HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)(Human Computer Interaction)の分野で最も権威のあるものと考えられており、毎年何千人もの国際的な参加者が集まります。今回横浜で開催された、CHI2021 は初めてのオンライン・バーチャル・カンファレンスとして開催されました。CHI2021 のテーマは「Making Waves, Combining Strengths」。HCI における最新の発見や進歩を取り上げ、既存の状況を揺るがすような波を起こすことを著者や参加者に促進し、CHI とは、様々な人が様々な視点から力を結集するプラットフォームであると考えています（[CHI2021](https://chi2021.acm.org/)ウェブサイトより）。
+
+### 訳者より
+
+(2021/5/16)現在、粗訳が終わったところです。これから清書していきます。Twitter 上で前半を紹介していますので、興味ある人はこのスレッドを追ってみてください（Twitter の方が文字数制約があるのでより意訳になっていて読みやすいかもしれません）。
+
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392067792078213125">date</a></blockquote>
 
 ## 「リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか」
 
@@ -113,12 +115,29 @@ VTubers can be operated by an individual or an agency. Some for-profit VTuber ag
 
 ### 2.2 Avatar-Based Virtual Idols and Social Interactions in Virtual Worlds
 
+アバターを使ったバーチャルアイドルの歴史は、1990 年代半ばにさかのぼります。日本では、1996 年から 1997 年にかけて、伊達杏子と寺井由紀の 2 人のアバター・ベースのアイドルが誕生したのが最初である。2007 年にクリプトン・フューチャー・メディアから発売された初音ミク。ヤマハのソフトウェアエンジン「ボーカロイド」をベースに、16 歳の女性をイメージして作られたミクは、瞬く間に世界的なブームを巻き起こした。研究者たちは、ミクのようなアバター・ベースのアイドルをフェミニストの観点から考察し、女性の表現とジェンダーの本質化が、仮想世界においても女性のステレオタイプを永続させると主張している[34, 35]。アマチュアやプロのミュージシャン、アニメーター、アーティスト、ファンが分散型のグローバル・ネットワークを形成し、大規模なコラボレーションやピア・プロダクションを通じて、ミクを再現したりリミックスしたりして文化的な表現を行っていることは、企業によるミクのフランチャイズの支配とは異なるものであると指摘している[36, 67]。ミクのような最近のアバター・ベースのアイドルが世界的に成功しているにもかかわらず、これらのバーチャル・アイドルは、ファンとのリアルタイムのインタラクティビティを達成していないと言えるだろう。私たちの研究は、VTuber のライブストリーミングに焦点を当てることで、この研究ラインに貢献しています。VTuber は、ライブパフォーマンスの自発性と予測不可能性を利用して、リアルタイムで視聴者と対話します。
+
+また，HCI において重要なテーマとなっている，アバターを用いた仮想世界（VW）でのソーシャル・インタラクションにも注目しています[16]．これまでの研究では，World of Warcraft のようなゲーム指向の VW（例：[12, 46]）や Second Life のような社会指向の VW（例：[47, 48]）におけるユーザの知覚についての知見が得られている．ユーザーは通常，自分で作成・操作した仮想体（＝アバター）を介してこれらの VW に入り，アバターを使って様々な社会活動を行いながら相互に交流する。ユーザーは、VW でのオンライン・インタラクションを通じて、理想の自分（＝ Ego Ideals）であったり、本当の自分とは異なるもの（＝ Role Player）であったり、さらには複数のアイデンティティを構築します[8, 22, 48]。構築されたアイデンティティとアバターの外見は、VW における社会的相互作用に影響を与えます。例えば、顔のある人間らしいリアルなアバターは、よりポジティブな社会的相互作用を可能にする傾向があることが先行研究で明らかになっており[52, 66]、共通点がある場合には他の仮想アバターをより親密に扱うことができる[1]。また，仮想現実に実在する身体を持つエージェント（＝エンボディメント）は，ラポールと非言語的リアリズムを高める［31］．一部の VW では、ユーザーは音楽コンサートなどのライブパフォーマンスを行い[54]、ファンベースを確立することができる[11, 29]。しかし、VW におけるアバターベースのインタラクションは、VTuber のライブストリーミングと同じレベルの表現力やインタラクティビティに達しないことが多く、また、視聴者はストリーマーと同じ VW にいないため、VTuber の知覚と VW におけるバーチャルキャラクターの知覚は異なります。私たちは、このような研究におけるアイデンティティとエモボディメントの議論に触発され、VTuber のライブストリーミングを探求しています。
+
+<!--
 The history of avatar-based virtual idols can be traced back to the mid-1990s. The first two avatar-based idols, Kyoko Date and Yuki Terai, were created in Japan in 1996-1997. In 2007, Hatsune Miku was released by Crypton Future Media. Building on Yamaha’s software engine Vocaloid, and illustrated as a 16-year-old female character, Miku soon became an international phenomenon. Scholars have examined avatar-based idols such as Miku from a feminist perspective, arguing that the female representation and the essentializing of gender perpetuate female stereotypes, even in virtual worlds [34, 35]. Others have examined the fan communities around avatar-based idols, noting that although being virtual has limited idols’ capacities to emulate real people, independence from a living body has cultivated a new type of relationship between fans and the idol [5] — amateur and professional musicians, animators, artists, and fans formed a distributed global network and recreated and remixed Miku for cultural expression through large-scale collaborations and peer-production, which differed from the corporate control of Miku’s franchise [36, 67]. Despite the international success of recent avatar-based idols like Miku, these virtual idols have arguably never achieved real-time interactivity with their fans. Our work contributes to this line of research by focusing specifically on VTuber live streaming, where VTubers interact with viewers in real time, harnessing both the spontaneity and unpredictability of live performances.
 
 Also relevant is avatar-based social interactions in virtual worlds (VWs), which has been a key theme in HCI [16]. Past research has offered insights into user perception in game-oriented VWs such as World of Warcraft (e.g., [12, 46]) and social-oriented VWs such as Second Life (e.g., [47, 48]). Users usually enter these VWs through virtual bodies (i.e., avatars) that are created and controlled by them, and interact with each other using their avatar in a variety of social activities. Through online interactions in VWs, users construct their identities that might be their ideal selves (i.e., Ego Ideals), something different than they truly are (i.e., Role Players), or even multiple identities [8, 22, 48]. The constructed identity and the avatar appearance both influence social interactions in VWs. For example, prior work has found that human-like and more realistic avatars with faces tend to enable more positive social interactions [52, 66], and people treat other virtual avatars more intimately if they have commonality [1]. Agents with real/physical body (i.e. embodiment) in virtual reality also increase rapport and nonverbal realism [31]. In some VWs, users can deliver live performances [54], such as musical concerts, and establish fan bases [11, 29]. Though relevant, avatar-based interactions in VWs often do not reach the same level of expressiveness and interactivity of VTuber live streaming, and perception of VTuber differs from virtual character perception in VW because viewers are not in the same VW as the streamer. We are inspired by the discussion of identity and emobodiment in this line of research to explore VTuber live streaming.
+-->
 
 ### 2.3 Live Streaming Motivations and Practices
 
+HCI におけるライブ・ストリーミングに関する先行研究では、ライブ・ストリーミングの双方向性と社会性が、ライブ・ストリーミングを魅力的なものにしていることがわかっています[24, 44]。ライブ・ストリーミング・プラットフォームのユビキタスな性質により、ライブ・ストリーミングは、楽しみ、学び、インスピレーションを得て、スキルを向上させ、オンライン・コミュニティを構築し、コミュニティ・メンバーとの社会的関係を形成する方法として、多くのユーザーに活用されてきました[60]。
+
+ビデオゲームの領域は、ライブストリーミングの中でも人気の高いトピックです。Twitch のストリーマーは、自分のゲームプレイの様子を生中継したり、他の人のゲームプレイを観戦したりします。彼らはまた，ゲームプレイのスキルを共有したり，視聴者に興味深いビデオゲームの情報を提供したりすることで，ライブストリーミングを利用して，同じ興味を共有するゲーマーのコミュニティを育成している[24, 30, 53, 56, 64]．また，ビデオゲームのライブストリーミング中に，視聴者とストリーマーの間のコミュニケーションチャネルを拡張する新しいユーザインタフェースも設計・開発されています[21, 37]．これらのプロジェクトでは，ライブストリームにおける視聴者のエンゲージメントの向上が見られましたが，その結果は主にゲームのライブストリームに限られていました．
+
+他の分野のライブストリーマーも、パフォーマンス（歌など）、教育 [7, 25]、知識の共有 [43]、プログラミング [14]、文化的実践 [41]、創造的活動 [44]など、ライブストリーミングを活用してコミュニティのメンバーとつながり、参加しています。これらの研究では、異なるライブ・ストリーミング・コミュニティの中で、異なる動機、人口統計、実践、および関与レベルが発見されており、多様なユーザー・ニーズをサポートするライブ・ストリーミング・インターフェースの設計を改善するために、ライブ・ストリーミング・ユーザー・グループをさらに理解する必要性が強調されています。
+
+ライブ・ストリーミングのアフォーダンス（ライブ・チャットや絵文字など）は、コンピュータ媒介コミュニケーション（CMC）における Hyperpersonal Model に関連しています[55, 61, 62]。VTuber は、仮想のアバターで自分自身を選択的に表現するメッセージの送信者と見なすことができ、視聴者は、VTuber のコンテンツを解釈し、印象を形成する受信者と見なすことができます。Hyperpersonal Model によると、発信者は受信者とのやりとりにおいて、従来の対面コミュニケーションに比べて多くの利点があるとされている（最適なイメージを形成するために自己表現を修正できることや、比較的匿名性が高いことなど）。その結果、テキストベースの CMC では、対面でのコミュニケーションに比べて手掛かりが限られているため、受信者は送信者の自己表現に内在する手掛かりを過剰に解釈する傾向があります。VTuber の視聴者は、なかのひとの外見や非言語的行動を見ることができないため、手がかりが少なくなってしまいます。
+
+ライブストリーミングの研究の主流は、実在する人物の姿でライブストリーミングを行うストリーマーのライブストリームに集中していました。本研究は、オタク・コミュニティの視聴者が VTuber のバーチャル・キャラクターにどのように関わり、どのように知覚するかを理解することで、HCI における広範なライブ・ストリーミング研究に貢献するものです。
+
+<!--
 Prior work about live streaming in HCI has found that the interactivity and the sociality of live streams are what make live streaming engaging [24, 44]. Due to the ubiquitous nature of live streaming platforms, live streaming has been leveraged by many users as a way to have fun, to learn, to get inspirations, to improve their skills, and to build online communities and form social relationships with community members [60].
 
 The domain of video games has been a popular topic within live streaming. Streamers on Twitch often broadcast their own live gameplay experience or spectate on others’ gameplay. They also share gameplay skills and inform viewers of interesting video games thus using live streaming to cultivate a community of gamers who share similar interests [24, 30, 53, 56, 64]. Novel user interfaces that extend communication channels between viewers and streamers during video game live streams have also been designed and developed [21, 37]. Although these projects found increased viewer engagement in live streams, their findings were largely confined to video game live streams.
@@ -128,32 +147,59 @@ Live streamers in other domains have also leveraged live streaming to connect an
 The affordances of live streaming (e.g., live chats and emojis) is relevant to the Hyperpersonal Model in computer-mediated communication (CMC) [55, 61, 62]. VTubers can be viewed as message senders who selectively present themselves with virtual avatars, and viewers can be viewed as receivers who interpret the content and form impressions of VTubers. The Hyperpersonal Model suggests that senders often have a number of advantages in their interactions with receivers, compared to traditional face-to-face communications (e.g., the ability to modify self-presentation to develop an optimized image and relative anonymity). As a result, receivers tend to over interpret the cues inherent in senders’ selfpresentations because the cues in text-based CMC are limited compared to face-to-face interactions. VTuber viewers cannot see the appearance and non-verbal behaviors of Nakanohitos, resulting in reduced cues.
 
 The mainstream live streaming research mostly focused on live streams of real-person streamers who live stream with their real-life appearance. This work contributes to the broader live streaming research in HCI by understanding how viewers of the Otaku community engage with and perceive virtual characters of VTubers.
+-->
 
 ## 3 METHOD
 
+VTuber のライブ・ストリームを視聴するオタク・コミュニティの視聴者の動機や状況を理解し、彼らが VTuber とどのように関わり、認識しているのかを理解するために、VTuber のライブ・ストリームを週 1 回以上、1 年以上にわたって視聴している 21 人の視聴者を対象に、インタビュー形式の質的研究を行いました（表 1）。研究プロトコルは、オンラインのアーカイブデータをもとに作成し、機関内審査委員会（IRB）の承認を得ました。
+
+<!--
 To understand the motivational and situational contexts of viewers from the Otaku community who watch VTuber live streams, and how they engage with and perceive VTubers, we conducted a qualitative interview-based study with 21 viewers who had been watching live streams of VTubers at least once a week for at least a year (Table 1). The study protocol was informed by online archival data and approved by the institutional review board (IRB).
+-->
 
 ### 3.1 Interviewee Recruitment
 
+VTuber は主に Otaku コミュニティからの視聴者を惹きつけているため[9]、潜在的な「熱心な」視聴者には、個人的なつながりか、アクティブユーザー数とスレッド数の両方で中国最大の VTuber ディスカッションボードである National Geographic of Azeroth（NGA）フォーラム[51]の VTuber ディスカッションボードを通じて意図的にアプローチした[57]。4 人のインタビュイーは，著者の一人が参加しているアニメ・コミック・ゲーム（ACG）ファンの WeChat グループからで，WeChat 上のダイレクトメッセージで参加を呼びかけた．残りの 17 人のインタビュー対象者は、NGA フォーラムから募集した。フォーラムには中国語で募集広告が掲載され、参加希望者は WeChat または電子メールで研究チームに連絡するよう求められた。視聴者を自認し、VTuber のライブストリームを週に 1 回以上視聴し、1 年以上の視聴経験がある人全員に参加を呼びかけた。本研究では、視聴者の個人的な経験を重視しており、この種のストリーミングを調査した先行研究はないため、視聴者の認識に影響を与える可能性のある要因を探るためには、意図的なサンプリングが有効でした。しかし、このような方法で募集したため、インタビュー対象者は男性に偏り、ほとんどが学生でした。これは、VTuber の視聴者層について研究チームが持っていた逸話的証拠と一致しています。
+
+<!--
 Because VTubers mostly attract viewers from the Otaku community [9], potential “dedicated” viewers were purposefully approached through either personal connections or VTuber discussion board on the National Geographic of Azeroth (NGA) forum [51], which is the largest VTuber discussion board in China, in terms of both the number of active users and threads [57]. Four interviewees were from a WeChat group of anime, comics, and gaming (ACG) fans that one of the authors joined, and were invited to participate through direct messaging on WeChat. The other 17 interviewees were recruited from the NGA forum. A recruitment advertisement was posted in Chinese on the forum soliciting those who wanted to participate to contact the research team through WeChat or e-mail. All those who self-identified as viewers and who watched at least one VTuber’s live stream once a week with over one year of watching experience were invited to participate. Since this study valued the individual experiences of viewers and there is no previous work exploring this specific type of streaming, purposive sampling was helpful to explore factors that could influence viewers’ perceptions. Due to this recruitment method, however, the recruited interviewees skewed male and were mostly students. This aligns with anecdotal evidence that the research team had about VTuber viewer demographics.
+-->
 
 ### 3.2 Background Material Collection
 
+VTuber 現象についての視点を広げ、インタビュープロトコルのデザインを補強するために、インタビューの前と最中にオンラインリソースから広範な背景資料を収集しました。主な情報源は、NGA フォーラムの VTuber ディスカッションボードでした[51]。この掲示板のユーザーは、カジュアルな視聴者から、愛する VTuber に多大な時間や金銭的支援を提供する熱心なファンまで様々です。このような多様なユーザーがいることで、幅広い意見を収集することができました。さらに、この掲示板では、VTuber についての深い議論や熱い討論が行われている。これらのスレッドは、研究チームが、進化する VTuber 業界の最新情報を入手し、インタビューのための関連テーマを特定するのに役立ちました。
+
+筆者 1 名は、2019 年 10 月から 2019 年 12 月の間、この掲示板の投稿を毎日追いかけ、視聴者の VTuber に対する認識、VTuber のライブ配信やナカノヒトや VTuber 事務所に関する議論、VTuber 業界の重要な変化などを反映した上位のアクティブなスレッドを追った。人気 VTuber の名前や所属事務所、VTuber や中の人などの概念をキーワードにして、フォローすべきスレッドを検索しました。52 のフォーラムスレッドから 1059 件の投稿を抽出しました。Strauss のオープンコーディング法[10]を用いて、スレッド内の投稿を分析し、予備的なテーマを特定し、それをインタビュープロトコルに反映させた。
+
+<!--
 To broaden the perspectives on the VTuber phenomenon and scaffold the interview protocol design, we collected extensive background material from online resources before and during the interview process. The primary source of information was the VTuber discussion board of the NGA forum [51]. The users of the board vary from casual viewers to highly dedicated fans who offer significant time or monetary support to their beloved VTubers. Such user diversity on this board allowed us to sample a broad range of opinions. Furthermore, the board archives some in-depth discussions and heated debates about VTubers. These threads helped the research team stay up-to-date with the evolving VTuber industry and identify relevant themes for the interviews.
 
 One author followed the posts in this discussion board daily between October 2019 and December 2019, following the top active threads reflecting viewers’ perceptions of VTubers, their discussions about VTuber’s live streams, Nakanotitos and VTuber agencies, and important changes in the VTuber industry. We used keywords including popular VTubers’ names and agencies, and notions like VTuber and Nakanohito to search for threads to follow. Altogether 1059 posts from across 52 forum threads were sampled. Strauss’ open coding method was used [10] to analyze the posts in the threads and identified preliminary themes, which were incorporated into the interview protocol.
+-->
 
 ### 3.3 Interview Protocol
 
+VTuber の熱心な視聴者 21 名に半構造化インタビューを実施。インタビューは、2019 年の 11 月と 12 月、2020 年の 3 月と 4 月に、ビデオまたはオーディオコールを使って遠隔地で行われました。各インタビューは約 60 分で、インタビュー対象者には 50CNY の謝礼が提供されました。インタビューでは、視聴者が VTuber のコンテンツを視聴する動機、どのような種類のコンテンツを視聴したか、視聴して楽しかったか、VTuber のライブストリームの好きな点と嫌いな点、VTuber や他の視聴者とどのように交流したか、などについて質問しました。また、VTuber と生身の人間の違いや、バーチャル・ライブ・ストリーミングの中でのナカノヒトの役割についても考えてもらいました。企業が運営する VTuber では、なかのひとが正当な理由なく交代させられるなど、不当な扱いを受けているケースが多いため、インタビューの際にはこれらの問題について考えてもらいました。
+
+インタビューの 2 週間前に、インタビュアーとの信頼関係を築くために、インタビュアーに連絡を取り、好きな VTuber の面白い動画を紹介してもらいました。すべてのインタビュー対象者は、インタビューの前に少なくとも 1 本の動画を送ってくれました。2 人の著者が動画を確認し、主なテーマを記しました。インタビューでは、VTuber がどのようなパフォーマンスをして視聴者を惹きつけているか、どのような話題でおしゃべりしているか、予想外のドラマチックな瞬間など、彼らが共有したコンテンツに合わせた質問をしました。インタビューは北京語で行われ、オーディオテープに録音され、個人を特定できる情報を削除した上で、テープ起こしサービス iflyrec.cn によって書き起こされました。
+
+<!--
 Semi-structured interviews were conducted with 21 dedicated viewers of VTubers. The interviews were conducted remotely using video or audio calls in November and December of 2019 and March and April of 2020. Each interview lasted approximately 60 minutes and interviewees were provided with a 50 CNY honorarium for their time. The interviews included questions about viewer’s motivations to watch VTubers’ content, what types of content they watched or enjoyed watching, what they liked and disliked about VTubers’ live streams, how they interacted with VTubers and other viewers, and so on. Interviewees were also primed to think about differences between VTubers and real-person streamers and their perceptions towards the roles that Nakanohitos play within virtual live streaming. Because there were many cases where corporateoperated VTubers were mistreated, e.g., Nakanohitos being replaced without a fair reason, we asked interviewees to reflect on these issues during the interview
 
 To build rapport with interviewees, we contacted them 2 weeks prior to the interviews and asked them to share interesting videos of their favorite VTubers. All interviewees sent at least one video prior to the interviews. Two authors reviewed the videos and noted main themes. During the interviews, we then asked questions tailored to the content they had shared, e.g., how VTubers performed and engaged viewers, what topics they chatted about, unexpected dramatic moments, etc. Interviews were conducted in Mandarin, audio-taped, and transcribed by the transcription service iflyrec.cn after removing all personally identifiable information.
+-->
 
 ### 3.4 Data Analysis
 
+インタビューの記録は，オープン・コーディング法[10]を用いて分析した．北京語を母国語とする 2 人の著者が、帰納的アプローチを用いて個別にトランスクリプトをコーディングし、意見の相違についてはミーティングを行い、コードについての合意を得た。その後、すべてのコードを英語に翻訳し、親和性ダイアグラムを用いて研究チームで議論し、新たなテーマを見つけ出した。すべてのコードは、付箋紙に書き写し、ランダムな順序で並べました。そして、そのメモを繰り返しテーマの階層に並べ直し、VTuber のライブストリーミングに対する視聴者の行動、エンゲージメント、認識について合意に達しました。また、収集した背景資料は、VTuber のコミュニティのサブカルチャーやコードの全体的な文脈に関する知識を補うために使用しました。多くのインタビュイーの回答には、ミソジニーやセクシズムの感情が見られた。
+
+女性蔑視は、オタクのサブカルチャーとバーチャルアイドル業界の両方に根ざしているのかもしれない。性差別はオタクサブカルチャーに蔓延しているようで、そこでは可愛らしさが望まれたり、コミュニティにとって性的に魅力的であったりします[27]。また、バーチャルアイドル業界は、性差別を積極的に利用し、商業化しています[5]。私たちは、既存の VTuber コミュニティにおけるジェンダーバイアスが、本研究で観察された行動やインタラクションの一因となっている可能性を十分に認識しています。複数のジェンダーの研究チームは、女性蔑視的なニュアンスが排除され、反映されるようにインタビューの回答を文脈化しました。
+
+<!--
 The interview transcripts were analyzed using an open coding method [10]. Two native Mandarin-speaking authors coded the transcripts individually using an inductive approach and met to discuss disagreements to gain consensus about codes. All the codes were then translated into English and were discussed by the research team using affinity diagramming to find emerging themes. All codes were transcribed on sticky notes and then arranged in a random order. We then iteratively rearranged the notes into a hierarchy of themes and reached a consensus about viewer behaviors, engagement, and perceptions of VTuber live streaming. The collected background material was also used to supplement our knowledge about the subculture of VTubers’ communities and the overall context for the codes. Misogyny and sexism sentiment was present in many interviewee’s responses.
 
 The misogyny might be rooted from both the Otaku subculture and the virtual idol industry. Sexism seems prevalent in the Otaku subculture, where cuteness is desired or sexually attractive for the community [27]. The virtual idol industry also actively exploits and commercializes sexism [5]. We fully acknowledge the existing gender biases in the existing VTuber communities, which might contribute to the behaviors and interactions observed in this study. The multi-gender research team has contextualized interviewee responses to ensure the misogynistic undertones are eliminated and reflected upon.
+-->
 
 > Table 1: Summary of participants interviewed. Preferred platforms: YouTube (YT), Bilibili (BB), Niconico (NN)
 
@@ -161,43 +207,83 @@ The misogyny might be rooted from both the Otaku subculture and the virtual idol
 
 ### 4.1 Viewer Motivation
 
+インタビューに参加した人々は，自分が熱心なオタク・サブカルチャーのメンバーであり，日本のマンガ，アニメ，ゲームの熱心な消費者であると述べている．彼らは、VTuber の多くがアニメ・キャラクター風の外見を持ち、オタク・サブカルチャーに関連したコンテンツを配信する傾向がある[27]ことから、彼らの嗜好や興味に合致すると考えた。彼らが VTuber のライブ配信に魅力を感じたのは、VTuber の外見や特別にデザインされたペルソナに魅力を感じたことと、VTuber のライブ配信では、「メアはとてもカワイイので、彼女のライブを見逃すと後悔する」（P19）、「VTuber の配信では、非現実的なキャラクターが現実のものとなり、好きなキャラクターとおしゃべりしたり、交流したりすることができて、とてもカッコイイ」（P15）など、好きなアニメのキャラクターと触れ合える機会があったからである。また、週に数回という熱心な視聴行動は、アニメやマンガの長期連載を追うことへの強い関心によるものだという。まるでアニメの全話を見ているような感覚です」（P3）。また、「VTuber のコンテンツは、生身の人間が配信するよりもクリエイティブで想像を超えたものになる可能性がある」（P17）として、好奇心や創造性を VTuber 視聴の主な動機として挙げる人もいました。その他の動機としては、先行研究[24, 44, 60]と同様に、リラクゼーションや娯楽、暇つぶし、仲間やコミュニティの感覚を味わうためなどが挙げられた。
+
+<!--
 All interviewees described themselves as dedicated members of the Otaku subculture and were enthusiastic consumers of Japanese manga, anime, and video games. They found that VTubers, most of whom have anime-character-style appearances and tend to deliver content related to the Otaku subculture [27], aligned with their tastes and interests. They were attracted to VTuber live streaming because VTuber appearances and specially-designed persona appealed to them, and VTuber live streaming gave them opportunities to interact with their favorite anime characters, e.g., “Mea is so kawaii that I will regret if I miss her show” (P19) and “VTuber streaming turns an unreal character into reality, so that you can chat and interact with characters you like, which is very cool” (P15). They also attributed their dedicated viewing behaviors (several times per week) to their strong interests in following a long series of anime or manga, e.g., “I watch her live streams almost every time she streams. It’s just like following every episode of an anime” (P3). Several interviewees also noted curiosity and creativity as a main motivation to watch VTuber, because “vtubers’ content could be more creative and beyond imagination than real-person streamers” (P17). Other motivations included to seek relaxation and entertainment, to pass time, and to experience a sense of company and community, similar to prior findings [24, 44, 60].
+-->
 
 ### 4.2 Streaming Content and Interactions
 
+インタビュー対象者は、VTuber のライブ・ストリームを見て、リアル・パーソンのライブ・ストリームと同じような内容を見ていました。しかし、先行研究と比較すると、VTuber の提供するコンテンツや、視聴者のライブストリームへの関わり方に特徴がありました。
+
+<!--
 Interviewees watched VTubers’ live streams about similar content as in real-person live streams. However, compared to prior research, there were unique content provided by VTubers’ and ways that viewers engaged with live streams.
+-->
 
 #### 4.2.1 Main Activities: Singing, Chatting, and Gaming.
 
+インタビューによると，VTuber の活動としては，歌，チャット，ゲームの 3 つがよく見られたという。現実のストリーマーの同様のパフォーマンス[44]と比較して、VTuber のコンテンツは、よりマンガやアニメのサブカルチャーに沿ったものになる傾向があった。例えば、「VTuber は皆、アニメ、マンガ、ゲームに特化している。より深みがあるので、共鳴する部分も多いのかな」（P7）。(P7). また、「VTuber はいつも想像を絶する番組作りで感心させられる」（P12）、「初心者が一緒に遊ぶような（ボードゲームの）キャンペーンだった」（P4）など、配信を楽しませるための独創的な番組企画も重視されていた。
+
+また、バーチャル・アバターがもたらす斬新なストリーミングの機会もいくつか挙げられました。例えば、ゲームの共同配信では、2 人の Vtuber がアバターを入れ替えて配信しました。慣れ親しんだ魂が新しい体になる、なんて楽しいんだろう！」（P17）、「自分のアバターが今までやったことのないことをする」（P20）など、アバターと中の人のミスマッチに興奮している様子が伺えます。P19 は、VTuber が運営するショーでは、ステージ上のほとんどのキャラクターが VTuber のアバターのバリエーションで表現されていて、すべての声を同じ中の人が担当しているという話をしていた。
+
+一般的には、3D アバターの方が 2D アバターよりも優れているという意見はありませんでしたが、3D アバターは全身の動きを利用してより高い表現力を得ることができるという点を評価しています。しかし、現在の 3D モーションキャプチャー技術は、経済的に不安定な VTuber にとっては高価なものであるため、2D アバターでも「おしゃべりするには十分」（P18）であると認識しているようだ。
+
+<!--
 Interviewees reported that singing, chatting, and gaming were the three most common VTuber activities they watched. In comparison to similar performances of real-person streamers [44], VTubers’ content tended to align more with manga and anime subcultures, e.g., “VTubers all have some specialties in anime, manga, and video game. There is more depth to it so is there more resonance.” (P7). There was also a strong emphasis on creative program planning to ensure that the streams are entertaining, e.g.,“VTubers always impress us with unimaginable program design” (P12). and “it was a (board game) campaign for newbies as if they played together” (P4).
 
 Interviewees also noted several novel streaming opportunities that virtual avatars afford. For example, during a gaming co-streaming session, two Vtubers switched their avatars. Interviewees were excited by the mismatches between avatars and the Nakanohitos, e.g., “Familiar souls, new bodies, what fun it is!”(P17), and “Their avatars do things that they have never done before”(P20). P19 mentioned another VTuber who ran a show where most characters on the stage were represented by variants of the VTuber avatar that were all voiced by the same Nakanohito.
 
 In general, interviewees did not have a strong preference on the 3D avatar streams over 2D ones, although appreciating 3D avatar’s ability to leverage full-body motions to achieve a higher degree of expressiveness. However, interviewees also recognized that current 3D motion capture technologies were costly for individual VTubers with unstable financial source, so 2D avatars were “good enough for chatting” (P18).
+-->
 
 #### 4.2.2 Content about the Daily Lives of Nakanohitos.
 
+インタビュー参加者は、ナカノヒトがライブストリーム中に自分の個人的な日常生活を共有したり、現実世界の出来事について話したりすることを楽しんでいました。インタビューに答えてくれた人の多くは、熱心にアニメを見ていて、自分の好きなアニメのキャラクターが空想上のアニメの世界にしか存在しないことを知っています。しかし、VTuber が共有する日常生活のコンテンツは、皮肉にも VTuber がそうであるように見える典型的なアニメ・キャラクターよりも、視聴者に近いものとなっています。彼女の経験はリアルで、現実の世界との共通点を感じさせるものです。彼女は、典型的なアニメキャラクターよりもずっと身近に感じられる」（P3）。この感覚は、P8 も「以前は、マネタイズのプレッシャーのために、仕事を終えてもプレッシャーから逃れられない『会社の奴隷』だったメアの中の人に、（本物らしさを）感じることができる」と語っている。この神楽メアの例では、企業が運営する VTuber であるにもかかわらず、日常生活を公開することで、視聴者は彼女から「本物」を感じ取り、親近感を抱くことができる。また、「友達同士のおしゃべりのように生活を共有しているようで、面白いというよりはホッとする」（P5）というように、仲間意識を持つことも大切にしている。
+
+<!--
 Interviewees enjoyed that Nakanohitos shared their personal daily lives and talked about real-world events during live streams. Most interviewees are dedicated anime watchers and are aware that their favorite anime characters only exist in fantasized anime worlds. The daily life content that VTubers share, however, brings them closer to viewers than typical anime characters, which VTubers ironically appear to be, e.g., “Kagura Mea talks about how she (the Nakanohito) has been doing and comments on different events, like the recent typhoon in Japan ... Her experiences feel real, (it is) something that has a sense of commonalities with the real world ... She feels much closer than a typical anime character” (P3). This feeling was echoed by P8, “before, because of the pressure of monetization, (you can feel) the authenticity of Mea’s Nakanohito, a ‘corporate slave’ who could not escape from pressure even after getting off her work”. In this example of Kagura Mea, although she is a corporate-run VTuber, her sharing of daily lives made viewers perceive more ‘authenticity’ from her and feel closer to her. Our interviewees also valued having a sense of community and company, i.e., “(it is) like someone sharing her life just like chat between friends, (which is) more relieving than interesting”(P5).
+-->
 
 #### 4.2.3 Co-streaming.
 
+また、VTuber のライブ・ストリーミングの魅力的でポピュラーな形態として、複数のインタビュイーから、リアルパーソン・コー・ストリーミングに似たコー・ストリーミングが挙げられています[38]。複数の VTuber のアバターが 1 つのバーチャル・ステージで一緒にパフォーマンスをする場合（図 1c）と、VTuber が他の実在のストリーマーと一緒にストリーミングする場合があります。後者の場合、VTuber と実在のストリーマーは通常、合成ビデオ・ストリームの中で並んで表示されるが、例外的に VTuber が物理的な世界のディスプレイに表示されることもある。インタビューに答えてくださった 4 人の方がおっしゃっていたように、VTuber の高槻律さんと生身のストリーマーである鈴木裕太さんは、最も人気のある共演者の一組です。二人は、まるで恋人同士のように、ライブの様子を一緒に配信することがあります。彼らがお互いをサポートし、親密に交流している様子を、取材者は楽しんでいる。
+
+視聴者の中には、お気に入りの VTuber との共演をきっかけに、新たな VTuber を発見する人も少なくない。VTuber が配信するパフォーマンスは、歌やチャット、ゲームなどが中心だが、VTuber の配信の魅力は、配信者同士の交流にあるとインタビューに答えてくれた。P6 は、「雑談のやりとりなど、一人での配信では見られない新しいコンテンツがたくさんある」と説明した。また、P7 のように、VTuber 同士の友情や人間関係を楽しんでいる人もいました。「アンサンブルキャストのテレビ番組を見るように、ストリーマーのグループがお互いに親密な関係にあるのを見るのが好きです。".
+
+<!--
 Co-streaming is also mentioned by several interviewees as an engaging and popular form of VTuber live streaming, similar to real-person co-streaming [38]. In some instances, the avatars of multiple VTubers perform on one virtual stage together (Figure 1c), whereas in other cases, VTubers stream with other realperson streamers. In the latter situation, VTubers and real-person streamers are typically shown side-by-side in a composite video stream, with occasional exceptions where VTubers appear on a display in the physical world. As mentioned by four interviewees, one of the most popular co-streaming pairs is VTuber Takatsuki Ritsu and real-person streamer Suzuki Yuyuuta. They sometimes co-stream live performances together, acting as if they were in romantic or platonic relationship. Interviewees enjoyed watching the pair support and interact with each other intimately.
 
 Many viewers discovered new VTubers to watch because they had previously co-streamed with their favorite VTubers. Although the performances that VTubers co-stream are mostly composed of singing, chatting, and gaming, interviewees highlighted the interactions between streamers as what made VTuber streams engaging. P6 explained that "there is a lot of new content that you do not see in single-streamer sessions, like the exchange of banter". Some interviewees enjoyed displays of friendship or inter-personal relationships between VTubers, as P7 described, “I like seeing a group of streamers in close relationships with each other, like watching an ensemble cast TV show. ”.
+-->
 
 #### 4.2.4 Technological Limitations Affecting Experiences.
 
+現在、バーチャル・ストリーミングに利用できる技術は、コンテンツの多様性を制限し、視聴者との関係を築く上での制約となっていることがわかりました。
+
+彼らはまず、アバターにもっと豊かで自然な表情を持たせたいと考えました。2D の VTuber をアニメーションさせるための最も一般的なツールである「Live2D」では、アバターのさまざまな部分のアニメーションがあらかじめ記録されています。2D アバターの顔には、眉毛、目、口など、アニメーションできる部分が限られているため、VTuber の言葉によるコミュニケーションが硬くなってしまう。P6 は、「VTuber の表情がもっと豊かになって、自然に会話しているように見えるようになるといいですね......話しているときに表情が変わったりして」と語った。
+
+また、VTuber のパフォーマンスの多くは、中の人がパソコンの前で行う空間に限定されており、全身を使った動きや物理的な世界とのインタラクションはほとんどないことが分かった。モーションキャプチャー技術は、3D アバターの全身アニメーションを可能にし、VTuber のコンテンツのレパートリーをダンスやモーション・センシング・ゲームなどに拡大することができるが、コストがかかり、制限がないわけではない。P8 のコメントによると、「VTuber はフェイスキャプチャーに依存しているため、常にカメラを見ていなければなりません。大企業の中には 3D モーションキャプチャーを導入しているところもありますが、まだまだキャプチャーできないことが多く、リアルな人間のストリームでしか見ることができません」。バーチャル・ストリーミングの中では、実物を手に取って操作するなど、物理的な世界とのインタラクションが、技術的に大きな課題となっています。
+
+<!--
 Interviewees found that the technologies currently available for virtual streaming limit the diversity of content that is created and constrain streamers’ abilities to engage with viewers.
 
 They first desired for avatars to have richer and more natural facial expressions. The most popular tool for animating 2D VTubers, Live2D, plays pre-recorded animations of different parts of an avatar. Since there are only a few animatable sections of a 2D avatar’s face (i.e., the eyebrows, eyes, and mouth), this limited set of available facial expressions made VTuber’s verbal communications look rigid. P6 remarked, “I hope that VTubers can have richer facial expressions, such that in conversations, they look more like real people talking naturally... facial expression changes as she talks”.
 
 Viewers also found that most performances of VTubers were confined to the space that a Nakanohito had in front of their desktop computer and involved little full-body movement or interaction with the physical world. Motion capture technology can drive the full-body animation of 3D avatars and expand the repertoire of VTubers’ content to include dancing and motion sensing games, but it is costly and not free of limitations. As P8 commented, "VTubers rely on face capture and therefore have to look at the camera all the time. Some large companies have 3D motion capture, but there are still many things that it cannot capture and only visible on real-person streams". Within virtual streaming, interaction with the physical world, such as picking up and interacting with real objects, remains a substantial technical challenge.
+-->
 
 #### 4.2.5 Viewer Interactions During and Beyond Streaming.
 
+VTuber の視聴者間のインタラクションは、リアルな人のストリームでのインタラクションと多くの共通要素を持っているが [44, 64]、微妙な違いもある。視聴者は VTuber を金銭的に支援することも厭わないが、サブカルチャーのアイデンティティを強化するために、ミームなどの文化的トークンの使用に注意を払っている。また、YouTube Super Chat や Bilibili のチャンネルバッジを購入して VTuber を支援したことがあると回答している。彼らの主な動機は，「（VTuber の）番組を見ていて，本当に楽しくてワクワクするときは，最低限の金額を払って応援する」（P7）など，現実のストリーム視聴者と同じように，楽しいコンテンツを提供するストリーマーを応援することにあった[44]．
+
+今回のインタビューでは、VTuber のコミュニティにおけるミームの重要な役割が明らかになった。コミュニティのメンバーは、VTuber のパフォーマンスの劇的な瞬間を、ライブストリームのスクリーンショットを使ってミームとして作成することが多い。これらのミームは、図や文字で表現されることもあれば、その両方が混在することもある（図 2）。NGA VTuber ディスカッションボードでは、人気のある VTuber のミームを新規参入者に紹介するためのスレッドがコミュニティで維持されていた。さらに、ミームは、ライブストリームやファングループのディスカッションのコメントで広く参照され、再現された。視聴者の間では、「迫害」と呼ばれるグループミームがよく見られた。"迫害」は、集団行動として、ストリームの全体的な娯楽性を高めるとともに、視聴者の集団的なアイデンティティを強化するものである[17]。VTuber のコミュニティでは、メンバーは、ミームの知識を学び、不適切と思われるミームの使用を拒否することで、グループのアイデンティティを強化しようとした。P13 は、「ファングループのチャで使われている最新のミームを理解できるように、より多くのストリームを見るようになりました」と報告している。このような熱心な視聴者にとって、ミームの正しい意味や使い方を知ることは、外部の人間と差別化するための文化資本の一形態となりうる[50]。
+
+<!--
 VTuber viewer interactions share many common elements with those within real-person streams [44, 64] but also bear subtle differences. While viewers were willing to provide monetary support to VTubers, they paid more attention to the usage of cultural tokens, such as memes, to reinforce their subculture identities. All interviewees reported that they had supported VTubers by purchasing YouTube Super Chat and Bilibili channel badges through a hierarchical membership system. Their main motivation was to show support for streamers who provided enjoyable content, similar to real-person stream viewers [44], e.g., "When I am really happy and excited while watching the (VTuber’s) program, I will pay the minimum amount to encourage her" (P7).
 
 Our interviews revealed the important role of memes in VTuber communities. Members of these communities frequently created memes out of dramatic moments of VTubers’ performances with screenshots of live streams. These memes often took graphical or textual forms, or a mixture of both (Figure 2). On the NGA VTuber discussion board, there were community-maintained threads dedicated to introducing popular VTuber memes to newcomers. Further, memes were widely referenced and recreated in the comments of live streams and fan group discussions. Viewers often engaged in a particular type of group meme, playfully termed “persecution”, which involved the burst posting of mischievous memes about a streamer during their live stream. “Persecution”, as a group action, adds to the overall entertaining atmosphere of a stream while reinforcing the collective identity of the viewers [17]. In VTuber communities, members sought to strengthen the group’s identity by learning meme knowledge and rejecting meme usage that they deemed inappropriate. P13 reported that “I started to watch more streams so that I can understand the most recent memes used in the fan group cha”. For these dedicated viewers, knowing the correct meaning and usage of memes can be a form of cultural capital to differentiate them from outsiders [50].
+-->
 
 > Figure 2: Memes of VTubers. Names of VTubers with meme text translated, if available, from left to right: Nekomiya Hinata (What are the bosses talking about?), Tsukino Mito, Sasaki Saku (Arrogant), Natsuiro Matsur, Kizuna Ai (Ehyo-yo), Minato Aqua and Kagura Nana (How could crying help?).
 
