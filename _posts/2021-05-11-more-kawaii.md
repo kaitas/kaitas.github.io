@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "海外論文:リアルな配信者よりもカワイイ：オタクコミュニティがバーチャルYouTuberとどのように関わり、どのように認識しているか"
+title: "コミュニティがバーチャルYouTuberとどのように関わり、どのように認識しているかについての海外論文"
 date: "2021-05-11 23:52:00"
 author: aki
 description: More Kawaii than a Real-Person Streamer - Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers
@@ -8,12 +8,14 @@ preview: http://img.youtube.com/vi/IuMhbo0MZrU/hqdefault.jpg
 categories: Research
 ---
 
+# "海外論文:リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか"
+
 This is authorized Japanese translation of "More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers".
 [https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf]
 
-国際会議[CHI2021](https://chi2021.acm.org/)[^chi] にて、興味深い論文「リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか」（原題："More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers"）がありましたので、著者の Zhicong Lu さんに Twitter 上でご許可をいただいて日本語翻訳させていただきました。日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待します。
+国際会議[CHI2021](https://chi2021.acm.org/) にて、興味深い論文「リアルな配信者よりもカワイイ ：オタクコミュニティがバーチャル YouTuber とどのように関わり、どのように認識しているか」（原題："More Kawaii than a Real-Person Streamer: Understanding How the Otaku Community Engages with and Perceives Virtual YouTubers"）がありましたので、著者の Zhicong Lu さんに Twitter 上でご許可をいただいて日本語翻訳させていただきました。日本発祥である VTuber 文化が、現在、どのように受容されているかを垣間見ることができます。また日本の学術コミュニティにおいても、より VTuber や SNS、配信者文化に関する学術的研究が活発になる事を期待します。
 
-[^chi] CHI は「カイ」と発音され、世界中の研究者や実務者が集まる最新のインタラクティブ技術について議論する国際会議です。CHI は一般的に[HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)(Human Computer Interaction)の分野で最も権威のあるものと考えられており、毎年何千人もの国際的な参加者が集まります。今回横浜で開催された、CHI2021 は初めてのオンライン・バーチャル・カンファレンスとして開催されました。CHI2021 のテーマは「Making Waves, Combining Strengths」。HCI における最新の発見や進歩を取り上げ、既存の状況を揺るがすような波を起こすことを著者や参加者に促進し、CHI とは、様々な人が様々な視点から力を結集するプラットフォームであると考えています（[CHI2021](https://chi2021.acm.org/)ウェブサイトより）。
+※ CHI は ACM の国際会議で、世界中の研究者や実務者が集まる最新のインタラクティブ技術について議論する歴史ある会議です。CHI は「カイ」と発音し、一般的に[HCI](https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction)(Human Computer Interaction)の分野で最も権威のあるものと考えられており、毎年何千人もの国際的な参加者が集まります。今回横浜で開催された、CHI2021 は初めてのオンライン・バーチャル・カンファレンスとして開催されました。CHI2021 のテーマは「Making Waves, Combining Strengths」。HCI における最新の発見や進歩を取り上げ、既存の状況を揺るがすような波を起こすことを著者や参加者に促進し、CHI とは、様々な人が様々な視点から力を結集するプラットフォームであると考えています（[CHI2021](https://chi2021.acm.org/)ウェブサイトより）。
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1392067792078213125">date</a></blockquote>
 
