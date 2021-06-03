@@ -402,11 +402,11 @@ Interviewees also mentioned that VTubers extend their virtual lives and presence
 Most interviewees were interested in such artefacts and perceived them as a way to stay connected with their favorite VTubers in real life, in the real world. They also regarded these artefacts (e.g., garage kit) as a way to extend VTubers “physically” in the real world, and they desired to purchase them to support their favorite VTubers, e.g., “I think through buying a garage kit of her, I get a copy of her in the real world which can be with me. It is also my way to support her” (P8).
 -->
 
-### 4.4 Perceptions of Nakanohito Disembodiment and Nakanohito’s Labor
+### 4.4 ナカノヒトの身体的分離の認識及びナカノヒトの労働
 
-中の人とは、アバターの背後で VTuber の声や動きをコントロールする人のことです。中の人は、VTuber の声や動きをコントロールする役割を担い、声質やライブ配信中に視聴者との会話を盛り上げる才能が求められます。中の人は、VTuber のパフォーマンスや視聴者との交流において重要な役割を担っていますが、VTuber の中の人は、ほとんどのライブ配信において見えません。多くのなかのひとは、個人情報保護の観点や企業の方針などから、自分の素性を公開していません。公開している場合でも、VTuber のアイデンティティは、中の人のアイデンティティよりも、企業や配信者が最初に設定した仮想アバターのペルソナによって決定されることがほとんどです。例えば、女性漫画家である佃煮のりおは、人気男性 VTuber である犬山たまきの中の人である。男性のキャラクターを女性が演じていることはわかっていても、バーチャルアバターの人物像に惹かれる視聴者は多い。佃煮のりおと犬山たまきが、あたかも同時進行で会話をしているかのようなユニークな番組を楽しんでいるのだ（図 3）。
+中の人とは、アバターの背後で VTuber の声や動きをコントロールする人のことです。中の人は、VTuber の声や動きをコントロールする役割を担い、声質やライブ配信中に視聴者との会話を盛り上げる才能が求められます。中の人は、VTuber のパフォーマンスや視聴者との交流において重要な役割を担っていますが、VTuber の中の人は、ほとんどのライブ配信において見えません。多くの中の人は、個人情報保護の観点や企業の方針などから、自分の素性を公開していません。公開している場合でも、VTuber のアイデンティティは、中の人のアイデンティティよりも、企業や配信者が最初に設定した仮想アバターのペルソナによって決定されることがほとんどです。例えば、女性漫画家である**佃煮のりお**は、人気男性 VTuber である**犬山たまき**の中の人です。男性のキャラクターを女性が演じていることはわかっていても、バーチャルアバターの人物像に惹かれる視聴者は多いです。彼らは、佃煮のりおと犬山たまきが、あたかもコラボ配信をしているかのように同時進行で会話をするユニークな番組を楽しみます（図 3）。
 
-このように、中の人とバーチャル・アバターとの関係が希薄であることは、バーチャル・ライブ・ストリーミングの特徴であり、アイデンティティ管理やユーザー・エンゲージメントに関する課題をもたらしている。
+このように、中の人とバーチャル・アバターとの関係が希薄であることは、バーチャル・ライブ・ストリーミングの特徴であり、アイデンティティ管理やユーザー・エンゲージメントに関する課題をもたらします。
 
 <!--
 A Nakanohito (中の人) is the person performing behind an avatar who provides the VTuber’s voice and controls their movements. A proficient Nakanohito must have a pleasant voice and talent for generating interesting conversations with viewers during live streams. Although they play a pivotal role in VTubers’ performances and interactions with viewers, a VTuber’s Nakanohito remains invisible throughout most live streams. Most Nakanohitos do not disclose their personal identity to the public, due to privacy concerns or corporations’ policies. Even for those who do disclose some of their personal information to the public, VTubers’ identities are mostly determined by the persona of the virtual avatar that was initially set by the company or the streamer rather than the Nakanohito’s identity. For example, Tsukudani Norio (佃煮のりお) is a female manga artist, who is the Nakanohito of a popular male VTuber Inuyama Tamaki (犬山たまき). Although viewers know that a female is portraying a male character, many viewers are still attracted to the persona of the virtual avatar. They enjoy watching a unique show wherein Tsukudani Norio and Inuyama Tamaki stream simultaneously talking to each other, as if they were co-streaming (Figure 3).
@@ -414,9 +414,9 @@ A Nakanohito (中の人) is the person performing behind an avatar who provides 
 The degree of disembodiment between Nakanohitos and their virtual avatars is unique in virtual live streaming, as it brings forth challenges related to identity management and user engagement.
 -->
 
-#### 4.4.1 Intentionally Maintaining Nakanohito and Avatar Disembodiment.
+#### 4.4.1 ナカノヒトとアバターの分離を意図的に維持する
 
-VTuber のコミュニティでは、なかのひとの個人情報はデリケートなものであり、視聴者がネット上でそのような話をすることは避けるべきであるという認識で一致しているとインタビューに答えている。例えば、NGA の VTuber サブフォーラムでは、なかのひとの正体や個人情報の公開を禁止することが第一のルールとなっている（図 4）。これらのコミュニティメンバーは、中の人の個人情報の拡散を制限することで、VTuber の体外離脱を積極的に維持しているのである。ほとんどのインタビュイーは、なかのひとに興味はあっても、その素性を知ることにはあまり関心がないと答えており、なかのひとのプライバシーを詮索するような行為を否定している。たとえば、「なかのひとの素性を知ったり聞いたりすることはない。彼らのプライバシーは尊重されるべきだ」（P8）。中の人の個人情報を話さないというルールは、企業や他のステークホルダーから要求されたり、提案されたりするものだと指摘する人もいる。中の人についての議論を禁止することは、彼らの運営や経営にとって良いことなのかもしれません」（P13）。興味深いことに、ほとんどのコミュニティメンバーは、これらのルールが企業の利益のためのものだと知っていても、それを支持し、守っていた。
+VTuber のコミュニティでは、なかのひとの個人情報はデリケートなものであり、視聴者がネット上でそのような話をすることは避けるべきであるという認識で一致しているとインタビューに答えています。例えば、NGA の VTuber サブフォーラムでは、なかのひとの正体や個人情報の公開を禁止することが第一のルールとなっています（図 4）。これらのコミュニティメンバーは、中の人の個人情報の拡散を制限することで、VTuber の体外離脱を積極的に維持しています。ほとんどのインタビュイーは、なかのひとに興味はあっても、その素性を知ることにはあまり関心がないと答えており、なかのひとのプライバシーを詮索するような行為を否定しています。たとえば、「なかのひとの素性を知ったり聞いたりすることはない。彼らのプライバシーは尊重されるべきだ」（P8）。中の人の個人情報を話さないというルールは企業や他のステークホルダーから要求されたり、提案されたりするものだと指摘する人もいます。「彼らの戦略はリスクやトラブルを避けるため中の人を見えなくすることであり、中の人に関する議論を禁じることは運営や経営にとって良いことなのかもしれません」（P13）。興味深いことに、ほとんどのコミュニティメンバーは、これらのルールが企業の利益のためのものだと知っていても、それを支持し、守りました。
 
 <!--
 Interviewees noted that the VTuber community agreed that personal information about Nakanohitos is sensitive and viewers should avoid talking about it online. For example, on the VTuber sub-forum of NGA, the first rule was that discussions about the identity of Nakanohitos and disclosing their personal information was prohibited (Figure 4). These community members actively maintain the disembodiment of VTubers by limiting the spread of Nakanohito’s personal information. Most interviewees reported that although they were curious about Nakanohitos, they had little interest in knowing their identities and they denounced behaviors relating to prying into Nakanohitos’ privacy, e.g., “I tend not to know or ask about Nakanohitos’ identities. Their privacy should be respected” (P8). Some interviewees noted that rules about not discussing Nakanohito’s personal information are required or suggested by corporations or other stakeholders, because “their strategies are to make Nakanohito more invisible to avoid risks or trouble. Prohibiting discussions about Nakanohito could be good for their operation and management” (P13). Interestingly, most community members supported and followed these rules even if they knew that they were for corporate interests.
@@ -426,13 +426,13 @@ Interviewees noted that the VTuber community agreed that personal information ab
 
 > Figure 4: Rules of NGA’s VTuber subforum. Translation of text: (1) Discussing a Nakanohitoe’s identity is prohibited, unless it has been disclosed implicitly in activities; (2) Discussing accidentally leaked Nakanohito personal information is prohibited; (3) Under certain circumstances, discussions about certain Nakanohito-related topics may be allowed by the forum committee.
 
-#### 4.4.2 Maintaining the Disembodiment of Nakanohitos to Maintain Perfect Impressions.
+#### 4.4.2 完全な印象を保つためにナカノヒトとアバターの分離を維持する
 
-バーチャル・アバターの完璧なイメージを維持するために、体外離脱を意図的に支持するインタビュイーもいる。彼女のビデオやストリームを見て、とてもがっかりしたり、不快に感じたりして、彼女を見捨ててしまうこともあります」（P8）。このような女性蔑視的な感情は、オタク・コミュニティ[27]における可愛らしさへの嗜好や、VTuber との心理的な距離感、VTuber を実在の人物よりもキャラクターとして認識していることが根底にあると考えられる。
+バーチャル・アバターの完璧なイメージを維持するために、分離を意図的に支持するインタビュイーもいました。「中の人がVTuberのペルソナと全く異なる、例えば中の人の容姿がアバターほどかわいくないなどのことを知ってしまった場合は、彼女のビデオやストリームを見て、とてもがっかりしたり、不快に感じたりして、彼女を見捨ててしまうこともあります」（P8）。このような女性蔑視的な感情は、オタク・コミュニティ[27]における可愛らしさへの嗜好や、VTuber との心理的な距離感、VTuber を実在の人物よりもキャラクターとして認識していることが根底にあると考えられます。
 
-なかのひとは裏方であり、配信時には声を公開したり変えたりするだけなので、視聴者がなかのひとの本当の人格やアイデンティティを推察する情報は限られている。一方で、バーチャルなアバターは、ペルソナの設定や背景のストーリーがよく練られていることが多く、視聴者に「完璧な印象」を与えることができます。時間が経つにつれ、視聴者は「中の人もアバターのように完璧な存在である」と思うようになるかもしれません。視聴者の中には、中の人の本当の姿を見てしまうと、自分の中のファンタジーが崩れてしまう人もいます。
+中の人は裏方であり、配信時には声を公開したり変えたりするだけなので、視聴者が中の人の本当の人格やアイデンティティを推察する情報は限られています。一方で、バーチャルなアバターは、ペルソナの設定や背景のストーリーがよく練られていることが多く、視聴者に「完璧な印象」を与えることができます。時間が経つにつれ、視聴者は「中の人もアバターのように完璧な存在である」と思うようになるかもしれません。視聴者の中には、中の人の本当の姿を見てしまうと、自分の中のファンタジーが崩れてしまう人もいます。
 
-「VTuber はバーチャルの世界では完璧。彼女のパフォーマンスを評価するためには、なかのひととは距離を置くべきだと思います。近くで見ているとファンタジーが台無しになる。神楽めあの中の人の情報を探ろうとした人がいた。その人は、自分の想像とは違う写真を見つけた。その人はがっかりして、二度と彼女のストリームを見なかった。しかし、実際にはその中の人は自分の写真をネットにアップしていなかったのです。」(P10)
+「VTuber はバーチャルの世界では完璧。彼女のパフォーマンスを評価するためには、私たちは中の人とは距離を置くべきだと思います。近くで見ているとファンタジーが台無しになる。神楽めあの中の人の情報を探ろうとした人がいました。その人は、自分の想像とは違う写真を見つけました。その人はがっかりして、二度と彼女のストリームを見なかったのです。しかし、実際にはその中の人は自分の写真をネットにアップしていなかったのです」(P10)。
 
 <!--
 Some interviewees intentionally supported disembodiment for the sake of maintaining the perfect image of the virtual avatar in their mind, e.g., “In some cases, if I know that the Nakanohito is totally different from her persona, for example, if her style is not as cute as the avatar. I may get very disappointed and feel uncomfortable when watching her videos or streams, even abandon her” (P8). This misogyny sentiment may root from preferences for cuteness in the Otaku community [27], the psychological distance they perceived with the VTuber, and that they perceived the VTuber more as a character than as a real person.
@@ -442,15 +442,15 @@ Because Nakanohitos are behind the scenes and only disclose or alter their voice
 “VTuber is perfect in the virtual world. We should keep a distance from the Nakanohito to appreciate her performance. Watching up close will ruin the fantasy. Someone tried to dig out information about Kagura Mea’s Nakanohito. He found a photo of her that does not align with his imagination. He was so disappointed that he never watched her streams again. But actually the Nakanohito did not post her photos online.” (P10)
 -->
 
-#### 4.4.3 Indifference towards Corporations Replacing Nakanohitos.
+#### 4.4.3 企業が中の人を交替させることへの無関心
 
-中の人とバーチャル・アバターの乖離は、中の人の代替についての無関心さにも表れている。キズナアイのケースなど、中の人が代理店に置き換えられたケースについては、すべてのインタビュアーが言及している。自分の好きな VTuber の中の人が入れ替わったらどう思うか」という質問に対しては、ほとんどの人が「関係ない」と回答しています。
+中の人とバーチャル・アバターの乖離は、中の人の交替についての無関心さにも表れている。キズナアイのケースなど、中の人が事務所に置き換えられたケースについては、すべてのインタビュアーが言及している。自分の好きな VTuber の中の人が入れ替わったらどう思うか」という質問に対しては、ほとんどの人が「関係ない」と回答しています。
 
-中には、VTuber と一緒に体験したコンテンツの質を重視する人もいて、それは中の人自身の努力というよりも、チームワークの賜物であることが多いようです。このようなケースでは、なかのひとが自分の体験に与える影響は限られたものになります。例えば、「多くの浅い視聴者は、ストリームやペルソナの質が変わらなければ、なかのひとが交代したことに気づかないでしょう。チームがプロフェッショナルであれば、中の人が交代しても実現できる」（P4）など、体験談は限られている。
+中には、VTuber と一緒に体験したコンテンツの質を重視する人もいて、それは中の人自身の努力というよりも、チームワークの賜物であることが多いようです。このようなケースでは、中の人が自分の体験に与える影響は限られたものになります。例えば、「多くの浅い視聴者は、ストリームやペルソナの質が変わらなければ、中の人が交代したことに気づかないでしょう。チームがプロフェッショナルであれば、中の人が交代しても実現できる」（P4）。
 
-中の人を経験豊富な人に代えたほうが、より質の高いコンテンツを提供できると考えている人もいた。例えば、「VTuber にとって中の人は欠かせない存在だが、彼女がプロジェクトの全てではない」というように、人よりも中の人のスキルを重視している。新しい中の人が面白ければ、その人のライブ配信を見続ける」（P6）など、人よりも中の人のスキルを重視しているようだ。
+中の人を経験豊富な人に代えたほうが、より質の高いコンテンツを提供できると考えている人もいました。例えば、「VTuber にとって中の人は欠かせない存在だが、彼女がプロジェクトの全てではありません。新しい中の人が面白ければ、その人のライブ配信を見続けます」（P6）など、人よりも中の人のスキルを重視しているようです。
 
-中の人の代わりになる可能性を、独自の機能として考えているインタビュアーもいた。例えば、P11 は、VTuber の中の人が入れ替わることは、人が人生のステージを変えていくことに似ており、それによって新たな新鮮さや魅力が生まれると述べています。VTuber も人間と同じように成長していくものだと考えています。会社がスムーズにナカノヒトを異動させてくれれば、それはそれでいいと思います」。
+中の人が交替する可能性を、VTuber独自の特徴として考えているインタビュアーもいた。例えば、P11 は、VTuber の中の人が入れ替わることは、人が人生のステージを変えていくことに似ており、それによって新たな新鮮さや魅力が生まれると述べています。「私はVTuber も人間と同じように成長していくものだと考えるようにしています。違う中の人はVTuberの異なるライフステージを代表しますが、VTuberは同じVTuberのままなのです。会社がスムーズに中の人を異動させてくれれば、それはそれでいいと思います」。
 
 <!--
 The disembodiment of Nakanohito and virtual avatars is also reflected by indifferent attitudes towards replacing Nakanohitos. All interviewees mentioned cases where Nakanohitos were replaced by agencies, e.g., Kizuna Ai’s case. When asked to reflect on how they would feel if their favorite VTuber’s Nakanohito were replaced, most interviewees did not think it would matter.
@@ -462,11 +462,11 @@ Some interviewees thought that replacing the Nakanohito with a more experienced 
 Some interviewees considered the possibility of replacing Nakanohito as a unique feature. For example, P11 noted that having different Nakanohitos for one VTuber was similar to a person journeying through different life stages, which could bring new levels of freshness and engagement, “I prefer to think in this way that VTuber can grow over time just like human ... Different Nakanohitos represent the VTuber in different life stages, but it is the same VTuber. I will accept this if the company transfers Nakanohitos smoothly”
 -->
 
-#### 4.4.4 Viewers Care about Fairness for Nakanohitos’ Labor.
+#### 4.4.4 視聴者は中の人の労働の公平性を気にかけている
 
-多くの人は、ナカノヒトが交代することは受け入れられるが、交代するにはそれなりの理由が必要だと考えている。特に、なかのひとたちの労働条件や待遇を気にしていた。
+多くの人は、ナカノヒトが交代することは受け入れられるが、交代するにはそれなりの理由が必要だと考えている。特に、なかのひとたちの労働条件や待遇を気にしていました。
 
-2019 年 4 月、ゲームクラブプロジェクトに参加していた 4 人のなかのひとが、アンリミテッドの運営会社から残業やセクハラなどの不当な扱いを受けたと告発しました。同社はすぐに 4 人のなかのひとたちを交代させました。これを受けて、視聴者コミュニティからの不買運動により、最終的に「ゲーム部」プロジェクトは終了した。一方で、適切な理由があれば、視聴者は交代を受け入れることができる。例えば、ReVdol の VTuber の中の人が一身上の都合で辞任しましたが、視聴者はほとんど彼女の選択を支持しました。
+2019 年 4 月、**「ゲーム部プロジェクト」**に参加していた 4 人のなかのひとが、運営会社であるUnlimitedから残業やセクハラなどの不当な扱いを受けたと告発しました。同社はすぐに 4 人のなかのひとたちを交代させました。これを受けて、視聴者コミュニティからの不買運動により、最終的に「ゲーム部」プロジェクトは終了しました。一方で、適切な理由があれば、視聴者は交代を受け入れることができます。例えば、**ReVdol** のうち1人の VTuber の中の人が一身上の都合で辞任しましたが、視聴者はほとんど彼女の選択を支持しました。
 
 また、インタビューに答えてくださった方全員が、元の中の人が公平に扱われていることを確認しない限り、新しい中の人を受け入れることはないとおっしゃっていました。例えば、P4 は「会社が儲けたいからといって、なかのひとを変えてしまうのはひどいことだ」と述べています。P3 は「会社がナカノヒトを酷使したら許せない」と述べています。
 
@@ -478,7 +478,7 @@ In 2019 April, four Nakanohitoes in the Game Club project accused the Unlimited 
 All interviewees mentioned that they would not accept a new Nakanohito without confirming that the original Nakanohito was treated fairly. For example, P4 mentioned that “It’s an awful thing to change Nakanohito only because the company wants to make more money.”. P3 stated that, “we won’t forgive the company if they abuse a Nakanohito”.
 -->
 
-## 5 DISCUSSION
+## 5 考察
 
 私たちの研究は、VTuber のライブストリーミングの多くの新しい側面を明らかにしました。ここでは、私たちが発見した重要な点を紹介し、先行研究との比較を行い、HCI への洞察と示唆を議論します。
 
@@ -486,7 +486,7 @@ All interviewees mentioned that they would not accept a new Nakanohito without c
 Our study uncovered many novel facets of VTuber live streaming. We now reflect and highlight our key findings, situate our results with prior research, and discuss insights and implications for HCI.
 -->
 
-### 5.1 Multi-Layer Identity and the Line between Virtual and Real in Live Streaming
+### 5.1 多層化したアイデンティティ及びライブ配信におけるバーチャルとリアルの境界線
 
 今回の調査結果から、VTuber のライブストリーミングは、仮想世界と現実世界が融合したパフォーマンスの一形態であることが示唆されました。しかし、現実の自分と仮想の自分の境界は常に変化しており、社会的な相互作用に影響を与えている。
 
@@ -494,7 +494,7 @@ Our study uncovered many novel facets of VTuber live streaming. We now reflect a
 
 VTuber がライブ配信するコンテンツは、バーチャルとリアルが混在しています。VTuber は、現実世界でのスキルや経験に基づいたコンテンツを提供することで、仮想世界のペルソナを構築しており、VTuber と視聴者の間には距離感があります。このペルソナが VTuber の仮想的なアイデンティティを構築するが、これは先行研究[39]と同様である。さらに、ライブストリームやソーシャルネットワーク（ファングループなど）における視聴者のインタラクションも、VTuber のアイデンティティ構築に影響を与えることを示している。ライブストリームの予測不可能性は、視聴者が VTuber と共同体験するストーリーを増やすことに貢献し、これらのストーリーは徐々に VTuber のペルソナに融合していく。視聴者がコミュニティ内でミームを作成して拡散することで、VTuber のオンライン・アイデンティティをさらに高めることができる。
 
-VTuber の配信では、バーチャルとリアルの境界線がダイナミックで曖昧であるため、視聴者はバーチャルなアバターと中の人を別々に考えるのではなく、VTuber をバーチャル世界のキャラクターとして、現実世界の社会的規範に左右されないように考えることが多い。このような考え方は、VTuber の不適切な行動に対して視聴者を寛容にさせ、中の人を交代させる機関に対して視聴者が無関心であることの一因となっていると考えられる。しかし、VTuber の仮想と現実の境界がどこにあるかは、視聴者個人によって異なり、外部からの影響によっても変化する可能性がある。時には、現実の複雑さが入り込んできて、幻想が壊れることもある。視聴者がコミュニティ内の集団行動（ボイコットなど）を通じて、代理店がナカノヒトを虐待したり、納得のいく理由もなく交換したりしていることを知り、バーチャルな「側」が崩壊したのはその顕著な例である。このことは、バーチャルなアバターを媒介とした空間において、透明性と公平性を求める集団行動の重要性についての Kou ら[32]の所見を反映している。
+VTuber の配信では、バーチャルとリアルの境界線がダイナミックで曖昧であるため、視聴者はバーチャルなアバターと中の人を別々に考えるのではなく、VTuber をバーチャル世界のキャラクターとして、現実世界の社会的規範に左右されないように考えることが多い。このような考え方は、VTuber の不適切な行動に対して視聴者を寛容にさせ、中の人を交代させるVTuber事務所に対して視聴者が無関心であることの一因となっていると考えられる。しかし、VTuber の仮想と現実の境界がどこにあるかは、視聴者個人によって異なり、外部からの影響によっても変化する可能性がある。時には、現実の複雑さが入り込んできて、幻想が壊れることもある。視聴者がコミュニティ内の集団行動（ボイコットなど）を通じて、代理店がナカノヒトを虐待したり、納得のいく理由もなく交替させたりしていることを知り、バーチャルな「側」が崩壊したのはその顕著な例である。このことは、バーチャルなアバターを媒介とした空間において、透明性と公平性を求める集団行動の重要性についての Kou ら[32]の所見を反映している。
 
 <!--
 Our findings suggest that VTuber live streaming is a form of performance where the virtual and the real worlds converge. However, the boundaries between real and virtual selves are ever-changing, thus influencing social interactions.
@@ -506,11 +506,11 @@ The content that VTubers live stream is a mixture of virtual and real. VTubers b
 Because the line between virtual and real in VTuber streaming is dynamic and blurry, viewers often do not consider a virtual avatar and the Nakanohito separately, but rather, regard the VTuber as a character in the virtual world and thus less subject to real world social norms. This mindset makes viewers more tolerant to VTubers’ inappropriate behaviors and may contribute to viewers’ indifferent attitudes towards agencies replacing Nakanohitos. However, where the virtuality-reality boundary of VTubers lies varies on individual viewers and may be shifted by external influences. Occasionally, the complexity of reality cuts in and breaks the illusion. A notable example occurred when the virtual “side” collapsed when viewers found out, through collective actions within the community (e.g., boycotts), that agencies were mistreating Nakanohitos and replacing them without an acceptable reason. This echoes findings of Kou et al. [32] about the importance of collective actions in seeking transparency and fairness in spaces mediated by virtual avatars.
 -->
 
-### 5.2 Corporations Roles and the Labor of (Virtual) Live Streamers
+### 5.2 企業の役割及び（バーチャル）ライブ配信者の労働
 
 これまでの文献では、ライブ・ストリーミング業界の労働問題について論じられています。例えば、Woodcock and Johnson [65]は、感情的労働と非物質的労働という理論的レンズを用いて、Twitch におけるさまざまなストリーマーの活動（観客とのパラソーシャルな親密性の構築、寄付の募集など）を調査し、現代のデジタルワークの風景の一部としてライブストリーミングを研究するためのさらなる取り組みを求めました。
 
-このような研究に貢献するために、今回の結果は、熱心な視聴者が、ライブストリーミングにおける労働、すなわち、しばしば隠され、目に見えないナカノヒトの労働をどのように認識し、気にかけているかを示しました。個人ブランドを構築して報酬を得ることができる実在のストリーマー [44, 64]とは異なり、なかのひとたちは、ほとんどがストリームの舞台裏にいるため、個人ブランディングを行うことは困難です。VTuber の場合、視聴者からのブランドや感情的な愛着は、ほとんどが仮想アバターに対するものです。そのため、企業がなかのひとたちに代わることに無関心な視聴者がいたのかもしれません。
+このような研究に貢献するために、今回の結果は、熱心な視聴者が、ライブストリーミングにおける労働、すなわち、しばしば隠され、目に見えないナカノヒトの労働をどのように認識し、気にかけているかを示しました。個人ブランドを構築して報酬を得ることができる実在のストリーマー [44, 64]とは異なり、なかのひとたちは、ほとんどがストリームの舞台裏にいるため、個人ブランディングを行うことは困難です。VTuber の場合、視聴者からのブランドや感情的な愛着は、ほとんどが仮想アバターに対するものです。そのため、企業がなかのひとたちを交替させることに無関心な視聴者がいたのかもしれません。
 
 また、VTuber のコンテンツ制作に必要な技術やアバターの知的財産は企業に帰属することが多く、なかのひとは不利な立場に置かれています。企業はいつでもコストをかけずになかのひとを変更することができます。これは、東アジアのポップカルチャーにおける消費者資本主義の極端な例であり、バーチャル・アイドルが自律的な存在でないことが、「彼女を交換可能で使い捨て可能なイメージ商品にしている」ということである[19]。このことはまた、ライブストリーミング産業が成長し、より利益を生むようになると、新たな労働搾取の形態も出現する可能性があることを思い起こさせる。現在、私たちは、なかのひとを含むさまざまなタイプのストリーマーが貢献している労働について、また、業界を規制し、労働者の権利を保護するために利用可能な政策オプションについて、限られた理解しか持っていません。
 
@@ -522,7 +522,7 @@ Contributing to this line of research, these results showed how dedicated viewer
 Additionally, most of the time, the intellectual property of the avatar and the technologies required for producing VTuber content belongs to a corporation, which places a Nakanohito at a disadvantaged position. A corporation could change Nakanohitos at any time, without much cost. This is an extreme example of consumer capitalism in pop culture in East Asia, in that a virtual idol’s lack of an autonomous existence “makes her an interchangeable and disposable image commodity” [19]. This also reminds us that as the live streaming industry grows and becomes more lucrative, new forms of labor exploitation may also emerge. Currently, we have a limited understanding of the labor contributed by different types of streamers, including Nakanohito, and of the policy options that might be leveraged to regulate the industry and to protect labor rights.
 -->
 
-### 5.3 VTuber Live Streaming Challenges
+### 5.3 VTuberのライブ配信における課題
 
 新興の VTuber ライブストリーミングを探ることで、バーチャルライブストリーマーが抱えるいくつかのユニークな課題を明らかにし、その結果を先行研究と比較することで、ライブストリーマーのプロ意識についての洞察を得ました。
 
@@ -530,7 +530,7 @@ Additionally, most of the time, the intellectual property of the avatar and the 
 By exploring the emerging VTuber live streaming, we unveiled several unique challenges that virtual live streamers have and compare our findings to prior research to provide insights into the professionalism of live streamers.
 -->
 
-#### 5.3.1 Constructing Virtual Identities.
+#### 5.3.1 バーチャルなアイデンティティの構築
 
 熱心な視聴者は、VTuber がストーリーやパフォーマンスを通じてアイデンティティをダイナミックに構築し、異なる嗜好を持つ視聴者を惹きつけたり、中の人の性格や生活の一部を意図的に明らかにしてコントラストを生み出し、視聴者を楽しませたりしていると認識していた。これらの結果は、Second Life 上のファッション・ブロガーのアイデンティティの再構築に関する知見を反映したもので、「仮想の身体は、継続的なアイデンティティの再構築の連続体の一片に過ぎない」というものです[39]。VTuber のオンライン・アイデンティティは、刻々と変化するアバターの身体と、中の人のリアルなアイデンティティを媒介としている。
 
@@ -542,15 +542,15 @@ Dedicated viewers perceived that VTubers construct their identities dynamically 
 Live streaming viewers also have a profound impact on VTubers’ identities. Their comments during live streams create moments that complement and transform streamers’ existing personas and their interactions go beyond the live streams, e.g., spreading memes created during live streams in group chats and other fan communities. VTubers’ personalities usually begin with simple designs, but evolve to be more complicated through the interactions they have with viewers. This creates challenges for VTubers. As their virtual identities become more complex and viewers’ expectations change dynamically, Nakanohitos cannot effectively maintain a consistent persona or image, which will potentially lead them to lose fans.
 -->
 
-#### 5.3.2 Changeable or Multiple Nakanohitos.
+#### 5.3.2 交替可能、または複数の中の人
 
-VTuber の特徴は、アバターと中の人が、コミュニティと企業の両方から意図的に切り離されていることです。そのため、VTuber は中の人を入れ替えたり、複数の中の人が同じアバターの後ろで別々のコンテンツを演じたりすることができます。例えば、2 人のなかのひとが一緒に配信し、1 人はゲームをし、もう 1 人は視聴者との交流に専念することができます。また、それぞれのなかのひとが得意とするコンテンツを交代で視聴者に届けることもできます。コンテンツの質が損なわれず、プロセスが透明である限り、視聴者がこうした慣行を受け入れていることは驚くべきことです。しかし、こうしたやり方は、VTuber のチームに課題をもたらします。なかのひと」を変更することで、VTuber の喋り方などが変わってしまうことがあり、それがまたファン離れにつながってしまうこともあります。
+VTuber の特徴は、アバターと中の人が、コミュニティと企業の両方から意図的に切り離されていることです。そのため、VTuber は中の人を入れ替えたり、複数の中の人が同じアバターの後ろで別々のコンテンツを演じたりすることができます。例えば、2 人のなかのひとが一緒に配信し、1 人はゲームをし、もう 1 人は視聴者との交流に専念することができます。また、それぞれのなかのひとが得意とするコンテンツを交代で視聴者に届けることもできます。コンテンツの質が損なわれず、プロセスが透明である限り、視聴者がこうした慣行を受け入れていることは驚くべきことです。しかし、こうしたやり方は、VTuber のチームに課題をもたらします。なかのひとを変更することで、VTuber の喋り方などが変わってしまうことがあり、それがまたファン離れにつながってしまうこともあります。
 
 <!--
 VTubers are unique in that the avatar and the Nakanohito are intentionally disembodied by both the community and a corporation. Because of this, VTubers could have Nakanohitos replaced or even have multiple Nakanohitos performing different content behind the same avatar together or separately. For example, two Nakanohitos could stream together, with one focusing on playing a game and another on interacting with viewers. Different Nakanohitos could also take turns delivering content that they have expertise in to viewers. It is surprising that viewers are accepting these practices, as long as the quality of the content remains untainted and the process is transparent. These practices, however, bring challenges to VTubers’ teams. Changing Nakanohito sometimes also changes the talking style or other traits of the VTuber, which may again leads to a loss of fans.
 -->
 
-#### 5.3.3 Content Diversity.
+#### 5.3.3 コンテンツの多様性
 
 4.2.4 で述べたように、VTuber は、技術的な制約のために、実在するストリーマーのような表現方法を行うことができません。まず、VTuber は、手作りチュートリアル[41]や旅行体験の共有[42]など、多くの人気ストリーミングジャンルの舞台である、現実世界との物理的なインタラクションを伴うコンテンツを提供することができません。VTuber が実在のストリーマーと共演する試みはあるが、VTuber の存在は、物理的な環境にあるコンピュータ・ディスプレイにしか固定できない。さらに、ゲームやアニメーション映画のような他のコンピュータ・グラフィック体験におけるキャラクターとは対照的に、VTuber のアバターは、彼らが存在する仮想環境とほとんど相互作用しないため、強化された物語やストーリーテリングの機会を逃してしまう。
 
@@ -558,23 +558,23 @@ VTubers are unique in that the avatar and the Nakanohito are intentionally disem
 As discussed in 4.2.4, VTubers can not perform in an expressive manner as real-person streamers can due to technology constraints. Firstly, VTubers cannot provide content involving physical interactions with the real world which is the stage for many popular streaming genres, such as handcrafting tutorials [41] or travel experience sharing [42]. While there have been attempts by VTubers to co-stream with real-person streamers, the presence of VTubers can only be fixed to computer displays in physical environments. Moreover, in contrast to the characters in other computer graphic experiences such as games or animated movies, VTuber avatars rarely interact with the virtual environments they reside in, missing out on opportunities for enhanced narratives and storytelling.
 --->
 
-### 5.4 Design Implications
+### 5.4 デザインの示唆
 
-VTuber に関する私たちの発見は、HCI や CSCW で現在行われている、インクルーシブ・ライブストリーミング、AI を介したコミュニケーション[28]、ソーシャルメディア上での欺瞞に関する議論に関連しています。仮想アバターを使えば，自分の障害や不完全さを公表したくない人も，別のアイデンティティを構築することで，自分の才能を発信したり，ライブストリーミングでストーリーを共有したりすることに抵抗を感じるかもしれない．今後、AI 技術がさらに進化すれば、さまざまなバーチャルアイドルの外見を自動的に生成したり、キャラクターデザインや背景ストーリーを作成したり、さらには声を変えたりすることがより容易になるでしょう。現実のホストの声、表情、ジェスチャーを機械学習によってシミュレートする、完全に AI を搭載したテレビ番組のホストを作り始めた企業もすでにある[33]。ここでは、将来のライブ・ストリーミング・サービスの設計、実装、および調査に役立つ、いくつかの設計上の考慮事項について詳しく説明します。
+VTuber に関する私たちの発見は、HCI や CSCW で現在行われている、インクルーシブ・ライブストリーミング、AI を介したコミュニケーション[28]、ソーシャルメディア上での欺瞞に関する議論に関連しています。仮想アバターを使えば，自分の障害や不完全さを公表したくない人も，別のアイデンティティを構築することで，自分の才能を発信したり，ライブストリーミングでストーリーを共有したりすることを快適に感じるかもしれない．今後、AI 技術がさらに進化すれば、さまざまなバーチャルアイドルの外見を自動的に生成したり、キャラクターデザインや背景ストーリーを作成したり、さらには声を変えたりすることがより容易になるでしょう。現実のホストの声、表情、ジェスチャーを機械学習によってシミュレートする、完全に AI を搭載したテレビ番組のホストを作り始めた企業もすでにある[33]。ここでは、将来のライブ・ストリーミング・サービスの設計、実装、および調査に役立つ、いくつかの設計上の考慮事項について詳しく説明します。
 
 <!--
 Our findings about VTuber relates to the ongoing discussion in HCI and CSCW about inclusive live streaming, AI-mediated communication [28], and deception on social media. With virtual avatars, people who are unwilling to disclose their disabilities or imperfections may feel more comfortable broadcasting their talents and sharing stories through live streaming by constructing a different identity. With more and more advanced AI technology, automatically generating the appearance of different virtual idols, creating character designs and background stories, or even altering voices, will become much easier. Some companies have already begun creating fully AI-powered TV program hosts that use machine learning to simulate the voice, facial expressions, and gestures of real-life hosts [33]. We now detail several design considerations which should inform the design, implementation, and exploration of future live streaming services.
 -->
 
-#### 5.4.1 Design for Identity Management.
+#### 5.4.1 アイデンティティ管理のためのデザイン
 
-この結果は、VTuber が自分のアイデンティティを動的に構築し、中の人の特徴や視聴者のコミュニティへの参加状況に応じて、時間の経過とともにアイデンティティを進化させていくことを示している。さらに、VTuber は異なる中の人を持つこともあれば、複数の中の人が協力してパフォーマンスを行うこともあります。このように複雑な要素があるため、VTuber が一貫したアイデンティティを維持することは困難ですが、安定したファン層を維持するためには重要です。そのため、VTuber のためのコラボレーション・アイデンティティ管理ツールを提供することで、中の人たちがライブ・ストリーム中に一貫したアイデンティティを維持するためのガイドラインや実行可能な戦略を提供することができると考えられます。例えば、視聴者がライブストリーム中になかのひとのアイデンティティを明らかにするリスクのあるコメントを送ってきた場合、ツールはなかのひとにそのリスクを警告し、構築されたアイデンティティに沿った方法でコメントに対応するよう導くことができる。また、1 つの VTuber に複数のなかのひとが出演している場合には、なかのひとに合わせて出力を調整する必要があります。将来的には自然言語処理によってこれらの機能が自動化されるかもしれませんが、現在のストリーマーは、モデレーターの役割と同様に、リスクのあるコメントにフラグを立てたり、アイデンティティを維持するための提案を提供したりする「アシスタント」に頼ることができます[63]。
+我々の結果は、VTuber が自分のアイデンティティを動的に構築し、中の人の特徴や視聴者のコミュニティへの参加状況に応じて、時間の経過とともにアイデンティティを進化させていくことを示している。さらに、VTuber は異なる中の人を持つこともあれば、複数の中の人が協力してパフォーマンスを行うこともあります。このように複雑な要素があるため、VTuber が一貫したアイデンティティを維持することは困難ですが、安定したファン層を維持するためには重要です。そのため、VTuber のためのコラボレーション・アイデンティティ管理ツールを提供することで、中の人たちがライブ・ストリーム中に一貫したアイデンティティを維持するためのガイドラインや実行可能な戦略を提供することができると考えられます。例えば、視聴者がライブストリーム中になかのひとのアイデンティティを明らかにするリスクのあるコメントを送ってきた場合、ツールはなかのひとにそのリスクを警告し、構築されたアイデンティティに沿った方法でコメントに対応するよう導くことができる。また、1 つの VTuber に複数のなかのひとが出演している場合には、そうしたツールはなかのひとに合わせて出力を調整する必要があります。将来的には自然言語処理によってこれらの機能が自動化されるかもしれませんが、現在のストリーマーは、モデレーターの役割と同様に、リスクのあるコメントにフラグを立てたり、アイデンティティを維持するための提案を提供したりする「アシスタント」に頼ることができます[63]。
 
 <!--
 Our results highlight that VTubers construct their identities dynamically, often evolving them over time based on characteristics of Nakanohitos or viewers community participation. Further, VTubers could have different Nakanohitos or even multiple Nakanohitos who collaborate to perform. Due to this potential complexity, maintaining a consistent identity will remain challenging for VTubers but is crucial to maintaining a stable fan base. There is thus a design opportunity to provide collaborative identity managing tools for VTubers, which could provide Nakanohitos with guidelines and actionable strategies to maintain a consistent identity during live streams. For example, when viewers send comments that risk revealing the identity of a Nakanohito during a live stream, the tool could alert the Nakanohito about the risk and guide them to respond to the comments in manner consistent with their constructed identity. Such tools may also need to tailor their output to different Nakanohitos if there are multiple Nakanohitos performing for one VTuber. While future natural language processing may make these features automatic, current streamers could rely on an “assistant” to help them flag risky comments and provide suggestions for maintaining identity, similar to the role of moderators [63].
 --->
 
-#### 5.4.2 Design for Transparency and Fairness.
+#### 5.4.2 透明性と公平性のためのデザイン
 
 中の人が入れ替わったり、複数の中の人がいたりすることは、VTuber のライブ配信の中でも独特の動きです。コンテンツの質が安定していて、中の人にとって透明で公平なプロセスであれば問題ないが、視聴者にとっては、予告なしに中の人が入れ替わったかどうかを判断するのは難しく、事後的に知った場合には、その企業を不買運動することもあるという。そこで、企業は、残業しない、理由なく交代させないなど、なかのひとが企業から公平に扱われているかどうかの情報を開示し、なかのひとの見えない労働を可視化する必要があります。また、中の人の健康状態や感情をある程度視聴者に知らせることもできるが、中の人のプライバシー保護には注意が必要である。
 
@@ -582,15 +582,15 @@ Our results highlight that VTubers construct their identities dynamically, often
 Replacing Nakanohito or having multiple Nakanohitos is a unique dynamic within VTuber live streaming. While interviewees were fine with this when the quality of content remained consistent and the process was transparent and fair to Nakanohito, it was hard for viewers to determine if a Nakanohito was replaced without notice, and if they found out after the fact, they have been known to boycott the corporation. It is thus necessary for corporations to make the invisible labor of Nakanohitos more visible by disclosing information such as whether the Nakanohitos are treated fairly by the corporation, for example, not working overtime or being replaced without a convincing reason. The health or emotional states of Nakanohitos can also be made known to the viewers to some extent although care must be taken to protect Nakanohito’s privacy.
 -->
 
-#### 5.4.3 Design for both the Virtual and the Real.
+#### 5.4.3 バーチャルとリアル両方のためのデザイン
 
-今回の調査では、VTuber のライブ・ストリーミングによってリアルとバーチャルの境界線が曖昧になったときに起こりうる機会についても明らかになりました。VTuber のライブ・ストリームは、現実のライブ・ストリーマーに刺激を与えるクリエイティブなパフォーマンス形態を示唆しています。一つの仮想世界に複数の VTuber が同居している様子を熱心に見ている様子が伺えた。しかし、現在のリアル・パーソン・ライブ配信のほとんどは、複数の配信者の映像が画面上に並置されているだけです。これは、マーカーレス・モーションキャプチャーなどの技術を用いて、地理的な障壁を取り除き、VTuber の共同ストリーミング体験を実在のストリーマーに提供するデザインチャンスを示唆しています。将来の複合現実技術は、VTuber のライブストリームの視聴者の体験を高める可能性があります。拡張現実（Augmented Reality）は、VTuber の人間サイズの 3D アバターを現実世界に出現させることができる。バーチャル・リアリティでは、VTuber が出演する仮想世界に視聴者を没入させることができます。リアルとバーチャルを融合させたライブストリーミングは、文化遺産や観光、知識の共有など、特定のアプリケーション分野と組み合わせることで、より多くの視聴者を惹きつけることができる可能性を秘めています。
+今回の調査では、VTuber のライブ・ストリーミングによってリアルとバーチャルの境界線が曖昧になったときに起こりうる機会についても明らかになりました。VTuber のライブ・ストリームは、現実のライブ・ストリーマーに刺激を与えるクリエイティブなパフォーマンス形態を示唆しています。インタビュー対象者は、一つの仮想世界に複数の VTuber が同居している様子を熱心に見ている様子が伺えた。しかし、現在のリアル・パーソン・ライブ配信のほとんどは、複数の配信者の映像が画面上に並置されているだけです。これは、マーカーレス・モーションキャプチャーなどの技術を用いて、地理的な障壁を取り除き、VTuber の共同ストリーミング体験を実在のストリーマーに提供するデザインチャンスを示唆しています。将来の複合現実技術は、VTuber のライブストリームの視聴者の体験を高める可能性があります。拡張現実（Augmented Reality）は、VTuber の人間サイズの 3D アバターを現実世界に出現させることができる。バーチャル・リアリティでは、VTuber が出演する仮想世界に視聴者を没入させることができます。リアルとバーチャルを融合させたライブストリーミングは、文化遺産や観光、知識の共有など、特定のアプリケーション分野と組み合わせることで、より多くの視聴者を惹きつけることができる可能性を秘めています。
 
 <!--
 Our findings also revealed the opportunities that can occur when blurring the line between the real and the virtual through VTubers’ live streaming. VTubers’ live streams suggest creative performance forms that could inspire real-person live streamers. Interviewees showed great enthusiasm towards watching multiple VTubers co-located in one virtual world. Most current real-person co-streaming, however, only displays the juxtaposition of multiple streamers’ videos on the screen. This suggests a design opportunity to break geographic barriers and bring the co-streaming experience of VTubers to realperson streamers, using technologies such as markerless motion capture. Future Mixed Reality technologies could enhance viewers’ experiences of VTuber live streams. Augmented reality could bring human-sized 3D avatars of VTubers to the real world. Virtual reality could immerse the viewers in the the virtual world where the VTuber performs. Live streaming that blurs the real and the virtual has the potential to be further combined with specific application areas, such as cultural heritage, tourism, and knowledge sharing, to better engage broader viewership.
 -->
 
-### 5.5 Limitations and Future Work
+### 5.5 本研究の限界と将来課題
 
 本研究を解釈する際に考慮すべきいくつかの限界があることを指摘します。
 本研究では、若年層と男性に偏った熱心な視聴者のサンプルのインタビューデータを使用しました。
@@ -603,7 +603,7 @@ VTuber の中の人、モデレーター、その他のサポート役、企業�
 We note several limitations of our study that should be considered when interpreting this work. Our study drew from the interview data of a sample of dedicated viewers that skewed young and male. Future research is needed to expand and deepen our understanding of the VTuber community with a larger and more diverse sample, even in different countries. Due to the nature of this study, causal conclusions or generalizability of the findings could not be made. Interviewing different stakeholders, such as Nakanohitos of VTubers, their moderators, other supporting roles, and managers of corporations could probably reveal more insights about this phenomenon. Alternative methodology where participants are invited to engage with a particular set of VTubers with their reactions to VTubers analyzed in a controlled experiment could also be explored in future research.
 -->
 
-## 6 CONCLUSION
+## 6 結果
 
 本論文では、オタクコミュニティが VTuber とどのように関わり、どのように認識しているのかを検証した。
 その結果、VTuber のライブ配信の内容や視聴者の動機は、実在のストリーマーと同様であることがわかった。
