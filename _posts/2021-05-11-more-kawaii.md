@@ -619,13 +619,13 @@ This work examined how the Otaku community engages with and perceive VTubers. Th
 [See original PDF](https://www.cs.cityu.edu.hk/~zhiconlu/assets/pdf/CHI2021Vtuber.pdf)
 
 - [1] Jeremy N Bailenson, Andrew C Beall, Jack Loomis, Jim Blascovich, and Matthew Turk. 2004. Transformed social interaction: Decoupling representation from behavior and form in collaborative virtual environments. Presence: Teleoperators & Virtual Environments 13, 4 (2004), 428–441.
-- [2] 株式会社ユーザーローカル . 2020. バーチャル YouTuber、本日 1 万人を 突破（ユーザーローカル調べ）｜株式会社ユーザーローカル . https: //www.userlocal.jp/press/20200115vi/. [Online; accessed 16-January-2020].
-- [3] 株式会社ユーザーローカル. 2020. ファン数ランキング バーチャルYouTuberランキング https://virtual-youtuber.userlocal.jp/document/ ranking. [Online; accessed 16-January-2020].
+- [2] 株式会社ユーザーローカル. 2020. バーチャルYouTuber、本日1万人を突破（ユーザーローカル調べ）株式会社ユーザーローカル. https://www.userlocal.jp/press/20200115vi/ . [Online; accessed 16-January-2020].
+- [3] 株式会社ユーザーローカル. 2020. ファン数ランキング バーチャルYouTuberランキング https://virtual-youtuber.userlocal.jp/document/ranking . [Online; accessed 16-January-2020].
 - [4] Bilibili. 2020. Bilibili. https://www.bilibili.com/.
 - [5] Daniel Black. 2012. The virtual idol: Producing and consuming digital femininity. In Idols and celebrity in Japanese media culture. Palgrave Macmillan, London, UK, 209–228.
 - [6] Raymond Blanton and Darlene Carbajal. 2019. Not a Girl, Not Yet a Woman: A Critical Case Study on Social Media, Deception, and Lil Miquela. In Handbook of Research on Deception, Fake News, and Misinformation Online. IGI Global, Hershey, PA, USA, 87–103.
 - [7] Di Laura Chen, Dustin Freeman, and Ravin Balakrishnan. 2019. Integrating Multimedia Tools to Enrich Interactions in Live Streaming for Language Learning. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems. ACM, ACM, New York, NY, USA, 438.
-- [8] Mark Childs. 2011. Identity: A Primer. Springer London, London, 13–31. https: //doi.org/10.1007/978-0-85729-361-9_2
+- [8] Mark Childs. 2011. Identity: A Primer. Springer London, London, 13–31. https://doi.org/10.1007/978-0-85729-361-9_2
 - [9] 依光流. 2018. 冯提莫不是 B 站直播的杀招，Vtuber 才是. Retrieved May 31, 2020 from https://www.ifanr.com/1325444
 - [10] Juliet Corbin and Anselm Strauss. 1998. Basics of qualitative research: Techniques and procedures for developing grounded theory. Sage Publications, Inc, Thousand Oaks, CA, USA.
 - [11] Donna Z Davis. 2010. Exploring the media effects of three-dimensional online immersive worlds and how they impact both virtual and real social capital. University of Florida.
@@ -660,8 +660,8 @@ This work examined how the Otaku community engages with and perceive VTubers. Th
 - [40] Danielle Lottridge, Frank Bentley, Matt Wheeler, Jason Lee, Janet Cheung, Katherine Ong, and Cristy Rowley. 2017. Third-Wave Livestreaming: Teens’ Long Form Selfie. In Proceedings of the 19th International Conference on HumanComputer Interaction with Mobile Devices and Services (MobileHCI ’17). Association for Computing Machinery, New York, NY, USA, Article 20, 12 pages. https://doi.org/10.1145/3098279.3098540
 - [41] Zhicong Lu, Michelle Annett, Mingming Fan, and Daniel Wigdor. 2019. “I Feel It is My Responsibility to Stream”: Streaming and Engaging with Intangible Cultural Heritage through Livestreaming. In Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems (CHI ’19). ACM, New York, NY, USA, Article Paper 229, 14 pages. https://doi.org/10.1145/3290605.3300459
 - [42] Zhicong Lu, Michelle Annett, and Daniel Wigdor. 2019. Vicariously Experiencing it all without Going Outside: A Study of Outdoor Livestreaming in China. Proceedings of the ACM on Human-Computer Interaction 3, CSCW (2019), 1–28.
-- [43] Zhicong Lu, Seongkook Heo, and Daniel Wigdor. 2018. StreamWiki: Enabling Viewers of Knowledge Sharing Live Streams to Collaboratively Generate Archival Documentation for Effective In-Stream and Post-Hoc Learning. Proceedings of the ACM on Human-Computer Interaction 2, CSCW (2018), Article 112. https: //doi.org/10.1145/3274381
-- [44] Zhicong Lu, Haijun Xia, Seongkook Heo, and Daniel Wigdor. 2018. You Watch, You Give, and You Engage: A Study of Live Streaming Practices in China. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI ’18). ACM, New York, NY, USA, Article Paper 466, 13 pages. https://doi. org/10.1145/3173574.3174040
+- [43] Zhicong Lu, Seongkook Heo, and Daniel Wigdor. 2018. StreamWiki: Enabling Viewers of Knowledge Sharing Live Streams to Collaboratively Generate Archival Documentation for Effective In-Stream and Post-Hoc Learning. Proceedings of the ACM on Human-Computer Interaction 2, CSCW (2018), Article 112. https://doi.org/10.1145/3274381
+- [44] Zhicong Lu, Haijun Xia, Seongkook Heo, and Daniel Wigdor. 2018. You Watch, You Give, and You Engage: A Study of Live Streaming Practices in China. In Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems (CHI ’18). ACM, New York, NY, USA, Article Paper 466, 13 pages. https://doi.org/10.1145/3173574.3174040
 - [45] Tetsuya Nakajo. 2020. Live2D. https://www.live2d.com/en/.
 - [46] Bonnie Nardi. 2010. My life as a night elf priest: An anthropological account of World of Warcraft. University of Michigan Press, Ann Arbor, MI, USA.
 - [47] Carman Neustaedter and Elena Fedorovskaya. 2009. Capturing and sharing memories in a virtual world. In Proceedings of the SIGCHI Conference on Human Factors in Computing Systems. ACM, ACM, New York, NY, USA, 1161–1170.
@@ -687,17 +687,11 @@ This work examined how the Otaku community engages with and perceive VTubers. Th
 - [67] Yiyi Yin. 2018. Vocaloid in China: Cosmopolitan music, cultural expression, and multilayer identity. Global Media and China 3, 1 (2018), 51–66. https://doi.org/10.1177/2059436418778600
 - [68] Japan National Tourism Organization New York. 2018. JNTO to Launch ’Come to Japan’ Campaign With Kizuna AI, the World’s First Virtual YouTuber. Retrieved May 31, 2020 from https://www.prnewswire.com/news-releases/jnto-to-launchcome-to-japan-campaign-with-kizuna-ai-the-worlds-first-virtual-youtuber300608037.html
 
-## Glossary
 
-### 訳注
+## 訳注
 1. 「企業が運営する」と書かれているが、神楽めあ氏が過去に所属していた「ぱりぷろ（Project Paryi）」は個人運営のプロジェクトであるため誤解と考えられる。なお、ぱりぷろは[2019年4月に解散を発表](https://www.moguravr.com/paryiproject-dissolution/)しており、所属者は現在個人勢として活動している。
 
-### 後で置き換える用の用語集
-
-- ライブストリーミング → ライブ配信
-- ストリーマー → 配信者
-- 中の人 → ナカノヒト（Nakanohito）
-
+## Glossary
 ### 日英対訳辞書
 
 English        | 和訳          　　　　　 | コメント
@@ -711,7 +705,7 @@ English        | 和訳          　　　　　 | コメント
  persona | ペルソナ。VTuberが設定として持っている人物像 |
  replacement of a Nakanohito | 中の人の交代 |
 
-### Tools and acknowledgements
+## Tools and acknowledgements
 
 I note my appreciation for these great tools.
 
@@ -719,6 +713,6 @@ I note my appreciation for these great tools.
 - [https://dream-exp.net/shaper/](https://dream-exp.net/shaper/)
 - [VTuber-IME 辞書](https://twitter.com/VRStudioLab/status/1136889624360472577)
 
-翻訳協力
+### 翻訳協力
 
 - Kenichi Ito ([@kn1cht](https://github.com/kn1cht))
