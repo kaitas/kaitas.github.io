@@ -620,7 +620,7 @@ This work examined how the Otaku community engages with and perceive VTubers. Th
 
 - [1] Jeremy N Bailenson, Andrew C Beall, Jack Loomis, Jim Blascovich, and Matthew Turk. 2004. Transformed social interaction: Decoupling representation from behavior and form in collaborative virtual environments. Presence: Teleoperators & Virtual Environments 13, 4 (2004), 428–441.
 - [2] 株式会社ユーザーローカル . 2020. バーチャル YouTuber、本日 1 万人を 突破（ユーザーローカル調べ）｜株式会社ユーザーローカル . https: //www.userlocal.jp/press/20200115vi/. [Online; accessed 16-January-2020].
-- [3] 株式会社ユーザーローカル . 2020. ファン数ランキング(1 ページ) | バー チャル YouTuber ランキング . https://virtual-youtuber.userlocal.jp/document/ ranking. [Online; accessed 16-January-2020].
+- [3] 株式会社ユーザーローカル. 2020. ファン数ランキング バーチャルYouTuberランキング https://virtual-youtuber.userlocal.jp/document/ ranking. [Online; accessed 16-January-2020].
 - [4] Bilibili. 2020. Bilibili. https://www.bilibili.com/.
 - [5] Daniel Black. 2012. The virtual idol: Producing and consuming digital femininity. In Idols and celebrity in Japanese media culture. Palgrave Macmillan, London, UK, 209–228.
 - [6] Raymond Blanton and Darlene Carbajal. 2019. Not a Girl, Not Yet a Woman: A Critical Case Study on Social Media, Deception, and Lil Miquela. In Handbook of Research on Deception, Fake News, and Misinformation Online. IGI Global, Hershey, PA, USA, 87–103.
