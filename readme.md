@@ -47,8 +47,9 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 ### Misc
 
+- "WFLE: Beyond VTuber to Live Entertainment", What is happening in Japanese CG research and industry now?, In SIGGRAPH 2020 Birds of a Feather, 2020/Aug/25, [Announce](https://twitter.com/siggraph_irc/status/1298209673783345152?s=20)
 - [Mozilla Hubs が拓く新世代 WebVR のススメ #HubsScrum](https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum) Published on May 13, 2020
-- [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10 月 22 日 23 日, China.
+- [聚逸虚拟现实工作室总监 白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10 月 22 日 23 日, China.
 - [SIGGRAPH Asia 日本語完全ガイド～初めての参加者ために](https://www.slideshare.net/aquihiko/siggraph-asia-2018-acm-tokyo-20181204) SIGGRAPH ASIA 2018 Tokyo (2018 年 12 月 4 日)
 - [WiiRemote Programming Workshop - 革新的インタラクションを構成する“部品としての”ゲームコントローラー](https://www.slideshare.net/aquihiko/wiiremote-programming-workshop), JAIST, 2009/11/20
 - [Virtual Realty for Entertainment - 文化・言語背景を 文化・言語背景を超えた環境における国際的エンタテイメントシステムデザイン](https://www.slideshare.net/aquihiko/virtual-realty-for-entertainment) JAIST, 2006/11
