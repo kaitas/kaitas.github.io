@@ -132,9 +132,20 @@ https://www.slideshare.net/harukasakami/xxvr-lab
 
 # Books
 
-- [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
+1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
+
 - (working)[WiiRemote プログラミング](https://akihiko2.shirai.as/projects/WiiRemote/)
-- [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
+
+1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
+
+## Online Publications
+
+1. 「これまでの 5 年、これからの 5 年――「VR 元年」の終焉から世界同時参加の XR ライブエンタメへ」（メディア芸術カレントコンテンツ：文化庁）2020 年 10 月 29 日
+   [https://mediag.bunka.go.jp/article/article-16853/](https://mediag.bunka.go.jp/article/article-16853/)
+
+## 技術書典
+
+1. 白井暁彦, 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号
 
 # Academic Papers
 
@@ -156,16 +167,14 @@ Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Ak
 
 1. 白井暁彦, 「賛助会員紹介 グリー株式会社／ REALITY 株式会社 GREE VR Studio Laboratory」, 日本バーチャルリアリティ学会誌第 25 巻 4 号 (2020/12/31) [Web](https://www.jstage.jst.go.jp/article/jvrsj/25/4/25_43/_article/-char/ja)
 
-1. 白井暁彦, 堀部貴紀, ブレディキーナ リュドミラ, 山崎勇祐, 坂口塔也, 中村清人, 栢之間諒汰, 「【研究ノート】 Mozilla Hubs を用いたオンラインイベントの WebVR 化」, DHU JOURNAL Vol.07 2020. (2020/11/26) [Web] (https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)
-
-Liudmila Bredikhina, Toya Sakaguchi, Akihiko Shirai, “Web3D Live Distance Workshop for Children in Mozilla Hubs”, Web3D ’20: The 25th International Conference on 3D Web Technology, 9th, November 2020, Article No. 27, Pages 1–2, [Best Poster Awards 2nd Prize]
-白井暁彦, 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号
 坂口塔也, 山崎勇祐, Bredikhina Liudmila, 白井暁彦, 「交流型 WebVR における空間音響のオンライン評価手法」, 第 25 回日本バーチャルリアリティ学会大会論文集, 2020-9-16 [PDF]
 堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; 『転声こえうらない』利用者の基本周波数分析, 情報処理学会研究報告, 2020-05-30 (URL) [SlideShare] [Awarded]
 白井暁彦, 「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」, グリー技術書典部誌 2020 年春号
 白井暁彦, “【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究“, 2019 年度デジタルハリウッド大学紀要, 2019-11-29
 
 1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「[Mozilla Hubs を用いたオンラインイベントの WebVR 化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
+
+1. Liudmila Bredikhina, Toya Sakaguchi, Akihiko Shirai, “Web3D Live Distance Workshop for Children in Mozilla Hubs”, Web3D ’20: The 25th International Conference on 3D Web Technology, 9th, November 2020, Article No. 27, Pages 1–2. [Web](https://dl.acm.org/doi/10.1145/3424616.3424724) [Best Poster Awards 2nd Prize](https://web3d.siggraph.org/web3d-live-distance-workshop-for-children-in-mozilla-hubs/)
 
 #### 2019
 
