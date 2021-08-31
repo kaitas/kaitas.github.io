@@ -148,8 +148,6 @@ https://www.wantedly.com/companies/reality/post_articles/184950
 
 # Academic Papers
 
-Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
-
 #### 2021
 
 1. 山崎勇祐(REALITY 株式会社/東京工業大学大学院), 白井暁彦「VibeShare::Performer — Emoji・触覚・音効によるオンライン音楽ライブの双方向化」, 第 26 回日本バーチャルリアリティ学会大会 (2021/9/21). [Web](http://conference.vrsj.org/ac2021/program/program-flash01.html) [PDF](https://vr.gree.net/wp-content/uploads/2021/07/VRSJ2021_VibeShare.pdf)
@@ -191,6 +189,8 @@ Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Ak
 1. 舘暲, 岩田洋夫, 安藤英由樹, 小泉直也, 中村拓人, 吉元俊輔, 白井暁彦, 長谷川晶一, IVRC2019（第 27 回 国際学生対抗バーチャルリアリティコンテスト）開催報告, 日本バーチャルリアリティ学会誌, 2019, 24 巻, 4 号, p. 39-43, 公開日 2021/04/08 [Web](https://www.jstage.jst.go.jp/article/jvrsj/24/4/24_39/_article/-char/ja)
 
 #### Before 2018
+
+Refer my paper indexed in [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
 
 1. Rex Hsieh, Marika Higashida, Yuya Mochizuki, Takaya Asano, Akihiko Shirai, Hisashi Sato, "MasQueRade: Onsite QR Code based VR Experience Evaluation System using Sanitary Mask", Conference Paper, the Virtual Reality International Conference - Laval Virtual (April 2018)
 1. Akihiko Shirai, Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, “Real Baby - Real Family”- Multi-Sensory Feedback Tangible Baby VR, International Journal of Virtual Reality (November 2017)
