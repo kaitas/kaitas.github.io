@@ -116,7 +116,27 @@ https://www.slideshare.net/harukasakami/xxvr-lab
 
 # Academic Papers
 
-Rebuilding my index with [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
+Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
+
+
+1. 山崎勇祐(REALITY株式会社/東京工業大学大学院), 白井暁彦「VibeShare::Performer — Emoji・触覚・音効によるオンライン音楽ライブの双方向化」, 第26回日本バーチャルリアリティ学会大会 (2021/9/21). {Web} {PDF}
+堀部貴紀(REALITY/明治大)，橋本順之(グリー)，白井暁彦(REALITY)，森勢将雅(明治大), 「FFT ライブラリを対象とした実時間Vocoder の速度比較」, 日本音響学会2021年秋季研究発表会(2021/9/7)
+Yusuke Yamazaki, Akihiko SHIRAI, “Pseudo Real-Time Live Event: Virtualization for Nonverbal Live Entertainment and Sharing”, Laval Virtual 2021 ConVRgence, 2021/7/7. [Web] [Abstract] [Poster]
+堀部貴紀(REALITY/明治大)，白井暁彦(REALITY)，森勢将雅(明治大),「『転声こえうらない』を通したボイスチェンジャー品質改善のための定性分析と考察」, 日本音響学会2021年春季研究発表会, [Web], [Slides], [SlideShare] (2021/3/11)
+山崎勇祐, 白井暁彦, 「VibeShare:Vote ～オンラインでの出演者と観客の非言語コミュニケーションの実現～」, 映像表現・芸術科学フォーラム2021（Expressive Japan 2021), [Abstract], [Slides], [SlideShare] (2021/3/8)
+「賛助会員紹介 グリー株式会社／ REALITY 株式会社 GREE VR Studio Laboratory」, 日本バーチャルリアリティ学会誌第25巻4号 (2020/12/31)
+白井暁彦, 堀部貴紀, ブレディキーナ リュドミラ, 山崎勇祐, 坂口塔也, 中村清人, 栢之間諒汰, 「【研究ノート】 Mozilla Hubsを用いたオンラインイベントのWebVR化」, DHU JOURNAL Vol.07 2020. (2020/11/26)
+Liudmila Bredikhina, Toya Sakaguchi, Akihiko Shirai, “Web3D Live Distance Workshop for Children in Mozilla Hubs”, Web3D ’20: The 25th International Conference on 3D Web Technology, 9th, November 2020, Article No. 27, Pages 1–2, [Best Poster Awards 2nd Prize]
+白井暁彦, 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020年秋号
+坂口塔也, 山崎勇祐, Bredikhina Liudmila, 白井暁彦, 「交流型WebVRにおける空間音響のオンライン評価手法」, 第25回日本バーチャルリアリティ学会大会論文集, 2020-9-16 [PDF]
+堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; 『転声こえうらない』利用者の基本周波数分析, 情報処理学会研究報告, 2020-05-30 (URL) [SlideShare] [Awarded]
+白井暁彦, 「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」, グリー技術書典部誌2020年春号
+白井暁彦, “【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR産業における基盤研究“, 2019年度デジタルハリウッド大学紀要, 2019-11-29
+舘暲, 岩田洋夫, 安藤英由樹, 小泉直也, 中村拓人, 吉元俊輔, 白井暁彦, 長谷川晶一, IVRC2019（第27回 国際学生対抗バーチャルリアリティコンテスト）開催報告, 日本バーチャルリアリティ学会誌, 2019, 24 巻, 4 号, p. 39-43, 公開日 2021/04/08 
+Akihiko Shirai. 2019. REALITY: broadcast your virtual beings from everywhere. In ACM SIGGRAPH 2019 Appy Hour (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 5, 1–2. DOI: https://doi.org/10.1145/3305365.3329727
+Yusuke Yamazaki, Shoichi Hasegawa, Hironori Mitake, and Akihiko Shirai. 2019. Neck strap haptics: an algorithm for non-visible VR information using haptic perception on the neck. In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 60, 1–2. DOI: https://doi.org/10.1145/3306214.3338562
+Rex Hsieh, Akihiko Shirai, and Hisashi Sato. 2019. Effectiveness of facial animated avatar and voice transformer in elearning programming course. In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 82, 1–2. DOI: https://doi.org/10.1145/3306214.3338540
+
 
 
 1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「[Mozilla Hubsを用いたオンラインイベントのWebVR化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
@@ -125,7 +145,7 @@ Rebuilding my index with [Research Gate](https://www.researchgate.net/profile/Ak
 1. Yusuke Yamazaki, Hironori Mitake, Akihiko Shirai, Shoichi Hasegawa, "Widespread Hapbeat: Tension Based Necklace Type Haptic Display" (November 2019)
 1. Akihiko Shirai, "REALITY: broadcast your virtual beings from everywhere", ACM SIGGRAPH 2019 Appy Hour (July 2019)
 1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Effectiveness of facial animated avatar and voice transformer in elearning programming course", Conference Paper, ACM SIGGRAPH 2019 Posters (July 2019)
-1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures", Conference Paper, the 19th ACM International Conference, (July 2019)
+1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures", In Proceedings of the 19th ACM International Conference on Intelligent Virtual Agents (IVA ’19). Association for Computing Machinery, New York, NY, USA, 197–199. DOI: https://doi.org/10.1145/3308532.3329430
 1. Rex Hsieh, Marika Higashida, Yuya Mochizuki, Takaya Asano, Akihiko Shirai, Hisashi Sato, "MasQueRade: Onsite QR Code based VR Experience Evaluation System using Sanitary Mask", Conference Paper, the Virtual Reality International Conference - Laval Virtual (April 2018)
 1. Akihiko Shirai, Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, “Real Baby - Real Family”- Multi-Sensory Feedback Tangible Baby VR, International Journal of Virtual Reality (November 2017)
 1. Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, Akihiko Shirai, "Real baby - real family": VR entertainment baby interaction system, ACM SIGGRAPH 2017 Emerging Technologies (July 2017)
