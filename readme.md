@@ -121,9 +121,6 @@ https://www.wantedly.com/companies/reality/post_articles/184950
 
 # Articles
 
-- 「[【研究ノート】 Mozilla Hubs を用いたオンラインイベントの WebVR 化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」（[DHU JOURNAL Vol.07 2020 電子版](https://msl.dhw.ac.jp/journal/)）
-- 「[■ これまでの 5 年、これからの 5 年――「VR 元年」の終焉から世界同時参加の XR ライブエンタメへ](https://mediag.bunka.go.jp/article/article-16853/)」（文化庁「メディア芸術カレントコンテンツ」, 2020/10/29 公開）
-- [【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf) DHU JOURNAL Vol.06 2019
 - [卒論が 1 ミリも進まない 4 年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
 - ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
@@ -145,7 +142,9 @@ https://www.wantedly.com/companies/reality/post_articles/184950
 
 ## 技術書典
 
-1. 白井暁彦, 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号
+1. 白井暁彦他,「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号, [Web](https://techbookfest.org/product/5759878496780288?productVariantID=6214599038730240)
+
+1. 白井暁彦他,「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」,グリー技術書典部誌 2020 年春号, [Web](https://techbookfest.org/product/5694096500850688?productVariantID=6015509631860736)
 
 # Academic Papers
 
@@ -167,31 +166,29 @@ Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Ak
 
 1. 白井暁彦, 「賛助会員紹介 グリー株式会社／ REALITY 株式会社 GREE VR Studio Laboratory」, 日本バーチャルリアリティ学会誌第 25 巻 4 号 (2020/12/31) [Web](https://www.jstage.jst.go.jp/article/jvrsj/25/4/25_43/_article/-char/ja)
 
-坂口塔也, 山崎勇祐, Bredikhina Liudmila, 白井暁彦, 「交流型 WebVR における空間音響のオンライン評価手法」, 第 25 回日本バーチャルリアリティ学会大会論文集, 2020-9-16 [PDF]
-堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; 『転声こえうらない』利用者の基本周波数分析, 情報処理学会研究報告, 2020-05-30 (URL) [SlideShare] [Awarded]
-白井暁彦, 「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」, グリー技術書典部誌 2020 年春号
-白井暁彦, “【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究“, 2019 年度デジタルハリウッド大学紀要, 2019-11-29
-
 1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「[Mozilla Hubs を用いたオンラインイベントの WebVR 化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
 
 1. Liudmila Bredikhina, Toya Sakaguchi, Akihiko Shirai, “Web3D Live Distance Workshop for Children in Mozilla Hubs”, Web3D ’20: The 25th International Conference on 3D Web Technology, 9th, November 2020, Article No. 27, Pages 1–2. [Web](https://dl.acm.org/doi/10.1145/3424616.3424724) [Best Poster Awards 2nd Prize](https://web3d.siggraph.org/web3d-live-distance-workshop-for-children-in-mozilla-hubs/)
 
+1. 坂口塔也, 山崎勇祐, Bredikhina Liudmila, 白井暁彦, 「交流型 WebVR における空間音響のオンライン評価手法」, 第 25 回日本バーチャルリアリティ学会大会論文集, 2020-9-16 [PDF](http://conference.vrsj.org/ac2020/program/doc/3D2-1_PR0182.pdf)
+
+1. 堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; [『転声こえうらない』利用者の基本周波数分析](http://www.isc.meiji.ac.jp/~mmorise/lab/publication/paper/IPSJ-MUS20127018.pdf), [情報処理学会研究報告](https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=204756&item_no=1&page_id=13&block_id=8), 2020-05-30 [Web](http://id.nii.ac.jp/1001/00204661/) [SlideShare](https://es.slideshare.net/mobile/vrstudiolab/full-version-236360511) [Awarded](http://www.fms-meiji.jp/archives/1399)
+
 #### 2019
 
-1. [【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf) DHU JOURNAL Vol.06 (Nov. 2019)
+1. [VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究](https://msl.dhw.ac.jp/wp-content/uploads/2020/04/DHUJOURNAL2019_P82.pdf) DHU JOURNAL Vol.06 (2019/11/29)
 
-1. Akihiko Shirai, 2019, "REALITY: broadcast your virtual beings from everywhere", In ACM SIGGRAPH 2019 Appy Hour (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 5, 1–2. DOI: https://doi.org/10.1145/3305365.3329727
+1. Yusuke Yamazaki, Hironori Mitake, Akihiko Shirai, Shoichi Hasegawa, "Widespread Hapbeat: Tension Based Necklace Type Haptic Display", Proceedings of the International Display Workshops Volume 26 (IDW '19), 2019/11/27, [DOI](https://doi.org/10.36463/idw.2019.1656) [PDF](https://confit.atlas.jp/guide/event-img/idw2019/INP3-1/public/pdf_archive?type=in)
 
-1. Yusuke Yamazaki, Shoichi Hasegawa, Hironori Mitake, and Akihiko Shirai. 2019. "Neck strap haptics: an algorithm for non-visible VR information using haptic perception on the neck", In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 60, 1–2. DOI: https://doi.org/10.1145/3306214.3338562
+1. Akihiko Shirai, "REALITY: broadcast your virtual beings from everywhere", In ACM SIGGRAPH 2019 Appy Hour (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 5, 1–2. [DOI](https://doi.org/10.1145/3305365.3329727)
 
-1. Yusuke Yamazaki, Hironori Mitake, Akihiko Shirai, Shoichi Hasegawa, "Widespread Hapbeat: Tension Based Necklace Type Haptic Display" (November 2019)
+1. Yusuke Yamazaki, Shoichi Hasegawa, Hironori Mitake, and Akihiko Shirai. 2019. "Neck strap haptics: an algorithm for non-visible VR information using haptic perception on the neck", In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 60, 1–2. [DOI](https://doi.org/10.1145/3306214.3338562)
 
-1. Akihiko Shirai, "REALITY: broadcast your virtual beings from everywhere", ACM SIGGRAPH 2019 Appy Hour (July 2019)
-1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Effectiveness of facial animated avatar and voice transformer in elearning programming course", Conference Paper, ACM SIGGRAPH 2019 Posters (July 2019)
-1. Rex Hsieh, Akihiko Shirai, and Hisashi Sato. 2019. Effectiveness of facial animated avatar and voice transformer in elearning programming course. In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 82, 1–2. DOI: https://doi.org/10.1145/3306214.3338540
-1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures", In Proceedings of the 19th ACM International Conference on Intelligent Virtual Agents (IVA ’19). Association for Computing Machinery, New York, NY, USA, 197–199. DOI: https://doi.org/10.1145/3308532.3329430
+1. Rex Hsieh, Akihiko Shirai, and Hisashi Sato. 2019. "Effectiveness of facial animated avatar and voice transformer in elearning programming course", In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 82, 1–2. [DOI](https://doi.org/10.1145/3306214.3338540)
 
-舘暲, 岩田洋夫, 安藤英由樹, 小泉直也, 中村拓人, 吉元俊輔, 白井暁彦, 長谷川晶一, IVRC2019（第 27 回 国際学生対抗バーチャルリアリティコンテスト）開催報告, 日本バーチャルリアリティ学会誌, 2019, 24 巻, 4 号, p. 39-43, 公開日 2021/04/08
+1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures", In Proceedings of the 19th ACM International Conference on Intelligent Virtual Agents (IVA ’19). Association for Computing Machinery, New York, NY, USA, 197–199. [DOI](https://doi.org/10.1145/3308532.3329430)
+
+1. 舘暲, 岩田洋夫, 安藤英由樹, 小泉直也, 中村拓人, 吉元俊輔, 白井暁彦, 長谷川晶一, IVRC2019（第 27 回 国際学生対抗バーチャルリアリティコンテスト）開催報告, 日本バーチャルリアリティ学会誌, 2019, 24 巻, 4 号, p. 39-43, 公開日 2021/04/08 [Web](https://www.jstage.jst.go.jp/article/jvrsj/24/4/24_39/_article/-char/ja)
 
 #### Before 2018
 
