@@ -44,6 +44,10 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 ## CEDEC 発表経歴
 
+### CEDEC2021
+
+白井暁彦,山崎勇祐「[VibeShare: コロナ禍の音楽ライブを「触覚」で双方向化する](https://cedec.cesa.or.jp/2021/session/detail/s606425b133c63)」, ([Blog](https://note.com/reality_eng/n/nc858173ef43c))
+
 ### CEDEC2000
 
 「RenderWare3」と「RenderVision」による次世代ゲーム開発の高速化
@@ -137,7 +141,6 @@ Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Ak
    堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; 『転声こえうらない』利用者の基本周波数分析, 情報処理学会研究報告, 2020-05-30 (URL) [SlideShare] [Awarded]
    白井暁彦, 「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」, グリー技術書典部誌 2020 年春号
    白井暁彦, “【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究“, 2019 年度デジタルハリウッド大学紀要, 2019-11-29
-   舘暲, 岩田洋夫, 安藤英由樹, 小泉直也, 中村拓人, 吉元俊輔, 白井暁彦, 長谷川晶一, IVRC2019（第 27 回 国際学生対抗バーチャルリアリティコンテスト）開催報告, 日本バーチャルリアリティ学会誌, 2019, 24 巻, 4 号, p. 39-43, 公開日 2021/04/08
 
 1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「[Mozilla Hubs を用いたオンラインイベントの WebVR 化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
 
@@ -155,6 +158,8 @@ Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Ak
 1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Effectiveness of facial animated avatar and voice transformer in elearning programming course", Conference Paper, ACM SIGGRAPH 2019 Posters (July 2019)
 1. Rex Hsieh, Akihiko Shirai, and Hisashi Sato. 2019. Effectiveness of facial animated avatar and voice transformer in elearning programming course. In ACM SIGGRAPH 2019 Posters (SIGGRAPH ’19). Association for Computing Machinery, New York, NY, USA, Article 82, 1–2. DOI: https://doi.org/10.1145/3306214.3338540
 1. Rex Hsieh, Akihiko Shirai, Hisashi Sato, "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures", In Proceedings of the 19th ACM International Conference on Intelligent Virtual Agents (IVA ’19). Association for Computing Machinery, New York, NY, USA, 197–199. DOI: https://doi.org/10.1145/3308532.3329430
+
+舘暲, 岩田洋夫, 安藤英由樹, 小泉直也, 中村拓人, 吉元俊輔, 白井暁彦, 長谷川晶一, IVRC2019（第 27 回 国際学生対抗バーチャルリアリティコンテスト）開催報告, 日本バーチャルリアリティ学会誌, 2019, 24 巻, 4 号, p. 39-43, 公開日 2021/04/08
 
 #### Before 2018
 
