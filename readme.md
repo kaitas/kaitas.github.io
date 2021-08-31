@@ -45,7 +45,7 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 1. Game.Impulse, University of Applied Sciences Bonn-Rhein-Sieg, 2021/6/9 [Web](https://www.h-brs.de/de/isf/termin/gameimpulse-Akihiko_Shirai)
 
-### Slides
+### Misc
 
 - [Mozilla Hubs が拓く新世代 WebVR のススメ #HubsScrum](https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum) Published on May 13, 2020
 - [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10 月 22 日 23 日, China.
@@ -55,10 +55,6 @@ From June 2018, He is backed to game industry again as a labo director to launch
 - <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式 Ludology 事始－</a> IGDA 日本 ゲームテクノロジー研究会 第 1 回 研究会(2004 年 1 月 10 日)(<a href="https://www.slideshare.net/aquihiko/igda-1/aquihiko/igda-1">Detail in SlideShare</a>)
 
 ## CEDEC 発表経歴
-
-### CEDEC2021
-
-白井暁彦,山崎勇祐「[VibeShare: コロナ禍の音楽ライブを「触覚」で双方向化する](https://cedec.cesa.or.jp/2021/session/detail/s606425b133c63)」, ([Blog](https://note.com/reality_eng/n/nc858173ef43c))
 
 ### CEDEC2000
 
@@ -109,8 +105,12 @@ https://cedec.cesa.or.jp/2019/session/detail/s5c9df84045dd1
 https://www.wantedly.com/companies/reality/post_articles/184950
 
 「宇宙 x 教育 xVR ＝ちゃんと学べる体感サイエンスツアー「ありえな LAB」の挑戦
-https://cedec.cesa.or.jp/2019/session/detail/s5c9c660d3c16c.html
-https://www.slideshare.net/harukasakami/xxvr-lab
+[https://cedec.cesa.or.jp/2019/session/detail/s5c9c660d3c16c.html]
+[https://www.slideshare.net/harukasakami/xxvr-lab]
+
+### CEDEC2021
+
+白井暁彦,山崎勇祐「[VibeShare: コロナ禍の音楽ライブを「触覚」で双方向化する](https://cedec.cesa.or.jp/2021/session/detail/s606425b133c63)」, ([Blog](https://note.com/reality_eng/n/nc858173ef43c))
 
 # Archived Projects in Github pages
 
