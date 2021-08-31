@@ -140,19 +140,30 @@ https://www.slideshare.net/harukasakami/xxvr-lab
 
 Reffer my paper index in [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai/research)...
 
-1. 山崎勇祐(REALITY 株式会社/東京工業大学大学院), 白井暁彦「VibeShare::Performer — Emoji・触覚・音効によるオンライン音楽ライブの双方向化」, 第 26 回日本バーチャルリアリティ学会大会 (2021/9/21). {Web} {PDF}
-   堀部貴紀(REALITY/明治大)，橋本順之(グリー)，白井暁彦(REALITY)，森勢将雅(明治大), 「FFT ライブラリを対象とした実時間 Vocoder の速度比較」, 日本音響学会 2021 年秋季研究発表会(2021/9/7)
-   Yusuke Yamazaki, Akihiko SHIRAI, “Pseudo Real-Time Live Event: Virtualization for Nonverbal Live Entertainment and Sharing”, Laval Virtual 2021 ConVRgence, 2021/7/7. [Web] [Abstract] [Poster]
-   堀部貴紀(REALITY/明治大)，白井暁彦(REALITY)，森勢将雅(明治大),「『転声こえうらない』を通したボイスチェンジャー品質改善のための定性分析と考察」, 日本音響学会 2021 年春季研究発表会, [Web], [Slides], [SlideShare] (2021/3/11)
-   山崎勇祐, 白井暁彦, 「VibeShare:Vote ～オンラインでの出演者と観客の非言語コミュニケーションの実現～」, 映像表現・芸術科学フォーラム 2021（Expressive Japan 2021), [Abstract], [Slides], [SlideShare] (2021/3/8)
-   「賛助会員紹介 グリー株式会社／ REALITY 株式会社 GREE VR Studio Laboratory」, 日本バーチャルリアリティ学会誌第 25 巻 4 号 (2020/12/31)
-   白井暁彦, 堀部貴紀, ブレディキーナ リュドミラ, 山崎勇祐, 坂口塔也, 中村清人, 栢之間諒汰, 「【研究ノート】 Mozilla Hubs を用いたオンラインイベントの WebVR 化」, DHU JOURNAL Vol.07 2020. (2020/11/26)
-   Liudmila Bredikhina, Toya Sakaguchi, Akihiko Shirai, “Web3D Live Distance Workshop for Children in Mozilla Hubs”, Web3D ’20: The 25th International Conference on 3D Web Technology, 9th, November 2020, Article No. 27, Pages 1–2, [Best Poster Awards 2nd Prize]
-   白井暁彦, 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号
-   坂口塔也, 山崎勇祐, Bredikhina Liudmila, 白井暁彦, 「交流型 WebVR における空間音響のオンライン評価手法」, 第 25 回日本バーチャルリアリティ学会大会論文集, 2020-9-16 [PDF]
-   堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; 『転声こえうらない』利用者の基本周波数分析, 情報処理学会研究報告, 2020-05-30 (URL) [SlideShare] [Awarded]
-   白井暁彦, 「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」, グリー技術書典部誌 2020 年春号
-   白井暁彦, “【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究“, 2019 年度デジタルハリウッド大学紀要, 2019-11-29
+#### 2021
+
+1. 山崎勇祐(REALITY 株式会社/東京工業大学大学院), 白井暁彦「VibeShare::Performer — Emoji・触覚・音効によるオンライン音楽ライブの双方向化」, 第 26 回日本バーチャルリアリティ学会大会 (2021/9/21). [Web](http://conference.vrsj.org/ac2021/program/program-flash01.html) [PDF](https://vr.gree.net/wp-content/uploads/2021/07/VRSJ2021_VibeShare.pdf)
+
+1. 堀部貴紀(REALITY/明治大)，橋本順之(グリー)，白井暁彦(REALITY)，森勢将雅(明治大), 「FFT ライブラリを対象とした実時間 Vocoder の速度比較」, 日本音響学会 2021 年秋季研究発表会(2021/9/7)
+
+1. Yusuke Yamazaki, Akihiko SHIRAI, “Pseudo Real-Time Live Event: Virtualization for Nonverbal Live Entertainment and Sharing”, Laval Virtual 2021 ConVRgence, 2021/7/7. [Web](https://ijvr.eu/article/view/4797) [Abstract](https://vr.gree.net/wp-content/uploads/2021/07/VRIC2021-PseudoRealTimeLiveEvent-VirtualizationforNonverbalLiveEntertainmentAndSharing.pdf) [Poster](https://vr.gree.net/wp-content/uploads/2021/07/ConVRgence2021_poster_Pseudo_Real-Time_Live_Event.pdf)
+
+1. 堀部貴紀(REALITY/明治大)，白井暁彦(REALITY)，森勢将雅(明治大),「『転声こえうらない』を通したボイスチェンジャー品質改善のための定性分析と考察」, 日本音響学会 2021 年春季研究発表会, [Web](https://www.mtg.acoustics.jp/poster.html#2-2P-9), [Slides](https://vr.gree.net/wp-content/uploads/2021/04/ASJ2021S-Slides-20210311.pdf), [SlideShare](https://www.slideshare.net/vrstudiolab/ss-245769023) (2021/3/11)
+
+1. 山崎勇祐, 白井暁彦, 「VibeShare:Vote ～オンラインでの出演者と観客の非言語コミュニケーションの実現～」, 映像表現・芸術科学フォーラム 2021（Expressive Japan 2021), [Abstract](https://www.ite.or.jp/ken/paper/20210308MAJt/), [Slides](https://vr.gree.net/wp-content/uploads/2021/04/ArtSciForum-20210308.pdf), [SlideShare](https://www.slideshare.net/vrstudiolab/vibeshare-vote) (2021/3/8)
+
+#### 2020
+
+1. 白井暁彦, 「賛助会員紹介 グリー株式会社／ REALITY 株式会社 GREE VR Studio Laboratory」, 日本バーチャルリアリティ学会誌第 25 巻 4 号 (2020/12/31) [Web](https://www.jstage.jst.go.jp/article/jvrsj/25/4/25_43/_article/-char/ja)
+
+1. 白井暁彦, 堀部貴紀, ブレディキーナ リュドミラ, 山崎勇祐, 坂口塔也, 中村清人, 栢之間諒汰, 「【研究ノート】 Mozilla Hubs を用いたオンラインイベントの WebVR 化」, DHU JOURNAL Vol.07 2020. (2020/11/26) [Web] (https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)
+
+Liudmila Bredikhina, Toya Sakaguchi, Akihiko Shirai, “Web3D Live Distance Workshop for Children in Mozilla Hubs”, Web3D ’20: The 25th International Conference on 3D Web Technology, 9th, November 2020, Article No. 27, Pages 1–2, [Best Poster Awards 2nd Prize]
+白井暁彦, 「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号
+坂口塔也, 山崎勇祐, Bredikhina Liudmila, 白井暁彦, 「交流型 WebVR における空間音響のオンライン評価手法」, 第 25 回日本バーチャルリアリティ学会大会論文集, 2020-9-16 [PDF]
+堀部 貴紀, 石原 達馬, 白井 暁彦, 森勢 将雅; 『転声こえうらない』利用者の基本周波数分析, 情報処理学会研究報告, 2020-05-30 (URL) [SlideShare] [Awarded]
+白井暁彦, 「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」, グリー技術書典部誌 2020 年春号
+白井暁彦, “【ショートレポート】VR4.0 -リアルタイムバーチャルキャラクターが牽引する VR 産業における基盤研究“, 2019 年度デジタルハリウッド大学紀要, 2019-11-29
 
 1. 白井 暁彦, ブレディキーナ リュドミラ, 坂口 塔也, 栢之間 諒汰, 堀部 貴紀, 山崎 勇祐, 中村 清人, 「[Mozilla Hubs を用いたオンラインイベントの WebVR 化](https://msl.dhw.ac.jp/wp-content/uploads/2020/11/DHUJOURNAL2020_P045.pdf)」, DHU JOURNAL, Vol.07, [電子版](https://msl.dhw.ac.jp/journal/)）(Nov 2020)
 
