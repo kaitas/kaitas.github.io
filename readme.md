@@ -32,9 +32,21 @@ From June 2018, He is backed to game industry again as a labo director to launch
 
 # Lecture
 
+## Slide portal
+
 - [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
 - [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
+
+## YouTube Archived
+
 - [“Research and Development for Avatar-Driven Virtual Society in VR4.0 Era” #EMTECH #DesiredIdentities](https://www.youtube.com/watch?v=hVR82Rb7eqM) Published on June 27,2020
+
+### Lecuture and Talks (part)
+
+1. Game.Impulse, University of Applied Sciences Bonn-Rhein-Sieg, 2021/6/9 [Web](https://www.h-brs.de/de/isf/termin/gameimpulse-Akihiko_Shirai)
+
+### Slides
+
 - [Mozilla Hubs が拓く新世代 WebVR のススメ #HubsScrum](https://www.slideshare.net/vrstudiolab/mozilla-hubswebvr-hubsscrum) Published on May 13, 2020
 - [聚逸虚拟现实工作室总监白井晓彦：研究创新是为了更好地娱乐](http://www.cena.com.cn/tablet/20191023/102949.html) DIC2019 10 月 22 日 23 日, China.
 - [SIGGRAPH Asia 日本語完全ガイド～初めての参加者ために](https://www.slideshare.net/aquihiko/siggraph-asia-2018-acm-tokyo-20181204) SIGGRAPH ASIA 2018 Tokyo (2018 年 12 月 4 日)
