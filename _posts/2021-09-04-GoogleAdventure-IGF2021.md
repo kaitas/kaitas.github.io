@@ -4,7 +4,7 @@ title: "Google Adventure - Indie Games Festival2021でこれからのエキス�
 date: "2021-09-04 17:00:00"
 author: aki
 description: Google Adventure - Indie Games Festival2021でこれからのエキスポに求められそうな賑わいのあるカジュアルメタバースのUX分析をしてみた"
-preview: https://pbs.twimg.com/media/E-bPUcMVUAgz3tG?format=jpg&name=large
+preview: https://akihiko.shirai.as/assets/2021/ga.png
 ---
 
 Indige Game Festival が面白そうなので覗いてみた。
@@ -43,6 +43,8 @@ Google アカウントでログインすると、アバターがガチャっぽ�
 [Pronouns](https://uwm.edu/lgbtrc/support/gender-pronouns/)（日本語では[人称代名詞](https://en.wikipedia.org/wiki/Japanese_pronouns))って項目。自分は「なんとお呼びすればいいか」は He/Him としましたが、結構最近の国際会議とかでもこの手の自認を（するかしないかも含めて）聞いたりすること多くなりましたね。ちなみに gender みたいな聞き方もどっちかしかないのでよろしくないようです、まあ露骨に「sex」って聞いてくる国もたくさんありますけどね（日本とかフランスとか）。
 
 # さてフェスティバルへ
+
+さてフェスティバルに入りました。メタバース着地直後の視界です。
 
 ![Adventure メタバース着地直後](/assets/2021/ga4.png "Adventure メタバース着地直後")
 
