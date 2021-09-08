@@ -163,12 +163,10 @@ Google Play の実績解除はなかなか有効に働いていると思いま�
 番組も面白いです。Unity のやなせさんが審査員だったり、インディーゲーム作った大学院生が「雇ってください！」とか「うちへ！」みたいなやりとり。
 
 IGF2021 Japan Live Stream
-https://youtu.be/MwvzjfXZmho
-弓矢バトルオンラインを解説する簗瀬さん
-「このゲーム全然メディアで扱われたことないのだけど前から遊んでいて…多分口コミと思うんだけどどう広まったかご存知ですか？」
-作者の藤枝さん『私もさっき Adventure 内でプレイヤーさんに聞いてクチコミだって』
+[https://youtu.be/MwvzjfXZmho](https://youtu.be/MwvzjfXZmho)
 
 ライブ投票機能もあるようです（すぐ消えてしまったので参加できなかった）。
+
 なおこの会場は「Adventure」というプラットフォーム名だそうです。そういえばオリンピックの時にも似たようなゲームシステムがあったけどあれとは違うプロダクトラインなのかな？
 
 # いったんおわり
@@ -181,3 +179,22 @@ https://youtu.be/MwvzjfXZmho
 というかこれ期間限定公開なんだろうか？？
 
 p.s. 韓国会場も 10 倍ぐらい盛り上がっている様子・・・！
+
+いったんおわり
+
+このドキュメントは閲覧コメント可能にしておきますので、お気づきの方がいらっしゃいましたらコメントなりでご感想いただければ幸いです！
+
+というかこれ完全に業務外で書いていて、特に機密もないので個人ブログのネタにしておきました。
+Google Adventure 自体は…期間限定公開なんだろうか？？
+
+## 補足・Gather.town もよさそう
+
+今週、[ICAT-EGVE2021](https://icat-egve-2021.org/) というドイツ(オンライン)で開催される国際会議で基調講演するのですが、会場が gather.town という 2D ドット絵メタバースになってました。
+
+[https://www.gather.town/](https://www.gather.town/)
+
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1435508842264088577">ICAT-EGVE2021 基調講演会場はこちらでした</a></blockquote>
+
+見た目や UX は Google Adventure とそっくりで、デバイス選択もできて、OBS Virtual Cam も使える感じです。
+YouTube 埋め込みから YouTube への導線を潰していたりして、なかなかすごい。
+既存 Zoom の互換性やハイブリッド顔出し需要には gather も優位性あり、Google Play の実績を使ったチュートリアルがきっちり作れるなら Adventure も使い所多そう（そもそも一般に SDK 公開しているのかわかりませんが）。
