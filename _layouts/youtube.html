@@ -7,6 +7,8 @@ layout: default
     {%- endif -%}
     {{ content }}
     {% for yt in site.data.youtube %}
-    [![{{ yt.title }}](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
+    {{ yt.title }}
+    https://img.youtube.com/vi/{{ yt.id }}/0.jpg
+    https://www.youtube.com/watch?v={{ yt.url }}
     {% endfor %}
 </div>
