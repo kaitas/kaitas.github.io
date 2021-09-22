@@ -2,15 +2,15 @@
 layout: default
 ---
 <ul>
-    {% for member in site.data.members %}
+    {% for tweet in site.data.tweets %}
     <li>
-        <a href="https://github.com/{{ member.github }}">
-            {{ member.name }}
+        <a href="https://github.com/{{ tweet.url }}">
+            {{ tweet.memo }}
         </a>
     </li>
     {% endfor %}
 </ul>
-tweets
+delete tweets
 <div class="tweets">
   {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
