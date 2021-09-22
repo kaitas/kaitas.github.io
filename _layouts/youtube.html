@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<div class="youtube">
+    {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+    {%- endif -%}
+    {{ content }}
+    {% for yt in site.data.youtube %}
+    [![{{ yt.title }}](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
+    {% endfor %}
+</div>
