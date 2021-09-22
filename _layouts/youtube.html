@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<div class="youtube">
+<div class="tweets">
     {%- if page.title -%}
     <h1 class="page-heading">{{ page.title }}</h1>
     {%- endif -%}
     {{ content }}
-    {% for yt in site.data.youtube %}
-    {{ yt.title }}
-    https://img.youtube.com/vi/{{ yt.id }}/0.jpg
-    https://www.youtube.com/watch?v={{ yt.url }}
+    {% for tweet in site.data.tweets %}
+    <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+        <p lang="ja" dir="ltr"></p><a href="{{ tweet.url }}">{{ tweet.memo }}</a>
+    </blockquote>
     {% endfor %}
 </div>
