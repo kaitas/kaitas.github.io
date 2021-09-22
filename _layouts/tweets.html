@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+{% for tweet in site.data.tweets %}
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true">
+ <p lang="ja" dir="ltr"></p><a href="{{ tweet.url }}">{{ tweet.memo }}</a>
+</blockquote>
+{% endfor %}
+
+
 <ul>
     {% for tweet in site.data.tweets %}
     <li>
