@@ -7,9 +7,7 @@ layout: default
     {%- endif -%}
     {{ content }}
 
-    {% for yt in site.data.youtube %}
-    <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
-        <p lang="ja" dir="ltr"></p><a href="{{ yt.url }}">{{ yt.memo }}</a>
-    </blockquote>
-    {% endfor %}
+{% for yt in site.data.youtube %}    
+    <a href="{{ yt.url }}">{{ yt.memo }}</a>
+{% endfor %}
 </div>
