@@ -10,6 +10,5 @@ title: YouTube
 ---
 
 {% for yt in site.data.youtube %}  
- <a href="https://www.youtube.com/watch?v=">{{ yt.memo }}</a>
-[![KIDS WORKSHOP 2021 "みんなで(バーチャル)世界旅行" Digest](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
+[![{{ yt.memo }}](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
 {% endfor %}
