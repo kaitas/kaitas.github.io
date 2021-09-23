@@ -8,6 +8,6 @@ layout: default
     {{ content }}
 
 {% for yt in site.data.youtube %}    
-    <a href="{{ yt.url }}">{{ yt.memo }}</a>
+    <a href="https://www.youtube.com/watch?v={{ yt.id }}">{{ yt.memo }}</a>
 {% endfor %}
 </div>
