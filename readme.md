@@ -25,7 +25,7 @@ Since June 2018, He revived to game industry again as a research director to lau
 
 ### Projects
 
-- [Fantastic Phantom Slipper](https://kaitas.github.io/Fantastic-Phantom-Slipper.html)
+- [Fantastic Phantom Slipper](https://akihiko.shirai.as/Fantastic-Phantom-Slipper.html)
 - [BookWii](https://akihiko.shirai.as/projects/BookWii/index.html)
 - [SIGGRAPH ASIA 2015 Kobe](https://akihiko.shirai.as/projects/sa2015/)
 - [projects.shirai.as](https://projects.shirai.as/)
