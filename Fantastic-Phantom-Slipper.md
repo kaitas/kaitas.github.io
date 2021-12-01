@@ -31,6 +31,7 @@
 
 <p><code>白井暁彦, 佐藤勝, 草原真知子, 久米祐一郎,"足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ(<特集>複合現実感)",日本バーチャルリアリティ学会論文集, 4巻(1999) 4号, 1999年, p.691-697. DOI=<a href="https://doi.org/10.18974/tvrsj.4.4_691">https://doi.org/10.18974/tvrsj.4.4_691</a>
 </code>
+  
 <a href="https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_article/-char/ja/">J-STAGE</a> [<a href="https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja">PDF</a>]
 </p>
 
