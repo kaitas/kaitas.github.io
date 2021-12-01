@@ -21,8 +21,16 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vU_SBt7GJ6A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>Academic articles</h2>
-<p><code>Yuichiro Kume. 1998. Foot interface: fantastic phantom slipper. In ACM SIGGRAPH 98 Conference abstracts and applications (SIGGRAPH '98). ACM, New York, NY, USA, 114-. DOI=http://dx.doi.org/10.1145/280953.284801</code><br /><a href="https://dl.acm.org/citation.cfm?id=284801">ACM Portal</a> [<a href="http://delivery.acm.org/10.1145/290000/284801/p114-kume.pdf">PDF</a>]</p>
 
 <p><code>
-  白井暁彦, 佐藤勝, 草原真知子, 久米祐一郎,"足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ(<特集>複合現実感)",日本バーチャルリアリティ学会論文集, 4巻(1999) 4号, 1999年, p.691-697. DOI=https://doi.org/10.18974/tvrsj.4.4_691</code><br /><a href="https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_article/-char/ja/">J-STAGE</a> [<a href="https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja">PDF</a>]</p>
+白井暁彦, 佐藤勝, 久米祐一郎, 草原真知子, 「ファンタスティック・ファントム・スリッパ」,
+日本バーチャルリアリティ学会大会論文集  (Proceedings of the Virtual Reality Society of Japan Annual Conference),
+2nd, pp. 27-28, 1997/Sep., DOI=<a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200902119698897464">https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200902119698897464</a></p></code>
+
+<p><code>Yuichiro Kume. 1998. Foot interface: fantastic phantom slipper. In ACM SIGGRAPH 98 Conference abstracts and applications (SIGGRAPH '98). ACM, New York, NY, USA, 114-. DOI=http://dx.doi.org/10.1145/280953.284801</code><br /><a href="https://dl.acm.org/citation.cfm?id=284801">ACM Portal</a> [<a href="http://delivery.acm.org/10.1145/290000/284801/p114-kume.pdf">PDF</a>]</p>
+
+<p><code>白井暁彦, 佐藤勝, 草原真知子, 久米祐一郎,"足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ(<特集>複合現実感)",日本バーチャルリアリティ学会論文集, 4巻(1999) 4号, 1999年, p.691-697. DOI=<a href="https://doi.org/10.18974/tvrsj.4.4_691">https://doi.org/10.18974/tvrsj.4.4_691</a>
+</code>
+<a href="https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_article/-char/ja/">J-STAGE</a> [<a href="https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja">PDF</a>]
+</p>
 
