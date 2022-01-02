@@ -4,13 +4,8 @@ title: "GitHubを最強のToDo管理ツールにする"
 date: "2021-11-14 23:59:59"
 author: aki
 description: エンジニア、もしくは非エンジニアにこそ親しんでほしいGitHubによる個人ToDo管理
-preview: https://akihiko.shirai.as/img/2x3d.jpg
+preview: https://akihiko.shirai.as/{% link /assets/2021/ga.png %}
 ---
-
-[Link to a document]({% link _collection/name-of-document.md %})
-[Link to a post]({% link _posts/2016-07-26-name-of-post.md %})
-[Link to a page]({% link news/index.html %})
-[Link to a file]({% link /assets/files/doc.pdf %})
 
 # ToDo 管理ツール、いろいろありますよね。
 
