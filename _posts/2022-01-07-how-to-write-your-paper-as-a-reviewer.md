@@ -165,6 +165,3 @@ Google Spreadsheetを使う方法は発案者の自分としても「魔法の�
 
 よい論文執筆ライフ(人生)を！
 
-
-<a href="https://twitter.com/intent/tweet?screen_name=o_ob&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @o_ob</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
