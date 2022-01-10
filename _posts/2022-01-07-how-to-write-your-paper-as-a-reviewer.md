@@ -7,7 +7,7 @@ description: 論文を査読者視点で完成させる
 preview: https://akihiko.shirai.as/img/2x3d.jpg
 categories: blog
 ---
-
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## この時期になると書きかけの論文を読むことが多くなりますね。
 
