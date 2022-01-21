@@ -7,6 +7,7 @@ description: NFT
 preview: https://akihiko.shirai.as/assets/2022/Blog2022.png
 categories: NFT
 ---
+https://oncyber.io/o_ob
 
 
 "Lucas is still asleep"
@@ -15,6 +16,7 @@ A series of Akihiko SHIRAI's daily creation at Jan 11th 2022.
 After purchasing you'll be able to get original untrimmed Photoshop PSD file signed by Akihiko SHIRAI (@o_ob) at Jan 11th 2022. 
 
 https://www.instagram.com/p/CYmL1A0BbhC/
+https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/50945594738355075121405017459015863241292069842128860034830472911609200115713/
 
 
 "Lucas shares a cake" (20220110)
