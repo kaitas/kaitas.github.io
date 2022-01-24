@@ -151,6 +151,8 @@ https://www.wantedly.com/companies/reality/post_articles/184950
 
 #### 2021
 
+1. 白井暁彦, 中野友介, 堀部貴紀, ボイスチェンジャーサービスの研究開発を通したインターンによる次世代人材育成(Developing next-generation creators through research and development in voice changer services), デジタルハリウッド大学 研究紀要第8号, (2021/11/25), [PDF](https://msl.dhw.ac.jp/wp-content/uploads/2021/11/DHUJOURNAL2021_P040.pdf), [SlideShare](https://www.slideshare.net/vrstudiolab/ss-250792325)
+
 1. 山崎勇祐(REALITY 株式会社/東京工業大学大学院), 白井暁彦「VibeShare::Performer — Emoji・触覚・音効によるオンライン音楽ライブの双方向化」, 第 26 回日本バーチャルリアリティ学会大会 (2021/9/21). [Web](http://conference.vrsj.org/ac2021/program/program-flash01.html) [PDF](https://vr.gree.net/wp-content/uploads/2021/07/VRSJ2021_VibeShare.pdf)
 
 1. 堀部貴紀(REALITY/明治大)，橋本順之(グリー)，白井暁彦(REALITY)，森勢将雅(明治大), 「FFT ライブラリを対象とした実時間 Vocoder の速度比較」, 日本音響学会 2021 年秋季研究発表会(2021/9/7)
