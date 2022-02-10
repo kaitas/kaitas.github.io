@@ -24,7 +24,7 @@
             return sha.getHash('HEX');
         }
         function auth(password) {
-            const url = hash(password) + ".html";
+            const url = hash(password);
             const xhr = new XMLHttpRequest();
             xhr.open('GET', url);
             xhr.send();
@@ -34,7 +34,7 @@
                 } else {
                     const message = document.getElementById('message');
                     const input = document.getElementById('password');
-                    message.innerHTML = url+' is Wrong password! Try again.';
+                    message.innerHTML = 'Wrong password! Try again.';
                     input.value = '';
                 }
             };
