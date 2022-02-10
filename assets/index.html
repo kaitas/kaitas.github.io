@@ -40,7 +40,7 @@
             };
             xhr.onerror = function () {
                 const message = document.getElementById('message');
-                message.innerHTML = 'Sorry, ERROR !';
+                message.innerHTML = 'Sorry, ERROR !'+xhr.status+url;
             };
         }
         const form = document.getElementById('form');
