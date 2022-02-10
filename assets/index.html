@@ -26,7 +26,7 @@
         function auth(password) {
             const url = hash(password);
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', url);
+            xhr.open('GET', url+".html");
             xhr.send();
             xhr.onload = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
