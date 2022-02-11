@@ -4,7 +4,7 @@ title: "VRC理系集会「メタバースと遊び研究の交差点」"
 date: "2022-02-12 03:52:00"
 author: aki
 description: VRC理系集会「メタバースと遊び研究の交差点」にて講演しました。ご参加ありがとうございました。
-preview: {% link /assets/2022/2022-02-11-Rikei/Slides4.png %}
+preview: https://akihiko.shirai.as/assets/2022/2022-02-11-Rikei/Slides4.png
 ---
 
 VRC理系集会「メタバースと遊び研究の交差点」にて講演しました。ご参加ありがとうございました。
