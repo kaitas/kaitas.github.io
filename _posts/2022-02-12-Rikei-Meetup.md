@@ -10,19 +10,22 @@ categories: lecture
 
 VRC理系集会「メタバースと遊び研究の交差点」にて講演させていただきました。ご参加ありがとうございました。
 
+YouTube動画はこちらにあるようです
 [![第12回VRC理系集会特別講演「メタバースと遊び研究の交差点」](https://img.youtube.com/vi/wGlwf8bsLQ4/0.jpg)](https://www.youtube.com/watch?v=wGlwf8bsLQ4)
+[https://www.youtube.com/watch?v=wGlwf8bsLQ4](https://www.youtube.com/watch?v=wGlwf8bsLQ4)
 
 
+
+
+## 参加された方の感想から
 感想を拾いながら、補足していきたいと思います。
+
+Twitter検索から拾わせていただきました。
+（掲載に問題あるようでしたらお伝えください）
 
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1492213758051373056?s=20&t=Ezy9BQWeWNFGXGNoEj7_Jw">date</a></blockquote>
 
-
-## 参加された方の感想から
-
-Twitter検索から拾わせていただきました。
-（掲載に問題あるようでしたらお伝えください）
 
 
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/vr_kaz/status/1492334043865960449">理系集会、修論終わったから行きたいけど、人が爆増しててちょっと躊躇ってしまった()</a></blockquote>
