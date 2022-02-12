@@ -19,7 +19,7 @@ VRC理系集会「メタバースと遊び研究の交差点」にて講演さ�
 <blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1492213758051373056?s=20&t=Ezy9BQWeWNFGXGNoEj7_Jw">date</a></blockquote>
 
 
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/vr_kaz/status/1492334043865960449?s=20&t=ZzWdgdgucSTTD0JEnVroew">理系集会、修論終わったから行きたいけど、人が爆増しててちょっと躊躇ってしまった()</a></blockquote>
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/vr_kaz/status/1492334043865960449">理系集会、修論終わったから行きたいけど、人が爆増しててちょっと躊躇ってしまった()</a></blockquote>
 
 
 人多すぎてドン引きするってありますよね…。
