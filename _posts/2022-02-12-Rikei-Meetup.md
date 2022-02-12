@@ -8,17 +8,38 @@ preview: https://akihiko.shirai.as/assets/2022/2022-02-11-Rikei/Slides4.png
 categories: lecture
 ---
 
-VRC理系集会「メタバースと遊び研究の交差点」にて講演しました。ご参加ありがとうございました。
-
-<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1492213758051373056?s=20&t=Ezy9BQWeWNFGXGNoEj7_Jw">date</a></blockquote>
-
-https://twitter.com/vr_kaz/status/1492334043865960449?s=20&t=ZzWdgdgucSTTD0JEnVroew
-
-人多すぎてドン引きするってありますよね…。（自分もそうでした）
+VRC理系集会「メタバースと遊び研究の交差点」にて講演させていただきました。ご参加ありがとうございました。
 
 [![第12回VRC理系集会特別講演「メタバースと遊び研究の交差点」](https://img.youtube.com/vi/wGlwf8bsLQ4/0.jpg)](https://www.youtube.com/watch?v=wGlwf8bsLQ4)
 
+
+感想を拾いながら、補足していきたいと思います。
+
+
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/o_ob/status/1492213758051373056?s=20&t=Ezy9BQWeWNFGXGNoEj7_Jw">date</a></blockquote>
+
+
+<blockquote class="twitter-tweet" data-width="550" data-dnt="true"><p lang="ja" dir="ltr"></p><a href="https://twitter.com/vr_kaz/status/1492334043865960449?s=20&t=ZzWdgdgucSTTD0JEnVroew">理系集会、修論終わったから行きたいけど、人が爆増しててちょっと躊躇ってしまった()</a></blockquote>
+
+
+人多すぎてドン引きするってありますよね…。
+実は他でもない講演者の自分もそうでした。
+こんなにたくさんの、マスクをしていない人に囲まれる環境はコロナ禍の中では珍しいですし、ふだんVRChatの中では静かに過ごしているので、ドキドキしてしまった。
+
+
 ![Slides1]({% link /assets/2022/2022-02-11-Rikei/Slides1.png %})
+
+![Slides2]({% link /assets/2022/2022-02-11-Rikei/Slides2.png %})
+
+![Slides3]({% link /assets/2022/2022-02-11-Rikei/Slides3.png %})
+
+![Slides4]({% link /assets/2022/2022-02-11-Rikei/Slides4.png %})
+
+![Slides5]({% link /assets/2022/2022-02-11-Rikei/Slides5.png %})
+
+![Slides6]({% link /assets/2022/2022-02-11-Rikei/Slides6.png %})
+
+![Slides7]({% link /assets/2022/2022-02-11-Rikei/Slides7.png %})
 
 https://youtu.be/wGlwf8bsLQ4?t=3254
 
