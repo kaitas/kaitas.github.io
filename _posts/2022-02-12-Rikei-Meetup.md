@@ -34,9 +34,12 @@ Twitter検索から拾わせていただきました。
 実は他でもない講演者の自分もそうでした。
 こんなにたくさんの、マスクをしていない人に囲まれる環境はコロナ禍の中では珍しいですし、ふだんVRChatの中では静かに過ごしているので、ドキドキしてしまった。
 
+# 講演の中で紹介しきれなかったこと
 
+実は理系集会には「スライド5枚まで」という制約があるそうで、実際には使えなかった資料がたくさんあります。
+こちらで補足しながら供養したいと思います。
 
-![Slides1]({% link /assets/2022/2022-02-11-Rikei/Slides1.png %})
+![白井暁彦:VRエンタテイメントシステムの研究者]({% link /assets/2022/2022-02-11-Rikei/Slides1.png %})
 
 ![Slides2]({% link /assets/2022/2022-02-11-Rikei/Slides2.png %})
 
@@ -71,4 +74,8 @@ https://youtu.be/wGlwf8bsLQ4?t=4898
 質問が終わった後に、両面での解釈をするとかですね。
 
 このへん、自分のブログにまとめておこうと思います。
-Kurolyさんからの追加質問があればそこにまとめていきますね。
+
+- [VR Studio Laboratory noteマガジン](https://note.com/reality_eng/m/m394ac85738b5)
+- [インターンがやってみた! Unityによるアニメ制作](https://note.com/reality_eng/n/nc63e1665affa?magazine_key=m394ac85738b5)
+
+
