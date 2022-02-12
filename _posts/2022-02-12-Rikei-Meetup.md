@@ -75,7 +75,8 @@ https://youtu.be/wGlwf8bsLQ4?t=4898
 
 このへん、自分のブログにまとめておこうと思います。
 
+最後に、関連のブログを紹介しておきます。
 - [VR Studio Laboratory noteマガジン](https://note.com/reality_eng/m/m394ac85738b5)
 - [インターンがやってみた! Unityによるアニメ制作](https://note.com/reality_eng/n/nc63e1665affa?magazine_key=m394ac85738b5)
-
+- [REALITY VRで全身を動かしてみた話 REALITY Advent Calendar #18](https://note.com/reality_eng/n/nd102f12e7f78)
 
