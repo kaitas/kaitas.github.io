@@ -1,16 +1,19 @@
 
 {% for book in site.data.researchmap %}
-{% assign d = book[2] %}
+{% assign d = book[1] %}
 
+1つ目[0]はinsert,
 どうやら2つめの項目がmerge
 
 1. {{ d }}
 1. {{ d.merge }}
+1. {{ d[3] }}
+1. {{ d[3].ja }}
 1. {{ d.merge.book_title }}
 1. {{ d.merge.book_title.ja }}
 1. {{ d | book_title }}
 
--{{ book | size}} : {{ book.book_title }}　({{ book.authors }})
+- {{ book | size}} : {{ book.book_title }}　({{ book.authors }})
 
 1. {{ book | insert }}
 1. {{ book | merge }}
@@ -20,8 +23,10 @@
 
 {% endfor %}
 
+以下がJSONLに改行とタブを入れたもの
 
-{"insert":    {
+{"insert":
+    {
         "type":"books_etc",
         "id":"9614893",
         "user_id":"B000001034"},
