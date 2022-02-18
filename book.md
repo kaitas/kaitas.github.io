@@ -1,3 +1,4 @@
+jsonlのままでは読めないので拡張子をjsonにする
 
 {% for book in site.data.researchmap %}
 
