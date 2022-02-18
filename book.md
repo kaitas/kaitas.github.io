@@ -4,11 +4,11 @@ jsonlのままでは読めないので拡張子をjsonにする
 
 
 {% for book in site.data.researchmap %}
-
+{% assign d = book[1] %}
 1つ目[0]はinsert,
 どうやら2つめの項目がmerge
 
-{% for d in book %}
+for d in book
 
 1. {{ d }}
 1. {{ d.merge }}
@@ -17,7 +17,7 @@ jsonlのままでは読めないので拡張子をjsonにする
 1. {{ d.merge.book_title }}
 1. {{ d.merge.book_title.ja }}
 1. {{ d | book_title }}
-{% endfor %}
+endfor
 
 - {{ book | name }} {{ book | size}} : {{ merge.book_title.ja }}　({{ merge.publisher.ja }})
 
