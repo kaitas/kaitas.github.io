@@ -3,11 +3,9 @@
 
 - {{ book_title }}　({{ authors }})
 
-{{ book.insert.id}}
-
-{{ book.insert.user_id}}
-
-{{ book.insert.merge.book_title.ja}}
+1. {{ book.insert.id}}
+1. {{ book.user_id}}
+1. {{ book.merge.book_title.ja}}
 
 {% endfor %}
 
