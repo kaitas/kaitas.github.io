@@ -1,8 +1,10 @@
 
 {% for book in site.data.researchmap %}
 
-- {{ book_title }}　({{ authors }})
+- {{ book.book_title }}　({{ book.authors }})
 
+1. {{ insert }}
+1. {{ book.insert }}
 1. {{ book.insert.id}}
 1. {{ book.user_id}}
 1. {{ book.merge.book_title.ja}}
