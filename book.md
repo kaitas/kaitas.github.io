@@ -1,5 +1,12 @@
 
 {% for book in site.data.researchmap %}
+{% assign d = book[0] %}
+
+{{ d.insert }}
+{{ d.insert.id }}
+{{ d.insert.merge }}
+{{ d.insert.merge.book_title }}
+{{ d.insert.merge.book_title.ja }}
 
 - {{ book.book_title }}　({{ book.authors }})
 
@@ -12,8 +19,7 @@
 {% endfor %}
 
 
-{"insert":
-    {
+{"insert":    {
         "type":"books_etc",
         "id":"9614893",
         "user_id":"B000001034"},
