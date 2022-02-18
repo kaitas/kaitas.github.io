@@ -2,15 +2,15 @@
 {% for book in site.data.researchmap %}
 {% assign d = book[0] %}
 
-{{ d }}
-{{ d | id }}
-{{ d.insert.merge }}
-{{ d | book_title }}
-{{ d.insert.merge.book_title.ja }}
+1. {{ d }}
+2. {{ d | id }}
+3. {{ d.insert.merge }}
+4. {{ d | book_title }}
+5. {{ d.insert.merge.book_title.ja }}
 
 - {{ book.book_title }}　({{ book.authors }})
 
-1. {{ insert }}
+1. {{ book | insert }}
 1. {{ book.insert }}
 1. {{ book.insert.id}}
 1. {{ book.user_id}}
