@@ -2,10 +2,10 @@
 {% for book in site.data.researchmap %}
 {% assign d = book[0] %}
 
-{{ d.insert }}
-{{ d.insert.id }}
+{{ d }}
+{{ d | id }}
 {{ d.insert.merge }}
-{{ d.insert.merge.book_title }}
+{{ d | book_title }}
 {{ d.insert.merge.book_title.ja }}
 
 - {{ book.book_title }}　({{ book.authors }})
