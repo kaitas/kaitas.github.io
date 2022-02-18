@@ -1,23 +1,13 @@
 {% for book in site.data.researchmap %}
-assign d = book[1] 
 
 jsonlは1塊のデータの最後にカンマではなく改行が入ったJSONの亜種。
 jsonlのままでは読めないので拡張子をjsonにする
 行末の改行にカンマを加えるかどうかでどう挙動が変わるかを調べる。
 
-
-
 1つ目はinsert,どうやら2つめの項目がmerge
 
 for d in book
 
-1. {{ d }}
-1. {{ d.merge }}
-1. {{ d.merge.book_title }}
-1. {{ d.merge.book_title.ja }}
-1. {{ d | book_title }}
-
-endfor
 
 - {{ book | name }} {{ book | size}} : {{ merge.book_title.ja }}　({{ merge.publisher.ja }})
 
