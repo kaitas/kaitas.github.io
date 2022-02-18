@@ -5,7 +5,10 @@
 どうやら2つめの項目がmerge
 
 1. {{ d }}
-2. {{ d | book_title }}
+1. {{ d.merge }}
+1. {{ d.merge.book_title }}
+1. {{ d.merge.book_title.ja }}
+1. {{ d | book_title }}
 
 - {{ book.book_title }}　({{ book.authors }})
 
