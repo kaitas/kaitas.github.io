@@ -1,4 +1,7 @@
+jsonlは1塊のデータの最後にカンマではなく改行が入ったJSONの亜種。
 jsonlのままでは読めないので拡張子をjsonにする
+行末の改行にカンマを加えるかどうかでどう挙動が変わるかを調べる。
+
 
 {% for book in site.data.researchmap %}
 
