@@ -3,7 +3,11 @@
 
 - {{ book_title }}　({{ authors }})
 
-{{ book.id}}
+{{ book.insert.id}}
+
+{{ book.insert.user_id}}
+
+{{ book.insert.merge.book_title.ja}}
 
 {% endfor %}
 
