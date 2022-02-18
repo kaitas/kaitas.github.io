@@ -1,6 +1,6 @@
 
 {% for book in site.data.researchmap %}
-{% assign d = book[1] %}
+{% assign d = book[2] %}
 
 どうやら2つめの項目がmerge
 
@@ -10,7 +10,7 @@
 1. {{ d.merge.book_title.ja }}
 1. {{ d | book_title }}
 
-- {{ book.book_title }}　({{ book.authors }})
+-{{ book | size}} : {{ book.book_title }}　({{ book.authors }})
 
 1. {{ book | insert }}
 1. {{ book | merge }}
