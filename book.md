@@ -5,14 +5,12 @@
 # To change the home page layout, edit the _layouts/home.html file.
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
-layout: youtube
-title: YouTube
+layout: defalut
+title: Books
 ---
 
-{% for yt in site.data.youtube %}
+{% for book in site.data.ybooks %}
 
-- {{ yt.memo }}　({{ yt.year }})
-
-  [![{{ yt.memo }}](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
+- {{ merge.book_title.ja }}　({{ merge.publisher.ja }})
 
 {% endfor %}
