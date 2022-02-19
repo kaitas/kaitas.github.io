@@ -9,7 +9,7 @@ layout: defalut
 title: Books
 ---
 
-{% for book in site.data.ybooks %}
+{% for book in site.data.books %}
 
 - {{ merge.book_title.ja }}　({{ merge.publisher.ja }})
 
