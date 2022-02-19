@@ -13,15 +13,15 @@ title: Books
 
 {{book}}
 
-- {{ book.タイトル(日本語) }}　({{ book.出版者・発行元(日本語) }})
+- {{ book[4] }}　({{ book[5] }})
 
 {% endfor %}
 
-{% for book in site.data.ybooks %}
+{% for bo in site.data.ybooks %}
 
-{{book}}
+{{bo}}
 
-- {{ book.merge.book_title.ja }}　({{ book.merge.publisher.ja }})
+- {{ bo.book_title }}　({{ bo.publisher }})
 
 {% endfor %}
 
