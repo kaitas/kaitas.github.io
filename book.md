@@ -13,7 +13,7 @@ title: Books
 
 {{book}}
 
-- {{ book[4] }}　({{ book[5] }})
+- {{ book['タイトル(日本語)'] }}　({{ book.{{タイトル(日本語)}} }})
 
 {% endfor %}
 
