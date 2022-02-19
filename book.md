@@ -11,10 +11,11 @@ title: Books
 
 {% for book in site.data.books %}
 
-{{book}}
+> {{book}}
+
 {% for bi in book %}
 
-- {{ book[bi] }}
+- {{ bi }}
 
 {% endfor %}
 
