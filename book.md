@@ -12,8 +12,13 @@ title: Books
 {% for book in site.data.books %}
 
 {{book}}
+{% for bi in book %}
 
-- {{ book['タイトル(日本語)'] }}　({{ book[出版者・発行元(日本語)] }})
+- {{ book[bi] }}
+
+{% endfor %}
+
+- {{ book['タイトル(日本語)'] }}, {{ book['著者(翻訳者)(日本語)']}} ({{ book['出版者・発行元(日本語)'] }})
 
 {% endfor %}
 
