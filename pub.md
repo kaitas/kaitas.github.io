@@ -8,7 +8,7 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 
 {% for book in site.data.books %}
 
-1. _{{ book['タイトル(日本語)'] }}({{ book['タイトル(英語)'] }})_ {{ book['著者(翻訳者)(日本語)']}}{% if book['担当区分'] contains "single_work" or book['担当区分']== "single_work" %}(単著){% endif %}, {{book['総ページ数']}} pages, 出版日 {{ book['出版年月'] }} ({{ book['出版者・発行元(日本語)'] }}), ISBN:{{book['ISBN']}}
+1. _{{ book['タイトル(日本語)'] }}({{ book['タイトル(英語)'] }})_ {{ book['著者(翻訳者)(日本語)']}}{% if book['担当区分'] contains "single_work" or book['担当区分']== "single_work" %}単著{% endif %}, {{book['総ページ数']}} pages, 出版日 {{ book['出版年月'] }} ({{ book['出版者・発行元(日本語)'] }}), ISBN:{{book['ISBN']}}
 
 {% endfor %}
 
@@ -26,7 +26,9 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 
 {% for p in site.data.published_papers %}
 
-1. {{p}}
+(% if p['タイトル(英語)'] %}English{% endif %}
+
+1. {{p['著者(日本語)']}}, {{p['タイトル(日本語)']}}, {{p['誌名(日本語)']}}, {{p['巻']}}巻, {{p['号']}}号, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(日本語)']}},
 
 {% endfor %}
 
