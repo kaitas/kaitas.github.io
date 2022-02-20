@@ -26,8 +26,6 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 
 {% for p in site.data.published_papers %}
 
-(% if p['タイトル(英語)']==null %}Japanese{% endif %}
-
 {% endfor %}
 
 # Association Memberships
