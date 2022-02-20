@@ -16,10 +16,10 @@
 
 # Association Memberships
 
-アクション名,アクションタイプ,類似業績マージ優先度,ID,所属学協会名(日本語),所属学協会名(英語),年月(From),年月(To),URL,主要な業績かどうか,公開の有無
+<!--アクション名,アクションタイプ,類似業績マージ優先度,ID,所属学協会名(日本語),所属学協会名(英語),年月(From),年月(To),URL,主要な業績かどうか,公開の有無-->
 
 {% for aso in site.data.association_memberships %}
 
-- {{ aso }}
+- {{ aso['所属学協会名(日本語)'] }}
 
 {% endfor %}
