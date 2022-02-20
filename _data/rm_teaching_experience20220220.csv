@@ -1,0 +1,8 @@
+﻿teaching_experience
+アクション名,アクションタイプ,類似業績マージ優先度,ID,科目(日本語),科目(英語),機関名(日本語),機関名(英語),年月(From),年月(To),概要(日本語),概要(英語),科目区分,国・地域,URL,主要な業績かどうか,公開の有無
+insert,merge,null,32133690,人工現実,"Artificial reality",デジタルハリウッド大学大学院,"Digital Hollywood University Graduate School",2018,9999,null,null,null,null,null,false,disclosed
+insert,merge,null,1339213,メディアアート技法,null,東京工業大学,null,null,null,null,null,null,null,null,false,disclosed
+insert,merge,null,1339212,コンピューターゲーム,null,国際基督教大学,null,null,null,null,null,null,null,null,false,disclosed
+insert,merge,null,1339211,応用プログラミング,null,神奈川工科大学,null,null,null,null,null,null,null,null,false,disclosed
+insert,merge,null,1339210,ゲームプログラミング,null,神奈川工科大学,null,null,null,null,null,null,null,null,false,disclosed
+insert,merge,null,1339209,メディアアート,null,神奈川工科大学,null,null,null,null,null,null,null,null,false,disclosed

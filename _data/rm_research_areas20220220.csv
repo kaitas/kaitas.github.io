@@ -1,0 +1,13 @@
+﻿research_areas
+アクション名,アクションタイプ,類似業績マージ優先度,ID,大分類番号,小分類番号,大分類名(日本語),大分類名(英語),小分類名(日本語),小分類名(英語),キーワード(日本語),キーワード(英語),主要な業績かどうか,公開の有無
+insert,merge,null,5933625,A289,A62040,情報通信,Informatics,エンタテインメント、ゲーム情報学,"Entertainment and game informatics",null,null,false,disclosed
+insert,merge,null,29276,A289,A61060,情報通信,Informatics,感性情報学,"Sensitivity (kansei) informatics",デザイン評価,null,false,disclosed
+insert,merge,null,29275,A289,A61040,情報通信,Informatics,ソフトコンピューティング,"Soft computing",デザイン評価,null,false,disclosed
+insert,merge,null,29274,A289,A61030,情報通信,Informatics,知能情報学,"Intelligent informatics",コンピュータビジョン,null,false,disclosed
+insert,merge,null,29273,A289,A60050,情報通信,Informatics,ソフトウェア,Software,コンピュータグラフィックス,null,false,disclosed
+insert,merge,null,29272,A900,A01070,人文・社会,"Humanities & social sciences",芸術実践論,"Aesthetic practices",メディアアート,null,false,disclosed
+insert,merge,null,29271,A900,A01050,人文・社会,"Humanities & social sciences",美学、芸術論,"Aesthetics and art studies",メディアアート,null,false,disclosed
+insert,merge,null,29270,A289,A61050,情報通信,Informatics,知能ロボティクス,"Intelligent robotics",バーチャルリアリティ,null,false,disclosed
+insert,merge,null,29269,A289,A61010,情報通信,Informatics,知覚情報処理,"Perceptual information processing",バーチャルリアリティ,null,false,disclosed
+insert,merge,null,29268,A289,A20010,情報通信,Informatics,機械力学、メカトロニクス,"Mechanics and mechatronics",エンタテイメントシステム,null,false,disclosed
+insert,merge,null,29267,A289,A20020,情報通信,Informatics,ロボティクス、知能機械システム,"Robotics and intelligent systems",エンタテイメントシステム,null,false,disclosed

@@ -1,0 +1,6 @@
+﻿education
+アクション名,アクションタイプ,類似業績マージ優先度,ID,年月(From),年月(To),学校名(日本語),学校名(英語),学部・研究科等(日本語),学部・研究科等(英語),学科等(日本語),学科等(英語),備考(日本語),備考(英語),国・地域,主要な業績かどうか,公開の有無
+insert,merge,null,24479599,null,1998,東京工芸大学,"Tokyo Polytechnic University",工学研究科,null,画像工学専攻,null,null,null,JPN,false,disclosed
+insert,merge,null,24479598,null,1998,東京工芸大学,"Tokyo Polytechnic University",null,"Graduate School, Division of Engineering",null,null,null,null,null,false,disclosed
+insert,merge,null,24479601,null,1996,東京工芸大学,"Tokyo Polytechnic University",工学部,"Faculty of Engineering",写真工学科,null,null,null,JPN,false,disclosed
+insert,merge,null,24479600,null,1996,東京工芸大学,"Tokyo Polytechnic University",null,"Faculty of Engineering",null,null,null,null,null,false,disclosed

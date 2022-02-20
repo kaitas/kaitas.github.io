@@ -1,0 +1,5 @@
+﻿industrial_property_rights
+アクション名,アクションタイプ,類似業績マージ優先度,ID,産業財産権の種類,産業財産権名(日本語),産業財産権名(英語),発明者/考案者/創作者(日本語),発明者/考案者/創作者(英語),出願番号,出願日,出願人(機関)(日本語),出願人(機関)(英語),公開番号,公開日,公表番号,公表日,特許番号/登録番号,登録日,発行日,権利者(日本語),権利者(英語),出願国,取得国,概要(日本語),概要(英語),URL,主要な業績かどうか,公開の有無
+insert,merge,null,1345962,patent_right,姿勢判定方法、プログラム、装置、システム,null,"[白井 暁彦,小坂 崇之,藤村 航,三角 甫]",null,特願2011-171482,2011-08-05,学校法人幾徳学園,null,特開2013-037454,2013-02-21,null,null,null,null,null,null,null,null,null,null,null,http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201303091058705792,false,disclosed
+insert,merge,null,1345961,patent_right,情報表示装置,null,"[白井 暁彦,谷中 一寿,宇津木 健]",null,JP2011005179,2011-09-14,学校法人幾徳学園,null,WO2012-035768,2012-03-22,null,null,null,null,null,null,null,null,null,null,null,http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201403072638429841,false,disclosed
+insert,merge,null,1345963,patent_right,情報表示装置,null,"[白井 暁彦,長野 光希,宇津木 健,濱田 健夫,平野 実花]",null,特願2010-088213,2010-04-06,"白井 暁彦, 長野 光希, 宇津木 健, 濱田 健夫, 平野 実花",null,特開2011-221151,2011-11-04,null,null,null,null,null,null,null,null,null,null,null,http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201103063521042279,false,disclosed

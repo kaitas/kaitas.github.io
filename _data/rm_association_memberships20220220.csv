@@ -1,0 +1,7 @@
+﻿association_memberships
+アクション名,アクションタイプ,類似業績マージ優先度,ID,所属学協会名(日本語),所属学協会名(英語),年月(From),年月(To),URL,主要な業績かどうか,公開の有無
+insert,merge,null,7770300,芸術科学会,"THE SOCIETY FOR ART AND SCIENCE",null,null,null,false,disclosed
+insert,merge,null,7770299,情報処理学会,"INFORMATION PROCESSING SOCIETY OF JAPAN",null,null,null,false,disclosed
+insert,merge,null,7770298,日本バーチャルリアリティ学会,"THE VIRTUAL REALITY SOCIETY OF JAPAN",null,null,null,false,disclosed
+insert,merge,null,7770297,映像情報メディア学会,"THE INSTITUTE OF IMAGE INFORMATION AND TELEVISION ENGINEERS",null,null,null,false,disclosed
+insert,merge,null,3140,null,"Virtual Reality Society of Japan",null,null,null,false,disclosed

@@ -1,0 +1,9 @@
+﻿research_projects
+アクション名,アクションタイプ,類似業績マージ優先度,ID,タイトル(日本語),タイトル(英語),担当研究者(日本語),担当研究者(英語),提供機関(日本語),提供機関(英語),制度名(日本語),制度名(英語),研究種目(日本語),研究種目(英語),研究機関名(日本語),研究機関名(英語),研究期間(From),研究期間(To),担当区分,配分額(総額),配分額(直接経費),配分額(間接経費),研究概要(日本語),研究概要(英語),資金種別,国際共著,課題番号,URL,主要な業績かどうか,公開の有無
+insert,merge,null,10791082,多重化隠蔽映像技術による新たな情報共有空間の創出のための映像制作手法の確立,null,"[白井 暁彦]",null,文部科学省,null,科学研究費補助金(基盤研究(C)),null,基盤研究(C),null,神奈川工科大学,null,2013,2015,principal_investigator,4420000,3400000,1020000,null,null,competitive_research_funding,null,25330440,http://kaken.nii.ac.jp/d/p/25330440.ja.html,false,disclosed
+insert,merge,null,24479609,null,"A haptics entertainment system for children.",null,null,null,null,null,"JST Basic Research Programs (Exploratory Research for Advanced Technology :ERATO)",null,null,null,null,2001,2003,null,0,0,0,null,null,competitive_research_funding,null,null,null,false,disclosed
+insert,merge,null,24479607,子供向け触覚エンタテイメントシステムの開発,null,null,null,null,null,"ＪＳＴ戦略的創造研究推進制度（総括実施型） （創造科学技術推進事業：ＥＲＡＴＯ）",null,null,null,null,null,2001,2003,null,0,0,0,null,null,competitive_research_funding,null,null,null,false,disclosed
+insert,merge,null,24479612,次世代エンタテイメントシステムの開発,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,null,null,competitive_research_funding,null,null,null,false,disclosed
+insert,merge,null,24479611,情動入力可能なコンピュータインターフェイスデバイスの開発,null,null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,null,null,competitive_research_funding,null,null,null,false,disclosed
+insert,merge,null,24479610,null,"Development for next generational entertainmet system",null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,null,null,competitive_research_funding,null,null,null,false,disclosed
+insert,merge,null,24479608,null,"Development of Computer Interface using Human Emotion.",null,null,null,null,null,null,null,null,null,null,null,null,null,0,0,0,null,null,competitive_research_funding,null,null,null,false,disclosed

@@ -1,0 +1,4 @@
+﻿research_experience
+アクション名,アクションタイプ,類似業績マージ優先度,ID,年月(From),年月(To),所属(日本語),所属(英語),部署(日本語),部署(英語),職名(日本語),職名(英語),職階,称号(日本語),称号(英語),備考(日本語),備考(英語),国・地域,主要な業績かどうか,公開の有無
+insert,merge,null,32241922,2018,9999,デジタルハリウッド大学,"Digital Hollywood University",大学院,"Graduate School",客員教授,"Visiting Professor",prof_lv,null,null,null,null,JPN,false,disclosed
+insert,merge,null,14835028,2013,2018-04,神奈川工科大学,"Kanagawa Institute of Technology",情報学部,"Faculty of Information Technology",准教授,null,associate_prof_lecturer_lv,null,null,null,null,null,false,disclosed

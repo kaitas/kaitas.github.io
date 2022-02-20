@@ -1,0 +1,7 @@
+﻿research_interests
+アクション名,アクションタイプ,類似業績マージ優先度,ID,キーワード(日本語),キーワード(英語),主要な業績かどうか,公開の有無
+insert,merge,null,75890,"Entertainment systems","Entertainment systems",false,disclosed
+insert,merge,null,75889,Haptics,Haptics,false,disclosed
+insert,merge,null,75888,"Computer Vision and sensing devices","Computer Vision and sensing devices",false,disclosed
+insert,merge,null,75887,"Human Computer Interaction","Human Computer Interaction",false,disclosed
+insert,merge,null,75886,"Virtual Reality","Virtual Reality",false,disclosed
