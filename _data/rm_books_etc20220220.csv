@@ -1,4 +1,0 @@
-﻿books_etc
-アクション名,アクションタイプ,類似業績マージ優先度,ID,タイトル(日本語),タイトル(英語),担当区分,著者(翻訳者)(日本語),著者(翻訳者)(英語),原著者(日本語),原著者(英語),担当範囲(日本語),担当範囲(英語),出版者・発行元(日本語),出版者・発行元(英語),概要(日本語),概要(英語),出版年月,総ページ数,担当ページ,記述言語,査読の有無,著書種別,国際共著,DOI,ISBN,URL,URL2,主要な業績かどうか,公開の有無
-insert,merge,null,9614893,"白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-",null,single_work,"[白井 暁彦,はやのん]",null,null,null,null,null,ワークスコーポレーション,null,null,null,2013-11-26,192,null,null,false,null,null,null,4862671586,null,null,false,disclosed
-insert,merge,null,23141,WiiRemoteプログラミング,null,joint_work,"[白井 暁彦,小坂 崇之,くるくる研究室,木村 秀敬,オーム社開発部,タナカユカリ]",null,null,null,null,null,オーム社,null,null,null,2009-07-25,400,null,null,false,null,null,null,4274067505,null,null,false,disclosed

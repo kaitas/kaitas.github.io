@@ -1,5 +1,4 @@
-﻿awards
-アクション名,アクションタイプ,類似業績マージ優先度,ID,賞名(日本語),賞名(英語),受賞者・グループ(日本語),受賞者・グループ(英語),タイトル(日本語),タイトル(英語),授与機関(日本語),授与機関(英語),概要(日本語),概要(英語),受賞年月,受賞区分,受賞国・地域,URL,主要な業績かどうか,公開の有無
+﻿アクション名,アクションタイプ,類似業績マージ優先度,ID,賞名(日本語),賞名(英語),受賞者・グループ(日本語),受賞者・グループ(英語),タイトル(日本語),タイトル(英語),授与機関(日本語),授与機関(英語),概要(日本語),概要(英語),受賞年月,受賞区分,受賞国・地域,URL,主要な業績かどうか,公開の有無
 insert,merge,null,3207305,"Top 500 startups","Top 500 startups","[白井 暁彦]","[Akihiko SHIRAI]","“Multiplex World Augmentation Display""","“Multiplex World Augmentation Display""","Hello Tomorrow Global Summit","Hello Tomorrow Global Summit",null,null,2016-10,null,null,null,false,disclosed
 insert,merge,null,3207304,芸術科学会貢献賞,"Art and Science Contributed Award","[白井 暁彦]","[Akihiko SHIRAI]",null,null,芸術科学会,"Art and Science",null,null,2016-10,null,null,null,false,disclosed
 insert,merge,null,3207303,インタラクティブセッション「オーディエンス賞」2位,"2nd place, Interactive Session Audience Award","[鈴木 久貴,山口 裕太,白井 暁彦,須貝 孝明]","[Hisataka SUZUKI,Yuta YAMAGUCHI,Akihiko SHIRAI,Takaaki SUGAI]","多重化多視点VRアーケードゲームシステム-DUAL DUEL-","DUAL DUEL",ゲーム開発者会議「CEDEC2016」,CEDEC2016,null,null,2016-08,null,null,null,false,disclosed

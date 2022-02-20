@@ -5,3 +5,19 @@
 1. "{{ book['タイトル(日本語)'] }}" {{ book['著者(翻訳者)(日本語)']}}, {{book['総ページ数']}} pages, 出版日 {{ book['出版年月'] }} ({{ book['出版者・発行元(日本語)'] }}), ISBN:{{book['ISBN']}}
 
 {% endfor %}
+
+# Awards
+
+{% for aw in site.data.awards %}
+
+- {{ aw }}
+
+{% endfor %}
+
+# Association Memberships
+
+{% for aso in site.data.association_memberships %}
+
+- {{ aso }}
+
+{% endfor %}
