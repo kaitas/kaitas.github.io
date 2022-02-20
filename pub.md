@@ -26,7 +26,7 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 
 {% for p in site.data.published_papers %}
 
-(% if p['タイトル(英語)']==nil %}Japanese?{% endif %}
+(% if p['タイトル(英語)'] contains "" %}Japanese?{% endif %}
 
 1. {{p['著者(日本語)']}}, {{p['タイトル(日本語)']}}, {{p['誌名(日本語)']}}, {{p['巻']}}巻, {{p['号']}}号, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(日本語)']}}
 
