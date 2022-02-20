@@ -16,7 +16,7 @@ paginate_path: "/blog/page:num/"
 # permalink: date # 不明
 # collections_dir: .
 collections:
-  posts: 
+  posts:
     output: true
 plugins:
   - jekyll-sitemap
@@ -38,11 +38,13 @@ plugins:
 # https://github.com/set0gut1/good-looking-repository/
 # twitter:
 # username: o_ob
+
+## https://jekyllrb.com/docs/front-matter/
 # defaults:
-#  - scope: 
+#  - scope:
 #      path: ""
 #    values:
 #      image:
 #        path: /img/card.png
 #        height: 630
-#        width: 1200 
+#        width: 1200
