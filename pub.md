@@ -16,7 +16,7 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 
 {% for aw in site.data.awards %}
 
-1. _{{ aw['賞名(英語)'] }}_, {{ aw['受賞者・グループ(英語)']}}, {{ aw['タイトル(英語)']}} given by {{ aw['授与機関(英語)']}} at {{aw['受賞年月']}}
+1. _{{ aw['賞名(英語)'] }}_, {{ aw['受賞者・グループ(英語)']}}, To _{{ aw['タイトル(英語)']}}_, given by {{ aw['授与機関(英語)']}} at {{aw['受賞年月']}}
 
 {% endfor %}
 
@@ -25,6 +25,10 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 > アクション名,アクションタイプ,類似業績マージ優先度,ID,タイトル(日本語),タイトル(英語),著者(日本語),著者(英語),担当区分,概要(日本語),概要(英語),出版者・発行元(日本語),出版者・発行元(英語),出版年月,誌名(日本語),誌名(英語),巻,号,開始ページ,終了ページ,記述言語,査読の有無,招待の有無,掲載種別,国際・国内誌,国際共著,DOI,ISSN,eISSN,URL,URL2,主要な業績かどうか,公開の有無
 
 {% for p in site.data.published_papers %}
+
+(% if p['タイトル(英語)']!=nil %}Japanese?{% endif %}
+
+1. {{p['著者(日本語)']}}, {{p['タイトル(日本語)']}}, {{p['誌名(日本語)']}}, {{p['巻']}}巻, {{p['号']}}号, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(日本語)']}}
 
 {% endfor %}
 
