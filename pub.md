@@ -27,10 +27,15 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 {% for p in site.data.published_papers %}
 {%comment%} https://shopify.github.io/liquid/basics/types/#string {%endcomment%}
 
+{% assign title = p['タイトル(英語))'] %}
+{% if title!=empty %}
+{% assign title = p['タイトル(日本語))'] %}
+{$ endif $}
+
 {% if p['タイトル(英語)']!=empty %}
 {% if p['タイトル(日本語))']!=empty %}
 
-1. {{p['著者(日本語)']}}, {{p['タイトル(日本語)']}}, {{p['誌名(日本語)']}}, {{p['巻']}}巻, {{p['号']}}号, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(日本語)']}}, {{p['出版年月']}}.
+1. {{ title }} {{p['著者(日本語)']}}, {{p['タイトル(日本語)']}}, {{p['誌名(日本語)']}}, {{p['巻']}}巻, {{p['号']}}号, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(日本語)']}}, {{p['出版年月']}}.
 
 {% else %}
 
@@ -40,7 +45,6 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 {% else %}
 
 - {{p['著者(日本語)']}}, {{p['タイトル(日本語)']}}, {{p['誌名(日本語)']}}, {{p['巻']}}巻, {{p['号']}}号, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(日本語)']}}, {{p['出版年月']}}.
-
 
 {% endif %}
 {% endfor %}
