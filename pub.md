@@ -27,10 +27,11 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 {% for p in site.data.published_papers %}
 {%comment%} https://shopify.github.io/liquid/basics/types/#string {%endcomment%}
 
-{% unless p['タイトル(日本語)'] == empty %}
-{% if p['タイトル(英語)']!=empty %}
-{{ p['タイトル(英語)'] }}
+{% if p['タイトル(日本語)']!=empty %}
+{{ p['タイトル(日本語)'] }}
 {% endif %}
+
+{% unless p['タイトル(日本語)'] == empty %}
 
 1. {{p['著者(英語)']}}, {{p['タイトル(英語)']}}, {{p['誌名(英語)']}}, Vol.{{p['巻']}}, No.{{p['号']}}, pp. {{p['開始ページ']}}--{{p['終了ページ']}}, {{p['出版者・発行元(英語)']}}, {{p['出版年月']}}.
 
