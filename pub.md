@@ -28,7 +28,7 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 {%comment%} https://shopify.github.io/liquid/basics/types/#string {%endcomment%}
 
 {% assign title = p['タイトル(英語))'] %}
-
+{{ title }}
 {% if p['タイトル(英語)']!=empty %}
 {% if p['タイトル(日本語))']!=empty %}
 
