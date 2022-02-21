@@ -29,7 +29,7 @@ Data is reterieved from [researchmap.jp](https://researchmap.jp/akihiko)
 
 {% assign title = p['タイトル(英語))'] %}
 {% if title!=empty %}
-{% assign title = p['タイトル(日本語))'] %}
+{% title = p['タイトル(日本語))'] %}
 {$ endif $}
 
 {% if p['タイトル(英語)']!=empty %}
