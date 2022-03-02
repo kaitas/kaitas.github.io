@@ -4,8 +4,6 @@ title: "Unity2021.2.13f1でシンプルなPostEffectsとShaderGraphを試す"
 date: "2022-03-02 20:50:00"
 author: aki
 description: 新しいUnity2021でのShaderGraphとPosteffectについて勉強してみました。
-preview: https://user-images.githubusercontent.com/5110708/156352621-aa429248-b464-41fa-8f46-e4deb0725eda.png
-categories: Unity
 ---
 
 
