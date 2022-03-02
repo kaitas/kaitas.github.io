@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "Unity2021.2.13f1でシンプルなPostEffectsとShaderGraphを試す"
-date: "2022-03-02 20:50:00"
+title: Unity2021.2.13f1でシンプルなPostEffectsとShaderGraphを試す
 author: aki
 description: 新しいUnity2021でのShaderGraphとPosteffectについて勉強してみました。
 ---
-
 
 # SimplePostEffects
 [keijiro神の URP SimplePostEffects](https://github.com/kaitas/SimplePostEffects)をみて、新しいUnity2021でのShaderGraphとPosteffectについて勉強してみました。
