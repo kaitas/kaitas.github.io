@@ -45,7 +45,7 @@ The motto is "Creating people who create" (from his written book in [The future 
 - [Publications](http://blog.shirai.la/publications/)
 - [Manga Generator Consortium](https://manga.style/)
 
-### Projects
+### Legacy Projects
 
 - [Fantastic Phantom Slipper](https://akihiko.shirai.as/Fantastic-Phantom-Slipper.html)
 - [BookWii](https://akihiko.shirai.as/projects/BookWii/index.html)
@@ -53,11 +53,6 @@ The motto is "Creating people who create" (from his written book in [The future 
 - [projects.shirai.as](https://projects.shirai.as/)
 
 # Lecture
-
-## Slide portal
-
-- [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
-- [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
 
 ### Lecuture and Talks (part)
 
@@ -73,6 +68,10 @@ The motto is "Creating people who create" (from his written book in [The future 
 [![Research and Development for Avatar-Driven Virtual Society in VR4.0 Era](https://img.youtube.com/vi/hVR82Rb7eqM/0.jpg)](https://www.youtube.com/watch?v=hVR82Rb7eqM)
 
 
+## Slide portal
+
+- [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
+- [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
 
 
 ## Digital Hollywood University
@@ -90,7 +89,7 @@ The motto is "Creating people who create" (from his written book in [The future 
 - [Virtual Realty for Entertainment - 文化・言語背景を 文化・言語背景を超えた環境における国際的エンタテイメントシステムデザイン](https://www.slideshare.net/aquihiko/virtual-realty-for-entertainment) JAIST, 2006/11
 - <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式 Ludology 事始－</a> IGDA 日本 ゲームテクノロジー研究会 第 1 回 研究会(2004 年 1 月 10 日)(<a href="https://www.slideshare.net/aquihiko/igda-1/aquihiko/igda-1">Detail in SlideShare</a>)
 
-## CEDEC 発表経歴
+## CEDEC History (GDC in Japan)
 
 ### CEDEC2000
 
