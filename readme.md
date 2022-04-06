@@ -52,19 +52,21 @@ The motto is "Creating people who create" (from his written book in [The future 
 - [SlideShare@GREEVRStudioLab](https://www.slideshare.net/vrstudiolab/)
 - [SlideShare@AkihikoSHIRAI](https://www.slideshare.net/aquihiko)
 
-## YouTube Archived
-
-- [“Research and Development for Avatar-Driven Virtual Society in VR4.0 Era” #EMTECH #DesiredIdentities](https://www.youtube.com/watch?v=hVR82Rb7eqM) Published on June 27,2020
-
 ### Lecuture and Talks (part)
 
 [![REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021](https://img.youtube.com/vi/VpfjRFD4fhw/0.jpg)](https://www.youtube.com/watch?v=VpfjRFD4fhw)
 
-1. "REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021", [SIGGRAPH ASIA 2021  CG In Japan](https://www.youtube.com/watch?v=VpfjRFD4fhw)
+1. "REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021", [SIGGRAPH ASIA 2021  CG In Japan](https://www.youtube.com/watch?v=VpfjRFD4fhw), 2021/Dec/14
 1. "Since VR Entertainment, dawn of XR Metaverse - Development and Deployment for next generation of human being", [ICAT-EGVE 2021 Keynote](https://icat-egve-2021.org/index.php/keynotes/), 2021/Sep/08
 1. "What is happening in Japanese CG research and industry now? WFLE: Beyond VTuber to Live Entertainment", [SIGGRAPH 2020 IRC](https://docs.google.com/presentation/d/19fHo9PRxz8hn5bYFcrl-uezbxK21YwxIb4W1ht92z84/edit#slide=id.g9274a76f41_13_85)
 1. Virtual Beings World "New Play Together", [SIGGRAPH 2020 BoF](https://www.slideshare.net/vrstudiolab/virtual-beings-world-new-play-together-siggraph-2020-bof)
 1. Game.Impulse, University of Applied Sciences Bonn-Rhein-Sieg, 2021/6/9 [Web](https://www.h-brs.de/de/isf/termin/gameimpulse-Akihiko_Shirai)
+1. [“Research and Development for Avatar-Driven Virtual Society in VR4.0 Era” #EMTECH #DesiredIdentities](https://www.youtube.com/watch?v=hVR82Rb7eqM) Published on June 27,2020
+
+[![Research and Development for Avatar-Driven Virtual Society in VR4.0 Era](https://img.youtube.com/vi/hVR82Rb7eqM/0.jpg)](https://www.youtube.com/watch?v=hVR82Rb7eqM)
+
+
+
 
 ## Digital Hollywood University
 
