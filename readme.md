@@ -1,11 +1,15 @@
-## Akihiko SHIRAI, Ph.D - Biography
+## Akihiko SHIRAI, Ph.D - Creator / Researcher of Entertainment VR and UXDev in Metaverse
 
 AKIHIKO SHIRAI, Ph.D (Engineering) worked for Canon and Criterion as a game development consultant to distribute RenderWare, a multi-platform graphics middle-ware for the game industry until 2001. He had backed to academia and received his Ph.D from the Tokyo Institute of Technology in Japan in 2004 with research concerning the “Tangible Playroom”, an entertainment system for young children using haptics, a floor screen and real-time physics engine. He was a R&D researcher at NHK-ES in Japan, focusing on the next generation’s TV production environment before moving to ENSAM Presence & Innovation Laboratory in France in 2004 to 2007 for R&D of a Virtual Reality theme park development project with some significant research projects. Rapid computer vision on GPU "[GPUVision](https://youtu.be/N4WtupBoRMI?t=172)", robotic game player "[RoboGamer](https://www.youtube.com/watch?v=2vH62EEfH6E)" and WiiMedia projects have been accepted by ACM SIGGRAPH and IEEE VR. He worked for [National Museum of Emerging Science and Innovation (Miraikan)](https://www.miraikan.jst.go.jp/en/), Tokyo Japan, as a science communicator and exhibition planner for 2008 to 2010. From 2010, he is working in Information Media, Kanagawa Institute of Technology (KAIT) as an associate professor. The motto is "Creating people who creates". Simultaneous multiplex imagery system "[Scritter](https://www.youtube.com/watch?v=FZSC1ZETzZQ)", "[ExPixel](https://www.youtube.com/watch?v=lOMx5F7aGEQ)" and "[ExField](https://www.youtube.com/watch?v=BrVJDMgVFqY)", Manga immersive system "[Manga Generator](https://manga.style/manga-generator/)", nursery VR entertainment "Real Baby - Real Family" have been awarded by ministry, academia, and game industry.
 Since June 2018, He revived to game industry again as a research director to launch "[GREE VR Studio Laboratory](https://vr.gree.net/lab/)" in [REALITY, Inc](https://reality.inc/). a family of [GREE, Inc.](https://gree.co.jp/), which promotes a new XR metaverse industry. Tackling to research for vTuber (Virtual YouTuber, virtual persona, virtual artist) enhancement and exploring XR live entertainment. Contributing to develop new user experience in XR entertainment and solutions like "[VibeShare](https://vr.gree.net/lab/vibeshare/)", a suite of virtual live enchanting technologies to share non-verbal interaction in XR live entertainment. Visiting Professor at [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). Vice president of [the society for Art and Science](https://art-science.org/). Ambassador and Board of Directors at [Laval Virtual](https://www.laval-virtual.com/).
 
 # Research
 
+- [GREE VR Studio Laboratory](https://j.mp/VRSYT)
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
+
+[![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
+
 
 ## Works
 
