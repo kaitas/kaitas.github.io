@@ -34,6 +34,7 @@ The motto is "Creating people who create" (from his written book in [The future 
  - [Let's go travel around the world virtually](https://vr.gree.net/lab/live/kws2021/)
 - [REALITY](https://reality.app/)
  - [UXDev Project](https://vr.gree.net/lab/demo/uxdev/)
+  - [“Metaverse Christmas”](https://www.youtube.com/watch?v=0eKx-mlRNd4)
   - ["Back to Metaver-School" - a blooming future of Metaverse in REALITY](https://www.youtube.com/watch?v=1JlD6XF2HNI)
 
  [!["Back to Metaver-School" - a blooming future of Metaverse in REALITY](https://img.youtube.com/vi/1JlD6XF2HNI/0.jpg)](https://www.youtube.com/watch?v=1JlD6XF2HNI)
