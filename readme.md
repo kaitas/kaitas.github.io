@@ -1,8 +1,8 @@
 ## Akihiko SHIRAI, Ph.D 
 
-![Akihko SHIRAI in GREE VR Studio Laboratory](img/VRStudioLab.jpg)
-
 ### Creator and Researcher of Entertainment VR and UXDev in Metaverse
+
+![Akihko SHIRAI in GREE VR Studio Laboratory](img/VRStudioLab.jpg)
 
 AKIHIKO SHIRAI, Ph.D (Engineering), is a researcher in entertainment virtual reality. He worked for Canon and Criterion as a game development consultant to distribute RenderWare, a multi-platform graphics middle-ware for the game industry until 2001. He had returned to academia and received his Ph.D from the Tokyo Institute of Technology in Japan in 2004 with research concerning the “Tangible Playroom”, an entertainment system for young children using haptics, a floor screen and real-time physics engine. He was a R&D researcher at NHK-ES in Japan, focusing on the next generation’s TV production environment before moving to ENSAM Presence & Innovation Laboratory in France in 2004 to 2007 for R&D of a Virtual Reality theme park development project with some significant research projects. Rapid computer vision on GPU "[GPUVision](https://youtu.be/N4WtupBoRMI?t=172)", robotic game player "[RoboGamer](https://www.youtube.com/watch?v=2vH62EEfH6E)" and "WiiMedia" projects have been accepted by ACM SIGGRAPH and IEEE VR. He worked for  [National Museum of Emerging Science and Innovation (Miraikan)](https://www.miraikan.jst.go.jp/en/), Tokyo Japan, as a science communicator and exhibition planner for 2008 to 2010. He worked in Information Media, Kanagawa Institute of Technology (KAIT) as an associate professor from 2010 to 2018. Simultaneous multiplex imagery systems "Scritter", "[ExPixel](https://www.youtube.com/watch?v=lOMx5F7aGEQ)" and "[ExField](https://www.youtube.com/watch?v=BrVJDMgVFqY)", Manga immersive system "[Manga Generator](https://manga.style/manga-generator/)", nursery VR entertainment "[Real Baby - Real Family](https://www.youtube.com/watch?v=vqmMXMKX33M)" have been awarded by ministry, academia, and game industry. Visiting Professor at Digital Hollywood University Graduate School since 2018. In June 2018, He returned to the entertainment industry again as a research director to launch "[GREE VR Studio Laboratory](https://vr.gree.net/lab/)" in [REALITY, Inc](https://reality.inc/). a family of [GREE, Inc.](https://corp.gree.net/jp/en/), which promotes a new XR metaverse industry. Tackling to research for vTuber (Virtual YouTuber, virtual persona, virtual artist) enhancement and exploring XR live entertainment. Contributing to develop new user experience in XR entertainment and solutions like "[VibeShare](https://vr.gree.net/lab/vibeshare/)", a suite of virtual live enchanting technologies to share non-verbal interaction in XR live entertainment. In [REALITY, Inc](https://reality.inc/), [representative of the metaverse industry in Japan](https://www.google.com/search?q=%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9&rlz=1C1GCEA_enJP946JP946&sxsrf=APq-WBvo0I_cAw-TlGHO2OEXSubTXb6TYw:1649263207297&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9tPKc8P_2AhXQdHAKHR-jCX8Q_AUoAnoECAIQBA&biw=1707&bih=802&dpr=1.13), he produces some visualization of near-future user experiences using [REALITY.app](https://reality.app) in [UXDev projects on YouTube](https://vr.gree.net/lab/demo/uxdev/), and contributes to some PoC for B2B metaverse using [Mozilla Hubs with Japanese translation](https://github.com/gree/hubs-docs-jp) and community developments. 
 Visiting Professor at [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). 
@@ -15,13 +15,14 @@ The motto is "Creating people who create" (from his written book in [The future 
 
 # Research
 
+[![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
+
 - [GREE VR Studio Laboratory](https://j.mp/VRSYT)
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
-[![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
-
-
 ## Works
+
+![Akihko SHIRAI in a manga](img/ShiraiAkihiko-VRStudioLab.jpg)
 
 ### GREE VR Studio Laboratory (2018-)
 
@@ -57,11 +58,18 @@ The motto is "Creating people who create" (from his written book in [The future 
 
 ### Lecuture and Talks (part)
 
+[![REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021](https://img.youtube.com/vi/VpfjRFD4fhw/0.jpg)](https://www.youtube.com/watch?v=VpfjRFD4fhw)
+
+1. "REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021", [SIGGRAPH ASIA 2021  CG In Japan](https://www.youtube.com/watch?v=VpfjRFD4fhw)
+1. "Since VR Entertainment, dawn of XR Metaverse - Development and Deployment for next generation of human being", [ICAT-EGVE 2021 Keynote](https://icat-egve-2021.org/index.php/keynotes/), 2021/Sep/08
+1. "What is happening in Japanese CG research and industry now? WFLE: Beyond VTuber to Live Entertainment", [SIGGRAPH 2020 IRC](https://docs.google.com/presentation/d/19fHo9PRxz8hn5bYFcrl-uezbxK21YwxIb4W1ht92z84/edit#slide=id.g9274a76f41_13_85)
+1. Virtual Beings World "New Play Together", [SIGGRAPH 2020 BoF](https://www.slideshare.net/vrstudiolab/virtual-beings-world-new-play-together-siggraph-2020-bof)
 1. Game.Impulse, University of Applied Sciences Bonn-Rhein-Sieg, 2021/6/9 [Web](https://www.h-brs.de/de/isf/termin/gameimpulse-Akihiko_Shirai)
 
 ## Digital Hollywood University
 
-- [DHGS](https://akihiko.shirai.as/dhgs/)
+- [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/)
+- [Lectures and Projects in DHGS](https://akihiko.shirai.as/dhgs/)
 
 ### Misc
 
