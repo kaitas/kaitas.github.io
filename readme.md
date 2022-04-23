@@ -79,6 +79,8 @@ The motto is "Creating people who create" (from his written book in [The future 
 - [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/)
 - [Lectures and Projects in DHGS](https://akihiko.shirai.as/dhgs/)
 
+<hr>
+
 ### Misc
 
 - "WFLE: Beyond VTuber to Live Entertainment", What is happening in Japanese CG research and industry now?, In SIGGRAPH 2020 Birds of a Feather, 2020/Aug/25, [Announce](https://twitter.com/siggraph_irc/status/1298209673783345152?s=20)
@@ -89,72 +91,16 @@ The motto is "Creating people who create" (from his written book in [The future 
 - [Virtual Realty for Entertainment - 文化・言語背景を 文化・言語背景を超えた環境における国際的エンタテイメントシステムデザイン](https://www.slideshare.net/aquihiko/virtual-realty-for-entertainment) JAIST, 2006/11
 - <a href="http://kaitas.github.io/PDF/SIG-GT20040410Web.pdf" onclick= "ga('send', 'event', 'download','click','/PDF/SIG-GT20040410Web.pdf');">ゲーム開発業の未来を支える産学連携－日本式 Ludology 事始－</a> IGDA 日本 ゲームテクノロジー研究会 第 1 回 研究会(2004 年 1 月 10 日)(<a href="https://www.slideshare.net/aquihiko/igda-1/aquihiko/igda-1">Detail in SlideShare</a>)
 
-## CEDEC History (GDC in Japan)
 
-### CEDEC2000
+<hr>
 
-「RenderWare3」と「RenderVision」による次世代ゲーム開発の高速化
-http://cedec.cesa.or.jp/2000/detail_categori.html
+## IVRC community events
 
-### CEDEC2012
+[https://ivrc.net](https://ivrc.net)
 
-3D ディスプレイと互換の多重化・隠蔽映像技術「Scritter」が拓く 3D コンテンツの未来
-https://cedec.cesa.or.jp/2012/program/INT/C12_P0205.html
-インタラクティブセッション会場投票賞 1 位受賞
-https://cedec.cesa.or.jp/2012/program/INT/result.html
+<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K6LYP5/embed" data-aspect="0.563"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K6LYP5-IVRC-BoF-SIGGRAPH2016">IVRC Birds of a Feather (BoF) in SIGRAPH2016 by @o_ob</a></div>
 
-### CEDEC2013
-
-姿勢評価によるリアルタイム感情推定を特徴とする動的マンガ生成システム「Manga Generator」
-http://cedec.cesa.or.jp/2013/program/GD/7225.html
-https://cedil.cesa.or.jp/cedil_sessions/view/1083
-
-### CEDEC2014
-
-ゲームの次元を拡張する次世代多重化映像技術「ExPixel」
-https://cedec.cesa.or.jp/2014/session/AC/5423.html
-インタラクティブセッション 3 位受賞
-https://cedec.cesa.or.jp/2014/session/INT/result.html
-
-### CEDEC2016
-
-多重化多視点 VR アーケードゲームシステム -DUAL DUEL-
-https://cedec.cesa.or.jp/2016/session/AC/8656.html
-「インタラクティブセッション オーディエンス賞 2 位受賞
-https://cedec.cesa.or.jp/2016/session/INT/result.html
-
-### CEDEC2017
-
-家族愛をテーマにした子育て VR エンタテイメント ”Real Baby - Real Family”
-http://cedec.cesa.or.jp/2017/session/AC/s58e0597c6eab2/
-https://cedil.cesa.or.jp/cedil_sessions/view/1758
-
-次世代 VR/AR エンタテイメントのための多重化映像生成ミドルウェア
-https://cedil.cesa.or.jp/cedil_sessions/view/1607
-https://www.slideshare.net/aquihiko/cedec2017-vrar
-
-### CEDEC2019
-
-REALITY「なりたい自分で、生きていく」リアルタイムライブで VTuber が活躍する舞台を作る現場の 1 年
-https://cedec.cesa.or.jp/2019/session/detail/s5c9df84045dd1
-https://www.wantedly.com/companies/reality/post_articles/184950
-
-「宇宙 x 教育 xVR ＝ちゃんと学べる体感サイエンスツアー「ありえな LAB」の挑戦
-[https://cedec.cesa.or.jp/2019/session/detail/s5c9c660d3c16c.html]
-[https://www.slideshare.net/harukasakami/xxvr-lab]
-
-### CEDEC2021
-
-白井暁彦,山崎勇祐「[VibeShare: コロナ禍の音楽ライブを「触覚」で双方向化する](https://cedec.cesa.or.jp/2021/session/detail/s606425b133c63)」, ([Blog](https://note.com/reality_eng/n/nc858173ef43c))
-
-# Archived Projects in Github pages
-
-- [KAIT Shirai Lab](https://new.shirai.la/)
-- [相模 Ingress 部](https://kaitas.github.io/sagami-ingress/)
-- [スマ歩！さがみはら](https://kaitas.github.io/sumaho-sagamihara/)
-- [IEEEVR2020jp](https://kaitas.github.io/IEEEVR2020jp/)
-
-# Articles
+## Articles
 
 - [卒論が 1 ミリも進まない 4 年生におくる，卒論サンプル](tex-sample.md)
 - [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
@@ -236,14 +182,75 @@ Refer my paper indexed in [Research Gate](https://www.researchgate.net/profile/A
 1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「[足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja) ([Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper](https://doi.org/10.18974/tvrsj.4.4_691))」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
 1. Yuichiro Kume, Akihiko Shirai, Motoshisa Tsuda, Toyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
 
-<hr>
-
-## IVRC community events
-
-<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K6LYP5/embed" data-aspect="0.563"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K6LYP5-IVRC-BoF-SIGGRAPH2016">IVRC Birds of a Feather (BoF) in SIGRAPH2016 by @o_ob</a></div>
 
 <hr>
 
+## CEDEC History (GDC in Japan)
+
+### CEDEC2000
+
+「RenderWare3」と「RenderVision」による次世代ゲーム開発の高速化
+http://cedec.cesa.or.jp/2000/detail_categori.html
+
+### CEDEC2012
+
+3D ディスプレイと互換の多重化・隠蔽映像技術「Scritter」が拓く 3D コンテンツの未来
+https://cedec.cesa.or.jp/2012/program/INT/C12_P0205.html
+インタラクティブセッション会場投票賞 1 位受賞
+https://cedec.cesa.or.jp/2012/program/INT/result.html
+
+### CEDEC2013
+
+姿勢評価によるリアルタイム感情推定を特徴とする動的マンガ生成システム「Manga Generator」
+http://cedec.cesa.or.jp/2013/program/GD/7225.html
+https://cedil.cesa.or.jp/cedil_sessions/view/1083
+
+### CEDEC2014
+
+ゲームの次元を拡張する次世代多重化映像技術「ExPixel」
+https://cedec.cesa.or.jp/2014/session/AC/5423.html
+インタラクティブセッション 3 位受賞
+https://cedec.cesa.or.jp/2014/session/INT/result.html
+
+### CEDEC2016
+
+多重化多視点 VR アーケードゲームシステム -DUAL DUEL-
+https://cedec.cesa.or.jp/2016/session/AC/8656.html
+「インタラクティブセッション オーディエンス賞 2 位受賞
+https://cedec.cesa.or.jp/2016/session/INT/result.html
+
+### CEDEC2017
+
+家族愛をテーマにした子育て VR エンタテイメント ”Real Baby - Real Family”
+http://cedec.cesa.or.jp/2017/session/AC/s58e0597c6eab2/
+https://cedil.cesa.or.jp/cedil_sessions/view/1758
+
+次世代 VR/AR エンタテイメントのための多重化映像生成ミドルウェア
+https://cedil.cesa.or.jp/cedil_sessions/view/1607
+https://www.slideshare.net/aquihiko/cedec2017-vrar
+
+### CEDEC2019
+
+REALITY「なりたい自分で、生きていく」リアルタイムライブで VTuber が活躍する舞台を作る現場の 1 年
+https://cedec.cesa.or.jp/2019/session/detail/s5c9df84045dd1
+https://www.wantedly.com/companies/reality/post_articles/184950
+
+「宇宙 x 教育 xVR ＝ちゃんと学べる体感サイエンスツアー「ありえな LAB」の挑戦
+[https://cedec.cesa.or.jp/2019/session/detail/s5c9c660d3c16c.html]
+[https://www.slideshare.net/harukasakami/xxvr-lab]
+
+### CEDEC2021
+
+白井暁彦,山崎勇祐「[VibeShare: コロナ禍の音楽ライブを「触覚」で双方向化する](https://cedec.cesa.or.jp/2021/session/detail/s606425b133c63)」, ([Blog](https://note.com/reality_eng/n/nc858173ef43c))
+
+# Archived Projects in Github pages
+
+- [KAIT Shirai Lab](https://new.shirai.la/)
+- [相模 Ingress 部](https://kaitas.github.io/sagami-ingress/)
+- [スマ歩！さがみはら](https://kaitas.github.io/sumaho-sagamihara/)
+- [IEEEVR2020jp](https://kaitas.github.io/IEEEVR2020jp/)
+
+<hr>
 # Contact
 
 - twitter[@o_ob](https://twitter.com/o_ob)
