@@ -237,6 +237,13 @@ Refer my paper indexed in [Research Gate](https://www.researchgate.net/profile/A
 1. Yuichiro Kume, Akihiko Shirai, Motoshisa Tsuda, Toyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
 
 <hr>
+
+## IVRC community events
+
+<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K6LYP5/embed" data-aspect="0.563"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K6LYP5-IVRC-BoF-SIGGRAPH2016">IVRC Birds of a Feather (BoF) in SIGRAPH2016 by @o_ob</a></div>
+
+<hr>
+
 # Contact
 
 - twitter[@o_ob](https://twitter.com/o_ob)
