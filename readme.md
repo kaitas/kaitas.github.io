@@ -100,6 +100,11 @@ The motto is "Creating people who create" (from his written book in [The future 
 
 <script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K6LYP5/embed" data-aspect="0.563"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K6LYP5-IVRC-BoF-SIGGRAPH2016">IVRC Birds of a Feather (BoF) in SIGRAPH2016 by @o_ob</a></div>
 
+
+
+<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/KV8VDK/embed" data-aspect="0.75"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/KV8VDK-IVRC-BoF-SIGGRAPH2012">IVRC Birds of a Feather (BoF) in SIGRAPH2012 by @o_ob</a></div>
+
+
 ## Articles
 
 - [卒論が 1 ミリも進まない 4 年生におくる，卒論サンプル](tex-sample.md)
