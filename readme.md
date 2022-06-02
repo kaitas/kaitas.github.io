@@ -56,6 +56,12 @@ The motto is "Creating people who create" (from his written book in [The future 
 
 ### Lecuture and Talks (part)
 
+#### 2022
+
+1. 「メタバース時代の人間の界面：アバター技術とUXの探求～REALITY と GREE VR Studio LaboratoryのR&D活動紹介」, 画像電子学会 Advanced Image Seminar 2022, (2022/6/14) [Web](https://www.iieej.org/events/ais2022/)
+
+#### Past Talks
+
 [![REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021](https://img.youtube.com/vi/VpfjRFD4fhw/0.jpg)](https://www.youtube.com/watch?v=VpfjRFD4fhw)
 
 1. "REALITY: We can be whoever we want - Avatar driven metaverse service and UX R&D #SIGGRAPHAsia2021", [SIGGRAPH ASIA 2021  CG In Japan](https://www.youtube.com/watch?v=VpfjRFD4fhw), 2021/Dec/14
