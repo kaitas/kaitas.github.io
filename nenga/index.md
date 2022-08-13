@@ -5,7 +5,7 @@
 # To change the home page layout, edit the _layouts/home.html file.
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
-layout: defalut
+layout: noblog
 title: 年賀状
 ---
 
@@ -19,5 +19,12 @@ title: 年賀状
 
 過去の写真ギャラリーや、最新の様子は特設サイトで会員ログインした方々（主に親戚などを想定）してお届けしたいと思います。
 
+
+[https://wellwhite.wixsite.com/home/group/shiraifamily](https://wellwhite.wixsite.com/home/group/shiraifamily)
+
+
 ## 残暑お見舞い申し上げます
 
+![bit.ly/ShiraiNenga.png](/assets/2022/bit.ly_ShiraiNenga.png "QR Code bit.ly/ShiraiNenga")
+
+[https://bit.ly/ShiraiNenga](https://bit.ly/ShiraiNenga)
