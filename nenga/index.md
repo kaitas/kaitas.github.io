@@ -30,6 +30,12 @@ title: 年賀状
 
 毎年、新年に制作していたフォトカレンダーですが、印刷会社のサービス変更により、新しいデザインを検討しています。
 
+<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1LWOkfJfkX39Jp3WPNvQTRdn"
+publishable-key="pk_live_51LW2slJfkX39Jp3WoE7viyPaecIvOGWhRUOsKnBQrUes9dijHyzeR7buHzFv2yf1a2D13SCGuvc4TZQOmIipyPJ000U01tWQT4">
+</stripe-pricing-table>
+
+
 - [1千円 送料込み(毎年継続)](https://buy.stripe.com/cN203545J4E62By7ss)
 - [新年分のみ(値段はお気持ちで)](https://buy.stripe.com/eVa9DF0Tx6Me3FCaEF)
 
