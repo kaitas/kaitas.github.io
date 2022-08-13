@@ -17,9 +17,20 @@ title: 年賀状
 過去の写真ギャラリーや、最新の様子は特設サイトで会員ログインした方々（主に親戚などを想定）してお届けしたいと思います。
 
 
-[https://wellwhite.wixsite.com/home/group/shiraifamily](https://wellwhite.wixsite.com/home/group/shiraifamily)
+[https://wellwhite.wixsite.com/home/group/shiraifamily](https://wellwhite.wixsite.com/home/group/shiraifamily/about)
 
+お手数ですが「参加リクエスト」とメンバー登録をよろしくお願いいたします。
 
 ![bit.ly/ShiraiNenga.png](/assets/2022/bit.ly_ShiraiNenga.png "QR Code bit.ly/ShiraiNenga")
 
 [https://bit.ly/ShiraiNenga](https://bit.ly/ShiraiNenga)
+
+
+### カレンダー受注受付中
+
+毎年、新年に制作していたフォトカレンダーですが、印刷会社のサービス変更により、新しいデザインを検討しています。
+
+- [1千円 送料込み(毎年継続)](https://buy.stripe.com/cN203545J4E62By7ss)
+- [新年分のみ(値段はお気持ちで)](https://buy.stripe.com/eVa9DF0Tx6Me3FCaEF)
+
+12月中旬までにお申込みいただけば、お正月に発送いたします。
