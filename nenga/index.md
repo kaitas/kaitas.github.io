@@ -33,13 +33,14 @@ title: 年賀状
 ### カレンダー予約受付中
 
 毎年、新年に制作していたフォトカレンダーですが、印刷会社のサービス変更により、新しいデザインを検討しています。
-<video controls width="250">
+<div text-align="center"><video controls width="640" autoplay muted>
     <source src="/assets/2022/calender2022.webm"
             type="video/webm">
     <source src="/assets/2022/calender2022.mp4"
             type="video/mp4">
     Sorry, your browser doesn't support embedded videos.
 </video>
+</div>
 
 <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
 <stripe-pricing-table pricing-table-id="prctbl_1LWOkfJfkX39Jp3WPNvQTRdn"
