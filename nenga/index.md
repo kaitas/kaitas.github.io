@@ -8,12 +8,9 @@
 layout: noblog
 title: 年賀状
 ---
+## 残暑お見舞い申し上げます (2022/8/15)
 
-# Nenga
-
-## 2022
-
-## 会員用ギャラリーを作りました
+### 会員用ギャラリーを作りました
 
 毎年、年末年始の忙しい時期に凝った写真で年賀状を作っていたのですが、子供もそろそろ親元を離れて成長記録写真をお伝えするのが難しくなってきました。
 
@@ -22,8 +19,6 @@ title: 年賀状
 
 [https://wellwhite.wixsite.com/home/group/shiraifamily](https://wellwhite.wixsite.com/home/group/shiraifamily)
 
-
-## 残暑お見舞い申し上げます
 
 ![bit.ly/ShiraiNenga.png](/assets/2022/bit.ly_ShiraiNenga.png "QR Code bit.ly/ShiraiNenga")
 
