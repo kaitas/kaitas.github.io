@@ -41,12 +41,13 @@ title: 年賀状
 家族のメールアドレスについても、上記のSNSやメールからお尋ねいただけると幸いです。
 
 
-### 会員用ギャラリーを作りました
+### 会員制ギャラリーを作りました
 
-毎年、年末年始に凝った写真で年賀状を作っていたのですが、子供もそろそろ親元を離れて久しく、成長記録写真をお伝えするのが難しくなってきました。
+![Gallery](/assets/2022/gallery2022.jpg)
 
-過去の写真ギャラリーや、最新の様子は特設サイトで会員ログインした方々（主に親戚などを想定）してお届けしたいと思います。
+毎年、年末年始の機会に、撮った写真で凝った年賀状を作っていたのですが、子供もそろそろ親元を離れて久しく、成長記録写真を気軽にお伝えするのが難しくなってきました。
 
+過去の写真ギャラリーや、最新の様子は特設サイトで会員ログインした方々（主に親戚や知人などを想定）してお届けしたいと思います。
 
 [https://wellwhite.wixsite.com/home/group/shiraifamily](https://wellwhite.wixsite.com/home/group/shiraifamily/about)
 
@@ -60,6 +61,8 @@ title: 年賀状
 ### カレンダー予約受付中
 
 毎年、新年に制作していたフォトカレンダーですが、印刷会社のサービス変更により、新しいデザインを検討しています。
+こちらは毎年、ごく限られた方に配布していたのですが、2023年以降は希望される方に発送してみようかと思います（需要はないと思いますが！）。
+
 <div text-align="center"><video controls width="640" autoplay muted>
     <source src="/assets/2022/calender2022.webm"
             type="video/webm">
@@ -78,4 +81,4 @@ publishable-key="pk_live_51LW2slJfkX39Jp3WoE7viyPaecIvOGWhRUOsKnBQrUes9dijHyzeR7
 - [1千円 送料込み(毎年継続)](https://buy.stripe.com/cN203545J4E62By7ss)
 - [新年分のみ(値段はお気持ちで)](https://buy.stripe.com/eVa9DF0Tx6Me3FCaEF)
 - 12月中旬までにお申込みいただけば、お正月に発送いたします。
-- 最新の住所をお伝えください
+- 最新の住所をお伝えください（メールで確認させていただく流れ）
