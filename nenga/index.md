@@ -17,14 +17,17 @@ title: 年賀状
 
 ### 今後の年賀状について
 
-年賀状にメールアドレスが書かれている方には積極的にメールでご挨拶をお送りしていきたいと思います。
+- 年賀状ポータルサイト　https://akihiko.shirai.as/nenga/
+- [https://bit.ly/ShiraiNenga](https://bit.ly/ShiraiNenga)
+
+年賀状にメールアドレスが書かれている方には、次の冬からは積極的にメールやSNSでご挨拶のご挨拶に移行していきたいと思います。
 
 …というのも「年賀状をやめたい、電子メールやSNSでいいじゃないか」と思って年賀状に記載しても、仮に年賀状をやり取りさせていただいている方々が同じように「年賀状をやめたいな…」と思っていても、電子メールに移行する行為が進むわけではない…という事に気づきました。
 しかも「電子メールだって面倒だな」と思っている世代も多くいるのですから。
 一方で、子供の顔写真をネットに出すのは難しい時代でもあります。みなさまの住所も個人情報保護の観点では、あまり扱いたい情報ではありません。
 これはDXの課題として大変重要なチャレンジだなと思います。
 
-一方で、年賀状を楽しみにしている方もいらっしゃるとお思います。
+また年賀状を楽しみにしている方もいらっしゃるとお思います。
 私もけっこう写真作品をつくったり、住所録をメンテしたりと手間のかかることは嫌いではないのですが、
 明確な意思をもって、電子的なご挨拶に移行していく必要があると考えています。
 
@@ -33,9 +36,9 @@ title: 年賀状
 近況報告としてよく使っている順に紹介しておきます。
 新規にフォローしたときはDMもいただけるとありがたいです（誰が誰だかわからないので）。
 
-- Twitter [@o_ob](https://twitter.com/o_ob)
-- Facebook [@aquihiko](https://www.facebook.com/aquihiko)
-- Instagram [@virtual_akihiko](https://www.instagram.com/virtual_akihiko/)
+- Twitter [@o_ob](https://twitter.com/o_ob)　発信頻度重視（質は無視）
+- Facebook [@aquihiko](https://www.facebook.com/aquihiko)　仕事や大学関係の公式発信が中心
+- Instagram [@virtual_akihiko](https://www.instagram.com/virtual_akihiko/)　映え画像中心
 - 電子メール shirai @ mail．com → akihiko.shirai @ gmail．com （gmailに届きます）
 
 家族のメールアドレスについても、上記のSNSやメールからお尋ねいただけると幸いです。
