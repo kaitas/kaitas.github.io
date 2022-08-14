@@ -66,7 +66,7 @@ title: 年賀状DX
 毎年、新年に制作していたフォトカレンダーですが、印刷会社のサービス変更により、新しいデザインを検討しています。
 こちらは毎年、ごく限られた方に配布していたのですが、2023年以降は希望される方に発送してみようかと思います（需要はないと思いますが！）。
 
-<div text-align="center"><video controls width="640" autoplay muted>
+<div text-align="center"><video width="640" autoplay muted>
     <source src="calender2022.webm" type="video/webm">
     Sorry, your browser doesn't support embedded videos.
 </video>
