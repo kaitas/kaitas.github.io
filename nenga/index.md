@@ -6,18 +6,18 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: noblog
-title: 年賀状
+title: 年賀状DX
 ---
 ## 残暑お見舞い申し上げます (2022/8/15)
 
 年末年始がとても忙しく、2022年寅年は年賀状による新年のご挨拶が難しい状況でした。
 ご丁寧なごあいさつができず、申し訳ございませんでした。
 
-![2022SummerPostcard](/assets/2022/20220814-postcard.jpg)
+![2022SummerPostcard](20220814-postcard.jpg)
 
 ### 今後の年賀状について
 
-- 年賀状ポータルサイト　https://akihiko.shirai.as/nenga/
+- 年賀状DX(このページ)　https://akihiko.shirai.as/nenga/
 - [https://bit.ly/ShiraiNenga](https://bit.ly/ShiraiNenga)
 
 年賀状にメールアドレスが書かれている方には、次の冬からは積極的にメールやSNSでご挨拶のご挨拶に移行していきたいと思います。
@@ -46,7 +46,7 @@ title: 年賀状
 
 ### 会員制ギャラリーを作りました
 
-![Gallery](/assets/2022/gallery2022.jpg)
+![Gallery](gallery2022.jpg)
 
 毎年、年末年始の機会に、撮った写真で凝った年賀状を作っていたのですが、子供もそろそろ親元を離れて久しく、成長記録写真を気軽にお伝えするのが難しくなってきました。
 
@@ -56,7 +56,7 @@ title: 年賀状
 
 お手数ですが「参加リクエスト」とメンバー登録をよろしくお願いいたします。
 
-![bit.ly/ShiraiNenga.png](/assets/2022/bit.ly_ShiraiNenga.png "QR Code bit.ly/ShiraiNenga")
+![bit.ly/ShiraiNenga.png](bit.ly_ShiraiNenga.png "QR Code bit.ly/ShiraiNenga")
 
 [https://bit.ly/ShiraiNenga](https://bit.ly/ShiraiNenga)
 
@@ -67,10 +67,7 @@ title: 年賀状
 こちらは毎年、ごく限られた方に配布していたのですが、2023年以降は希望される方に発送してみようかと思います（需要はないと思いますが！）。
 
 <div text-align="center"><video controls width="640" autoplay muted>
-    <source src="/assets/2022/calender2022.webm"
-            type="video/webm">
-    <source src="/assets/2022/calender2022.mp4"
-            type="video/mp4">
+    <source src="calender2022.webm" type="video/webm">
     Sorry, your browser doesn't support embedded videos.
 </video>
 </div>
