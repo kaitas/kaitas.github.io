@@ -83,7 +83,7 @@ publishable-key="pk_live_51LW2slJfkX39Jp3WoE7viyPaecIvOGWhRUOsKnBQrUes9dijHyzeR7
 - 12月中旬までにお申込みいただけば、お正月に発送いたします。
 - 最新の住所をお伝えください（メールで確認させていただく流れ）
 
-### その他の更新
+### その他の更新(閲覧には登録が必要です)
 - (2022/8/20)[フジテレビ「めざましどようび」で活動が紹介されました](https://wellwhite.wixsite.com/home/group/shiraifamily/discussion/0b92012a-5c91-4add-8c26-b03ecfc0df48)
 
 
