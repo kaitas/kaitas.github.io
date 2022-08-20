@@ -17,7 +17,7 @@ title: 年賀状DX
 
 ### 今後の年賀状について
 
-- 年賀状DX(このページ)　https://akihiko.shirai.as/nenga/
+- 年賀状DX(このページ)　[https://akihiko.shirai.as/nenga/](https://akihiko.shirai.as/nenga/)
 - [https://bit.ly/ShiraiNenga](https://bit.ly/ShiraiNenga)
 
 年賀状にメールアドレスが書かれている方には、次の冬からは積極的にメールやSNSでご挨拶のご挨拶に移行していきたいと思います。
@@ -82,3 +82,8 @@ publishable-key="pk_live_51LW2slJfkX39Jp3WoE7viyPaecIvOGWhRUOsKnBQrUes9dijHyzeR7
 - [新年分のみ(値段はお気持ちで)](https://buy.stripe.com/eVa9DF0Tx6Me3FCaEF)
 - 12月中旬までにお申込みいただけば、お正月に発送いたします。
 - 最新の住所をお伝えください（メールで確認させていただく流れ）
+
+### その他の更新
+- (2022/8/20)[フジテレビ「めざましどようび」で活動が紹介されました](https://wellwhite.wixsite.com/home/group/shiraifamily/discussion/0b92012a-5c91-4add-8c26-b03ecfc0df48)
+
+
