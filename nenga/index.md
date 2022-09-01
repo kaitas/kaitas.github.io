@@ -15,6 +15,11 @@ title: 年賀状DX
 
 ![2022SummerPostcard](20220814-postcard.jpg)
 
+ Akihiko: 4th year in GREE VR Studio Laboratory https://vr.gree.net/lab
+ Kuniko: Now that childcare has settled down, we located near of parents and taking care of my filial piety.
+ Naruhiko: Second-year student at the Faculty of Engineering at Utsunomiya University, interning at a railway company this summer.
+ Lucas: Crazy about sketching and 3D modelling, and modern history. Went to Hawaii University through his Buddhist  school internship program.
+
 ### 今後の年賀状について
 
 - 年賀状DX(このページ)　[https://akihiko.shirai.as/nenga/](https://akihiko.shirai.as/nenga/)
