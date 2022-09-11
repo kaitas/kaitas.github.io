@@ -134,6 +134,7 @@ The motto is "Creating people who create" (from his written book in [The future 
 
 ## 技術書典
 
+1. 白井暁彦他,「AIとコラボして人気絵師になる」，グリー技術書典部誌 2022 年秋号，[Web](https://techbookfest.org/product/4GwQ9v4qrgaAuT2cQGAGt9?utm_source=twitter&utm_medium=social&utm_campaign=share)
 1. 白井暁彦他,「Mozilla Hubs を用いたオンラインイベント WebVR 化テクニック」,グリー技術書典部誌 2020 年秋号, [Web](https://techbookfest.org/product/5759878496780288?productVariantID=6214599038730240)
 
 1. 白井暁彦他,「Virtual Cast と Hapbeat を使った国際双方向アバター触覚ライブの開発」,グリー技術書典部誌 2020 年春号, [Web](https://techbookfest.org/product/5694096500850688?productVariantID=6015509631860736)
