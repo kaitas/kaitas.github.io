@@ -39,13 +39,22 @@ The motto is "Creating people who create" (from his written book in [The future 
 
  [!["Back to Metaver-School" - a blooming future of Metaverse in REALITY](https://img.youtube.com/vi/1JlD6XF2HNI/0.jpg)](https://www.youtube.com/watch?v=1JlD6XF2HNI)
 
-<script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
-<a href="https://github.com/kaitas" style="text-decoration:none"><div class="calendar"></div></a>
+### GitHub Calendar
+
+<script
+  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+</script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+/>
+<div class="calendar">
+    Loading the data just for you.
+</div>
 <script>
     GitHubCalendar(".calendar", "kaitas", { responsive: true });
 </script>
-<br>
+
 
 ### KAIT Shirai Lab (2010-2018)
 
