@@ -12,13 +12,15 @@ title: Lecture Notes
 {% for lec in site.data.lecture %}
 
 
-- {{ lec.year }}　({{ yt.title }})
+- {{ lec.year }}　({{ lec.title }})
 
-  [![{{ yt.memo }}](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
+  [![{{ lec.title }}](https://img.youtube.com/vi/{{ lec.ytid }}/0.jpg)](https://www.youtube.com/watch?v={{ lec.ytid }})
 
 {% endfor %}
 
 
+2021,11,11,GREE Tech Conf 2021,GREE VR Studio Laboratory「XR-UX Devプロジェクト」の成果紹介,q3gdhHtcnmI,ShortSession-7,https://techcon.gree.jp/2021/session/ShortSession-7,q3gdhHtcnmI,,https://www.slideshare.net/vrstudiolab/gree-vr-studio-laboratory-xrux-dev-greetc-2021nov11/
+2020,9,18,GREE Tech Conf 2020,VTuber・XRライブエンタメ駆動の研究開発 - GREE VR Studio Laboratory のR2D,ShortSession-9,https://techcon.gree.jp/2020/session/ShortSession-9,KhOgvaF8-oo,""
 
 # DHGS デジタルハリウッド大学 大学院 
 
