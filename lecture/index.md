@@ -1,9 +1,26 @@
 ---
 # Lecture noteを置く場所
-layout: default
+# By default, content added below the "---" mark will appear in the home page
+# between the top bar and the list of recent posts.
+# To change the home page layout, edit the _layouts/home.html file.
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+#
+layout: lecture
 title: Lecture Notes
 category: lecture
 ---
+
+{% for lec in site.data.lecture %}
+
+year,month,day,conf,title,subtitle,web,ytid,slides
+
+- {{ lec.year }}　({{ yt.title }})
+
+  [![{{ yt.memo }}](https://img.youtube.com/vi/{{ yt.id }}/0.jpg)](https://www.youtube.com/watch?v={{ yt.id }})
+
+{% endfor %}
+
+
 
 # DHGS デジタルハリウッド大学 大学院 
 
