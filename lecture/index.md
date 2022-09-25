@@ -12,7 +12,6 @@ category: lecture
 
 {% for lec in site.data.lecture %}
 
-year,month,day,conf,title,subtitle,web,ytid,slides
 
 - {{ lec.year }}　({{ yt.title }})
 
@@ -23,6 +22,8 @@ year,month,day,conf,title,subtitle,web,ytid,slides
 
 
 # DHGS デジタルハリウッド大学 大学院 
+
+year,month,day,conf,title,subtitle,web,ytid,slides
 
 - [DHGSVR21](https://akihiko.shirai.as/dhgs/)
 
