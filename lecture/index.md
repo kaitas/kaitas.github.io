@@ -4,10 +4,9 @@
 # between the top bar and the list of recent posts.
 # To change the home page layout, edit the _layouts/home.html file.
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
+# category: lecture
 layout: lecture
 title: Lecture Notes
-category: lecture
 ---
 
 {% for lec in site.data.lecture %}
