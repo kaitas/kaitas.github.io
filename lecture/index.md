@@ -34,4 +34,12 @@ Entertainment Systems
 [![第12回VRC理系集会特別講演「メタバースと遊び研究の交差点」](https://img.youtube.com/vi/wGlwf8bsLQ4/0.jpg)](https://www.youtube.com/watch?v=wGlwf8bsLQ4)
 
 
+### rm_presentations.csv
+
+アクション名,アクションタイプ,類似業績マージ優先度,ID,タイトル(日本語),タイトル(英語),講演者(日本語),講演者(英語),会議名(日本語),会議名(英語),発表年月日,開催年月日(From),開催年月日(To),招待の有無,記述言語,会議種別,主催者(日本語),主催者(英語),開催地(日本語),開催地(英語),国・地域,概要(日本語),概要(英語),国際・国内会議,国際共著,URL,URL2,主要な業績かどうか,公開の有無
+
+
+{% for pres in site.data.rm_presentations %}
+- {{ pres.タイトル(英語) }}　({{ pres.URL }})
+{% endfor %}
 
