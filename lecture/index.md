@@ -42,6 +42,6 @@ Entertainment Systems
 
 
 {% for pres in site.data.rm_presentations %}
-- {{pres}} {{ pres.タイトル(英語) }}   ({{ pres.URL }})
+- {{pres==>タイトル(英語)}} {{ pres.タイトル(英語) }}   ({{ pres.URL }})
 {% endfor %}
 
