@@ -17,7 +17,9 @@ The motto is "Creating people who create" (from his written book in [The future 
 
 [![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
 
-- [GREE VR Studio Laboratory](https://j.mp/VRSYT)
+- [GREE VR Studio Laboratory](https://vr.gree.net/lab/)
+  - [GREE VR Studio Laboratory - Publication](https://vr.gree.net/lab/#papers)
+  - [GREE VR Studio Laboratory - YouTube](https://j.mp/VRSYT)
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
 ## Works
