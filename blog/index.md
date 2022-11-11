@@ -17,6 +17,9 @@ title: blog
    - OpenCV
    - IVRC
 
+- [note - 白井暁彦(作家)](https://note.com/o_ob) 作家としての発信活動
+- [note - GREE VR Studio Laboratory](https://note.com/reality_eng/m/m394ac85738b5) REALITY株式会社 GREE VR Studio Laboratoryとしての発信
+- [zenn - o_ob](https://zenn.dev/o_ob) その他、技術関係の発信、markdownによる執筆
 - [aki's right brain](http://aki.shirai.as/) 最も記事が多いけど現在はTwitterログが中心
 - [Future Entertainment Laboratory](http://akihiko.shirai.as/) サーバ廃止計画中
 - [王様の耳はロバの耳](https://ameblo.jp/akihiko) フランス生活～未来館時代の無垢なブログ(2005/4月～2012/8月)
