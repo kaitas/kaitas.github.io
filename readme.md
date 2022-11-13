@@ -10,6 +10,7 @@ Vice president of [the society for Art and Science](https://art-science.org/).
 Ambassador and Board of Directors at [Laval Virtual](https://www.laval-virtual.com/).
 The motto is "Creating people who create" (from his written book in [The future of Game Design - Science in Entertainment Systems](https://bit.ly/mirainogame)).
 
+
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
 
