@@ -14,8 +14,6 @@ title: blog
 - [aki's left brain](https://akihiko.shirai.as/blog/) このサイト。新作と過去のアーカイブを収集中。
   - [Lecture Notes](https://akihiko.shirai.as/lecture)
   - [Special](https://akihiko.shirai.as/special/)
-   - OpenCV
-   - IVRC
 
 - [note - 白井暁彦(作家)](https://note.com/o_ob) 作家としての発信活動
 - [note - GREE VR Studio Laboratory](https://note.com/reality_eng/m/m394ac85738b5) REALITY株式会社 GREE VR Studio Laboratoryとしての発信
