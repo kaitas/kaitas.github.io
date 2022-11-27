@@ -14,6 +14,7 @@ The motto is "Creating people who create" (from his written book in [The future 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
 
+
 # Research
 
 [![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
