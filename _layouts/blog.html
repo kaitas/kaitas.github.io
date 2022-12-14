@@ -6,6 +6,8 @@ layout: blog
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
+  {% include toc.html %}
+
   {{ content }}
 
   {% for post in site.posts  %}
