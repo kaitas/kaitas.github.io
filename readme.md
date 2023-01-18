@@ -12,8 +12,9 @@ He worked for [National Museum of Emerging Science and Innovation (Miraikan)] (h
 
 In [REALITY, Inc](https://reality.inc/), [representative of the metaverse industry in Japan](https://www.google.com/search?q=%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9&rlz=1C1GCEA_enJP946JP946&sxsrf=APq-WBvo0I_cAw-TlGHO2OEXSubTXb6TYw:1649263207297&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9tPKc8P_2AhXQdHAKHR-jCX8Q_AUoAnoECAIQBA&biw=1707&bih=802&dpr=1.13), he produces some visualisations of near-future user experiences using [REALITY.app](https://reality.app) in [UXDev projects on YouTube](https://vr.gree.net/lab/demo/uxdev/), and contributes to some PoC for B2B metaverse using [Mozilla Hubs with Japanese translation](https://github.com/gree/hubs-docs-jp) and community developments. 
 Visiting professor at the [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). 
-Vice President of the [Society for Art and Science] (https://art-science.org/). 
-Ambassador and board member of [Laval Virtual] (https://www.laval-virtual.com/).
+Vice President of the [Society for Art and Science](https://art-science.org/). 
+Ambassador and board member of [Laval Virtual](https://www.laval-virtual.com/).
+Latest book written "[Collaborating with AI to become a Godhand Illustrator - How to comprehend Stable Diffusion](https://ivtv.page.link/ap)".
 His motto is "Creating people who create" (from his written book in [The Future of Game Design - Science in Entertainment Systems](https://bit.ly/mirainogame)).
 
 
