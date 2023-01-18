@@ -150,10 +150,8 @@ His motto is "Creating people who create" (from his written book in [The Future 
 # Books
 
 1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
-
-- (working)[WiiRemote プログラミング](https://akihiko2.shirai.as/projects/WiiRemote/)
-
-1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
+2. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
+3. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
 
 ## Online Publications
 
