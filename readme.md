@@ -21,8 +21,6 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
-
-
 # Research
 
 [![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
@@ -38,6 +36,7 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 ### GREE VR Studio Laboratory (2018-)
 
+- [UXDev](https://vr.gree.net/lab/uxdev/)
 - [VR Game Products](https://vr.gree.net/en/)
 - [Laboratory](https://vr.gree.net/lab/)
 - [YouTube Channel](http://j.mp/VRSYT)
@@ -84,6 +83,11 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 ### Lecuture and Talks (part)
 
+#### 2023
+
+1. Developers Summit 2023「AI神絵師はITエンジニアの未来をどう変えるのか？～メタバースR&DからみたAI画像生成のトレンド～」[Web](https://event.shoeisha.jp/devsumi/20230209/session/4191/) [Slides](https://vr.gree.net/wp-content/uploads/2023/02/DevSumi20230210.pdf) 2023/2/10
+
+
 #### 2022
 
 1. 「メタバース時代の人間の界面：アバター技術とUXの探求～REALITY と GREE VR Studio LaboratoryのR&D活動紹介」, 画像電子学会 Advanced Image Seminar 2022, (2022/6/14) [Web](https://www.iieej.org/events/ais2022/)
@@ -128,25 +132,6 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 <hr>
 
-## IVRC community events
-
-[https://ivrc.net](https://ivrc.net)
-
-<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K6LYP5/embed" data-aspect="0.563"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K6LYP5-IVRC-BoF-SIGGRAPH2016">IVRC Birds of a Feather (BoF) in SIGRAPH2016 by @o_ob</a></div>
-
-<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K17JLK/embed" data-aspect="0.75"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K17JLK-IVRC-BoF-SIGGRAPH2013">IVRC Birds of a Feather (BoF) in SIGRAPH2013 by @o_ob</a></div>
-
-<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/KV8VDK/embed" data-aspect="0.75"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/KV8VDK-IVRC-BoF-SIGGRAPH2012">IVRC Birds of a Feather (BoF) in SIGRAPH2012 by @o_ob</a></div>
-
-
-## Articles
-
-- [卒論が 1 ミリも進まない 4 年生におくる，卒論サンプル](tex-sample.md)
-- [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
-- ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
-- [【博士論文】「床面提示型触覚エンタテイメントシステムの提案と開発　白井暁彦」](AkihikoSHIRAI-DoctorThesis2004.md)
-- [フランスを研究 -rechercher la france-](2006-08-30-rechercher-la-france.md)
-
 # Books
 
 1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
@@ -155,7 +140,8 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 ## Online Publications
 
-1. 「これまでの 5 年、これからの 5 年――「VR 元年」の終焉から世界同時参加の XR ライブエンタメへ」（メディア芸術カレントコンテンツ：文化庁）2020 年 10 月 29 日
+1. CGWORLD特集 メタバース開発者の卵が「自分は何者か」を発見する場所【GREE VR Studio Laboratoryリサーチ系インターンシップ】2023/02/16 [Web](https://cgworld.jp/article/202302-greevr.html)
+1. 「これまでの 5 年、これからの 5 年――「VR 元年」の終焉から世界同時参加の XR ライブエンタメへ」（メディア芸術カレントコンテンツ：文化庁）2020年10月29日
    [https://mediag.bunka.go.jp/article/article-16853/](https://mediag.bunka.go.jp/article/article-16853/)
 
 ## 技術書典
@@ -235,6 +221,17 @@ Refer my paper indexed in [Research Gate](https://www.researchgate.net/profile/A
 1. "Real Baby - Real Family: Holdable tangible baby VR", the Virtual Reality International Conference - Laval Virtual 2017 (March 2017)
 1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「[足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja) ([Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper](https://doi.org/10.18974/tvrsj.4.4_691))」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
 1. Yuichiro Kume, Akihiko Shirai, Motoshisa Tsuda, Toyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
+
+
+## IVRC community events
+
+[https://ivrc.net](https://ivrc.net)
+
+<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K6LYP5/embed" data-aspect="0.563"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K6LYP5-IVRC-BoF-SIGGRAPH2016">IVRC Birds of a Feather (BoF) in SIGRAPH2016 by @o_ob</a></div>
+
+<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/K17JLK/embed" data-aspect="0.75"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/K17JLK-IVRC-BoF-SIGGRAPH2013">IVRC Birds of a Feather (BoF) in SIGRAPH2013 by @o_ob</a></div>
+
+<script async class="docswell-embed" src="https://www.docswell.com/assets/libs/docswell-embed/docswell-embed.min.js" data-src="https://www.docswell.com/slide/KV8VDK/embed" data-aspect="0.75"></script><div class="docswell-link"><a href="https://www.docswell.com/s/o_ob/KV8VDK-IVRC-BoF-SIGGRAPH2012">IVRC Birds of a Feather (BoF) in SIGRAPH2012 by @o_ob</a></div>
 
 
 <hr>
@@ -322,3 +319,11 @@ https://www.wantedly.com/companies/reality/post_articles/184950
 - Github pages Since 19th Dec 2013
 
 <hr>
+## Favorited Articles
+
+- [卒論が 1 ミリも進まない 4 年生におくる，卒論サンプル](tex-sample.md)
+- [コンピューターゲームの興奮度定量化（1）主観評価を使用したゲームジャンルの分類](2001-10-05-IPSJ-GPW.md)
+- ["おもしろい研究"への挑戦 - Challenges for "Omoshiroi" research](2016-03-19-ProfStato.md)
+- [【博士論文】「床面提示型触覚エンタテイメントシステムの提案と開発　白井暁彦」](AkihikoSHIRAI-DoctorThesis2004.md)
+- [フランスを研究 -rechercher la france-](2006-08-30-rechercher-la-france.md)
+
