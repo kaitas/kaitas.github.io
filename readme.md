@@ -167,6 +167,22 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 # Academic Papers
 
+#### 2023
+
+1. 白井暁彦「文化・技術・研究史で読み解く令和のメタバースの研究開発」,電子情報通信学会, 通信ソサイエティマガジン No.64 春号 2023, p.285-294 [PDF](https://www.jstage.jst.go.jp/article/bplus/16/4/16_285/_pdf)
+
+#### 2022
+
+1. Takuma Kato, Tomosuke Nakano, Takanori Horibe, Miku Takemasa, Yusuke Yamazaki, Akihiko Shirai, “Cross-platforming “School life metaverse” user experience”, SIGGRAPH Asia 2022 Posters (2022/12/01) [Web](https://sa2022.siggraph.org/en/presentation/?id=pos_198&sess=sess189)[DOI](https://dl.acm.org/doi/10.1145/3550082.3564200)
+
+2. Yusuke Yamazaki, Takanori Horibe, Akihiko Shirai, “Evaluation of time-shifted emotion through shared emoji reactions in a video watching experience”, CyberWorld2022 (2022/9/27) [SlideShare](https://www.slideshare.net/vrstudiolab/evaluation-of-timeshifted-emotion-through-shared-emoji-reactions-in-a-video-watching-experience-cyberworlds2022)[IEEE Explore](https://ieeexplore.ieee.org/document/9937393) Best short paper award
+
+3. 白井暁彦, 「メタバースの定義，歴史と事例からみる 今後のビジネス展望」 研究開発リーダー Vol.19, No.1 2022, pp.57-60. (2022/4/20) [PDF](https://vr.gree.net/wp-content/uploads/2022/07/Metaverse-202204.pdf)
+
+4. 中野友介, 加藤琢磨, 武政実玖, 堀部貴紀, 白井暁彦, “Metaverse Christmas”, 映像表現・芸術科学フォーラム2022 (2022/03/08) [Web](https://www.ite.or.jp/ken/paper/20220308yAKd/)
+
+5. 山崎勇祐, 白井暁彦, “VibeShare::Maptop – 写真撮影・同時参加型バーチャル旅行システムの開発と評価”, インタラクション2022 (2022/02/21) [Web](http://www.interaction-ipsj.org/proceedings/2022/data/bib/1D03.html)
+
 #### 2021
 
 1. 白井暁彦, 中野友介, 堀部貴紀, ボイスチェンジャーサービスの研究開発を通したインターンによる次世代人材育成(Developing next-generation creators through research and development in voice changer services), デジタルハリウッド大学 研究紀要第 8 号, (2021/11/25), [PDF](https://msl.dhw.ac.jp/wp-content/uploads/2021/11/DHUJOURNAL2021_P040.pdf), [SlideShare](https://www.slideshare.net/vrstudiolab/ss-250792325)
