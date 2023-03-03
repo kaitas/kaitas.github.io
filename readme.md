@@ -24,7 +24,7 @@ His latest interests in the "VR4.0 era", as he proposes, are the development of 
 
 ### Contact
 
-[Cotact Form](https://wellwhite.wixsite.com/home/contact) / Twitter[@o_ob](https://twitter.com/o_ob)
+[Contact Form](https://wellwhite.wixsite.com/home/contact) / [Twitter@o_ob](https://twitter.com/o_ob)
 
 ### GitHub Calendar
 
