@@ -21,6 +21,22 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
+### GitHub Calendar
+
+<script
+  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
+</script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+/>
+<div class="calendar">
+    Loading the data just for you.
+</div>
+<script>
+    GitHubCalendar(".calendar", "kaitas", { responsive: true });
+</script>
+
 # Research
 
 [![GREE VR Studio Laboratory 2022](https://img.youtube.com/vi/7r6HZJMBecA/0.jpg)](https://www.youtube.com/watch?v=7r6HZJMBecA)
@@ -50,21 +66,17 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
  [!["Back to Metaver-School" - a blooming future of Metaverse in REALITY](https://img.youtube.com/vi/1JlD6XF2HNI/0.jpg)](https://www.youtube.com/watch?v=1JlD6XF2HNI)
 
-### GitHub Calendar
+## Patents
 
-<script
-  src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js">
-</script>
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
-/>
-<div class="calendar">
-    Loading the data just for you.
-</div>
-<script>
-    GitHubCalendar(".calendar", "kaitas", { responsive: true });
-</script>
+1. Information display apparatus WO US CN JP US9769442B2
+1. Video delivery system, video delivery method, video delivery program, JP JP2020109935A Akihiko Shirai
+1. Video distribution system, video distribution method, and video distribution, US JP US20220038777A1 Akihiko Shirai 
+1. Computer program, server, terminal, and speech signal processing method, WO US JP US20210335364A1 Akihiko Shirai
+1. Computer Program, Server Device, Terminal Device and Method, US JP US20210099735A1 Akihiko Shirai
+1. Video distribution system, video distribution method, video distribution, WO US US20220070513A1 Akihiko Shirai
+1. Server device, terminal device, and display method for controlling facial, WO US JP US20210312167A1 Akihiko Shirai
+
+[Full List](https://patents.google.com/?inventor=Akihiko+SHIRAI&oq=Akihiko+SHIRAI)
 
 
 ### KAIT Shirai Lab (2010-2018)
