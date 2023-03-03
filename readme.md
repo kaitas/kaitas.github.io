@@ -78,6 +78,20 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 [Full List](https://patents.google.com/?inventor=Akihiko+SHIRAI&oq=Akihiko+SHIRAI)
 
+### "Laval Virtual ReVolution" (Session Chair, exhibition curation)
+
+ * [2019] VR5.0
+ * [2018] 1+1=∞ (one plus one equals unlimited)
+ * [2017] TransHumanism++
+ * [2016] REAL VIRTUALITY
+ * [2015] Kiddy Dream in Virtual Reality
+ * [2014] Frontier village in Virtual Reality
+ * [2013] The NEXT BIG STEP
+ * [2012] Virtual Reality That Moves You
+ * [2011] Converging
+ * [2010] Diverseness
+ * [2009] ReVolution Causes Revolutions
+ * [2008]World Performance of VR Applications
 
 ### KAIT Shirai Lab (2010-2018)
 
