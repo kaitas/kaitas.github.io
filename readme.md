@@ -69,12 +69,12 @@ His motto is "Creating people who create" (from his written book in [The Future 
 ## Patents
 
 1. Information display apparatus WO US CN JP US9769442B2
-1. Video delivery system, video delivery method, video delivery program, JP JP2020109935A Akihiko Shirai
-1. Video distribution system, video distribution method, and video distribution, US JP US20220038777A1 Akihiko Shirai 
-1. Computer program, server, terminal, and speech signal processing method, WO US JP US20210335364A1 Akihiko Shirai
-1. Computer Program, Server Device, Terminal Device and Method, US JP US20210099735A1 Akihiko Shirai
-1. Video distribution system, video distribution method, video distribution, WO US US20220070513A1 Akihiko Shirai
-1. Server device, terminal device, and display method for controlling facial, WO US JP US20210312167A1 Akihiko Shirai
+1. Video delivery system, video delivery method, video delivery program, JP JP2020109935A
+1. Video distribution system, video distribution method, and video distribution, US JP US20220038777A1
+1. Computer program, server, terminal, and speech signal processing method, WO US JP US20210335364A1
+1. Computer Program, Server Device, Terminal Device and Method, US JP US20210099735A1
+1. Video distribution system, video distribution method, video distribution, WO US US20220070513A1
+1. Server device, terminal device, and display method for controlling facial, WO US JP US20210312167A1
 
 [Full List](https://patents.google.com/?inventor=Akihiko+SHIRAI&oq=Akihiko+SHIRAI)
 
