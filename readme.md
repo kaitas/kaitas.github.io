@@ -219,29 +219,25 @@ Refer my paper indexed in [Research Gate](https://www.researchgate.net/profile/A
 1. Akihiko Shirai, Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, “Real Baby - Real Family”- Multi-Sensory Feedback Tangible Baby VR, International Journal of Virtual Reality (November 2017)
 1. Rex Hsieh, Yuya Mochizuki, Takaya Asano, Marika Higashida, Akihiko Shirai, "Real baby - real family": VR entertainment baby interaction system, ACM SIGGRAPH 2017 Emerging Technologies (July 2017)
 1. "Real Baby - Real Family: Holdable tangible baby VR", the Virtual Reality International Conference - Laval Virtual 2017 (March 2017)
-
-
 1. Akihiko Shirai, Hisataka Suzuki, Yuta Yamaguchi, Kazuhisa Yanaka,Glassless Augmented Display for Public Signage,ACM VRIC 2016,2016年
 1. 鈴木久貴, 白井暁彦, 谷中一寿,裸眼立体視技術を応用した多重化映像技術の提案,ITを活用した教育研究シンポジウム2015,2016年
-1.Akihiko SHIRAI,ExPixel: Multiplex hidden imagery, research in entertainment beyond 3D,SIGGRAPH 2015, CG in Asia,2015年
-1.Hisataka Suzuki, Rex Hsieh, Ryotaro Tsuda, Akihiko Shirai,ExPixel FPGA: Multiplex Hidden Imagery for HDMI Video Sources,SIGGRAPH 2015 Posters,2015年
-1.Hisataka Suzuki, Yuria Suzuki, Ayumi Ando, Akihiko Shira,ExPixel FPGA: multiplex hidden imagery for HDMI video sources,Laval Virtual ReVolution 2015,2015年
-1.Yuria Suzuki, Ayumi Ando, Ryotaro Tsuda, Akihiko Shirai,Face a la mode: A new immersive entertainment system that can train body and facial expressions,Virtual Reality International Conference &#8211; ACM VRIC 2015 Proceedings,2015年
-1.森 拓也，岡本 遼，鈴木 久貴，白井 暁彦,ミュージアムのための多重化サイネージシステムの提案,Entertainment Computing 2015,2015年
-1.鈴木 久貴, 鈴木 百合彩, 津田 良太郎, Vimuktalop Pinyapach, Jaruthien Nine, 白井 暁彦,多重化不可視映像技術（第3報） ―普及型ディスプレイにおける視聴特性評価―,第20回日本バーチャルリアリティ学会大会,2015年
-1.Hisataka Suzuki, Yannick Littfass, Rex Hsieh and Akihiko Shirai,Familink: expanding the social value of the living room with multiplex imaging technology,VRIC (VIRTUAL REALITY INTERNATIONAL CONFERENCE),2014年
-1.Yannick Littfass, Hisataka Suzuki and Akihiko Shirai,“Scritter” to “1p2x3D”: application development using multiplex hiding imaging technology,VRIC (VIRTUAL REALITY INTERNATIONAL CONFERENCE),2014年
-1.小出 雄空明，藤村 航，國富 彦岐，田口 裕起，鈴木 久貴，白井 暁彦,液晶フラットパネルにおける多重化隠蔽映像の試行と実現,映像情報メディア学会 立体映像技術研究会「立体映像における人間工学的研究，及び立体映像技術一般」,2014年
-1.田口裕起・鈴木久貴・白井暁彦,多重化不可視映像技術（第2報） ―FPGAを用いたハードウェア化―,電子情報通信学会 SIS研究会,2014年
-1.藤村 航，小出 雄空明，國富 彦岐，田口 裕起，鈴木 久貴，白井 暁彦,直線偏光による多重化隠蔽型ハイブリッド3Dディスプレイにおける画質評価,映像情報メディア学会 立体映像技術研究会「立体映像における人間工学的研究，及び立体映像技術一般」,2014年
+1. Akihiko SHIRAI,ExPixel: Multiplex hidden imagery, research in entertainment beyond 3D,SIGGRAPH 2015, CG in Asia,2015年
+1. Hisataka Suzuki, Rex Hsieh, Ryotaro Tsuda, Akihiko Shirai,ExPixel FPGA: Multiplex Hidden Imagery for HDMI Video Sources,SIGGRAPH 2015 Posters,2015年
+1. Hisataka Suzuki, Yuria Suzuki, Ayumi Ando, Akihiko Shira,ExPixel FPGA: multiplex hidden imagery for HDMI video sources,Laval Virtual ReVolution 2015,2015年
+1. Yuria Suzuki, Ayumi Ando, Ryotaro Tsuda, Akihiko Shirai,Face a la mode: A new immersive entertainment system that can train body and facial expressions,Virtual Reality International Conference &#8211; ACM VRIC 2015 Proceedings,2015年
+1. 森 拓也，岡本 遼，鈴木 久貴，白井 暁彦,ミュージアムのための多重化サイネージシステムの提案,Entertainment Computing 2015,2015年
+1. 鈴木 久貴, 鈴木 百合彩, 津田 良太郎, Vimuktalop Pinyapach, Jaruthien Nine, 白井 暁彦,多重化不可視映像技術（第3報） ―普及型ディスプレイにおける視聴特性評価―,第20回日本バーチャルリアリティ学会大会,2015年
+1. Hisataka Suzuki, Yannick Littfass, Rex Hsieh and Akihiko Shirai,Familink: expanding the social value of the living room with multiplex imaging technology,VRIC (VIRTUAL REALITY INTERNATIONAL CONFERENCE),2014年
+1. Yannick Littfass, Hisataka Suzuki and Akihiko Shirai,“Scritter” to “1p2x3D”: application development using multiplex hiding imaging technology,VRIC (VIRTUAL REALITY INTERNATIONAL CONFERENCE),2014年
+1. 小出 雄空明，藤村 航，國富 彦岐，田口 裕起，鈴木 久貴，白井 暁彦,液晶フラットパネルにおける多重化隠蔽映像の試行と実現,映像情報メディア学会 立体映像技術研究会「立体映像における人間工学的研究，及び立体映像技術一般」,2014年
+1. 田口裕起・鈴木久貴・白井暁彦,多重化不可視映像技術（第2報） ―FPGAを用いたハードウェア化―,電子情報通信学会 SIS研究会,2014年
+1. 藤村 航，小出 雄空明，國富 彦岐，田口 裕起，鈴木 久貴，白井 暁彦,直線偏光による多重化隠蔽型ハイブリッド3Dディスプレイにおける画質評価,映像情報メディア学会 立体映像技術研究会「立体映像における人間工学的研究，及び立体映像技術一般」,2014年
 1.白井 暁彦,3Dディスプレイに付加価値を与える多重化隠蔽映像技術,応用物理学会・日本光学会・微小光学研究グループ， 第131回微小光学研究会招待講演,2014年
-1.白井暁彦,“Scritter”, A futuristic AR technology which extends current 3D display,5th ASIAN FORUM ON SMART MEDIA AND AUGMENTED REALITY, JPEG Augmented Reality, Joint Photographic Experts Group and Augmented Reality Adhoc Group,2014年
-1.田所康隆,藤村 航,北田大樹,白井暁彦,エンタテイメントシステム展示を対象とした質的評価ツールの提案,エンタテイメントコンピューティング2013,2013年
-1.藤村航,小出雄空明,奈良優斗,白井暁彦,VR エンタテイメントシステムのための リアルタイムマンガ風画像生成シェーダーの開発,第18回日本バーチャルリアリティ学会大会,2013年
-1.北田大樹,白井暁彦,WebSocketを用いたスマートフォン上でのエンタテイメントコンテンツ閲覧時のリアルタイム行動分析,エンタテイメントコンピューティング2013,2013年
-1.國富彦岐,石川 晃,田所 康隆,白井 暁彦,年齢層とゲーミングデバイスの違いによる面白さの比較調査,エンタテイメントコンピューティング2013,2013年
-
-
+1. 白井暁彦,“Scritter”, A futuristic AR technology which extends current 3D display,5th ASIAN FORUM ON SMART MEDIA AND AUGMENTED REALITY, JPEG Augmented Reality, Joint Photographic Experts Group and Augmented Reality Adhoc Group,2014年
+1. 田所康隆,藤村 航,北田大樹,白井暁彦,エンタテイメントシステム展示を対象とした質的評価ツールの提案,エンタテイメントコンピューティング2013,2013年
+1. 藤村航,小出雄空明,奈良優斗,白井暁彦,VR エンタテイメントシステムのための リアルタイムマンガ風画像生成シェーダーの開発,第18回日本バーチャルリアリティ学会大会,2013年
+1. 北田大樹,白井暁彦,WebSocketを用いたスマートフォン上でのエンタテイメントコンテンツ閲覧時のリアルタイム行動分析,エンタテイメントコンピューティング2013,2013年
+1. 國富彦岐,石川 晃,田所 康隆,白井 暁彦,年齢層とゲーミングデバイスの違いによる面白さの比較調査,エンタテイメントコンピューティング2013,2013年
 1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「[足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja) ([Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper](https://doi.org/10.18974/tvrsj.4.4_691))」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
 1. Yuichiro Kume, Akihiko Shirai, Motoshisa Tsuda, Toyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
 
