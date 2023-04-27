@@ -55,7 +55,7 @@ His latest interests in the "VR4.0 era", as he proposes, are the development of 
 
 ![Akihko SHIRAI in a manga](img/ShiraiAkihiko-VRStudioLab.jpg)
 
-### GREE VR Studio Laboratory (2018-)
+## GREE VR Studio Laboratory (2018-)
 
 - [UXDev](https://vr.gree.net/lab/uxdev/)
 - [VR Game Products](https://vr.gree.net/en/)
@@ -70,6 +70,27 @@ His latest interests in the "VR4.0 era", as he proposes, are the development of 
   - ["Back to Metaver-School" - a blooming future of Metaverse in REALITY](https://www.youtube.com/watch?v=1JlD6XF2HNI)
 
  [!["Back to Metaver-School" - a blooming future of Metaverse in REALITY](https://img.youtube.com/vi/1JlD6XF2HNI/0.jpg)](https://www.youtube.com/watch?v=1JlD6XF2HNI)
+
+### Events
+
+
+1. [VRSionUp! #1 高校生VRを国際会議へ／VRChatを科学の研究に／ボイスチェンジャ探求](https://gree.connpass.com/event/112901/) (2019/1/11)
+1. [VRSionUp! #2 「Laval Virtual 2019 & バーチャルマーケット２予習会」](https://gree.connpass.com/event/117456/) (2019/3/1)
+1. [#VRSionUp! #3 「LavalVirtual2019公式報告会&VTuber番組技術特集」](https://gree.connpass.com/event/122745/) (2019/4/12)
+1. [#VRSionUp!4「VRエンタメxEdu」](https://gree.connpass.com/event/128401/) (2019/5/17)
+1. [#VRSionUp!5「kawaiiムーブ研究」](https://gree.connpass.com/event/131231/) (2019/6/21)
+1. [#VRSionUp!6「先端ボイチェン研究」](https://gree.connpass.com/event/134082/) (2019/7/16)
+1. [#VRSionUp!7「Hubs Study」](https://gree.connpass.com/event/176160/) (2020/7/15)
+1. [HubsでもくもくBlenderワークショップ(1)体験会 #VTC20](https://connpass.com/event/186321/) (2020/8/27)
+1. [HubsでもくもくBlenderワークショップ(2)体験会 #VTC20](https://connpass.com/event/187027/) (2020/9/24) 
+1. [#VRSionUp!8「WebVRオンラインイベント開発」](https://gree.connpass.com/event/187716/) (2020/9/8)
+1. [#VRSionUp!9「#IVRC2022 に挑戦！フランス遠征報告会」 ](https://connpass.com/event/248356/) (2020/5/21)
+1. [#VRSionUp!10「国際会議に挑戦！ #SIGGRAPHAsia2022 報告会」](https://connpass.com/event/268059/) (2022/12/13)
+1. [#VRSionUp!11「mocopiで遊ぼう♪」](https://connpass.com/event/275769/) (2023/2/22)
+1. [#VRSionUp!12「Laval Virtual 2023直前特集」](https://connpass.com/event/278095/) (2023/3/22)
+
+
+
 
 ## Patents
 
