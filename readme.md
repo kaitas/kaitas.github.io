@@ -88,7 +88,7 @@ His latest interests in the "VR4.0 era", as he proposes, are the development of 
 1. [#VRSionUp!10「国際会議に挑戦！ #SIGGRAPHAsia2022 報告会」](https://connpass.com/event/268059/) (2022/12/13)
 1. [#VRSionUp!11「mocopiで遊ぼう♪」](https://connpass.com/event/275769/) (2023/2/22)
 1. [#VRSionUp!12「Laval Virtual 2023直前特集」](https://connpass.com/event/278095/) (2023/3/22)
-
+1. [メタバース開発もくもく会 #VTC23](https://connpass.com/event/279669/) (2023/4/20)
 
 
 
