@@ -22,6 +22,34 @@ His latest interests in the "VR4.0 era", as he proposes, are the development of 
 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
+## 白井 暁彦 (Akihiko SHIRAI, profile in Japanese)
+
+白井暁彦（しらい あきひこ, Akihiko SHIRAI, Ph.D）aka しらいはかせ(Hacker作家)
+デジタルハリウッド大学大学院 客員教授
+
+- Twitter[@o_ob](https://twitter.com/o_ob)
+- [Wantedly]https://www.wantedly.com/id/akihiko_shirai_phd]
+
+### ショートプロフィール (2023/7)
+メタバース開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学を専門に画像生成の研究開発で30年近い経験を持つ博士(工学)。芸術科学会副会長。デジタルハリウッド大学大学院客員教授。StableDiffusionのリリースから2ヵ月で2冊の書籍「AIとコラボして神絵師になる」を執筆。インプレス「窓の杜」にて「生成AIストリーム」連載中。
+
+### 略歴
+VRエンタテイメントシステムの研究者。東京工芸大学工学部写真工学科卒、工学研究科画像工学専攻修士課程修了。キヤノン、英国クライテリオン・ソフトウエア社で世界初の産業用ゲームエンジン開発に参加、ゲームの未来を変えるために2001年 東京工業大学大学院総合理工学研究科知能システム科学専攻博士後期課程に復学、2003年「VRエンタテイメントシステム」の研究で博士 (工学)の学位を取得。2003年-2004年に財団法人NHKエンジニアリングサービス・次世代コンテント研究室。2004年末にフランスに渡り、以来日仏のVR研究の架け橋となる。2007年より帰国し、日本科学未来館科学コミュニケーターを経て、神奈川工科大学 情報学部情報メディア学科 准教授。位置情報ゲームの活用や多重化映像システムなど幅広く研究。著書「白井博士の未来のゲームデザイン -エンターテインメントシステムの科学」他、MoguraVRにて「白井博士のVRおもしろ相談室」を連載。2018年6月1日よりグリー株式会社に入社。「GREE VR Studio Lab Director」ディレクターを担当する。VRライブエンタテイメントを中心としたVR研究所の所長として、VRエンタテイメントシステムの研究開発・人材育成・発信活動、新しい世代のUXを開拓している。
+
+### 受賞歴（抜粋）
+- Hello Tomorrow Global Summit Top 500 startups “Multiplex World Augmentation Display"
+- ACM SIGGRAPH ASIA 2012 Emerging Technologies Prize，
+- ACM Student Research Competition, Bronze Award, Laval Virtual Award 2015，
+- 経産省Innovative Technologies 2013受賞（「2x3D」2D+3D互換の多重化ディスプレイシステム），CEDEC2012 インタラクティブセッション大賞，- CEDEC2014 インタラクティブセッション3位，CEDEC2016 インタラクティブセッション「オーディエンス賞」2位，ニコニコ超会議2015「第8回 ニコニコ学会β シンポジウム」（来場者15万人）にて会場投票で1位となる金賞を受賞, 他．
+
+### 所属学会等
+- 日本VR学会
+  - 国際学生VRコンテスト（[IVRC](https://ivrc.net/)）実行委員
+- 芸術科学会
+- 情報処理学会、映像情報メディア学会、
+- Laval Virtual Administrative Council (France)
+
+
 ### Contact
 
 [Contact Form](https://wellwhite.wixsite.com/home/contact) / [Twitter@o_ob](https://twitter.com/o_ob)
