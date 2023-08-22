@@ -42,6 +42,14 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 - ACM Student Research Competition, Bronze Award, Laval Virtual Award 2015，
 - 経産省Innovative Technologies 2013受賞（「2x3D」2D+3D互換の多重化ディスプレイシステム），CEDEC2012 インタラクティブセッション大賞，- CEDEC2014 インタラクティブセッション3位，CEDEC2016 インタラクティブセッション「オーディエンス賞」2位，ニコニコ超会議2015「第8回 ニコニコ学会β シンポジウム」（来場者15万人）にて会場投票で1位となる金賞を受賞, 他．
 
+### Media presences 
+
+- フジテレビ「週刊フジテレビ批評」2023/8/25 予定
+[生成ＡＩでメディアはどう変わるのか？驚きの最先端技術をスタジオ実演！ハリウッドのデモの要因にも･･･未来への展望と課題を検証](https://twitter.com/FUJICC_staff2/status/1692734674416885850)
+
+-　NHK「漫画家イエナガの複雑社会を超定義」 2023/5/12 放映
+[【漫画で解説】注目のバズワード「ジェネレーティブAI」が社会を変える！？](https://www.nhk.jp/p/ts/1M3MYJGG6G/blog/bl/pp2BabPyzp/bp/pJv5r5m1OD/)
+
 ### 所属学会等
 - 日本VR学会
   - 国際学生VRコンテスト（[IVRC](https://ivrc.net/)）実行委員
