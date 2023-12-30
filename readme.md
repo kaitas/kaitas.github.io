@@ -4,6 +4,7 @@
 
 ![Akihko SHIRAI in GREE VR Studio Laboratory](img/VRStudioLab.jpg)
 
+
 AKIHIKO SHIRAI, Ph.D. (Engineering), is a researcher in metaverse and entertainment virtual reality. He is currently the director of the GREE VR Studio Laboratory at REALITY, Inc. and the Digital Hollywood University Graduate School.
 
 He studied photographic engineering and image processing. He developed "[Fantastic Phantom Slipper](https://akihiko.shirai.as/Fantastic-Phantom-Slipper.html)", which uses dynamic phantom sensation with vibro-tactile, as his first masterpiece in 1997.
