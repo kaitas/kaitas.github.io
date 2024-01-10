@@ -2,9 +2,9 @@
 
 ### Creator{Author/CEO/Researcher} of Entertainment System
 
-AKIHIKO SHIRAI, Ph.D. (Engineering), is a creator of AI metaverse and entertainment virtual reality. He is currently the CEO of AICU Inc. and an affiliate professor of Digital Hollywood University Graduate School.
+![Akihko SHIRAI in GREE VR Studio Laboratory](img/202111-avatars.png)
 
-AKIHIKO SHIRAI, Ph.D. (Engineering), is a researcher in metaverse and entertainment virtual reality. He is currently the director of the GREE VR Studio Laboratory at REALITY, Inc. and the Digital Hollywood University Graduate School.
+AKIHIKO SHIRAI, Ph.D. (Engineering), is a creator of AI metaverse and entertainment virtual reality. He is currently the CEO of [AICU Inc.](https://corp.aicu.ai/) and an affiliate professor of Digital Hollywood University Graduate School.
 
 He studied photographic engineering and image processing. He developed "[Fantastic Phantom Slipper](https://akihiko.shirai.as/Fantastic-Phantom-Slipper.html)", which uses dynamic phantom sensation with vibro-tactile, as his first masterpiece in 1997.
 Until 2001, he worked for Canon and Criterion as a game development consultant to market RenderWare, a multi-platform graphics middleware for the game industry. He returned to academia and received his Ph.D. from the Tokyo Institute of Technology in Japan in 2004 with research on the "Tangible Playroom", an entertainment system for young children using haptics, a floor screen, and a real-time physics engine. He was an R&D researcher at NHK-ES in Japan, focusing on the next-generation TV production environment, before moving to ENSAM Presence & Innovation Laboratory in France from 2004 to 2007 to work on R&D for a virtual reality theme park development project with some significant research projects. Rapid computer vision on GPU "[GPUVision](https://youtu.be/N4WtupBoRMI?t=172)", robotic game player "[RoboGamer](https://www.youtube.com/watch?v=2vH62EEfH6E)" and "WiiMedia" projects were accepted by ACM SIGGRAPH and IEEE VR. 
