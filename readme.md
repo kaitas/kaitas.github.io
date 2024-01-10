@@ -1,9 +1,8 @@
-## Akihiko SHIRAI, Ph.D 
+## Akihiko SHIRAI, Ph.D - CEO of AICU Inc.
 
-### Creator and Researcher of Entertainment VR and UXDev in Metaverse
+### Creator{Author/CEO/Researcher} of Entertainment System
 
-![Akihko SHIRAI in GREE VR Studio Laboratory](img/VRStudioLab.jpg)
-
+AKIHIKO SHIRAI, Ph.D. (Engineering), is a creator of AI metaverse and entertainment virtual reality. He is currently the CEO of AICU Inc. and an affiliate professor of Digital Hollywood University Graduate School.
 
 AKIHIKO SHIRAI, Ph.D. (Engineering), is a researcher in metaverse and entertainment virtual reality. He is currently the director of the GREE VR Studio Laboratory at REALITY, Inc. and the Digital Hollywood University Graduate School.
 
@@ -11,6 +10,10 @@ He studied photographic engineering and image processing. He developed "[Fantast
 Until 2001, he worked for Canon and Criterion as a game development consultant to market RenderWare, a multi-platform graphics middleware for the game industry. He returned to academia and received his Ph.D. from the Tokyo Institute of Technology in Japan in 2004 with research on the "Tangible Playroom", an entertainment system for young children using haptics, a floor screen, and a real-time physics engine. He was an R&D researcher at NHK-ES in Japan, focusing on the next-generation TV production environment, before moving to ENSAM Presence & Innovation Laboratory in France from 2004 to 2007 to work on R&D for a virtual reality theme park development project with some significant research projects. Rapid computer vision on GPU "[GPUVision](https://youtu.be/N4WtupBoRMI?t=172)", robotic game player "[RoboGamer](https://www.youtube.com/watch?v=2vH62EEfH6E)" and "WiiMedia" projects were accepted by ACM SIGGRAPH and IEEE VR. 
 
 He worked for [National Museum of Emerging Science and Innovation (Miraikan)](https://www.miraikan.jst.go.jp/en/), Tokyo, Japan, as a science communicator and exhibition planner from 2008 to 2010. He worked in Information Media, Kanagawa Institute of Technology (KAIT) as an associate professor from 2010 to 2018. Simultaneous multiplex image systems "Scritter", "[ExPixel](https://www.youtube.com/watch?v=lOMx5F7aGEQ)" and "[ExField](https://www.youtube.com/watch?v=BrVJDMgVFqY)", manga immersive system "[Manga Generator](https://manga.style/manga-generator/)", nursery VR entertainment "[Real Baby - Real Family](https://www.youtube.com/watch?v=vqmMXMKX33M)" have been awarded by ministry, academia and game industry. Since 2018, he has been a visiting professor at Digital Hollywood University Graduate School. In June 2018, he returned to the entertainment industry as a research director to launch "[GREE VR Studio Laboratory](https://vr.gree.net/lab/)" in [REALITY, Inc.](https://reality.inc/).A family of [GREE, Inc.](https://corp.gree.net/jp/en/) that promotes a new XR metaverse industry. Conducting research to improve vTuber (Virtual YouTuber, Virtual Persona, Virtual Artist) and exploring XR live entertainment. Contributing to the development of new user experiences in XR entertainment and solutions such as "[VibeShare](https://vr.gree.net/lab/vibeshare/)", a suite of virtual live enchanting technologies for sharing non-verbal interaction in XR live entertainment. 
+
+
+![Akihko SHIRAI in GREE VR Studio Laboratory](img/VRStudioLab.jpg)
+
 
 In [REALITY, Inc](https://reality.inc/), [representative of the metaverse industry in Japan](https://www.google.com/search?q=%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9&rlz=1C1GCEA_enJP946JP946&sxsrf=APq-WBvo0I_cAw-TlGHO2OEXSubTXb6TYw:1649263207297&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9tPKc8P_2AhXQdHAKHR-jCX8Q_AUoAnoECAIQBA&biw=1707&bih=802&dpr=1.13), he produces some visualizations of near-future user experiences using [REALITY.app](https://reality.app) in [UXDev projects on YouTube](https://vr.gree.net/lab/demo/uxdev/), and contributes to some PoC for B2B metaverse using [Mozilla Hubs with Japanese translation](https://github.com/gree/hubs-docs-jp) and community developments. 
 Visiting Professor at the [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). 
