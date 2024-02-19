@@ -331,7 +331,7 @@ Refer my paper indexed in [Research Gate](https://www.researchgate.net/profile/A
 1. 北田大樹,白井暁彦,WebSocketを用いたスマートフォン上でのエンタテイメントコンテンツ閲覧時のリアルタイム行動分析,エンタテイメントコンピューティング2013,2013年
 1. 國富彦岐,石川 晃,田所 康隆,白井 暁彦,年齢層とゲーミングデバイスの違いによる面白さの比較調査,エンタテイメントコンピューティング2013,2013年
 1. 白井 暁彦, 佐藤 勝, 草原 真知子, 久米 祐一郎,「[足インターフェイスによる複合現実感アミューズメントシステム : ファンタスティックファントムスリッパ](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja) ([Mixed Reality Amusement System with Foot Interface : Fantastic Phantom Slipper](https://doi.org/10.18974/tvrsj.4.4_691))」, 日本バーチャルリアリティ学会論文誌, 4 巻 4 号 p. 691-697, 1999 年. [https://doi.org/10.18974/tvrsj.4.4_691](https://doi.org/10.18974/tvrsj.4.4_691), [PDF](https://www.jstage.jst.go.jp/article/tvrsj/4/4/4_KJ00007553594/_pdf/-char/ja)
-1. Yuichiro Kume, Akihiko Shirai, Motoshisa Tsuda, Toyohiko Hatada, "Information Transmission through Soles by Vibro-tactile Stimulation" (October 1998)
+1. 久米祐一郎, 白井暁彦, 津田元久,畑田豊彦, "足裏への皮膚振動刺激による情報伝達 (Information Transmission through Soles by Vibro-tactile Stimulation)",日本バ-チャルリアリティ学会論文誌 (「ハプティックインタフェース」特集) , 基礎論文 (October 1998)
 
 <hr>
 
