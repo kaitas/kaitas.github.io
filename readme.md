@@ -52,9 +52,18 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 - ACM Student Research Competition, Bronze Award, Laval Virtual Award 2015，
 - 経産省Innovative Technologies 2013受賞（「2x3D」2D+3D互換の多重化ディスプレイシステム），CEDEC2012 インタラクティブセッション大賞，- CEDEC2014 インタラクティブセッション3位，CEDEC2016 インタラクティブセッション「オーディエンス賞」2位，ニコニコ超会議2015「第8回 ニコニコ学会β シンポジウム」（来場者15万人）にて会場投票で1位となる金賞を受賞, 他．
 
+
+# 著書 Books (new to old)
+
+1. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
+1. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
+1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
+1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
+
+
 ### Media presences 
 
-- フジテレビ「週刊フジテレビ批評」2023/8/25 予定
+- フジテレビ「週刊フジテレビ批評」2023/8/25 
 [生成ＡＩでメディアはどう変わるのか？驚きの最先端技術をスタジオ実演！ハリウッドのデモの要因にも･･･未来への展望と課題を検証](https://twitter.com/FUJICC_staff2/status/1692734674416885850)
 
 -　NHK「漫画家イエナガの複雑社会を超定義」 2023/5/12 放映
@@ -230,16 +239,11 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 
 <hr>
 
-# Books (new to old)
-
-1. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
-1. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
-1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
-1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
-
-
 
 ## Online Publications
+
+- [AICU media](https://note.com/aicu) editor-in-chief 編集長
+- [窓の杜 連載 生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html) Author
 
 1. CGWORLD特集 メタバース開発者の卵が「自分は何者か」を発見する場所【GREE VR Studio Laboratoryリサーチ系インターンシップ】2023/02/16 [Web](https://cgworld.jp/article/202302-greevr.html)
 1. 「これまでの 5 年、これからの 5 年――「VR 元年」の終焉から世界同時参加の XR ライブエンタメへ」（メディア芸術カレントコンテンツ：文化庁）2020年10月29日
