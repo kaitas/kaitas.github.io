@@ -25,7 +25,7 @@ His motto is "Creating people who create" (from his written book in [The Future 
 His latest interests in the "VR4.0 era", as he proposes, are the development of a multi-user avatar society called Metaverse, User Generated Content (UGC), Blockchain, and User Experience (UX) in AI, and in particular, his research on generative AI is presented to the general public in an easy-to-understand manner. In particular, the book "Collaborating with AI to become a Godhand Illustrator - How to comprehend Stable Diffusion" ([AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap)) is a book that presents research on generative AI in an easy-to-understand manner for the general public. Diffusion was published within two months of its release and has received a great response from the community.
 
 
-Since 2023, He has continued to push the boundaries of AI metaverse and virtual reality entertainment. As the CEO of [AICU Inc.](https://aicu.ai/), he leads cutting-edge research and development initiatives aimed at revolutionizing the industry. He also serves as a specially appointed Professor (特任教授) at Digital Hollywood University Graduate School.
+Since 2023, He has continued to push the boundaries of AI metaverse and virtual reality entertainment. As the CEO of [AICU Inc.](https://aicu.ai/), he leads cutting-edge research and development initiatives aimed at revolutionizing the industry. He also serves as a Project Professor (特任教授) at Digital Hollywood University Graduate School.
 
 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
