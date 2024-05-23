@@ -16,7 +16,7 @@ He worked for [National Museum of Emerging Science and Innovation (Miraikan)](ht
 
 
 In [REALITY, Inc](https://reality.inc/), [representative of the metaverse industry in Japan](https://www.google.com/search?q=%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9&rlz=1C1GCEA_enJP946JP946&sxsrf=APq-WBvo0I_cAw-TlGHO2OEXSubTXb6TYw:1649263207297&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9tPKc8P_2AhXQdHAKHR-jCX8Q_AUoAnoECAIQBA&biw=1707&bih=802&dpr=1.13), he produces some visualizations of near-future user experiences using [REALITY.app](https://reality.app) in [UXDev projects on YouTube](https://vr.gree.net/lab/demo/uxdev/), and contributes to some PoC for B2B metaverse using [Mozilla Hubs with Japanese translation](https://github.com/gree/hubs-docs-jp) and community developments. 
-Visiting Professor at the [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). 
+affiliate professor at the [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). 
 Vice President of the [Society for Art and Science](https://art-science.org/). 
 Ambassador and board member of [Laval Virtual] (https://www.laval-virtual.com/).
 Latest book written: "[Collaborating with AI to become a Godhand Illustrator - How to comprehend Stable Diffusion](https://ivtv.page.link/ap)".
@@ -24,15 +24,21 @@ His motto is "Creating people who create" (from his written book in [The Future 
 
 His latest interests in the "VR4.0 era", as he proposes, are the development of a multi-user avatar society called Metaverse, User Generated Content (UGC), Blockchain, and User Experience (UX) in AI, and in particular, his research on generative AI is presented to the general public in an easy-to-understand manner. In particular, the book "Collaborating with AI to become a Godhand Illustrator - How to comprehend Stable Diffusion" ([AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap)) is a book that presents research on generative AI in an easy-to-understand manner for the general public. Diffusion was published within two months of its release and has received a great response from the community.
 
+
+Since 2023, He has continued to push the boundaries of AI metaverse and virtual reality entertainment. As the CEO of [AICU Inc.](https://aicu.ai/), he leads cutting-edge research and development initiatives aimed at revolutionizing the industry. He also serves as a specially appointed Professor (特任教授) at Digital Hollywood University Graduate School.
+
+
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
-## 白井 暁彦 (Akihiko SHIRAI, profile in Japanese)
+## 白井暁彦（Akihiko Shirai, PhD /しらいはかせ ）Profile in Japanese
 
 白井暁彦（しらい あきひこ, Akihiko SHIRAI, Ph.D）aka しらいはかせ(Hacker作家)
-デジタルハリウッド大学大学院 客員教授
+デジタルハリウッド大学大学院 特任教授
 
-- Twitter[@o_ob](https://twitter.com/o_ob)
+- Twitter[@o_ob](https://x.com/o_ob)
 - [Wantedly](https://www.wantedly.com/id/akihiko_shirai_phd)
+
+エンタメ・メタバース技術の研究開発に関わる研究者、ホワイトハッカー作家、米国スタートアップ「AICU Inc.」「Hidden Pixel Technology Inc.」のCEO。東京工芸大学写真工学科卒、同画像工学専攻修了。キヤノン株式会社とグループの研究所より生まれた英国・Criterion Software にて世界初の産業用ゲームエンジン「RenderWare」の普及開発に参加、その後、東京工業大学知能システム科学専攻に復学。博士学位後、NHK エンジニアリングサービス・次世代コンテント研究室、フランスに渡りENSAM 客員研究員、国際公募展Laval Virtual ReVolution の立ち上げ、日本科学未来館科学コミュニケーター神奈川工科大学情報メディア学科准教授を経て、2018 年よりデジタルハリウッド大学 大学院客員教授 およびグリー株式会社GREE VR Studio Laboratory Director。スマートフォン向けメタバース「REALITY」を開発・運用するREALITY 株式会社の立ち上げを通して、Virtual YouTuber などXR ライブエンタメ技術のR&D、国際発信など、メタバースエンタテイメントの未来開発や知財創出を中心に、自らエンタテイメントのライブプレイヤーとして世界に向けた開発・発信活動方法論化しながら世界中のエンタテインメント技術業界に数百人の規模でクリエイターを育成している。2023 年よりデジタルハリウッド大学発米国スタートアップ企業「AICU Inc.」CEO。生成AI 時代に「つくる人をつくる」をビジョンに英語、日本語、フランス語、プログラミング言語などでオープンな作家活動を続けている。日本バーチャルリアリティ学会IVRC 実行委員会委員。芸術科学会副会長。著書に『WiiRemote プログラミング』（オーム社）、『白井博士の未来のゲームデザイン - エンターテインメントシステムの科学-』（ワークスコーポレーション）、『AI とコラボして神絵師になる　論文から読み解くStable Diffusion』（インプレスR&D）他。
 
 ### ショートプロフィール (2023/7)
 メタバース開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学を専門に画像生成の研究開発で30年近い経験を持つ博士(工学)。一般社団法人[芸術科学会](https://art-science.org/)副会長。[デジタルハリウッド大学大学院客員教授](https://akihiko.shirai.as/dhgs)。StableDiffusionのリリースから2ヵ月で2冊の書籍「[AIとコラボして神絵師になる](https://ivtv.page.link/aisd)」を執筆。インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載中。
@@ -224,11 +230,14 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 
 <hr>
 
-# Books
+# Books (new to old)
 
+1. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
+1. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
+1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
 1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
-2. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
-3. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
+
+
 
 ## Online Publications
 
