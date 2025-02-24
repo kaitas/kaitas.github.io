@@ -36,10 +36,10 @@ VRエンターテインメントシステム研究開発、人材育成、知識
 
 著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
 
-### ショートバイオ (2025/2/24更新)
 
-メタバース研究開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学、生成AIを専門とする博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。著書に「[白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-](https://amzn.to/3QANoio)」「[AIとコラボして神絵師になる](https://amzn.to/4i7b0qK)」「[画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」など。インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。「つくる人をつくる」をビジョンにAIクリエイターユニオンをコンセプトにしたスタートアップAICUを創立、[AICU media](https://note.com/aicu)や[月刊アイキューマガジン](https://j.aicu.ai/kindle)等で情報発信、AI時代のクリエイター支援を行う。
+### 300文字程度のショートバイオ (2025/2/24更新)
 
+メタバース研究開発、VRエンタメシステム、メディアアート、写真/画像工学、生成AIを専門とする博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。著書に「[未来のゲームデザイン](https://amzn.to/3QANoio)」「[AI神絵師](https://amzn.to/4i7b0qK)」「[Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[ComfyUIマスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」。インプレス「窓の杜」で「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。「つくる人をつくる」AICUグループCEO。AIクリエイター支援。[AICU media](https://note.com/aicu)等で情報発信。
 
 ### 略歴 (講演用 2025/2/24更新)
 
