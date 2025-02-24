@@ -16,69 +16,25 @@ In 2023, Dr. Shirai founded AICU, an international startup envisioned as an AI c
 
 Dr. Shirai is the author of numerous books, including "The Future of Game Design: Science in Entertainment Systems," "Collaborating with AI to Become a God-level Illustrator," "Image Generation AI Stable Diffusion Startup Guide," and "[Image and Video Generation AI ComfyUI Master Guide](https://comfy.aicu.ai/) (scheduled for release on April 18, 2025)." He also authors the "Generative AI Stream" column in Impress's "窓の杜" (Forest of Windows) online magazine and actively disseminates information through his note blog "[AICU media](https://note.com/aicu)", and the monthly "[AICU Magazine](https://j.aicu.ai/kindle)". He can be found on X (formerly Twitter) as [@o_ob](https://x.com/o_ob).
 
+![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
+
 ## 白井暁彦博士 - AICU Inc. CEO
 
 ### エンターテインメントシステムのクリエイター {作家 / CEO / 研究者}
 
 ![白井暁彦 (GREE VR Studio Laboratory, 2021)](img/202111-avatars.png)
 
-工学博士（Ph.D. in Engineering）である白井暁彦は、AIメタバースとエンターテインメント・バーチャルリアリティを専門とする研究者であり、これらの分野で多作なクリエイターです。[AICU Inc.](https://corp.aicu.ai/) のCEOであり、デジタルハリウッド大学大学院の特任教授として、[クリエイティブAIラボ](https://akihiko.shirai.as/dhgs)を主宰しています。
+工学博士、白井暁彦。AIメタバースとエンターテインメントVR専門の研究者。多作なクリエイター。[AICU Inc.](https://corp.aicu.ai/) CEO。デジタルハリウッド大学大学院 特任教授、[クリエイティブAIラボ](https://akihiko.shirai.as/dhgs)主宰。
 
-白井博士の専門分野は、メタバースの研究開発、VRエンターテインメントシステム、メディアアート、写真工学、画像工学、そして生成AIと多岐にわたります。東京工芸大学写真工学科を卒業後、同大学院工学研究科画像工学専攻修士課程を修了。ゲーム業界向けの先駆的なゲームエンジンであるRenderWareの開発に貢献するため、キヤノンとクライテリオン・ソフトウェア（英国）で業界経験を積みました。ゲームの未来を形作りたいという強い思いから、2001年に東京工業大学大学院に戻り、「VRエンターテインメントシステム」の研究で2003年に博士（工学）の学位を取得しました。
+専門分野、メタバース研究開発、VRエンターテインメントシステム、メディアアート、写真工学、画像工学、生成AIなど多岐。東京工芸大学写真工学科卒業。同大学院工学研究科画像工学専攻修士課程修了。ゲーム業界先駆的ゲームエンジンRenderWare開発貢献のため、キヤノン、クライテリオン・ソフトウェア（英国）で業界経験。ゲームの未来を形作りたい強い思い。2001年、東京工業大学大学院へ。2003年、「VRエンターテインメントシステム」研究で博士（工学）号取得。
 
-NHKエンジニアリングサービスの研究開発研究員、フランス国立高等工芸学校（ENSAM）客員研究員、日本科学未来館（Miraikan）科学コミュニケーター、神奈川工科大学情報メディア学科准教授、デジタルハリウッド大学大学院客員教授などを歴任。
+NHKエンジニアリングサービス研究開発研究員、フランス国立高等工芸学校（ENSAM）客員研究員、日本科学未来館（Miraikan）科学コミュニケーター、神奈川工科大学情報メディア学科准教授、デジタルハリウッド大学大学院客員教授など歴任。
 
-白井博士は、VRエンターテインメントシステムの研究開発、人材育成、知識普及の最前線に常に立ってきました。ACM SIGGRAPH、IEEE MetaCom、Laval Virtual、CEDECなどの国際会議で、常に最先端のUXコンセプトを発表。2018年から2023年まで、グリーVR Studioのラボディレクターとして、アバター駆動型メタバースとVRライブエンターテインメントにおけるUX研究開発を主導しました。
+VRエンターテインメントシステム研究開発、人材育成、知識普及の最前線。ACM SIGGRAPH、IEEE MetaCom、Laval Virtual、CEDEC等、国際会議で常に最先端UXコンセプト発表。2018年～2023年、グリーVR Studioラボディレクター。アバター駆動型メタバース、VRライブエンターテインメントにおけるUX研究開発を主導。
 
-2023年、国際的なスタートアップ企業「AICU Inc.」を設立。デジタルハリウッド大学大学院クリエイティブAIラボにおいては、高等教育機関として研究活動を行う傍ら、「AICU media」や個人ブログを通じて年間700本ものブログ記事を発信し、AIイラストレーション、漫画、動画、アバター、メタバース、システム開発といった生成AI時代のクリエイティブサービス開発における社会実装、実験、アウトリーチ活動を指揮しています。先端的な事例としては、神奈川県の福祉事業である「ともいきメタバース」にも積極的に参加し、障害者の社会参加を促進しています。
+2023年、国際的スタートアップ企業「AICU Inc.」設立。「つくる人を創る (Creating People Who Create in the AIDX era)」ミッション。デジタルハリウッド大学大学院クリエイティブAIラボ。高等教育機関として研究活動。年間700本のブログ記事発信。「AICU media」や個人ブログで。AIイラストレーション、漫画、動画、アバター、メタバース、システム開発。生成AI時代クリエイティブサービス開発における社会実装、実験、アウトリーチ活動を指揮。先端事例、神奈川県福祉事業「ともいきメタバース」積極参加。障害者の社会参加促進。
 
-白井博士は、「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」など、多数の著書があります。また、インプレスのオンラインマガジン「窓の杜」でコラム「生成AIストリーム」を執筆しているほか、noteブログ「[AICU media](https://note.com/aicu)」や月刊「[AICUマガジン](https://j.aicu.ai/kindle)」を通じて積極的に情報発信を行っています。X（旧Twitter）アカウントは [@o_ob](https://x.com/o_ob) です。
-
-![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
-
-## 白井暁彦 経歴 (年度、受賞、展示会など)
-
-**学歴**
-
-* **1996年:** 東京工芸大学 工学部 写真工学科 卒業
-* **1998年:** 東京工芸大学大学院 工学研究科 画像工学専攻 修了
-* **2003年:** 東京工業大学大学院 総合理工学研究科 知能システム科学専攻 博士後期課程修了、博士(工学)取得
-
-**職歴・活動歴**
-
-* **1998年 - 2001年:** キヤノン株式会社、クライテリオン・ソフトウェア社 (ゲーム開発コンサルタント)
-* **2003年 - 2004年:** 財団法人NHKエンジニアリングサービス 次世代コンテンツ研究室 (研究員)
-* **2004年 - 2007年:** フランス国立高等工芸学校 (ENSAM) 客員研究員
-* **2006年 - :** Laval Virtual ReVolution セッションオーガナイザー
-* **2007年 - 2010年:** 日本科学未来館 科学コミュニケーター、展示企画
-* **2010年 - 2018年:** 神奈川工科大学 情報学部 情報メディア学科 准教授
-* **2018年 - :** デジタルハリウッド大学大学院 客員教授
-* **2018年 - 2023年:** グリー株式会社 GREE VR Studio Laboratory Director (REALITY株式会社出向)
-* **2023年 - :** AICU Inc. CEO
-* **2023年 - :** デジタルハリウッド大学大学院 特任教授
-
-
-**受賞歴 (抜粋)**
-
-* **1997年:** 日本バーチャルリアリティ学会第2回大会にてFantastic Phantom Slipper初期型を発表
-* **2012年:** CEDEC AWARDS 2012 インタラクティブセッション大賞 (多重化隠蔽映像技術 Scritter)
-* **2012年:** ACM SIGGRAPH ASIA 2012 Emerging Technologies Prize (多重化隠蔽映像技術 Scritter)
-* **2013年:** 経産省 Innovative Technologies 2013 (2D+3D互換多重化ディスプレイシステム 2x3D)
-* **2014年:** CEDEC 2014 インタラクティブセッション3位 (多重化隠蔽映像技術 ExPixel)
-* **2015年:** Laval Virtual Award 2015 (多重化隠蔽映像技術 ExPixel FPGA)
-* **2015年:** ニコニコ超会議2015 第8回 ニコニコ学会β シンポジウム 金賞 (多重化隠蔽映像技術 ExPixel)
-* **2015年:** 指導学生が ACM Student Research Competition, Bronze Award を受賞 (多重化隠蔽映像技術 ExPixel 関連)
-* **2016年:** CEDEC 2016 インタラクティブセッション オーディエンス賞2位 (多重化多視点VRアーケードゲームシステム DUAL DUEL)
-* **2020年:** 共著論文が情報処理学会 研究報告 2020-MUS-103(6) 優秀賞を受賞
-* **2022年:** 共著論文が CyberWorlds 2022 Best short paper
-
-
-**主な著書**
-
-* **2009年:** WiiRemoteプログラミング (オーム社)
-* **2013年:** 白井博士の未来のゲームデザイン - エンターテインメントシステムの科学 - (ワークスコーポレーション)
-* **2022年:** AIとコラボして神絵師になる 論文から読み解くStable Diffusion (インプレスR&D)
-* **2024年:** 画像生成AI Stable Diffusion スタートガイド (SBクリエイティブ)
+著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
 
 ### ショートバイオ (2025/2/24更新)
 
@@ -104,10 +60,11 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 - 経産省Innovative Technologies 2013受賞（「2x3D」2D+3D互換の多重化ディスプレイシステム），CEDEC2012 インタラクティブセッション大賞，- CEDEC2014 インタラクティブセッション3位，CEDEC2016 インタラクティブセッション「オーディエンス賞」2位，ニコニコ超会議2015「第8回 ニコニコ学会β シンポジウム」（来場者15万人）にて会場投票で1位となる金賞を受賞, 他．
 
 
+
 # 著書 Books (new to old)
 
 1. [画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) 2025年4月18日発売予定
-2. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
+1. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
 1. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
 1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
 1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
@@ -121,6 +78,43 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 -　NHK「漫画家イエナガの複雑社会を超定義」 2023/5/12 放映
 [【漫画で解説】注目のバズワード「ジェネレーティブAI」が社会を変える！？](https://www.nhk.jp/p/ts/1M3MYJGG6G/blog/bl/pp2BabPyzp/bp/pJv5r5m1OD/)
 
+## 白井暁彦 経歴 (アカデミック向け)
+
+**学歴**
+
+* **1996年:** 東京工芸大学 工学部 写真工学科 卒業
+* **1998年:** 東京工芸大学大学院 工学研究科 画像工学専攻 修了
+* **2003年:** 東京工業大学大学院 総合理工学研究科 知能システム科学専攻 博士後期課程修了、博士(工学)取得
+
+**職歴・活動歴**
+
+* **1998年 - 2001年:** キヤノン株式会社、クライテリオン・ソフトウェア社 (ゲーム開発コンサルタント)
+* **2003年 - 2004年:** 財団法人NHKエンジニアリングサービス 次世代コンテンツ研究室 (研究員)
+* **2004年 - 2007年:** フランス国立高等工芸学校 (ENSAM) 客員研究員
+* **2006年 - :** Laval Virtual ReVolution セッションオーガナイザー
+* **2007年 - 2010年:** 日本科学未来館 科学コミュニケーター、展示企画
+* **2010年 - 2018年:** 神奈川工科大学 情報学部 情報メディア学科 准教授
+* **2018年 - :** デジタルハリウッド大学大学院 客員教授
+* **2018年 - 2023年:** グリー株式会社 GREE VR Studio Laboratory Director (REALITY株式会社出向)
+* **2023年 - :** AICU Inc. CEO
+* **2023年 - :** デジタルハリウッド大学大学院 特任教授
+* **2024年11月11日 - :** AICU Japan 株式会社 代表取締役
+
+**受賞歴 (抜粋)**
+
+* **1997年:** 日本バーチャルリアリティ学会第2回大会にてFantastic Phantom Slipper初期型を発表
+* **2012年:** CEDEC AWARDS 2012 インタラクティブセッション大賞 (多重化隠蔽映像技術 Scritter)
+* **2012年:** ACM SIGGRAPH ASIA 2012 Emerging Technologies Prize (多重化隠蔽映像技術 Scritter)
+* **2013年:** 経産省 Innovative Technologies 2013 (2D+3D互換多重化ディスプレイシステム 2x3D)
+* **2014年:** CEDEC 2014 インタラクティブセッション3位 (多重化隠蔽映像技術 ExPixel)
+* **2015年:** Laval Virtual Award 2015 (多重化隠蔽映像技術 ExPixel FPGA)
+* **2015年:** ニコニコ超会議2015 第8回 ニコニコ学会β シンポジウム 金賞 (多重化隠蔽映像技術 ExPixel)
+* **2015年:** 指導学生が ACM Student Research Competition, Bronze Award を受賞 (多重化隠蔽映像技術 ExPixel 関連)
+* **2016年:** CEDEC 2016 インタラクティブセッション オーディエンス賞2位 (多重化多視点VRアーケードゲームシステム DUAL DUEL)
+* **2020年:** 共著論文が情報処理学会 研究報告 2020-MUS-103(6) 優秀賞を受賞
+* **2022年:** 共著論文が CyberWorlds 2022 Best short paper
+
+
 ### 所属学会等
 - 日本VR学会
   - 国際学生VRコンテスト（[IVRC](https://ivrc.net/)）実行委員
@@ -133,6 +127,8 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 ### Contact
 
 [Contact Form](https://corp.aicu.ai/ja) / [Twitter@o_ob](https://x.com/o_ob)
+
+----
 
 ### GitHub Calendar
 
