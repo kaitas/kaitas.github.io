@@ -2,7 +2,7 @@
 
 ### Creator{Author/CEO/Researcher} of Entertainment System
 
-![Akihko SHIRAI in GREE VR Studio Laboratory](img/202111-avatars.png)
+![Akihko SHIRAI in GREE VR Studio Laboratory (2021)](img/202111-avatars.png)
 
 AKIHIKO SHIRAI, Ph.D. (Engineering), is a creator of AI metaverse and entertainment virtual reality. He is currently the CEO of [AICU Inc.](https://corp.aicu.ai/) and an affiliate professor of Digital Hollywood University Graduate School.
 
@@ -87,13 +87,14 @@ Since 2023, He has continued to push the boundaries of AI metaverse and virtual 
 
 
 
-### ショートプロフィール (2023/7)
-メタバース開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学を専門に画像生成の研究開発で30年近い経験を持つ博士(工学)。一般社団法人[芸術科学会](https://art-science.org/)副会長。[デジタルハリウッド大学大学院特任教授](https://akihiko.shirai.as/dhgs)。StableDiffusionのリリースから2ヵ月で2冊の書籍「[AIとコラボして神絵師になる](https://ivtv.page.link/aisd)」を執筆。インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載中。
+### ショートプロフィール (2025/2)
+メタバース研究開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学、生成AIを専門に研究開発で30年近い経験を持つ博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。書籍「[白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-](https://amzn.to/3QANoio)」(2013)、Stable Diffusionのリリースから2ヵ月で書籍「[AIとコラボして神絵師になる](https://amzn.to/4i7b0qK)」を執筆、インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。その後、「つくる人をつくる」をビジョンに日米でAIクリエイターユニオンをコンセプトにしたスタートアップ企業「AICU」を創立。画像生成AIの教科書となる「[画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」(SBクリエイティブ・2024)や、noteでのブログ「[AICU media](https://note.com/aicu)」や、「[月刊アイキューマガジン](https://j.aicu.ai/kindle)」で、読み物メディアを中心にAI時代のクリエイターのための支援活動を行っている。最新刊 [画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) 2025年4月18日発売予定。
 
 ### 略歴
-VRエンタテイメントシステムの研究者。東京工芸大学工学部写真工学科卒、[工学研究科画像工学専攻修士課程修了](/PDF/9662005.pdf)。キヤノン、英国クライテリオン・ソフトウエア社で世界初の産業用ゲームエンジン開発に参加、ゲームの未来を変えるために2001年 東京工業大学大学院総合理工学研究科知能システム科学専攻博士後期課程に復学、2003年「VRエンタテイメントシステム」の研究で博士 (工学)の学位を取得。2003年-2004年に財団法人NHKエンジニアリングサービス・次世代コンテント研究室。2004年末にフランスに渡り、以来日仏のVR研究の架け橋となる。2007年より帰国し、日本科学未来館科学コミュニケーターを経て、神奈川工科大学 情報学部情報メディア学科 准教授。位置情報ゲームの活用や多重化映像システムなど幅広く研究。著書「白井博士の未来のゲームデザイン -エンターテインメントシステムの科学」他、MoguraVRにて「白井博士のVRおもしろ相談室」を連載。2018年6月1日よりグリー株式会社に入社。[GREE VR Studio Laboratory](https://vr.gree.net/lab) Directorを担当する。アバター駆動のメタバース、VRライブエンタテイメントを中心としたUX研究開発のリーダーとして、VRエンタテイメントシステムの研究開発・人材育成・発信活動、新しい世代のUXを開拓。ACM SIGRAPH, IEEE MetaCom, Laval Virtual, CEDECなどの国際的なインタラクティブ技術・UX研究の先端において常に最先端のUXを提案してきた。2023年よりデジタルハリウッド大学大学院にてラボプロジェクト「クリエイティブAIラボ」を主宰。生成AIとサービス開発における実験的な取り組みをより社会において実験する活動を推進している。
+VRエンタテイメントシステムの研究者。東京工芸大学工学部写真工学科卒、[工学研究科画像工学専攻修士課程修了](/PDF/9662005.pdf)。キヤノン、英国クライテリオン・ソフトウエア社で世界初の産業用ゲームエンジン開発に参加、ゲームの未来を変えるために2001年 東京工業大学大学院総合理工学研究科知能システム科学専攻博士後期課程に復学、2003年「VRエンタテイメントシステム」の研究で博士 (工学)の学位を取得。2003年-2004年に財団法人NHKエンジニアリングサービス・次世代コンテント研究室。2004年末にフランスに渡り、以来日仏のVR研究の架け橋となる。2007年より帰国し、日本科学未来館科学コミュニケーターを経て、神奈川工科大学 情報学部情報メディア学科 准教授。位置情報ゲームの活用や多重化映像システムなど幅広く研究。著書「白井博士の未来のゲームデザイン -エンターテインメントシステムの科学」他、MoguraVRにて「白井博士のVRおもしろ相談室」を連載。2018年6月1日よりグリー株式会社に入社。[GREE VR Studio Laboratory](https://vr.gree.net/lab) Directorを担当する。アバター駆動のメタバース、VRライブエンタテイメントを中心としたUX研究開発のリーダーとして、VRエンタテイメントシステムの研究開発・人材育成・発信活動、新しい世代のUXを開拓。ACM SIGRAPH, IEEE MetaCom, Laval Virtual, CEDECなどの国際的なインタラクティブ技術・UX研究の先端において常に最先端のUXを提案してきた。2023年よりデジタルハリウッド大学大学院にてラボプロジェクト「[クリエイティブAIラボ](https://akihiko.shirai.as/dhgs)」を主宰。メタバース、アバター、生成AIとクリエイティブサービス開発における実験的な取り組みを、自身がCEOをつとめるスタートアップ企業「AICU Inc.」「AICU Japan株式会社」や、神奈川県「[ともいきメタバース](https://note.com/hashtag/%E3%81%A8%E3%82%82%E3%81%84%E3%81%8D%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9)」とコラボレーションしながら社会実装・実験・発信活動を行っている。
 
 ### 受賞歴（抜粋）
+- [第1回生成AIアートバトル「AIBATO」優勝](https://note.com/o_ob/n/nf7a760746933)
 - Hello Tomorrow Global Summit Top 500 startups “Multiplex World Augmentation Display"
 - ACM SIGGRAPH ASIA 2012 Emerging Technologies Prize，
 - ACM Student Research Competition, Bronze Award, Laval Virtual Award 2015，
@@ -102,7 +103,8 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 
 # 著書 Books (new to old)
 
-1. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
+1. [画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) 2025年4月18日発売予定
+2. [画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)
 1. [AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap) 
 1. [白井博士の未来のゲームデザイン ―エンターテインメントシステムの科学―](http://aki.shirai.as/entsys/)
 1. [WiiRemote プログラミング](http://akihiko.shirai.as/projects/WiiRemote/)
@@ -119,8 +121,9 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 ### 所属学会等
 - 日本VR学会
   - 国際学生VRコンテスト（[IVRC](https://ivrc.net/)）実行委員
-- 芸術科学会
-- 情報処理学会、映像情報メディア学会、
+- 一般社団法人[芸術科学会](https://art-science.org/) 副会長(2022-2024) [発信交流事業](https://note.com/o_ob/n/n944f7cf48960)
+- 情報処理学会
+- 映像情報メディア学会
 - Laval Virtual Administrative Council (France)
 
 
