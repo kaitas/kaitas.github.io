@@ -1,46 +1,42 @@
-## Akihiko SHIRAI, Ph.D - CEO of AICU Inc.
+## Akihiko SHIRAI, Ph.D. - CEO of AICU Inc.
 
-### Creator{Author/CEO/Researcher} of Entertainment System
+### Creator{Author/CEO/Researcher} of Entertainment Systems
 
 ![Akihko SHIRAI in GREE VR Studio Laboratory (2021)](img/202111-avatars.png)
 
-AKIHIKO SHIRAI, Ph.D. (Engineering), is a creator of AI metaverse and entertainment virtual reality. He is currently the CEO of [AICU Inc.](https://corp.aicu.ai/) and an affiliate professor of Digital Hollywood University Graduate School.
+Akihiko SHIRAI, Ph.D. (Engineering), is a researcher specializing in AI metaverse and entertainment virtual reality, and a prolific creator in these fields. He is the CEO of [AICU Inc.](https://corp.aicu.ai/) and a Project Professor at Digital Hollywood University Graduate School, where he leads the [Creative AI Lab](https://akihiko.shirai.as/dhgs).
 
-He studied photographic engineering and image processing. He developed "[Fantastic Phantom Slipper](https://akihiko.shirai.as/Fantastic-Phantom-Slipper.html)", which uses dynamic phantom sensation with vibro-tactile, as his first masterpiece in 1997.
-Until 2001, he worked for Canon and Criterion as a game development consultant to market RenderWare, a multi-platform graphics middleware for the game industry. He returned to academia and received his Ph.D. from the Tokyo Institute of Technology in Japan in 2004 with research on the "Tangible Playroom", an entertainment system for young children using haptics, a floor screen, and a real-time physics engine. He was an R&D researcher at NHK-ES in Japan, focusing on the next-generation TV production environment, before moving to ENSAM Presence & Innovation Laboratory in France from 2004 to 2007 to work on R&D for a virtual reality theme park development project with some significant research projects. Rapid computer vision on GPU "[GPUVision](https://youtu.be/N4WtupBoRMI?t=172)", robotic game player "[RoboGamer](https://www.youtube.com/watch?v=2vH62EEfH6E)" and "WiiMedia" projects were accepted by ACM SIGGRAPH and IEEE VR. 
+Dr. Shirai's expertise spans across metaverse research and development, VR entertainment systems, media art, photographic engineering, image engineering, and generative AI. He graduated from Tokyo Polytechnic University with a degree in Photographic Engineering and earned his Master's degree in Image Engineering from the same institution.  He gained industry experience at Canon and Criterion Software (UK), contributing to the development of RenderWare, a pioneering game engine.  Driven by a desire to shape the future of gaming, he returned to academia and obtained his Ph.D. in Engineering from Tokyo Institute of Technology in 2003, focusing his research on "VR Entertainment Systems."
 
-He worked for [National Museum of Emerging Science and Innovation (Miraikan)](https://www.miraikan.jst.go.jp/en/), Tokyo, Japan, as a science communicator and exhibition planner from 2008 to 2010. He worked in Information Media, Kanagawa Institute of Technology (KAIT) as an associate professor from 2010 to 2018. Simultaneous multiplex image systems "Scritter", "[ExPixel](https://www.youtube.com/watch?v=lOMx5F7aGEQ)" and "[ExField](https://www.youtube.com/watch?v=BrVJDMgVFqY)", manga immersive system "[Manga Generator](https://manga.style/manga-generator/)", nursery VR entertainment "[Real Baby - Real Family](https://www.youtube.com/watch?v=vqmMXMKX33M)" have been awarded by ministry, academia and game industry. Since 2018, he has been a visiting professor at Digital Hollywood University Graduate School. In June 2018, he returned to the entertainment industry as a research director to launch "[GREE VR Studio Laboratory](https://vr.gree.net/lab/)" in [REALITY, Inc.](https://reality.inc/).A family of [GREE, Inc.](https://corp.gree.net/jp/en/) that promotes a new XR metaverse industry. Conducting research to improve vTuber (Virtual YouTuber, Virtual Persona, Virtual Artist) and exploring XR live entertainment. Contributing to the development of new user experiences in XR entertainment and solutions such as "[VibeShare](https://vr.gree.net/lab/vibeshare/)", a suite of virtual live enchanting technologies for sharing non-verbal interaction in XR live entertainment. 
+His career includes positions as an R&D researcher at NHK Engineering Services, a Visiting Researcher at École Nationale Supérieure d'Arts et Métiers (ENSAM) in France, a Science Communicator at the National Museum of Emerging Science and Innovation (Miraikan),  Associate Professor at Kanagawa Institute of Technology, and an Affiliate Professor at Digital Hollywood University Graduate School.
 
+Throughout his career, Dr. Shirai has consistently been at the forefront of VR entertainment system research and development, talent cultivation, and dissemination of knowledge. He has presented cutting-edge UX concepts at international conferences such as ACM SIGGRAPH, IEEE MetaCom, Laval Virtual, and CEDEC.  From 2018 to 2023, as Laboratory Director at GREE VR Studio, he spearheaded UX research and development in avatar-driven metaverse and VR live entertainment.
 
-![Akihko SHIRAI in GREE VR Studio Laboratory](img/VRStudioLab.jpg)
+In 2023, Dr. Shirai founded AICU, an international startup envisioned as an AI creator union, with the mission to "Creating People Who Create in the AIDX era".  At Digital Hollywood University Graduate School's Creative AI Lab, he leads social implementation, experimentation, and outreach activities in manga, metaverse, avatars, generative AI, and creative service development. He also actively participates in "Tomoiki Metaverse" in Kanagawa Prefecture, promoting social participation for people with disabilities.
 
+Dr. Shirai is the author of numerous books, including "The Future of Game Design: Science in Entertainment Systems," "Collaborating with AI to Become a God-level Illustrator," "Image Generation AI Stable Diffusion Startup Guide," and "[Image and Video Generation AI ComfyUI Master Guide](https://comfy.aicu.ai/) (scheduled for release on April 18, 2025)." He also authors the "Generative AI Stream" column in Impress's "窓の杜" (Forest of Windows) online magazine and actively disseminates information through his note blog "[AICU media](https://note.com/aicu)", and the monthly "[AICU Magazine](https://j.aicu.ai/kindle)". He can be found on X (formerly Twitter) as [@o_ob](https://x.com/o_ob).
 
-In [REALITY, Inc](https://reality.inc/), [representative of the metaverse industry in Japan](https://www.google.com/search?q=%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9&rlz=1C1GCEA_enJP946JP946&sxsrf=APq-WBvo0I_cAw-TlGHO2OEXSubTXb6TYw:1649263207297&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi9tPKc8P_2AhXQdHAKHR-jCX8Q_AUoAnoECAIQBA&biw=1707&bih=802&dpr=1.13), he produces some visualizations of near-future user experiences using [REALITY.app](https://reality.app) in [UXDev projects on YouTube](https://vr.gree.net/lab/demo/uxdev/), and contributes to some PoC for B2B metaverse using [Mozilla Hubs with Japanese translation](https://github.com/gree/hubs-docs-jp) and community developments. 
-affiliate professor at the [Digital Hollywood University Graduate School](https://www.dhw.ac.jp/en/academics/). 
-Vice President of the [Society for Art and Science](https://art-science.org/). 
-Ambassador and board member of [Laval Virtual] (https://www.laval-virtual.com/).
-Latest book written: "[Collaborating with AI to become a Godhand Illustrator - How to comprehend Stable Diffusion](https://ivtv.page.link/ap)".
-His motto is "Creating people who create" (from his written book in [The Future of Game Design - Science in Entertainment Systems](https://bit.ly/mirainogame)).
+## 白井暁彦博士 - AICU Inc. CEO
 
-His latest interests in the "VR4.0 era", as he proposes, are the development of a multi-user avatar society called Metaverse, User Generated Content (UGC), Blockchain, and User Experience (UX) in AI, and in particular, his research on generative AI is presented to the general public in an easy-to-understand manner. In particular, the book "Collaborating with AI to become a Godhand Illustrator - How to comprehend Stable Diffusion" ([AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://ivtv.page.link/ap)) is a book that presents research on generative AI in an easy-to-understand manner for the general public. Diffusion was published within two months of its release and has received a great response from the community.
+### エンターテインメントシステムのクリエイター {作家 / CEO / 研究者}
 
+![白井暁彦 (GREE VR Studio Laboratory, 2021)](img/202111-avatars.png)
 
-Since 2023, He has continued to push the boundaries of AI metaverse and virtual reality entertainment. As the CEO of [AICU Inc.](https://aicu.ai/), he leads cutting-edge research and development initiatives aimed at revolutionizing the industry. He also serves as a Project Professor (特任教授) at Digital Hollywood University Graduate School.
+工学博士（Ph.D. in Engineering）である白井暁彦は、AIメタバースとエンターテインメント・バーチャルリアリティを専門とする研究者であり、これらの分野で多作なクリエイターです。[AICU Inc.](https://corp.aicu.ai/) のCEOであり、デジタルハリウッド大学大学院の特任教授として、[クリエイティブAIラボ](https://akihiko.shirai.as/dhgs)を主宰しています。
 
+白井博士の専門分野は、メタバースの研究開発、VRエンターテインメントシステム、メディアアート、写真工学、画像工学、そして生成AIと多岐にわたります。東京工芸大学写真工学科を卒業後、同大学院工学研究科画像工学専攻修士課程を修了。ゲーム業界向けの先駆的なゲームエンジンであるRenderWareの開発に貢献するため、キヤノンとクライテリオン・ソフトウェア（英国）で業界経験を積みました。ゲームの未来を形作りたいという強い思いから、2001年に東京工業大学大学院に戻り、「VRエンターテインメントシステム」の研究で2003年に博士（工学）の学位を取得しました。
+
+NHKエンジニアリングサービスの研究開発研究員、フランス国立高等工芸学校（ENSAM）客員研究員、日本科学未来館（Miraikan）科学コミュニケーター、神奈川工科大学情報メディア学科准教授、デジタルハリウッド大学大学院客員教授などを歴任。
+
+白井博士は、VRエンターテインメントシステムの研究開発、人材育成、知識普及の最前線に常に立ってきました。ACM SIGGRAPH、IEEE MetaCom、Laval Virtual、CEDECなどの国際会議で、常に最先端のUXコンセプトを発表。2018年から2023年まで、グリーVR Studioのラボディレクターとして、アバター駆動型メタバースとVRライブエンターテインメントにおけるUX研究開発を主導しました。
+
+2023年、国際的なスタートアップ企業「AICU Inc.」を設立。デジタルハリウッド大学大学院クリエイティブAIラボにおいては、高等教育機関として研究活動を行う傍ら、「AICU media」や個人ブログを通じて年間700本ものブログ記事を発信し、AIイラストレーション、漫画、動画、アバター、メタバース、システム開発といった生成AI時代のクリエイティブサービス開発における社会実装、実験、アウトリーチ活動を指揮しています。先端的な事例としては、神奈川県の福祉事業である「ともいきメタバース」にも積極的に参加し、障害者の社会参加を促進しています。
+
+白井博士は、「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」など、多数の著書があります。また、インプレスのオンラインマガジン「窓の杜」でコラム「生成AIストリーム」を執筆しているほか、noteブログ「[AICU media](https://note.com/aicu)」や月刊「[AICUマガジン](https://j.aicu.ai/kindle)」を通じて積極的に情報発信を行っています。X（旧Twitter）アカウントは [@o_ob](https://x.com/o_ob) です。
 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
 
-## 白井暁彦（Akihiko Shirai, PhD /しらいはかせ ）Profile in Japanese
-
-白井暁彦（しらい あきひこ, Akihiko SHIRAI, Ph.D）aka しらいはかせ(Hacker作家)
-デジタルハリウッド大学大学院 特任教授
-
-- Twitter[@o_ob](https://x.com/o_ob)
-- [Wantedly](https://www.wantedly.com/id/akihiko_shirai_phd)
-
-エンタメ・メタバース技術の研究開発に関わる研究者、ホワイトハッカー作家、米国スタートアップ「AICU Inc.」「Hidden Pixel Technology Inc.」のCEO。東京工芸大学写真工学科卒、同画像工学専攻修了。キヤノン株式会社とグループの研究所より生まれた英国・Criterion Software にて世界初の産業用ゲームエンジン「RenderWare」の普及開発に参加、その後、東京工業大学知能システム科学専攻に復学。博士学位後、NHK エンジニアリングサービス・次世代コンテント研究室、フランスに渡りENSAM 客員研究員、国際公募展Laval Virtual ReVolution の立ち上げ、日本科学未来館科学コミュニケーター神奈川工科大学情報メディア学科准教授を経て、2018 年よりデジタルハリウッド大学 大学院客員教授 およびグリー株式会社GREE VR Studio Laboratory Director。スマートフォン向けメタバース「REALITY」を開発・運用するREALITY 株式会社の立ち上げを通して、Virtual YouTuber などXR ライブエンタメ技術のR&D、国際発信など、メタバースエンタテイメントの未来開発や知財創出を中心に、自らエンタテイメントのライブプレイヤーとして世界に向けた開発・発信活動方法論化しながら世界中のエンタテインメント技術業界に数百人の規模でクリエイターを育成している。2023 年よりデジタルハリウッド大学発米国スタートアップ企業「AICU Inc.」CEO。生成AI 時代に「つくる人をつくる」をビジョンに英語、日本語、フランス語、プログラミング言語などでオープンな作家活動を続けている。日本バーチャルリアリティ学会IVRC 実行委員会委員。芸術科学会副会長。著書に『WiiRemote プログラミング』（オーム社）、『白井博士の未来のゲームデザイン - エンターテインメントシステムの科学-』（ワークスコーポレーション）、『AI とコラボして神絵師になる　論文から読み解くStable Diffusion』（インプレスR&D）他。
-
-## 白井暁彦氏 経歴 (年度、受賞、展示会など)
+## 白井暁彦 経歴 (年度、受賞、展示会など)
 
 **学歴**
 
@@ -84,14 +80,21 @@ Since 2023, He has continued to push the boundaries of AI metaverse and virtual 
 * **2022年:** AIとコラボして神絵師になる 論文から読み解くStable Diffusion (インプレスR&D)
 * **2024年:** 画像生成AI Stable Diffusion スタートガイド (SBクリエイティブ)
 
+### ショートバイオ (2025/2/24更新)
+
+メタバース研究開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学、生成AIを専門とする博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。著書に「[白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-](https://amzn.to/3QANoio)」「[AIとコラボして神絵師になる](https://amzn.to/4i7b0qK)」「[画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」など。インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。「つくる人をつくる」をビジョンにAIクリエイターユニオンをコンセプトにしたスタートアップAICUを創立、[AICU media](https://note.com/aicu)や[月刊アイキューマガジン](https://j.aicu.ai/kindle)等で情報発信、AI時代のクリエイター支援を行う。
 
 
+### 略歴 (講演用 2025/2/24更新)
 
-### ショートプロフィール (2025/2)
-メタバース研究開発、VRエンタテインメントシステム、メディアアート研究、写真工学、画像工学、生成AIを専門に研究開発で30年近い経験を持つ博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。書籍「[白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-](https://amzn.to/3QANoio)」(2013)、Stable Diffusionのリリースから2ヵ月で書籍「[AIとコラボして神絵師になる](https://amzn.to/4i7b0qK)」を執筆、インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。その後、「つくる人をつくる」をビジョンに日米でAIクリエイターユニオンをコンセプトにしたスタートアップ企業「AICU」を創立。画像生成AIの教科書となる「[画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」(SBクリエイティブ・2024)や、noteでのブログ「[AICU media](https://note.com/aicu)」や、「[月刊アイキューマガジン](https://j.aicu.ai/kindle)」で、読み物メディアを中心にAI時代のクリエイターのための支援活動を行っている。最新刊 [画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) 2025年4月18日発売予定。
+VRエンタテインメントシステムの研究者。東京工芸大学写真工学科卒、[工学研究科画像工学専攻修士課程修了](/PDF/9662005.pdf)。キヤノン、英国クライテリオン・ソフトウエア社で世界初の産業用ゲームエンジン開発に参加後、東京工業大学大学院にて博士(工学)取得。NHKエンジニアリングサービス・次世代コンテント研究室、フランス国立高等工芸学校客員研究員、日本科学未来館科学コミュニケーター、神奈川工科大学准教授を経て、現職。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)、「[クリエイティブAIラボ](https://akihiko.shirai.as/dhgs)」主宰。
 
-### 略歴
-VRエンタテイメントシステムの研究者。東京工芸大学工学部写真工学科卒、[工学研究科画像工学専攻修士課程修了](/PDF/9662005.pdf)。キヤノン、英国クライテリオン・ソフトウエア社で世界初の産業用ゲームエンジン開発に参加、ゲームの未来を変えるために2001年 東京工業大学大学院総合理工学研究科知能システム科学専攻博士後期課程に復学、2003年「VRエンタテイメントシステム」の研究で博士 (工学)の学位を取得。2003年-2004年に財団法人NHKエンジニアリングサービス・次世代コンテント研究室。2004年末にフランスに渡り、以来日仏のVR研究の架け橋となる。2007年より帰国し、日本科学未来館科学コミュニケーターを経て、神奈川工科大学 情報学部情報メディア学科 准教授。位置情報ゲームの活用や多重化映像システムなど幅広く研究。著書「白井博士の未来のゲームデザイン -エンターテインメントシステムの科学」他、MoguraVRにて「白井博士のVRおもしろ相談室」を連載。2018年6月1日よりグリー株式会社に入社。[GREE VR Studio Laboratory](https://vr.gree.net/lab) Directorを担当する。アバター駆動のメタバース、VRライブエンタテイメントを中心としたUX研究開発のリーダーとして、VRエンタテイメントシステムの研究開発・人材育成・発信活動、新しい世代のUXを開拓。ACM SIGRAPH, IEEE MetaCom, Laval Virtual, CEDECなどの国際的なインタラクティブ技術・UX研究の先端において常に最先端のUXを提案してきた。2023年よりデジタルハリウッド大学大学院にてラボプロジェクト「[クリエイティブAIラボ](https://akihiko.shirai.as/dhgs)」を主宰。メタバース、アバター、生成AIとクリエイティブサービス開発における実験的な取り組みを、自身がCEOをつとめるスタートアップ企業「AICU Inc.」「AICU Japan株式会社」や、神奈川県「[ともいきメタバース](https://note.com/hashtag/%E3%81%A8%E3%82%82%E3%81%84%E3%81%8D%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9)」とコラボレーションしながら社会実装・実験・発信活動を行っている。
+グリー株式会社 GREE VR Studio Laboratory Directorとしてアバター駆動メタバース、VRライブエンタテイメントのUX研究開発を主導。国際的な舞台(ACM SIGGRAPH, IEEE MetaCom, Laval Virtual, CEDEC等)で常に最先端のUXを提案。
+
+スタートアップ企業「AICU Inc.」「AICU Japan株式会社」CEOとして、メタバース、アバター、生成AIとクリエイティブサービス開発における社会実装・実験・発信活動を推進。神奈川県「[ともいきメタバース](https://note.com/hashtag/%E3%81%A8%E3%82%82%E3%81%84%E3%81%8D%E3%83%A1%E3%82%BF%E3%83%90%E3%83%BC%E3%82%B9)」とも連携。
+
+著書に「[白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-](https://amzn.to/3QANoio)」「[AIとコラボして神絵師になる](https://amzn.to/4i7b0qK)」「[画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」など。インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載中。
+
 
 ### 受賞歴（抜粋）
 - [第1回生成AIアートバトル「AIBATO」優勝](https://note.com/o_ob/n/nf7a760746933)
@@ -129,7 +132,7 @@ VRエンタテイメントシステムの研究者。東京工芸大学工学部
 
 ### Contact
 
-[Contact Form](https://wellwhite.wixsite.com/home/contact) / [Twitter@o_ob](https://twitter.com/o_ob)
+[Contact Form](https://corp.aicu.ai/ja) / [Twitter@o_ob](https://x.com/o_ob)
 
 ### GitHub Calendar
 
