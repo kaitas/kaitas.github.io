@@ -42,7 +42,7 @@ VRエンターテインメントシステム研究開発、人材育成、知識
 メタバース研究開発、VRエンタメシステム、メディアアート、写真/画像工学、生成AIを専門とする博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。
 「つくる人をつくる」をビジョンにするAICU Inc. CEO, AICU Japan株式会社 代表取締役。
 著書に「[未来のゲームデザイン](https://amzn.to/3QANoio)」「[AI神絵師](https://amzn.to/4i7b0qK)」「[Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[ComfyUIマスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」。インプレス「窓の杜」で「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。
-noteで年間700件のブログを書き、[個人](https://note.com/o_ob),「[AICU media](https://note.com/aicu)」でフォロワー3600人、年間140万PVを超える。クリエイティブAIメディアを通してAI時代の「つくる人」を応援している。
+noteで年間700件のブログを書き、[個人](https://note.com/o_ob),「[AICU media](https://note.com/aicu)」でクリエイティブ分野の購読者を中心に3,600人、年間140万PVを超える。クリエイティブAIメディアとサービス開発を通してAI時代の「つくる人」を応援している。
 
 ### 略歴 (講演用 2025/2/24更新)
 
