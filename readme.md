@@ -34,15 +34,15 @@ VRエンターテインメントシステム研究開発、人材育成、知識
 
 2023年、国際的スタートアップ企業「AICU Inc.」設立。「つくる人を創る (Creating People Who Create in the AIDX era)」ミッション。デジタルハリウッド大学大学院クリエイティブAIラボ。高等教育機関として研究活動。年間700本のブログ記事発信。「AICU media」や個人ブログで。AIイラストレーション、漫画、動画、アバター、メタバース、システム開発。生成AI時代クリエイティブサービス開発における社会実装、実験、アウトリーチ活動を指揮。先端事例、神奈川県福祉事業「ともいきメタバース」積極参加。障害者の社会参加促進。
 
-著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
+著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
 
 
-### 300文字程度のショートバイオ (2025/3/5更新)
+### 300文字程度のショートバイオ (2025/6/20更新)
 
 メタバース研究開発、VRエンタメシステム、メディアアート、写真/画像工学、生成AIを専門とする博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。
 「つくる人をつくる」をビジョンにするAICU Inc. CEO, AICU Japan株式会社 代表取締役。
-著書に「[未来のゲームデザイン](https://amzn.to/3QANoio)」「[AI神絵師](https://amzn.to/4i7b0qK)」「[Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[ComfyUIマスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」。インプレス「窓の杜」で「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。
-noteで1600フォロワーを超えるブログ「[AICU media](https://note.com/aicu)」や雑誌メディアを通してAI時代の「つくる人」を応援している。
+著書に「[未来のゲームデザイン](https://amzn.to/3QANoio)」「[AI神絵師](https://amzn.to/4i7b0qK)」「[Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[ComfyUIマスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」。インプレス「窓の杜」で「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。
+noteで年間700件のブログを書き、[個人](https://note.com/o_ob),「[AICU media](https://note.com/aicu)」でフォロワー3600人、年間140万PVを超える。クリエイティブAIメディアを通してAI時代の「つくる人」を応援している。
 
 ### 略歴 (講演用 2025/2/24更新)
 
