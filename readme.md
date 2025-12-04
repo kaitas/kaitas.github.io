@@ -37,12 +37,9 @@ VRエンターテインメントシステム研究開発、人材育成、知識
 著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
 
 
-### 300文字程度のショートバイオ (2025/6/20更新)
+### 300文字程度のshortbio (2025/12/4更新)
 
-メタバース研究開発、VRエンタメシステム、メディアアート、写真/画像工学、生成AIを専門とする博士(工学)。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。
-「つくる人をつくる」をビジョンにするAICU Inc. CEO, AICU Japan株式会社 代表取締役。
-著書に「[未来のゲームデザイン](https://amzn.to/3QANoio)」「[AI神絵師](https://amzn.to/4i7b0qK)」「[Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[ComfyUIマスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」。インプレス「窓の杜」で「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載。
-noteで年間700件のブログを書き、[個人](https://note.com/o_ob),「[AICU media](https://note.com/aicu)」でクリエイティブ分野の購読者を中心に3,600人、年間140万PVを超える。クリエイティブAIメディアとサービス開発を通してAI時代の「つくる人」を応援している。
+白井暁彦（Shirai Akihiko） メタバース研究開発、VRエンタメシステム、メディアアート、写真・画像工学、生成AIを専門とする博士（工学）。[デジタルハリウッド大学大学院 特任教授](https://akihiko.shirai.as/dhgs)。「つくる人をつくる」をビジョンにするAICU Inc. CEO、AICU Japan株式会社 代表取締役。著書に『[未来のゲームデザイン](https://amzn.to/3QANoio)』『[AIとコラボして神絵師になる 論文から読み解くStable Diffusion](https://amzn.to/4i7b0qK)』『[Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)』『[ComfyUIマスターガイド](https://comfy.aicu.ai/)』。インプレス「窓の杜」で『[生成AIストリーム](https://j.aicu.ai/Mado)』連載中。『[月刊アイキューマガジン](https://j.aicu.ai/kindle)』編集長。[個人](https://note.com/o_ob)および,「[AICU media](https://note.com/aicu)」で年間700件のブログを書き、クリエイティブ分野の購読者を中心に総フォロワー2万人、年間150万PVを超える。クリエイティブAIメディアと「つくる人をつくる」サービス開発を通してAI時代の「つくる人」を応援している。
 
 ### ちょっと長いバイオ(773文字 2025/11/7更新)
 
