@@ -27,7 +27,7 @@ In 2023, Dr. Shirai founded AICU, an international startup envisioned as an AI c
 
 In 2026, AICU was selected for the [Supercell AI Innovation Lab](https://supercell.com/), a highly selective program run by the game company Supercell, spending two months on-site across Helsinki and Tokyo (April–May 2026).
 
-Dr. Shirai is the author of numerous books, including "The Future of Game Design: Science in Entertainment Systems," "Collaborating with AI to Become a God-level Illustrator," "Image Generation AI Stable Diffusion Startup Guide," and "[Image and Video Generation AI ComfyUI Master Guide](https://comfy.aicu.ai/) (scheduled for release on April 18, 2025)." He also authors the "Generative AI Stream" column in Impress's "窓の杜" (Forest of Windows) online magazine and actively disseminates information through his note blog "[AICU media](https://note.com/aicu)", and the monthly "[AICU Magazine](https://j.aicu.ai/kindle)". He can be found on X (formerly Twitter) as [@o_ob](https://x.com/o_ob).
+Dr. Shirai is the author of numerous books, including "The Future of Game Design: Science in Entertainment Systems," "Collaborating with AI to Become a God-level Illustrator," "Image Generation AI Stable Diffusion Startup Guide," and "[Image and Video Generation AI ComfyUI Master Guide](https://comfy.aicu.ai/) (scheduled for release on April 18, 2025)." He also authors the "Generative AI Stream" column in Impress's "窓の杜" (Forest of Windows) online magazine and actively disseminates information through his note blog "[AICU media](https://note.com/aicu)". He is the editor-in-chief of the monthly "[AICU Magazine](https://aicu.ai/mag)" and the original creator (story author) of the manga "[YOUKAI](https://aicu.ai/manga/youkai)". He can be found on X (formerly Twitter) as [@o_ob](https://x.com/o_ob).
 
 ![Akihiko SHIRAI featured in a manga](img/AkihikoSHIRAI-Manga.png)
 
@@ -271,6 +271,8 @@ Open-source Unity library that handles Humanoid animation externally through [mu
 ## Online Publications
 
 - [AICU media](https://note.com/aicu) editor-in-chief 編集長
+- [AICU Magazine（月刊アイキューマガジン）](https://aicu.ai/mag) editor-in-chief 編集長
+- [YOUKAI](https://aicu.ai/manga/youkai) manga — original creator / story author 原作
 - [窓の杜 連載 生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html) Author
 
 1. CGWORLD特集 メタバース開発者の卵が「自分は何者か」を発見する場所【GREE VR Studio Laboratoryリサーチ系インターンシップ】2023/02/16 [Web](https://cgworld.jp/article/202302-greevr.html)

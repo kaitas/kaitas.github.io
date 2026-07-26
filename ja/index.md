@@ -27,7 +27,7 @@ VRエンターテインメントシステム研究開発、人材育成、知識
 
 2026年、AICUはゲーム企業Supercellが主催する選抜制プログラム「[Supercell AI Innovation Lab](https://supercell.com/)」に採択。ヘルシンキと東京にて2か月のオンサイトプログラムを経験（2026年4月〜5月）。
 
-著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
+著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」で積極的情報発信。月刊「[AICUマガジン](https://aicu.ai/mag)」編集長。漫画「[YOUKAI](https://aicu.ai/manga/youkai)」原作。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
 
 
 ### short-bio (416文字 2025/12/4更新)
