@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Akihiko SHIRAI, Ph.D."
-description: "Akihiko Shirai, Ph.D. (Engineering) — founder and CEO of AICU Inc., Project Professor at Digital Hollywood University Graduate School, and an internationally recognized researcher in VR entertainment systems, the metaverse, avatars, and generative AI."
+title: "CEO of AICU Inc. · VR, Metaverse & Generative-AI Researcher"
+description: "Akihiko Shirai, Ph.D. (Engineering) — founder and CEO of AICU Inc., Professor at Kaishi Innovation University, Project Professor at Digital Hollywood University Graduate School, and an internationally recognized researcher in VR entertainment systems, the metaverse, avatars, and generative AI."
 lang: en
 lang_page: en
 permalink: /
@@ -15,7 +15,7 @@ permalink: /
 
 ![Akihiko SHIRAI at GREE VR Studio Laboratory (2021)](img/202111-avatars.png)
 
-Akihiko SHIRAI, Ph.D. (Engineering), is an internationally recognized researcher and prolific creator working at the intersection of the AI metaverse, entertainment virtual reality, and generative AI. He is the founder and CEO of [AICU Inc.](https://corp.aicu.ai/) and a Project Professor at Digital Hollywood University Graduate School, where he leads the [Creative AI Lab](https://akihiko.shirai.as/dhgs).
+Akihiko SHIRAI, Ph.D. (Engineering), is an internationally recognized researcher and prolific creator working at the intersection of the AI metaverse, entertainment virtual reality, and generative AI. He is the founder and CEO of [AICU Inc.](https://corp.aicu.ai/), a Professor in the Faculty of Information Design at Kaishi Innovation University (since 2026), and a Project Professor at Digital Hollywood University Graduate School, where he leads the [Creative AI Lab](https://akihiko.shirai.as/dhgs).
 
 Dr. Shirai's expertise spans across metaverse research and development, VR entertainment systems, media art, photographic engineering, image engineering, and generative AI. He graduated from Tokyo Polytechnic University with a degree in Photographic Engineering and earned his Master's degree in Image Engineering from the same institution.  He gained industry experience at Canon and Criterion Software (UK), contributing to the development of RenderWare, a pioneering game engine.  Driven by a desire to shape the future of gaming, he returned to academia and obtained his Ph.D. in Engineering from Tokyo Institute of Technology in 2003, focusing his research on "VR Entertainment Systems."
 
@@ -51,6 +51,7 @@ Dr. Shirai is the author of numerous books, including "The Future of Game Design
 - **2018–** — Digital Hollywood University Graduate School — Visiting / Project Professor
 - **2023–** — AICU Inc. — Founder & CEO
 - **2024–** — AICU Japan Inc. — Representative Director
+- **2026–** — Kaishi Innovation University — Professor, Faculty of Information Design
 - **2026 (Apr–May)** — Supercell AI Innovation Lab — selected (two-month on-site program, Helsinki & Tokyo)
 
 ## Awards & Selected Programs
