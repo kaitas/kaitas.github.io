@@ -1,47 +1,117 @@
-<html lang="{{ site.lang | default: "ja" }}" prefix="og: http://ogp.me/ns#">
+<!doctype html>
+{% assign page_lang = page.lang | default: site.lang | default: "en" %}
+<html lang="{{ page_lang }}" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ page.title }}" />
-    <meta property="og:site_name" content="{{ site.title | default: site.github.repository_name }}" />
-   {% if page.description %}
-    <meta property="og:description" content="{{ page.description }}" />
-   {% else %}
-    <meta property="og:description" content="{{ site.description | default: site.github.project_tagline }}" />
-   {% endif %}
-   {% if page.preview %}
-    <meta property="og:image" content="{{ page.preview }}" />
-   {% else %}
-    <meta property="og:image" content="https://akihiko.shirai.as/img/card.png" />
-   {% endif %}
-
-   <meta name="twitter:card" content="summary" />
-   <meta name="twitter:site" content="@o_ob" />
-   <meta name="twitter:creator" content="@o_ob" />
-
-  <meta property="fb:app_id" content="409021277108943" />
-
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    <link rel="stylesheet" href="/assets/css/style.css?v=791e0a36b217305d2dcbfb42a76c786eb17ba7c4">
+    <meta name="theme-color" content="#0b1f3a">
+
+    {% assign page_title = page.title | default: site.title %}
+    {% if page.title %}
+      {% assign full_title = page.title | append: " | " | append: site.title %}
+    {% else %}
+      {% assign full_title = site.title | append: " — " | append: site.tagline %}
+    {% endif %}
+    {% assign page_desc = page.description | default: site.description %}
+    <title>{{ full_title }}</title>
+    <meta name="description" content="{{ page_desc }}" />
+    <meta name="author" content="{{ site.author | default: 'Akihiko Shirai' }}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
+    <link rel="alternate" hreflang="en" href="https://akihiko.shirai.as/" />
+    <link rel="alternate" hreflang="ja" href="https://akihiko.shirai.as/ja/" />
+    <link rel="alternate" hreflang="x-default" href="https://akihiko.shirai.as/" />
+
+    <!-- Open Graph -->
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+    <meta property="og:title" content="{{ full_title }}" />
+    <meta property="og:site_name" content="{{ site.title | default: site.github.repository_name }}" />
+    <meta property="og:description" content="{{ page_desc }}" />
+    <meta property="og:locale" content="{% if page_lang == 'ja' %}ja_JP{% else %}en_US{% endif %}" />
+    <meta property="og:locale:alternate" content="{% if page_lang == 'ja' %}en_US{% else %}ja_JP{% endif %}" />
+    {% if page.preview %}
+    <meta property="og:image" content="{{ page.preview }}" />
+    {% else %}
+    <meta property="og:image" content="https://akihiko.shirai.as/img/card.png" />
+    {% endif %}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@o_ob" />
+    <meta name="twitter:creator" content="@o_ob" />
+    <meta property="fb:app_id" content="409021277108943" />
+
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css?v=791e0a36b217305d2dcbfb42a76c786eb17ba7c4">
+    <link rel="stylesheet" href="/assets/css/custom.css?v=2">
+
+    <!-- Structured data: Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Akihiko Shirai",
+      "alternateName": "白井暁彦",
+      "honorificSuffix": "Ph.D.",
+      "url": "https://akihiko.shirai.as/",
+      "image": "https://akihiko.shirai.as/img/card.png",
+      "jobTitle": "Founder & CEO, AICU Inc.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AICU Inc.",
+        "url": "https://corp.aicu.ai/"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Digital Hollywood University Graduate School"
+      },
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Tokyo Institute of Technology" },
+        { "@type": "CollegeOrUniversity", "name": "Tokyo Polytechnic University" }
+      ],
+      "knowsAbout": ["Virtual Reality", "Metaverse", "Avatars", "Generative AI", "Entertainment Systems", "Human-Computer Interaction"],
+      "sameAs": [
+        "https://x.com/o_ob",
+        "https://github.com/kaitas",
+        "https://scholar.google.com/citations?user=9QZTl2AAAAAJ",
+        "https://researchmap.jp/akihiko",
+        "https://note.com/o_ob"
+      ]
+    }
+    </script>
+
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 
   <body>
     <section class="page-header">
+      <div class="hero-inner">
+        <div class="lang-switch" role="navigation" aria-label="Language">
+          <a href="/" hreflang="en" class="{% if page_lang == 'ja' %}{% else %}is-active{% endif %}">EN</a>
+          <a href="/ja/" hreflang="ja" class="{% if page_lang == 'ja' %}is-active{% endif %}">日本語</a>
+        </div>
+        <p class="hero-eyebrow">VR Entertainment · Metaverse · Generative AI</p>
         <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
-        <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
-          {% if site.show_downloads %}
-            <section id="downloads">
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
-            </section>
-          {% endif %}
-
-	{% include nav.html %}
+        <h2 id="project_tagline">{{ site.tagline | default: site.description }}</h2>
+        {% if site.show_downloads %}
+          <section id="downloads">
+            <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
+          </section>
+        {% endif %}
+        <div class="hero-links">
+          <a href="https://corp.aicu.ai/">AICU Inc.</a>
+          <a href="https://akihiko.shirai.as/dhgs">Creative AI Lab</a>
+          <a href="https://scholar.google.com/citations?user=9QZTl2AAAAAJ">Google Scholar</a>
+          <a href="https://github.com/kaitas">GitHub</a>
+          <a href="https://x.com/o_ob">X @o_ob</a>
+        </div>
+        {% include nav.html %}
+      </div>
     </section>
 
     <section class="main-content">
@@ -49,15 +119,13 @@
     </section>
 
     <!-- FOOTER  -->
-    <div align="center" id="footer_wrap" class="site-footer">
+    <div id="footer_wrap" class="site-footer">
         {% include nav.html %}
-        <p class="copyright"><i>"aki's left brain"</i> maintained by <a href="https://twitter.com/o_ob">o_ob</a></p>
-
+        <p class="copyright"><i>"aki's left brain"</i> — maintained by <a href="https://x.com/o_ob">@o_ob</a></p>
         <footer class="inner">
         {% if site.github.is_project_page %}
         <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <!--<p>Published by <a href="https://pages.github.com">GitHub Pages</a></p>-->
       </footer>
     </div>
 
@@ -73,13 +141,12 @@
     {% endif %}
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-27RLJ2MB61"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-27RLJ2MB61');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-27RLJ2MB61"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-27RLJ2MB61');
+    </script>
   </body>
 </html>

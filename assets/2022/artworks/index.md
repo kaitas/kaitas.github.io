@@ -1,5 +1,5 @@
 ---
-layout: defalut
+layout: default
 title: "Index"
 date: "2022-01-12 13:00:00"
 author: aki

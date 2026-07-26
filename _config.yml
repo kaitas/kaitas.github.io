@@ -1,11 +1,22 @@
 theme: jekyll-theme-cayman
 encoding: UTF-8
-title: Akihiko SHIRAI, Ph.D
+title: Akihiko SHIRAI, Ph.D.
+tagline: "Founder & CEO of AICU Inc. · Project Professor, Digital Hollywood University Graduate School"
+description: "Akihiko Shirai, Ph.D. (Engineering) — founder and CEO of AICU Inc., Project Professor at Digital Hollywood University Graduate School, and an internationally recognized researcher in VR entertainment systems, the metaverse, avatars, and generative AI."
+url: "https://akihiko.shirai.as"
+author: "Akihiko Shirai"
+lang: en
 # show_downloads: true
 languages: ["en", "ja"]
 google_analytics: UA-168023643-1
 
 source: .
+exclude:
+  - yc26f
+  - README-yc26f.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
 layouts_dir: _layouts
 # data_dir: _data # なぜかこのディレクトリをいったん指定しないと _posts が動かなかった
 includes_dir: _includes
