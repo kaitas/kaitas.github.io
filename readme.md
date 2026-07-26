@@ -14,6 +14,8 @@ Throughout his career, Dr. Shirai has consistently been at the forefront of VR e
 
 In 2023, Dr. Shirai founded AICU, an international startup envisioned as an AI creator union, with the mission to "Creating People Who Create in the AIDX era".  At Digital Hollywood University Graduate School's Creative AI Lab, he leads social implementation, experimentation, and outreach activities in manga, metaverse, avatars, generative AI, and creative service development. He also actively participates in "Tomoiki Metaverse" in Kanagawa Prefecture, promoting social participation for people with disabilities.
 
+In 2026, AICU was selected for the [Supercell AI Innovation Lab](https://supercell.com/), a highly selective program run by the game company Supercell, spending two months on-site across Helsinki and Tokyo (April–May 2026).
+
 Dr. Shirai is the author of numerous books, including "The Future of Game Design: Science in Entertainment Systems," "Collaborating with AI to Become a God-level Illustrator," "Image Generation AI Stable Diffusion Startup Guide," and "[Image and Video Generation AI ComfyUI Master Guide](https://comfy.aicu.ai/) (scheduled for release on April 18, 2025)." He also authors the "Generative AI Stream" column in Impress's "窓の杜" (Forest of Windows) online magazine and actively disseminates information through his note blog "[AICU media](https://note.com/aicu)", and the monthly "[AICU Magazine](https://j.aicu.ai/kindle)". He can be found on X (formerly Twitter) as [@o_ob](https://x.com/o_ob).
 
 ![Akihko SHIRAI in a manga](img/AkihikoSHIRAI-Manga.png)
@@ -33,6 +35,8 @@ NHKエンジニアリングサービス研究開発研究員、フランス国�
 VRエンターテインメントシステム研究開発、人材育成、知識普及の最前線。ACM SIGGRAPH、IEEE MetaCom、Laval Virtual、CEDEC等、国際会議で常に最先端UXコンセプト発表。2018年～2023年、グリーVR Studioラボディレクター。アバター駆動型メタバース、VRライブエンターテインメントにおけるUX研究開発を主導。
 
 2023年、国際的スタートアップ企業「AICU Inc.」設立。「つくる人を創る (Creating People Who Create in the AIDX era)」ミッション。デジタルハリウッド大学大学院クリエイティブAIラボ。高等教育機関として研究活動。年間700本のブログ記事発信。「AICU media」や個人ブログで。AIイラストレーション、漫画、動画、アバター、メタバース、システム開発。生成AI時代クリエイティブサービス開発における社会実装、実験、アウトリーチ活動を指揮。先端事例、神奈川県福祉事業「ともいきメタバース」積極参加。障害者の社会参加促進。
+
+2026年、AICUはゲーム企業Supercellが主催する選抜制プログラム「[Supercell AI Innovation Lab](https://supercell.com/)」に採択。ヘルシンキと東京にて2か月のオンサイトプログラムを経験（2026年4月〜5月）。
 
 著書多数。「白井博士の未来のゲームデザイン - エンターテインメントシステムの科学」、「AIとコラボして神絵師になる」、「画像生成AI Stable Diffusion スタートガイド」、「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売)」、など。インプレス「窓の杜」でコラム「生成AIストリーム」執筆。noteブログ「[AICU media](https://note.com/aicu)」、月刊「[AICUマガジン](https://j.aicu.ai/kindle)」で積極的情報発信。X（旧Twitter）アカウント [@o_ob](https://x.com/o_ob)。
 
@@ -68,7 +72,8 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 著書に「[白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-](https://amzn.to/3QANoio)」「[AIとコラボして神絵師になる](https://amzn.to/4i7b0qK)」「[画像生成AI Stable Diffusion スタートガイド](https://j.aicu.ai/SBXL)」「[画像・動画生成AI ComfyUI マスターガイド](https://comfy.aicu.ai/) (2025年4月18日発売予定)」など。インプレス「窓の杜」にて「[生成AIストリーム](https://forest.watch.impress.co.jp/docs/serial/aistream/index.html)」連載中。
 
 
-### 受賞歴（抜粋）
+### 受賞歴・選抜プログラム（抜粋）
+- Supercell AI Innovation Lab 採択（2026）― ゲーム企業[Supercell](https://supercell.com/)主催の選抜制プログラム。ヘルシンキ・東京にて2か月のオンサイトプログラム（2026年4月〜5月）
 - [第1回生成AIアートバトル「AIBATO」優勝](https://note.com/o_ob/n/nf7a760746933)
 - Hello Tomorrow Global Summit Top 500 startups “Multiplex World Augmentation Display"
 - ACM SIGGRAPH ASIA 2012 Emerging Technologies Prize，
@@ -115,6 +120,7 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 * **2023年 - :** AICU Inc. CEO
 * **2023年 - :** デジタルハリウッド大学大学院 特任教授
 * **2024年11月11日 - :** AICU Japan 株式会社 代表取締役
+* **2026年4月 - 5月:** Supercell AI Innovation Lab 採択 (ヘルシンキ・東京にて2か月のオンサイトプログラム)
 
 **受賞歴 (抜粋)**
 
@@ -129,6 +135,8 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 * **2016年:** CEDEC 2016 インタラクティブセッション オーディエンス賞2位 (多重化多視点VRアーケードゲームシステム DUAL DUEL)
 * **2020年:** 共著論文が情報処理学会 研究報告 2020-MUS-103(6) 優秀賞を受賞
 * **2022年:** 共著論文が CyberWorlds 2022 Best short paper
+* **2023年:** [AI-Assisted Avatar Fashion Show](https://doi.org/10.1145/3588028.3603660) を ACM SIGGRAPH 2023 Posters にて発表 (テキストからの衣装生成とモーション合成によるメタバースUGC)
+* **2026年:** AICUとして Supercell AI Innovation Lab に採択 (ヘルシンキ・東京にて2か月のオンサイトプログラム、2026年4月〜5月)
 
 
 ### 所属学会等
@@ -174,6 +182,10 @@ VRエンタテインメントシステムの研究者。東京工芸大学写真
 ## Works
 
 ![Akihko SHIRAI in a manga](img/ShiraiAkihiko-VRStudioLab.jpg)
+
+### Open Source
+
+- [MuscleCompressor](https://github.com/gree/MuscleCompressor) — an open-source Unity library for recording, compressing, loading and converting Humanoid avatar motion using muscle values. It achieves up to 96% compression compared with Unity `.anim` data and includes a Meta Quest PCVR motion-capture sample.
 
 ## GREE VR Studio Laboratory (2018-)
 
