@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YC Founder Profile — Accomplishments | Akihiko Shirai / AICU</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #131a2e;
+      --panel-2: #0f1628;
+      --text: #edf2ff;
+      --muted: #a9b4cc;
+      --accent: #ffb454;
+      --accent-2: #72d6ff;
+      --line: #2a3553;
+      --ok: #9ee6b8;
+      --warn: #ffd48a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(114,214,255,.14), transparent 30%),
+        radial-gradient(circle at top left, rgba(255,180,84,.12), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    main { max-width: 1120px; margin: 0 auto; padding: 48px 24px 80px; }
+    header { margin-bottom: 40px; }
+    .eyebrow { color: var(--accent-2); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
+    h1 { font-size: clamp(34px, 6vw, 64px); line-height: 1.05; margin: 10px 0 18px; }
+    .lead { max-width: 820px; color: var(--muted); font-size: 18px; }
+    .summary {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      background: rgba(19,26,46,.76);
+      border-radius: 16px;
+    }
+    .summary strong { color: var(--accent); }
+    section {
+      margin-top: 28px;
+      border: 1px solid var(--line);
+      background: rgba(19,26,46,.9);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.2);
+    }
+    .section-head {
+      padding: 24px 26px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.025), transparent);
+    }
+    .num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 999px; background: var(--accent); color: #16110a; font-weight: 800; margin-right: 10px; }
+    h2 { display: inline; font-size: 24px; }
+    .question { color: var(--muted); margin: 12px 0 0; }
+    .grid { display: grid; grid-template-columns: 1.15fr .85fr; }
+    .block { padding: 26px; }
+    .block + .block { border-left: 1px solid var(--line); background: var(--panel-2); }
+    h3 { margin: 0 0 14px; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; }
+    .english h3 { color: var(--accent-2); }
+    .jp h3 { color: var(--accent); }
+    .answer {
+      white-space: pre-wrap;
+      font-size: 16px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .note { color: var(--muted); }
+    ul { margin: 10px 0 0 1.1em; padding: 0; }
+    li { margin: 7px 0; }
+    a { color: var(--accent-2); text-decoration: none; word-break: break-all; }
+    a:hover { text-decoration: underline; }
+    .tag {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .copy-tip { color: var(--ok); font-size: 13px; margin-top: 12px; }
+    footer { margin-top: 34px; color: var(--muted); font-size: 14px; }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+      .block + .block { border-left: 0; border-top: 1px solid var(--line); }
+      main { padding: 30px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Y Combinator Founder Profile</div>
+    <h1>Accomplishments</h1>
+    <p class="lead">Akihiko Shirai / AICU向け。各設問について、上段に提出用の英語、右側に日本語で狙いと注意点をまとめています。</p>
+    <div class="summary">
+      <strong>全体の軸：</strong> 制度がまだ評価できない領域に、定義、測定法、実装、知的財産、市場を与えてきた人物として見せる。博士研究、GREE VR Studio、Supercell AI Innovation Lab、AICUが一本の線につながる構成です。
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <span class="num">1</span><h2>Non-computer system hack</h2>
+      <p class="question">Please tell us about a time you most successfully hacked some (non-computer) system to your advantage.</p>
+    </div>
+    <div class="grid">
+      <div class="block english">
+        <h3>English answer</h3>
+        <div class="answer">Japanese engineering academia had no accepted way to award a PhD for studying “fun.” I created one: I defined play as a measurable system state, built a room-scale haptic game for children, and evaluated spontaneous behavior using motion data instead of subjective claims. That let me turn a topic considered too subjective for engineering into a defensible research discipline and complete the PhD in three years.</div>
+        <div class="copy-tip">提出候補。制度の穴を利用した話ではなく、評価制度そのものを作った話として提示しています。</div>
+      </div>
+      <div class="block jp">
+        <h3>日本語解説</h3>
+        <p class="note">「博士号を3年で取った」だけでは、単に優秀だった話に見えます。強いのは、当時の工学研究では扱いにくかった「面白さ」を、定義、実装、行動計測によって審査可能な対象へ変えた点です。</p>
+        <ul>
+          <li>制度を破壊したのではなく、制度が評価できる新しいレールを敷いた。</li>
+          <li>ゲーム開発経験を研究へ転換した。</li>
+          <li>主観アンケートではなく、自然な行動を物理データで測定した。</li>
+          <li>最後に「3年で取得」を置くことで速度も伝える。</li>
+        </ul>
+        <p><a href="https://akihiko.shirai.as/AkihikoSHIRAI-DoctorThesis2004.html">Doctoral thesis</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">2</span><h2>Most impressive achievement</h2>
+      <p class="question">Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.</p>
+    </div>
+    <div class="grid">
+      <div class="block english">
+        <h3>English answer</h3>
+        <div class="answer">I built and led GREE VR Studio Laboratory, where we developed avatar communication and virtual live entertainment systems around REALITY and contributed to roughly 80 global patent applications. I later left the director role to found AICU because I believed creator-owned AI infrastructure had to become a company, not remain an internal research project.</div>
+        <div class="copy-tip">1〜2文の制約に合わせた本命案です。</div>
+      </div>
+      <div class="block jp">
+        <h3>日本語解説</h3>
+        <p class="note">ここはAICU以外の最大実績を問われています。研究所を辞めた決断だけでなく、辞める前に何を作ったかを先に置きます。</p>
+        <ul>
+          <li>REALITY周辺のアバター、VRライブ、UX研究開発を統括。</li>
+          <li>約80件のグローバル特許出願への貢献。</li>
+          <li>成功した研究所を離れ、次の課題を会社として解く決断。</li>
+          <li>「研究成果を市場へ出す人」というAICU創業の必然性につながる。</li>
+        </ul>
+        <p class="note">Supercell AI Innovation Lab採択は、次の「Awards / selective programs」に置く方が収まりが良いです。ここに入れると1〜2文が散ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">3</span><h2>Things built before</h2>
+      <p class="question">Tell us about things you’ve built before. For example apps you’ve built, websites, open source contributions. Include URLs if possible.</p>
+    </div>
+    <div class="grid">
+      <div class="block english">
+        <h3>English answer</h3>
+        <div class="answer">I have built products and research systems across games, VR, avatars, computer vision, publishing, and generative AI.
+
+MuscleCompressor — an open-source Unity library for recording, compressing, loading, and converting Humanoid avatar motion using muscle values. It achieves up to 96% compression compared with Unity .anim data and includes a Meta Quest PCVR motion-capture sample.
+https://github.com/gree/MuscleCompressor
+
+AI-Assisted Avatar Fashion Show — a SIGGRAPH 2023 project combining text-to-clothing generation, avatar fashion, and motion synthesis for metaverse UGC.
+https://doi.org/10.1145/3588028.3603660
+
+REALITY / GREE VR Studio Laboratory — I led R&D in avatar communication, virtual live entertainment, UX research, and IP development for a production-scale metaverse platform.
+
+Tangible Playroom / Penguin Hockey — a room-scale entertainment system combining floor projection, haptic feedback, real-time physics, and behavioral measurement for children. This became my PhD thesis in engineering.
+https://akihiko.shirai.as/AkihikoSHIRAI-DoctorThesis2004.html
+
+The Song of Anagura — tracking, spatial interaction, and collective-intelligence systems for a permanent exhibition at Japan’s National Museum of Emerging Science and Innovation.
+
+GPUVision and RoboGamer — experimental GPU computer-vision and robotic game-playing systems presented at international VR and graphics venues.
+
+AICU media and technical publishing — a creator-education and publishing platform around Stable Diffusion, ComfyUI, image generation, and creative AI.
+https://aicu.jp
+
+Code and repositories:
+https://github.com/aicuai/
+
+Selected work and publications:
+https://akihiko.shirai.as/
+https://scholar.google.com/citations?user=9QZTl2AAAAAJ&amp;hl=en</div>
+      </div>
+      <div class="block jp">
+        <h3>日本語解説</h3>
+        <p class="note">役職一覧ではなく、実際に作ったものを年代と領域をまたいで並べます。AICU以前から「実装、展示、論文化、OSS公開」を反復していることが伝わる棚です。</p>
+        <div>
+          <span class="tag">Open Source</span>
+          <span class="tag">Unity / Avatar</span>
+          <span class="tag">SIGGRAPH</span>
+          <span class="tag">VR / Haptics</span>
+          <span class="tag">Museum Systems</span>
+          <span class="tag">Publishing</span>
+        </div>
+        <ul>
+          <li><strong>MuscleCompressor</strong>はGitHubで確認できる具体的OSSなので先頭級。</li>
+          <li><strong>AI-Assisted Avatar Fashion Show</strong>はSIGGRAPH 2023と生成AIの橋になる。</li>
+          <li><strong>Tangible Playroom</strong>は博士研究を「作ったもの」として説明できる。</li>
+          <li><strong>AICU media</strong>は、技術だけでなく人と市場を作れることの証拠。</li>
+        </ul>
+        <p class="note">文字数が厳しい場合は、MuscleCompressor、REALITY、Tangible Playroom、AICU mediaの4件に圧縮します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <span class="num">4</span><h2>Awards, competitions, papers</h2>
+      <p class="question">List any competitions/awards you have won, or papers you’ve published.</p>
+    </div>
+    <div class="grid">
+      <div class="block english">
+        <h3>English answer</h3>
+        <div class="answer">Selected programs, awards, and publications:
+
+• Selected for the Supercell AI Innovation Lab, 2026.
+• Winner, the first AIBATO Generative AI Art Battle.
+• ACM SIGGRAPH Asia 2012 Emerging Technologies Prize for Scritter, a multiplex hidden-image display system.
+• CEDEC Awards 2012 Interactive Session Grand Prize for Scritter.
+• Innovative Technologies 2013, awarded by Japan’s Ministry of Economy, Trade and Industry, for 2x3D, a backward-compatible 2D/3D multiplex display.
+• Laval Virtual Award 2015 for ExPixel FPGA.
+• Gold Prize by audience vote at the 8th NicoNico Gakkai Beta Symposium, 2015.
+• CEDEC 2016 Interactive Session Audience Award, 2nd place, for DUAL DUEL, a multiplex multi-view VR arcade system.
+• Co-author of the CyberWorlds 2022 Best Short Paper.
+• “AI-Assisted Avatar Fashion Show: Word-to-Clothing Texture Exploration and Motion Synthesis for Metaverse UGC,” ACM SIGGRAPH 2023 Posters.
+• PhD in Engineering from Tokyo Institute of Technology for the proposal, implementation, and behavioral evaluation of a room-scale haptic entertainment system.
+
+I have published research in virtual reality, entertainment systems, avatars, haptics, computer vision, metaverse UX, and generative AI.
+
+Full profile:
+https://akihiko.shirai.as/
+
+Google Scholar:
+https://scholar.google.com/citations?user=9QZTl2AAAAAJ&amp;hl=en</div>
+      </div>
+      <div class="block jp">
+        <h3>日本語解説</h3>
+        <p class="note"><strong>Supercell AI Innovation Lab採択</strong>を先頭に追加しました。現在のAICUと最も近い、選抜性のある外部評価だからです。その直後にAIBATO優勝を置き、「AIを語るだけでなく作って勝った」ことを示します。</p>
+        <ul>
+          <li>Supercellは「award」ではなく、<strong>selected program</strong>として表記。</li>
+          <li>AIBATOは生成AI分野の直接的な競技実績なので前方に置く。</li>
+          <li>過去のSIGGRAPH、CEDEC、Laval Virtualで20年以上の継続性を示す。</li>
+          <li>CyberWorlds 2022は共著受賞なので <strong>Co-author of</strong> と明記。</li>
+          <li>学生が受賞したACM Student Research Competitionは、自分の受賞としては入れない。</li>
+        </ul>
+        <p class="note">提出欄が短ければ、Supercell、AIBATO、SIGGRAPH Asia、METI、Laval Virtual、CyberWorlds、SIGGRAPH 2023の7点に絞ると輪郭が濃くなります。</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Draft prepared for YC application review. 数字、受賞年、特許件数、プログラム正式名称は最終提出前に原典と照合してください。
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,302 @@
+/* =====================================================================
+   akihiko.shirai.as — custom theme layer
+   Modernizes the Cayman base: responsive, typographic, prestige-oriented.
+   Loaded AFTER the theme stylesheet, so these rules take precedence.
+   ===================================================================== */
+
+:root {
+  --ink: #16202e;
+  --ink-soft: #43526a;
+  --muted: #6b7a90;
+  --line: #e3e8f0;
+  --bg: #ffffff;
+  --bg-soft: #f6f8fb;
+  --accent: #1f7a8c;         /* teal — content links */
+  --accent-strong: #145a68;
+  --gold: #ffb454;           /* warm highlight in the hero */
+  --hero-1: #0b1f3a;
+  --hero-2: #12345a;
+  --hero-3: #1f6f8b;
+  --radius: 14px;
+  --shadow: 0 18px 40px rgba(12, 28, 54, .12);
+  --measure: 46rem;
+  --serif: "Georgia", "Times New Roman", serif;
+  --sans: "Inter", "Noto Sans JP", ui-sans-serif, system-ui, -apple-system,
+          "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+}
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.75;
+  font-size: 17px;
+  letter-spacing: .003em;
+}
+
+/* ---------- Hero header ------------------------------------------------ */
+.page-header {
+  position: relative;
+  padding: clamp(48px, 9vw, 96px) 16px clamp(30px, 5vw, 52px);
+  background:
+    radial-gradient(1200px 480px at 78% -10%, rgba(114, 214, 255, .18), transparent 60%),
+    radial-gradient(900px 420px at 8% 0%, rgba(255, 180, 84, .14), transparent 55%),
+    linear-gradient(135deg, var(--hero-1) 0%, var(--hero-2) 48%, var(--hero-3) 100%);
+  color: #eef4ff;
+  text-align: left;
+  overflow: hidden;
+}
+.page-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at 70% 0%, #000 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 62rem;
+  margin: 0 auto;
+}
+.lang-switch {
+  display: inline-flex;
+  gap: 2px;
+  margin-bottom: 18px;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(0, 0, 0, .18);
+}
+.lang-switch a {
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #cdd9ec;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.lang-switch a.is-active { background: #fff; color: var(--hero-1); }
+.lang-switch a:not(.is-active):hover { color: #fff; background: rgba(255, 255, 255, .12); }
+.hero-eyebrow {
+  margin: 0 0 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: #a7d9ea;
+}
+#project_title {
+  margin: 0;
+  font-size: clamp(34px, 6.4vw, 60px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+#project_tagline {
+  margin: 14px 0 0;
+  max-width: 44rem;
+  font-size: clamp(16px, 2.4vw, 20px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #c9d6ea;
+}
+.hero-links {
+  margin: 22px 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(255, 255, 255, .06);
+  color: #eef4ff;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
+}
+.hero-links a:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #23180a;
+  transform: translateY(-1px);
+}
+
+/* ---------- Navigation ------------------------------------------------- */
+#nav, .site-nav { }
+.page-header .nav-wrap,
+.site-footer .nav-wrap {
+  background: transparent !important;
+}
+.nav-wrap {
+  margin-top: 26px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 4px;
+  align-items: center;
+  background: transparent !important;
+  text-align: left !important;
+}
+.nav-wrap a {
+  color: #dbe6f6;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background .15s ease, color .15s ease;
+}
+.nav-wrap a:hover {
+  background: rgba(255, 255, 255, .12);
+  color: #fff;
+  text-decoration: none;
+}
+.nav-sep { color: rgba(255, 255, 255, .28); }
+
+/* ---------- Main content ---------------------------------------------- */
+.main-content {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) 20px 24px;
+  color: var(--ink);
+  font-size: 17px;
+}
+.main-content > h1:first-child,
+.main-content > h2:first-child { margin-top: 0; }
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+  color: var(--ink);
+  line-height: 1.25;
+  font-weight: 700;
+  scroll-margin-top: 20px;
+}
+.main-content h1 { font-size: clamp(28px, 4.5vw, 38px); margin: 2.2em 0 .6em; letter-spacing: -.01em; }
+.main-content h2 {
+  font-size: clamp(23px, 3.4vw, 30px);
+  margin: 2em 0 .7em;
+  padding-bottom: .34em;
+  border-bottom: 2px solid var(--line);
+}
+.main-content h2::before {
+  content: "";
+  display: inline-block;
+  width: .5em; height: .5em;
+  margin-right: .5em;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--accent), var(--hero-3));
+  vertical-align: middle;
+}
+.main-content h3 { font-size: clamp(18px, 2.6vw, 21px); margin: 1.7em 0 .5em; color: var(--accent-strong); }
+.main-content h4 { font-size: 16px; margin: 1.4em 0 .4em; color: var(--ink-soft); }
+
+.main-content p,
+.main-content li { color: #26303f; }
+.main-content p { margin: 0 0 1.05em; }
+
+.main-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31, 122, 140, .35);
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.main-content a:hover {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent-strong);
+}
+
+.main-content ul, .main-content ol { padding-left: 1.35em; }
+.main-content li { margin: .38em 0; }
+
+.main-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 8px 0;
+}
+
+.main-content blockquote {
+  margin: 1.4em 0;
+  padding: .2em 1.1em;
+  color: var(--ink-soft);
+  border-left: 4px solid var(--accent);
+  background: var(--bg-soft);
+  border-radius: 0 10px 10px 0;
+}
+
+.main-content hr {
+  height: 1px;
+  border: 0;
+  margin: 2.6em 0;
+  background: linear-gradient(90deg, transparent, var(--line) 20%, var(--line) 80%, transparent);
+}
+
+.main-content code {
+  font-size: .9em;
+  background: #eef2f7;
+  padding: .12em .4em;
+  border-radius: 6px;
+  color: #0f3a44;
+}
+.main-content pre {
+  background: #0f1a2b;
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  overflow-x: auto;
+}
+.main-content pre code { background: transparent; color: #e7eefc; }
+
+/* Tables scroll instead of breaking the layout on mobile */
+.main-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.main-content table th,
+.main-content table td {
+  border: 1px solid var(--line);
+  padding: 8px 12px;
+}
+.main-content table th { background: var(--bg-soft); }
+
+/* ---------- Footer ----------------------------------------------------- */
+.site-footer {
+  margin-top: 48px;
+  padding: 34px 20px 44px;
+  border-top: 1px solid var(--line);
+  background: var(--bg-soft);
+  color: var(--muted);
+  text-align: center;
+}
+.site-footer .nav-wrap { justify-content: center; margin-bottom: 14px; }
+.site-footer .nav-wrap a { color: var(--ink-soft); }
+.site-footer .nav-wrap a:hover { background: rgba(20, 40, 60, .06); color: var(--accent-strong); }
+.site-footer .copyright { font-size: 13.5px; margin: 6px 0; }
+.site-footer a { color: var(--accent); text-decoration: none; }
+
+/* ---------- Responsive ------------------------------------------------- */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .main-content { padding-left: 16px; padding-right: 16px; }
+  .hero-links a { font-size: 12.5px; padding: 6px 11px; }
+  .nav-wrap { gap: 4px 2px; }
+  .nav-wrap a { padding: 6px 9px; font-size: 13px; }
+}
