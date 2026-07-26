@@ -125,13 +125,18 @@ Dr. Shirai is the author of numerous books, including "The Future of Game Design
   - [GREE VR Studio Laboratory - YouTube](https://j.mp/VRSYT)
 - [Research Gate](https://www.researchgate.net/profile/Akihiko_Shirai)
 
+### MuscleCompressor (Open Source)
+
+Open-source Unity library that handles Humanoid animation externally through [muscle](https://docs.unity3d.com/2017.4/Documentation/Manual/MuscleDefinitions.html) values instead of the conventional `.anim` format. It ships a PCVR sample scene that performs Quest-based motion capture — reading and saving motion while wearing a Meta Quest — and achieves **up to 96% compression** versus `.anim` for one minute of Humanoid recording at 60 fps. The code is extracted from *AI-Assisted Avatar Fashion Show* (ACM SIGGRAPH 2023 Posters).
+
+- Repository: [github.com/gree/MuscleCompressor](https://github.com/gree/MuscleCompressor)
+- Paper: [AI-Assisted Avatar Fashion Show: Word-to-Clothing Texture Exploration and Motion Synthesis for Metaverse UGC](https://doi.org/10.1145/3588028.3603660), ACM SIGGRAPH 2023 Posters
+
+[![MuscleCompressor](https://github.com/gree/MuscleCompressor/blob/readme-imgs/imgs/MuscleCompressor.png?raw=true)](https://github.com/gree/MuscleCompressor)
+
 ## Works
 
 ![Akihiko SHIRAI at GREE VR Studio Laboratory](img/ShiraiAkihiko-VRStudioLab.jpg)
-
-### Open Source
-
-- [MuscleCompressor](https://github.com/gree/MuscleCompressor) — an open-source Unity library for recording, compressing, loading and converting Humanoid avatar motion using muscle values. It achieves up to 96% compression compared with Unity `.anim` data and includes a Meta Quest PCVR motion-capture sample.
 
 ## GREE VR Studio Laboratory (2018-)
 
