@@ -1,0 +1,4550 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/akihiko/published_papers?limit=1000&format=json&start=1",
+    "@type": "published_papers",
+    "@reverse": "https://api.researchmap.jp/akihiko",
+    "total_items": 58,
+    "items": [
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/47336208",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "47336208",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2024-08-08T04:02:19Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-08-08T04:02:19Z",
+            "paper_title": {
+                "ja": "IVRC2023（Interverse Virtual Reality Challenge）開催報告"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "稲見 昌彦"
+                    },
+                    {
+                        "name": "安藤 英由樹"
+                    },
+                    {
+                        "name": "三武 裕玄"
+                    },
+                    {
+                        "name": "石塚 裕己"
+                    },
+                    {
+                        "name": "梶本 裕之"
+                    },
+                    {
+                        "name": "佐々木 智也"
+                    },
+                    {
+                        "name": "中村 拓人"
+                    },
+                    {
+                        "name": "長谷川 晶一"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "亀岡 嵩幸"
+                    },
+                    {
+                        "name": "畑田 裕二"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "特定非営利活動法人 日本バーチャルリアリティ学会"
+            },
+            "publication_date": "2024-03-31",
+            "publication_name": {
+                "ja": "日本バーチャルリアリティ学会誌"
+            },
+            "volume": "29",
+            "number": "1",
+            "starting_page": "39",
+            "ending_page": "45",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.18974/jvrsj.29.1_39"
+                ],
+                "issn": [
+                    "1342-6680"
+                ],
+                "e_issn": [
+                    "2435-8746"
+                ],
+                "cinii_cr_id": [
+                    "1390862931515433088"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.18974/jvrsj.29.1_39",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_research",
+                    "@id": "https://cir.nii.ac.jp/crid/1390862931515433088?lang=ja",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/42703519",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "42703519",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2023-07-03T19:25:55Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-03-02T07:08:05Z",
+            "paper_title": {
+                "ja": "Avatar Fusion Karaoke: Research and development on multi-user music play VR experience in the metaverse",
+                "en": "Avatar Fusion Karaoke: Research and development on multi-user music play VR experience in the metaverse"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Alexandre Berthaul"
+                    },
+                    {
+                        "name": "Takuma Kato"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Alexandre Berthaul"
+                    },
+                    {
+                        "name": "Takuma Kato"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "published_paper_owner_roles": [
+                "last",
+                "corresponding"
+            ],
+            "publication_date": "2023-06-26",
+            "publication_name": {
+                "en": "IEEE International Conference on Metaverse Computing, Networking and Applications (IEEE MetaCom 2023)"
+            },
+            "volume": "1",
+            "number": "1",
+            "starting_page": "1",
+            "ending_page": "9",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "published_paper_type": "international_conference_proceedings",
+            "dataset": {
+                "dataset_name": "IEEE_MetaCon23(0510CamReady).pdf",
+                "dataset_type": "preprint",
+                "access_url": "https://researchmap.jp/akihiko/published_papers/42703519/attachment_file.pdf",
+                "rm:media_type": "application/pdf",
+                "rm:use_password": false,
+                "thumbnail_url": "https://researchmap.jp/akihiko/published_papers/42703519/attachment_file.pdf?thumbnail"
+            },
+            "rm:is_open_access": true,
+            "identifiers": {
+                "doi": [
+                    "10.48550/arXiv.2308.02139"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.48550/arXiv.2308.02139",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/49139753",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "49139753",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_papers",
+            "rm:creator_type": "coauthor",
+            "rm:created": "2025-02-13T03:23:32Z",
+            "rm:modifier_id": "ai:assign_based_papers",
+            "rm:modifier_type": "coauthor",
+            "rm:modified": "2025-02-13T03:23:32Z",
+            "paper_title": {
+                "ja": "IVRC2022（Interverse Virtual Reality Challenge）開催報告"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "稲見 昌彦"
+                    },
+                    {
+                        "name": "安藤 英由樹"
+                    },
+                    {
+                        "name": "三武 裕玄"
+                    },
+                    {
+                        "name": "山岡 潤一"
+                    },
+                    {
+                        "name": "小泉 直也"
+                    },
+                    {
+                        "name": "永谷 直久"
+                    },
+                    {
+                        "name": "梶本 裕之"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "特定非営利活動法人 日本バーチャルリアリティ学会"
+            },
+            "publication_date": "2023-03-31",
+            "publication_name": {
+                "ja": "日本バーチャルリアリティ学会誌"
+            },
+            "volume": "28",
+            "number": "1",
+            "starting_page": "26",
+            "ending_page": "28",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.18974/jvrsj.28.1_26"
+                ],
+                "issn": [
+                    "1342-6680"
+                ],
+                "e_issn": [
+                    "2435-8746"
+                ],
+                "cinii_cr_id": [
+                    "1390295901055166080"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.18974/jvrsj.28.1_26",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_research",
+                    "@id": "https://cir.nii.ac.jp/crid/1390295901055166080?lang=ja",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/34544316",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "34544316",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2021-10-22T20:59:06Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-03-02T07:29:29Z",
+            "paper_title": {
+                "ja": "学会オンライン化・VR開催の幕開け"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "亀岡 嵩幸"
+                    },
+                    {
+                        "name": "清川 清"
+                    },
+                    {
+                        "name": "ヤェム ヴィボル"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "佐瀬 一弥"
+                    },
+                    {
+                        "name": "吉元 俊輔"
+                    },
+                    {
+                        "name": "蜂須 拓"
+                    },
+                    {
+                        "name": "嵯峨 智"
+                    },
+                    {
+                        "name": "黒田 嘉宏"
+                    },
+                    {
+                        "name": "矢内 智大"
+                    },
+                    {
+                        "name": "石丸 翔也"
+                    },
+                    {
+                        "name": "川口 碧"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "特定非営利活動法人 日本バーチャルリアリティ学会"
+            },
+            "publication_date": "2020-06-30",
+            "publication_name": {
+                "ja": "日本バーチャルリアリティ学会誌"
+            },
+            "volume": "25",
+            "number": "2",
+            "starting_page": "35",
+            "ending_page": "43",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.18974/jvrsj.25.2_35"
+                ],
+                "issn": [
+                    "1342-6680"
+                ],
+                "cinii_na_id": [
+                    "130007935411"
+                ],
+                "cinii_nc_id": [
+                    "AA11461758"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.18974/jvrsj.25.2_35",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/130007935411",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA11461758",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://id.ndl.go.jp/bib/030548702",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/52689892",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "52689892",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2026-03-09T08:15:15Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2026-03-09T08:15:15Z",
+            "paper_title": {
+                "en": "Neck strap haptics"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yusuke Yamazaki"
+                    },
+                    {
+                        "name": "Shoichi Hasegawa"
+                    },
+                    {
+                        "name": "Hironori Mitake"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2019-07-28",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2019 Posters"
+            },
+            "starting_page": "1",
+            "ending_page": "2",
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3306214.3338562"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3306214.3338562",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://dl.acm.org/doi/10.1145/3306214.3338562",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://dl.acm.org/doi/pdf/10.1145/3306214.3338562",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/47095530",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "47095530",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2024-07-16T08:58:48Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-07-16T08:58:48Z",
+            "paper_title": {
+                "en": "Effectiveness of facial animated avatar and voice transformer in elearning programming course"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Hisashi Sato"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery, Inc"
+            },
+            "publication_date": "2019-07-28",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2019 Posters, SIGGRAPH 2019"
+            },
+            "languages": [
+                "eng"
+            ],
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3306214.3338540"
+                ],
+                "scopus_id": [
+                    "85083954359"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3306214.3338540",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/41069132",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "41069132",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_papers",
+            "rm:creator_type": "ai",
+            "rm:created": "2023-01-08T09:38:03Z",
+            "rm:modifier_id": "ai:assign_based_papers",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2023-01-08T09:38:03Z",
+            "paper_title": {
+                "en": "Evaluation of Avatar and Voice Transform in Programming E-Learning Lectures"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Hisashi Sato"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2019-07",
+            "publication_name": {
+                "en": "Proceedings of the 19th ACM International Conference on Intelligent Virtual Agents"
+            },
+            "referee": true,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3308532.3329430"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3308532.3329430",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "https://dl.acm.org/doi/pdf/10.1145/3308532.3329430",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/47121575",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "47121575",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2024-07-17T06:13:52Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-07-17T06:13:52Z",
+            "paper_title": {
+                "en": "Widespread the hapbeat: Tension based necklace type haptic display"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yusuke Yamazaki"
+                    },
+                    {
+                        "name": "Hironori Mitake"
+                    },
+                    {
+                        "name": "Shirai Akihiko"
+                    },
+                    {
+                        "name": "Shoichi Hasegawa"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "International Display Workshops"
+            },
+            "publication_date": "2019",
+            "publication_name": {
+                "en": "Proceedings of the International Display Workshops"
+            },
+            "volume": "3",
+            "starting_page": "1656",
+            "ending_page": "1659",
+            "languages": [
+                "eng"
+            ],
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "1883-2490"
+                ],
+                "scopus_id": [
+                    "85105306244"
+                ]
+            }
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/47067959",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "47067959",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2024-07-15T10:21:04Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-07-15T10:21:04Z",
+            "paper_title": {
+                "en": "MasQueRade: Onsite QR code based VR experience evaluation system using sanitary mask"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Takaya Asano"
+                    },
+                    {
+                        "name": "Marika Higashida"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Yuya Mochizuki"
+                    },
+                    {
+                        "name": "Hisashi Sato"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2018-04-04",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "languages": [
+                "eng"
+            ],
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3234253.3234315"
+                ],
+                "scopus_id": [
+                    "85058666055"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3234253.3234315",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/39649421",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "39649421",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2022-08-18T03:32:20Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-08-18T03:32:20Z",
+            "paper_title": {
+                "en": "MasQueRade"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Marika Higashida"
+                    },
+                    {
+                        "name": "Yuya Mochizuki"
+                    },
+                    {
+                        "name": "Takaya Asano"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Hisashi Sato"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2018-04-04",
+            "publication_name": {
+                "en": "Proceedings of the Virtual Reality International Conference - Laval Virtual"
+            },
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3234253.3234315"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3234253.3234315",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://dl.acm.org/doi/pdf/10.1145/3234253.3234315",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/54248642",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "54248642",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_papers",
+            "rm:creator_type": "ai",
+            "rm:created": "2026-06-25T13:34:14Z",
+            "rm:modifier_id": "ai:assign_based_papers",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2026-06-25T13:34:14Z",
+            "paper_title": {
+                "ja": "小特集1 IVRC2017（第25回 国際学生対抗バーチャルリアリティコンテスト）開催報告"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "舘 暲"
+                    },
+                    {
+                        "name": "岩田 洋夫"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "長谷川 晶一"
+                    },
+                    {
+                        "name": "安藤 英由樹"
+                    },
+                    {
+                        "name": "橋本 悠希"
+                    },
+                    {
+                        "name": "杉本 麻樹"
+                    },
+                    {
+                        "name": "橋本 直"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "特定非営利活動法人 日本バーチャルリアリティ学会"
+            },
+            "publication_date": "2017-12-31",
+            "publication_name": {
+                "ja": "日本バーチャルリアリティ学会誌"
+            },
+            "volume": "22",
+            "number": "4",
+            "starting_page": "46",
+            "ending_page": "49",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.18974/jvrsj.22.4_46"
+                ],
+                "issn": [
+                    "1342-6680"
+                ],
+                "e_issn": [
+                    "2435-8746"
+                ],
+                "cinii_cr_id": [
+                    "1390863495393158016"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.18974/jvrsj.22.4_46",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_research",
+                    "@id": "https://cir.nii.ac.jp/crid/1390863495393158016?lang=ja",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29717183",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29717183",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-28T03:53:51Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-28T03:53:51Z",
+            "paper_title": {
+                "en": "\"Real baby-real family\"-VR entertainment baby interaction system"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Yuya Mochizuki"
+                    },
+                    {
+                        "name": "Takaya Asano"
+                    },
+                    {
+                        "name": "Marika Higashida"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery, Inc"
+            },
+            "publication_date": "2017-07-30",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2017 Emerging Technologies, SIGGRAPH 2017"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3084822.3084830"
+                ],
+                "scopus_id": [
+                    "85033361579"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3084822.3084830",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/47060048",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "47060048",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2024-07-15T07:51:35Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-07-15T07:51:35Z",
+            "paper_title": {
+                "en": "“Real baby - Real family”- Holdable tangible baby VR"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yuya Mochizuki"
+                    },
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Daiki Agatsuma"
+                    },
+                    {
+                        "name": "Takaya Asano"
+                    },
+                    {
+                        "name": "Marika Higashida"
+                    },
+                    {
+                        "name": "Tatsuya Nishikizawa"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2017-03-22",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "languages": [
+                "eng"
+            ],
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3110292.3110297"
+                ],
+                "scopus_id": [
+                    "85050079747"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3110292.3110297",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29695847",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29695847",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-27T18:18:25Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-27T18:18:25Z",
+            "paper_title": {
+                "en": "Manga Generator, a future of interactive manga media"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2016-12-04",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/3011549.3015156"
+                ],
+                "scopus_id": [
+                    "85014832978"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/3011549.3015156",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/28131920",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "28131920",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-07-01T00:55:57Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-03-02T07:38:35Z",
+            "paper_title": {
+                "ja": "Some Considerations of Age Estimation Method for \"Augmented TV\" Based on Posture of Gripping Tablet PC",
+                "en": "Some Considerations of Age Estimation Method for \"Augmented TV\" Based on Posture of Gripping Tablet PC"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yuria Suzuki"
+                    },
+                    {
+                        "name": "Hiroyuki Kawakita"
+                    },
+                    {
+                        "name": "Michihiro Uehara"
+                    },
+                    {
+                        "name": "Toshio Nakagawa"
+                    },
+                    {
+                        "name": "Hiromitsu Nishimura"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publication_date": "2016-06-22",
+            "publication_name": {
+                "ja": "HCI International 2016 – Posters' Extended Abstracts. HCI 2016. Communications in Computer and Information Science, Springer",
+                "en": "HCI International 2016 – Posters' Extended Abstracts. HCI 2016. Communications in Computer and Information Science, Springer"
+            },
+            "volume": "617",
+            "starting_page": "525",
+            "ending_page": "530",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1007/978-3-319-40548-3_87"
+                ],
+                "issn": [
+                    "1865-0929"
+                ],
+                "wos_id": [
+                    "WOS:000389727300087"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1007/978-3-319-40548-3_87",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000389727300087&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29698273",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29698273",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-27T19:50:32Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-27T19:50:32Z",
+            "paper_title": {
+                "en": "Glassless augmented display for public signage"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Hisataka Suzuki"
+                    },
+                    {
+                        "name": "Kazuhisa Yanaka"
+                    },
+                    {
+                        "name": "Yuta Yamaguchi"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2016-03-23",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2927929.2927930"
+                ],
+                "scopus_id": [
+                    "85017395771"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2927929.2927930",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/43069329",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "43069329",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_papers",
+            "rm:creator_type": "ai",
+            "rm:created": "2023-08-11T11:59:22Z",
+            "rm:modifier_id": "ai:assign_based_papers",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2023-08-11T11:59:22Z",
+            "paper_title": {
+                "ja": "Personal characteristic motion of elderly gait for nursing relocation using robot and telepresence smart house",
+                "en": "Personal characteristic motion of elderly gait for nursing relocation using robot and telepresence smart house"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Yoichi Yamazaki"
+                    },
+                    {
+                        "name": "Kentaro Nakamura"
+                    },
+                    {
+                        "name": "Masaki Mikami"
+                    },
+                    {
+                        "name": "Takayuki Misu"
+                    },
+                    {
+                        "name": "Hiroshi Sugimura"
+                    },
+                    {
+                        "name": "Takuya Hashimoto"
+                    },
+                    {
+                        "name": "Shingo Otsuka"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masao Isshiki"
+                    },
+                    {
+                        "name": "Kaoru Hirota"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Yoichi Yamazaki"
+                    },
+                    {
+                        "name": "Kentaro Nakamura"
+                    },
+                    {
+                        "name": "Masaki Mikami"
+                    },
+                    {
+                        "name": "Takayuki Misu"
+                    },
+                    {
+                        "name": "Hiroshi Sugimura"
+                    },
+                    {
+                        "name": "Takuya Hashimoto"
+                    },
+                    {
+                        "name": "Shingo Otsuka"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masao Isshiki"
+                    },
+                    {
+                        "name": "Kaoru Hirota"
+                    }
+                ]
+            },
+            "publication_date": "2016-01",
+            "publication_name": {
+                "ja": "ISCIIA 2016 - 7th International Symposium on Computational Intelligence and Industrial Applications",
+                "en": "ISCIIA 2016 - 7th International Symposium on Computational Intelligence and Industrial Applications"
+            },
+            "referee": true,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "scopus_id": [
+                    "84997638240"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "url",
+                    "@id": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84997638240&origin=inward",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29674244",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29674244",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-27T07:12:21Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2021-10-22T04:59:03Z",
+            "paper_title": {
+                "en": "Innovation in the age of virtual reality through organizing international student competition"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Jun Nishida"
+                    },
+                    {
+                        "name": "Daiki Sato"
+                    },
+                    {
+                        "name": "Kosuke Sato"
+                    },
+                    {
+                        "name": "Hikaru Takatori"
+                    },
+                    {
+                        "name": "Susumu Tachi"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery, Inc"
+            },
+            "publication_date": "2015-11-02",
+            "publication_name": {
+                "en": "SIGGRAPH Asia 2015 Symposium on Education, SA 2015"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2818498.2818505"
+                ],
+                "scopus_id": [
+                    "84975733512"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2818498.2818505",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "scopus",
+                    "@id": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84975733512&origin=inward",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "scopus_citedby",
+                    "@id": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84975733512&origin=inward",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29658208",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29658208",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-27T01:50:53Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-27T01:50:53Z",
+            "paper_title": {
+                "en": "Ex pixel FPGA: Multiplex hidden imagery for HDMI video sources"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Hisataka Suzuki"
+                    },
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Ryotaro Tsuda"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery, Inc"
+            },
+            "publication_date": "2015-07-31",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2015 Posters, SIGGRAPH 2015"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2787626.2787645"
+                ],
+                "scopus_id": [
+                    "84959332414"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2787626.2787645",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29681065",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29681065",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-27T10:19:47Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-27T10:19:47Z",
+            "paper_title": {
+                "en": "Gamification and construction of virtual field museum by using augmented reality game \"Ingress\""
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Yuki Kose"
+                    },
+                    {
+                        "name": "Kumiko Minobe"
+                    },
+                    {
+                        "name": "Tomoyuki Kimura"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2015-04-08",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "volume": "08-10-",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2806173.2806182"
+                ],
+                "scopus_id": [
+                    "84984923503"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2806173.2806182",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29680984",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29680984",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-27T10:17:01Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-27T10:17:01Z",
+            "paper_title": {
+                "en": "Face à la mode: A new immersive entertainment system that can train body and facial expressions"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yuria Suzuki"
+                    },
+                    {
+                        "name": "Ayumi Ando"
+                    },
+                    {
+                        "name": "Ryotaro Tsuda"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2015-04-08",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "volume": "08-10-",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2806173.2806195"
+                ],
+                "scopus_id": [
+                    "84984873715"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2806173.2806195",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/47050941",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "47050941",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2024-07-14T11:20:26Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-07-14T11:20:26Z",
+            "paper_title": {
+                "en": "Automatic cartoon generation system which linked to emotional display and physical movement"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Kosaku Ogawa"
+                    },
+                    {
+                        "name": "Genki Kunitomi"
+                    },
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Institute of Image Electronics Engineers of Japan"
+            },
+            "publication_date": "2015",
+            "publication_name": {
+                "en": "Journal of the Institute of Image Electronics Engineers of Japan"
+            },
+            "volume": "44",
+            "number": "2",
+            "starting_page": "336",
+            "ending_page": "347",
+            "languages": [
+                "jpn"
+            ],
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "1348-0316",
+                    "0285-9831"
+                ],
+                "scopus_id": [
+                    "85017361158"
+                ]
+            }
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/37389492",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "37389492",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2022-06-28T10:50:50Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-06-28T10:50:50Z",
+            "paper_title": {
+                "ja": "身体動作と感情表現を連動させたマンガ自動生成システム",
+                "en": "Automatic Cartoon Generation System Which Linked to Emotional Display and Physical Movement"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "小川 耕作"
+                    },
+                    {
+                        "name": "國富 彦岐"
+                    },
+                    {
+                        "name": "藤村 航"
+                    },
+                    {
+                        "name": "小出 雄空明"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Shirai Akihiko"
+                    },
+                    {
+                        "name": "Ogawa Kosaku"
+                    },
+                    {
+                        "name": "Kunitomi Genki"
+                    },
+                    {
+                        "name": "Fujimura Wataru"
+                    },
+                    {
+                        "name": "Koide Yukua"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "本論文はKinect等の自然動作入力インタフェース(NUI)を用いたマンガ自動生成環境において，ユーザの自然な動作と感情表現を連動させる手法について報告する．提案方法&ldquo;KinEmotion&rdquo;は，各関節（KinematicsにおけるBones）の寄与率で構成されており，類似度が目標姿勢との内積により得ることができる姿勢評価関数を有している．姿勢評価関数の出力は，それぞれの感情を表現するための画像に割り当てることができる．提案された方法は関節角の評価に基づく手法のため，特定のユーザに限定されるものではなく，インタラクションデザイナは，スクリプトでプレイヤインタラクション設定することができる．過去のアルゴリズムAccuMotionより速く理論値で2.6倍単純化されている．公開デモンストレーションと常設展示でテストされた実際の学生プロジェクト&ldquo;Manga Generartor&rdquo;と将来のアプリケーション開発についての課題と知見についても報告する．",
+                "en": "This article contributes to build a method and case study to link the natural movement and display effects of the user emotional in automatic cartoon generation using natural user input interface (NUI) like Kinect. As a suggested method, &ldquo;KinEmotion&rdquo; has posture evaluation functions which is configured with contribution ratios for each joint (bone in Kinematics) and the similarity ratio can be obtained by inner product with a target posture. The output of posture evaluation function can be assigned to some pictures which can used to express emotions respectively. The proposed method is not limited to particular users because of it is based on angular evaluation. Interaction designer can configure player interaction with a scripting and culled process can be 2.6 times simplified faster than past algorithm AccuMotion. The applied demonstration system &ldquo;Manga Generartor&rdquo; and its future applications and development are also reported with results of scripting abstraction in actual student project as a case study. The system and constants had been tested in some public demonstration and permanent exhibition."
+            },
+            "publisher": {
+                "ja": "一般社団法人 画像電子学会",
+                "en": "The Institute of Image Electronics Engineers of Japan"
+            },
+            "publication_date": "2015",
+            "publication_name": {
+                "ja": "画像電子学会誌",
+                "en": "The Journal of the Institute of Image Electronics Engineers of Japan"
+            },
+            "volume": "44",
+            "number": "2",
+            "starting_page": "336",
+            "ending_page": "347",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.11371/iieej.44.336"
+                ],
+                "issn": [
+                    "2186-716X"
+                ],
+                "cinii_na_id": [
+                    "130005268535"
+                ],
+                "cinii_nc_id": [
+                    "AA12563298"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.11371/iieej.44.336",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/130005268535",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA12563298",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://id.ndl.go.jp/bib/026402632",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/35476116",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "35476116",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2021-10-27T03:54:03Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2021-10-27T03:54:03Z",
+            "paper_title": {
+                "ja": "SIGGRAPH 2015見聞記",
+                "en": "SIGGRAPH 2015 Report"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "中嶋 正之"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "谷本 正幸"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Nakajima Masayuki"
+                    },
+                    {
+                        "name": "Shirai Akihiko"
+                    },
+                    {
+                        "name": "Tanimoto Masayuki"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "一般社団法人 映像情報メディア学会",
+                "en": "The Institute of Image Information and Television Engineers"
+            },
+            "publication_date": "2015",
+            "publication_name": {
+                "ja": "映像情報メディア学会誌",
+                "en": "The Journal of the Institute of Image Information and Television Engineers"
+            },
+            "volume": "69",
+            "number": "11",
+            "starting_page": "882",
+            "ending_page": "888",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.3169/itej.69.882"
+                ],
+                "issn": [
+                    "1342-6907"
+                ],
+                "cinii_na_id": [
+                    "130006191255"
+                ],
+                "cinii_nc_id": [
+                    "AN10588970"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.3169/itej.69.882",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/130006191255",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AN10588970",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://id.ndl.go.jp/bib/026834619",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29639506",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29639506",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-26T18:47:41Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-26T18:47:41Z",
+            "paper_title": {
+                "en": "\"Scritter\" to \"1p2×3d\": Application development using multiplex hiding imaging technology"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yannick Littfass"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    },
+                    {
+                        "name": "Hisataka Suzuki"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2014-04-09",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "volume": "2014-",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2617841.2620709"
+                ],
+                "scopus_id": [
+                    "84940054401"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2617841.2620709",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29639473",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29639473",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-26T18:45:49Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-26T18:45:49Z",
+            "paper_title": {
+                "en": "FamiLinkTV: Expanding the social value of the living room with multiplex imaging technology"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Hisataka Suzuki"
+                    },
+                    {
+                        "name": "Yannick Littfass"
+                    },
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Hiroki Taguchi"
+                    },
+                    {
+                        "name": "Fujimura Wataru"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2014-04-09",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "volume": "2014-",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2617841.2620727"
+                ],
+                "scopus_id": [
+                    "84940035583"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2617841.2620727",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29639447",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29639447",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-26T18:45:13Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-26T18:45:13Z",
+            "paper_title": {
+                "en": "3DCG art expression on a tablet device using integral photography"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Nahomi Maki"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Kazuhisa Yanaka"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery"
+            },
+            "publication_date": "2014-04-09",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "volume": "2014-",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2617841.2620708"
+                ],
+                "scopus_id": [
+                    "84940021379"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2617841.2620708",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/35215133",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "35215133",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2021-10-25T17:10:50Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-02-19T16:01:02Z",
+            "paper_title": {
+                "ja": "SIGGRAPH 2014見聞記",
+                "en": "Current Topics of SIGGRAPH 2014"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "中嶋 正之"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Nakajima Masayuki"
+                    },
+                    {
+                        "name": "Shirai Akihiko"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "今年で41回目となるSIGGRAPH2014は,8月10日(日)から8月14日(木)まで,カナダ・バンクーバーのコンベンションセンターで,例年通り華やかに開催された.SIGGRAPHはACMに属する一つの研究会であり,CG (Computer Graphics)やInteractive技術に関する国際会議であり,CG, Virtual Reality, Art, Image ProcessingやGameに関する最新の試みなどが発表される.本学会における極めて重要な会議である.本会議は,5日間にわたり,並列して多数のイベントが開催されており,すべてを聴講することは不可能であるが,今年もその概要を,例年通り報告することにする."
+            },
+            "publisher": {
+                "ja": "一般社団法人映像情報メディア学会",
+                "en": "The Institute of Image Information and Television Engineers"
+            },
+            "publication_date": "2014",
+            "publication_name": {
+                "ja": "映像情報メディア学会誌",
+                "en": "The Journal of the Institute of Image Information and Television Engineers"
+            },
+            "volume": "68",
+            "number": "11",
+            "starting_page": "861",
+            "ending_page": "867",
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.3169/itej.68.861"
+                ],
+                "issn": [
+                    "1342-6907"
+                ],
+                "cinii_na_id": [
+                    "110009892012"
+                ],
+                "cinii_nc_id": [
+                    "AN10588970"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.3169/itej.68.861",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110009892012",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AN10588970",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://id.ndl.go.jp/bib/025880615",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/10618286",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "10618286",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-09-05T12:30:16Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:30:16Z",
+            "paper_title": {
+                "ja": "ExPixel: PixelShader for multiplex-image hiding in consumer 3D flat panels.",
+                "en": "ExPixel: PixelShader for multiplex-image hiding in consumer 3D flat panels."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Hisataka Suzuki"
+                    },
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Hisataka Suzuki"
+                    },
+                    {
+                        "name": "Rex Hsieh"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "ACM",
+                "en": "ACM"
+            },
+            "publication_date": "2014",
+            "publication_name": {
+                "ja": "Special Interest Group on Computer Graphics and Interactive Techniques Conference, SIGGRAPH '14, Vancouver, Canada, August 10-14, 2014, Posters Proceedings",
+                "en": "Special Interest Group on Computer Graphics and Interactive Techniques Conference, SIGGRAPH '14, Vancouver, Canada, August 10-14, 2014, Posters Proceedings"
+            },
+            "starting_page": "63",
+            "referee": true,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/SuzukiHS14"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/SuzukiHS14",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://doi.acm.org/10.1145/2614217.2633393",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://dblp.uni-trier.de/db/conf/siggraph/siggraph2014posters.html#conf/siggraph/SuzukiHS14",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554879",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554879",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:56Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T16:51:49Z",
+            "paper_title": {
+                "en": "Manga generator: Immersive posing role playing game in manga world"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yuto Nara"
+                    },
+                    {
+                        "name": "Genki Kunitomi"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    },
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2013",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "starting_page": "27",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/vric/NaraKKFS13"
+                ],
+                "doi": [
+                    "10.1145/2466816.2466845"
+                ],
+                "scopus_id": [
+                    "84882287696"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/vric/NaraKKFS13",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2466816.2466845",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/2466816.2466845",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/vric/vric2013.html#conf/vric/NaraKKFS13",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554878",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554878",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:56Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T16:47:38Z",
+            "paper_title": {
+                "en": "KinEmotion: Context controllable emotional motion analysis method for interactive cartoon generator"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Yuto Nara"
+                    },
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    },
+                    {
+                        "name": "Genki Kunitomi"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2013",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2013 Posters, SIGGRAPH 2013"
+            },
+            "starting_page": "75",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/NaraFKKS13"
+                ],
+                "doi": [
+                    "10.1145/2503385.2503467"
+                ],
+                "scopus_id": [
+                    "84881608029"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/NaraFKKS13",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2503385.2503467",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/2503385.2503467",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/siggraph/siggraph2013posters.html#conf/siggraph/NaraFKKS13",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/39778845",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "39778845",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2022-08-30T02:31:02Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-08-30T02:31:02Z",
+            "paper_title": {
+                "en": "2x3D"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    },
+                    {
+                        "name": "Robert Songer"
+                    },
+                    {
+                        "name": "Takahiro Hayakawa"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Kazuhisa Yanaka"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2012-11-28",
+            "publication_name": {
+                "en": "SIGGRAPH Asia 2012 Emerging Technologies"
+            },
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2407707.2407708"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2407707.2407708",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://dl.acm.org/ft_gateway.cfm?id=2407708&amp;ftid=1324219&amp;dwn=1",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554880",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554880",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:56Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T08:38:05Z",
+            "paper_title": {
+                "en": "AccuMotion: Intuitive recognition algorithm for new interactions and experiences for the post-PC era"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Takuya Sakai"
+                    },
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Songer Robert"
+                    },
+                    {
+                        "name": "Takayuki Kosaka"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2012",
+            "publication_name": {
+                "en": "ACM International Conference Proceeding Series"
+            },
+            "starting_page": "15",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/vric/SakaiFSKS12"
+                ],
+                "doi": [
+                    "10.1145/2331714.2331732"
+                ],
+                "scopus_id": [
+                    "84864984750"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/vric/SakaiFSKS12",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2331714.2331732",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/2331714.2331732",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/vric/vric2012.html#conf/vric/SakaiFSKS12",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29873295",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29873295",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-31T12:00:51Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T12:00:51Z",
+            "paper_title": {
+                "en": "2x3D: Real time shader for simultaneous 2D/3D hybrid theater"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Yukua Koide"
+                    },
+                    {
+                        "name": "Robert Songer"
+                    },
+                    {
+                        "name": "Takahiro Hayakawa"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Kazuhisa Yanaka"
+                    }
+                ]
+            },
+            "publication_date": "2012",
+            "publication_name": {
+                "en": "SIGGRAPH Asia 2012 Emerging Technologies, SA 2012"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2407707.2407708"
+                ],
+                "scopus_id": [
+                    "84871769774"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2407707.2407708",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/1482340",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "1482340",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-12-02T20:31:04Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-08-21T12:23:57Z",
+            "paper_title": {
+                "ja": "測域センサを用いた体験教育環境の物理的評価",
+                "en": "Physical evaluation methods for experience learning environments using laser range scanner"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "岩楯 翔仁"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "ja": [
+                    {
+                        "name": "岩楯 翔仁"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "神奈川工科大学",
+                "en": "神奈川工科大学"
+            },
+            "publication_date": "2011-03",
+            "publication_name": {
+                "ja": "ITを活用した教育シンポジウム講演論文集",
+                "en": "Proceedings of the Symposium on the Educational Application of Information Technology"
+            },
+            "volume": "5",
+            "starting_page": "49",
+            "ending_page": "52",
+            "languages": [
+                "jpn"
+            ],
+            "referee": false,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "1881-6061"
+                ],
+                "cinii_na_id": [
+                    "40018755379"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/40018755379",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/1482339",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "1482339",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-12-02T20:30:59Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-08-21T12:24:05Z",
+            "paper_title": {
+                "ja": "抽象的なアニメーション作品視聴に対する加速度センサを用いた自然なユーザ解析手法の提案",
+                "en": "User analysis method using acceleration sensor of smartphone to evaluate abstractive animation works"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "加藤 匠"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "田中 健司"
+                    }
+                ],
+                "ja": [
+                    {
+                        "name": "加藤 匠"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "田中 健司"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "神奈川工科大学",
+                "en": "神奈川工科大学"
+            },
+            "publication_date": "2011-03",
+            "publication_name": {
+                "ja": "ITを活用した教育シンポジウム講演論文集",
+                "en": "Proceedings of the Symposium on the Educational Application of Information Technology"
+            },
+            "volume": "5",
+            "starting_page": "53",
+            "ending_page": "56",
+            "languages": [
+                "jpn"
+            ],
+            "referee": false,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "1881-6061"
+                ],
+                "cinii_na_id": [
+                    "40018755380"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/40018755380",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554881",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554881",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:56Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T02:30:13Z",
+            "paper_title": {
+                "en": "GAMIC: Exaggerated real time character animation control method for full-body gesture interaction systems"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Hajime Misumi"
+                    },
+                    {
+                        "name": "Wataru Fujimura"
+                    },
+                    {
+                        "name": "Takayuki Kosaka"
+                    },
+                    {
+                        "name": "Motofumi Hattori"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2011",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2011 Posters, SIGGRAPH'11"
+            },
+            "starting_page": "5",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/MisumiFKHS11"
+                ],
+                "doi": [
+                    "10.1145/2037715.2037721"
+                ],
+                "scopus_id": [
+                    "80054806074"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/MisumiFKHS11",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2037715.2037721",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/2037715.2037721",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/siggraph/siggraph2011posters.html#conf/siggraph/MisumiFKHS11",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/39778844",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "39778844",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2022-08-30T02:31:02Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-08-30T02:31:02Z",
+            "paper_title": {
+                "en": "ScritterHDR"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Koki Nagano"
+                    },
+                    {
+                        "name": "Takeru Utsugi"
+                    },
+                    {
+                        "name": "Kazuhisa Yanaka"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masayuki Nakajima"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM Press"
+            },
+            "publication_date": "2011",
+            "publication_name": {
+                "en": "SIGGRAPH Asia 2011 Posters on - SA '11"
+            },
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2073304.2073363"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2073304.2073363",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://dl.acm.org/ft_gateway.cfm?id=2073363&amp;ftid=1060638&amp;dwn=1",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29847564",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29847564",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-31T00:26:09Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T00:26:09Z",
+            "paper_title": {
+                "en": "ScritterHDR: Multiplex-hidden imaging on high dynamic range projection"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Koki Nagano"
+                    },
+                    {
+                        "name": "Takeru Utsugi"
+                    },
+                    {
+                        "name": "Kazuhisa Yanaka"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masayuki Nakajima"
+                    }
+                ]
+            },
+            "publication_date": "2011",
+            "publication_name": {
+                "en": "SIGGRAPH Asia 2011 Posters, SA'11"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2073304.2073363"
+                ],
+                "scopus_id": [
+                    "84855508313"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2073304.2073363",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29847558",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29847558",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-31T00:25:59Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T00:25:59Z",
+            "paper_title": {
+                "en": "Skeleton-based diverse creature design tool for mass production"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Noriyuki Yamamoto"
+                    },
+                    {
+                        "name": "Nahomi Maki"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "publication_date": "2011",
+            "publication_name": {
+                "en": "SIGGRAPH Asia 2011 Posters, SA'11"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/2073304.2073316"
+                ],
+                "scopus_id": [
+                    "84855503681"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/2073304.2073316",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554882",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554882",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:57Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-06-09T13:06:18Z",
+            "paper_title": {
+                "en": "A new \"multiplex content\" displaying system compatible with current 3D projection technology."
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Koki Nagano"
+                    },
+                    {
+                        "name": "Takeru Utsugi"
+                    },
+                    {
+                        "name": "Mika Hirano"
+                    },
+                    {
+                        "name": "Takeo Hamada"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masayuki Nakajima"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2010",
+            "publication_name": {
+                "en": "International Conference on Computer Graphics and Interactive Techniques, SIGGRAPH 2010, Los Angeles, California, USA, July 26-30, 2010, Poster Proceedings"
+            },
+            "starting_page": "79",
+            "ending_page": "1",
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/NaganoUHHSN10"
+                ],
+                "doi": [
+                    "10.1145/1836845.1836931"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/NaganoUHHSN10",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/1836845.1836931",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "dblp_cross_ref",
+                    "@id": "https://dblp.uni-trier.de/conf/siggraph/2010posters",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "dblp_url",
+                    "@id": "https://dblp.uni-trier.de/db/conf/siggraph/siggraph2010posters.html#NaganoUHHSN10",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/1836845.1836931",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554883",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554883",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:57Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-30T14:39:10Z",
+            "paper_title": {
+                "en": "WiiRemote programming: Development experiences of interactive techniques that can be applied to education for young engineers"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Simon Richir"
+                    },
+                    {
+                        "name": "Takuya Iwamoto"
+                    },
+                    {
+                        "name": "Takayuki Kosaka"
+                    },
+                    {
+                        "name": "Hidetaka Kimura"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2009",
+            "publication_name": {
+                "en": "ACM SIGGRAPH ASIA 2009 Educators Program, SIGGRAPH ASIA '09"
+            },
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/ShiraiRIKK09"
+                ],
+                "doi": [
+                    "10.1145/1666611.1666635"
+                ],
+                "scopus_id": [
+                    "77049117357"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/ShiraiRIKK09",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/1666611.1666635",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/1666611.1666635",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/siggraph/siggraph2009asiaedu.html#conf/siggraph/ShiraiRIKK09",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/39420675",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "39420675",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2022-08-02T06:09:25Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-08-02T06:09:25Z",
+            "paper_title": {
+                "en": "Baked crepe texture generation."
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Kaisei Sakurai"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Fabien Goslin"
+                    },
+                    {
+                        "name": "Kazunori Miyata"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2007",
+            "publication_name": {
+                "en": "International Conference on Computer Graphics and Interactive Techniques"
+            },
+            "starting_page": "27",
+            "ending_page": "27",
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/SakuraiSGM07"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/SakuraiSGM07",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://dl.acm.org/doi/10.1145/1280720.1280751",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://dblp.uni-trier.de/conf/siggraph/2007posters",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://dblp.uni-trier.de/db/conf/siggraph/siggraph2007posters.html#SakuraiSGM07",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/28779557",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "28779557",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-07-09T04:24:23Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-07-09T04:24:23Z",
+            "paper_title": {
+                "en": "WiiMedia: motion analysis methods and applications using a consumer video game controller"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Erik Geslin"
+                    },
+                    {
+                        "name": "Simon Richir"
+                    }
+                ]
+            },
+            "publication_date": "2007",
+            "publication_name": {
+                "en": "SANDBOX SYMPOSIUM 2007: ACM SIGGRAPH VIDEO GAME SYMPOSIUM, PROCEEDINGS"
+            },
+            "starting_page": "133",
+            "ending_page": "140",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "wos_id": [
+                    "WOS:000266109200016"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000266109200016&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/215323",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "215323",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-10-30T20:58:42Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-09-01T23:20:24Z",
+            "paper_title": {
+                "en": "EasyGPU : Development of experimental environment for computer vision by means of programmable GPU",
+                "ja": "EasyGPU:GPUを用いたコンピュータビジョン実験環境の開発"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "高橋 誠史"
+                    },
+                    {
+                        "name": "宮田 一乘"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Takahashi Masafumi"
+                    },
+                    {
+                        "name": "Miyata Kazunori"
+                    },
+                    {
+                        "name": "Shirai Akihiko"
+                    }
+                ]
+            },
+            "description": {
+                "en": "This paper proposes a system which performs various operations for computer vision process on programmable GPU. Program codes of GPU are independent from an executable code, therefore, this system modularizes the algorithm of image processing. This paper also reports an experimental environment for developing computer vision applications.",
+                "ja": "本論文では, コンピュータビジョンにおける各種演算をプログラマブルGPU上で行うシステムの提案を行う.本システムは, GPUのプログラムコードが実行ファイルから独立していることに着眼して, 画像処理のアルゴリズムのモジュール化を行う.そして, このモジュールの処理順序をグラフィカルなインターフェイスで組み換え可能な, コンピュータビジョンに関するアプリケーション開発の支援環境を試作した. : This paper proposes a system which performs various operations for computer vision process on programmable GPU. Program codes of GPU are independent from an executable code, therefore, this system modularizes the algorithm of image processing. This paper also reports an experimental environment for developing computer vision applications."
+            },
+            "publisher": {
+                "en": "Information Processing Society of Japan (IPSJ)",
+                "ja": "情報処理学会"
+            },
+            "publication_date": "2005-08-18",
+            "publication_name": {
+                "en": "IPSJ SIG Notes",
+                "ja": "情報処理学会研究報告"
+            },
+            "volume": "2005",
+            "number": "85",
+            "starting_page": "19",
+            "ending_page": "24",
+            "languages": [
+                "jpn"
+            ],
+            "referee": false,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "cinii_na_id": [
+                    "110002781840"
+                ],
+                "issn": [
+                    "0919-6072"
+                ],
+                "cinii_nc_id": [
+                    "AN10100541"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110002781840",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AN10100541",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://id.ndl.go.jp/bib/7422108",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://hdl.handle.net/10119/4042",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29888446",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29888446",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-08-31T15:48:04Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-31T15:48:04Z",
+            "paper_title": {
+                "en": "A new real-time video synthesis method for virtual studio environments using GPU and projected screens"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masafumi Takahashi"
+                    },
+                    {
+                        "name": "Kiichi Kobayashi"
+                    },
+                    {
+                        "name": "Hideki Mitsumine"
+                    },
+                    {
+                        "name": "Simon Richir"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Association for Computing Machinery, Inc"
+            },
+            "publication_date": "2005-07-31",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2005 Posters, SIGGRAPH 2005"
+            },
+            "starting_page": "120",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1145/1186954.1187090"
+                ],
+                "scopus_id": [
+                    "84983190580"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/1186954.1187090",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/27637006",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "27637006",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_papers",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-06-06T22:45:44Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-09-01T23:20:49Z",
+            "paper_title": {
+                "en": "Development of robotic TV game player using haptic interface and GPU image recognition"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masafumi Takahashi"
+                    },
+                    {
+                        "name": "Kazunori Miyata"
+                    },
+                    {
+                        "name": "Makoto Sato"
+                    },
+                    {
+                        "name": "Simon Richir"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "ACM"
+            },
+            "publication_date": "2005-07-31",
+            "publication_name": {
+                "en": "ACM SIGGRAPH 2005 Posters, SIGGRAPH 2005"
+            },
+            "starting_page": "122",
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "international_conference_proceedings",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/siggraph/ShiraiTMSR05"
+                ],
+                "doi": [
+                    "10.1145/1186954.1187092"
+                ],
+                "scopus_id": [
+                    "84983109308"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/siggraph/ShiraiTMSR05",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1145/1186954.1187092",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "scopus",
+                    "@id": "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=84983109308&origin=inward",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "scopus_citedby",
+                    "@id": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=84983109308&origin=inward",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://doi.acm.org/10.1145/1186954.1187093",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/siggraph/siggraph2005posters.html#conf/siggraph/ShiraiTMSR05",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554885",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554885",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:57Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:30:16Z",
+            "paper_title": {
+                "ja": "RoboGamer: development of robotic tv game player using haptic interface and GPU image recognition.",
+                "en": "RoboGamer: development of robotic tv game player using haptic interface and GPU image recognition."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Lionel Dominjon"
+                    },
+                    {
+                        "name": "Masafumi Takahashi"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Lionel Dominjon"
+                    },
+                    {
+                        "name": "Masafumi Takahashi"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "ACM",
+                "en": "ACM"
+            },
+            "publication_date": "2005",
+            "publication_name": {
+                "ja": "Proceedings of the International Conference on Advances in Computer Entertainment Technology, ACE 2005, Valencia, Spain, June 15-15, 2005",
+                "en": "Proceedings of the International Conference on Advances in Computer Entertainment Technology, ACE 2005, Valencia, Spain, June 15-15, 2005"
+            },
+            "starting_page": "5",
+            "referee": true,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/ACMace/ShiraiDT05a"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/ACMace/ShiraiDT05a",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://doi.acm.org/10.1145/1178477.1178587",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://dblp.uni-trier.de/db/conf/ACMace/ace2005.html#conf/ACMace/ShiraiDT05a",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554884",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554884",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:57Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:30:16Z",
+            "paper_title": {
+                "ja": "RoboGamer: a robotic tv game player.",
+                "en": "RoboGamer: a robotic tv game player."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Lionel Dominjon"
+                    },
+                    {
+                        "name": "Masafumi Takahashi"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Lionel Dominjon"
+                    },
+                    {
+                        "name": "Masafumi Takahashi"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "ACM",
+                "en": "ACM"
+            },
+            "publication_date": "2005",
+            "publication_name": {
+                "ja": "Proceedings of the International Conference on Advances in Computer Entertainment Technology, ACE 2005, Valencia, Spain, June 15-15, 2005",
+                "en": "Proceedings of the International Conference on Advances in Computer Entertainment Technology, ACE 2005, Valencia, Spain, June 15-15, 2005"
+            },
+            "starting_page": "4",
+            "referee": true,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/ACMace/ShiraiDT05"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/ACMace/ShiraiDT05",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://doi.acm.org/10.1145/1178477.1178586",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://dblp.uni-trier.de/db/conf/ACMace/ace2005.html#conf/ACMace/ShiraiDT05",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/215325",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "215325",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-10-30T20:58:42Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-06-09T12:49:24Z",
+            "paper_title": {
+                "en": "Modeling and shadowing using Axi-Vision camera",
+                "ja": "Axi-Vision カメラによるモデリングとシャドウイング"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "小林 希一"
+                    },
+                    {
+                        "name": "河北 真宏"
+                    },
+                    {
+                        "name": "斉藤 豪"
+                    },
+                    {
+                        "name": "中嶋 正之"
+                    }
+                ],
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "小林 希一"
+                    },
+                    {
+                        "name": "河北 真宏"
+                    },
+                    {
+                        "name": "斉藤 豪"
+                    },
+                    {
+                        "name": "中嶋 正之"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "映像情報メディア学会",
+                "ja": "映像情報メディア学会"
+            },
+            "publication_date": "2004-06-18",
+            "publication_name": {
+                "en": "ITE technical report",
+                "ja": "映像情報メディア学会技術報告"
+            },
+            "volume": "28",
+            "number": "32",
+            "starting_page": "9",
+            "ending_page": "12",
+            "languages": [
+                "jpn"
+            ],
+            "referee": false,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "cinii_na_id": [
+                    "40006367430"
+                ],
+                "issn": [
+                    "1342-6893"
+                ],
+                "cinii_nc_id": [
+                    "AN1059086X"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/40006367430",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AN1059086X",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://id.ndl.go.jp/bib/7055105",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554886",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554886",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:57Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-04-26T18:52:00Z",
+            "paper_title": {
+                "en": "Entertainment applications of human-scale virtual reality systems"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "A Shirai"
+                    },
+                    {
+                        "name": "K Kobayashi"
+                    },
+                    {
+                        "name": "M Kawakita"
+                    },
+                    {
+                        "name": "S Hasegawa"
+                    },
+                    {
+                        "name": "M Nakajima"
+                    },
+                    {
+                        "name": "M Sato"
+                    }
+                ]
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "en": "ADVANCES IN MULTIMEDIA INFORMATION PROCESSING - PCM 2004, PT 3, PROCEEDINGS"
+            },
+            "volume": "3333",
+            "starting_page": "31",
+            "ending_page": "38",
+            "languages": [
+                "eng"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "dblp_id": [
+                    "conf/pcm/ShiraiKKHNS04"
+                ],
+                "doi": [
+                    "10.1007/978-3-540-30543-9_5"
+                ],
+                "issn": [
+                    "0302-9743"
+                ],
+                "wos_id": [
+                    "WOS:000226025400005"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/pcm/ShiraiKKHNS04",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1007/978-3-540-30543-9_5",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "web_of_science",
+                    "@id": "https://gateway.webofknowledge.com/gateway/Gateway.cgi?GWVersion=2&SrcAuth=JSTA_CEL&SrcApp=J_Gate_JST&DestLinkType=FullRecord&KeyUT=WOS:000226025400005&DestApp=WOS_CPL",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://dblp.uni-trier.de/db/conf/pcm/pcm2004-3.html#conf/pcm/ShiraiKKHNS04",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/29159277",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "29159277",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-07-15T11:22:58Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-07-15T11:22:58Z",
+            "paper_title": {
+                "ja": "３次元カメラの画像蓄積による距離検出分解能の向上と形状計測",
+                "en": "Improvement of a depth resolution of 3D camera by frame store and shape measurement"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "浅見 典充"
+                    },
+                    {
+                        "name": "河北 真宏"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "小林 希一"
+                    },
+                    {
+                        "name": "滝沢 國治"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "ASAMI Norimitsu"
+                    },
+                    {
+                        "name": "KAWAKITA Masahiro"
+                    },
+                    {
+                        "name": "SHIRAI Akihiko"
+                    },
+                    {
+                        "name": "KOBAYASHI Kiichi"
+                    },
+                    {
+                        "name": "TAKIZAWA Kuniharu"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "画像蓄積効果を用いたノイズ低減手法を提案し、3次元カメラ（Axi-Visionカメラ）の距離検出分解能を向上した。本手法では、蓄積画像20フレームを使用した場合、ノイズ低減率は39%となり、形状計測への応用の可能性を示した。",
+                "en": "A depth resolution of 3D camera (Axi-Vision Camera) has been improved by a proposed noise reduction method using the image accumulation effect. The noise of the depth image was reduced to 39% by using 20 frames and the possibility of the application to shape measurement was demonstrated."
+            },
+            "publisher": {
+                "ja": "一般社団法人 画像電子学会",
+                "en": "The Institute of Image Electronics Engineers of Japan"
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "ja": "画像電子学会年次大会予稿集",
+                "en": "Proceedings of the Annual Conference of the Institute of Image Electronics Engineers of Japan"
+            },
+            "volume": "32",
+            "number": "0",
+            "starting_page": "71",
+            "ending_page": "72",
+            "referee": true,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.11371/aiieej.32.0.71.0"
+                ],
+                "cinii_na_id": [
+                    "130004569826"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.11371/aiieej.32.0.71.0",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/130004569826",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/215326",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "215326",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2009-11-29T04:09:11Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "system",
+            "rm:modified": "2014-09-05T12:30:16Z",
+            "paper_title": {
+                "ja": "エンタテイメントシステム"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ]
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "ja": "芸術科学会論文誌"
+            },
+            "volume": "3",
+            "number": "1",
+            "starting_page": "22",
+            "ending_page": "34",
+            "languages": [
+                "jpn"
+            ],
+            "referee": true,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.3756/artsci.3.22"
+                ],
+                "cinii_na_id": [
+                    "10014545945"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.3756/artsci.3.22",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/10014545945",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/215324",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "215324",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-10-30T20:58:42Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-08-29T04:00:00Z",
+            "paper_title": {
+                "en": "Study of operation accuracy on cooperative work in spherical displays",
+                "ja": "ドーム型ディスプレイ内の協調作業における操作精度に関する検討(<小特集>コンピュータグラフィックス)"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "曽根 順治"
+                    },
+                    {
+                        "name": "菅原 健二"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "大久保 真道"
+                    },
+                    {
+                        "name": "礒部 正利"
+                    },
+                    {
+                        "name": "今野 晃市"
+                    },
+                    {
+                        "name": "徳山 喜政"
+                    },
+                    {
+                        "name": "鳥谷 浩志"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Junji Sone"
+                    },
+                    {
+                        "name": "Kenji Sugawara"
+                    },
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Masamichi Ookubo"
+                    },
+                    {
+                        "name": "Masatoshi Isobe"
+                    },
+                    {
+                        "name": "Kouichi Konno"
+                    },
+                    {
+                        "name": "Yoshimasa Tokuyama"
+                    },
+                    {
+                        "name": "Hiroshi Toriya"
+                    }
+                ]
+            },
+            "publisher": {
+                "en": "Inst. of Image Information and Television Engineers",
+                "ja": "社団法人映像情報メディア学会"
+            },
+            "publication_date": "2004",
+            "publication_name": {
+                "en": "Kyokai Joho Imeji Zasshi/Journal of the Institute of Image Information and Television Engineers",
+                "ja": "映像情報メディア学会誌 : 映像情報メディア"
+            },
+            "volume": "58",
+            "number": "10",
+            "starting_page": "1522",
+            "ending_page": "1525",
+            "languages": [
+                "jpn"
+            ],
+            "referee": false,
+            "invited": false,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.3169/itej.58.1522"
+                ],
+                "issn": [
+                    "1342-6907"
+                ],
+                "scopus_id": [
+                    "9944264448"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.3169/itej.58.1522",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://ci.nii.ac.jp/naid/110006837039",
+                    "is_downloadable": false,
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/215327",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "215327",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-10-30T20:58:43Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2022-09-26T22:07:31Z",
+            "paper_title": {
+                "ja": "幼児向け触覚エンタテイメントシステムの提案",
+                "en": "A proposal of haptic entertainment VR system for infancy"
+            },
+            "authors": {
+                "en": [
+                    {
+                        "name": "SHIRAI Akihiko"
+                    },
+                    {
+                        "name": "HASEGAWA Shouichi"
+                    },
+                    {
+                        "name": "KOIKE Yasuharu"
+                    },
+                    {
+                        "name": "SATO Makoto"
+                    }
+                ],
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "長谷川 晶一"
+                    },
+                    {
+                        "name": "小池 康晴"
+                    },
+                    {
+                        "name": "佐藤 誠"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "日本バ-チャルリアリティ学会",
+                "en": "日本バ-チャルリアリティ学会"
+            },
+            "publication_date": "2002-09-18",
+            "publication_name": {
+                "ja": "日本バーチャルリアリティ学会大会論文集 = Proceedings of the Virtual Reality Society of Japan annual conference",
+                "en": "Proceedings of the Virtual Reality Society of Japan,annual conference"
+            },
+            "volume": "7",
+            "starting_page": "133",
+            "ending_page": "136",
+            "languages": [
+                "jpn"
+            ],
+            "referee": false,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "issn": [
+                    "1342-4564"
+                ],
+                "cinii_na_id": [
+                    "10013960767"
+                ],
+                "cinii_nc_id": [
+                    "AA11429766"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/10013960767",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA11429766",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/7554887",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "7554887",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T06:49:58Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "system",
+            "rm:modified": "2014-09-05T12:30:16Z",
+            "paper_title": {
+                "ja": "Penguin hockey: a virtual reality game system for children.",
+                "en": "Penguin hockey: a virtual reality game system for children."
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Shoichi Hasegawa"
+                    },
+                    {
+                        "name": "Yasuharu Koike"
+                    },
+                    {
+                        "name": "Makoto Sato"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    },
+                    {
+                        "name": "Shoichi Hasegawa"
+                    },
+                    {
+                        "name": "Yasuharu Koike"
+                    },
+                    {
+                        "name": "Makoto Sato"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "Kluwer",
+                "en": "Kluwer"
+            },
+            "publication_date": "2002",
+            "publication_name": {
+                "ja": "Entertainment Computing: Technologies and Applications, IFIP First International Workshop on Entertainment Computing (IWEC 2002), May 14-17, 2002, Makuhari, Japan",
+                "en": "Entertainment Computing: Technologies and Applications, IFIP First International Workshop on Entertainment Computing (IWEC 2002), May 14-17, 2002, Makuhari, Japan"
+            },
+            "starting_page": "447",
+            "ending_page": "454",
+            "referee": true,
+            "invited": false,
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.1007/978-0-387-35660-0"
+                ],
+                "dblp_id": [
+                    "conf/iwec/ShiraiHKS02"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.1007/978-0-387-35660-0",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "DBLP",
+                    "@id": "https://dblp.org/rec/conf/iwec/ShiraiHKS02",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "http://dblp.uni-trier.de/db/conf/iwec/iwec2002.html#conf/iwec/ShiraiHKS02",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/34956852",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "34956852",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:assign_based_internal_feeds",
+            "rm:creator_type": "ai",
+            "rm:created": "2021-10-24T09:15:25Z",
+            "rm:modifier_id": "ai:assign_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2021-10-24T09:15:25Z",
+            "paper_title": {
+                "ja": "\"Penguin Hockey\":A Tangible Playroom for Children",
+                "en": "\"Penguin Hockey\":A Tangible Playroom for Children"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "長谷川 晶一"
+                    },
+                    {
+                        "name": "小池 康晴"
+                    },
+                    {
+                        "name": "佐藤 誠"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Shirai Akihiko"
+                    },
+                    {
+                        "name": "Hasegawa Shouichi"
+                    },
+                    {
+                        "name": "Koike Yasuharu"
+                    },
+                    {
+                        "name": "SATO Makoto"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "我々は「タンジブル・プレイルーム」の実証コンテンツとしてインタラクティブ作品「ペンギンホッケー」を開発した．このシステムは，プロジェクタを用いた接触可能な映像空間，大空間が扱えるフォースフィードバックディスプレイを持った通常の何もない子供部屋である．子供たちはコンピュータによって生成されたオブジェクトだけでなく，友達や実空間の物体とともにインタラクションすることができる．ペンギンホッケーは，人工知能ペンギンと遊ぶ，シンプルな3次元ホッケーゲームである．プレイヤはコンピュータで生成されたオブジェクトと，友人といっしょにインタラクションを楽しめる．このコンテンツは小学校程度の低年齢層の子供に体験者層を設定している．このシステムは複合現実感のアプリケーションの１つとしてだけではなく，自然な生活空間への触知の実装でもある．",
+                "en": "We have developed an interactive installation called \"Penguin Hockey\". It is a demonstration content of \"Tangible Playroom\" for children. Tangible playroom looks an empty children′s room but it has large tangible image space with projector and big spatial force feedback display. Children can interact with not only computer-generated objects but also their friends and real physical objects. Penguin Hockey is a simple 3D hockey game playing with A.I. penguins. Players can interact with computer-generated objects and their friend. It is targeted to players as young children, elementary school age (6-12). This system provides not only application of Mixed Reality, but also a tangible life space installation naturally."
+            },
+            "publisher": {
+                "ja": "The Society for Art and Science",
+                "en": "The Society for Art and Science"
+            },
+            "publication_date": "2002",
+            "publication_name": {
+                "ja": "芸術科学会論文誌",
+                "en": "The Journal of the Society for Art and Science"
+            },
+            "volume": "1",
+            "number": "3",
+            "starting_page": "117",
+            "ending_page": "124",
+            "languages": [
+                "eng"
+            ],
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.3756/artsci.1.117"
+                ],
+                "issn": [
+                    "1347-2267"
+                ],
+                "cinii_na_id": [
+                    "130004951774"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.3756/artsci.1.117",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/130004951774",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "url",
+                    "@id": "https://jlc.jst.go.jp/DN/JALC/00316302058?from=CiNii",
+                    "is_downloadable": false
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/published_papers/45624318",
+            "@type": "published_papers",
+            "@reverse": "https://api.researchmap.jp/akihiko/published_papers",
+            "rm:id": "45624318",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2024-02-19T16:00:00Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-03-02T08:28:47Z",
+            "paper_title": {
+                "ja": "足裏への皮膚振動刺激による情報伝達",
+                "en": "Information Transmission through Soles by Vibro-tactile Stimulation"
+            },
+            "authors": {
+                "ja": [
+                    {
+                        "name": "久米 祐一郎"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "津田 元久"
+                    },
+                    {
+                        "name": "畑田 豊彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Kume Yuichiro"
+                    },
+                    {
+                        "name": "Shirai Akihiko"
+                    },
+                    {
+                        "name": "Tsuda Motoshisa"
+                    },
+                    {
+                        "name": "Hatada Toyohiko"
+                    }
+                ]
+            },
+            "description": {
+                "ja": "If shoes or slipper-like interfaces were developed, we could walk in virtual environments by walking in the real world and physical, and psychological discomforts caused by wearing special devices would be minimized. In order to transmit information from the system, tactile sensations by multiple vibrators on the soles were studied. Fundamental characteristics, especially phantom sensation, of human sole tactile sensations by multiple vibro-tactile stimulators were psychophysically measured, and stimulation conditions eliciting phantom sensation were elucidated. It was found that the location, movement and rotation of objects are perceived through the sole, and this concept can be implemented in shoesoles.",
+                "en": "If shoes or slipper-like interfaces were developed, we could walk in virtual environments by walking in the real world and physical, and psychological discomforts caused by wearing special devices would be minimized. In order to transmit information from the system, tactile sensations by multiple vibrators on the soles were studied. Fundamental characteristics, especially phantom sensation, of human sole tactile sensations by multiple vibro-tactile stimulators were psychophysically measured, and stimulation conditions eliciting phantom sensation were elucidated. It was found that the location, movement and rotation of objects are perceived through the sole, and this concept can be implemented in shoesoles."
+            },
+            "publisher": {
+                "ja": "特定非営利活動法人 日本バーチャルリアリティ学会",
+                "en": "THE VIRTUAL REALITY SOCIETY OF JAPAN"
+            },
+            "publication_date": "1998-09-30",
+            "publication_name": {
+                "ja": "日本バーチャルリアリティ学会論文誌",
+                "en": "Transactions of the Virtual Reality Society of Japan"
+            },
+            "volume": "3",
+            "number": "3",
+            "starting_page": "83",
+            "ending_page": "88",
+            "languages": [
+                "jpn"
+            ],
+            "referee": true,
+            "published_paper_type": "scientific_journal",
+            "rm:is_open_access": false,
+            "identifiers": {
+                "doi": [
+                    "10.18974/tvrsj.3.3_83"
+                ],
+                "issn": [
+                    "1344-011X"
+                ],
+                "cinii_na_id": [
+                    "110008746604"
+                ],
+                "cinii_nc_id": [
+                    "AA11448578"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "doi",
+                    "@id": "https://doi.org/10.18974/tvrsj.3.3_83",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_articles",
+                    "@id": "http://ci.nii.ac.jp/naid/110008746604",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/AA11448578",
+                    "is_downloadable": false
+                },
+                {
+                    "@id": "http://id.ndl.go.jp/bib/4583568",
+                    "label": "url",
+                    "is_downloadable": false
+                }
+            ]
+        }
+    ]
+}

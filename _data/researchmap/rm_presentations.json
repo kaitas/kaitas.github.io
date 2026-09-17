@@ -1,0 +1,682 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/akihiko/presentations?limit=1000&format=json&start=1",
+    "@type": "presentations",
+    "@reverse": "https://api.researchmap.jp/akihiko",
+    "total_items": 11,
+    "items": [
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/45616161",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "45616161",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2024-02-18T04:30:47Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-02-18T04:30:47Z",
+            "presentation_title": {
+                "ja": "クリエイティブAIが拓くAIDX 「おもしろいAI体験」を産業にするには"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ]
+            },
+            "event": {
+                "ja": "AITC 第12回オープンラボ"
+            },
+            "publication_date": "2024-02-05",
+            "from_event_date": "2024-02-05",
+            "to_event_date": "2024-02-05",
+            "invited": true,
+            "languages": [
+                "jpn"
+            ],
+            "presentation_type": "public_discourse",
+            "description": {
+                "ja": "生成AIの熱狂は HypeCycleのどの段階にいるのでしょうか。\nテクノロジーの進化はどこまでいくのか、\nそして先進IT活用推進の立場でどんなチャレンジができるのでしょうか。\n今回のセミナーでは、 生成AI時代に「つくる人をつくる」メディアを運営している\n白井暁彦（しらいはかせ/@o_ob）をお招きして、\n「おもしろいAI体験の産業化」を切り口に、2024年の予測をみんなで行っていきたいと思います。\n参考：AICU media https://note.com/aicu\n参考：どうなる？ 2024年のAI ～ChatGPTと新春対談して見える現在位置と未来 - 生成AIストリーム - 窓の杜 https://forest.watch.impress.co.jp/docs/serial/aistream/1560860.html"
+            },
+            "rm:is_open_access": true,
+            "see_also": [
+                {
+                    "is_downloadable": true,
+                    "@id": "https://aitc-openlab.connpass.com/event/307063/",
+                    "label": "url"
+                },
+                {
+                    "is_downloadable": true,
+                    "@id": "https://www.youtube.com/watch?v=aV5F-retKqo",
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/42703271",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "42703271",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2023-07-03T17:16:05Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2023-07-03T17:19:44Z",
+            "presentation_title": {
+                "ja": "UX開発から生成AIへ メタバース研究開発における ユーザ生成コンテンツとコミュニケーション設計",
+                "en": "From UX Development to Generative AI, User-Generated Content and Communication Design in Metaverse R&D"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "event": {
+                "ja": "画像電子学会 Advanced Image Seminar 2023 (AIS2023)",
+                "en": "Advanced Image Seminar 2023 (AIS2023) The Institute of Image Electronics Engineers of Japan"
+            },
+            "publication_date": "2023-06-23",
+            "invited": true,
+            "languages": [
+                "jpn"
+            ],
+            "presentation_type": "public_discourse",
+            "dataset": {
+                "dataset_name": "20230623-AIS2023s.pdf",
+                "dataset_type": "published",
+                "access_url": "https://researchmap.jp/akihiko/presentations/42703271/attachment_file.pdf",
+                "rm:media_type": "application/pdf",
+                "rm:use_password": false,
+                "thumbnail_url": "https://researchmap.jp/akihiko/presentations/42703271/attachment_file.pdf?thumbnail"
+            },
+            "rm:is_open_access": false
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/42546603",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "42546603",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2023-06-15T15:15:24Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2023-07-03T19:21:12Z",
+            "presentation_title": {
+                "ja": "人間×機械×知能 メタバースにおけるユーザーエクスペリエンスの研究開発",
+                "en": "Human x Machine x Intelligence - Research and Development of User Experience in the Metaverse"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "event": {
+                "ja": "日本機械学会 情報・知能・精密機器部門（IIP部門）講演会",
+                "en": "JSME MSD&IIP2023"
+            },
+            "publication_date": "2023-03-06",
+            "from_event_date": "2023-03-06",
+            "to_event_date": "2023-03-06",
+            "invited": true,
+            "languages": [
+                "jpn"
+            ],
+            "presentation_type": "invited_oral_presentation",
+            "dataset": {
+                "dataset_name": "20230306-IIP2023s.pdf",
+                "access_url": "https://researchmap.jp/akihiko/presentations/42546603/attachment_file.pdf",
+                "rm:media_type": "application/pdf",
+                "rm:use_password": false,
+                "thumbnail_url": "https://researchmap.jp/akihiko/presentations/42546603/attachment_file.pdf?thumbnail"
+            },
+            "description": {
+                "ja": "メタバースと呼ばれる仮想世界に関する研究開発は、現在急速に進んでいる分野の一つです。本講演では精密工学・知能システム分野、特にバーチャルリアリティーおよびエンターテインメントシステムの設計や開発において活動してきた経験やREALITY株式会社GREE VR Studio Laboratoryでの経験から、ヒューマンインタラクションやネットワーク上でのコミュニケーション技術としてのメタバース、その歴史的な背景や、最新の研究成果、求められる技術や未来観測について紹介いたします。"
+            },
+            "is_international_presentation": false,
+            "rm:is_open_access": true,
+            "see_also": [
+                {
+                    "is_downloadable": true,
+                    "@id": "https://speakerdeck.com/vrstudiolab/ren-jian-xji-jie-xzhi-neng-metabasuniokeruyuzaekusuperiensunoyan-jiu-kai-fa",
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/41494919",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "41494919",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2023-02-22T02:21:14Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2023-02-22T02:21:14Z",
+            "presentation_title": {
+                "ja": "AI神絵師はITエンジニアの未来をどう変えるのか？～メタバースR&DからみたAI画像生成のトレンド～",
+                "en": "How Will AI God Painters Change the Future of IT Engineers? -Trends in AI Image Generation from Metaverse R&D's Perspective"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ]
+            },
+            "event": {
+                "ja": "Developers Summit 2023",
+                "en": "Developers Summit 2023"
+            },
+            "publication_date": "2023-02-10",
+            "from_event_date": "2023-02-09",
+            "to_event_date": "2023-02-10",
+            "invited": true,
+            "languages": [
+                "jpn"
+            ],
+            "presentation_type": "public_discourse",
+            "rm:is_open_access": false
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/40161504",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "40161504",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2022-10-01T15:24:16Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2022-10-01T15:37:00Z",
+            "presentation_title": {
+                "ja": "Entertainment VR to Metaverse - “Creating People who creates”",
+                "en": "Entertainment VR to Metaverse - “Creating People who creates”"
+            },
+            "presenters": {
+                "en": [
+                    {
+                        "name": "Akihiko Shirai"
+                    }
+                ]
+            },
+            "event": {
+                "en": "Cyberworlds 2022"
+            },
+            "publication_date": "2022-09-27",
+            "from_event_date": "2022-09-27",
+            "to_event_date": "2022-09-29",
+            "invited": true,
+            "languages": [
+                "eng"
+            ],
+            "presentation_type": "invited_oral_presentation",
+            "promoter": {
+                "ja": "Cyberworlds 2022 Organization Committee",
+                "en": "Cyberworlds 2022 Organization Committee"
+            },
+            "location": {
+                "en": "Kanazawa"
+            },
+            "address_country": "JPN",
+            "description": {
+                "ja": "基調講演",
+                "en": "Keynote speech"
+            },
+            "rm:is_open_access": true,
+            "see_also": [
+                {
+                    "is_downloadable": true,
+                    "@id": "https://art-science.org/cyberworlds/cw22/",
+                    "label": "url"
+                },
+                {
+                    "is_downloadable": true,
+                    "@id": "https://www.youtube.com/watch?v=ZACgSnRQTH4",
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/36387166",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "36387166",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2022-02-19T17:37:33Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2022-02-19T17:44:49Z",
+            "presentation_title": {
+                "ja": "メタバースと\"遊び研究\"の交差点",
+                "en": "The Intersection of the Metaverse and “Research of Play\""
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "event": {
+                "ja": "第12回理系集会"
+            },
+            "publication_date": "2022-02-11",
+            "from_event_date": "2022-02-11",
+            "to_event_date": "2022-02-11",
+            "invited": true,
+            "languages": [
+                "jpn"
+            ],
+            "presentation_type": "invited_oral_presentation",
+            "dataset": {
+                "dataset_name": "20220211-理系集会.pdf",
+                "dataset_type": "published",
+                "access_url": "https://researchmap.jp/akihiko/presentations/36387166/attachment_file.pdf",
+                "rm:media_type": "application/pdf",
+                "rm:use_password": false,
+                "thumbnail_url": "https://researchmap.jp/akihiko/presentations/36387166/attachment_file.pdf?thumbnail"
+            },
+            "rm:is_open_access": false
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/10218765",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "10218765",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-09-05T12:25:32Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:32:00Z",
+            "presentation_title": {
+                "ja": "直線偏光による多重化隠蔽型ハイブリッド3Dディスプレイにおける画質評価",
+                "en": "Image evaluation of multiplex-hidden hybrid 3D display using linear polarization"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "藤村航"
+                    },
+                    {
+                        "name": "小出雄空明"
+                    },
+                    {
+                        "name": "國富彦岐"
+                    },
+                    {
+                        "name": "田口裕起"
+                    },
+                    {
+                        "name": "鈴木久貴"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "FUJIMURA WATARU"
+                    },
+                    {
+                        "name": "KOIDE YUKUA"
+                    },
+                    {
+                        "name": "KUNITOMI GENKI"
+                    },
+                    {
+                        "name": "TAGUCHI HIROKI"
+                    },
+                    {
+                        "name": "SUZUKI HISATAKA"
+                    },
+                    {
+                        "name": "SHIRAI AKIHIKO"
+                    }
+                ]
+            },
+            "presenters_text": {
+                "ja": "藤村航, 小出雄空明, 國富彦岐, 田口裕起, 鈴木久貴, 白井暁彦",
+                "en": "FUJIMURA WATARU, KOIDE YUKUA, KUNITOMI GENKI, TAGUCHI HIROKI, SUZUKI HISATAKA, SHIRAI AKIHIKO"
+            },
+            "event": {
+                "ja": "映像情報メディア学会技術報告",
+                "en": "映像情報メディア学会技術報告"
+            },
+            "publication_date": "2014-02-27",
+            "invited": false,
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "see_also": [
+                {
+                    "is_downloadable": false,
+                    "label": "url",
+                    "@id": "http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201402282644006376"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/10218764",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "10218764",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-09-05T12:25:27Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:32:00Z",
+            "presentation_title": {
+                "ja": "液晶フラットパネルを用いた多重化隠蔽映像の試行と実現",
+                "en": "Trial and realization of multiplex hidden image in the LC Flat panel display"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "小出雄空明"
+                    },
+                    {
+                        "name": "藤村航"
+                    },
+                    {
+                        "name": "國富彦岐"
+                    },
+                    {
+                        "name": "田口裕起"
+                    },
+                    {
+                        "name": "鈴木久貴"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "KOIDE YUKUA"
+                    },
+                    {
+                        "name": "FUJIMURA WATARU"
+                    },
+                    {
+                        "name": "KUNITOMI GENKI"
+                    },
+                    {
+                        "name": "TAGUCHI HIROKI"
+                    },
+                    {
+                        "name": "SUZUKI HISATAKA"
+                    },
+                    {
+                        "name": "SHIRAI AKIHIKO"
+                    }
+                ]
+            },
+            "presenters_text": {
+                "ja": "小出雄空明, 藤村航, 國富彦岐, 田口裕起, 鈴木久貴, 白井暁彦",
+                "en": "KOIDE YUKUA, FUJIMURA WATARU, KUNITOMI GENKI, TAGUCHI HIROKI, SUZUKI HISATAKA, SHIRAI AKIHIKO"
+            },
+            "event": {
+                "ja": "映像情報メディア学会技術報告",
+                "en": "映像情報メディア学会技術報告"
+            },
+            "publication_date": "2014-02-27",
+            "invited": false,
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "see_also": [
+                {
+                    "is_downloadable": false,
+                    "label": "url",
+                    "@id": "http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201402251654066234"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/10218766",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "10218766",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-09-05T12:25:38Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:32:00Z",
+            "presentation_title": {
+                "ja": "HMD装着時における首によるジェスチャ認識―首可動域の特性―",
+                "en": "Neck gesture recognition for head mounted display user: movable range of head turning"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "田口裕起"
+                    },
+                    {
+                        "name": "鈴木久貴"
+                    },
+                    {
+                        "name": "小川耕作"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "TAGUCHI HIROKI"
+                    },
+                    {
+                        "name": "SUZUKI HISATAKA"
+                    },
+                    {
+                        "name": "OGAWA KOSAKU"
+                    },
+                    {
+                        "name": "SHIRAI AKIHIKO"
+                    }
+                ]
+            },
+            "presenters_text": {
+                "ja": "田口裕起, 鈴木久貴, 小川耕作, 白井暁彦",
+                "en": "TAGUCHI HIROKI, SUZUKI HISATAKA, OGAWA KOSAKU, SHIRAI AKIHIKO"
+            },
+            "event": {
+                "ja": "映像情報メディア学会技術報告",
+                "en": "映像情報メディア学会技術報告"
+            },
+            "publication_date": "2014-02-25",
+            "invited": false,
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "see_also": [
+                {
+                    "is_downloadable": false,
+                    "label": "url",
+                    "@id": "http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201402254279373530"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/10218767",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "10218767",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-09-05T12:25:46Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:32:00Z",
+            "presentation_title": {
+                "ja": "学生VRコンテストを起点としたVRエンタテイメントシステム開発とその報告",
+                "en": "学生VRコンテストを起点としたVRエンタテイメントシステム開発とその報告"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "小出雄空明"
+                    },
+                    {
+                        "name": "國富彦岐"
+                    },
+                    {
+                        "name": "藤村航"
+                    },
+                    {
+                        "name": "奈良優斗"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "小出雄空明"
+                    },
+                    {
+                        "name": "國富彦岐"
+                    },
+                    {
+                        "name": "藤村航"
+                    },
+                    {
+                        "name": "奈良優斗"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    }
+                ]
+            },
+            "presenters_text": {
+                "ja": "小出雄空明, 國富彦岐, 藤村航, 奈良優斗, 白井暁彦",
+                "en": "小出雄空明, 國富彦岐, 藤村航, 奈良優斗, 白井暁彦"
+            },
+            "event": {
+                "ja": "横幹連合コンファレンス(CD-ROM)",
+                "en": "横幹連合コンファレンス(CD-ROM)"
+            },
+            "publication_date": "2013-12-21",
+            "invited": false,
+            "languages": [
+                "jpn"
+            ],
+            "rm:is_open_access": false,
+            "see_also": [
+                {
+                    "is_downloadable": false,
+                    "label": "url",
+                    "@id": "http://jglobal.jst.go.jp/detail.php?from=API&JGLOBAL_ID=201402202230901035"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/presentations/56610",
+            "@type": "presentations",
+            "@reverse": "https://api.researchmap.jp/akihiko/presentations",
+            "rm:id": "56610",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2009-11-29T04:58:30Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2014-09-05T12:25:46Z",
+            "presentation_title": {
+                "ja": "WiiRemote Programming Workshop 革新的インタラクションを構成する“部品としての”ゲームコントローラー",
+                "en": "WiiRemote Programming Workshop 革新的インタラクションを構成する“部品としての”ゲームコントローラー"
+            },
+            "presenters": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ]
+            },
+            "presenters_text": {
+                "ja": "白井暁彦",
+                "en": "白井暁彦"
+            },
+            "event": {
+                "ja": "北陸先端科学技術大学院大学エクセレント・コア（JAIST-EC）形成プロジェクト",
+                "en": "北陸先端科学技術大学院大学エクセレント・コア（JAIST-EC）形成プロジェクト"
+            },
+            "publication_date": "2009-11",
+            "invited": true,
+            "languages": [
+                "jpn"
+            ],
+            "presentation_type": "nominated_symposium",
+            "is_international_presentation": false,
+            "rm:is_open_access": false
+        }
+    ]
+}

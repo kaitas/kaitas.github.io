@@ -1,0 +1,245 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/akihiko/research_projects?limit=1000&format=json&start=1",
+    "@type": "research_projects",
+    "@reverse": "https://api.researchmap.jp/akihiko",
+    "total_items": 7,
+    "items": [
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/10791082",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "10791082",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-09-05T12:32:29Z",
+            "rm:modifier_id": "ai:identify_based_internal_feeds",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2024-02-01T14:13:51Z",
+            "research_project_title": {
+                "ja": "多重化隠蔽映像技術による新たな情報共有空間の創出のための映像制作手法の確立",
+                "en": "Establishment of the video production techniques for the creation of new information shared space by multiplexing hiding imagery"
+            },
+            "investigators": {
+                "en": [
+                    {
+                        "name": "SHIRAI Akihiko"
+                    }
+                ],
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ]
+            },
+            "offer_organization": {
+                "ja": "文部科学省",
+                "en": "Japan Society for the Promotion of Science"
+            },
+            "system_name": {
+                "ja": "科学研究費補助金(基盤研究(C))",
+                "en": "Grants-in-Aid for Scientific Research"
+            },
+            "category": {
+                "ja": "基盤研究(C)",
+                "en": "Grant-in-Aid for Scientific Research (C)"
+            },
+            "institution_name": {
+                "ja": "神奈川工科大学",
+                "en": "Kanagawa Institute of Technology"
+            },
+            "from_date": "2013",
+            "to_date": "2015",
+            "research_project_owner_role": "principal_investigator",
+            "overall_grant_amount_text": {
+                "ja": "総額: 4420千円 (直接経費: 3400千円, 間接経費: 1020千円)"
+            },
+            "overall_grant_amount": {
+                "total_cost": "4420000",
+                "direct_cost": "3400000",
+                "indirect_cost": "1020000"
+            },
+            "description": {
+                "ja": "「多重化隠蔽映像技術による新たな情報共有空間の創出のための映像制作手法の確立」は立体映像技術と互換の映像ディスプレイ技術として、偏光フィルタを用いたExPixel方式の多重化技術における画質向上技術について詳細は「多重化不可視映像技術（第3報） ―普及型ディスプレイにおける視聴特性評価―」において報告している。またFPGAによるハードウェア化に加え、偏光フィルタ等が必要ない方式についての実験的成功に至った。これらの基礎技術は次世代の多重化映像技術となる裸眼視聴可能な多重化映像技術「ExField」のベースとなっており、今後も幅広い研究応用性が期待できる。",
+                "en": "This project, Establishment of the video production techniques for the creation of new information shared space by multiplexing hiding imagery, had tried to enhance quality of multiplex hidden imagery. As a result, it realizes several method for quality enhancement for polarized displays, contents design and tools for multiplex image generation \"ExPixel\" which includes Unity shader, ExPixel FPGA blackbox and PowerPoint add-ins. At the end of term, we had tried to realize the prototype of next generation of spatial augmented reality which can be useful in the public. Audiences can watch their preferred images and audios on the public signage. It can enlarge virtuality, without any glasses and/or developmental hardwares for user side, into the public space like stadiums, parks, public halls and restaurants and used for displaying various contents such as sports games and concerts by audience's movement."
+            },
+            "fund_type": "competitive_research_funding",
+            "identifiers": {
+                "grant_number": [
+                    "25330440"
+                ],
+                "national_grant_number": [
+                    "JP25330440"
+                ]
+            },
+            "see_also": [
+                {
+                    "@id": "http://kaken.nii.ac.jp/d/p/25330440.ja.html",
+                    "is_downloadable": false,
+                    "label": "url"
+                },
+                {
+                    "label": "kaken",
+                    "@id": "https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-25330440"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/24479609",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "24479609",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:identify_based_researcher",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-01-22T10:18:37Z",
+            "rm:modifier_id": "ai:identify_based_researcher",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-01-22T10:18:37Z",
+            "research_project_title": {
+                "en": "A haptics entertainment system for children."
+            },
+            "system_name": {
+                "en": "JST Basic Research Programs (Exploratory Research for Advanced Technology :ERATO)"
+            },
+            "from_date": "2001",
+            "to_date": "2003",
+            "overall_grant_amount": {
+                "indirect_cost": "0",
+                "total_cost": "0",
+                "direct_cost": "0"
+            },
+            "fund_type": "competitive_research_funding"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/24479607",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "24479607",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:identify_based_researcher",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-01-22T10:18:37Z",
+            "rm:modifier_id": "ai:identify_based_researcher",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-01-22T10:18:37Z",
+            "research_project_title": {
+                "ja": "子供向け触覚エンタテイメントシステムの開発"
+            },
+            "system_name": {
+                "ja": "ＪＳＴ戦略的創造研究推進制度（総括実施型） （創造科学技術推進事業：ＥＲＡＴＯ）"
+            },
+            "from_date": "2001",
+            "to_date": "2003",
+            "overall_grant_amount": {
+                "indirect_cost": "0",
+                "total_cost": "0",
+                "direct_cost": "0"
+            },
+            "fund_type": "competitive_research_funding"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/24479612",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "24479612",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:identify_based_researcher",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-01-22T10:18:37Z",
+            "rm:modifier_id": "ai:identify_based_researcher",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-01-22T10:18:37Z",
+            "research_project_title": {
+                "ja": "次世代エンタテイメントシステムの開発"
+            },
+            "overall_grant_amount": {
+                "indirect_cost": "0",
+                "total_cost": "0",
+                "direct_cost": "0"
+            },
+            "fund_type": "competitive_research_funding"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/24479611",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "24479611",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:identify_based_researcher",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-01-22T10:18:37Z",
+            "rm:modifier_id": "ai:identify_based_researcher",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-01-22T10:18:37Z",
+            "research_project_title": {
+                "ja": "情動入力可能なコンピュータインターフェイスデバイスの開発"
+            },
+            "overall_grant_amount": {
+                "indirect_cost": "0",
+                "total_cost": "0",
+                "direct_cost": "0"
+            },
+            "fund_type": "competitive_research_funding"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/24479610",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "24479610",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:identify_based_researcher",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-01-22T10:18:37Z",
+            "rm:modifier_id": "ai:identify_based_researcher",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-01-22T10:18:37Z",
+            "research_project_title": {
+                "en": "Development for next generational entertainmet system"
+            },
+            "overall_grant_amount": {
+                "indirect_cost": "0",
+                "total_cost": "0",
+                "direct_cost": "0"
+            },
+            "fund_type": "competitive_research_funding"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/research_projects/24479608",
+            "@type": "research_projects",
+            "@reverse": "https://api.researchmap.jp/akihiko/research_projects",
+            "rm:id": "24479608",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "ai:identify_based_researcher",
+            "rm:creator_type": "ai",
+            "rm:created": "2020-01-22T10:18:37Z",
+            "rm:modifier_id": "ai:identify_based_researcher",
+            "rm:modifier_type": "ai",
+            "rm:modified": "2020-01-22T10:18:37Z",
+            "research_project_title": {
+                "en": "Development of Computer Interface using Human Emotion."
+            },
+            "overall_grant_amount": {
+                "indirect_cost": "0",
+                "total_cost": "0",
+                "direct_cost": "0"
+            },
+            "fund_type": "competitive_research_funding"
+        }
+    ]
+}

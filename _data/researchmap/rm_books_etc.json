@@ -1,0 +1,211 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/akihiko/books_etc?limit=1000&format=json&start=1",
+    "@type": "books_etc",
+    "@reverse": "https://api.researchmap.jp/akihiko",
+    "total_items": 3,
+    "items": [
+        {
+            "@id": "https://api.researchmap.jp/akihiko/books_etc/42546797",
+            "@type": "books_etc",
+            "@reverse": "https://api.researchmap.jp/akihiko/books_etc",
+            "rm:id": "42546797",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2023-06-15T15:33:46Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2024-02-18T08:17:35Z",
+            "book_title": {
+                "ja": "AIとコラボして神絵師になる : 論文から読み解くStable Diffusion"
+            },
+            "book_owner_role": "single_work",
+            "authors": {
+                "ja": [
+                    {
+                        "name": "白井暁彦"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "インプレスR&D,インプレス (発売)"
+            },
+            "publication_date": "2022-10-28",
+            "total_page": "114p",
+            "languages": [
+                "jpn"
+            ],
+            "identifiers": {
+                "cinii_nc_id": [
+                    "BD00700802"
+                ],
+                "isbn": [
+                    "9784295601388"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/BD00700802",
+                    "is_downloadable": false
+                },
+                {
+                    "is_downloadable": false,
+                    "@id": "https://ivtv.page.link/aisd",
+                    "label": "url"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/books_etc/9614893",
+            "@type": "books_etc",
+            "@reverse": "https://api.researchmap.jp/akihiko/books_etc",
+            "rm:id": "9614893",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2014-03-13T08:26:00Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2017-11-15T02:20:53Z",
+            "book_title": {
+                "ja": "白井博士の未来のゲームデザイン -エンターテインメントシステムの科学-"
+            },
+            "book_owner_role": "single_work",
+            "authors": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "はやのん"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "ワークスコーポレーション"
+            },
+            "publication_date": "2013-11-26",
+            "total_page": "192",
+            "referee": false,
+            "identifiers": {
+                "ean": [
+                    "9784862671585"
+                ],
+                "cinii_nc_id": [
+                    "BB1405576X"
+                ],
+                "isbn": [
+                    "4862671586"
+                ],
+                "asin": [
+                    "4862671586"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "cinii_books",
+                    "@id": "http://ci.nii.ac.jp/ncid/BB1405576X",
+                    "is_downloadable": false
+                },
+                {
+                    "label": "amazon_url",
+                    "@id": "https://www.amazon.co.jp/%E7%99%BD%E4%BA%95%E5%8D%9A%E5%A3%AB%E3%81%AE%E6%9C%AA%E6%9D%A5%E3%81%AE%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3-%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%86%E3%82%A4%E3%83%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E7%A7%91%E5%AD%A6-%E7%99%BD%E4%BA%95-%E6%9A%81%E5%BD%A6/dp/4862671586%3FSubscriptionId%3DAKIAJGNOIQQZDD6XM6QQ%26tag%3Dresearchmap21-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4862671586"
+                },
+                {
+                    "label": "amazon_small_image_url",
+                    "@id": "https://images-fe.ssl-images-amazon.com/images/I/51-InvXHz%2BL._SL75_.jpg"
+                },
+                {
+                    "label": "amazon_medium_image_url",
+                    "@id": "https://images-fe.ssl-images-amazon.com/images/I/51-InvXHz%2BL._SL160_.jpg"
+                },
+                {
+                    "label": "amazon_large_image_url",
+                    "@id": "https://images-fe.ssl-images-amazon.com/images/I/51-InvXHz%2BL.jpg"
+                }
+            ]
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/books_etc/23141",
+            "@type": "books_etc",
+            "@reverse": "https://api.researchmap.jp/akihiko/books_etc",
+            "rm:id": "23141",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2009-11-29T04:10:01Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2017-11-15T02:20:52Z",
+            "book_title": {
+                "ja": "WiiRemoteプログラミング"
+            },
+            "book_owner_role": "joint_work",
+            "authors": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "小坂 崇之"
+                    },
+                    {
+                        "name": "くるくる研究室"
+                    },
+                    {
+                        "name": "木村 秀敬"
+                    },
+                    {
+                        "name": "オーム社開発部"
+                    },
+                    {
+                        "name": "タナカユカリ"
+                    }
+                ]
+            },
+            "publisher": {
+                "ja": "オーム社"
+            },
+            "publication_date": "2009-07-25",
+            "total_page": "400",
+            "referee": false,
+            "identifiers": {
+                "ean": [
+                    "9784274067501"
+                ],
+                "isbn": [
+                    "4274067505"
+                ],
+                "asin": [
+                    "4274067505"
+                ]
+            },
+            "see_also": [
+                {
+                    "label": "amazon_url",
+                    "@id": "https://www.amazon.co.jp/WiiRemote%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E7%99%BD%E4%BA%95-%E6%9A%81%E5%BD%A6/dp/4274067505%3FSubscriptionId%3DAKIAJGNOIQQZDD6XM6QQ%26tag%3Dresearchmap21-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D4274067505"
+                },
+                {
+                    "label": "amazon_small_image_url",
+                    "@id": "https://images-fe.ssl-images-amazon.com/images/I/51dt1H-3WKL._SL75_.jpg"
+                },
+                {
+                    "label": "amazon_medium_image_url",
+                    "@id": "https://images-fe.ssl-images-amazon.com/images/I/51dt1H-3WKL._SL160_.jpg"
+                },
+                {
+                    "label": "amazon_large_image_url",
+                    "@id": "https://images-fe.ssl-images-amazon.com/images/I/51dt1H-3WKL.jpg"
+                }
+            ]
+        }
+    ]
+}

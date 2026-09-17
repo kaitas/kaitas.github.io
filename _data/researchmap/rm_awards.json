@@ -1,0 +1,366 @@
+{
+    "@context": "https://api.researchmap.jp/researcher.jsonld",
+    "@id": "https://api.researchmap.jp/akihiko/awards?limit=1000&format=json&start=1",
+    "@type": "awards",
+    "@reverse": "https://api.researchmap.jp/akihiko",
+    "total_items": 7,
+    "items": [
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/3207305",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "3207305",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-01-10T02:45:39Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2019-01-10T02:45:39Z",
+            "award_name": {
+                "ja": "Top 500 startups",
+                "en": "Top 500 startups"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "白井 暁彦",
+                "en": "Akihiko SHIRAI"
+            },
+            "award_title": {
+                "ja": "“Multiplex World Augmentation Display\"",
+                "en": "“Multiplex World Augmentation Display\""
+            },
+            "association": {
+                "ja": "Hello Tomorrow Global Summit",
+                "en": "Hello Tomorrow Global Summit"
+            },
+            "award_date": "2016-10"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/3207304",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "3207304",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-01-10T02:44:05Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2019-01-10T02:44:05Z",
+            "award_name": {
+                "ja": "芸術科学会貢献賞",
+                "en": "Art and Science Contributed Award"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "白井 暁彦",
+                "en": "Akihiko SHIRAI"
+            },
+            "association": {
+                "ja": "芸術科学会",
+                "en": "Art and Science"
+            },
+            "award_date": "2016-10"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/3207303",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "3207303",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-01-10T02:41:03Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2019-01-10T02:41:03Z",
+            "award_name": {
+                "ja": "インタラクティブセッション「オーディエンス賞」2位",
+                "en": "2nd place, Interactive Session Audience Award"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "鈴木 久貴"
+                    },
+                    {
+                        "name": "山口 裕太"
+                    },
+                    {
+                        "name": "白井 暁彦"
+                    },
+                    {
+                        "name": "須貝 孝明"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Hisataka SUZUKI"
+                    },
+                    {
+                        "name": "Yuta YAMAGUCHI"
+                    },
+                    {
+                        "name": "Akihiko SHIRAI"
+                    },
+                    {
+                        "name": "Takaaki SUGAI"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "鈴木 久貴・山口 裕太・白井 暁彦・須貝 孝明（神奈川工科大学）",
+                "en": "Hisataka SUZUKI, Yuta YAMAGUCHI, Akihiko SHIRAI, Takaaki SUGAI"
+            },
+            "award_title": {
+                "ja": "多重化多視点VRアーケードゲームシステム-DUAL DUEL-",
+                "en": "DUAL DUEL"
+            },
+            "association": {
+                "ja": "ゲーム開発者会議「CEDEC2016」",
+                "en": "CEDEC2016"
+            },
+            "award_date": "2016-08"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/3207307",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "3207307",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-01-10T02:51:47Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2019-01-10T02:51:47Z",
+            "award_name": {
+                "ja": "ACM Student Research Competition, Bronze Award",
+                "en": "ACM Student Research Competition, Bronze Award"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "鈴木久貴"
+                    },
+                    {
+                        "name": "Rex HSIEH"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Hisataka SUZUKI"
+                    },
+                    {
+                        "name": "Rex HSIEH"
+                    },
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "鈴木久貴, Rex HSIEH, 白井暁彦",
+                "en": "Hisataka SUZUKI, Rex HSIEH, Akihiko SHIRAI"
+            },
+            "award_title": {
+                "ja": "ExPixel: PixelShader for multiplex-image hiding in consumer 3D flat panels",
+                "en": "ExPixel: PixelShader for multiplex-image hiding in consumer 3D flat panels"
+            },
+            "association": {
+                "ja": "ACM SIGGRAPH 2014",
+                "en": "ACM SIGGRAPH 2014"
+            },
+            "award_date": "2014-08"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/3207308",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "3207308",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-01-10T02:53:27Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2019-01-10T02:53:27Z",
+            "award_name": {
+                "ja": "Innovative Technologies 2013",
+                "en": "Innovative Technologies 2013"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "白井 暁彦",
+                "en": "Akihiko SHIRAI"
+            },
+            "award_title": {
+                "ja": "「2x3D」2D+3D互換の多重化ディスプレイシステム",
+                "en": "\"2x3D\""
+            },
+            "association": {
+                "ja": "経済産業省",
+                "en": "METI (Ministry of Economy, Trade and Industry)"
+            },
+            "award_date": "2013-11"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/1345287",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "1345287",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2011-10-30T21:21:53Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2011-10-30T21:21:53Z",
+            "award_name": {
+                "ja": "学術奨励賞",
+                "en": "Academic encouraging prize"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "長野光希"
+                    },
+                    {
+                        "name": "宇津木健"
+                    },
+                    {
+                        "name": "山本倫行"
+                    },
+                    {
+                        "name": "白井暁彦"
+                    },
+                    {
+                        "name": "中嶋正之"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Koki Nagano"
+                    },
+                    {
+                        "name": "Takeru Utsugi"
+                    },
+                    {
+                        "name": "Noriyuki Yamamoto"
+                    },
+                    {
+                        "name": "Akihiko SHIRAI"
+                    },
+                    {
+                        "name": "Masayuki Nakajima"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "長野光希，宇津木健，山本倫行， 白井暁彦，中嶋正之",
+                "en": "Koki Nagano, Takeru Utsugi, Noriyuki Yamamoto, Akihiko SHIRAI, Masayuki Nakajima"
+            },
+            "award_title": {
+                "ja": "「ステレオ立体視技術と高い互換性を持つ多重化映像提示システムおよびコンテンツ制作手法の提案」",
+                "en": "A New Multiplex Displaying System and Contents Creation methods Compatible with Current 3D Projection Technology"
+            },
+            "association": {
+                "ja": "日本VR学会",
+                "en": "Virtual Reality Society of Japan"
+            },
+            "award_date": "2011-02"
+        },
+        {
+            "@id": "https://api.researchmap.jp/akihiko/awards/3207306",
+            "@type": "awards",
+            "@reverse": "https://api.researchmap.jp/akihiko/awards",
+            "rm:id": "3207306",
+            "rm:user_id": "B000001034",
+            "display": "disclosed",
+            "major_achievement": false,
+            "rm:creator_id": "B000001034",
+            "rm:creator_type": "myself",
+            "rm:created": "2019-01-10T02:48:21Z",
+            "rm:modifier_id": "B000001034",
+            "rm:modifier_type": "myself",
+            "rm:modified": "2019-01-10T02:48:21Z",
+            "award_name": {
+                "ja": "Emerging Technologies Prize",
+                "en": "Emerging Technologies Prize"
+            },
+            "winners": {
+                "ja": [
+                    {
+                        "name": "白井 暁彦"
+                    }
+                ],
+                "en": [
+                    {
+                        "name": "Akihiko SHIRAI"
+                    }
+                ]
+            },
+            "winners_text": {
+                "ja": "白井 暁彦",
+                "en": "Akihiko SHIRAI"
+            },
+            "award_title": {
+                "ja": "\"2x3D: real time shader for simultaneous 2D/3D hybrid theater\"",
+                "en": "\"2x3D: real time shader for simultaneous 2D/3D hybrid theater\""
+            },
+            "association": {
+                "ja": "ACM SIGGRAPH ASIA 2012",
+                "en": "ACM SIGGRAPH ASIA 2012"
+            }
+        }
+    ]
+}
