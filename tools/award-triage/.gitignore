@@ -1,0 +1,9 @@
+out/
+*.egg-info/
+__pycache__/
+.venv/
+# 応募データと審査結果は絶対にコミットしない
+entries*.csv
+entries*.jsonl
+golden*.csv
+!samples/*

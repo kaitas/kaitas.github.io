@@ -1,0 +1,23 @@
+# 応募フォームの CSV/JSONL カラム -> 内部フィールドのマッピング。
+# エントリーポータルの実カラム名が決まったら右辺だけ直す。
+# 右辺はリストで書ける（最初に見つかったものを使う）。
+mapping:
+  entry_id:        [entry_id, id, "ID", 応募ID]
+  title:           [title, work_title, タイトル, 作品名]
+  creator:         [creator, name, artist, 氏名, 作者名]
+  language:        [language, lang, 言語]          # 空なら自動判定
+  category:        [category, 部門, カテゴリ]        # 応募者の自己申告
+  url:             [url, work_url, link, URL, 作品URL]
+  published_at:    [published_at, publish_date, 公開日]
+  description:     [description, statement, 作品説明, 説明]
+  ai_usage:        [ai_usage, ai_tools, 使用AI, 生成AIの利用方法]
+  credits:         [credits, クレジット]
+
+# 審査に投入する本文を組み立てる順序。ここにないフィールドはモデルに渡らない。
+# 一次審査は氏名を伏せて行う（作者名で評価が動くのを防ぐため）。creator と
+# credits は意図的に外してある。共同制作の規模を見たい場合は credits を
+# 足してよいが、そこには実名が入るのでその判断は審査委員会が行うこと。
+judge_fields: [title, category, url, published_at, description, ai_usage]
+
+# 翻訳対象（自由記述のみ。URL や日付は翻訳しない）
+translate_fields: [title, description, ai_usage, credits]

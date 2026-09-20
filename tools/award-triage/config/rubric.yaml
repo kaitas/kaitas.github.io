@@ -1,0 +1,156 @@
+# ============================================================================
+# 一次審査ルーブリック
+#   このファイルが唯一の「審査基準の正本」。審査委員が直接編集する前提。
+#   コードを触らずにここだけ直せば判定が変わる。変更したら必ず
+#   `award-triage calibrate` を回してゴールデンセットとの一致率を見ること。
+# ============================================================================
+version: 3
+award: "International AI Creator Award 2026"
+
+# ---------------------------------------------------------------------------
+# 国際言語サポート: 応募は7言語で来る。審査員が読む言語へ正規化する。
+# ---------------------------------------------------------------------------
+languages:
+  accepted: [ja, en, ko, zh, fr, es, pt]
+  # 審査員向けに必ず生成する言語。原文は常に保持する。
+  judge: [ja, en]
+  # TypeSafe に投げる言語（判定の言語依存を消すため1つに固定する）
+  canonical: en
+
+# ---------------------------------------------------------------------------
+# 応募資格スクリーニング (TypeSafe noul / 0.0-1.0 の「満たしている確からしさ」)
+#   1つでも false 寄りなら失格候補。グレーゾーンは必ず人間に回す。
+# ---------------------------------------------------------------------------
+eligibility:
+  - id: public_window
+    label: 公開時期
+    instructions: >-
+      The work was first made public between 1 January 2025 and 31 December 2026.
+      Treat an explicitly stated publication date in that range as satisfying this.
+      If no date is stated anywhere, this is NOT satisfied.
+  - id: publicly_viewable
+    label: 第三者閲覧可能
+    instructions: >-
+      A URL is given where a third party can view the work without logging in,
+      without a password, and without a paid membership.
+  - id: genai_disclosed
+    label: 生成AI利用の開示
+    instructions: >-
+      The entry describes how generative AI was used in producing the work
+      (tools, models, workflow, or the creator's role). A bare claim such as
+      "I used AI" with no further detail does NOT satisfy this.
+  - id: genuine_entry
+    label: 実体のある応募
+    instructions: >-
+      This is a genuine entry describing a real, finished work. Test submissions,
+      placeholder text, empty descriptions, advertising for an unrelated product,
+      and duplicate spam do NOT satisfy this.
+  - id: rights_clear
+    label: 権利関係
+    instructions: >-
+      Nothing in the entry indicates an unresolved rights problem, such as using
+      a named living artist's style as the selling point, uncredited third-party
+      characters or IP, or a work the entrant states they did not create.
+
+# ---------------------------------------------------------------------------
+# カテゴリ判定 (TypeSafe choice)
+#   応募者の自己申告カテゴリと突き合わせ、不一致だけを人間に回す。
+#   ★★ 本番前に公式10カテゴリへ差し替えること ★★
+# ---------------------------------------------------------------------------
+categories:
+  still_image: "A single still image or a series of still images: illustration, photography-style work, concept art, graphic design."
+  moving_image: "Video works: short film, animation, music video, VFX, motion graphics."
+  music_sound: "Music and sound: songs, instrumental tracks, sound design, voice works."
+  interactive: "Games, interactive installations, VR/AR/XR experiences, playable works."
+  character_ip: "Character design, virtual talent, VTuber, mascot and IP development."
+  narrative: "Text-led works: novels, manga, scripts, poetry, world-building documents."
+  design_product: "Applied design: product, fashion, architecture, packaging, spatial design."
+  tool_tech: "Tools, models, workflows, plugins and technical contributions for AI creators."
+  social_impact: "Works whose primary value is social: education, accessibility, welfare, disaster relief, regional revitalisation."
+  business_ad: "Commercial application: advertising, branding, corporate campaigns, published commercial products."
+
+# ---------------------------------------------------------------------------
+# 採点軸 (TypeSafe score) — criteria は 0,1,2,3 の順に並べる
+#   weight の合計は 1.0 にすること（していなければ自動で正規化して警告する）
+# ---------------------------------------------------------------------------
+scores:
+  - id: originality
+    label: 新規性・独創性
+    weight: 0.30
+    instructions: "How original and unexpected is this work, compared with the large volume of generative-AI work already published?"
+    criteria:
+      - "Derivative. A standard output of a popular tool with a common prompt; nothing distinguishes it."
+      - "Competent but familiar. Well executed within a widely seen genre or style."
+      - "Distinctive. A clear personal voice, an unusual combination, or a technique not commonly seen."
+      - "Genuinely new. Opens an approach or form that did not previously exist in this field."
+
+  - id: expression
+    label: 表現の強度
+    weight: 0.25
+    instructions: "How strong is the work as expression, judged as art or craft and not as technology?"
+    criteria:
+      - "Weak. Incoherent, unresolved, or with nothing the viewer is meant to feel."
+      - "Adequate. The intent reads, but the execution is flat."
+      - "Strong. Deliberate choices in composition, rhythm, or narrative that clearly land."
+      - "Outstanding. The kind of work that would hold up in a non-AI competition in the same field."
+
+  - id: impact
+    label: 社会的インパクト
+    weight: 0.25
+    instructions: "How much reach or social consequence does this work have or plausibly have? Evidence of audience, deployment, or real-world use counts."
+    criteria:
+      - "None stated. A personal piece with no audience or use described."
+      - "Small. Shared within a community, or a stated intention with no evidence yet."
+      - "Real. Documented audience, commercial release, institutional adoption, or coverage."
+      - "Significant. Changed practice, policy, or a market; or reached a mass audience."
+
+  - id: completion
+    label: 完成度
+    weight: 0.20
+    instructions: "How finished is the work? Judge the artefact itself, not the ambition of the description."
+    criteria:
+      - "Unfinished. A sketch, a fragment, or a plan rather than a work."
+      - "Rough. Complete in outline with obvious unresolved defects."
+      - "Finished. Presentable as-is to a general audience."
+      - "Polished. Production quality throughout, including presentation and documentation."
+
+# ---------------------------------------------------------------------------
+# ゲート閾値 — `award-triage calibrate` の出力を見て決める。
+#   最初は全部人間に回す設定 (auto_reject_below: -1) から始め、
+#   ゴールデンセットで取りこぼし率を測ってから自動化率を上げること。
+# ---------------------------------------------------------------------------
+gates:
+  # 応募資格 noul: これ未満なら失格寄り、これ以上なら適格寄り。
+  # その間 (グレーゾーン) は判定せず人間に回す。
+  eligibility_fail_below: 0.15
+  eligibility_pass_above: 0.85
+
+  # 採点の confidence がこれを下回る軸が1つでもあれば人間に回す
+  min_score_confidence: 0.55
+
+  # カテゴリ判定の confidence がこれ未満なら人間に回す
+  min_category_confidence: 0.50
+
+  # 自己申告カテゴリと不一致なら人間に回す
+  flag_category_mismatch: true
+
+  # 加重合計の上下カット。-1 は「この自動判定を使わない」の意味。
+  # 既定は両方 -1 = 全件が人間レビューに回る。calibrate で取りこぼし率を
+  # 測ってから、その出力が示す値に書き換えること。目安は 2.2〜2.4 付近。
+  shortlist_above: -1
+  auto_reject_below: -1
+
+# ---------------------------------------------------------------------------
+# コスト計算用の単価 (効果測定レポートに使う)
+# ---------------------------------------------------------------------------
+pricing:
+  usd_jpy: 155.0
+  # Claude (翻訳) — USD / 1M tokens
+  claude_input_per_mtok: 2.00
+  claude_output_per_mtok: 10.00
+  # TypeSafe — 公開価格が出たら差し替える。0 のままなら「未計上」と表示される。
+  typesafe_input_per_mtok: 0.0
+  typesafe_output_per_mtok: 0.0
+  # 人間の一次審査の実測コスト（1件あたり）。削減額の算出に使う。
+  human_minutes_per_entry: 6.0
+  human_hourly_jpy: 5000.0

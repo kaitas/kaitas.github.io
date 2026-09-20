@@ -1,0 +1,9 @@
+entry_id,decision,category,originality,expression,impact,completion,memo
+E-001,SHORTLIST,moving_image,2,3,2,3,手描きとの併用が明確。強い
+E-002,SHORTLIST,tool_tech,2,2,3,3,実運用の実績あり
+E-003,SHORTLIST,still_image,2,3,2,2,
+E-004,SHORTLIST,social_impact,3,2,3,2,公共展示の実績
+E-005,REJECT,music_sound,1,2,1,2,samba×AIは既視感
+E-006,INELIGIBLE,still_image,0,0,0,0,テスト投稿
+E-007,INELIGIBLE,still_image,1,1,0,1,ログイン必須
+E-008,INELIGIBLE,narrative,2,2,1,3,2024年公開で対象期間外

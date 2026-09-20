@@ -12,6 +12,7 @@ google_analytics: UA-168023643-1
 
 source: .
 exclude:
+  - tools
   - yc26f
   - README-yc26f.md
   - Gemfile
