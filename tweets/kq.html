@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>120km/hは、何メートルで止まれるのか｜鉄道ブレーキ物理シミュレータ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{
+  --paper:#e8eef1; --sheet:#f6f9fa; --sheet2:#edf2f4; --ink:#14233a; --ink2:#4a5a70; --rule:#c5d1d8; --grid:rgba(20,35,58,.08);
+  --red:#c8101a; --cream:#ead7a4; --amber:#d18a00; --blue:#2a64b8; --green:#137a55;
+  --sky1:#c9dbe6; --sky2:#e6eef2; --ground:#cfd6d2; --ballast:#8a8f8c; --rail:#4f5558; --pole:#7c8a93; --win:#1b2536;
+  --num:'Barlow Semi Condensed','Zen Kaku Gothic New',sans-serif;
+  --sans:'Zen Kaku Gothic New',system-ui,-apple-system,'Hiragino Sans',sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0f1b2b; --sheet:#152335; --sheet2:#1b2b40; --ink:#e4ecf3; --ink2:#93a4b8; --rule:#2a3d55; --grid:rgba(228,236,243,.07);
+    --red:#ff4048; --cream:#f0dfae; --amber:#ffb428; --blue:#5aa2ff; --green:#3ed69a;
+    --sky1:#0c1726; --sky2:#172a40; --ground:#122030; --ballast:#2a3a4c; --rail:#8b9aab; --pole:#415468; --win:#08101b;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0f1b2b; --sheet:#152335; --sheet2:#1b2b40; --ink:#e4ecf3; --ink2:#93a4b8; --rule:#2a3d55; --grid:rgba(228,236,243,.07);
+  --red:#ff4048; --cream:#f0dfae; --amber:#ffb428; --blue:#5aa2ff; --green:#3ed69a;
+  --sky1:#0c1726; --sky2:#172a40; --ground:#122030; --ballast:#2a3a4c; --rail:#8b9aab; --pole:#415468; --win:#08101b;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:4px}
+
+.app{display:flex;flex-direction:column;gap:10px;padding:10px 12px}
+/* header */
+.top{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;border-bottom:3px solid var(--ink);padding-bottom:8px}
+.kp{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--ink2)}
+.kp b{font-family:var(--num);font-weight:700;background:var(--ink);color:var(--paper);padding:0 7px;border-radius:3px}
+h1{font-size:clamp(20px,2.1vw,28px);font-weight:900;line-height:1.15;margin:2px 0 0;letter-spacing:-.01em;white-space:nowrap}
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule);background:var(--sheet);max-width:640px;justify-self:end;width:100%}
+.cell{padding:4px 12px;border-left:1px solid var(--rule)}
+.cell:first-child{border-left:0}
+.cell .k{font-size:11px;color:var(--ink2);white-space:nowrap}
+.cell .v{font-family:var(--num);font-weight:700;font-size:clamp(20px,1.9vw,28px);line-height:1.1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cell .v small{font-size:.5em;font-weight:600;color:var(--ink2);margin-left:2px}
+.cell.hero .v{color:var(--red)}
+.hbtns{display:flex;gap:6px}
+.ghost{background:transparent;border:1px solid var(--rule);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:12.5px;color:var(--ink2);white-space:nowrap}
+.ghost:hover{border-color:var(--ink2);color:var(--ink)}
+
+/* main */
+.main{display:grid;grid-template-columns:1fr;gap:10px}
+.view{display:grid;gap:10px}
+.cab{position:relative;background:#0e1116;height:62vw;min-height:280px;overflow:hidden}
+#three{position:absolute;inset:0;width:100%;height:100%;display:block}
+.frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.no3d[hidden]{display:none}
+.no3d{position:absolute;inset:3% 3% 30% 3%;display:grid;place-items:center;color:#c9d2dc;font-size:14px;background:#1a222c;text-align:center;padding:1em}
+.hud{position:absolute;left:4.5%;top:5.5%;display:flex;flex-wrap:wrap;gap:6px;pointer-events:none}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border-radius:999px;background:rgba(10,14,20,.55);color:#e9eef3;border:1px solid rgba(255,255,255,.15);font-size:12px;backdrop-filter:blur(4px)}
+.pill .n{font-family:var(--num);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.pill.ph{font-weight:700;border-color:transparent}
+.pill.ph[data-p="cruise"]{background:#5aa2ff;color:#04101f}
+.pill.ph[data-p="react"]{background:#ffb428;color:#1a1100}
+.pill.ph[data-p="brake"]{background:#ff4048;color:#fff}
+.pill.ph[data-p="stop"]{background:#3ed69a;color:#03150d}
+.hud-tr{position:absolute;right:4.5%;top:5.5%;pointer-events:none}
+.hud-tr .pill .n{font-size:18px}
+.hud-bl{position:absolute;left:4.5%;bottom:32%;pointer-events:none;display:flex;align-items:baseline;gap:.4em;
+  padding:.25em .8em .3em;border-radius:8px;background:rgba(10,14,20,.62);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);color:#e9eef3}
+.hud-bl .k{font-size:clamp(12px,1.2vw,17px);font-weight:700}
+.hud-bl .n{font-family:var(--num);font-weight:700;font-size:clamp(28px,3.6vw,52px);line-height:1;font-variant-numeric:tabular-nums}
+.hud-bl .n small{font-size:.45em;margin-left:.1em;color:#aab4c0}
+.hud-bl.warn .n{color:#ff4048}
+#map{position:absolute;right:4.5%;bottom:32%;width:min(26%,260px);aspect-ratio:2/1;border-radius:8px;background:rgba(10,14,20,.6);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);pointer-events:none}
+.dash{position:absolute;left:0;right:0;top:71%;bottom:0;display:flex;align-items:center;gap:3.5%;padding:.6% 5%;color:#dfe6ee}
+#gauge{height:94%;aspect-ratio:1/1;display:block}
+.lamps{display:grid;gap:5px}
+.lp{display:flex;align-items:center;gap:7px;font-size:clamp(10px,.95vw,13px);color:#6b7584;white-space:nowrap}
+.lp i{width:11px;height:11px;border-radius:2px;background:#26303c}
+.lp.on{color:#e9eef3}
+.lp.on[data-k="cruise"] i{background:#5aa2ff;box-shadow:0 0 8px #5aa2ff}
+.lp.on[data-k="react"] i{background:#ffb428;box-shadow:0 0 8px #ffb428}
+.lp.on[data-k="brake"] i{background:#ff4048;box-shadow:0 0 10px #ff4048}
+.lp.on[data-k="stop"] i{background:#3ed69a;box-shadow:0 0 8px #3ed69a}
+.dro{display:flex;flex-direction:column;min-width:0}
+.dro .k{font-size:clamp(10px,.9vw,12px);color:#8b96a5;white-space:nowrap}
+.dro .v{font-family:var(--num);font-weight:700;font-size:clamp(20px,2.5vw,40px);line-height:1.05;color:#f0f4f8;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dro .v.warn{color:#ff4048}
+.dro .v small{font-size:.45em;color:#8b96a5;margin-left:2px}
+.dro .g{font-size:clamp(10px,.85vw,12px);color:#aab4c0;line-height:1.35;margin-top:2px;white-space:normal;max-width:16em}
+.dro .g b{font-family:var(--num);font-size:1.25em;color:#e9eef3;font-weight:700;margin-right:.4em}
+.note{border-top:1px dashed var(--rule);margin-top:6px;padding-top:6px}
+.note .nt{font-size:13px;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.note .nt b{font-family:var(--num);color:var(--red);margin-right:6px;font-size:14px}
+.note .nb{font-size:14px;line-height:1.5;color:var(--ink);margin-top:2px}
+.note .nb em{font-style:normal;color:var(--red);font-weight:700}
+.pax{display:flex;align-items:center;gap:10px;margin-left:auto;padding-right:1%}
+.pax .fig{font-size:clamp(34px,4.6vw,66px);line-height:1;display:inline-block;transform-origin:50% 100%;transition:transform .35s ease;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.pax .txt{display:flex;flex-direction:column;gap:2px}
+.pax .txt .k{font-size:clamp(10px,.9vw,12px);color:#8b96a5}
+.pax .txt .v{font-family:var(--num);font-weight:700;font-size:clamp(18px,2vw,30px);line-height:1.05;color:#f0f4f8}
+.pax .txt .v small{font-size:.5em;color:#8b96a5;margin-left:2px}
+.pax .txt .f{font-size:clamp(10px,.85vw,12px);color:#aab4c0;line-height:1.35;max-width:15em}
+@media(max-width:560px){.pax .txt .f{display:none}}
+.flash{position:absolute;inset:0 0 29% 0;background:#fff;opacity:0;pointer-events:none}
+.flash.on{animation:flash .45s ease-out forwards}
+@keyframes flash{0%{opacity:.85}100%{opacity:0}}
+.callout{position:absolute;left:50%;top:26%;transform:translate(-50%,-50%);pointer-events:none;opacity:0;text-align:center;
+  font-family:var(--num);font-weight:700;letter-spacing:.02em;color:#fff;white-space:nowrap}
+.callout .big{display:block;font-size:clamp(40px,7.5vw,112px);line-height:1;font-family:var(--sans);font-weight:900;
+  -webkit-text-stroke:2px rgba(0,0,0,.35);text-shadow:0 0 22px rgba(0,0,0,.5),0 6px 0 rgba(0,0,0,.35);
+  transform:skewX(-8deg)}
+.callout .sub{display:inline-block;margin-top:.35em;font-size:clamp(14px,1.8vw,26px);padding:.15em .9em;background:rgba(10,14,20,.78);border-radius:999px;border:1px solid rgba(255,255,255,.35)}
+.callout.on{animation:slam 2.2s cubic-bezier(.2,1.2,.3,1) forwards}
+@keyframes slam{0%{opacity:0;transform:translate(-50%,-50%) scale(2.2)}12%{opacity:1;transform:translate(-50%,-50%) scale(.94)}20%{transform:translate(-50%,-50%) scale(1)}75%{opacity:1;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-58%) scale(1.04)}}
+.callout.find .big{color:#ffb428}
+.callout.brake .big{color:#ff4048}
+.callout.ok .big{color:#3ed69a}
+.callout.ng .big{color:#ff4048}
+.callout.brake.on{animation-duration:1.8s}
+@media (prefers-reduced-motion:reduce){.callout.on{animation:none;opacity:1}.flash.on{animation:none}}
+.strip{position:relative;background:var(--sheet);border:1px solid var(--rule);height:140px}
+#track{display:block;width:100%;height:100%}
+
+.side{display:grid;gap:10px}
+.sheet{background:var(--sheet);border:1px solid var(--rule);padding:8px 14px}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:4px}
+.sh h2{font-size:14px;font-weight:900;margin:0}
+.sh span{font-size:12px;color:var(--ink2)}
+.sh span b{font-family:var(--num);font-size:14px;color:var(--ink)}
+.chartbox{display:flex;flex-direction:column;height:126px}
+#chart{flex:1;min-height:0;height:0;width:100%;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:4px}
+.rail{display:flex;align-items:center;gap:5px;padding:5px 0 0;border-top:1px dashed var(--rule);margin-top:2px}
+.rail .lb{font-size:13px;font-weight:700;margin-right:4px}
+.rail label{border:1px solid var(--rule);background:var(--sheet2);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer}
+.rail input{position:absolute;opacity:0;width:0;height:0}
+.rail input:checked+span{color:var(--paper)}
+.rail label:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.rail label:has(input:focus-visible){outline:2px solid var(--blue)}
+.rain{position:absolute;inset:0 0 29% 0;pointer-events:none;opacity:0;transition:opacity .8s;
+  backdrop-filter:blur(1.6px) saturate(.85) brightness(.92);-webkit-backdrop-filter:blur(1.6px) saturate(.85) brightness(.92);
+  background:
+    radial-gradient(ellipse 5px 8px at 37% 28%, rgba(255,255,255,.55) 0 22%, rgba(255,255,255,.12) 45%, transparent 70%),
+    radial-gradient(ellipse 3px 5px at 71% 63%, rgba(255,255,255,.5) 0 22%, rgba(255,255,255,.1) 45%, transparent 70%),
+    radial-gradient(ellipse 4px 7px at 12% 77%, rgba(255,255,255,.5) 0 22%, rgba(255,255,255,.1) 45%, transparent 70%),
+    radial-gradient(ellipse 2.5px 4px at 88% 18%, rgba(255,255,255,.5) 0 22%, transparent 70%),
+    radial-gradient(ellipse 3.5px 6px at 55% 44%, rgba(255,255,255,.5) 0 22%, rgba(255,255,255,.1) 45%, transparent 70%),
+    radial-gradient(ellipse 2px 3.5px at 24% 52%, rgba(255,255,255,.45) 0 22%, transparent 70%),
+    linear-gradient(180deg, rgba(160,175,190,.22), rgba(120,135,150,.28));
+  background-size:160px 130px,190px 170px,140px 150px,210px 120px,170px 190px,120px 110px,100% 100%;
+  animation:rain 7s linear infinite}
+.rain.on{opacity:1}
+@keyframes rain{from{background-position:0 0,0 0,0 0,0 0,0 0,0 0,0 0}to{background-position:6px 130px,-4px 170px,3px 150px,-6px 120px,5px 190px,-3px 110px,0 0}}
+@media (prefers-reduced-motion:reduce){.rain{animation:none}}
+.chip{border:1px solid var(--rule);background:var(--sheet2);border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer}
+.chip:hover{border-color:var(--red)}
+.ctl{padding:1px 0 1px;border-bottom:1px dashed var(--rule)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.row label{font-size:13px;font-weight:700}
+.row output{font-family:var(--num);font-weight:700;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row output small{font-size:12px;color:var(--ink2);font-weight:500;margin-left:2px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:16px;background:transparent;margin:0;cursor:pointer;display:block}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(90deg,var(--ink) var(--p,50%),var(--rule) var(--p,50%))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:20px;border-radius:3px;background:var(--red);border:2px solid var(--sheet);margin-top:-8px;box-shadow:0 0 0 1px var(--red)}
+input[type=range]::-moz-range-track{height:4px;background:var(--rule);border-radius:2px}
+input[type=range]::-moz-range-progress{height:4px;background:var(--ink);border-radius:2px}
+input[type=range]::-moz-range-thumb{width:11px;height:18px;border-radius:3px;background:var(--red);border:2px solid var(--sheet)}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 0 0}
+.sw label{font-size:13px;font-weight:700}
+.sw p{margin:0;font-size:11.5px;color:var(--ink2);line-height:1.45}
+.tg{position:relative;width:44px;height:24px;flex:none}
+.tg input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer;z-index:1}
+.tg span{position:absolute;inset:0;border-radius:12px;background:var(--rule);transition:background .2s}
+.tg span::after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:var(--sheet);transition:transform .2s}
+.tg input:checked+span{background:var(--green)}
+.tg input:checked+span::after{transform:translateX(20px)}
+.tg input:focus-visible+span{outline:2px solid var(--blue);outline-offset:2px}
+
+/* bottom bar */
+.bar{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;background:var(--sheet);border:1px solid var(--rule);padding:6px 10px}
+.btn{border:1px solid var(--rule);background:var(--sheet2);border-radius:6px;padding:6px 12px;font-weight:700;font-size:13.5px;cursor:pointer}
+.btn:hover{border-color:var(--ink2)}
+.btn.go{background:var(--red);border-color:var(--red);color:#fff;min-width:8.5em}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden}
+.seg button{border:0;background:transparent;padding:5px 10px;font-family:var(--num);font-weight:600;font-size:15px;cursor:pointer;color:var(--ink2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.tourcap{font-size:12.5px;color:var(--ink2)}
+.seq{display:flex;flex-wrap:nowrap;gap:6px;align-items:center;width:100%;border-top:1px dashed var(--rule);padding-top:6px}
+#seqList{display:flex!important;gap:6px;overflow-x:auto;flex:1;min-width:0;padding-bottom:2px;scrollbar-width:thin}
+.seq .mini{flex:none}
+.seq .lb{font-size:12px;color:var(--ink2);margin-right:2px}
+.sc{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--rule);background:var(--sheet2);border-radius:999px;padding:1px 8px 1px 5px;font-size:11.5px;cursor:pointer;user-select:none;white-space:nowrap;flex:none}
+.sc input{margin:0;accent-color:var(--red)}
+.sc b{font-family:var(--num);color:var(--red);font-weight:700}
+.sc.off{opacity:.45}
+.sc .x{margin-left:2px;color:var(--ink2);font-size:11px;padding:0 2px}
+.sc .x:hover{color:var(--red)}
+.mini{border:1px solid var(--rule);background:transparent;border-radius:6px;padding:3px 9px;font-size:12px;cursor:pointer}
+.mini:hover{border-color:var(--ink2)}
+.seq .grow{flex:1}
+.verdict{margin-left:auto;font-size:14px;font-weight:700}
+.verdict .n{font-family:var(--num);font-size:18px}
+.verdict.ok{color:var(--green)} .verdict.ng{color:var(--red)}
+
+/* one-screen layout */
+@media (min-width:1000px) and (min-height:620px){
+  html,body{height:100%;overflow:hidden}
+  .app{height:100%}
+  .main{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 390px}
+  .view{min-height:0;grid-template-rows:minmax(0,1fr) 140px}
+  .cab{height:auto;min-height:0}
+  .side{min-height:0;grid-template-rows:126px minmax(0,1fr)}
+  .ctrls{overflow:auto;min-height:0}
+}
+@media (max-width:999px){
+  .top{grid-template-columns:1fr auto}
+  .board{grid-column:1/-1;grid-row:2;max-width:none}
+  h1{white-space:normal}
+}
+@media (max-width:560px){
+  .board{grid-template-columns:repeat(2,1fr)}
+  .cell:nth-child(3){border-left:0}.cell:nth-child(n+3){border-top:1px solid var(--rule)}
+  .dash{gap:3%}
+  .verdict{margin-left:0;width:100%}
+}
+
+dialog{max-width:760px;width:calc(100% - 32px);border:1px solid var(--rule);background:var(--sheet);color:var(--ink);padding:20px 22px;max-height:85vh}
+dialog::backdrop{background:rgba(8,14,22,.5)}
+dialog h3{font-size:16px;font-weight:900;margin:0 0 6px}
+dialog ul{margin:0 0 14px;padding-left:1.2em}
+dialog li,dialog p{font-size:14px;color:var(--ink2);margin:0 0 6px}
+.memo{border-left:3px solid var(--ink);padding-left:10px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+
+<header class="top">
+  <div>
+    <div class="kp"><b>2019.09.05</b> 京急本線・神奈川新町駅付近の踏切事故をきっかけに</div>
+    <h1>120km/hは、何メートルで止まれるのか。</h1>
+  </div>
+  <section class="board" aria-live="polite">
+    <div class="cell hero"><div class="k">総停止距離</div><div class="v" id="kTotal">–</div></div>
+    <div class="cell"><div class="k">うち空走距離</div><div class="v" id="kReact">–</div></div>
+    <div class="cell"><div class="k" id="kMarginLabel">踏切手前の余裕</div><div class="v" id="kMargin">–</div></div>
+    <div class="cell"><div class="k">停止までの時間</div><div class="v" id="kTime">–</div></div>
+  </section>
+  <div class="hbtns">
+    <button class="ghost" id="infoBtn" type="button">前提と報告書</button>
+    <button class="ghost" id="themeBtn" type="button">表示: 自動</button>
+  </div>
+</header>
+
+<div class="main">
+  <section class="view">
+    <div class="cab" id="cab">
+      <canvas id="three" aria-label="運転席からの3D視点"></canvas>
+      <div class="no3d" id="no3d" hidden>この環境では3D表示を利用できません。下の側面図と運転曲線で確認できます。</div>
+      <svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#232a34"/><stop offset="1" stop-color="#0b0e12"/></linearGradient></defs>
+        <path fill-rule="evenodd" fill="#0e1116" d="M0 0H100V100H0Z M3.2 5.5 Q3.2 3 5.5 3 H94.5 Q96.8 3 96.8 5.5 V70 H3.2 Z"/>
+        <rect x="0" y="70" width="100" height="30" fill="url(#dg)"/>
+        <line x1="0" y1="70.2" x2="100" y2="70.2" stroke="#3a434f" stroke-width=".35"/>
+      </svg>
+      <div class="rain" id="rain" aria-hidden="true"></div>
+      <div class="flash" id="flash" aria-hidden="true"></div>
+      <div class="callout" id="callout" aria-live="assertive"><span class="big" id="coBig"></span><span class="sub" id="coSub"></span></div>
+      <div class="hud-tr"><span class="pill">初速 <span class="n" id="hV0">120</span>km/h</span></div>
+      <canvas id="map" aria-label="上空から見た線路の配置図"></canvas>
+      <div class="hud-bl" id="hudBL"><span class="k" id="blK">障害物まで あと</span><span class="n" id="blN">–</span></div>
+      <div class="hud">
+        <span class="pill ph" id="phasePill" data-p="idle"><span id="phaseTxt">待機中</span></span>
+        <span class="pill">時刻 <span class="n" id="hT">0.0</span>s</span>
+        <span class="pill">位置 <span class="n" id="hX">0</span>m</span>
+      </div>
+      <div class="dash">
+        <canvas id="gauge" aria-label="速度計"></canvas>
+        <div class="lamps">
+          <div class="lp" data-k="cruise"><i></i>走行</div>
+          <div class="lp" data-k="react"><i></i>空走</div>
+          <div class="lp" data-k="brake"><i></i>非常ブレーキ</div>
+          <div class="lp" data-k="stop"><i></i>停止</div>
+        </div>
+        <div class="dro"><span class="k">踏切まで</span><span class="v" id="dDist">–</span></div>
+        <div class="dro"><span class="k">減速度</span><span class="v" id="dDec">–</span></div>
+        <div class="pax" title="立っている乗客が釣り合うために傾く角度 θ = atan(a/g)">
+          <span class="fig" id="paxFig">🧍</span>
+          <span class="txt"><span class="k">乗客にかかる力</span><span class="v" id="paxG">–</span><span class="f" id="paxF"></span></span>
+        </div>
+      </div>
+    </div>
+    <div class="strip"><canvas id="track" aria-label="線路の側面図"></canvas></div>
+  </section>
+
+  <aside class="side">
+    <div class="sheet chartbox">
+      <div class="sh"><h2>運転曲線</h2><span>空走1秒で <b id="eqV">33.3m</b>　制動 v²/2a</span></div>
+      <canvas id="chart" aria-label="速度-距離グラフ"></canvas>
+    </div>
+    <div class="sheet ctrls" aria-label="条件設定">
+      <div class="sh"><h2>条件を変える</h2></div>
+      <div class="ctl" title="事故当時の列車は約120km/hで走行">
+        <div class="row"><label for="speed">進入速度</label><output id="o-speed"></output></div>
+        <input type="range" id="speed" min="60" max="130" step="1">
+      </div>
+      <div class="ctl" title="異常を見つけて判断し、ブレーキ力が立ち上がるまでの時間">
+        <div class="row"><label for="react">空走時間</label><output id="o-react"></output></div>
+        <input type="range" id="react" min="0" max="5" step="0.1">
+      </div>
+      <div class="ctl" title="2019年の投稿では4.5km/h/s（応荷重装置あり前提）">
+        <div class="row"><label for="decel">非常減速度</label><output id="o-decel"></output></div>
+        <input type="range" id="decel" min="2" max="6" step="0.1">
+      </div>
+      <div class="ctl" title="踏切の異常に気づける地点から踏切までの距離">
+        <div class="row"><label for="sight">発見地点→踏切</label><output id="o-sight"></output></div>
+        <input type="range" id="sight" min="200" max="1000" step="10">
+      </div>
+      <div class="ctl" title="8両の空車を約250tとし、乗客を加えた重さ">
+        <div class="row"><label for="weight">編成重量</label><output id="o-weight"></output></div>
+        <input type="range" id="weight" min="200" max="400" step="10">
+      </div>
+      <div class="rail" role="radiogroup" aria-label="レール状態" title="車輪とレールの粘着係数μ。減速度の上限はμg">
+        <span class="lb">レール</span>
+        <label><input type="radio" name="rail" value="dry" checked><span>乾燥 μ0.25</span></label>
+        <label><input type="radio" name="rail" value="wet"><span>雨 μ0.12</span></label>
+        <label><input type="radio" name="rail" value="slip"><span>落ち葉 μ0.07</span></label>
+      </div>
+      <div class="rail" role="radiogroup" aria-label="曲線半径" title="踏切の600m〜200m手前に入る左カーブの半径。∞は直線">
+        <span class="lb">カーブ</span>
+        <label><input type="radio" name="curve" value="0"><span>直線</span></label>
+        <label><input type="radio" name="curve" value="1500" checked><span>R1500</span></label>
+        <label><input type="radio" name="curve" value="800"><span>R800</span></label>
+        <label><input type="radio" name="curve" value="500"><span>R500</span></label>
+      </div>
+      <div class="sw">
+        <div><label for="comp" title="重さに比例してブレーキ力を強め、減速度を一定に保つ装置">応荷重装置</label></div>
+        <span class="tg"><input type="checkbox" id="comp" role="switch"><span></span></span>
+      </div>
+      <div class="note" id="note"><div class="nt" id="noteT">解説</div><div class="nb" id="noteB"></div></div>
+    </div>
+  </aside>
+</div>
+
+<footer class="bar">
+  <button class="btn go" id="playBtn" type="button">▶ 走らせる</button>
+  <button class="btn" id="resetBtn" type="button">最初に戻す</button>
+  <span class="seg" role="group" aria-label="再生速度">
+    <button type="button" data-mul="1" aria-pressed="true">×1 実時間</button>
+    <button type="button" data-mul="2" aria-pressed="false">×2</button>
+    <button type="button" data-mul="4" aria-pressed="false">×4</button>
+  </span>
+  <button class="btn" id="tourBtn" type="button">8つの条件を連続で検証</button>
+  <span class="tourcap" id="tourCap"></span>
+  <span class="verdict" id="verdict" aria-live="polite"></span>
+  <div class="seq" id="seq"><span class="lb">シーケンス</span><span id="seqList"></span>
+    <button class="mini" id="addScen" type="button" title="いまのスライダーの条件をシナリオとして追加">＋ いまの条件を追加</button>
+    <button class="mini" id="saveJson" type="button">JSONを保存</button>
+    <button class="mini" id="loadJson" type="button">JSONを読み込む</button>
+    <input type="file" id="jsonFile" accept="application/json" hidden>
+  </div>
+</footer>
+<dialog id="jsonDlg"><h3>シナリオJSON</h3><p>ダウンロードできない環境向けに、ここからコピーできます。読み込むときは貼り付けて「反映」。</p><textarea id="jsonText" style="width:100%;height:240px;font:12px/1.4 ui-monospace,monospace;background:var(--sheet2);color:var(--ink);border:1px solid var(--rule);padding:8px"></textarea>
+<p style="margin-top:10px;display:flex;gap:8px"><button class="btn" id="jsonApply" type="button">貼り付けた内容を反映</button><button class="btn" id="jsonCopy" type="button">コピー</button><button class="btn" id="jsonClose" type="button">閉じる</button></p></dialog>
+</div>
+
+<dialog id="info">
+  <h3>このモデルが入れていないもの</h3>
+  <ul>
+    <li>ブレーキは空走時間が終わった瞬間に一定の減速度で効き始める、と単純化しています。</li>
+    <li>勾配、曲線抵抗、車輪とレールの滑り（粘着）、ブレーキの段階的な立ち上がりは入っていません。3D視点の線路も直線です。</li>
+    <li>「発見地点」は一つの数字ですが、現実には信号や踏切は見えたり隠れたりします。既定値の570mは、事故現場で運転士が最初の特殊信号発光機（踏切の約390m手前）を目視できる地点が踏切の約570m手前だったことによります。</li>
+    <li>レール状態は、車輪とレールの粘着係数μで減速度の上限をμgに制限する単純化です。乾燥0.25、雨0.12、落ち葉・油分0.07という値は一般に言われる目安で、実際は速度・車輪の状態・滑走防止装置の働きで変わります。この事故の天候を再現するものではありません。</li>
+  </ul>
+  <h3>事故調査報告書が示したこと</h3>
+  <ul>
+    <li>運輸安全委員会の報告書（2021年2月18日公表）によると、列車は約120km/hで走行し、運転士は特殊信号発光機の停止信号を認めて常用ブレーキ、続いて非常ブレーキを操作。約62km/hでトラックと衝突し、踏切の約67m先で停止しました。トラックの運転手（67歳）が亡くなり、乗客乗員77人が負傷しました。</li>
+    <li>発光機は踏切中心から約10m・130m・390mの3か所にあり、最初の1基が見える地点は踏切の約570m手前。報告書は、そこから約1.5秒以内に非常ブレーキを扱わなければ止まれない配置で、運転士の確認時間への配慮が不足していたと分析しました。</li>
+    <li>発光機は視認できる位置があった一方、架線柱などで明滅が断続的に遮られる場面があったこと、予期しない停止信号に即座に反応するのは難しかった可能性が指摘されています。</li>
+    <li>当時は常用・非常どちらのブレーキを使うかの明確な規定がなく、事故後は「直ちに非常ブレーキ」へ取り扱いが改められました。</li>
+    <li>同形式車両の標準的な方法による停止距離は約477m。高校物理の444mとは条件が異なるため直接は比べられませんが、400m台後半という規模感は一致します。</li>
+  </ul>
+  <p class="memo">この事故ではトラックの運転手が亡くなり、多くの方が負傷しました。本ページは原因を断定するものではなく、物理でどこまで考えられ、どこから先は現実の調査が必要かを切り分けるための教材です。数値はすべて理想化モデルによる計算値です。</p>
+  <p style="margin-top:14px"><button class="btn" id="infoClose" type="button">閉じる</button></p>
+</dialog>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s);
+const KEYS=['speed','react','decel','sight','weight'];
+const BASE={speed:120,react:2.0,decel:4.5,sight:570,weight:300,comp:true,rail:'dry',curveR:1500};
+// track plan: straight → left curve (radius curveR, from 600m to 200m before the crossing) → straight
+function trk(s){
+  const R=P.curveR, c0=P.sight-600, c1=P.sight-200;
+  if(!R||s<=c0) return {x:0,z:-s,th:0,rx:1,rz:0};
+  const ph1=(c1-c0)/R;
+  if(s<=c1){const ph=(s-c0)/R; const th=ph; return {x:-(R-R*Math.cos(ph)),z:-c0-R*Math.sin(ph),th,rx:Math.cos(th),rz:-Math.sin(th)};}
+  const x1=-(R-R*Math.cos(ph1)), z1=-c0-R*Math.sin(ph1), t=s-c1;
+  return {x:x1-t*Math.sin(ph1),z:z1-t*Math.cos(ph1),th:ph1,rx:Math.cos(ph1),rz:-Math.sin(ph1)};
+}
+const MU={dry:0.25,wet:0.12,slip:0.07}, G=9.81;
+const P={...BASE};
+const BASE_W=250, CAR=18, CARS=8, LEAD=2.5;
+let M, C={};
+const sim={t:-LEAD,running:false,done:false,mul:1,trace:[],crossed:null};
+let tour=null;
+
+function model(p){
+  const v0=p.speed/3.6, aBrake=p.decel/3.6*(p.comp?1:BASE_W/p.weight), aLim=MU[p.rail]*G;
+  const a=Math.min(aBrake,aLim), limited=aLim<aBrake;
+  const dR=v0*p.react, dB=v0*v0/(2*a), tot=dR+dB, tStop=p.react+v0/a;
+  let vc; if(p.sight<=dR) vc=v0; else {const r=v0*v0-2*a*(p.sight-dR); vc=r>0?Math.sqrt(r):0;}
+  return {v0,a,aBrake,aLim,limited,dR,dB,tot,tStop,vCross:vc,margin:p.sight-tot};
+}
+function stateAt(t){
+  if(t<0) return {x:M.v0*t,v:M.v0,phase:'cruise'};
+  if(t<P.react) return {x:M.v0*t,v:M.v0,phase:'react'};
+  const tbMax=M.v0/M.a, tb=Math.min(t-P.react,tbMax);
+  return {x:M.dR+M.v0*tb-0.5*M.a*tb*tb,v:Math.max(0,M.v0-M.a*tb),phase:(t-P.react)>=tbMax?'stop':'brake'};
+}
+const _last=new Map(); const setH=(sel,h)=>{if(_last.get(sel)!==h){_last.set(sel,h); $(sel).innerHTML=h;}};
+const fmt=(n,d=0)=>Number(n).toLocaleString('ja-JP',{minimumFractionDigits:d,maximumFractionDigits:d});
+function readColors(){
+  const s=getComputedStyle(document.documentElement);
+  ['sheet','sheet2','ink','ink2','rule','red','cream','amber','blue','green','sky1','sky2','ground','ballast','rail','pole','win'].forEach(k=>C[k]=s.getPropertyValue('--'+k).trim());
+  C.num=s.getPropertyValue('--num').trim()||'sans-serif';
+}
+function setFill(el){el.style.setProperty('--p',((el.value-el.min)/(el.max-el.min)*100)+'%');}
+function syncInputs(){KEYS.forEach(k=>{const el=$('#'+k); el.value=P[k]; setFill(el);}); $('#comp').checked=P.comp; const r=document.querySelector(`input[name=rail][value=${P.rail}]`); if(r) r.checked=true; const c=document.querySelector(`input[name=curve][value="${P.curveR}"]`); if(c) c.checked=true;}
+
+function recalc(){
+  M=model(P);
+  $('#o-speed').innerHTML=`${P.speed}<small>km/h</small>`; $('#hV0').textContent=P.speed;
+  $('#o-react').innerHTML=`${P.react.toFixed(1)}<small>秒</small>`;
+  const aK=M.a*3.6;
+  $('#o-decel').innerHTML=(Math.abs(aK-P.decel)>0.005)
+    ?`${P.decel.toFixed(1)}<small>→</small><span style="color:var(--red)">${aK.toFixed(2)}</span><small>${M.limited?'粘着限界':'km/h/s'}</small>`
+    :`${P.decel.toFixed(1)}<small>km/h/s</small>`;
+  $('#o-sight').innerHTML=`${P.sight}<small>m</small>`;
+  $('#o-weight').innerHTML=`${P.weight}<small>t</small>`;
+  $('#kTotal').innerHTML=`${fmt(M.tot)}<small>m</small>`;
+  $('#kReact').innerHTML=`${fmt(M.dR)}<small>m</small>`;
+  const ok=M.margin>=0;
+  $('#kMarginLabel').textContent=ok?'踏切手前の余裕':'踏切に到達する速度';
+  $('#kMargin').innerHTML=ok?`${fmt(M.margin)}<small>m</small>`:`${fmt(M.vCross*3.6)}<small>km/h</small>`;
+  $('#kMargin').style.color=ok?'var(--green)':'var(--red)';
+  $('#kTime').innerHTML=`${fmt(M.tStop,1)}<small>秒</small>`;
+  $('#eqV').textContent=`${M.v0.toFixed(1)}m`;
+  $('#dDec').innerHTML=`${aK.toFixed(2)}<small>km/h/s</small>`;
+  const g=M.a/G, deg=Math.atan(g)*180/Math.PI;
+  const feel= g<0.08?'常用ブレーキ並み。立っていても違和感は小さい'
+            : g<0.11?'常用最大ブレーキ相当。つり革なしだと足を踏ん張る'
+            : g<0.16?'非常ブレーキ。つり革なしでは体が持っていかれ、転倒の恐れ'
+            : '立っている乗客が転倒する水準';
+  $('#paxG').innerHTML=`${g.toFixed(2)}<small>G</small>　${deg.toFixed(1)}<small>°</small>`;
+  $('#paxF').textContent=feel;
+  if(T3.buildTrack&&(T3._sight!==P.sight||T3._R!==P.curveR)){T3._sight=P.sight; T3._R=P.curveR; T3.buildTrack();}
+  setWeather(P.rail!=='dry');
+  resetSim(); refreshNote(true);
+}
+
+/* ---------- sim control ---------- */
+function resetSim(){
+  sim.t=-LEAD; sim.running=false; sim.done=false; sim.trace=[]; sim.crossed=null;
+  $('#playBtn').textContent='▶ 走らせる';
+  $('#verdict').textContent=''; $('#verdict').className='verdict';
+  const c=$('#callout'); if(c){c.className='callout';}
+}
+function play(){
+  if(sim.running){sim.running=false; $('#playBtn').textContent='▶ 再開'; return;}
+  if(sim.done) resetSim();
+  sim.running=true; $('#playBtn').textContent='❚❚ 一時停止';
+}
+const PHASE={idle:'待機中',cruise:'走行中',react:'空走中（判断・ブレーキ立ち上がり）',brake:'非常ブレーキ',stop:'停止'};
+function hud(s){
+  const ph=(!sim.running&&!sim.done&&sim.t<=-LEAD)?'idle':s.phase;
+  setH('#phaseTxt',PHASE[ph]); if($('#phasePill').dataset.p!==ph){$('#phasePill').dataset.p=ph; document.querySelectorAll('.lp').forEach(l=>l.classList.toggle('on',l.dataset.k===ph));}
+  setH('#hT',Math.max(0,sim.t).toFixed(1));
+  setH('#hX',fmt(Math.max(0,s.x)));
+  const braking=(s.phase==='brake')&&(sim.running||sim.done===false);
+  const hit=sim.crossed!=null&&sim.crossed>0.5&&s.x>=P.sight;
+  setH('#paxFig',hit?(sim.crossed>30?'❌':'🤕'):'🧍');
+  const rot=`rotate(${braking&&!hit?(-Math.atan(M.a/G)*180/Math.PI):0}deg)`; if($('#paxFig').style.transform!==rot) $('#paxFig').style.transform=rot;
+  const d=P.sight-s.x, el=$('#dDist'), bl=$('#hudBL');
+  const cannot=d<M.tot-Math.max(0,s.x)&&s.phase!=='stop';
+  if(d>=0){setH('#dDist',`${fmt(d)}<small>m</small>`); el.classList.toggle('warn',cannot);
+    setH('#blK','障害物まで あと'); setH('#blN',`${fmt(d)}<small>m</small>`); bl.classList.toggle('warn',cannot);}
+  else {setH('#dDist',`通過<small>+${fmt(-d)}m</small>`); el.classList.add('warn');
+    setH('#blK','障害物を通過'); setH('#blN',`+${fmt(-d)}<small>m</small>`); bl.classList.add('warn');}
+}
+function finish(){
+  sim.running=false; sim.done=true;
+  $('#playBtn').textContent='↻ もう一度';
+  const v=$('#verdict');
+  if(sim.crossed!=null&&sim.crossed>0.5){v.className='verdict ng'; v.innerHTML=`踏切を <span class="n">${fmt(sim.crossed)}km/h</span> で通過し、${fmt(M.tot-P.sight)}m 先で停止`;}
+  else {v.className='verdict ok'; v.innerHTML=`踏切の <span class="n">${fmt(M.margin)}m</span> 手前で停止`;}
+  refreshNote(true);
+  if(tour){const me=tour; setTimeout(()=>{if(tour===me) nextTour();},4000);}
+}
+
+/* ---------- 2D canvases ---------- */
+const trackC=$('#track'), chartC=$('#chart'), gaugeC=$('#gauge');
+function fit(c){
+  const r=c.getBoundingClientRect(), d=window.devicePixelRatio||1;
+  c.width=Math.max(1,Math.round(r.width*d)); c.height=Math.max(1,Math.round(r.height*d));
+  c.getContext('2d').setTransform(d,0,0,d,0,0);
+}
+function rr(ctx,x,y,w,h,r){r=Math.min(r,w/2,h/2);ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+const blinkOn=()=>Math.floor(performance.now()/450)%2;
+
+function drawTrack(s){
+  const ctx=trackC.getContext('2d'), W=trackC.clientWidth, H=trackC.clientHeight;
+  ctx.clearRect(0,0,W,H);
+  const xmin=-150, xmax=Math.max(700,P.sight*1.12,M.tot+110), sx=x=>(x-xmin)/(xmax-xmin)*W;
+  const hz=H*0.6, ry=H*0.74;
+  const g=ctx.createLinearGradient(0,0,0,hz); g.addColorStop(0,C.sky1); g.addColorStop(1,C.sky2);
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,hz); ctx.fillStyle=C.ground; ctx.fillRect(0,hz,W,H-hz);
+  ctx.strokeStyle=C.pole; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,ry-38); ctx.lineTo(W,ry-38); ctx.stroke();
+  ctx.lineWidth=2;
+  for(let x=Math.ceil(xmin/50)*50;x<=xmax;x+=50){const px=sx(x); ctx.beginPath(); ctx.moveTo(px,ry-1); ctx.lineTo(px,ry-44); ctx.moveTo(px-2,ry-40); ctx.lineTo(px+8,ry-40); ctx.stroke();}
+  ctx.fillStyle=C.ballast; ctx.fillRect(0,ry,W,7); ctx.fillStyle=C.rail; ctx.fillRect(0,ry-2,W,2);
+  ctx.font=`600 11px ${C.num}`; ctx.textAlign='center'; ctx.fillStyle=C.ink2; ctx.strokeStyle=C.ink2; ctx.lineWidth=1;
+  for(let x=0;x<=xmax;x+=100){const px=sx(x); ctx.beginPath(); ctx.moveTo(px,ry+9); ctx.lineTo(px,ry+14); ctx.stroke(); ctx.fillText(x+'m',px,ry+26);}
+  const by=16;
+  ctx.fillStyle=C.amber; ctx.fillRect(sx(0),by,Math.max(0,sx(M.dR)-sx(0)),5);
+  ctx.fillStyle=C.blue; ctx.fillRect(sx(M.dR),by,sx(M.tot)-sx(M.dR),5);
+  ctx.font=`700 12px ${C.num}`;
+  if(sx(M.dR)-sx(0)>60){ctx.fillStyle=C.amber; ctx.fillText(`空走 ${fmt(M.dR)}m`,(sx(0)+sx(M.dR))/2,by-4);}
+  if(sx(M.tot)-sx(M.dR)>60){ctx.fillStyle=C.blue; ctx.fillText(`制動 ${fmt(M.dB)}m`,(sx(M.dR)+sx(M.tot))/2,by-4);}
+  ctx.font=`600 10px ${C.num}`; ctx.fillStyle=C.ink2; ctx.strokeStyle=C.ink2;
+  [[444,'444'],[477,'477']].forEach(([x,l],i)=>{const px=sx(x); ctx.beginPath(); ctx.moveTo(px,by+6); ctx.lineTo(px,by+12); ctx.stroke(); ctx.textAlign=i?'left':'right'; ctx.fillText(l,px+(i?2:-2),by+20);});
+  ctx.setLineDash([3,4]); ctx.beginPath(); ctx.moveTo(sx(0),by+6); ctx.lineTo(sx(0),ry-2); ctx.stroke(); ctx.setLineDash([]);
+  ctx.textAlign='left'; ctx.font=`700 11px ${C.num}`; ctx.fillText('発見',sx(0)+4,ry-48);
+  const stopC=M.margin>=0?C.green:C.red, spx=sx(M.tot);
+  ctx.setLineDash([5,4]); ctx.strokeStyle=stopC; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(spx,by); ctx.lineTo(spx,ry+5); ctx.stroke(); ctx.setLineDash([]);
+  const cp=sx(P.sight);
+  for(let i=0;i<6;i++){ctx.fillStyle=i%2?'#1a1a1a':'#f2c200'; ctx.fillRect(cp-1.5,ry-30+i*5,3,5);}
+  ctx.lineCap='round';
+  [1,-1].forEach(b=>{ctx.strokeStyle='#1a1a1a';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(cp-7,ry-38-7*b);ctx.lineTo(cp+7,ry-38+7*b);ctx.stroke();ctx.strokeStyle='#f2c200';ctx.lineWidth=3;ctx.stroke();});
+  ctx.lineCap='butt';
+  const bk=blinkOn();
+  [[-6,0],[6,1]].forEach(([dx,k])=>{ctx.fillStyle=bk===k?'#ff2a2a':'#3a2020'; ctx.beginPath(); ctx.arc(cp+dx,ry-26,3,0,Math.PI*2); ctx.fill();});
+  ctx.font=`700 12px ${C.num}`; ctx.textAlign='center';
+  const lbl=`踏切 ${P.sight}m`, lw=ctx.measureText(lbl).width+12;
+  ctx.fillStyle=C.red; rr(ctx,cp-lw/2,ry-66,lw,17,8.5); ctx.fill(); ctx.fillStyle='#fff'; ctx.fillText(lbl,cp,ry-53.5);
+  const xh=s.x, top=ry-18, h=15;
+  for(let i=CARS-1;i>=0;i--){
+    const f=xh-i*CAR, b=f-CAR+0.9, pf=sx(f), pb=sx(b), w=pf-pb;
+    if(pf<-10||pb>W+10) continue;
+    ctx.fillStyle=C.red;
+    if(i===0){ctx.beginPath();ctx.moveTo(pb,top);ctx.lineTo(pf-5,top);ctx.quadraticCurveTo(pf,top+1,pf,top+7);ctx.lineTo(pf,top+h);ctx.lineTo(pb,top+h);ctx.closePath();ctx.fill();}
+    else {rr(ctx,pb,top,w,h,2); ctx.fill();}
+    ctx.fillStyle=C.win; ctx.fillRect(pb+2,top+3,Math.max(0,w-(i===0?7:4)),4);
+    ctx.fillStyle=C.cream; ctx.fillRect(pb,top+9,w,2);
+  }
+  if(s.phase==='brake'&&sim.running){
+    for(let i=0;i<CARS;i++){const wx=sx(xh-i*CAR-CAR/2); ctx.fillStyle=C.amber; ctx.globalAlpha=.6+Math.random()*.4; ctx.beginPath(); ctx.arc(wx-4-Math.random()*10,ry-1,Math.random()*1.5+.5,0,Math.PI*2); ctx.fill();}
+    ctx.globalAlpha=1;
+  }
+}
+
+function drawChart(s){
+  const ctx=chartC.getContext('2d'), W=chartC.clientWidth, H=chartC.clientHeight;
+  ctx.clearRect(0,0,W,H);
+  const L=34,R=8,T=14,B=20, pw=W-L-R, ph=H-T-B;
+  const xmx=Math.ceil(Math.max(P.sight,M.tot)*1.1/100)*100, ymx=Math.max(140,Math.ceil((P.speed+10)/20)*20);
+  const X=x=>L+x/xmx*pw, Y=v=>T+ph-v/ymx*ph;
+  ctx.fillStyle=C.amber; ctx.globalAlpha=.12; ctx.fillRect(X(0),T,X(Math.min(M.dR,xmx))-X(0),ph);
+  ctx.fillStyle=C.blue; ctx.globalAlpha=.08; ctx.fillRect(X(M.dR),T,X(Math.min(M.tot,xmx))-X(M.dR),ph); ctx.globalAlpha=1;
+  ctx.strokeStyle=C.rule; ctx.lineWidth=1; ctx.font=`600 11px ${C.num}`; ctx.fillStyle=C.ink2;
+  for(let v=0;v<=ymx;v+=40){ctx.beginPath();ctx.moveTo(L,Y(v));ctx.lineTo(W-R,Y(v));ctx.stroke();ctx.textAlign='right';ctx.fillText(v,L-5,Y(v)+4);}
+  const step=xmx>900?300:200;
+  for(let x=0;x<=xmx;x+=step){ctx.beginPath();ctx.moveTo(X(x),T);ctx.lineTo(X(x),T+ph);ctx.stroke();ctx.textAlign='center';ctx.fillText(x,X(x),H-6);}
+  ctx.textAlign='left'; ctx.fillText('km/h',L+3,T-3); ctx.textAlign='right'; ctx.fillText('m',W-R,H-6);
+  ctx.setLineDash([2,3]); ctx.strokeStyle=C.ink2;
+  [444,477].forEach(x=>{if(x<xmx){ctx.beginPath();ctx.moveTo(X(x),T);ctx.lineTo(X(x),T+ph);ctx.stroke();}});
+  ctx.setLineDash([]);
+  ctx.strokeStyle=C.red; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(X(P.sight),T); ctx.lineTo(X(P.sight),T+ph); ctx.stroke();
+  ctx.fillStyle=C.red; ctx.font=`700 11px ${C.num}`; ctx.textAlign='right'; ctx.fillText('踏切',X(P.sight)-3,T+10);
+  ctx.setLineDash([5,4]); ctx.strokeStyle=C.ink2; ctx.lineWidth=1.5; ctx.beginPath();
+  for(let i=0;i<=120;i++){const st=stateAt(M.tStop*i/120), px=X(st.x), py=Y(st.v*3.6); i?ctx.lineTo(px,py):ctx.moveTo(px,py);}
+  ctx.stroke(); ctx.setLineDash([]);
+  if(sim.trace.length>1){ctx.strokeStyle=C.red; ctx.lineWidth=2.5; ctx.lineJoin='round'; ctx.beginPath(); sim.trace.forEach(([x,v],i)=>{const px=X(x),py=Y(v); i?ctx.lineTo(px,py):ctx.moveTo(px,py);}); ctx.stroke();}
+  if(s.x>=0){ctx.fillStyle=C.red; ctx.beginPath(); ctx.arc(X(s.x),Y(s.v*3.6),4.5,0,Math.PI*2); ctx.fill(); ctx.strokeStyle=C.sheet; ctx.lineWidth=2; ctx.stroke();}
+}
+
+function drawGauge(v){
+  const ctx=gaugeC.getContext('2d'), S=gaugeC.clientWidth; if(!S) return;
+  ctx.clearRect(0,0,S,S);
+  const cx=S/2, cy=S*0.52, r=S*0.43, mx=140, a0=Math.PI*0.75, a1=Math.PI*2.25, ang=x=>a0+(a1-a0)*Math.min(x,mx)/mx;
+  ctx.fillStyle='#0a0d11'; ctx.beginPath(); ctx.arc(cx,cy,r+S*0.04,0,Math.PI*2); ctx.fill();
+  ctx.lineWidth=S*0.035; ctx.strokeStyle='#27303b'; ctx.beginPath(); ctx.arc(cx,cy,r,a0,a1); ctx.stroke();
+  ctx.strokeStyle='#ff4048'; ctx.beginPath(); ctx.arc(cx,cy,r,a0,ang(v)); ctx.stroke();
+  ctx.textAlign='center'; ctx.font=`600 ${Math.round(S*0.075)}px ${C.num}`; ctx.fillStyle='#8b96a5';
+  for(let x=0;x<=mx;x+=10){
+    const a=ang(x), maj=x%20===0, r1=r-S*0.035, r2=r-S*(maj?0.09:0.06);
+    ctx.strokeStyle='#dfe6ee'; ctx.lineWidth=maj?S*0.012:S*0.006;
+    ctx.beginPath(); ctx.moveTo(cx+Math.cos(a)*r1,cy+Math.sin(a)*r1); ctx.lineTo(cx+Math.cos(a)*r2,cy+Math.sin(a)*r2); ctx.stroke();
+    if(maj&&x%40===0) ctx.fillText(x,cx+Math.cos(a)*(r-S*0.16),cy+Math.sin(a)*(r-S*0.16)+S*0.025);
+  }
+  const a=ang(v);
+  ctx.strokeStyle='#ff4048'; ctx.lineWidth=S*0.018; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(cx-Math.cos(a)*S*0.05,cy-Math.sin(a)*S*0.05); ctx.lineTo(cx+Math.cos(a)*(r-S*0.07),cy+Math.sin(a)*(r-S*0.07)); ctx.stroke(); ctx.lineCap='butt';
+  ctx.fillStyle='#dfe6ee'; ctx.beginPath(); ctx.arc(cx,cy,S*0.03,0,Math.PI*2); ctx.fill();
+  ctx.font=`700 ${Math.round(S*0.2)}px ${C.num}`; ctx.fillStyle='#f0f4f8'; ctx.fillText(v.toFixed(0),cx,cy+S*0.3);
+  ctx.font=`600 ${Math.round(S*0.07)}px ${C.num}`; ctx.fillStyle='#8b96a5'; ctx.fillText('km/h',cx,cy+S*0.4);
+}
+
+/* ---------- 3D cab view ---------- */
+const T3={};
+function initThree(){
+  const cv=$('#three');
+  if(!window.THREE){$('#no3d').hidden=false; return;}
+  let r; try{r=new THREE.WebGLRenderer({canvas:cv,antialias:true});}catch(e){$('#no3d').hidden=false; return;}
+  r.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+  r.outputEncoding=THREE.sRGBEncoding; r.toneMapping=THREE.ACESFilmicToneMapping; r.toneMappingExposure=0.82;
+  r.shadowMap.enabled=true; r.shadowMap.type=THREE.PCFSoftShadowMap;
+  const scene=new THREE.Scene(), SKY=0xb7c9d8;
+  scene.fog=new THREE.FogExp2(0xbfcdd8,0.00075);
+  const cam=new THREE.PerspectiveCamera(52,1,0.1,4000);
+  // sky dome (gradient) that follows the camera
+  const skyU={top:{value:new THREE.Color(0x4f86c6)},hor:{value:new THREE.Color(0xdbe6ee)},sunDir:{value:new THREE.Vector3(-0.38,0.36,-0.85).normalize()},sunCol:{value:new THREE.Color(0xfff1d0)}};
+  const sky=new THREE.Mesh(new THREE.SphereGeometry(3200,32,16),new THREE.ShaderMaterial({uniforms:skyU,side:THREE.BackSide,depthWrite:false,fog:false,
+    vertexShader:'varying vec3 vW; void main(){ vW=(modelMatrix*vec4(position,1.0)).xyz-cameraPosition; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}',
+    fragmentShader:'uniform vec3 top,hor,sunDir,sunCol; varying vec3 vW; void main(){ vec3 d=normalize(vW); float h=max(d.y,0.0); vec3 c=mix(hor,top,pow(h,0.55)); float s=max(dot(d,sunDir),0.0); float disc=smoothstep(0.99975,0.99992,s); c+=sunCol*(disc*6.0+pow(s,900.0)*2.0+pow(s,40.0)*0.3+pow(s,14.0)*0.08); gl_FragColor=vec4(c,1.0);}'}));
+  scene.add(sky);
+  const hemi=new THREE.HemisphereLight(0xc8dbf0,0x5d5a4c,0.34); scene.add(hemi);
+  const sun=new THREE.DirectionalLight(0xffe9c4,1.7); sun.castShadow=true;
+  sun.shadow.mapSize.set(2048,2048); sun.shadow.camera.near=5; sun.shadow.camera.far=700;
+  sun.shadow.camera.left=-140; sun.shadow.camera.right=140; sun.shadow.camera.top=140; sun.shadow.camera.bottom=-140; sun.shadow.bias=-0.0006; sun.shadow.normalBias=0.03; sun.shadow.camera.updateProjectionMatrix();
+  scene.add(sun); scene.add(sun.target);
+  const noiseTex=(a,b,rep)=>{const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');const img=x.createImageData(256,256);const ca=new THREE.Color(a),cb=new THREE.Color(b);for(let i=0;i<256*256;i++){const t=Math.random();img.data[i*4]=255*(ca.r+(cb.r-ca.r)*t);img.data[i*4+1]=255*(ca.g+(cb.g-ca.g)*t);img.data[i*4+2]=255*(ca.b+(cb.b-ca.b)*t);img.data[i*4+3]=255;}x.putImageData(img,0,0);const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep[0],rep[1]);t.encoding=THREE.sRGBEncoding;return t;};
+  const Lm=(c,o={})=>new THREE.MeshStandardMaterial(Object.assign({color:c,roughness:.88,metalness:0},o));
+  const S0=-300,S1=1900,LEN=S1-S0;
+  const box=(w,h,d,m,x,y,z,parent=scene)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o;};
+  const mtx=new THREE.Matrix4(), q=new THREE.Quaternion(), pv=new THREE.Vector3(), sv=new THREE.Vector3(), yAx=new THREE.Vector3(0,1,0);
+  const gnd=new THREE.Mesh(new THREE.PlaneGeometry(2400,LEN+1200),Lm(0xffffff,{map:noiseTex(0x7f8c62,0xa3ad84,[400,800]),roughness:1})); gnd.rotation.x=-Math.PI/2; gnd.position.z=-(S0+S1)/2; gnd.receiveShadow=true; scene.add(gnd);
+  const tex=(txt,bg,fg,w=128,h=64,fs=38)=>{const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle=bg;x.fillRect(0,0,w,h);x.fillStyle=fg;x.font=`bold ${fs}px sans-serif`;x.textAlign='center';x.textBaseline='middle';x.fillText(txt,w/2,h/2+2);return new THREE.CanvasTexture(c);};
+  const boardTex={}; for(let d=100;d<=1500;d+=100) boardTex[d]=tex('踏切まで '+d,'#f4f4f0','#111',192,64,30);
+  const findTex=tex('発見','#c8101a','#fff',128,64,34);
+  const stripe=(()=>{const c=document.createElement('canvas');c.width=16;c.height=128;const x=c.getContext('2d');for(let i=0;i<8;i++){x.fillStyle=i%2?'#151515':'#f2c200';x.fillRect(0,i*16,16,16);}return new THREE.CanvasTexture(c);})();
+  const mats={sl:Lm(0x8d8b84,{roughness:.95}),rail:new THREE.MeshStandardMaterial({color:0xc0c4c8,metalness:.9,roughness:.32}),bal:Lm(0xffffff,{map:noiseTex(0x6e6a63,0x9b968c,[3,4]),roughness:1}),
+    wire:Lm(0x2a2a2a),pole:Lm(0x7d8a7a,{metalness:.35,roughness:.6}),fence:Lm(0xb9c0c4),house:new THREE.MeshStandardMaterial({color:0xffffff,roughness:.85}),post:Lm(0x555555),
+    road:Lm(0xffffff,{map:noiseTex(0x3e4145,0x555a5f,[30,3]),roughness:.95}),stripe:new THREE.MeshLambertMaterial({map:stripe})};
+  // town layout in track coordinates (u = lateral, s = along track), fixed by seed
+  let seed=11; const rnd=()=>((seed=seed*16807%2147483647)/2147483647);
+  const houses=[]; const pal=[0xb9b3a4,0x9aa3aa,0xc8c1b1,0x7f8a95,0xa8977c,0x6f7a86,0xbdb5a3,0x8e8272];
+  for(let i=0;i<520;i++){const w=6+rnd()*10,d=6+rnd()*12,h=4+rnd()*(rnd()<.15?26:9); houses.push({u:i%2?(12+w/2+rnd()*55):-(8+w/2+rnd()*55),s:S0+rnd()*LEN,w,d,h,c:pal[Math.floor(rnd()*pal.length)]});}
+  let TG=null, X=null, lamps=[], sigM=[];
+  function place(o,u,y,s){const f=trk(s); o.position.set(f.x+u*f.rx,y,f.z+u*f.rz); o.rotation.y=f.th; return o;}
+  function inst(geo,mat,items,shadow=true){ // items: [{u,y,s,sx,sy,sz}]
+    const m=new THREE.InstancedMesh(geo,mat,items.length); m.castShadow=shadow; m.receiveShadow=true;
+    items.forEach((it,i)=>{const f=trk(it.s); pv.set(f.x+it.u*f.rx,it.y,f.z+it.u*f.rz); q.setFromAxisAngle(yAx,f.th); sv.set(it.sx||1,it.sy||1,it.sz||1); mtx.compose(pv,q,sv); m.setMatrixAt(i,mtx); if(it.c){m.setColorAt(i,new THREE.Color(it.c));}});
+    return m;
+  }
+  function buildTrack(){
+    if(TG){scene.remove(TG); TG.traverse(o=>{if(o.geometry&&!o.isInstancedMesh) o.geometry.dispose();});}
+    TG=new THREE.Group(); scene.add(TG); lamps=[]; sigM=[];
+    const seg=5, segs=[]; for(let s=S0;s<S1;s+=seg) segs.push(s+seg/2);
+    [0,3.9].forEach(tu=>{
+      TG.add(inst(new THREE.BoxGeometry(3.4,0.3,seg+0.05),mats.bal,segs.map(s=>({u:tu,y:0.15,s})),false));
+      const sl=[]; for(let s=S0;s<S1;s+=0.7) sl.push({u:tu,y:0.33,s}); TG.add(inst(new THREE.BoxGeometry(2.3,0.14,0.22),mats.sl,sl));
+      [-0.7175,0.7175].forEach(o=>TG.add(inst(new THREE.BoxGeometry(0.07,0.14,seg+0.04),mats.rail,segs.map(s=>({u:tu+o,y:0.47,s})),false)));
+      TG.add(inst(new THREE.BoxGeometry(0.03,0.03,seg+0.02),mats.wire,segs.map(s=>({u:tu,y:5.4,s})),false));
+    });
+    const ps=[]; for(let s=Math.ceil(S0/50)*50;s<=S1;s+=50) ps.push(s);
+    TG.add(inst(new THREE.BoxGeometry(0.35,8,0.35),mats.pole,ps.flatMap(s=>[{u:-2.7,y:4,s},{u:6.6,y:4,s}])));
+    TG.add(inst(new THREE.BoxGeometry(9.6,0.3,0.3),mats.pole,ps.map(s=>({u:1.95,y:7.4,s}))));
+    TG.add(inst(new THREE.BoxGeometry(0.05,0.05,seg+0.02),mats.wire,segs.map(s=>({u:1.95,y:6.9,s})),false));
+    const fs=[]; for(let s=S0;s<S1;s+=seg) fs.push({u:-6.2,y:0.7,s:s+seg/2},{u:10.1,y:0.7,s:s+seg/2}); TG.add(inst(new THREE.BoxGeometry(0.08,1.4,seg+0.05),mats.fence,fs,false));
+    TG.add(inst(new THREE.BoxGeometry(1,1,1),mats.house,houses.map(h=>({u:h.u,y:h.h/2,s:h.s,sx:h.w,sy:h.h,sz:h.d,c:h.c}))));
+    // discovery board
+    TG.add(place(new THREE.Mesh(new THREE.PlaneGeometry(0.9,0.45),new THREE.MeshBasicMaterial({map:findTex})),-2.1,1.7,0));
+    TG.add(place(new THREE.Mesh(new THREE.BoxGeometry(0.06,1.5,0.06),mats.post),-2.1,0.75,0));
+    // countdown boards + 特殊信号発光機 ×3 (10m/130m/390m before the crossing)
+    for(let d=100;d<=1500;d+=100){const s=P.sight-d; if(s<S0+20) break;
+      TG.add(place(new THREE.Mesh(new THREE.PlaneGeometry(1.1,0.5),new THREE.MeshBasicMaterial({map:boardTex[d]})),-2.1,1.7,s));
+      TG.add(place(new THREE.Mesh(new THREE.BoxGeometry(0.06,1.5,0.06),mats.post),-2.1,0.75,s));}
+    [10,130,390].forEach(d=>{const s=P.sight-d, g=new THREE.Group(); place(g,-2.6,0,s); TG.add(g);
+      box(0.14,4.4,0.14,Lm(0x777777),0,2.2,0,g);
+      const disc=new THREE.Mesh(new THREE.CylinderGeometry(0.42,0.42,0.1,24),Lm(0x111111)); disc.rotation.x=Math.PI/2; disc.position.set(0,4.3,0.06); g.add(disc);
+      for(let i=0;i<5;i++){const m=new THREE.MeshBasicMaterial({color:0x3a1010}); const l=new THREE.Mesh(new THREE.SphereGeometry(0.08,8,6),m); const a=i/5*Math.PI*2; l.position.set(Math.cos(a)*0.25,4.3+Math.sin(a)*0.25,0.13); g.add(l); sigM.push(m);}});
+    // the crossing itself
+    X=new THREE.Group(); place(X,0,0,P.sight); TG.add(X);
+    box(90,0.42,8,mats.road,0,0.21,0,X);
+    function post(px,pz){
+      const pole=new THREE.Mesh(new THREE.CylinderGeometry(0.08,0.08,3.4,12),mats.stripe); pole.position.set(px,1.7,pz); X.add(pole);
+      [0.62,-0.62].forEach(rz=>{const b=box(1.5,0.22,0.05,Lm(0xf2c200),px,3.25,pz+0.05,X); b.rotation.z=rz;});
+      box(1.0,0.3,0.2,Lm(0x151515),px,2.6,pz+0.02,X);
+      [-0.3,0.3].forEach(dx=>{const m=new THREE.MeshBasicMaterial({color:0x3a1010}); const l=new THREE.Mesh(new THREE.SphereGeometry(0.13,12,8),m); l.position.set(px+dx,2.6,pz+0.14); X.add(l); lamps.push(m);});
+    }
+    post(-2.9,5); post(6.8,5); post(-2.9,-5); post(6.8,-5);
+    [[-7.2,4.6],[10.9,-4.6]].forEach(([x,z])=>{const a=new THREE.Mesh(new THREE.BoxGeometry(8,0.1,0.1),Lm(0xf2c200)); a.position.set(x,0.95,z); X.add(a);});
+    const TR=new THREE.Group(); TR.position.set(0.35,0,2.5); TR.rotation.y=0.32; X.add(TR);
+    box(2.5,3.1,9,Lm(0xd9dcdf),0,2.0,-1.2,TR); box(2.56,0.5,9.06,Lm(0x2f5d9e),0,2.1,-1.2,TR);
+    box(2.4,2.7,2.3,Lm(0x2f5d9e),0,1.75,4.5,TR); box(2.0,1.0,0.1,Lm(0x1a2330),0,2.2,5.66,TR);
+    box(2.2,0.5,11.6,Lm(0x222222),0,0.65,0.6,TR);
+    [[-1.1,3.9],[1.1,3.9],[-1.1,-3.2],[1.1,-3.2],[-1.1,-4.4],[1.1,-4.4]].forEach(([x,z])=>{const w=new THREE.Mesh(new THREE.CylinderGeometry(0.5,0.5,0.35,14),Lm(0x111111)); w.rotation.z=Math.PI/2; w.position.set(x,0.5,z); TR.add(w);});
+    T3.X=X; T3.lamps=lamps; T3.sigM=sigM;
+  }
+  Object.assign(T3,{r,scene,cam,SKY,railM:mats.rail,gnd,sky,skyU,sun,hemi,buildTrack});
+  buildTrack();
+  resize3();
+}
+function setWeather(rain){
+  $('#rain').classList.toggle('on',rain);
+  if(!T3.r) return;
+  T3.scene.fog.color.setHex(rain?0x8f99a2:0xbfcdd8); T3.scene.fog.density=rain?0.0028:0.00075;
+  T3.skyU.top.value.setHex(rain?0x6d7a86:0x4f86c6); T3.skyU.hor.value.setHex(rain?0x9aa4ac:0xdbe6ee); T3.skyU.sunCol.value.setHex(rain?0x000000:0xfff1d0);
+  T3.sun.intensity=rain?0.25:1.7; T3.sun.castShadow=!rain; T3.hemi.intensity=rain?0.6:0.34;
+  T3.railM.roughness=rain?0.12:0.32; T3.gnd.material.color.setHex(rain?0x8c948a:0xffffff);
+}
+function resize3(){
+  if(!T3.r) return;
+  const box=$('#cab'), w=box.clientWidth, h=box.clientHeight;
+  T3.r.setSize(w,h,false); T3.cam.aspect=w/h; T3.cam.updateProjectionMatrix();
+}
+function render3(s){
+  if(!T3.r) return;
+  const sh=(s.phase==='brake'&&sim.running)?(Math.random()-.5)*0.025:0;
+  const f0=trk(s.x-1.5), f1=trk(s.x+120);
+  T3.cam.position.set(f0.x-0.45*f0.rx,2.75+sh,f0.z-0.45*f0.rz);
+  T3.cam.lookAt(f1.x-0.35*f1.rx,2.25+sh*0.4,f1.z-0.35*f1.rz);
+  T3.sky.position.copy(T3.cam.position);
+  const sd=T3.skyU.sunDir.value, ft=trk(s.x+60); T3.sun.position.set(ft.x+sd.x*220,sd.y*220,ft.z+sd.z*220); T3.sun.target.position.set(ft.x,0,ft.z);
+  const bk=blinkOn();
+  T3.lamps.forEach((m,i)=>m.color.setHex((i%2)===bk?0xff2a2a:0x3a1010));
+  drawMap(s);
+  const sOn=Math.floor(performance.now()/300)%2;
+  T3.sigM.forEach(m=>m.color.setHex(sOn?0xff3030:0x3a1010));
+  T3.r.render(T3.scene,T3.cam);
+}
+
+function drawMap(s){
+  const c=$('#map'); if(!c.clientWidth) return; if(c.width!==Math.round(c.clientWidth*2)){c.width=Math.round(c.clientWidth*2); c.height=Math.round(c.clientHeight*2);}
+  const ctx=c.getContext('2d'), W=c.width, H=c.height; ctx.clearRect(0,0,W,H);
+  const s0=Math.min(-160,s.x-160), s1=Math.max(P.sight,M.tot)+80;
+  const pts=[]; for(let t=s0;t<=s1;t+=5) pts.push([t,trk(t)]);
+  let minx=1e9,maxx=-1e9,minz=1e9,maxz=-1e9; pts.forEach(([,f])=>{minx=Math.min(minx,f.x);maxx=Math.max(maxx,f.x);minz=Math.min(minz,f.z);maxz=Math.max(maxz,f.z);});
+  const pad=14, sc=Math.min((W-2*pad)/Math.max(60,maxx-minx), (H-2*pad)/(maxz-minz));
+  // orientation: along-track (−z) → screen right; lateral (x) → screen down
+  const scX=(W-2*pad)/(maxz-minz), scY=Math.min(scX,(H-2*pad)/Math.max(40,maxx-minx));
+  const X2=f=>W-pad-(f.z-minz)*scX, Y2=f=>H/2+((f.x)-(minx+maxx)/2)*scY;
+  ctx.lineWidth=3; ctx.strokeStyle='rgba(255,255,255,.75)'; ctx.beginPath(); pts.forEach(([,f],i)=>i?ctx.lineTo(X2(f),Y2(f)):ctx.moveTo(X2(f),Y2(f))); ctx.stroke();
+  const dot=(t,col,r)=>{const f=trk(t); ctx.fillStyle=col; ctx.beginPath(); ctx.arc(X2(f),Y2(f),r,0,Math.PI*2); ctx.fill();};
+  // crossing
+  {const f=trk(P.sight), a={x:f.x+9*f.rx,z:f.z+9*f.rz}, b={x:f.x-9*f.rx,z:f.z-9*f.rz}; ctx.strokeStyle='#ff4048'; ctx.lineWidth=4; ctx.beginPath(); ctx.moveTo(X2(a),Y2(a)); ctx.lineTo(X2(b),Y2(b)); ctx.stroke();}
+  [10,130,390].forEach(d=>dot(P.sight-d,'#ff3030',4));
+  dot(0,'#ffb428',4);
+  // sight line from the train head to the first 特発
+  {const a=trk(s.x), b=trk(P.sight-390); ctx.setLineDash([4,4]); ctx.strokeStyle='rgba(255,180,40,.8)'; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(X2(a),Y2(a)); ctx.lineTo(X2(b),Y2(b)); ctx.stroke(); ctx.setLineDash([]);}
+  // train
+  {const a=trk(Math.max(s0,s.x-144)), b=trk(s.x); ctx.strokeStyle='#ff4048'; ctx.lineWidth=6; ctx.lineCap='round'; ctx.beginPath(); ctx.moveTo(X2(a),Y2(a)); ctx.lineTo(X2(b),Y2(b)); ctx.stroke(); ctx.lineCap='butt';}
+  ctx.fillStyle='#e9eef3'; ctx.font=`600 ${Math.round(H*0.11)}px ${C.num}`; ctx.textAlign='left'; ctx.fillText(P.curveR?`上空図　左カーブ R=${P.curveR}m`:'上空図　直線',pad,pad+H*0.08);
+  ctx.textAlign='right'; ctx.fillStyle='#ffb428'; ctx.fillText('● 発見',W-pad,H-pad*0.6); ctx.fillStyle='#ff3030'; ctx.fillText('● 特発　',W-pad-ctx.measureText('● 発見').width,H-pad*0.6);
+}
+/* ---------- loop ---------- */
+let last=null;
+function frame(ts){
+  const dt=last==null?0:Math.min(0.25,(ts-last)/1000); last=ts;
+  if(sim.running){
+    sim.t+=dt*sim.mul;
+    const s=stateAt(sim.t);
+    if(s.x>=0) sim.trace.push([s.x,s.v*3.6]);
+    if(sim.crossed==null&&s.x>=P.sight) sim.crossed=s.v*3.6;
+    if(sim.t>=M.tStop+0.4) finish();
+  }
+  const s=stateAt(sim.t);
+  hud(s); refreshNote(false); drawTrack(s); drawChart(s); drawGauge(s.v*3.6); render3(s);
+  requestAnimationFrame(frame);
+}
+
+/* ---------- tour ---------- */
+const SCEN=[
+  {id:'physics',cap:'高校物理モデル：空走0秒',react:0,intro:m=>`2019年の投稿と同じ計算。発見と同時にブレーキが効き始める理想化で、120km/hからの純制動距離は${fmt(m.dB)}m。まずこの物差しを作る。`},
+  {id:'react2',cap:'空走2秒',react:2,intro:m=>`運転士が異常を認め、判断し、ブレーキ力が立ち上がるまでを2秒とする。秒速${m.v0.toFixed(1)}mなので、その間に${fmt(m.dR)}m進む。`},
+  {id:'react35',cap:'空走3.5秒',react:3.5,intro:m=>`架線柱に遮られて信号の明滅を見失い、判断が1.5秒遅れた場合。たった1.5秒で約50m余分に進み、総停止距離は${fmt(m.tot)}m。`},
+  {id:'v100',cap:'速度を100km/hに落とす',speed:100,react:2,intro:m=>`同じ空走2秒でも、進入速度が100km/hなら。制動距離は速度の2乗に比例するので${fmt(m.dB)}mに縮み、総停止距離は${fmt(m.tot)}m。`},
+  {id:'heavy',cap:'満員400t・応荷重装置なし',react:2,weight:400,comp:false,intro:m=>`満員400tで応荷重装置が働かないと、F=maのとおり減速度は250/400倍の${(m.a*3.6).toFixed(2)}km/h/sに落ち、制動距離は${fmt(m.dB)}mまで伸びる。`},
+  {id:'heavyc',cap:'満員400t・応荷重装置あり',react:2,weight:400,comp:true,intro:m=>`同じ満員でも応荷重装置が重さに合わせてブレーキ力を強めれば、減速度は${(m.a*3.6).toFixed(1)}km/h/sに戻り、制動距離は空車時と同じ${fmt(m.dB)}m。`},
+  {id:'wet',cap:'雨のレール（粘着係数0.12）',react:2,rail:'wet',intro:m=>`雨で車輪とレールの粘着係数が0.12に落ちると、どれだけ強くブレーキをかけても減速度は粘着限界μg＝${(m.aLim*3.6).toFixed(2)}km/h/sが上限。制動距離は${fmt(m.dB)}mに伸びる。`},
+  {id:'slip',cap:'落ち葉・油分（粘着係数0.07）',react:2,rail:'slip',intro:m=>`落ち葉や油でさらに滑りやすい極端な条件。減速度の上限は${(m.aLim*3.6).toFixed(2)}km/h/sまで下がり、総停止距離は${fmt(m.tot)}m。ブレーキの強さではなく、レールが止まれる距離を決めてしまう。`},
+];
+SCEN.forEach(sc=>sc.on=true);
+const PK=['speed','react','decel','sight','weight','comp','rail','curveR'];
+const genIntro=p=>m=>`${p.speed}km/h・空走${p.react}秒・減速度${p.decel}km/h/s・踏切まで${p.sight}m・${p.weight}t・応荷重${p.comp?'あり':'なし'}・レール${({dry:'乾燥',wet:'雨',slip:'滑りやすい'})[p.rail]}・${p.curveR?'R'+p.curveR:'直線'}。総停止距離は${fmt(m.tot)}m。`;
+function activeScen(){return SCEN.filter(x=>x.on);}
+function renderSeq(){
+  const list=$('#seqList'); list.innerHTML='';
+  SCEN.forEach((sc,i)=>{
+    const l=document.createElement('label'); l.className='sc'+(sc.on?'':' off');
+    l.innerHTML=`<input type="checkbox" ${sc.on?'checked':''}><b>${i+1}</b>${sc.cap}${sc.custom?'<span class="x" title="削除">✕</span>':''}`;
+    l.querySelector('input').addEventListener('change',e=>{sc.on=e.target.checked; renderSeq(); saveSeq();});
+    const x=l.querySelector('.x'); if(x) x.addEventListener('click',e=>{e.preventDefault(); SCEN.splice(i,1); renderSeq(); saveSeq();});
+    list.appendChild(l);
+  });
+  const n=activeScen().length; if(!tour) $('#tourBtn').textContent=`${n}つの条件を連続で検証`; $('#tourBtn').disabled=n===0;
+}
+function scenJSON(){return JSON.stringify({version:1,title:'京急線踏切事故 ブレーキ物理シミュレータ シナリオ',scenarios:SCEN.map(sc=>{const o={id:sc.id,cap:sc.cap,on:sc.on}; PK.forEach(k=>{if(k in sc) o[k]=sc[k];}); return o;})},null,2);}
+function applyJSON(txt){
+  const d=JSON.parse(txt); if(!Array.isArray(d.scenarios)) throw new Error('scenarios がありません');
+  const builtin=Object.fromEntries(SCEN.filter(x=>!x.custom).map(x=>[x.id,x]).concat(Object.entries(BUILTIN)));
+  SCEN.length=0;
+  d.scenarios.forEach((o,i)=>{const b=o.id&&builtin[o.id]; const sc=b?{...b}:{id:o.id||('custom'+i),custom:true}; PK.forEach(k=>{if(k in o) sc[k]=o[k];}); sc.cap=o.cap||sc.cap||('シナリオ'+(i+1)); sc.on=o.on!==false; if(!b) sc.intro=genIntro(Object.assign({},BASE,sc)); SCEN.push(sc);});
+  renderSeq(); saveSeq();
+}
+const BUILTIN=Object.fromEntries(SCEN.map(x=>[x.id,x]));
+function saveSeq(){try{localStorage.setItem('brake-scen',scenJSON());}catch(e){}}
+function download(name,txt){try{const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([txt],{type:'application/json'})); a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),2000); return true;}catch(e){return false;}}
+let lastPh=null;
+function noteFor(ph){
+  const sc=tour&&tour.list[tour.i-1], aK=M.a*3.6, g=M.a/G;
+  if(ph==='idle'||ph==='cruise'){
+    const base=sc?sc.intro(M):`${P.speed}km/hで進入。発見地点から踏切まで${P.sight}m。`;
+    return base+` <em>豆知識</em> ${P.speed}km/hは秒速${M.v0.toFixed(1)}m。踏切の警報は列車が来る前に鳴り始めるが、120km/hでは30秒で1km進むので、警報開始から列車到達までの時間は思うより短い。`;
+  }
+  if(ph==='react') return `発見。判断とブレーキ立ち上がりに${P.react.toFixed(1)}秒。ブレーキは効いておらず、この間に${fmt(M.dR)}m進む。 <em>豆知識</em> 人が予期しない光に気づいて手を動かすまでは0.7〜1秒。さらに空気ブレーキは指令から圧力が立ち上がるまで1秒前後かかる。「反応が遅い」と言うときの1秒は、ここでは${M.v0.toFixed(0)}mの長さを持つ。`;
+  if(ph==='brake'){
+    const head=M.limited
+      ?`非常ブレーキ作動。しかしレールが滑りやすく、車輪が出せる減速度は粘着限界μg＝${aK.toFixed(2)}km/h/sまで。ここから停止まで${fmt(M.dB)}m。`
+      :`非常ブレーキ作動。減速度${aK.toFixed(2)}km/h/s＝${g.toFixed(2)}G。ここから停止まで${fmt(M.dB)}m。`;
+    return head+` <em>豆知識</em> 自動車の急ブレーキは0.6〜0.8G。鉄道が一桁弱いのは、鉄の車輪と鉄のレールの摩擦係数が乾燥でも0.25程度しかないことと、立っている乗客を転ばせないため。非常ブレーキは「これ以上強くできない」上限で設計されている。`;
+  }
+  if(ph==='stop'){
+    if(sim.crossed!=null&&sim.crossed>0.5){
+      const vc=sim.crossed/3.6, TRUCK=12, dv=vc*TRUCK/(P.weight+TRUCK), gAvg=dv/0.15/G, gLocal=vc*vc/(2*0.5)/G;
+      return `停止距離不足。踏切を${fmt(sim.crossed)}km/hで通過し、${fmt(M.tot-P.sight)}m先で停止。 <em>衝突のG</em> 列車${P.weight}tに対して12tの車両なら、運動量保存で列車が失う速度は約${(dv*3.6).toFixed(1)}km/h。0.15秒の衝撃で平均${gAvg.toFixed(1)}G——非常ブレーキの${(gAvg/g).toFixed(0)}倍で、立っていれば転倒する。一方、先頭車の前面が0.5m潰れて衝突速度を吸収する局所では a＝v²/2d で約${fmt(gLocal)}G。自動車の衝突試験（50km/hで20〜40G）と同じ桁で、ここから先は物理よりも車体構造と脱線の問題になる。列車は軽い相手に当たっても止まらない——だから実際の事故でも列車は踏切の約67m先まで進んだ。`;
+    }
+    return `踏切の${fmt(M.margin)}m手前で停止。総停止距離${fmt(M.tot)}m（空走${fmt(M.dR)}m＋制動${fmt(M.dB)}m）。 <em>豆知識</em> 止まれた余裕${fmt(M.margin)}mは、時間にすると発見が${(M.margin/M.v0).toFixed(1)}秒遅れたら消える幅。事故調査報告書は、特殊信号発光機の明滅が架線柱で断続的に遮られ、予期しない停止信号に即座に反応するのは難しかった可能性を指摘している。`;
+  }
+  return '';
+}
+function callout(cls,big,sub,flash){
+  const c=$('#callout'); c.className='callout '+cls; $('#coBig').textContent=big; $('#coSub').textContent=sub;
+  void c.offsetWidth; c.classList.add('on');
+  if(flash){const f=$('#flash'); f.classList.remove('on'); void f.offsetWidth; f.classList.add('on');}
+}
+function onPhase(prev,ph){
+  if(!sim.running&&ph!=='stop') return;
+  if(ph==='react'||(ph==='brake'&&prev==='cruise')) callout('find','発見!',`踏切まで ${P.sight}m`,true);
+  if(ph==='brake'){
+    const go=()=>callout('brake','非常ブレーキ!',`減速度 ${(M.a*3.6).toFixed(2)}km/h/s　停止まで ${fmt(M.dB)}m`,false);
+    if(prev==='cruise') setTimeout(go,900); else go();
+  }
+  if(ph==='stop'){
+    if(sim.crossed!=null&&sim.crossed>0.5) callout('ng','踏切通過',`到達時 ${fmt(sim.crossed)}km/h　${fmt(M.tot-P.sight)}m先で停止`,false);
+    else callout('ok','停止',`踏切の ${fmt(M.margin)}m 手前`,false);
+  }
+}
+const TIPS=[
+  '120km/hは秒速33.3m。踏切の警報は列車が来る前に鳴り始めるが、120km/hでは30秒で1km進むので、警報開始から列車到達までの時間は思うより短い。',
+  '人が予期しない光に気づいて手を動かすまでは0.7〜1秒。さらに空気ブレーキは指令から圧力が立ち上がるまで1秒前後かかる。「反応が遅い」と言うときの1秒は、120km/hでは33mの長さを持つ。',
+  '自動車の急ブレーキは0.6〜0.8G。鉄道の非常ブレーキは0.13G。一桁弱いのは、鉄の車輪と鉄のレールの摩擦係数が乾燥でも0.25程度しかないことと、立っている乗客を転ばせないため。非常ブレーキは「これ以上強くできない」上限で設計されている。',
+  '雨で粘着係数が0.12に落ちても非常ブレーキ4.5km/h/sはほぼ出せる。設計上、非常ブレーキは雨のレールでも滑らない範囲に収めてある。落ち葉や油分で0.07まで落ちると、ブレーキではなくレールが停止距離を決める。',
+  '重い列車ほど止まりにくいはずだが、応荷重装置が空気ばねの圧力から乗客の重さを読み取り、ブレーキ力を重さに比例させる。だから満員でも空車でも減速度は同じ。信号やATSはこの前提で設計されている。',
+  '列車は軽い相手にぶつかっても止まらない。300tの列車が12tのトラックに60km/hで当たっても、運動量保存で失う速度は2km/h程度。だから実際の事故でも列車は踏切の約67m先まで進んだ。一方、先頭車の前面が潰れる局所は数十Gになる。',
+  '事故現場の特殊信号発光機は踏切中心から約10m・130m・390mの3か所。運転士が最初に目視できるのは踏切の約570m手前で、報告書はそこから約1.5秒以内に非常ブレーキを扱わないと止まれない配置だったと分析した。実際は約140m進んだ地点で常用ブレーキ、非常ブレーキを扱った時点で踏切まで約244m、衝突速度は約62km/h。',
+  '事故調査報告書（2021年）は、特殊信号発光機の明滅が架線柱や駅の柱で断続的に遮られ、予期しない停止信号に即座に反応するのは難しかった可能性を指摘した。事故後、京急は発光信号を認めたら直ちに非常ブレーキとする作業基準に改め、200m以上遠くから見える位置への発光機増設を進めた。',
+  'この3D視点は直線の模式図で、実際の緩いカーブや信号の配置は再現していない。シミュレーションは答えを出す装置ではなく、計算と現実の差から「何が足りないか」を見つけるための物差し。',
+];
+let tipI=0, tipTimer=null;
+function tipLoop(){
+  const idle=!sim.running&&!sim.done&&sim.t<=-LEAD&&!tour;
+  if(!idle) return;
+  tipI=(tipI+1)%TIPS.length;
+  $('#noteT').innerHTML=`<b>豆知識 ${tipI+1}/${TIPS.length}</b>`;
+  $('#noteB').textContent=TIPS[tipI];
+}
+function refreshNote(force){
+  const s=stateAt(sim.t), ph=(!sim.running&&!sim.done&&sim.t<=-LEAD)?'idle':s.phase;
+  if(!force&&ph===lastPh) return;
+  const prev=lastPh; lastPh=ph;
+  if(!force) onPhase(prev,ph);
+  $('#noteT').innerHTML=tour?`<b>${tour.i}/${tour.list.length}</b>${tour.list[tour.i-1].cap}`:'解説';
+  $('#noteB').innerHTML=noteFor(ph);
+  clearInterval(tipTimer); tipTimer=setInterval(tipLoop,9000);
+}
+function nextTour(){
+  if(!tour) return;
+  if(tour.i>=tour.list.length){const n=tour.list.length; stopTour(); resetSim(); $('#noteT').textContent='解説'; $('#noteB').textContent=`${n}つの条件の検証を終了。条件を変えて、自分でも確かめてみてください。`; lastPh='end'; return;}
+  const {cap,intro,id,on,custom,...sc}=tour.list[tour.i++];
+  Object.assign(P,BASE,sc); syncInputs(); recalc();
+  $('#tourCap').textContent=`${tour.i}/${tour.list.length}　${cap}`;
+  refreshNote(true);
+  const me=tour; setTimeout(()=>{if(tour===me) play();},3200);
+}
+function stopTour(){tour=null; renderSeq(); $('#tourCap').textContent=''; refreshNote(true);}
+function setMul(m){sim.mul=m; document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.mul===m));}
+
+/* ---------- events ---------- */
+KEYS.forEach(k=>$('#'+k).addEventListener('input',e=>{P[k]=parseFloat(e.target.value); setFill(e.target); if(tour)stopTour(); recalc();}));
+$('#comp').addEventListener('change',e=>{P.comp=e.target.checked; if(tour)stopTour(); recalc();});
+document.querySelectorAll('input[name=curve]').forEach(r=>r.addEventListener('change',e=>{P.curveR=+e.target.value; if(tour)stopTour(); recalc();}));
+document.querySelectorAll('input[name=rail]').forEach(r=>r.addEventListener('change',e=>{P.rail=e.target.value; if(tour)stopTour(); recalc();}));
+$('#playBtn').addEventListener('click',()=>{if(tour)stopTour(); play();});
+$('#resetBtn').addEventListener('click',()=>{if(tour)stopTour(); resetSim();});
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>setMul(+b.dataset.mul)));
+$('#tourBtn').addEventListener('click',()=>{
+  if(tour){stopTour(); resetSim(); return;}
+  const list=activeScen(); if(!list.length) return; tour={i:0,list}; setMul(2); $('#tourBtn').textContent='連続検証を止める'; nextTour();
+});
+document.addEventListener('keydown',e=>{if(e.code==='Space'&&!/INPUT|BUTTON/.test(document.activeElement.tagName)&&!$('#info').open){e.preventDefault(); play();}});
+$('#addScen').addEventListener('click',()=>{
+  const sc={id:'custom'+Date.now(),custom:true,on:true}; PK.forEach(k=>sc[k]=P[k]);
+  sc.cap=`${P.speed}km/h・空走${P.react}s・${({dry:'乾燥',wet:'雨',slip:'落ち葉'})[P.rail]}${P.comp?'':'・応荷重なし'}${P.curveR?'':'・直線'}`; sc.intro=genIntro({...sc});
+  SCEN.push(sc); renderSeq(); saveSeq();
+});
+$('#saveJson').addEventListener('click',()=>{const txt=scenJSON(); if(!download('brake-sim-scenarios.json',txt)){} $('#jsonText').value=txt; const d=$('#jsonDlg'); if(d.showModal) d.showModal();});
+$('#loadJson').addEventListener('click',()=>$('#jsonFile').click());
+$('#jsonFile').addEventListener('change',e=>{const f=e.target.files[0]; if(!f) return; f.text().then(t=>{try{applyJSON(t);}catch(err){alert('読み込めませんでした: '+err.message);}}); e.target.value='';});
+$('#jsonApply').addEventListener('click',()=>{try{applyJSON($('#jsonText').value); $('#jsonDlg').close();}catch(err){alert('読み込めませんでした: '+err.message);}});
+$('#jsonCopy').addEventListener('click',()=>{navigator.clipboard&&navigator.clipboard.writeText($('#jsonText').value); $('#jsonCopy').textContent='コピーしました'; setTimeout(()=>$('#jsonCopy').textContent='コピー',1500);});
+$('#jsonClose').addEventListener('click',()=>$('#jsonDlg').close());
+$('#infoBtn').addEventListener('click',()=>{const d=$('#info'); if(d.showModal) d.showModal(); else d.setAttribute('open','');});
+$('#infoClose').addEventListener('click',()=>$('#info').close());
+
+const THEMES=['auto','light','dark'], TL={auto:'表示: 自動',light:'表示: ライト',dark:'表示: ダーク'};
+let ti=0;
+try{const sv=localStorage.getItem('brake-theme'); if(sv&&THEMES.includes(sv)) ti=THEMES.indexOf(sv);}catch(e){}
+function applyTheme(){const t=THEMES[ti]; if(t==='auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme',t); $('#themeBtn').textContent=TL[t]; readColors();}
+$('#themeBtn').addEventListener('click',()=>{ti=(ti+1)%3; try{localStorage.setItem('brake-theme',THEMES[ti]);}catch(e){} applyTheme();});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',readColors);
+
+new ResizeObserver(()=>{fit(trackC); fit(chartC); fit(gaugeC); resize3();}).observe(document.body);
+new ResizeObserver(()=>{fit(gaugeC); resize3();}).observe($('#cab'));
+
+try{const sv=localStorage.getItem('brake-scen'); if(sv) applyJSON(sv);}catch(e){}
+renderSeq();
+applyTheme(); initThree(); syncInputs(); recalc(); fit(trackC); fit(chartC); fit(gaugeC);
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(readColors);
+refreshNote(true);
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
