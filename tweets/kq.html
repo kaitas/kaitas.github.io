@@ -247,6 +247,65 @@ dialog ul{margin:0 0 14px;padding-left:1.2em}
 dialog li,dialog p{font-size:14px;color:var(--ink2);margin:0 0 6px}
 .memo{border-left:3px solid var(--ink);padding-left:10px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== widescreen refinement ===== */
+:root{--dashH:118px;--wpad:12px}
+.app{gap:8px;padding:8px 10px}
+.top{gap:12px;padding-bottom:6px;border-bottom-width:2px}
+.kp{font-size:11px}
+h1{font-size:clamp(16px,1.45vw,23px);margin-top:1px}
+.board{max-width:560px}
+.cell{padding:2px 10px}
+.cell .k{font-size:10.5px}
+.cell .v{font-size:clamp(17px,1.5vw,24px)}
+.ghost{padding:5px 9px;font-size:12px}
+.cab{background:#0e1116}
+.winframe{position:absolute;inset:var(--wpad) var(--wpad) calc(var(--dashH) + 6px) var(--wpad);border-radius:16px;pointer-events:none;
+  box-shadow:0 0 0 80px #0e1116, inset 0 0 0 2px #262d37, inset 0 0 40px rgba(0,0,0,.35)}
+.rain,.flash{inset:0 0 var(--dashH) 0}
+.no3d{inset:var(--wpad) var(--wpad) calc(var(--dashH) + 6px) var(--wpad)}
+.hud{left:calc(var(--wpad) + 14px);top:calc(var(--wpad) + 12px)}
+.hud-tr{right:calc(var(--wpad) + 14px);top:calc(var(--wpad) + 12px)}
+.hud-bl{left:calc(var(--wpad) + 14px);bottom:calc(var(--dashH) + 20px)}
+#map{right:calc(var(--wpad) + 14px);bottom:calc(var(--dashH) + 20px);width:min(20%,200px)}
+.callout{top:30%}
+.dash{top:auto;height:var(--dashH);padding:0 3%;gap:3%;background:linear-gradient(#232a34,#0b0e12);border-top:1px solid #3a434f}
+#gauge{height:100px}
+.lamps{gap:3px}
+.lp{font-size:12px}
+.dro .k{font-size:11px}
+.dro .v{font-size:clamp(20px,2vw,34px)}
+.pax .fig{font-size:clamp(30px,3.4vw,52px)}
+.pax .txt .v{font-size:clamp(16px,1.7vw,26px)}
+.pax .txt .f{font-size:11px}
+.strip{height:88px}
+.sheet{padding:7px 12px}
+.sh h2{font-size:13px}
+.chartbox{height:118px}
+.row label{font-size:12.5px}
+.row output{font-size:16px}
+input[type=range]{height:15px}
+.rail{padding-top:4px}
+.rail .lb{font-size:12px}
+.rail label{padding:2px 9px;font-size:11.5px}
+.sw{padding-top:3px}
+.note .nb{font-size:13px}
+/* bottom bar */
+.bar{padding:6px 10px;row-gap:6px}
+.bar .row1{gap:10px}
+.btn{padding:7px 13px;font-size:13px}
+.btn.go{min-width:8em}
+.btn.ghost2{background:transparent;color:var(--ink2);border-style:dashed;margin-left:2px}
+.seg button{padding:6px 10px;font-size:14px}
+.tourcap{margin-left:4px}
+.seq{display:none}
+body.seq-open .seq{display:flex}
+@media (min-width:1000px) and (min-height:620px){
+  .main{grid-template-columns:minmax(0,1fr) 360px;gap:8px}
+  .view{grid-template-rows:minmax(0,1fr) 88px;gap:8px}
+  .side{grid-template-rows:118px minmax(0,1fr);gap:8px}
+}
+@media (max-width:999px){.winframe{inset:8px 8px calc(var(--dashH) + 4px) 8px}}
 </style>
 </head>
 <body>
@@ -274,12 +333,7 @@ dialog li,dialog p{font-size:14px;color:var(--ink2);margin:0 0 6px}
     <div class="cab" id="cab">
       <canvas id="three" aria-label="運転席からの3D視点"></canvas>
       <div class="no3d" id="no3d" hidden>この環境では3D表示を利用できません。下の側面図と運転曲線で確認できます。</div>
-      <svg class="frame" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-        <defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#232a34"/><stop offset="1" stop-color="#0b0e12"/></linearGradient></defs>
-        <path fill-rule="evenodd" fill="#0e1116" d="M0 0H100V100H0Z M3.2 5.5 Q3.2 3 5.5 3 H94.5 Q96.8 3 96.8 5.5 V70 H3.2 Z"/>
-        <rect x="0" y="70" width="100" height="30" fill="url(#dg)"/>
-        <line x1="0" y1="70.2" x2="100" y2="70.2" stroke="#3a434f" stroke-width=".35"/>
-      </svg>
+      <div class="winframe" aria-hidden="true"></div>
       <div class="rain" id="rain" aria-hidden="true"></div>
       <div class="flash" id="flash" aria-hidden="true"></div>
       <div class="callout" id="callout" aria-live="assertive"><span class="big" id="coBig"></span><span class="sub" id="coSub"></span></div>
@@ -370,6 +424,7 @@ dialog li,dialog p{font-size:14px;color:var(--ink2);margin:0 0 6px}
   </span>
   <button class="btn" id="tourBtn" type="button">8つの条件を連続で検証</button>
   <button class="btn" id="recBtn" type="button" title="この画面を録画しながら連続検証を実行し、終わったら動画ファイルを保存します">⏺ 録画して連続検証</button>
+  <button class="btn ghost2" id="seqBtn" type="button" aria-expanded="false">シーケンス ▾</button>
   <span class="tourcap" id="tourCap"></span>
   <span class="verdict" id="verdict" aria-live="polite"></span>
   </div>
@@ -532,46 +587,46 @@ function drawTrack(s){
   const ctx=trackC.getContext('2d'), W=trackC.clientWidth, H=trackC.clientHeight;
   ctx.clearRect(0,0,W,H);
   const xmin=-150, xmax=Math.max(700,P.sight*1.12,M.tot+110), sx=x=>(x-xmin)/(xmax-xmin)*W;
-  const hz=H*0.6, ry=H*0.74;
+  const hz=H*0.55, ry=H-24;
   const g=ctx.createLinearGradient(0,0,0,hz); g.addColorStop(0,C.sky1); g.addColorStop(1,C.sky2);
   ctx.fillStyle=g; ctx.fillRect(0,0,W,hz); ctx.fillStyle=C.ground; ctx.fillRect(0,hz,W,H-hz);
-  ctx.strokeStyle=C.pole; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,ry-38); ctx.lineTo(W,ry-38); ctx.stroke();
+  ctx.strokeStyle=C.pole; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(0,ry-26); ctx.lineTo(W,ry-26); ctx.stroke();
   ctx.lineWidth=2;
-  for(let x=Math.ceil(xmin/50)*50;x<=xmax;x+=50){const px=sx(x); ctx.beginPath(); ctx.moveTo(px,ry-1); ctx.lineTo(px,ry-44); ctx.moveTo(px-2,ry-40); ctx.lineTo(px+8,ry-40); ctx.stroke();}
+  for(let x=Math.ceil(xmin/50)*50;x<=xmax;x+=50){const px=sx(x); ctx.beginPath(); ctx.moveTo(px,ry-1); ctx.lineTo(px,ry-31); ctx.moveTo(px-2,ry-28); ctx.lineTo(px+7,ry-28); ctx.stroke();}
   ctx.fillStyle=C.ballast; ctx.fillRect(0,ry,W,7); ctx.fillStyle=C.rail; ctx.fillRect(0,ry-2,W,2);
   ctx.font=`600 11px ${C.num}`; ctx.textAlign='center'; ctx.fillStyle=C.ink2; ctx.strokeStyle=C.ink2; ctx.lineWidth=1;
-  for(let x=0;x<=xmax;x+=100){const px=sx(x); ctx.beginPath(); ctx.moveTo(px,ry+9); ctx.lineTo(px,ry+14); ctx.stroke(); ctx.fillText(x+'m',px,ry+26);}
-  const by=16;
+  for(let x=0;x<=xmax;x+=100){const px=sx(x); ctx.beginPath(); ctx.moveTo(px,ry+8); ctx.lineTo(px,ry+12); ctx.stroke(); ctx.fillText(x+'m',px,ry+22);}
+  const by=11;
   ctx.fillStyle=C.amber; ctx.fillRect(sx(0),by,Math.max(0,sx(M.dR)-sx(0)),5);
   ctx.fillStyle=C.blue; ctx.fillRect(sx(M.dR),by,sx(M.tot)-sx(M.dR),5);
-  ctx.font=`700 12px ${C.num}`;
-  if(sx(M.dR)-sx(0)>60){ctx.fillStyle=C.amber; ctx.fillText(`空走 ${fmt(M.dR)}m`,(sx(0)+sx(M.dR))/2,by-4);}
-  if(sx(M.tot)-sx(M.dR)>60){ctx.fillStyle=C.blue; ctx.fillText(`制動 ${fmt(M.dB)}m`,(sx(M.dR)+sx(M.tot))/2,by-4);}
-  ctx.font=`600 10px ${C.num}`; ctx.fillStyle=C.ink2; ctx.strokeStyle=C.ink2;
-  [[444,'444'],[477,'477']].forEach(([x,l],i)=>{const px=sx(x); ctx.beginPath(); ctx.moveTo(px,by+6); ctx.lineTo(px,by+12); ctx.stroke(); ctx.textAlign=i?'left':'right'; ctx.fillText(l,px+(i?2:-2),by+20);});
-  ctx.setLineDash([3,4]); ctx.beginPath(); ctx.moveTo(sx(0),by+6); ctx.lineTo(sx(0),ry-2); ctx.stroke(); ctx.setLineDash([]);
-  ctx.textAlign='left'; ctx.font=`700 11px ${C.num}`; ctx.fillText('発見',sx(0)+4,ry-48);
+  ctx.font=`700 11px ${C.num}`;
+  if(sx(M.dR)-sx(0)>60){ctx.fillStyle=C.amber; ctx.fillText(`空走 ${fmt(M.dR)}m`,(sx(0)+sx(M.dR))/2,by-3);}
+  if(sx(M.tot)-sx(M.dR)>60){ctx.fillStyle=C.blue; ctx.fillText(`制動 ${fmt(M.dB)}m`,(sx(M.dR)+sx(M.tot))/2,by-3);}
+  ctx.font=`600 9.5px ${C.num}`; ctx.fillStyle=C.ink2; ctx.strokeStyle=C.ink2;
+  [[444,'444'],[477,'477']].forEach(([x,l],i)=>{const px=sx(x); ctx.beginPath(); ctx.moveTo(px,by+5); ctx.lineTo(px,by+10); ctx.stroke(); ctx.textAlign=i?'left':'right'; ctx.fillText(l,px+(i?2:-2),by+19);});
+  ctx.setLineDash([3,4]); ctx.beginPath(); ctx.moveTo(sx(0),by+5); ctx.lineTo(sx(0),ry-2); ctx.stroke(); ctx.setLineDash([]);
+  ctx.textAlign='left'; ctx.font=`700 10px ${C.num}`; ctx.fillText('発見',sx(0)+3,ry-33);
   const stopC=M.margin>=0?C.green:C.red, spx=sx(M.tot);
   ctx.setLineDash([5,4]); ctx.strokeStyle=stopC; ctx.lineWidth=1.5; ctx.beginPath(); ctx.moveTo(spx,by); ctx.lineTo(spx,ry+5); ctx.stroke(); ctx.setLineDash([]);
   const cp=sx(P.sight);
-  for(let i=0;i<6;i++){ctx.fillStyle=i%2?'#1a1a1a':'#f2c200'; ctx.fillRect(cp-1.5,ry-30+i*5,3,5);}
+  for(let i=0;i<5;i++){ctx.fillStyle=i%2?'#1a1a1a':'#f2c200'; ctx.fillRect(cp-1.5,ry-25+i*5,3,5);}
   ctx.lineCap='round';
-  [1,-1].forEach(b=>{ctx.strokeStyle='#1a1a1a';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(cp-7,ry-38-7*b);ctx.lineTo(cp+7,ry-38+7*b);ctx.stroke();ctx.strokeStyle='#f2c200';ctx.lineWidth=3;ctx.stroke();});
+  [1,-1].forEach(b=>{ctx.strokeStyle='#1a1a1a';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(cp-6,ry-31-6*b);ctx.lineTo(cp+6,ry-31+6*b);ctx.stroke();ctx.strokeStyle='#f2c200';ctx.lineWidth=3;ctx.stroke();});
   ctx.lineCap='butt';
   const bk=blinkOn();
-  [[-6,0],[6,1]].forEach(([dx,k])=>{ctx.fillStyle=bk===k?'#ff2a2a':'#3a2020'; ctx.beginPath(); ctx.arc(cp+dx,ry-26,3,0,Math.PI*2); ctx.fill();});
-  ctx.font=`700 12px ${C.num}`; ctx.textAlign='center';
+  [[-5,0],[5,1]].forEach(([dx,k])=>{ctx.fillStyle=bk===k?'#ff2a2a':'#3a2020'; ctx.beginPath(); ctx.arc(cp+dx,ry-21,2.6,0,Math.PI*2); ctx.fill();});
+  ctx.font=`700 11px ${C.num}`; ctx.textAlign='left';
   const lbl=`踏切 ${P.sight}m`, lw=ctx.measureText(lbl).width+12;
-  ctx.fillStyle=C.red; rr(ctx,cp-lw/2,ry-66,lw,17,8.5); ctx.fill(); ctx.fillStyle='#fff'; ctx.fillText(lbl,cp,ry-53.5);
-  const xh=s.x, top=ry-18, h=15;
+  ctx.fillStyle=C.red; rr(ctx,cp+12,ry-44,lw,16,8); ctx.fill(); ctx.fillStyle='#fff'; ctx.fillText(lbl,cp+18,ry-32);
+  const xh=s.x, top=ry-15, h=12;
   for(let i=CARS-1;i>=0;i--){
     const f=xh-i*CAR, b=f-CAR+0.9, pf=sx(f), pb=sx(b), w=pf-pb;
     if(pf<-10||pb>W+10) continue;
     ctx.fillStyle=C.red;
     if(i===0){ctx.beginPath();ctx.moveTo(pb,top);ctx.lineTo(pf-5,top);ctx.quadraticCurveTo(pf,top+1,pf,top+7);ctx.lineTo(pf,top+h);ctx.lineTo(pb,top+h);ctx.closePath();ctx.fill();}
     else {rr(ctx,pb,top,w,h,2); ctx.fill();}
-    ctx.fillStyle=C.win; ctx.fillRect(pb+2,top+3,Math.max(0,w-(i===0?7:4)),4);
-    ctx.fillStyle=C.cream; ctx.fillRect(pb,top+9,w,2);
+    ctx.fillStyle=C.win; ctx.fillRect(pb+2,top+2,Math.max(0,w-(i===0?7:4)),3);
+    ctx.fillStyle=C.cream; ctx.fillRect(pb,top+7,w,1.6);
   }
   if(s.phase==='brake'&&sim.running){
     for(let i=0;i<CARS;i++){const wx=sx(xh-i*CAR-CAR/2); ctx.fillStyle=C.amber; ctx.globalAlpha=.6+Math.random()*.4; ctx.beginPath(); ctx.arc(wx-4-Math.random()*10,ry-1,Math.random()*1.5+.5,0,Math.PI*2); ctx.fill();}
@@ -951,6 +1006,7 @@ $('#recBtn').addEventListener('click',async()=>{
   await new Promise(r=>setTimeout(r,800));
   tour={i:0,list}; setMul(sim.mul); $('#tourBtn').textContent='連続検証を止める'; nextTour();
 });
+$('#seqBtn').addEventListener('click',()=>{const o=document.body.classList.toggle('seq-open'); $('#seqBtn').setAttribute('aria-expanded',o); $('#seqBtn').textContent=o?'シーケンス ▴':'シーケンス ▾';});
 $('#addScen').addEventListener('click',()=>{
   const sc={id:'custom'+Date.now(),custom:true,on:true}; PK.forEach(k=>sc[k]=P[k]);
   sc.cap=`${P.speed}km/h・空走${P.react}s・${({dry:'乾燥',wet:'雨',slip:'落ち葉'})[P.rail]}${P.comp?'':'・応荷重なし'}${P.curveR?'':'・直線'}`; sc.intro=genIntro({...sc});
