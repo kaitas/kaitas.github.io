@@ -65,10 +65,10 @@
         "name": "AICU Inc.",
         "url": "https://corp.aicu.ai/"
       },
-      "affiliation": {
-        "@type": "CollegeOrUniversity",
-        "name": "Digital Hollywood University Graduate School"
-      },
+      "affiliation": [
+        { "@type": "CollegeOrUniversity", "name": "Kaishi Innovation University" },
+        { "@type": "CollegeOrUniversity", "name": "Digital Hollywood University Graduate School" }
+      ],
       "alumniOf": [
         { "@type": "CollegeOrUniversity", "name": "Tokyo Institute of Technology" },
         { "@type": "CollegeOrUniversity", "name": "Tokyo Polytechnic University" }
@@ -94,7 +94,7 @@
           <a href="/" hreflang="en" class="{% if page_lang == 'ja' %}{% else %}is-active{% endif %}">EN</a>
           <a href="/ja/" hreflang="ja" class="{% if page_lang == 'ja' %}is-active{% endif %}">日本語</a>
         </div>
-        <p class="hero-eyebrow">VR Entertainment · Metaverse · Generative AI</p>
+        <p class="hero-eyebrow">VR Entertainment · Metaverse · Creative AI Startup</p>
         <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
         <h2 id="project_tagline">{{ site.tagline | default: site.description }}</h2>
         {% if site.show_downloads %}
